@@ -14,34 +14,34 @@ const principles: Principle[] = [
   {
     id: 'product',
     title: 'PRODUCT-CENTRIC',
-    tagline: 'Engineering aligned with tangible business metrics and user workflows.',
-    desc: 'Every architectural decision is anchored to measurable ROI, product-market velocity, and real end-user conversion. We eliminate speculative engineering by validating assumptions early through rapid interactive prototypes and production telemetry.',
+    tagline: 'Ideas do not create value until they reach users.',
+    desc: 'Ideas do not create value until they reach users. We cover the full path, from definition to long-term operation, with one accountable team responsible for speed, reliability, and measurable production outcomes.',
     points: [
-      'Business-driven architecture linked to measurable customer ROI',
-      'Continuous validation with rapid customer feedback loops',
-      'Zero feature bloat: laser focus on high-impact capability delivery',
+      'Full lifecycle engineering accountability from concept to scale',
+      'Direct focus on speed, reliability, and measurable production outcomes',
+      'One unified cross-functional squad eliminating organizational friction',
     ],
   },
   {
     id: 'ai',
     title: 'AI-MINDED',
-    tagline: 'Production cognitive systems with automated decision loops.',
-    desc: 'We incorporate intelligence at the system foundation. From autonomous agent reasoning to domain-grounded RAG pipelines, our systems maintain deterministic SLAs, zero data leakage, and comprehensive real-time evaluation harnesses.',
+    tagline: 'AI strengthens how we engineer software.',
+    desc: 'AI strengthens how we engineer software. It helps us explore ideas faster, eliminate routine tasks, and maintain stronger control over quality and implementation.',
     points: [
-      'Autonomous agent orchestration for mission-critical workflows',
-      'Private enterprise RAG grounded in proprietary datasets',
-      'Deterministic latency SLAs, eval harnesses & automated safety guardrails',
+      'Accelerate prototyping and ideation cycles safely',
+      'Eliminate routine manual tasks and cognitive bottlenecks',
+      'Maintain rigorous control over code quality, validation, and security',
     ],
   },
   {
     id: 'industry',
     title: 'INDUSTRY-FOCUSED',
-    tagline: 'Domain expertise in heavily regulated and compliance-driven environments.',
-    desc: 'Deep domain engineering for Healthcare, FinTech, Logistics, and Enterprise SaaS. We architect systems with native compliance for HIPAA, SOC 2 Type II, ISO 27001, and GDPR from day one rather than treating compliance as a retrofitted afterthought.',
+    tagline: 'Domain context shapes every engineering decision.',
+    desc: 'Domain context shapes every engineering decision. We build for how industries actually function their systems, constraints, and operational realities, ensuring solutions work in real operational environments.',
     points: [
-      'Built-in compliance architecture: HIPAA, SOC 2 Type II, ISO & GDPR',
-      'Immutable audit ledgers, row-level security & encrypted token storage',
-      'Domain schemas optimized for sub-second high-concurrency loads',
+      'Deep alignment with industry-specific compliance and workflows',
+      'Architectures tailored to existing operational constraints',
+      'Production reliability under strict domain regulatory standards',
     ],
   },
 ];
@@ -238,7 +238,7 @@ export const DeliveryPrinciples: React.FC = () => {
                         style={{
                           width: '38px',
                           height: '38px',
-                          borderRadius: '50%',
+                          borderRadius: '0px',
                           backgroundColor: isActive ? 'rgba(255, 255, 255, 0.18)' : 'transparent',
                           display: 'flex',
                           alignItems: 'center',
@@ -343,18 +343,18 @@ export const DeliveryPrinciples: React.FC = () => {
                   onMouseEnter={() => setHoveredCardIndex(index)}
                   style={{
                     padding: 'clamp(28px, 3.5vw, 42px) clamp(20px, 2.5vw, 32px)',
-                    border: 'none',
-                    borderRadius: '0px', // Proper sharp styling, not rounded corners
+                    border: '1px solid #e4e4e7',
+                    borderRadius: '0px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     minHeight: '190px',
                     backgroundColor: isHovered ? '#2258e7' : '#ffffff',
                     cursor: 'pointer',
-                    transition: 'background-color 0.22s ease, color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease',
+                    transition: 'background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease',
                     position: 'relative',
                     zIndex: isHovered ? 2 : 1,
-                    boxShadow: isHovered ? '0 16px 36px rgba(34, 88, 231, 0.28)' : 'none',
+                    boxShadow: 'none',
                   }}
                 >
                   <span

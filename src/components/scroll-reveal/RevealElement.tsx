@@ -40,67 +40,67 @@ interface VariantPreset {
 
 const VARIANT_PRESETS: Record<RevealVariant, VariantPreset> = {
   default: {
-    opacity: 0.15,
-    blur: 6,
-    y: 18,
-    scale: 1,
-    rotate: 0,
-    start: 'top 90%',
-    end: 'top 55%',
-  },
-  text: {
-    opacity: 0.15,
-    blur: 6,
-    y: 16,
-    scale: 1,
-    rotate: 2,
-    start: 'top 90%',
-    end: 'top 50%',
-  },
-  heading: {
-    opacity: 0.15,
-    blur: 8,
-    y: 22,
-    scale: 1,
-    rotate: 2.5,
-    start: 'top 90%',
-    end: 'top 48%',
-  },
-  image: {
-    opacity: 0.15,
-    blur: 10,
-    y: 24,
-    scale: 0.95,
-    rotate: 0,
-    start: 'top 90%',
-    end: 'top 52%',
-  },
-  card: {
-    opacity: 0.15,
-    blur: 7,
-    y: 28,
-    scale: 0.97,
-    rotate: 0,
-    start: 'top 92%',
-    end: 'top 55%',
-  },
-  button: {
-    opacity: 0.2,
-    blur: 4,
+    opacity: 0.25,
+    blur: 2,
     y: 12,
     scale: 1,
     rotate: 0,
     start: 'top 92%',
     end: 'top 60%',
   },
-  section: {
+  text: {
+    opacity: 0.25,
+    blur: 0,
+    y: 10,
+    scale: 1,
+    rotate: 0,
+    start: 'top 92%',
+    end: 'top 60%',
+  },
+  heading: {
+    opacity: 0.25,
+    blur: 2,
+    y: 14,
+    scale: 1,
+    rotate: 0,
+    start: 'top 92%',
+    end: 'top 55%',
+  },
+  image: {
     opacity: 0.3,
-    blur: 5,
+    blur: 3,
+    y: 16,
+    scale: 0.98,
+    rotate: 0,
+    start: 'top 92%',
+    end: 'top 55%',
+  },
+  card: {
+    opacity: 0.3,
+    blur: 2,
+    y: 14,
+    scale: 0.985,
+    rotate: 0,
+    start: 'top 92%',
+    end: 'top 60%',
+  },
+  button: {
+    opacity: 0.35,
+    blur: 0,
+    y: 8,
+    scale: 1,
+    rotate: 0,
+    start: 'top 94%',
+    end: 'top 65%',
+  },
+  section: {
+    opacity: 0.4,
+    blur: 0,
     y: 0,
     scale: 1,
     rotate: 0,
-    start: 'top 95%',
-    end: 'top 65%',
+    start: 'top 96%',
+    end: 'top 70%',
   },
 };
 
@@ -122,21 +122,31 @@ export const RevealElement: React.FC<RevealElementProps> = ({
     const el = elRef.current;
     if (!el) return;
 
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      gsap.set(el, {
+        opacity: 1,
+        filter: 'none',
+        y: 0,
+        scale: 1,
+        rotate: 0,
+      });
+      return;
+    }
+
     const ctx = gsap.context(() => {
       const preset = VARIANT_PRESETS[variant];
       const isMobile = window.innerWidth < 768;
 
-      const initialBlur = enableBlur
+      const initialBlur = enableBlur && !isMobile
         ? blurMax !== undefined
           ? blurMax
-          : isMobile
-          ? Math.min(preset.blur, 4)
-          : preset.blur
+          : Math.min(preset.blur, 3)
         : 0;
 
       const initialRotate = isMobile ? 0 : preset.rotate;
-      const initialY = isMobile ? Math.min(preset.y, 10) : preset.y;
-      const initialScale = isMobile && preset.scale < 1 ? 0.985 : preset.scale;
+      const initialY = isMobile ? Math.min(preset.y, 6) : preset.y;
+      const initialScale = isMobile ? 1 : preset.scale;
 
       const triggerStart = start || preset.start;
       const triggerEnd = end || preset.end;
@@ -145,14 +155,14 @@ export const RevealElement: React.FC<RevealElementProps> = ({
         el,
         {
           opacity: preset.opacity,
-          filter: initialBlur > 0 ? `blur(${initialBlur}px)` : 'blur(0px)',
+          filter: initialBlur > 0 ? `blur(${initialBlur}px)` : 'none',
           y: initialY,
           scale: initialScale,
           rotate: initialRotate,
         },
         {
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'none',
           y: 0,
           scale: 1,
           rotate: 0,

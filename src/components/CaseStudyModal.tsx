@@ -15,70 +15,105 @@ export interface CaseStudyDetail {
   technologies: string[];
 }
 
-export const caseStudyDetails: Record<string, CaseStudyDetail> = {
-  '1': {
-    id: '1',
-    title: 'AI integration for medical coding software',
-    client: 'TruBridge Healthcare',
-    industry: 'Healthcare & HealthTech',
-    duration: '9 Months',
-    tags: ['Healthcare', 'Artificial intelligence', 'Microsoft Azure', 'Integration', 'HIPAA'],
-    summary:
-      'Engineered an AI-assisted ICD-10/CPT autonomous suggestion copilot and real-time validation engine embedded inside clinical coding workflows.',
-    challenge:
-      'Manual coding of complex clinical charts resulted in an 8.4% error rate and an average processing time of 42 minutes per multi-encounter patient record. Inaccurate codes led to delayed reimbursements and compliance audits.',
-    solution:
-      'Neominds deployed fine-tuned clinical transformer models with retrieval-augmented generation (RAG) over medical ontology databases. The solution includes sub-second automated code validation, audit trail generation, and continuous compliance checks.',
-    metrics: [
-      { label: 'Coding Efficiency', value: '+46%' },
-      { label: 'Error Rate Reduction', value: '8.4% → 0.9%' },
-      { label: 'Days in A/R', value: '-14 Days' },
-      { label: 'Chart Processing Speed', value: '3.2x Faster' },
-    ],
-    technologies: ['Microsoft Azure', 'Python / FastAPI', 'PyTorch', 'Vector Embeddings', 'React / TypeScript', 'HIPAA-Vault'],
-  },
-  '2': {
-    id: '2',
-    title: 'Real-Time Algorithmic Trading Platform',
-    client: 'Global Quant Capital',
-    industry: 'Fintech & Capital Markets',
+const rawCaseStudyDetails: Record<string, CaseStudyDetail> = {
+  'authenticom-ai-etl': {
+    id: 'authenticom-ai-etl',
+    title: 'Mission-Critical ETL Platform Modernization with Agentic AI',
+    client: 'Authenticom Inc.',
+    industry: 'Automotive & Data Integration',
     duration: '12 Months',
-    tags: ['Fintech', 'Machine learning', 'High Frequency', 'AWS Cloud', 'Sub-millisecond'],
+    tags: ['Automotive', 'Artificial Intelligence', 'Data Pipelines', 'Modernization', 'Cloud Native'],
     summary:
-      'Engineered ultra-low latency order matching engine and real-time risk analytics processing 50,000+ transactions per second with sub-millisecond execution.',
+      'Modernized a mission-critical automotive ETL data pipeline with Claude AI agents to automate data ingestion, mapping, validation, and real-time schema reconciliation.',
     challenge:
-      'Legacy execution infrastructure suffered from latency spikes during market open volatility, resulting in slippage, unoptimized fill rates, and delayed risk exposure re-hedging.',
+      'Authenticom handles massive data feeds from thousands of automotive dealerships. Legacy batch ETL pipelines struggled with varied proprietary schemas, frequent field drift, and costly manual onboarding.',
     solution:
-      'Architected a lock-free C++ and Rust matching kernel integrated with high-throughput Kafka streaming and AWS dedicated direct-connect instances. Deployed ML-driven predictive liquidity routing algorithms.',
+      'Neominds designed an intelligent event-driven pipeline powered by Claude agentic models. The solution automatically interprets unstructured data formats, standardizes feeds, validates data integrity, and flags anomalies with zero human overhead.',
     metrics: [
-      { label: 'Peak Throughput', value: '50k+ tx/sec' },
-      { label: 'Tick-to-Trade Latency', value: '< 450 μs' },
-      { label: 'System Availability', value: '99.999%' },
-      { label: 'Slippage Reduction', value: '-38%' },
+      { label: 'Ingestion Throughput', value: '4.8x Faster' },
+      { label: 'Manual Mapping Overhead', value: '-74%' },
+      { label: 'Platform Availability', value: '99.99%' },
+      { label: 'Schema Adaptation', value: 'Real-time' },
     ],
-    technologies: ['Rust', 'C++20', 'AWS Direct Connect', 'Apache Kafka', 'TimescaleDB', 'React WebSockets UI'],
+    technologies: ['Python / FastAPI', 'Claude 3.5 Sonnet', 'Apache Kafka', 'PostgreSQL', 'AWS Cloud', 'Docker / Kubernetes'],
   },
-  '3': {
-    id: '3',
-    title: 'Autonomous Fleet Logistics & Route Optimizer',
-    client: 'Maersk Broker Tech',
-    industry: 'Logistics & Maritime Shipping',
-    duration: '8 Months',
-    tags: ['Logistics', 'IoT', 'Agentic AI', 'Google Cloud', 'Predictive Telemetry'],
+  'trading-platform': {
+    id: 'trading-platform',
+    title: 'High-Throughput Trading Engine for 1M+ Active Traders',
+    client: 'Global FinTech Exchange',
+    industry: 'Financial Services & Trading',
+    duration: '18 Months',
+    tags: ['Financial Services', 'Trading Engine', 'Ultra-Low Latency', 'Microservices', 'High Concurrency'],
     summary:
-      'Deployed predictive route optimization algorithms reducing fuel consumption by 14% across global maritime shipping routes.',
+      'Engineered a scalable multi-asset trading and risk management platform handling ultra-low latency execution and millions of active market participants.',
     challenge:
-      'Unpredictable weather fronts, canal congestion, and bunker fuel volatility caused escalating fuel expenditure and unpredictable cargo arrival windows.',
+      'The client needed to replace a legacy trading stack incapable of handling high-volatility spikes during global market openings, resulting in execution bottlenecks and slippage.',
     solution:
-      'Built an agentic routing engine ingesting live satellite AIS telemetry, ocean current forecasts, and port wait-time APIs to calculate dynamic voyage speeds and optimal maritime corridors.',
+      'Neominds architected an event-driven microservices platform utilizing memory-optimized distributed caches, real-time WebSockets, and resilient regulatory compliance reporting.',
     metrics: [
-      { label: 'Fuel Consumption', value: '-14%' },
-      { label: 'ETA Accuracy', value: '98.4%' },
-      { label: 'CO2 Emission Savings', value: '42,000 Tons' },
-      { label: 'Active Monitored Vessels', value: '380+ Fleet' },
+      { label: 'Active Users', value: '1M+' },
+      { label: 'Execution Latency', value: '< 12 ms' },
+      { label: 'Order Throughput', value: '50k+ req/sec' },
+      { label: 'System Uptime', value: '99.999%' },
     ],
-    technologies: ['Google Cloud Platform', 'Kubernetes', 'Golang', 'TensorFlow', 'PostGIS', 'MQTT Telemetry'],
+    technologies: ['C# / .NET Core', 'Go', 'Redis Cluster', 'Kafka', 'React / TypeScript', 'Kubernetes / Azure'],
   },
+  'motive-retail-ai': {
+    id: 'motive-retail-ai',
+    title: 'Claude AI Automated Dealer Management Integration',
+    client: 'Motive Retail',
+    industry: 'Automotive Tech & ISV',
+    duration: '9 Months',
+    tags: ['Automotive', 'AI Integration', 'Claude Partner', 'API Automation', 'Cloud'],
+    summary:
+      'Partnered to deploy Claude-powered agentic systems for accelerated automotive dealer software certification and documentation validation.',
+    challenge:
+      'Automotive dealership integration and certification required weeks of back-and-forth technical documentation review, creating severe onboarding friction for OEMs.',
+    solution:
+      'As a Claude Partner Network member, Neominds built an intelligent agent assistant that reviews API specifications, validates test suites against dealer systems, and automatically surfaces integration corrections.',
+    metrics: [
+      { label: 'Integration Cycle', value: '-65%' },
+      { label: 'Automated Certification', value: '92%' },
+      { label: 'Dealer Onboarding', value: '3x Faster' },
+      { label: 'API Accuracy', value: '99.8%' },
+    ],
+    technologies: ['Claude AI', 'TypeScript', 'Node.js', 'AWS Lambda', 'GraphQL', 'Terraform'],
+  },
+  'trubridge-medical-ai': {
+    id: 'trubridge-medical-ai',
+    title: 'AI-Powered Clinical Record Analysis & Medical Coding Automation',
+    client: 'TruBridge',
+    industry: 'Healthcare & HealthTech',
+    duration: '14 Months',
+    tags: ['Healthcare', 'Applied AI', 'HIPAA Compliant', 'Medical Coding', 'Cloud Security'],
+    summary:
+      'Engineered an enterprise healthcare AI platform that parses unstructured Electronic Health Records (EHR) and suggests ICD-10 medical codes with high clinical precision.',
+    challenge:
+      'Manual medical chart coding created multi-week billing delays, high administrative overhead, and susceptibility to coding audit rejections across community hospitals.',
+    solution:
+      'Neominds engineered a HIPAA-compliant, private AI pipeline that extracts clinical terms from physician notes, correlates diagnoses with lab results, and cross-references ICD-10 guidelines.',
+    metrics: [
+      { label: 'Coding Turnaround', value: '3.4x Faster' },
+      { label: 'Coding Error Reduction', value: '-52%' },
+      { label: 'HIPAA Isolation', value: '100% Zero-Leak' },
+      { label: 'Billing Claim Acceptance', value: '98.6%' },
+    ],
+    technologies: ['Python', 'PyTorch / Transformers', 'FastAPI', 'Vector Databases', 'AWS GovCloud', 'PostgreSQL'],
+  },
+};
+
+export const caseStudyDetails: Record<string, CaseStudyDetail> = {
+  ...rawCaseStudyDetails,
+  // Backward-compatibility aliases
+  'enterprise-ai-etl': rawCaseStudyDetails['authenticom-ai-etl'],
+  'cloud-commerce-platform': rawCaseStudyDetails['trading-platform'],
+  'healthcare-clinical-ai': rawCaseStudyDetails['trubridge-medical-ai'],
+  'etl-modernization': rawCaseStudyDetails['authenticom-ai-etl'],
+  'medical-coding': rawCaseStudyDetails['trubridge-medical-ai'],
+  '1': rawCaseStudyDetails['authenticom-ai-etl'],
+  '2': rawCaseStudyDetails['trading-platform'],
+  '3': rawCaseStudyDetails['motive-retail-ai'],
+  '4': rawCaseStudyDetails['trubridge-medical-ai'],
 };
 
 interface CaseStudyModalProps {
@@ -100,7 +135,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        backgroundColor: 'rgba(0, 19, 52, 0.85)',
         backdropFilter: 'blur(8px)',
         zIndex: 1000,
         display: 'flex',
@@ -119,12 +154,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
           width: '100%',
           maxWidth: '860px',
           maxHeight: '90vh',
-          backgroundColor: '#0a0e17',
+          backgroundColor: '#001334',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           color: '#ffffff',
           borderRadius: '0px',
           overflowY: 'auto',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.9)',
+          boxShadow: 'none',
           position: 'relative',
           padding: 'clamp(24px, 4vw, 48px)',
         }}
@@ -146,6 +181,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
+            borderRadius: '0px',
             transition: 'background-color 0.2s',
           }}
           aria-label="Close modal"
@@ -166,6 +202,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
                 backgroundColor: 'rgba(34, 88, 231, 0.2)',
                 padding: '4px 12px',
                 border: '1px solid rgba(34, 88, 231, 0.4)',
+                borderRadius: '0px',
               }}
             >
               {t}
@@ -226,9 +263,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
             <div
               key={idx}
               style={{
-                backgroundColor: '#121722',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 padding: '16px',
+                borderRadius: '0px',
               }}
             >
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: 800, color: '#2258e7', marginBottom: '4px' }}>
@@ -274,10 +312,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
                 style={{
                   fontFamily: 'var(--font-body)',
                   fontSize: '13px',
-                  backgroundColor: '#181d28',
+                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
                   padding: '6px 14px',
                   color: '#ffffff',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '0px',
                 }}
               >
                 {tech}
@@ -303,14 +342,14 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
               onClose();
               onRequestQuote();
             }}
-            className="btn-primary btn-lg"
+            className="btn btn-primary btn-lg"
           >
             Discuss similar project <ArrowRight size={16} style={{ marginLeft: '8px' }} />
           </button>
 
           <button
             onClick={onClose}
-            style={{ color: '#8893a7', fontSize: '14px', cursor: 'pointer', fontFamily: 'var(--font-heading)', minHeight: '44px', padding: '8px 16px' }}
+            style={{ color: '#8893a7', fontSize: '14px', cursor: 'pointer', fontFamily: 'var(--font-heading)', minHeight: '44px', padding: '8px 16px', background: 'none', border: 'none' }}
           >
             Close Overview
           </button>

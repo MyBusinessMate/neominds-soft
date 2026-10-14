@@ -14,6 +14,25 @@ export const EngineeringBlobSection: React.FC = () => {
   const paragraphRef = useRef<HTMLParagraphElement>(null);
 
   useLayoutEffect(() => {
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      if (blobRef.current) {
+        gsap.set(blobRef.current, {
+          width: 'clamp(220px, 24vw, 340px)',
+          height: 'clamp(100px, 12vw, 160px)',
+          bottom: '-70px',
+          borderRadius: '50% 50% 0 0',
+          opacity: 0.95,
+          filter: 'blur(20px)',
+        });
+      }
+      if (headlineRef.current) gsap.set(headlineRef.current, { color: '#0f172a' });
+      const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
+      if (dots.length > 0) gsap.set(dots, { color: '#2258e7' });
+      if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#334155' });
+      return;
+    }
+
     const ctx = gsap.context(() => {
       // Pinned scroll-driven transition:
       // Starts with 100% full screen blue background & white text (Screenshot 1)
@@ -57,28 +76,35 @@ export const EngineeringBlobSection: React.FC = () => {
 
       // 2. Dynamic Text Color Change:
       // Starts crisp White (#ffffff) -> Turns Dark (#0f172a) as the blue shrinks down
-      tl.fromTo(
-        headlineRef.current,
-        { color: '#ffffff' },
-        { color: '#0f172a', ease: 'power1.out', duration: 0.8 },
-        0.15
-      );
+      if (headlineRef.current) {
+        tl.fromTo(
+          headlineRef.current,
+          { color: '#ffffff' },
+          { color: '#0f172a', ease: 'power1.out', duration: 0.8 },
+          0.15
+        );
+      }
 
       // Dots color: Starts White (#ffffff) -> Turns vivid electric blue (#2258e7) exactly like screenshot 2
-      tl.fromTo(
-        [dotLeftRef.current, dotRightRef.current],
-        { color: '#ffffff' },
-        { color: '#2258e7', ease: 'power1.out', duration: 0.8 },
-        0.15
-      );
+      const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
+      if (dots.length > 0) {
+        tl.fromTo(
+          dots,
+          { color: '#ffffff' },
+          { color: '#2258e7', ease: 'power1.out', duration: 0.8 },
+          0.15
+        );
+      }
 
       // Paragraph subtext: Starts White (rgba(255, 255, 255, 0.95)) -> Turns readable Charcoal (#334155)
-      tl.fromTo(
-        paragraphRef.current,
-        { color: 'rgba(255, 255, 255, 0.95)' },
-        { color: '#334155', ease: 'power1.out', duration: 0.8 },
-        0.2
-      );
+      if (paragraphRef.current) {
+        tl.fromTo(
+          paragraphRef.current,
+          { color: 'rgba(255, 255, 255, 0.95)' },
+          { color: '#334155', ease: 'power1.out', duration: 0.8 },
+          0.2
+        );
+      }
     }, containerRef);
 
     return () => {
@@ -154,21 +180,18 @@ export const EngineeringBlobSection: React.FC = () => {
             transition: 'color 0.3s ease',
           }}
         >
-          Engineering first.
-          <br />
+          Engineering first
           <span
             ref={dotLeftRef}
             style={{
               color: '#ffffff',
-              marginRight: '0.22em',
-              fontSize: '0.85em',
-              verticalAlign: 'middle',
-              display: 'inline-block',
+              marginLeft: '0.04em',
               transition: 'color 0.3s ease',
             }}
           >
-            •
+            .
           </span>
+          <br />
           AI-enhanced
           <span
             ref={dotRightRef}

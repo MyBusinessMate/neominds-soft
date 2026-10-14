@@ -53,7 +53,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '2px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '0px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <Newspaper size={14} />
             <span>Neominds Corporate Announcements & News</span>
           </div>

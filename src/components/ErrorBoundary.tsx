@@ -59,9 +59,15 @@ export class ErrorBoundary extends Component<Props, State> {
           <h1 style={{ fontSize: '32px', fontWeight: 700, marginBottom: '12px' }}>
             Something went wrong
           </h1>
-          <p style={{ color: '#8893a7', maxWidth: '480px', marginBottom: '32px' }}>
-            An unexpected error occurred while rendering this page. Our engineering team has been notified.
+          <p style={{ color: '#8893a7', maxWidth: '480px', marginBottom: '16px' }}>
+            An unexpected error occurred while rendering this page.
           </p>
+          {this.state.error && (
+            <div style={{ textAlign: 'left', background: '#111827', color: '#f87171', padding: '16px', borderRadius: '8px', fontSize: '13px', maxWidth: '850px', width: '100%', marginBottom: '24px', overflowX: 'auto', border: '1px solid #374151', fontFamily: 'monospace' }}>
+              <strong>Error:</strong> {this.state.error.message}
+              <pre style={{ marginTop: '8px', color: '#9ca3af', fontSize: '11px', whiteSpace: 'pre-wrap' }}>{this.state.error.stack}</pre>
+            </div>
+          )}
           <button
             onClick={() => window.location.reload()}
             className="btn-primary"

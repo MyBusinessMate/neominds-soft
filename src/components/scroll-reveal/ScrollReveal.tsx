@@ -79,13 +79,13 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   as: Component = 'span',
   className = '',
   style,
-  baseOpacity = 0.12,
-  baseRotation = 2.5,
-  blurStrength = 8,
+  baseOpacity = 0.2,
+  baseRotation = 0,
+  blurStrength = 3,
   enableBlur = true,
-  start = 'top 88%',
-  end = 'top 45%',
-  stagger = 0.05,
+  start = 'top 90%',
+  end = 'top 50%',
+  stagger = 0.04,
 }) => {
   const containerRef = useRef<HTMLElement | null>(null);
 
@@ -98,25 +98,36 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     const el = containerRef.current;
     if (!el) return;
 
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      const words = el.querySelectorAll<HTMLElement>('.scroll-reveal-word');
+      if (words.length > 0) {
+        gsap.set(words, { opacity: 1, filter: 'none', rotate: 0, y: 0 });
+      } else {
+        gsap.set(el, { opacity: 1, filter: 'none', rotate: 0, y: 0 });
+      }
+      return;
+    }
+
     const ctx = gsap.context(() => {
       const words = el.querySelectorAll<HTMLElement>('.scroll-reveal-word');
       const isMobile = window.innerWidth < 768;
-      const actualBlur = isMobile ? Math.min(blurStrength, 4) : blurStrength;
+      const actualBlur = isMobile || !enableBlur ? 0 : Math.min(blurStrength, 4);
       const actualRotation = isMobile ? 0 : baseRotation;
-      const actualY = isMobile ? 8 : 16;
+      const actualY = isMobile ? 4 : 10;
 
       if (words.length > 0) {
         gsap.fromTo(
           words,
           {
             opacity: baseOpacity,
-            filter: enableBlur ? `blur(${actualBlur}px)` : 'none',
+            filter: actualBlur > 0 ? `blur(${actualBlur}px)` : 'none',
             rotate: actualRotation,
             y: actualY,
           },
           {
             opacity: 1,
-            filter: 'blur(0px)',
+            filter: 'none',
             rotate: 0,
             y: 0,
             stagger,
@@ -135,13 +146,13 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
           el,
           {
             opacity: baseOpacity,
-            filter: enableBlur ? `blur(${actualBlur}px)` : 'none',
+            filter: actualBlur > 0 ? `blur(${actualBlur}px)` : 'none',
             rotate: actualRotation,
             y: actualY,
           },
           {
             opacity: 1,
-            filter: 'blur(0px)',
+            filter: 'none',
             rotate: 0,
             y: 0,
             ease: 'power1.out',

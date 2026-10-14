@@ -321,8 +321,8 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           -------------------------------------------------------------------- */}
       <nav className="ai-nav" aria-label="AI Services Navigation">
         <div className="ai-nav-brand" onClick={onNavigateHome}>
-          <div className="ai-nav-logo-icon">N</div>
-          <span className="ai-nav-brand-text">NEOMINDS</span>
+          <div className="ai-nav-logo-icon">E</div>
+          <span className="ai-nav-brand-text">EFFECTIVESOFT</span>
           <span className="ai-nav-brand-badge">AI CORE</span>
         </div>
 
@@ -470,7 +470,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           <div className="ai-mission-text-col">
             <ScrollRevealText
               text={
-                "We've always been engineers first. AI is the evolution of software, not a replacement for the expertise required to build it.\n\nNeominds is backed by 23 years of execution and here to turn ambiguous capabilities into enterprise reality, with architecture that lasts."
+                "We've always been engineers first. AI is the evolution of software, not a replacement for the expertise required to build it.\n\nNeominds is backed by proven engineering execution and here to turn ambiguous capabilities into enterprise reality, with architecture that lasts."
               }
             />
           </div>
@@ -756,8 +756,8 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           <div className="ai-footer-top">
             <div className="ai-footer-brand-col">
               <div className="ai-nav-brand" onClick={onNavigateHome}>
-                <div className="ai-nav-logo-icon">N</div>
-                <span className="ai-nav-brand-text">NEOMINDS.AI</span>
+                <div className="ai-nav-logo-icon">E</div>
+                <span className="ai-nav-brand-text">EFFECTIVESOFT.AI</span>
               </div>
               <p className="ai-footer-desc">
                 AI-enabled product engineering—from idea to production. 23+
@@ -811,7 +811,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
               <div className="ai-footer-links">
                 <a
                   className="ai-footer-link"
-                  href="https://www.linkedin.com/company/neominds"
+                  href="https://www.linkedin.com/company/effectivesoft"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -819,7 +819,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
                 </a>
                 <a
                   className="ai-footer-link"
-                  href="https://twitter.com/neominds"
+                  href="https://twitter.com/effectivesoft"
                   target="_blank"
                   rel="noreferrer"
                 >

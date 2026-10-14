@@ -58,28 +58,36 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
               url: `${PRODUCTION_DOMAIN}/favicon.svg`,
             },
           },
-          mainEntityOfPage: {
-            '@type': 'WebPage',
-            '@id': `${PRODUCTION_DOMAIN}/blog/${article.slug}`,
-          },
         },
       };
     }
   }
 
-  // 3. 28 Universal Canonical Service Pages
+  // 3. Dynamic Service Pages
   if (page in SERVICE_METADATA_MAP) {
     const service = SERVICE_METADATA_MAP[page];
-    const canonicalSlug = page === 'chatbot-videobot' ? 'chatbot-videobot' : page;
+    const canonicalPath = `/services/${page}`;
     return {
       title: `${service.title} Services | Neominds Enterprise Engineering`,
       description: service.description,
-      canonicalPath: `/services/${canonicalSlug}`,
+      canonicalPath,
       ogType: 'website',
       ogImage: service.heroImage || DEFAULT_OG_IMAGE,
       schema: {
         '@context': 'https://schema.org',
         '@graph': [
+          {
+            '@type': 'Service',
+            name: service.title,
+            description: service.description,
+            provider: {
+              '@type': 'Organization',
+              name: 'Neominds',
+              url: PRODUCTION_DOMAIN,
+              logo: `${PRODUCTION_DOMAIN}/favicon.svg`,
+            },
+            areaServed: ['US', 'EU', 'Global'],
+          },
           {
             '@type': 'BreadcrumbList',
             itemListElement: [
@@ -99,25 +107,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
                 '@type': 'ListItem',
                 position: 3,
                 name: service.title,
-                item: `${PRODUCTION_DOMAIN}/services/${canonicalSlug}`,
+                item: `${PRODUCTION_DOMAIN}${canonicalPath}`,
               },
             ],
-          },
-          {
-            '@type': 'Service',
-            serviceType: service.title,
-            provider: {
-              '@type': 'Organization',
-              name: 'Neominds',
-              url: PRODUCTION_DOMAIN,
-            },
-            areaServed: 'Worldwide',
-            description: service.description,
-            offers: {
-              '@type': 'Offer',
-              priceCurrency: 'USD',
-              availability: 'https://schema.org/InStock',
-            },
           },
         ],
       },
@@ -128,7 +120,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   switch (page) {
     case 'about-us':
       return {
-        title: 'About Neominds | 23+ Years of Enterprise Engineering Execution',
+        title: 'About Neominds | Enterprise Engineering Execution & Innovation',
         description:
           'Discover Neominds: our engineering heritage, executive leadership, global delivery hubs, and mission to engineer resilient enterprise software.',
         canonicalPath: '/about-us',
@@ -216,7 +208,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
         ogImage: DEFAULT_OG_IMAGE,
       };
 
-    // Strategic Legacy Service Pages
+    // Strategic Service Pages
     case 'product-discovery':
       return {
         title: 'Product Discovery & UX Strategy Services | Neominds',
@@ -271,9 +263,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     case 'home':
     default:
       return {
-        title: 'Neominds — AI-Enabled Product Engineering & Enterprise Software',
+        title: 'Neominds | Custom Software Development & AI Engineering Company',
         description:
-          'Neominds is an elite product engineering and enterprise AI partner delivering custom cloud software, cognitive agentic pipelines, and regulated mission-critical systems.',
+          'Neominds is a custom software development company delivering full-spectrum product engineering, AI solutions, and cloud architectures.',
         canonicalPath: '/',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,

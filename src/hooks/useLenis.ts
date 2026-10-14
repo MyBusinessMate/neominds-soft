@@ -51,10 +51,32 @@ export function useLenis() {
     gsap.ticker.add(updateTicker);
     gsap.ticker.lagSmoothing(0);
 
-    // Refresh ScrollTrigger positions after DOM layout stabilizes
-    const refreshTimer = setTimeout(() => {
+    // Refresh ScrollTrigger positions after DOM layout stabilizes and assets load
+    const refreshTimers = [
+      setTimeout(() => ScrollTrigger.refresh(), 150),
+      setTimeout(() => ScrollTrigger.refresh(), 600),
+      setTimeout(() => ScrollTrigger.refresh(), 1500),
+    ];
+
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(() => {
+        ScrollTrigger.refresh();
+      }).catch(() => {});
+    }
+
+    const handleWindowLoad = () => {
       ScrollTrigger.refresh();
-    }, 250);
+    };
+    window.addEventListener('load', handleWindowLoad);
+
+    let resizeTimer: ReturnType<typeof setTimeout> | null = null;
+    const handleResize = () => {
+      if (resizeTimer) clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 150);
+    };
+    window.addEventListener('resize', handleResize);
 
     // 4. Global Anchor Link Interception
     // Intercepts clicks on <a href="#id"> to route through Lenis Lerp math instead of browser snapping
@@ -78,7 +100,10 @@ export function useLenis() {
     document.addEventListener('click', handleAnchorClick, { capture: true });
 
     return () => {
-      clearTimeout(refreshTimer);
+      refreshTimers.forEach(clearTimeout);
+      if (resizeTimer) clearTimeout(resizeTimer);
+      window.removeEventListener('load', handleWindowLoad);
+      window.removeEventListener('resize', handleResize);
       document.removeEventListener('click', handleAnchorClick, { capture: true });
       gsap.ticker.remove(updateTicker);
       lenis.destroy();

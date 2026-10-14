@@ -188,7 +188,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 padding: '10px 20px',
                 backgroundColor: 'rgba(7, 11, 20, 0.75)',
                 backdropFilter: 'blur(8px)',
-                borderRadius: '40px',
+                borderRadius: '0px',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
                 color: '#ffffff',
                 fontSize: '14px',
@@ -601,7 +601,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               Say hello to our friendly team at one of these locations.
             </p>
             <a
-              href="mailto:contact@neominds.io"
+              href="mailto:rfq@effectivesoft.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -612,7 +612,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               }}
             >
               <Mail size={16} />
-              <span>contact@neominds.io</span>
+              <span>rfq@effectivesoft.com</span>
             </a>
           </div>
 

@@ -20,118 +20,91 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    id: 'etl-modernization',
+    id: 'authenticom-ai-etl',
     clientName: 'AUTHENTICOM',
     clientLogo: (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <svg width="22" height="22" viewBox="0 0 40 40" fill="none">
-          <path d="M20 4L36 34H4L20 4Z" stroke="#ffffff" strokeWidth="4" strokeLinejoin="round" />
-          <path d="M20 16L28 30H12L20 16Z" fill="#ffffff" />
-        </svg>
-        <span
-          style={{
-            fontSize: '14px',
-            fontWeight: 800,
-            color: '#ffffff',
-            letterSpacing: '0.06em',
-            fontFamily: 'var(--font-heading)',
-          }}
-        >
-          AUTHENTICOM
-        </span>
-      </div>
+      <img
+        src="https://www.effectivesoft.com/wp/wp-content/uploads/2025/12/authenticom-color-2.svg"
+        alt="Authenticom"
+        style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
+      />
     ),
-    categories: ['Artificial intelligence', 'Data related', 'Modernization', 'Data services'],
-    extraTagsCount: 1,
+    categories: ['Artificial intelligence', 'Data related', 'Data services', 'Modernization', 'Migration'],
     title: 'Mission-critical ETL platform, modernized with agentic AI',
     description:
-      'Transformed ETL modernization approach from manual rewrites into a governed, multi-agent AI system designed for scale, control, and long-term growth.',
+      'We transformed ETL modernization approach from manual rewrites into a governed, multi-agent AI system designed for scale, control, and long-term growth.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #2a5298 0%, #1a3668 50%, #0c1c38 100%)',
-    isEmblemVisual: true,
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/142814/960.authenticom-cover-template.jpg',
   },
   {
     id: 'trading-platform',
-    clientName: 'TRADEX GROUP',
+    clientName: 'TRADING PLATFORM',
     clientLogo: (
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <div
           style={{
-            width: '20px',
-            height: '20px',
-            borderRadius: '4px',
-            backgroundColor: '#3b82f6',
+            width: '24px',
+            height: '24px',
+            borderRadius: '0px',
+            backgroundColor: '#2258e7',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: '#ffffff',
-            fontWeight: 900,
+            fontWeight: 800,
             fontSize: '12px',
           }}
         >
-          T
+          FX
         </div>
-        <span
-          style={{
-            fontSize: '14px',
-            fontWeight: 800,
-            color: '#ffffff',
-            letterSpacing: '0.06em',
-            fontFamily: 'var(--font-heading)',
-          }}
-        >
-          TRADEX
+        <span style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.05em' }}>
+          MULTI-ASSET TRADING
         </span>
       </div>
     ),
-    categories: ['Financial services', 'Trading platform', 'High concurrency', 'Cloud native'],
-    extraTagsCount: 2,
+    categories: ['Web app', 'Mobile app', 'Trading platform', 'Financial services & Trading', '.NET', 'MS Azure'],
     title: 'A startup idea engineered into a million-user trading platform',
     description:
-      'EffectiveSoft joined the founders to engineer the high-performance infrastructure behind a multi-asset user trading ecosystem.',
+      'Neominds joined at the early vision stage and became a core engineering partner behind a multi-asset trading platform that now serves over one million registered users across 50+ countries.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
-    imageUrl: 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137561/960.Website-cover-template-2.jpg',
   },
   {
-    id: 'medical-coding',
-    clientName: 'MEDICORE HEALTH',
+    id: 'motive-retail-ai',
+    clientName: 'MOTIVE RETAIL',
     clientLogo: (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <div
-          style={{
-            width: '20px',
-            height: '20px',
-            borderRadius: '50%',
-            backgroundColor: '#10b981',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#ffffff',
-            fontWeight: 900,
-            fontSize: '12px',
-          }}
-        >
-          +
-        </div>
-        <span
-          style={{
-            fontSize: '14px',
-            fontWeight: 800,
-            color: '#ffffff',
-            letterSpacing: '0.06em',
-            fontFamily: 'var(--font-heading)',
-          }}
-        >
-          MEDICORE
-        </span>
-      </div>
+      <img
+        src="https://www.effectivesoft.com/wp/wp-content/uploads/2026/08/motiveretail-color-4.svg"
+        alt="Motive Retail"
+        style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
+        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
+      />
     ),
-    categories: ['Healthcare', 'Artificial intelligence', 'HIPAA compliant', 'FHIR API'],
-    extraTagsCount: 3,
-    title: 'AI integration for mission-critical medical coding software',
+    categories: ['Artificial intelligence', 'Automotive', 'Claude Code', 'Development'],
+    title: 'Improving onboarding capacity for a leading automotive integration platform with Claude',
     description:
-      'Integrated clinical NLP chart review models directly with EHR systems, eliminating manual overhead while elevating diagnostic compliance accuracy.',
+      'We developed a governed agentic AI workflow to scale integration onboarding while maintaining Motive Retail’s existing engineering and validation standards.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #1b4b66 0%, #103247 50%, #091c29 100%)',
-    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/142785/960.motiveretail-cover-template.jpg',
+  },
+  {
+    id: 'trubridge-medical-ai',
+    clientName: 'TRUBRIDGE',
+    clientLogo: (
+      <img
+        src="https://www.effectivesoft.com/wp/wp-content/uploads/2019/11/TruBridge-logo-color.svg"
+        alt="TruBridge"
+        style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
+        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
+      />
+    ),
+    categories: ['Healthcare', 'Artificial intelligence', 'Python', 'ASP.NET', 'Microsoft Azure', 'Integration'],
+    title: 'AI integration for medical coding software',
+    description:
+      'We integrated an AI-powered assistant and intelligent checks into a medical coding platform to help coders work faster, improve accuracy, and reduce manual effort.',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1c3d5a 0%, #0f2438 50%, #091522 100%)',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/101598/960.Optimized-revenue-cycle-management-with-Power-BI-dashboards.png',
   },
 ];
 
@@ -144,19 +117,23 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
+    const checkViewport = () => {
       setIsMobile(window.innerWidth < 860);
+      setReduceMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+    checkViewport();
+    window.addEventListener('resize', checkViewport);
+    return () => window.removeEventListener('resize', checkViewport);
   }, []);
 
+  const shouldStack = isMobile || reduceMotion;
+
   useLayoutEffect(() => {
-    // On mobile, disable GSAP horizontal pinning so panels stack vertically
-    if (isMobile) return;
+    // Disable GSAP horizontal pinning on mobile or when reduced motion is preferred
+    if (shouldStack) return;
 
     const ctx = gsap.context(() => {
       const track = trackRef.current;
@@ -173,6 +150,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
           start: 'top top',
           end: () => `+=${track.scrollWidth - window.innerWidth + 400}`,
           invalidateOnRefresh: true,
+          anticipatePin: 1,
         },
       });
     }, sectionRef);
@@ -185,7 +163,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
       });
       ctx.revert();
     };
-  }, [isMobile]);
+  }, [shouldStack]);
 
   return (
     <section
@@ -194,17 +172,17 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
       style={{
         position: 'relative',
         width: '100%',
-        height: isMobile ? 'auto' : '100vh',
+        height: shouldStack ? 'auto' : '100vh',
         backgroundColor: '#0a0d14',
-        overflow: isMobile ? 'visible' : 'hidden',
+        overflow: shouldStack ? 'visible' : 'hidden',
         display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
-        alignItems: isMobile ? 'stretch' : 'center',
+        flexDirection: shouldStack ? 'column' : 'row',
+        alignItems: shouldStack ? 'stretch' : 'center',
         padding: 0,
       }}
     >
-      {/* Mobile Header Title */}
-      {isMobile && (
+      {/* Mobile / Stack Header Title */}
+      {shouldStack && (
         <div style={{ padding: '36px 20px 20px 20px', textAlign: 'left', width: '100%' }}>
           <span style={{ fontSize: '12px', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
             FEATURED WORK
@@ -220,13 +198,13 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
         ref={trackRef}
         style={{
           display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
+          flexDirection: shouldStack ? 'column' : 'row',
           alignItems: 'stretch',
-          height: isMobile ? 'auto' : '100vh',
-          width: isMobile ? '100%' : 'auto',
+          height: shouldStack ? 'auto' : '100vh',
+          width: shouldStack ? '100%' : 'auto',
           margin: 0,
           padding: 0,
-          willChange: isMobile ? 'auto' : 'transform',
+          willChange: shouldStack ? 'auto' : 'transform',
         }}
       >
         {/* Full-bleed, full-screen case study showcase views */}
@@ -242,9 +220,9 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
             }}
             style={{
               position: 'relative',
-              width: isMobile ? '100%' : '100vw',
-              height: isMobile ? 'auto' : '100vh',
-              minHeight: isMobile ? '520px' : '100vh',
+              width: shouldStack ? '100%' : '100vw',
+              height: shouldStack ? 'auto' : '100vh',
+              minHeight: shouldStack ? '520px' : '100vh',
               background: cs.bgGradient,
               borderRadius: '0px',
               border: 'none',
@@ -313,7 +291,8 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                       fontSize: '12.5px',
                       fontWeight: 500,
                       padding: '5px 16px',
-                      borderRadius: '100px',
+                      borderRadius: '0px',
+                      boxShadow: 'none',
                       letterSpacing: '0.01em',
                     }}
                   >
@@ -330,7 +309,8 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                       fontSize: '12.5px',
                       fontWeight: 600,
                       padding: '5px 12px',
-                      borderRadius: '100px',
+                      borderRadius: '0px',
+                      boxShadow: 'none',
                     }}
                   >
                     +{cs.extraTagsCount}
@@ -436,7 +416,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                       textShadow: '0 6px 24px rgba(0, 0, 0, 0.45)',
                     }}
                   >
-                    AUTHENTICOM
+                    DATASTREAM
                   </span>
                 </div>
               </div>

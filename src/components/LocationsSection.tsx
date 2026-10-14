@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Instagram, Facebook, Linkedin } from 'lucide-react';
+import { Mail, Facebook, Linkedin } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface LocationsSectionProps {
@@ -7,9 +7,61 @@ interface LocationsSectionProps {
   onOpenPrivacy?: () => void;
 }
 
+interface LocationItem {
+  city: string;
+  address: string;
+  phone: string;
+  postalCode?: string;
+}
+
 export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToast }) => {
+  const [activeTab, setActiveTab] = useState<'americas' | 'europe'>('americas');
   const [email, setEmail] = useState('');
   const [newsletterConsent, setNewsletterConsent] = useState(false);
+
+  const americasLocations: LocationItem[] = [
+    {
+      city: 'San Diego, California',
+      address: '4445 Eastgate Mall, Suite 200',
+      postalCode: '92121',
+      phone: '1-800-288-9659',
+    },
+    {
+      city: 'San Francisco, California',
+      address: '50 California St #1500',
+      postalCode: '94111',
+      phone: '1-800-288-9659',
+    },
+    {
+      city: 'Pittsburgh, Pennsylvania',
+      address: 'One Oxford Centre, 500 Grant St Suite 2900',
+      postalCode: '15219',
+      phone: '1-800-288-9659',
+    },
+    {
+      city: 'Durham, North Carolina',
+      address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300',
+      postalCode: '27713',
+      phone: '1-800-288-9659',
+    },
+    {
+      city: 'San Jose, Costa Rica',
+      address: 'C. 118B, Trejos Montealegre',
+      postalCode: '10203',
+      phone: '1-800-288-9659',
+    },
+  ];
+
+  const europeLocations: LocationItem[] = [
+    {
+      city: 'Warsaw, Poland',
+      address: '126/134 Marszalkowska Street',
+      postalCode: '00-008',
+      phone: '1-800-288-9659',
+    },
+  ];
+
+  const currentLocations = activeTab === 'americas' ? americasLocations : europeLocations;
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +69,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
       alert('Please enter your email and accept terms.');
       return;
     }
-    if (onSuccessToast) onSuccessToast(`Subscribed "${email}" to Neominds technology briefs.`);
+    if (onSuccessToast) onSuccessToast(`Subscribed "${email}" to Neominds newsletter.`);
+    setEmail('');
   };
 
   return (
@@ -37,9 +90,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1fr) minmax(300px, 1.4fr)',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.6fr)',
             gap: 'clamp(36px, 5vw, 64px)',
-            marginBottom: 'clamp(48px, 6vw, 90px)',
+            marginBottom: 'clamp(48px, 6vw, 80px)',
           }}
           className="location-grid"
         >
@@ -52,6 +105,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 color: '#121212',
                 marginBottom: '16px',
                 display: 'block',
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(30px, 3.5vw, 44px)',
+                fontWeight: 700,
               }}
               blurStrength={6}
             >
@@ -62,16 +118,18 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 className="body-lead"
                 style={{
                   color: '#475067',
-                  marginBottom: '28px',
+                  marginBottom: '24px',
                   maxWidth: '380px',
+                  fontSize: '15px',
+                  lineHeight: 1.6,
                 }}
               >
-                Say hello to our friendly engineering team at our headquarters.
+                Say hello to our friendly team at one of these locations.
               </p>
             </RevealElement>
 
             <a
-              href="mailto:rfq@neominds.io"
+              href="mailto:rfq@effectivesoft.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -83,6 +141,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 transition: 'color 0.2s',
                 minHeight: '44px',
                 marginBottom: '32px',
+                textDecoration: 'none',
               }}
               onMouseEnter={(e) => (e.currentTarget.style.color = '#183c9e')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#2258E7')}
@@ -96,6 +155,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  borderRadius: '0px',
                 }}
               >
                 <Mail size={15} />
@@ -120,16 +180,16 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 Connect with us
               </span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                {/* Instagram */}
+                {/* LinkedIn */}
                 <a
-                  href="https://instagram.com"
+                  href="https://www.linkedin.com/company/neominds"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Instagram"
+                  aria-label="LinkedIn"
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '50%',
+                    borderRadius: '0px',
                     backgroundColor: '#f1f5f9',
                     display: 'flex',
                     alignItems: 'center',
@@ -139,7 +199,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     textDecoration: 'none',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#e1306c';
+                    e.currentTarget.style.backgroundColor = '#0a66c2';
                     e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
@@ -149,51 +209,19 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
-                  <Instagram size={18} />
-                </a>
-
-                {/* Facebook */}
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '50%',
-                    backgroundColor: '#f1f5f9',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#0f172a',
-                    transition: 'all 0.25s ease',
-                    textDecoration: 'none',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1877f2';
-                    e.currentTarget.style.color = '#ffffff';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f1f5f9';
-                    e.currentTarget.style.color = '#0f172a';
-                    e.currentTarget.style.transform = 'none';
-                  }}
-                >
-                  <Facebook size={18} />
+                  <Linkedin size={18} />
                 </a>
 
                 {/* X (formerly Twitter) */}
                 <a
-                  href="https://x.com"
+                  href="https://x.com/neominds"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="X (Twitter)"
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '50%',
+                    borderRadius: '0px',
                     backgroundColor: '#f1f5f9',
                     display: 'flex',
                     alignItems: 'center',
@@ -218,16 +246,16 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   </svg>
                 </a>
 
-                {/* LinkedIn */}
+                {/* Facebook */}
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.facebook.com/neominds"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="LinkedIn"
+                  aria-label="Facebook"
                   style={{
                     width: '40px',
                     height: '40px',
-                    borderRadius: '50%',
+                    borderRadius: '0px',
                     backgroundColor: '#f1f5f9',
                     display: 'flex',
                     alignItems: 'center',
@@ -237,7 +265,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     textDecoration: 'none',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#0a66c2';
+                    e.currentTarget.style.backgroundColor = '#1877f2';
                     e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
@@ -247,87 +275,121 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
-                  <Linkedin size={18} />
+                  <Facebook size={18} />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Headquarters Location Card */}
-          <RevealElement variant="card" start="top 90%" end="top 65%">
+          {/* Right Column: Americas & Europe Tabbed Locations */}
+          <RevealElement variant="card">
             <div>
-              {/* Region Tab */}
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '28px' }}>
+              {/* Region Tabs matching EffectiveSoft */}
+              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
                 <button
-                  className="btn-primary btn-sm"
+                  onClick={() => setActiveTab('americas')}
                   style={{
+                    padding: '8px 20px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    border: '1px solid ' + (activeTab === 'americas' ? '#2258e7' : '#d0d3dd'),
                     borderRadius: '0px',
+                    backgroundColor: activeTab === 'americas' ? '#2258e7' : '#f5f7fc',
+                    color: activeTab === 'americas' ? '#ffffff' : '#475067',
+                    transition: 'all 0.25s ease',
                   }}
                 >
-                  Global Headquarters
+                  Americas
+                </button>
+                <button
+                  onClick={() => setActiveTab('europe')}
+                  style={{
+                    padding: '8px 20px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    border: '1px solid ' + (activeTab === 'europe' ? '#2258e7' : '#d0d3dd'),
+                    borderRadius: '0px',
+                    backgroundColor: activeTab === 'europe' ? '#2258e7' : '#f5f7fc',
+                    color: activeTab === 'europe' ? '#ffffff' : '#475067',
+                    transition: 'all 0.25s ease',
+                  }}
+                >
+                  Europe
                 </button>
               </div>
 
-              {/* Location Card */}
+              {/* Location Cards Grid */}
               <div
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e4e4e7',
-                  padding: 'clamp(24px, 3.5vw, 36px) clamp(20px, 3vw, 32px)',
-                  maxWidth: '480px',
-                  boxShadow: '0 4px 18px rgba(0, 0, 0, 0.04)',
-                  position: 'relative',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+                  gap: '16px',
                 }}
               >
-                <h3
-                  style={{
-                    fontSize: 'clamp(18px, 1.8vw, 22px)',
-                    fontWeight: 700,
-                    fontFamily: 'var(--font-heading)',
-                    color: '#121212',
-                    marginBottom: '12px',
-                  }}
-                >
-                  Hyderabad, India
-                </h3>
-
-                <p style={{ color: '#475067', fontSize: '15px', lineHeight: 1.6, marginBottom: '4px', fontFamily: 'var(--font-body)' }}>
-                  Moguls Court 7th Floor, Basheer Bagh
-                </p>
-                <p style={{ color: '#475067', fontSize: '15px', lineHeight: 1.6, marginBottom: '20px', fontFamily: 'var(--font-body)' }}>
-                  Hyderabad, Telangana, India
-                </p>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <a
-                    href="tel:+14159685678"
+                {currentLocations.map((loc, idx) => (
+                  <div
+                    key={idx}
                     style={{
-                      color: '#121212',
-                      fontSize: '15px',
-                      fontWeight: 600,
-                      textDecoration: 'none',
-                      fontFamily: 'var(--font-heading)',
+                      backgroundColor: '#f5f7fc',
+                      border: '1px solid #e4e4e7',
+                      borderRadius: '0px',
+                      padding: '20px',
+                      transition: 'border-color 0.2s, transform 0.2s',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#2258e7';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#e4e4e7';
+                      e.currentTarget.style.transform = 'none';
                     }}
                   >
-                    +1 (415) 968-5678
-                  </a>
-                </div>
+                    <h4
+                      style={{
+                        fontSize: '16px',
+                        fontWeight: 700,
+                        color: '#121212',
+                        marginBottom: '8px',
+                        fontFamily: 'var(--font-heading)',
+                      }}
+                    >
+                      {loc.city}
+                    </h4>
+                    <p style={{ color: '#666e85', fontSize: '13.5px', lineHeight: 1.5, margin: '0 0 10px 0' }}>
+                      {loc.address} {loc.postalCode ? `, ${loc.postalCode}` : ''}
+                    </p>
+                    <a
+                      href={`tel:${loc.phone}`}
+                      style={{
+                        color: '#2258e7',
+                        fontSize: '13.5px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                      }}
+                    >
+                      {loc.phone}
+                    </a>
+                  </div>
+                ))}
               </div>
             </div>
           </RevealElement>
         </div>
 
-        {/* Newsletter Subscription Strip */}
+        {/* Newsletter Subscription Strip matching EffectiveSoft */}
         <RevealElement variant="card">
           <div
             style={{
-              padding: 'clamp(28px, 3.5vw, 44px)',
-              backgroundColor: '#ffffff',
-              border: '1px solid #e4e4e7',
+              padding: 'clamp(28px, 3.5vw, 40px)',
+              backgroundColor: '#f5f7fc',
+              border: '1px solid #d0d3dd',
               borderRadius: '0px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '24px',
+              gap: '20px',
             }}
           >
             <div>
@@ -343,18 +405,18 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   fontFamily: 'var(--font-heading)',
                 }}
               >
-                STAY INFORMED
+                JOIN OUR NEWSLETTER
               </span>
               <h3
                 style={{
-                  fontSize: 'clamp(20px, 2.2vw, 28px)',
+                  fontSize: 'clamp(20px, 2.2vw, 26px)',
                   fontWeight: 700,
                   color: '#121212',
                   margin: 0,
                   fontFamily: 'var(--font-heading)',
                 }}
               >
-                Subscribe to our technology insights
+                Stay up to date with the latest news, announcements, and articles
               </h3>
             </div>
 
@@ -363,7 +425,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '16px',
+                gap: '14px',
                 maxWidth: '640px',
               }}
             >
@@ -372,27 +434,35 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your work email"
+                  placeholder="Enter your email"
                   required
                   style={{
                     flex: '1 1 260px',
-                    height: '48px',
+                    height: '46px',
                     padding: '0 16px',
+                    borderRadius: '0px',
                     border: '1px solid #d0d3dd',
                     fontSize: '14px',
                     outline: 'none',
+                    backgroundColor: '#ffffff',
                     fontFamily: 'var(--font-body)',
                   }}
                 />
                 <button
                   type="submit"
-                  className="btn-primary btn-md"
                   style={{
-                    height: '48px',
-                    paddingInline: '24px',
-                    fontWeight: 700,
+                    height: '46px',
+                    paddingInline: '26px',
+                    fontWeight: 600,
                     borderRadius: '0px',
+                    backgroundColor: '#2258e7',
+                    color: '#ffffff',
+                    border: 'none',
+                    cursor: 'pointer',
+                    transition: 'background-color 0.2s',
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
                 >
                   Subscribe
                 </button>
@@ -403,10 +473,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '8px',
-                  fontSize: '13px',
-                  color: '#64748b',
+                  fontSize: '12.5px',
+                  color: '#666e85',
                   cursor: 'pointer',
                   userSelect: 'none',
+                  lineHeight: 1.5,
                 }}
               >
                 <input
@@ -416,7 +487,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   required
                   style={{ marginTop: '3px' }}
                 />
-                <span>I agree to receive technology briefs and product updates from Neominds.</span>
+                <span>
+                  Subscribe to Neominds newsletter to receive updates. You can unsubscribe at any time. See our Privacy Policy for details.
+                </span>
               </label>
             </form>
           </div>

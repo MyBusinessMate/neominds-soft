@@ -45,7 +45,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
 
           {/* 4 Pillars of Security */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
-            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '24px' }}>
+            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
               <ShieldCheck size={28} color="#2258e7" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>ISO/IEC 27001 Certified</h3>
               <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>
@@ -53,7 +53,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '24px' }}>
+            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
               <Key size={28} color="#2258e7" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>Cryptographic Encryption</h3>
               <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>
@@ -61,7 +61,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '24px' }}>
+            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
               <Server size={28} color="#2258e7" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>Air-Gapped AI Isolation</h3>
               <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>
@@ -69,7 +69,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '24px' }}>
+            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
               <FileCheck2 size={28} color="#2258e7" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>Automated DevSecOps</h3>
               <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>

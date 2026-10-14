@@ -56,7 +56,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           backgroundColor: '#0d111a',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           padding: 'clamp(18px, 3vw, 24px) clamp(16px, 3vw, 28px)',
-          boxShadow: '0 20px 50px rgba(0, 0, 0, 0.85)',
+          boxShadow: 'none',
           zIndex: 990,
           color: '#ffffff',
           display: 'flex',

@@ -103,12 +103,12 @@ export const ITConsultingPage: React.FC<ITConsultingPageProps> = ({
       a: 'A focused architecture or security assessment typically takes 2 to 4 weeks. Enterprise-wide digital transformation strategies and cloud modernization blueprints are executed in 4 to 8 weeks with actionable phased roadmaps.',
     },
     {
-      q: 'How does EffectiveSoft ensure confidentiality during technical audits?',
+      q: 'How does Neominds ensure confidentiality during technical audits?',
       a: 'We execute mutual Non-Disclosure Agreements (NDAs) prior to accessing any code repository, architectural diagram, or database schema. Our operations comply strictly with ISO/IEC 27001:2022 and SOC 2 Type II security guidelines.',
     },
     {
       q: 'Can your team assist with hands-on execution after the consulting phase?',
-      a: 'Yes. EffectiveSoft provides end-to-end capabilities: from strategic advisory and solution architecture to dedicated cross-functional engineering squads that implement the recommended architecture.',
+      a: 'Yes. Neominds provides end-to-end capabilities: from strategic advisory and solution architecture to dedicated cross-functional engineering squads that implement the recommended architecture.',
     },
     {
       q: 'What industries do your IT consultants specialize in?',
@@ -141,7 +141,7 @@ export const ITConsultingPage: React.FC<ITConsultingPageProps> = ({
               padding: '6px 14px',
               backgroundColor: 'rgba(34, 88, 231, 0.08)',
               border: '1px solid rgba(34, 88, 231, 0.25)',
-              borderRadius: '2px',
+              borderRadius: '0px',
               color: '#2258e7',
               fontSize: '13px',
               fontWeight: 600,

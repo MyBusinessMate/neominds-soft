@@ -4,10 +4,12 @@ import { RevealElement } from './scroll-reveal';
 
 interface TestimonialItem {
   id: string;
-  logo: React.ReactNode;
+  logoUrl?: string;
+  clientName: string;
   quote: string;
   author: string;
   title: string;
+  photoUrl?: string;
   hasBlueDot?: boolean;
 }
 
@@ -17,209 +19,92 @@ export const Testimonials: React.FC = () => {
   const testimonials: TestimonialItem[] = [
     {
       id: '1',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <svg width="28" height="16" viewBox="0 0 34 20" fill="none">
-            <path d="M2 18C8 4 26 4 32 18H26C22 9 12 9 8 18H2Z" fill="#059669" />
-          </svg>
-          <span style={{ fontSize: '20px', fontWeight: 800, color: '#121212', fontFamily: 'var(--font-heading)' }}>
-            TruBridge<sup style={{ fontSize: '9px' }}>®</sup>
-          </span>
-        </div>
-      ),
+      clientName: 'TruBridge',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2019/11/TruBridge-logo-color.svg',
       quote:
         'We have been partnering with Neominds since 2006, so we’ve had time to become familiar with their professionalism and the quality of service they provide. I would highlight the great responsibility which my company assumes when solving critical tasks.',
       author: 'Thomas Golden',
-      title: 'VP of Engineering',
+      title: 'USA, TruBridge (formerly TruCode)',
+      photoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/2092/200.tomgolden.png',
+      hasBlueDot: true,
     },
     {
       id: '2',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ fontSize: '18px', fontWeight: 900, letterSpacing: '0.05em', color: '#121212', fontFamily: 'var(--font-heading)' }}>
-            MOTIVE
-          </span>
-          <span style={{ fontSize: '18px', fontWeight: 900, color: '#ea580c', fontFamily: 'var(--font-heading)' }}>
-            RETAIL
-          </span>
-        </div>
-      ),
+      clientName: 'Motive Retail',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/motiveretail-color-1.svg',
       quote:
-        'We have had a very positive experience with Neominds’ staff augmentation services. Their skilled, knowledgeable professionals integrated seamlessly with our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality.',
+        'We have had a very positive experience with Neominds’s staff augmentation services. Their skilled, knowledgeable professionals integrated seamlessly with our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds.',
       author: 'Philipe Araujo',
-      title: 'Director of Technology',
-      hasBlueDot: true,
+      title: 'Business Analyst and Quality Engineer',
     },
     {
       id: '3',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
-            style={{
-              width: '22px',
-              height: '22px',
-              backgroundColor: '#0284c7',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: '2px',
-            }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff">
-              <polygon points="12,2 15,9 22,9 17,14 19,21 12,17 5,21 7,14 2,9 9,9" />
-            </svg>
-          </div>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '0.04em', fontFamily: 'var(--font-heading)' }}>
-            MAERSK BROKER
-          </span>
-        </div>
-      ),
+      clientName: 'Maersk',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/maersk-color-1.svg',
       quote:
-        'Neominds’ team deeply understood our requirements and have been a proactive part of any problem-solving process. We have only experienced a professional approach to our projects, as well as a pleasant and trust-based collaboration.',
+        'Neominds’s team deeply understood our requirements and have been a proactive part of any problem-solving process. We have only experienced a professional approach to our projects, as well as a pleasant and trust-based collaboration. They’ve quickly found and added the necessary resources.',
       author: 'Sasja Ihn Christensen',
-      title: 'Senior Director, Head of Digital Business',
-    },
-    {
-      id: '4',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <svg width="22" height="22" viewBox="0 0 40 40" fill="none">
-            <path d="M20 4L36 34H4L20 4Z" stroke="#2258e7" strokeWidth="4" strokeLinejoin="round" />
-            <path d="M20 16L28 30H12L20 16Z" fill="#2258e7" />
-          </svg>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '0.05em', fontFamily: 'var(--font-heading)' }}>
-            AUTHENTICOM
-          </span>
-        </div>
-      ),
-      quote:
-        'Modernizing our ETL pipeline with autonomous agentic intelligence was a complex undertaking. The engineering discipline and architectural precision brought by the team gave us a 10x throughput leap with zero compliance incidents.',
-      author: 'David Meyer',
-      title: 'Chief Technology Officer',
+      title: 'Senior Director, Head of Digital Business Development',
       hasBlueDot: true,
     },
     {
-      id: '5',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <span style={{ fontSize: '16px', fontWeight: 800, color: '#00a3a6', fontFamily: 'var(--font-heading)', letterSpacing: '0.04em' }}>
-            SIEMENS
-          </span>
-          <span style={{ fontSize: '12px', color: '#121212', fontWeight: 600 }}>Healthineers</span>
-        </div>
-      ),
+      id: '4',
+      clientName: 'Delphi Vision',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/delphivision-color.svg',
       quote:
-        'Their engineering rigor in healthcare compliance and real-time medical imaging systems exceeded our expectations. They deliver production-ready code that adheres strictly to ISO and FDA software safety guidelines.',
-      author: 'Dr. Elena Vogel',
-      title: 'Head of Medical Software Systems',
+        'We are extremely satisfied with our collaboration with Neominds. We engaged them for business analysis, UI/UX design, web development, and testing. The results were visually stunning designs and wireframes, remarkable UX suggestions, and an app fully aligned with our requirements.',
+      author: 'Colin Cridland',
+      title: 'Director, Founder at Delphi Vision Ltd',
+    },
+    {
+      id: '5',
+      clientName: 'Plato',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/34584/280.plato-logo.png',
+      quote:
+        'Since working with Neominds, we’ve grown our company from the building phase to the profitability phase. We’ve continued expanding upon their responsibilities, and they’ve continued to accept challenges and integrate with our team. They’ve become mission-critical resources for us.',
+      author: 'Jesse MacNish',
+      title: 'CTO USA, Plato',
+      photoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/34585/200.plato-photo.png',
+      hasBlueDot: true,
     },
     {
       id: '6',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              borderRadius: '50%',
-              backgroundColor: '#ef4444',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              fontWeight: 900,
-              fontSize: '11px',
-            }}
-          >
-            S
-          </div>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '0.02em', fontFamily: 'var(--font-heading)' }}>
-            Santander Tech
-          </span>
-        </div>
-      ),
+      clientName: 'Adventr',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/adventr-color.svg',
       quote:
-        'From high-frequency transaction order routing to sub-millisecond risk recalculations, Neominds delivered rock-solid distributed cloud infrastructure. A true enterprise engineering partner.',
-      author: 'Mateo Morales',
-      title: 'Lead FinTech Architect',
+        'Neominds has played an impactful role in developing our SaaS app. Their developers and QA engineers show strong engagement, understand our needs, deliver solid results. They proactively improve security and performance of our app, report issues clearly, and help us deploy code with minimal bugs.',
+      author: 'Peter Gerard',
+      title: 'Head of Product',
     },
     {
       id: '7',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              borderRadius: '4px',
-              backgroundColor: '#10b981',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              fontWeight: 900,
-              fontSize: '11px',
-            }}
-          >
-            N
-          </div>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '0.04em', fontFamily: 'var(--font-heading)' }}>
-            Novartis R&D
-          </span>
-        </div>
-      ),
+      clientName: 'City Index',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/3281/280.Testimonials_CityIndex_color_50x125.png',
       quote:
-        'Their bio-computational engineering team accelerated our high-throughput compound screening pipeline by 4x, achieving complete audit readiness across GxP cloud benchmarks.',
-      author: 'Claire Beaumont',
-      title: 'VP of Discovery Informatics',
+        'Since our first engagement, I have been impressed not only by the quality of work that Neominds has done for City Index but also their attention to detail and reliability on delivery dates.',
+      author: 'Arthur Grimley',
+      title: 'CIO UK, CityIndex Group',
+      photoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/2095/200.arthur.png',
       hasBlueDot: true,
     },
     {
       id: '8',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div
-            style={{
-              width: '20px',
-              height: '20px',
-              borderRadius: '4px',
-              backgroundColor: '#6366f1',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#ffffff',
-              fontWeight: 900,
-              fontSize: '11px',
-            }}
-          >
-            C
-          </div>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '0.04em', fontFamily: 'var(--font-heading)' }}>
-            CITY INDEX
-          </span>
-        </div>
-      ),
+      clientName: 'Axure',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/3277/280.Testimonials_Axure_color_50x125.png',
       quote:
-        'The latency-critical execution engines and real-time risk dashboards built by Neominds handle billions in daily volume with zero dropped packets or downtime.',
-      author: 'Marcus Vance',
-      title: 'Global Head of Trading Systems',
+        'The team at Neominds is very skilled and has been a pleasure to work with. They have enabled us to adopt new technologies as they add their diverse skillset to our team. I would not hesitate to recommend Neominds to anyone looking for a great partner.',
+      author: 'Martin Smith',
+      title: 'CTO USA, Axure Software Solutions, Inc.',
+      photoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/1331/200.Martin-Smith-CTO@Axure.jpg',
     },
     {
       id: '9',
-      logo: (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2.2">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-          <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
-            plato data
-          </span>
-        </div>
-      ),
+      clientName: 'Canopy',
+      logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/canopy-color.svg',
       quote:
-        'Neominds helped us engineer a multi-region Kafka data fabric processing over 12 million events per second with automatic recovery and seamless failover.',
-      author: 'Sarah Chen',
-      title: 'Principal Distributed Architect',
+        'Neominds has been providing services to Canopy for the last four years. Their skilled engineers understand our product needs, deliver quality platform increments following agile principles, respond flexibly to changes, and meet evolving deadlines.',
+      author: 'Matt Hobbs',
+      title: 'Chief Product Officer',
       hasBlueDot: true,
     },
   ];
@@ -256,20 +141,20 @@ export const Testimonials: React.FC = () => {
         {/* Section Header */}
         <div style={{ marginBottom: 'clamp(28px, 4vw, 44px)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-              CLIENT TESTIMONIALS
+            <span style={{ fontSize: '13px', fontWeight: 700, color: '#475067', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              TESTIMONIALS
             </span>
             <h2
               style={{
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(28px, 3.5vw, 44px)',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#121212',
                 letterSpacing: '-0.025em',
-                margin: '6px 0 0 0',
+                margin: '8px 0 0 0',
               }}
             >
-              What engineering leaders say about us
+              Our clients say it best
             </h2>
           </div>
 
@@ -281,96 +166,137 @@ export const Testimonials: React.FC = () => {
 
         {/* 3-Column Testimonial Layout with Smooth Fade-in */}
         <div
-          key={currentPage}
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(24px, 3vw, 36px)',
-            animation: 'testimonialFadeIn 0.35s ease-out',
+            gap: 'clamp(20px, 2.5vw, 32px)',
+            marginBottom: 'clamp(36px, 4vw, 56px)',
           }}
         >
-          {currentTestimonials.map((t, idx) => (
-            <RevealElement key={t.id} variant="card" delay={idx * 0.06} start="top 90%" end="top 60%">
+          {currentTestimonials.map((item) => (
+            <RevealElement key={item.id} variant="card">
               <div
                 style={{
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#f5f7fc',
+                  border: '1px solid #d0d3dd',
+                  borderRadius: '0px',
+                  boxShadow: 'none',
+                  padding: 'clamp(24px, 3vw, 36px)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  padding: 'clamp(24px, 3.5vw, 36px) clamp(20px, 3vw, 32px)',
-                  border: '1px solid #e4e4e7',
                   minHeight: '380px',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
-                  height: '100%',
-                  borderRadius: '6px',
-                  transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease',
+                  position: 'relative',
+                  transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
+                  cursor: 'default',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.07)';
-                  e.currentTarget.style.borderColor = '#cbd5e1';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.borderColor = '#2258e7';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.03)';
-                  e.currentTarget.style.borderColor = '#e4e4e7';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = '#d0d3dd';
                 }}
               >
-                {/* Top Client Logo */}
-                <div style={{ marginBottom: 'clamp(20px, 2.8vw, 32px)', height: '36px', display: 'flex', alignItems: 'center' }}>
-                  {t.logo}
-                </div>
-
-                {/* Quote Body */}
-                <div style={{ flex: 1, marginBottom: 'clamp(20px, 3vw, 32px)' }}>
-                  <p
-                    className="body-text"
-                    style={{
-                      color: '#334155',
-                      lineHeight: 1.72,
-                      fontSize: '14.5px',
-                    }}
-                  >
-                    "{t.quote}"
-                  </p>
-
-                  {t.hasBlueDot && (
-                    <div style={{ marginTop: '16px' }}>
-                      <span className="blue-dot" style={{ width: '6px', height: '6px' }} />
-                    </div>
-                  )}
-                </div>
-
-                {/* Bottom Author Info */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingTop: '20px', borderTop: '1px solid #f1f5f9' }}>
-                  {/* Author Avatar Initial */}
+                <div>
+                  {/* Top Logo / Client Header */}
                   <div
                     style={{
-                      width: '42px',
-                      height: '42px',
-                      borderRadius: '50%',
-                      backgroundColor: '#eff6ff',
-                      color: '#2258e7',
+                      height: '48px',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center',
-                      fontWeight: 700,
-                      fontSize: '15px',
-                      fontFamily: 'var(--font-heading)',
-                      flexShrink: 0,
-                      border: '1px solid #dbeafe',
+                      justifyContent: 'space-between',
+                      marginBottom: '20px',
                     }}
                   >
-                    {t.author.charAt(0)}
+                    {item.logoUrl ? (
+                      <img
+                        src={item.logoUrl}
+                        alt={item.clientName}
+                        style={{ maxHeight: '36px', maxWidth: '140px', objectFit: 'contain' }}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                    ) : (
+                      <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212' }}>
+                        {item.clientName}
+                      </span>
+                    )}
+
+                    {item.hasBlueDot && (
+                      <span className="blue-dot" style={{ width: '8px', height: '8px', flexShrink: 0 }} />
+                    )}
                   </div>
 
+                  {/* Testimonial Quote */}
+                  <p
+                    style={{
+                      fontSize: 'clamp(14px, 1.1vw, 15px)',
+                      lineHeight: 1.65,
+                      color: '#475067',
+                      margin: 0,
+                    }}
+                  >
+                    "{item.quote}"
+                  </p>
+                </div>
+
+                {/* Author Info & Photo Footer */}
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    paddingTop: '20px',
+                    marginTop: '20px',
+                    borderTop: '1px solid #e4e4e7',
+                  }}
+                >
+                  {item.photoUrl ? (
+                    <img
+                      src={item.photoUrl}
+                      alt={item.author}
+                      style={{
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '0px',
+                        objectFit: 'cover',
+                        border: '1px solid #d0d3dd',
+                        boxShadow: 'none',
+                      }}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        width: '42px',
+                        height: '42px',
+                        borderRadius: '0px',
+                        backgroundColor: '#e9eefd',
+                        color: '#2258e7',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontWeight: 700,
+                        fontSize: '15px',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {item.author.charAt(0)}
+                    </div>
+                  )}
+
                   <div>
-                    <h4 style={{ fontSize: '14.5px', fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#0f172a', marginBottom: '2px' }}>
-                      {t.author}
-                    </h4>
-                    <p style={{ fontSize: '12.5px', color: '#64748b', lineHeight: 1.35, fontFamily: 'var(--font-body)', margin: 0 }}>
-                      {t.title}
-                    </p>
+                    <div style={{ fontWeight: 600, fontSize: '14px', color: '#121212' }}>
+                      {item.author}
+                    </div>
+                    <div style={{ fontSize: '12px', color: '#666e85', marginTop: '2px' }}>
+                      {item.title}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -378,124 +304,106 @@ export const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Dedicated Carousel Arrow Controls Below Testimonials */}
+        {/* Carousel Navigation Bar matching EffectiveSoft progress */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: '20px',
-            marginTop: 'clamp(36px, 5vw, 54px)',
-            paddingTop: '20px',
+            justifyContent: 'space-between',
+            paddingTop: '16px',
+            borderTop: '1px solid #e4e4e7',
           }}
         >
-          {/* Previous Arrow Button */}
-          <button
-            onClick={handlePrev}
-            aria-label="Previous testimonials"
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              backgroundColor: '#ffffff',
-              border: '1.5px solid #cbd5e1',
-              color: '#0f172a',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#2258e7';
-              e.currentTarget.style.color = '#ffffff';
-              e.currentTarget.style.borderColor = '#2258e7';
-              e.currentTarget.style.transform = 'translateX(-3px) scale(1.05)';
-              e.currentTarget.style.boxShadow = '0 6px 18px rgba(34, 88, 231, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#ffffff';
-              e.currentTarget.style.color = '#0f172a';
-              e.currentTarget.style.borderColor = '#cbd5e1';
-              e.currentTarget.style.transform = 'none';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
-            }}
-          >
-            <ArrowLeft size={20} />
-          </button>
-
-          {/* Page Indicators & Numerical Counter */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            {Array.from({ length: totalPages }).map((_, pIdx) => (
-              <button
-                key={pIdx}
-                onClick={() => setCurrentPage(pIdx)}
-                aria-label={`Go to testimonial page ${pIdx + 1}`}
+          {/* Progress bar */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, maxWidth: '280px' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#121212' }}>
+              0{currentPage + 1}
+            </span>
+            <div
+              style={{
+                flex: 1,
+                height: '3px',
+                backgroundColor: '#e4e4e7',
+                borderRadius: '0px',
+                overflow: 'hidden',
+              }}
+            >
+              <div
                 style={{
-                  width: currentPage === pIdx ? '28px' : '10px',
-                  height: '10px',
-                  borderRadius: '5px',
-                  backgroundColor: currentPage === pIdx ? '#2258e7' : '#cbd5e1',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: 0,
-                  transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+                  height: '100%',
+                  width: `${((currentPage + 1) / totalPages) * 100}%`,
+                  backgroundColor: '#2258e7',
+                  transition: 'width 0.4s ease',
                 }}
               />
-            ))}
+            </div>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#989fb3' }}>
+              0{totalPages}
+            </span>
           </div>
 
-          {/* Next Arrow Button */}
-          <button
-            onClick={handleNext}
-            aria-label="Next testimonials"
-            style={{
-              width: '48px',
-              height: '48px',
-              borderRadius: '50%',
-              backgroundColor: '#ffffff',
-              border: '1.5px solid #cbd5e1',
-              color: '#0f172a',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05)',
-              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#2258e7';
-              e.currentTarget.style.color = '#ffffff';
-              e.currentTarget.style.borderColor = '#2258e7';
-              e.currentTarget.style.transform = 'translateX(3px) scale(1.05)';
-              e.currentTarget.style.boxShadow = '0 6px 18px rgba(34, 88, 231, 0.3)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#ffffff';
-              e.currentTarget.style.color = '#0f172a';
-              e.currentTarget.style.borderColor = '#cbd5e1';
-              e.currentTarget.style.transform = 'none';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05)';
-            }}
-          >
-            <ArrowRight size={20} />
-          </button>
+          {/* Controls: Prev / Next */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <button
+              onClick={handlePrev}
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '0px',
+                border: '1px solid #d0d3dd',
+                backgroundColor: '#ffffff',
+                color: '#121212',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'none',
+                transition: 'border-color 0.2s, background-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#2258e7';
+                e.currentTarget.style.backgroundColor = '#f5f7fc';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#d0d3dd';
+                e.currentTarget.style.backgroundColor = '#ffffff';
+              }}
+              aria-label="Previous testimonials"
+            >
+              <ArrowLeft size={16} />
+            </button>
+
+            <button
+              onClick={handleNext}
+              style={{
+                width: '40px',
+                height: '40px',
+                borderRadius: '0px',
+                border: '1px solid #d0d3dd',
+                backgroundColor: '#ffffff',
+                color: '#121212',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'none',
+                transition: 'border-color 0.2s, background-color 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#2258e7';
+                e.currentTarget.style.backgroundColor = '#f5f7fc';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '#d0d3dd';
+                e.currentTarget.style.backgroundColor = '#ffffff';
+              }}
+              aria-label="Next testimonials"
+            >
+              <ArrowRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes testimonialFadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 };

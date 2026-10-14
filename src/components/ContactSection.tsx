@@ -104,7 +104,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               }}
               blurStrength={7}
             >
-              Let’s connect
+              Let’s build something useful
             </ScrollReveal>
             <RevealElement variant="text" delay={0.06}>
               <p
@@ -114,7 +114,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   marginBottom: 'clamp(32px, 4vw, 56px)',
                 }}
               >
-                Fill out the form, and we’ve got you covered.
+                Tell us what you are working on, where you want to go, and how we can help.
               </p>
             </RevealElement>
 

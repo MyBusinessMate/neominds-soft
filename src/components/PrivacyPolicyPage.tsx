@@ -65,11 +65,11 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
               We process personal and technical data under lawful bases including contractual necessity, legitimate business interests, and explicit consent:
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginTop: '12px' }}>
-              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '4px' }}>
+              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '0px' }}>
                 <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>RFP & Advisory Delivery</div>
                 <div style={{ fontSize: '13px', color: '#64748b' }}>Evaluating project scope, preparing technical proposals, and executing Non-Disclosure Agreements.</div>
               </div>
-              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '4px' }}>
+              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '0px' }}>
                 <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>Security & Zero-Trust</div>
                 <div style={{ fontSize: '13px', color: '#64748b' }}>Preventing unauthorized intrusion, defending against DDoS threats, and verifying API client integrity.</div>
               </div>
@@ -100,7 +100,7 @@ export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
             </ul>
           </div>
 
-          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '6px', padding: '24px' }}>
+          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
             <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
               Data Protection Officer (DPO) Contact
             </h3>

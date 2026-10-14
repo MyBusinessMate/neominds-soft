@@ -33,8 +33,8 @@ html.lenis body {
   --color-primary-light: #e9eefd;
   --color-background: #ffffff;
   --color-background-tint: #f5f7fc;
-  --color-background-dark: #001334;
-  --color-background-dark-alt: #15171b;
+  --color-background-dark: #000000;
+  --color-background-dark-alt: #0a0d14;
   --color-background-black: #000000;
   
   --color-text-primary: #121212;
@@ -50,14 +50,14 @@ html.lenis body {
   --color-border-input: #e4e4e7;
   --color-link-hover: #2258e7;
   
-  --dark-surface: #0a1d3d;
+  --dark-surface: #11141b;
   --dark-text: #ffffff;
   --dark-text-muted: #d0d3dd;
-  --dark-border: #293956;
+  --dark-border: #1e2430;
 
-  /* 2. Typography Design Tokens */
-  --font-heading: 'Bricolage Grotesque', 'BricolageGrotesque', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* 2. Typography Design Tokens (EffectiveSoft Official Typography) */
+  --font-heading: 'Inter', 'Mona Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-family: var(--font-body);
 
   /* 3. CORE SPACING SCALE (4px foundation, 8px primary rhythm) */
@@ -75,14 +75,14 @@ html.lenis body {
   --space-12: 128px; /* 6XL */
   --space-13: 160px; /* 7XL */
 
-  /* 4. BORDER RADIUS SYSTEM */
-  --radius-subtle: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
-  --radius-pill: 9999px;
+  /* 4. BORDER RADIUS SYSTEM - EffectiveSoft Strict Sharp/Crisp Architecture */
+  --radius-subtle: 0px;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-pill: 0px;
 
   /* 5. CONTAINERS */
   --container-md: 640px;
@@ -114,17 +114,17 @@ html.lenis body {
   --space-heading-to-content: var(--space-6);      /* 32px */
   --space-paragraph-to-paragraph: var(--space-4);  /* 16px */
 
-  /* 9. CARDS */
+  /* 9. CARDS (Zero radius & flat architectural borders) */
   --card-padding-compact: var(--space-4);  /* 16px */
   --card-padding-standard: var(--space-5); /* 24px */
   --card-padding-large: var(--space-6);    /* 32px */
   --card-gap-compact: var(--space-4);      /* 16px */
   --card-gap-standard: var(--space-5);     /* 24px */
   --card-gap-spacious: var(--space-6);     /* 32px */
-  --card-radius-standard: var(--radius-lg);/* 16px */
-  --card-radius-large: var(--radius-2xl);  /* 24px */
+  --card-radius-standard: 0px;
+  --card-radius-large: 0px;
 
-  /* 10. BUTTONS (Standardized UX Scale) */
+  /* 10. BUTTONS (Standardized UX Scale - Crisp Rectangular) */
   --btn-font-family: var(--font-body);
   --btn-font-weight: 600;
   --btn-letter-spacing: -0.01em;
@@ -142,7 +142,7 @@ html.lenis body {
   --btn-padding-x-lg: 28px;
   --btn-font-size-lg: 15px;
 
-  --btn-radius: 6px;
+  --btn-radius: 0px;
   --btn-gap: var(--space-2);               /* 8px */
   --btn-group-gap-tight: var(--space-2);       /* 8px */
   --btn-group-gap-standard: var(--space-3);    /* 12px */
@@ -160,13 +160,13 @@ html.lenis body {
   --grid-gap-lg: var(--space-6);           /* 32px */
   --grid-gap-col: var(--space-8);          /* 48px */
 
-  /* 13. FORMS */
+  /* 13. FORMS (Zero Radius) */
   --form-label-gap: var(--space-2);        /* 8px */
   --form-input-gap: var(--space-4);        /* 16px */
   --form-group-gap: var(--space-5);        /* 24px */
   --form-cta-gap: var(--space-6);          /* 32px */
   --input-height: 48px;
-  --input-radius: var(--radius-sm);        /* 8px */
+  --input-radius: 0px;
 
   /* 14. ICONS */
   --icon-xs: 16px;
@@ -177,10 +177,10 @@ html.lenis body {
   --icon-2xl: 48px;
   --icon-text-gap: var(--space-2);         /* 8px */
 
-  /* 15. BADGES / CHIPS */
+  /* 15. BADGES / CHIPS (Sharp Rectangular) */
   --badge-pad-x: var(--space-3);           /* 12px */
   --badge-pad-y: 6px;
-  --badge-radius: var(--radius-pill);
+  --badge-radius: 0px;
 
   /* 16. FOOTER */
   --footer-padding-top: var(--space-10);   /* 80px */
@@ -460,13 +460,13 @@ a.btn {
   background-color: var(--color-primary);
   color: #ffffff;
   border-color: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(34, 88, 231, 0.35);
+  box-shadow: none !important;
 }
 
 .btn-primary:hover {
   background-color: var(--color-primary-hover);
   border-color: var(--color-primary-hover);
-  box-shadow: 0 4px 18px rgba(34, 88, 231, 0.5);
+  box-shadow: none !important;
 }
 
 .btn-primary:active {
@@ -504,7 +504,7 @@ a.btn {
 .btn-white:hover {
   background-color: #f0f3fa;
   border-color: #f0f3fa;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+  box-shadow: none !important;
 }
 
 .btn-white:active {
@@ -679,9 +679,9 @@ a.btn {
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-radius: var(--radius-pill);
+  border-radius: 0px !important;
   background-color: var(--color-primary);
-  box-shadow: 0 0 10px rgba(34, 88, 231, 0.6);
+  box-shadow: none !important;
 }
 
 /* Responsive Overrides for Service Capabilities 7 Variants */
@@ -692,6 +692,50 @@ a.btn {
   .timeline-rail {
     display: none !important;
   }
+}
+
+/* ==========================================================================
+   EFFECTIVESOFT STRICT ARCHITECTURAL GEOMETRY SYSTEM
+   Zero Border-Radius & Zero Shadows Across All Elements & Subpages
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Flat architectural pill tags matching EffectiveSoft .btn-tag */
+.badge,
+.pill,
+[class*="pill-"],
+.btn-tag,
+[class*="tag-"],
+.chip,
+[class*="chip-"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Flat architectural cards matching EffectiveSoft */
+.card,
+[class*="card-"],
+.bento-tile,
+.stat-box,
+.header-panel,
+.dropdown-menu,
+.modal-container,
+dialog,
+[role="dialog"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Focus indicator */
+:focus-visible {
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: 2px !important;
 }
 
 /* ==========================================================================

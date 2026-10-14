@@ -4,33 +4,26 @@ import gsap from 'gsap';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface RecognitionSlide {
-  badgeTitle: string;
-  category: string;
-  org: string;
-  orgSub: string;
-  location: string;
-  year: string;
-  badgeType: 'clutch' | 'forrester';
+  title: string;
+  imageUrl: string;
+  caption: string;
 }
 
 const slides: RecognitionSlide[] = [
   {
-    badgeTitle: 'TOP',
-    category: 'ARTIFICIAL INTELLIGENCE COMPANY',
-    org: 'Clutch',
-    orgSub: '',
-    location: 'SAN FRANCISCO',
-    year: '2026',
-    badgeType: 'clutch',
+    title: 'Claude Partner Network Services Track',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/145843/660.vertical.jpg',
+    caption: 'Select partner in Claude Partner Network',
   },
   {
-    badgeTitle: 'GLOBAL LEADER',
-    category: 'ENTERPRISE AI & DIGITAL ENGINEERING',
-    org: 'Forrester',
-    orgSub: 'WAVE REVIEW',
-    location: 'NORTH AMERICA',
-    year: '2026',
-    badgeType: 'forrester',
+    title: 'Agentic AI in Digital Engineering Market 2025–2029',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137362/660.Image.jpg',
+    caption: 'Research and Markets Report recognition',
+  },
+  {
+    title: 'Top AI Company',
+    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/131881/660.Top-AI-company-Clutch.jpg',
+    caption: 'Clutch Top AI Company Award',
   },
 ];
 
@@ -64,11 +57,16 @@ export const IndustryRecognition: React.FC = () => {
   // Refined crossfade animation on slide change
   useEffect(() => {
     if (cardRef.current) {
-      gsap.fromTo(
-        cardRef.current,
-        { opacity: 0.4, scale: 0.98 },
-        { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' }
-      );
+      const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) {
+        gsap.set(cardRef.current, { opacity: 1, scale: 1 });
+      } else {
+        gsap.fromTo(
+          cardRef.current,
+          { opacity: 0.4, scale: 0.98 },
+          { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' }
+        );
+      }
     }
   }, [currentIndex]);
 
@@ -91,13 +89,13 @@ export const IndustryRecognition: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             alignItems: 'center',
             gap: 'clamp(40px, 6vw, 64px)',
           }}
         >
-          {/* Left Column Text */}
-          <div style={{ maxWidth: '540px' }}>
+          {/* Left Column Text matching EffectiveSoft */}
+          <div style={{ maxWidth: '560px' }}>
             <ScrollReveal
               as="h2"
               className="section-title"
@@ -105,8 +103,12 @@ export const IndustryRecognition: React.FC = () => {
                 color: '#ffffff',
                 marginBottom: 'clamp(20px, 3vw, 28px)',
                 display: 'block',
+                fontFamily: 'var(--font-heading)',
+                fontSize: 'clamp(32px, 3.5vw, 48px)',
+                fontWeight: 600,
+                lineHeight: 1.22,
               }}
-              blurStrength={7}
+              blurStrength={4}
             >
               Industry recognition
             </ScrollReveal>
@@ -115,31 +117,18 @@ export const IndustryRecognition: React.FC = () => {
               <p
                 className="body-lead"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.88)',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: 'clamp(16px, 1.3vw, 18px)',
+                  lineHeight: 1.6,
                   marginBottom: '20px',
                 }}
               >
-                We are recognized for AI engineering capabilities in the{' '}
-                <span style={{ color: '#60a5fa', fontWeight: 700 }}>
-                  “Agentic AI in Digital Engineering Market 2025–2029”
-                </span>{' '}
-                report by Research and Markets, listed alongside NVIDIA, OpenAI, Google Cloud, and Accenture.
-              </p>
-            </RevealElement>
-
-            <RevealElement variant="text" delay={0.1}>
-              <p
-                className="body-text"
-                style={{
-                  color: 'rgba(255, 255, 255, 0.65)',
-                }}
-              >
-                Beyond AI, we bring AWS, Google Cloud, and Microsoft partnerships with ISO/IEC 27001:2022-certified processes.
+                Neominds is a Select partner in the Claude Partner Network Services Track. We are recognized for AI engineering capabilities in the “Agentic AI in Digital Engineering Market 2025–2029” report by Research and Markets, listed alongside NVIDIA, OpenAI, Google Cloud, and Accenture. Our work is backed by ISO/IEC 27001:2022-certified processes.
               </p>
             </RevealElement>
           </div>
 
-          {/* Right Column Recognition Artwork Carousel */}
+          {/* Right Column Recognition Carousel */}
           <RevealElement variant="card">
             <div
               style={{
@@ -148,259 +137,164 @@ export const IndustryRecognition: React.FC = () => {
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                backgroundColor: 'rgba(255, 255, 255, 0.03)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '16px',
-                padding: 'clamp(36px, 5vw, 60px) clamp(20px, 3vw, 40px)',
+                borderRadius: '0px',
+                padding: 'clamp(24px, 4vw, 40px)',
                 minHeight: '440px',
-                boxShadow: '0 20px 48px rgba(0, 0, 0, 0.35)',
+                boxShadow: 'none',
               }}
             >
-            {/* Left Nav Arrow */}
-            <button
-              onClick={prevSlide}
-              style={{
-                position: 'absolute',
-                left: '12px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: '#ffffff',
-                opacity: 0.8,
-                padding: '12px',
-                minWidth: '44px',
-                minHeight: '44px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'opacity 0.2s',
-                zIndex: 4,
-                background: 'rgba(255, 255, 255, 0.08)',
-                borderRadius: '50%',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
-              aria-label="Previous Award"
-            >
-              <ChevronLeft size={24} />
-            </button>
-
-            {/* Right Nav Arrow */}
-            <button
-              onClick={nextSlide}
-              style={{
-                position: 'absolute',
-                right: '12px',
-                top: '50%',
-                transform: 'translateY(-50%)',
-                color: '#ffffff',
-                opacity: 0.8,
-                padding: '12px',
-                minWidth: '44px',
-                minHeight: '44px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                transition: 'opacity 0.2s',
-                zIndex: 4,
-                background: 'rgba(255, 255, 255, 0.08)',
-                borderRadius: '50%',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.8')}
-              aria-label="Next Award"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Recognition Badge Container */}
-            <div
-              ref={cardRef}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-                width: '100%',
-                maxWidth: '420px',
-              }}
-            >
-              {/* Hexagonal Stylized Award Badge */}
-              <div
-                style={{
-                  width: '100%',
-                  maxWidth: '380px',
-                  backgroundColor: '#ffffff',
-                  color: '#121212',
-                  padding: 'clamp(28px, 4vw, 36px) clamp(16px, 3vw, 28px)',
-                  clipPath: 'polygon(50% 0%, 100% 18%, 100% 82%, 50% 100%, 0% 82%, 0% 18%)',
-                  boxShadow: '0 20px 48px rgba(0, 0, 0, 0.08)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  border: '8px solid #f1f5f9',
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '13px',
-                    fontWeight: 700,
-                    letterSpacing: '0.2em',
-                    color: '#64748b',
-                    marginBottom: '4px',
-                  }}
-                >
-                  {currentSlide.badgeTitle}
-                </span>
-
-                <span
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '12px',
-                    fontWeight: 800,
-                    letterSpacing: '0.12em',
-                    color: '#0f172a',
-                    marginBottom: '16px',
-                  }}
-                >
-                  {currentSlide.category}
-                </span>
-
-                {/* Divider Line */}
-                <div style={{ width: '80%', height: '1px', backgroundColor: '#e2e8f0', marginBottom: '14px' }} />
-
-                {/* Org Logo / Brand Title */}
-                <div style={{ margin: '8px 0' }}>
-                  {currentSlide.badgeType === 'clutch' ? (
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <span
-                        style={{
-                          fontSize: 'clamp(36px, 5vw, 44px)',
-                          fontWeight: 900,
-                          letterSpacing: '-0.03em',
-                          color: '#192b3a',
-                          fontFamily: 'var(--font-heading)',
-                        }}
-                      >
-                        Clut<span style={{ color: '#ea4335' }}>c</span>h
-                      </span>
-                    </div>
-                  ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <span
-                        style={{
-                          fontSize: 'clamp(26px, 4vw, 32px)',
-                          fontWeight: 800,
-                          letterSpacing: '-0.02em',
-                          color: '#00558f',
-                          fontFamily: 'var(--font-heading)',
-                        }}
-                      >
-                        FORRESTER
-                      </span>
-                      <span style={{ fontSize: '11px', letterSpacing: '0.15em', fontWeight: 600, color: '#475067', fontFamily: 'var(--font-heading)' }}>
-                        WAVE LEADER
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Small blue dot motif */}
-                <div style={{ margin: '8px 0' }}>
-                  <span className="blue-dot" style={{ width: '6px', height: '6px' }} />
-                </div>
-
-                {/* Divider Line */}
-                <div style={{ width: '80%', height: '1px', backgroundColor: '#e2e8f0', marginTop: '6px', marginBottom: '12px' }} />
-
-                <span
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '0.18em',
-                    color: '#64748b',
-                    marginBottom: '2px',
-                  }}
-                >
-                  {currentSlide.location}
-                </span>
-
-                <span
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: '18px',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: '#2258e7',
-                  }}
-                >
-                  {currentSlide.year}
-                </span>
-              </div>
-            </div>
-
-            {/* Bottom Controls: Pause Button & Slide Indicators */}
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-                maxWidth: '380px',
-                marginTop: '32px',
-              }}
-            >
-              {/* Pause / Play Toggle Button */}
+              {/* Left Nav Arrow */}
               <button
-                onClick={() => setIsPlaying(!isPlaying)}
+                onClick={prevSlide}
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
+                  position: 'absolute',
+                  left: '12px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
                   color: '#ffffff',
+                  opacity: 0.85,
+                  width: '40px',
+                  height: '40px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'all 0.2s',
-                  background: 'rgba(255, 255, 255, 0.1)',
+                  transition: 'opacity 0.2s, background-color 0.2s',
+                  zIndex: 4,
+                  background: 'rgba(255, 255, 255, 0.12)',
+                  borderRadius: '0px',
+                  border: 'none',
                   cursor: 'pointer',
                 }}
-                aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.12)')}
+                aria-label="Previous Slide"
               >
-                {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+                <ChevronLeft size={22} />
               </button>
 
-              {/* Progress Indicator Bars */}
-              <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                {slides.map((_, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => setCurrentIndex(idx)}
-                    style={{
-                      width: idx === currentIndex ? '36px' : '20px',
-                      height: '4px',
-                      backgroundColor: idx === currentIndex ? '#60a5fa' : 'rgba(255, 255, 255, 0.25)',
-                      cursor: 'pointer',
-                      transition: 'all 0.3s ease',
-                      borderRadius: '2px',
-                    }}
-                    role="button"
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
+              {/* Right Nav Arrow */}
+              <button
+                onClick={nextSlide}
+                style={{
+                  position: 'absolute',
+                  right: '12px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  color: '#ffffff',
+                  opacity: 0.85,
+                  width: '40px',
+                  height: '40px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'opacity 0.2s, background-color 0.2s',
+                  zIndex: 4,
+                  background: 'rgba(255, 255, 255, 0.12)',
+                  borderRadius: '0px',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.12)')}
+                aria-label="Next Slide"
+              >
+                <ChevronRight size={22} />
+              </button>
+
+              {/* Slide Image Container */}
+              <div
+                ref={cardRef}
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '100%',
+                  maxWidth: '380px',
+                  borderRadius: '0px',
+                  overflow: 'hidden',
+                }}
+              >
+                <img
+                  src={currentSlide.imageUrl}
+                  alt={currentSlide.title}
+                  style={{
+                    width: '100%',
+                    maxHeight: '380px',
+                    objectFit: 'contain',
+                    borderRadius: '0px',
+                    boxShadow: 'none',
+                  }}
+                  loading="lazy"
+                />
+                <span
+                  style={{
+                    marginTop: '16px',
+                    color: 'rgba(255, 255, 255, 0.75)',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    textAlign: 'center',
+                  }}
+                >
+                  {currentSlide.title}
+                </span>
+              </div>
+
+              {/* Bottom Controls */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                  maxWidth: '380px',
+                  marginTop: '24px',
+                }}
+              >
+                <button
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '0px',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    color: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: 'rgba(255, 255, 255, 0.1)',
+                    cursor: 'pointer',
+                  }}
+                  aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                >
+                  {isPlaying ? <Pause size={13} /> : <Play size={13} />}
+                </button>
+
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                  {slides.map((_, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => setCurrentIndex(idx)}
+                      style={{
+                        width: idx === currentIndex ? '32px' : '16px',
+                        height: '4px',
+                        backgroundColor: idx === currentIndex ? '#2258e7' : 'rgba(255, 255, 255, 0.25)',
+                        cursor: 'pointer',
+                        transition: 'all 0.3s ease',
+                        borderRadius: '0px',
+                      }}
+                      role="button"
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </RevealElement>
+          </RevealElement>
+        </div>
       </div>
-    </div>
     </section>
   );
 };

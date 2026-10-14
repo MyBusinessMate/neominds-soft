@@ -7,56 +7,75 @@ interface FooterColumn {
 
 const footerColumns: FooterColumn[] = [
   {
-    title: 'Core Services',
+    title: 'Services',
     links: [
-      { label: 'Software Development', target: '#software-development' },
-      { label: 'AI Development', target: '#ai-development' },
-      { label: 'Mobile App Development', target: '#mobile-app-development' },
-      { label: 'Web & CMS Development', target: '#web-cms-development' },
-      { label: 'Ecommerce Development', target: '#ecommerce-development' },
-      { label: 'DevOps & Cloud', target: '#devops' },
+      { label: 'Custom software development', target: '#services' },
+      { label: 'Mobile app development', target: '#services' },
+      { label: 'Web & CMS development', target: '#services' },
+      { label: 'Cloud software development', target: '#services' },
+      { label: 'Product engineering', target: '#services' },
+      { label: 'UI/UX design', target: '#services' },
+      { label: 'AI development', target: '#services' },
+      { label: 'Legacy application modernization', target: '#services' },
+      { label: 'Quality assurance & testing', target: '#services' },
+      { label: 'DevOps', target: '#services' },
+      { label: 'Cybersecurity', target: '#services' },
+      { label: 'Software architecture consulting', target: '#services' },
+      { label: 'Strategic tech consulting', target: '#services' },
     ],
   },
   {
-    title: 'AI & Intelligence',
+    title: 'Technologies',
     links: [
-      { label: 'AI Agents & Swarms', target: '#ai-agents' },
-      { label: 'AI Automations (IPA)', target: '#ai-automations' },
-      { label: 'Chatbot & Video Bot', target: '#chatbot-videobot' },
-      { label: 'Analytics Dashboard', target: '#analytics-dashboard' },
-      { label: '24/7 Technical Support', target: '#technical-support' },
-    ],
-  },
-  {
-    title: 'Strategic Phases',
-    links: [
-      { label: 'Product Discovery', target: '#product-discovery' },
-      { label: 'Solution Architecture', target: '#product-engineering' },
-      { label: 'Business Analysis', target: '#business-analysis' },
-      { label: 'IT Consulting', target: '#it-consulting' },
-      { label: 'UI/UX Design', target: '#ui-ux-design' },
+      { label: 'Artificial intelligence', target: '#services' },
+      { label: 'Machine learning', target: '#services' },
+      { label: 'Extended reality', target: '#services' },
+      { label: 'Internet of things', target: '#services' },
+      { label: 'Blockchain', target: '#services' },
     ],
   },
   {
     title: 'Industries',
     links: [
-      { label: 'FinTech & Banking', target: '#portfolio' },
-      { label: 'Healthcare & HIPAA', target: '#portfolio' },
-      { label: 'Ecommerce & Retail', target: '#portfolio' },
-      { label: 'Logistics & Supply Chain', target: '#portfolio' },
-      { label: 'Enterprise SaaS', target: '#portfolio' },
+      { label: 'Financial services', target: '#experience' },
+      { label: 'Healthcare', target: '#experience' },
+      { label: 'ISV/SaaS', target: '#experience' },
+      { label: 'Automotive', target: '#experience' },
+      { label: 'Logistics & Supply Chain', target: '#experience' },
+      { label: 'CleanTech', target: '#experience' },
+      { label: 'Telecommunications', target: '#experience' },
+      { label: 'Legal', target: '#experience' },
+      { label: 'Energy', target: '#experience' },
+      { label: 'Retail', target: '#experience' },
+      { label: 'Manufacturing', target: '#experience' },
+      { label: 'Biotechnology', target: '#experience' },
+      { label: 'AdTech', target: '#experience' },
+      { label: 'Real Estate', target: '#experience' },
     ],
   },
   {
-    title: 'Company & Legal',
+    title: 'How we work',
     links: [
-      { label: 'About Us', target: '#about-us' },
-      { label: 'Case Studies', target: '#portfolio' },
-      { label: 'Insights & Blogs', target: '#insights' },
-      { label: 'Contacts & RFP', target: '#contacts' },
-      { label: 'Privacy Policy', target: '#privacy-policy', isLegal: 'privacy' },
-      { label: 'Cookie Policy', target: '#cookie-policy', isLegal: 'cookie' },
-      { label: 'Security Standards', target: '#security-policy', isLegal: 'security' },
+      { label: 'Nearshore development', target: '#delivery' },
+      { label: 'Agile development', target: '#delivery' },
+      { label: 'Staff augmentation', target: '#delivery' },
+      { label: 'Dedicated development teams', target: '#delivery' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About us', target: '#about' },
+      { label: 'Case studies', target: '#case-studies' },
+      { label: 'Blog', target: '#insights' },
+      { label: 'News', target: '#recognition' },
+      { label: 'Certifications', target: '#recognition' },
+      { label: 'Careers', target: '#contact' },
+      { label: 'Privacy policy', target: '#privacy', isLegal: 'privacy' },
+      { label: 'Cookie policy', target: '#cookie', isLegal: 'cookie' },
+      { label: 'Information security policy', target: '#security', isLegal: 'security' },
+      { label: 'Attribution', target: '#attribution' },
+      { label: 'Contacts', target: '#contact' },
     ],
   },
 ];
@@ -75,21 +94,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
         position: 'relative',
         width: '100%',
         backgroundColor: '#ffffff',
-        paddingTop: 'var(--footer-padding-top)',
-        paddingBottom: 'var(--footer-padding-bottom)',
+        paddingTop: 'clamp(48px, 6vw, 80px)',
+        paddingBottom: '40px',
         borderTop: '1px solid #e4e4e7',
         color: '#121212',
       }}
     >
       <div className="container-large">
-        {/* 5 Multi-Column Layout matching EffectiveSoft design */}
+        {/* 5-Column Navigation Layout */}
         <div
           className="footer-nav-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(5, 1fr)',
-            gap: 'var(--footer-col-gap) var(--space-6)',
-            marginBottom: 'var(--space-9)',
+            gap: '32px 24px',
+            marginBottom: '48px',
           }}
         >
           {footerColumns.map((col, idx) => (
@@ -99,14 +118,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
                   fontFamily: 'var(--font-heading)',
                   fontSize: '15px',
                   fontWeight: 700,
-                  color: '#121212',
-                  marginBottom: 'var(--space-4)',
+                  color: '#001334',
+                  marginBottom: '16px',
                 }}
               >
                 {col.title}
               </h4>
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--footer-link-gap)' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
                     <a
@@ -123,13 +142,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
                       }}
                       style={{
                         fontFamily: 'var(--font-body)',
-                        fontSize: '14px',
+                        fontSize: '13px',
                         color: '#475067',
-                        lineHeight: 1.4,
+                        lineHeight: 1.45,
                         transition: 'color 0.2s',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        minHeight: '28px',
                         textDecoration: 'none',
                       }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = '#2258E7')}
@@ -140,60 +158,76 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
                   </li>
                 ))}
               </ul>
-
-              {/* Decorative blue dot */}
-              {idx === 0 && (
-                <div style={{ position: 'absolute', bottom: '-20px', left: '0' }}>
-                  <span className="blue-dot" style={{ width: '6px', height: '6px' }} />
-                </div>
-              )}
             </div>
           ))}
         </div>
 
-        {/* Bottom Bar: Logo Mark, Copyright & Clean Attribution */}
+        {/* Bottom Bar: Clutch Badge, Logo, Copyright */}
         <div
           style={{
             paddingTop: '32px',
-            borderTop: '1px solid #f0f2f6',
+            borderTop: '1px solid #eef2f6',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '20px',
+            gap: '24px',
           }}
         >
-          <div
-            onClick={() => onNavigate('#hero')}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              cursor: 'pointer',
-            }}
-          >
-            {/* Neominds Speed Bars Icon */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
             <div
+              onClick={() => onNavigate('#hero')}
               style={{
                 display: 'flex',
-                flexDirection: 'column',
-                gap: '2.5px',
-                width: '18px',
+                alignItems: 'center',
+                gap: '10px',
+                cursor: 'pointer',
               }}
             >
-              <span style={{ height: '2px', backgroundColor: '#121212', width: '100%' }} />
-              <span style={{ height: '2px', backgroundColor: '#121212', width: '85%' }} />
-              <span style={{ height: '2px', backgroundColor: '#121212', width: '100%' }} />
-              <span style={{ height: '2px', backgroundColor: '#121212', width: '70%' }} />
-              <span style={{ height: '2px', backgroundColor: '#121212', width: '100%' }} />
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2.5px',
+                  width: '18px',
+                }}
+              >
+                <span style={{ height: '2px', backgroundColor: '#001334', width: '100%' }} />
+                <span style={{ height: '2px', backgroundColor: '#001334', width: '85%' }} />
+                <span style={{ height: '2px', backgroundColor: '#001334', width: '100%' }} />
+                <span style={{ height: '2px', backgroundColor: '#001334', width: '70%' }} />
+                <span style={{ height: '2px', backgroundColor: '#001334', width: '100%' }} />
+              </div>
+              <span style={{ fontFamily: 'var(--font-heading)', fontSize: '20px', fontWeight: 800, letterSpacing: '-0.02em', color: '#001334' }}>
+                Neominds
+              </span>
             </div>
-            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800, letterSpacing: '-0.02em', color: '#121212' }}>
-              Neominds
-            </span>
+
+            {/* Clutch Mini Badge */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '6px 14px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                borderRadius: '0px',
+                boxShadow: 'none',
+                fontSize: '12px',
+                color: '#334155',
+              }}
+            >
+              <span style={{ fontWeight: 700, color: '#001334' }}>Clutch</span>
+              <span style={{ color: '#f59e0b', fontSize: '13px' }}>★★★★★</span>
+              <span style={{ fontWeight: 600 }}>4.9</span>
+              <span style={{ color: '#94a3b8' }}>•</span>
+              <span style={{ color: '#64748b' }}>19 reviews</span>
+            </div>
           </div>
 
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#666e85' }}>
-            © {new Date().getFullYear()} Neominds Inc. All rights reserved. High-fidelity product engineering & applied AI.
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#64748b', margin: 0 }}>
+            © 2026 Neominds. All rights reserved.
           </p>
         </div>
       </div>

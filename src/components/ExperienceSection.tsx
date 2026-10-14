@@ -7,99 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 interface ClientLogo {
   id: string;
   name: string;
-  render: React.ReactNode;
+  url: string;
 }
 
 const clientLogos: ClientLogo[] = [
-  {
-    id: 'plato',
-    name: 'plato',
-    render: (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <span style={{ fontSize: '20px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-          plato
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: 'waterway',
-    name: 'waterway',
-    render: (
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <span style={{ fontSize: '22px', fontWeight: 900, fontStyle: 'italic', color: '#ffffff', letterSpacing: '0.04em' }}>
-          /// waterway
-        </span>
-      </div>
-    ),
-  },
-  {
-    id: 'nissin',
-    name: 'NISSIN',
-    render: (
-      <div
-        style={{
-          border: '2px solid #ffffff',
-          borderRadius: '16px',
-          padding: '2px 12px',
-          color: '#ffffff',
-          fontWeight: 900,
-          fontSize: '15px',
-          letterSpacing: '0.08em',
-        }}
-      >
-        NISSIN
-      </div>
-    ),
-  },
-  {
-    id: 'cityindex',
-    name: 'CITY INDEX',
-    render: (
-      <span style={{ fontSize: '18px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
-        CITY INDEX
-      </span>
-    ),
-  },
-  {
-    id: 'midiagnostics',
-    name: 'miDiagnostics',
-    render: (
-      <span style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em' }}>
-        <i style={{ fontStyle: 'italic', fontWeight: 900 }}>mi</i>Diagnostics
-      </span>
-    ),
-  },
-  {
-    id: 'authenticom',
-    name: 'AUTHENTICOM',
-    render: (
-      <span style={{ fontSize: '17px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
-        AUTHENTICOM
-      </span>
-    ),
-  },
-  {
-    id: 'maersk',
-    name: 'MAERSK BROKER',
-    render: (
-      <span style={{ fontSize: '16px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.06em' }}>
-        MAERSK BROKER
-      </span>
-    ),
-  },
-  {
-    id: 'trubridge',
-    name: 'TruBridge',
-    render: (
-      <span style={{ fontSize: '19px', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em' }}>
-        TruBridge<sup style={{ fontSize: '10px' }}>®</sup>
-      </span>
-    ),
-  },
+  { id: 'migiagnostics', name: 'Migiagnostics', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2025/02/Migiagnostics.svg' },
+  { id: 'plato', name: 'Plato', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Plato.svg' },
+  { id: 'authenticom', name: 'Authenticom', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/authenticom-white.svg' },
+  { id: 'webbula', name: 'Webbula', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/07/webbula-white2.svg' },
+  { id: 'waterway', name: 'Waterway', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Waterway.svg' },
+  { id: 'motiveretail', name: 'Motive Retail', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/motiveretail-white.svg' },
+  { id: 'yfc', name: 'YourFitnessCoach', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/YourFitnessCoach.svg' },
+  { id: 'maersk', name: 'Maersk', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/maersk-white.svg' },
+  { id: 'nissin', name: 'Nissin', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Nissin.svg' },
+  { id: 'medscope', name: 'MedScope', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/MedScope.svg' },
+  { id: 'trubridge', name: 'TruBridge', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2025/02/TruBridge.svg' },
+  { id: 'delphivision', name: 'Delphi Vision', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/delphivision-white.svg' },
+  { id: 'adventr', name: 'Adventr', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Adventr.svg' },
 ];
 
 export const ExperienceSection: React.FC = () => {
@@ -109,8 +33,18 @@ export const ExperienceSection: React.FC = () => {
 
   // Word-by-word slow and buttery smooth scroll illumination
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
       const words = textContainerRef.current?.querySelectorAll('.scroll-word');
+      if (words) {
+        gsap.set(words, { opacity: 1, color: '#ffffff', y: 0 });
+      }
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      if (!textContainerRef.current) return;
+      const words = textContainerRef.current.querySelectorAll('.scroll-word');
       if (!words || words.length === 0) return;
 
       gsap.fromTo(
@@ -139,25 +73,23 @@ export const ExperienceSection: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  // Premium 4-at-a-time Rolling Slot rotation every 2 seconds
+  // Rotate client logos through ticker slots
   useEffect(() => {
     const interval = setInterval(() => {
-      setLogoBatch((prev) => (prev + 1) % 2);
-    }, 2000);
+      setLogoBatch((prev) => (prev + 1) % 3);
+    }, 2800);
     return () => clearInterval(interval);
   }, []);
 
-  // Text broken strictly into words
   const headlineText =
     'Backed by 23 years of full-spectrum engineering for healthcare, financial services, and ISV/SaaS companies.';
   const wordsList = headlineText.split(' ');
 
-  // Group 8 logos into 4 pairs (one for each slot)
-  const slotPairs = [
-    [clientLogos[0], clientLogos[4]], // Slot 1: plato <-> miDiagnostics
-    [clientLogos[1], clientLogos[5]], // Slot 2: waterway <-> AUTHENTICOM
-    [clientLogos[2], clientLogos[6]], // Slot 3: NISSIN <-> MAERSK BROKER
-    [clientLogos[3], clientLogos[7]], // Slot 4: CITY INDEX <-> TruBridge
+  const slotSets = [
+    [clientLogos[0], clientLogos[4], clientLogos[8]],
+    [clientLogos[1], clientLogos[5], clientLogos[9]],
+    [clientLogos[2], clientLogos[6], clientLogos[10]],
+    [clientLogos[3], clientLogos[7], clientLogos[11]],
   ];
 
   return (
@@ -232,8 +164,8 @@ export const ExperienceSection: React.FC = () => {
             borderTop: 'none',
           }}
         >
-          {slotPairs.map((pair, slotIdx) => {
-            const activeLogo = pair[logoBatch];
+          {slotSets.map((set, slotIdx) => {
+            const activeLogo = set[logoBatch] || set[0];
 
             return (
               <div
@@ -242,8 +174,8 @@ export const ExperienceSection: React.FC = () => {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '240px',
-                  height: '56px',
+                  maxWidth: '220px',
+                  height: '48px',
                   overflow: 'hidden',
                   perspective: '800px',
                   display: 'flex',
@@ -251,9 +183,8 @@ export const ExperienceSection: React.FC = () => {
                   justifyContent: 'center',
                 }}
               >
-                {/* Rolling Content Container */}
                 <div
-                  key={logoBatch}
+                  key={`${slotIdx}-${logoBatch}`}
                   style={{
                     position: 'absolute',
                     inset: 0,
@@ -264,7 +195,20 @@ export const ExperienceSection: React.FC = () => {
                     willChange: 'transform, opacity, filter',
                   }}
                 >
-                  {activeLogo.render}
+                  <img
+                    src={activeLogo.url}
+                    alt={activeLogo.name}
+                    style={{
+                      maxHeight: '32px',
+                      maxWidth: '160px',
+                      objectFit: 'contain',
+                      opacity: 0.9,
+                    }}
+                    onError={(e) => {
+                      // Fallback text if network blocked
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
                 </div>
               </div>
             );

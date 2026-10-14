@@ -93,7 +93,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
             padding: '6px 14px',
             backgroundColor: 'rgba(34, 88, 231, 0.08)',
             border: '1px solid rgba(34, 88, 231, 0.25)',
-            borderRadius: '2px',
+            borderRadius: '0px',
             color: '#2258e7',
             fontSize: '13px',
             fontWeight: 600,
@@ -140,7 +140,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
         <RevealElement variant="card" delay={0.12}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
             <a
-              href="mailto:contact@neominds.io"
+              href="mailto:rfq@neominds.io"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -151,13 +151,13 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                 backgroundColor: '#f8fafc',
                 border: '1px solid #e2e8f0',
                 padding: '12px 24px',
-                borderRadius: '6px',
+                borderRadius: '0px',
                 textDecoration: 'none',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+                boxShadow: 'none',
               }}
             >
               <Mail size={18} style={{ color: '#2258e7' }} />
-              <span>contact@neominds.io</span>
+              <span>rfq@neominds.io</span>
             </a>
 
             <a
@@ -172,9 +172,9 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                 backgroundColor: '#f8fafc',
                 border: '1px solid #e2e8f0',
                 padding: '12px 24px',
-                borderRadius: '6px',
+                borderRadius: '0px',
                 textDecoration: 'none',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.03)',
+                boxShadow: 'none',
               }}
             >
               <Phone size={18} style={{ color: '#16a34a' }} />

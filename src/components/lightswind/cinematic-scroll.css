@@ -97,3 +97,18 @@
 .cinematic-scroll-content::-webkit-scrollbar {
   display: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-mask-top,
+  .cinematic-mask-bottom,
+  .cinematic-scrollbar-track {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cinematic-mask-top,
+  .cinematic-mask-bottom {
+    display: none !important;
+  }
+}

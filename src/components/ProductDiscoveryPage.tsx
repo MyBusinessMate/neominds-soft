@@ -954,7 +954,7 @@ export const ProductDiscoveryPage: React.FC<ProductDiscoveryPageProps> = ({
         <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
           <div style={{ maxWidth: '680px', marginBottom: '56px' }}>
             <span style={{ color: '#2258e7', fontSize: '13px', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-              Why EffectiveSoft
+              Why Neominds
             </span>
             <h2
               style={{
@@ -2170,7 +2170,7 @@ export const ProductDiscoveryPage: React.FC<ProductDiscoveryPageProps> = ({
                   <span style={{ height: '2px', backgroundColor: '#ffffff', width: '100%' }} />
                 </div>
                 <span style={{ fontSize: '20px', fontWeight: 700, fontFamily: 'var(--font-heading)' }}>
-                  EffectiveSoft
+                  Neominds
                 </span>
               </div>
               <p style={{ color: '#8893a7', fontSize: '13px', lineHeight: 1.6 }}>
@@ -2228,7 +2228,7 @@ export const ProductDiscoveryPage: React.FC<ProductDiscoveryPageProps> = ({
               color: '#666e85',
             }}
           >
-            <span>© {new Date().getFullYear()} EffectiveSoft. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Neominds. All rights reserved.</span>
             <div style={{ display: 'flex', gap: '20px' }}>
               <span onClick={onOpenPrivacy} style={{ cursor: 'pointer', transition: 'color 0.2s' }}>
                 Privacy Policy
