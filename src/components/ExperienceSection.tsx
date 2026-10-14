@@ -149,7 +149,7 @@ export const ExperienceSection: React.FC = () => {
 
   // Text broken strictly into words
   const headlineText =
-    'Backed by 23 years of full-spectrum engineering for healthcare, financial services, and ISV/SaaS companies.';
+    'Delivering software for businesses in e-commerce, education, healthcare, real estate, enterprise and retail across global markets.';
   const wordsList = headlineText.split(' ');
 
   // Group 8 logos into 4 pairs (one for each slot)

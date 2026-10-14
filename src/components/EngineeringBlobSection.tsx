@@ -154,7 +154,7 @@ export const EngineeringBlobSection: React.FC = () => {
             transition: 'color 0.3s ease',
           }}
         >
-          Engineering first.
+          Strong software.
           <br />
           <span
             ref={dotLeftRef}
@@ -169,7 +169,7 @@ export const EngineeringBlobSection: React.FC = () => {
           >
             •
           </span>
-          AI-enhanced
+          Made smarter with AI
           <span
             ref={dotRightRef}
             style={{
@@ -197,7 +197,7 @@ export const EngineeringBlobSection: React.FC = () => {
             transition: 'color 0.3s ease',
           }}
         >
-          The AI era doesn’t replace engineering fundamentals, but it raises the bar for them. The hard part is not the demo, but scaling, securing, integrating, and sustaining AI inside real products. Neominds brings deep experience in complex systems, production delivery, and reliability-critical environments.
+          AI adds real value only when the software around it is solid. Neominds TechHub builds the application, the cloud setup and the AI features together, so your product is secure, fast, easy to maintain and ready to grow with your business.
         </p>
       </div>
     </div>

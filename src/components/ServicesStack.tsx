@@ -24,144 +24,73 @@ interface ServiceStackCard {
 const stackCards: ServiceStackCard[] = [
   {
     id: 1,
-    slug: 'ai-development',
-    category: 'COGNITIVE INTELLIGENCE',
-    title: 'ARTIFICIAL INTELLIGENCE & AGENTS',
-    tagline: 'Autonomous multi-agent orchestration, enterprise RAG & LLM-driven acceleration',
+    slug: 'software-development',
+    category: 'PILLAR 01 // FOUNDATION',
+    title: 'BUILD',
+    tagline: 'Web, mobile, cross-platform, e-commerce, custom and SaaS software',
     description:
-      'AI is an engineering layer that extends existing systems rather than replaces them. We apply it where it can improve automation, decision-making, and product behavior in real operational environments. In practice, this includes AI-enabled products, workflow automation, legacy system modernization, and intelligent software delivery.',
+      'We create web, mobile, cross-platform, e-commerce, custom and SaaS software that stays reliable as your users, data and features grow. We handle design, development, testing, cloud deployment and ongoing support.',
     links: [
-      { label: 'AI-enabled products', slug: 'ai-development' },
-      { label: 'workflow automation', slug: 'ai-automations' },
-      { label: 'legacy system modernization', slug: 'software-development' },
-      { label: 'intelligent software delivery', slug: 'ai-agents' },
+      { label: 'web', slug: 'web-cms-development' },
+      { label: 'mobile', slug: 'mobile-app-development' },
+      { label: 'e-commerce', slug: 'ecommerce-development' },
+      { label: 'SaaS software', slug: 'devops' },
     ],
     servicePills: [
-      { label: 'AI Development', slug: 'ai-development' },
-      { label: 'Autonomous AI Agents', slug: 'ai-agents' },
-      { label: 'Workflow Automations', slug: 'ai-automations' },
-      { label: 'Chatbot & Video Bots', slug: 'chatbot-videobot' },
+      { label: 'Web Development', slug: 'web-cms-development' },
+      { label: 'Mobile App Development', slug: 'mobile-app-development' },
+      { label: 'Custom Software', slug: 'software-development' },
+      { label: 'E-commerce Software', slug: 'ecommerce-development' },
     ],
-    image: '/services/ai-development.png',
-    imageAlt: 'Artificial Intelligence and Autonomous Multi-Agent Topology',
-    bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
+    image: '/services/software-development.png',
+    imageAlt: 'Build Web, Mobile, Custom and SaaS Software',
+    bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
   },
   {
     id: 2,
-    slug: 'software-development',
-    category: 'CORE ENGINEERING',
-    title: 'CUSTOM SOFTWARE DEVELOPMENT',
-    tagline: 'High-throughput transactional architectures, event microservices & API platforms',
+    slug: 'ai-development',
+    category: 'PILLAR 02 // INTELLIGENCE',
+    title: 'AI',
+    tagline: 'Integration, intelligent automation, and AI-native products',
     description:
-      'Product engineering forms the core of our work. We build and evolve software that remains reliable as data volumes grow, integrations expand, and requirements change. From solution architecture and cloud deployment to QA testing, automated CI/CD, and ongoing maintenance, we stay involved to keep digital products stable, secure, and ready to advance.',
+      'We add AI to the software you already run, automate repetitive manual work, and build products that are AI-native from day one. Each solution is built to work inside your real business, not as a demo.',
     links: [
-      { label: 'solution architecture', slug: 'software-development' },
-      { label: 'cloud deployment', slug: 'devops' },
-      { label: 'QA testing', slug: 'software-development' },
-      { label: 'ongoing maintenance', slug: 'technical-support' },
+      { label: 'add AI to the software', slug: 'ai-development' },
+      { label: 'automate repetitive manual work', slug: 'ai-automations' },
+      { label: 'AI-native from day one', slug: 'ai-agents' },
     ],
     servicePills: [
-      { label: 'Software Development', slug: 'software-development' },
-      { label: 'Web & CMS Development', slug: 'web-cms-development' },
-      { label: 'Ecommerce Development', slug: 'ecommerce-development' },
-      { label: 'Product Engineering', slug: 'product-engineering' },
+      { label: 'AI Integration', slug: 'ai-development' },
+      { label: 'AI Automation', slug: 'ai-automations' },
+      { label: 'AI-Native Software', slug: 'ai-agents' },
+      { label: 'Chatbots & Assistants', slug: 'chatbot-videobot' },
     ],
-    image: '/services/software-development.png',
-    imageAlt: 'Custom Enterprise Software Development Architecture',
-    bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
+    image: '/services/ai-development.png',
+    imageAlt: 'AI Integration and Autonomous Intelligent Systems',
+    bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
   },
   {
     id: 3,
     slug: 'devops',
-    category: 'CLOUD & RELIABILITY',
-    title: 'CLOUD INFRASTRUCTURE & DEVOPS',
-    tagline: 'Resilient multi-cloud Kubernetes clusters, automated GitOps CI/CD & FinOps',
+    category: 'PILLAR 03 // EVOLUTION',
+    title: 'MODERNIZE',
+    tagline: 'Moving legacy applications to modern code and cloud platforms in stages',
     description:
-      'Resilient cloud infrastructure engineered for 99.99% availability, zero-downtime continuous deployment pipelines, automated infrastructure as code, and FinOps cost optimization. We automate Kubernetes orchestration, implement versioned Terraform cloud environments, and deliver continuous 24/7 telemetry monitoring.',
+      'Outdated systems slow teams down and cost more every year. We move legacy applications to modern code and cloud platforms in stages, so your daily operations keep running while the upgrade happens.',
     links: [
-      { label: 'cloud infrastructure', slug: 'devops' },
-      { label: 'Kubernetes orchestration', slug: 'devops' },
-      { label: 'infrastructure as code', slug: 'devops' },
-      { label: 'telemetry monitoring', slug: 'technical-support' },
+      { label: 'legacy applications', slug: 'software-development' },
+      { label: 'cloud platforms', slug: 'devops' },
+      { label: 'daily operations keep running', slug: 'technical-support' },
     ],
     servicePills: [
-      { label: 'DevOps & Cloud', slug: 'devops' },
-      { label: '24/7 Technical Support', slug: 'technical-support' },
-      { label: 'IT Consulting', slug: 'it-consulting' },
+      { label: 'Legacy App Modernization', slug: 'software-development' },
+      { label: 'Cloud Apps Development', slug: 'devops' },
+      { label: 'SaaS Architecture', slug: 'product-engineering' },
+      { label: 'Data Analytics & BI', slug: 'analytics-dashboard' },
     ],
     image: '/services/devops.png',
-    imageAlt: 'Cloud Infrastructure and Zero-Downtime DevOps GitOps Pipeline',
+    imageAlt: 'Legacy Application Modernization and Cloud Migration',
     bgGradient: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)',
-  },
-  {
-    id: 4,
-    slug: 'analytics-dashboard',
-    category: 'DATA PLATFORMS',
-    title: 'DATA ANALYTICS & BI DASHBOARDS',
-    tagline: 'Real-time lakehouses, ClickHouse/Snowflake pipelines & executive intelligence',
-    description:
-      'Transform high-velocity data streams into actionable intelligence. We architect real-time lakehouse pipelines, implement sub-second ClickHouse and Snowflake data warehouses, and build interactive multi-tenant analytics dashboards with natural language querying and high-framerate visualizations.',
-    links: [
-      { label: 'lakehouse pipelines', slug: 'analytics-dashboard' },
-      { label: 'ClickHouse and Snowflake', slug: 'analytics-dashboard' },
-      { label: 'analytics dashboards', slug: 'analytics-dashboard' },
-      { label: 'natural language querying', slug: 'ai-development' },
-    ],
-    servicePills: [
-      { label: 'Analytics Dashboard', slug: 'analytics-dashboard' },
-      { label: 'Business Analysis', slug: 'business-analysis' },
-      { label: 'Real-Time Pipelines', slug: 'analytics-dashboard' },
-    ],
-    image: '/services/analytics-dashboard.png',
-    imageAlt: 'Real-Time Enterprise Analytics Dashboard and Data Architecture',
-    bgGradient: 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #a7f3d0 100%)',
-  },
-  {
-    id: 5,
-    slug: 'mobile-app-development',
-    category: 'DIGITAL PRODUCTS',
-    title: 'MOBILE & WEB EXPERIENCES',
-    tagline: 'Native iOS & Android, offline-first sync, Next.js portals & 100/100 Core Web Vitals',
-    description:
-      'Engaging digital experiences crafted for performance and accessibility. From native iOS (Swift 6) and Android (Kotlin Compose) applications with offline-first synchronization to high-speed Next.js and headless CMS web portals, we ensure sub-second latency and 100/100 Core Web Vitals.',
-    links: [
-      { label: 'native iOS (Swift 6)', slug: 'mobile-app-development' },
-      { label: 'Android (Kotlin Compose)', slug: 'mobile-app-development' },
-      { label: 'Next.js and headless CMS', slug: 'web-cms-development' },
-      { label: '100/100 Core Web Vitals', slug: 'web-cms-development' },
-    ],
-    servicePills: [
-      { label: 'Mobile App Development', slug: 'mobile-app-development' },
-      { label: 'Web & CMS Development', slug: 'web-cms-development' },
-      { label: 'Ecommerce Platforms', slug: 'ecommerce-development' },
-    ],
-    image: '/services/mobile-app-development.png',
-    imageAlt: 'Native Mobile App Development and Responsive Web Experience',
-    bgGradient: 'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 50%, #fbcfe8 100%)',
-  },
-  {
-    id: 6,
-    slug: 'ui-ux-design',
-    category: 'DESIGN & STRATEGY',
-    title: 'UX/UI DESIGN & PRODUCT DISCOVERY',
-    tagline: 'Design systems, rapid interactive prototyping & strategic discovery roadmaps',
-    description:
-      'Design thinking is where product direction becomes concrete. It helps us align around the problem, user context, and expected outcomes before implementation begins. That clarity carries into product and UX design, where requirements are translated into structure, interaction logic, and system behavior through our dedicated UX practice embedded in delivery. Engineering then turns those decisions into production systems, ensuring the product behaves consistently under production conditions.',
-    links: [
-      { label: 'product direction', slug: 'product-discovery' },
-      { label: 'product and UX design', slug: 'ui-ux-design' },
-      { label: 'dedicated UX practice', slug: 'ui-ux-design' },
-      { label: 'production systems', slug: 'software-development' },
-    ],
-    servicePills: [
-      { label: 'UX/UI Design', slug: 'ui-ux-design' },
-      { label: 'Product Discovery', slug: 'product-discovery' },
-      { label: 'Business Analysis', slug: 'business-analysis' },
-      { label: 'IT Consulting', slug: 'it-consulting' },
-    ],
-    image: '/services/ui-ux-design.png',
-    imageAlt: 'UX/UI Design Systems and Strategic Product Discovery Interface',
-    bgGradient: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #cbd5e1 100%)',
   },
 ];
 
@@ -283,7 +212,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                 textTransform: 'uppercase',
               }}
             >
-              OUR SERVICES // WHAT WE DELIVER
+              OUR THREE PILLARS // BUILD · AI · MODERNIZE
             </span>
           </div>
         </RevealElement>
@@ -303,7 +232,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
           }}
           blurStrength={7}
         >
-          Specialized engineering practices tailored to enterprise scale.
+          Engineering that stays reliable as your business grows.
         </ScrollReveal>
       </div>
 

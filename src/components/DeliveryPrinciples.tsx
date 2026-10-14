@@ -12,36 +12,36 @@ interface Principle {
 
 const principles: Principle[] = [
   {
-    id: 'product',
-    title: 'PRODUCT-CENTRIC',
-    tagline: 'Engineering aligned with tangible business metrics and user workflows.',
-    desc: 'Every architectural decision is anchored to measurable ROI, product-market velocity, and real end-user conversion. We eliminate speculative engineering by validating assumptions early through rapid interactive prototypes and production telemetry.',
+    id: 'outcomes',
+    title: 'BUILT FOR OUTCOMES',
+    tagline: 'We begin with the result you want and plan every sprint around it.',
+    desc: 'We begin with the result you want, such as more sales, lower costs or faster operations, and plan every sprint around it. You see working progress in a demo every week.',
     points: [
-      'Business-driven architecture linked to measurable customer ROI',
-      'Continuous validation with rapid customer feedback loops',
-      'Zero feature bloat: laser focus on high-impact capability delivery',
+      'Sprint planning directly anchored to your business targets',
+      'Live working progress demo every single week',
+      'Continuous refinement based on real operational feedback',
     ],
   },
   {
-    id: 'ai',
-    title: 'AI-MINDED',
-    tagline: 'Production cognitive systems with automated decision loops.',
-    desc: 'We incorporate intelligence at the system foundation. From autonomous agent reasoning to domain-grounded RAG pipelines, our systems maintain deterministic SLAs, zero data leakage, and comprehensive real-time evaluation harnesses.',
+    id: 'ai-value',
+    title: 'AI WHERE IT EARNS ITS PLACE',
+    tagline: 'Applied only where it saves time or improves results.',
+    desc: 'We use AI to speed up our own work and to add smart features to your product, but only where it saves time or improves results.',
     points: [
-      'Autonomous agent orchestration for mission-critical workflows',
-      'Private enterprise RAG grounded in proprietary datasets',
-      'Deterministic latency SLAs, eval harnesses & automated safety guardrails',
+      'Targeted AI features that solve actual business bottlenecks',
+      'Rigorous cost-benefit and latency evaluation before deployment',
+      'No vanity demos: production systems designed to work inside your real business',
     ],
   },
   {
-    id: 'industry',
-    title: 'INDUSTRY-FOCUSED',
-    tagline: 'Domain expertise in heavily regulated and compliance-driven environments.',
-    desc: 'Deep domain engineering for Healthcare, FinTech, Logistics, and Enterprise SaaS. We architect systems with native compliance for HIPAA, SOC 2 Type II, ISO 27001, and GDPR from day one rather than treating compliance as a retrofitted afterthought.',
+    id: 'sector-focused',
+    title: 'MADE FOR YOUR SECTOR',
+    tagline: 'Tailored to the rules and workflows of your specific industry.',
+    desc: 'Each industry has its own rules and workflows. We learn yours first, including data-privacy needs such as GDPR, so the software fits how you actually operate.',
     points: [
-      'Built-in compliance architecture: HIPAA, SOC 2 Type II, ISO & GDPR',
-      'Immutable audit ledgers, row-level security & encrypted token storage',
-      'Domain schemas optimized for sub-second high-concurrency loads',
+      'Deep domain alignment with your teams and customer processes',
+      'Built with data-privacy and compliance rules (GDPR, HIPAA) in mind',
+      'Seamless integration into your existing operational infrastructure',
     ],
   },
 ];
@@ -136,7 +136,7 @@ export const DeliveryPrinciples: React.FC = () => {
                   textTransform: 'uppercase',
                 }}
               >
-                OUR DELIVERY PRINCIPLES
+                HOW WE WORK
               </span>
             </RevealElement>
           </div>
@@ -157,7 +157,7 @@ export const DeliveryPrinciples: React.FC = () => {
               }}
               blurStrength={6}
             >
-              We own the engineering from early concept to enterprise-scale systems and long-term support.
+              We take your project from first idea to launch and long-term support, with one team responsible throughout.
             </ScrollReveal>
 
             {/* Principle Accordion Items - Pure click-to-expand */}

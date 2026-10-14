@@ -71,7 +71,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
             </RevealElement>
 
             <a
-              href="mailto:rfq@neominds.io"
+              href="mailto:contact@neomindstechhub.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -100,7 +100,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               >
                 <Mail size={15} />
               </div>
-              <span>rfq@neominds.io</span>
+              <span>contact@neomindstechhub.com</span>
             </a>
 
             {/* Connect with us on social media */}
@@ -343,19 +343,22 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   fontFamily: 'var(--font-heading)',
                 }}
               >
-                STAY INFORMED
+                NEWSLETTER
               </span>
               <h3
                 style={{
                   fontSize: 'clamp(20px, 2.2vw, 28px)',
                   fontWeight: 700,
                   color: '#121212',
-                  margin: 0,
+                  marginBottom: '8px',
                   fontFamily: 'var(--font-heading)',
                 }}
               >
-                Subscribe to our technology insights
+                Get our latest insights
               </h3>
+              <p style={{ color: '#475067', fontSize: '15px', margin: 0, lineHeight: 1.5 }}>
+                Practical updates on AI, software and cloud, a couple of times a month. Unsubscribe anytime.
+              </p>
             </div>
 
             <form
@@ -416,7 +419,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   required
                   style={{ marginTop: '3px' }}
                 />
-                <span>I agree to receive technology briefs and product updates from Neominds.</span>
+                <span>I agree to receive practical updates on AI, software and cloud from Neominds TechHub.</span>
               </label>
             </form>
           </div>

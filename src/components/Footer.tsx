@@ -7,56 +7,57 @@ interface FooterColumn {
 
 const footerColumns: FooterColumn[] = [
   {
-    title: 'Core Services',
+    title: 'Services',
     links: [
-      { label: 'Software Development', target: '#software-development' },
-      { label: 'AI Development', target: '#ai-development' },
+      { label: 'Web Development', target: '#web-cms-development' },
       { label: 'Mobile App Development', target: '#mobile-app-development' },
-      { label: 'Web & CMS Development', target: '#web-cms-development' },
-      { label: 'Ecommerce Development', target: '#ecommerce-development' },
-      { label: 'DevOps & Cloud', target: '#devops' },
+      { label: 'Cross-Platform Development', target: '#mobile-app-development' },
+      { label: 'Legacy App Modernization', target: '#software-development' },
+      { label: 'E-commerce Software', target: '#ecommerce-development' },
+      { label: 'Custom Software', target: '#software-development' },
+      { label: 'AI Integration', target: '#ai-development' },
+      { label: 'AI Automation', target: '#ai-automations' },
+      { label: 'AI-Native Software', target: '#ai-agents' },
+      { label: 'Cloud Apps Development', target: '#devops' },
+      { label: 'SaaS Development', target: '#product-engineering' },
     ],
   },
   {
-    title: 'AI & Intelligence',
+    title: 'Technologies',
     links: [
-      { label: 'AI Agents & Swarms', target: '#ai-agents' },
-      { label: 'AI Automations (IPA)', target: '#ai-automations' },
-      { label: 'Chatbot & Video Bot', target: '#chatbot-videobot' },
-      { label: 'Analytics Dashboard', target: '#analytics-dashboard' },
-      { label: '24/7 Technical Support', target: '#technical-support' },
-    ],
-  },
-  {
-    title: 'Strategic Phases',
-    links: [
-      { label: 'Product Discovery', target: '#product-discovery' },
-      { label: 'Solution Architecture', target: '#product-engineering' },
-      { label: 'Business Analysis', target: '#business-analysis' },
-      { label: 'IT Consulting', target: '#it-consulting' },
-      { label: 'UI/UX Design', target: '#ui-ux-design' },
+      { label: 'Artificial Intelligence', target: '#ai-development' },
+      { label: 'Machine Learning', target: '#ai-development' },
+      { label: 'Web Development', target: '#web-cms-development' },
+      { label: 'Database', target: '#analytics-dashboard' },
+      { label: 'Cloud Computing', target: '#devops' },
+      { label: 'Data Analytics', target: '#analytics-dashboard' },
+      { label: 'Automation', target: '#ai-automations' },
     ],
   },
   {
     title: 'Industries',
     links: [
-      { label: 'FinTech & Banking', target: '#portfolio' },
-      { label: 'Healthcare & HIPAA', target: '#portfolio' },
-      { label: 'Ecommerce & Retail', target: '#portfolio' },
-      { label: 'Logistics & Supply Chain', target: '#portfolio' },
-      { label: 'Enterprise SaaS', target: '#portfolio' },
+      { label: 'E-commerce', target: '#industries' },
+      { label: 'Education', target: '#industries' },
+      { label: 'Healthcare', target: '#industries' },
+      { label: 'Real Estate', target: '#industries' },
+      { label: 'Enterprise', target: '#industries' },
+      { label: 'Retail', target: '#industries' },
     ],
   },
   {
-    title: 'Company & Legal',
+    title: 'Company',
     links: [
       { label: 'About Us', target: '#about-us' },
+      { label: 'Leadership', target: '#leaders' },
+      { label: 'Careers', target: '#careers' },
+      { label: 'Certification', target: '#certification' },
       { label: 'Case Studies', target: '#portfolio' },
-      { label: 'Insights & Blogs', target: '#insights' },
-      { label: 'Contacts & RFP', target: '#contacts' },
+      { label: 'Blog', target: '#blog' },
+      { label: 'News & Updates', target: '#company-updates' },
+      { label: 'Contacts', target: '#contacts' },
       { label: 'Privacy Policy', target: '#privacy-policy', isLegal: 'privacy' },
       { label: 'Cookie Policy', target: '#cookie-policy', isLegal: 'cookie' },
-      { label: 'Security Standards', target: '#security-policy', isLegal: 'security' },
     ],
   },
 ];
@@ -188,12 +189,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
               <span style={{ height: '2px', backgroundColor: '#121212', width: '100%' }} />
             </div>
             <span style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800, letterSpacing: '-0.02em', color: '#121212' }}>
-              Neominds
+              Neominds TechHub
             </span>
           </div>
 
           <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#666e85' }}>
-            © {new Date().getFullYear()} Neominds Inc. All rights reserved. High-fidelity product engineering & applied AI.
+            © 2026 Neominds TechHub. All rights reserved.
           </p>
         </div>
       </div>

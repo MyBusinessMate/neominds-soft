@@ -108,22 +108,19 @@ export const IndustryRecognition: React.FC = () => {
               }}
               blurStrength={7}
             >
-              Industry recognition
+              Our commitments
             </ScrollReveal>
 
             <RevealElement variant="text" delay={0.05}>
               <p
                 className="body-lead"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.88)',
+                  color: 'rgba(255, 255, 255, 0.92)',
                   marginBottom: '20px',
+                  lineHeight: 1.6,
                 }}
               >
-                We are recognized for AI engineering capabilities in the{' '}
-                <span style={{ color: '#60a5fa', fontWeight: 700 }}>
-                  “Agentic AI in Digital Engineering Market 2025–2029”
-                </span>{' '}
-                report by Research and Markets, listed alongside NVIDIA, OpenAI, Google Cloud, and Accenture.
+                Every Neominds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
               </p>
             </RevealElement>
 
@@ -131,10 +128,10 @@ export const IndustryRecognition: React.FC = () => {
               <p
                 className="body-text"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.65)',
+                  color: 'rgba(255, 255, 255, 0.68)',
                 }}
               >
-                Beyond AI, we bring AWS, Google Cloud, and Microsoft partnerships with ISO/IEC 27001:2022-certified processes.
+                Backed by ISO/IEC 27001:2022 aligned processes, AWS, Microsoft Azure, and Google Cloud engineering standards.
               </p>
             </RevealElement>
           </div>

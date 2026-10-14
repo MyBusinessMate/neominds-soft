@@ -128,19 +128,69 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   switch (page) {
     case 'about-us':
       return {
-        title: 'About Neominds | 23+ Years of Enterprise Engineering Execution',
+        title: 'About Us – Neominds TechHub',
         description:
-          'Discover Neominds: our engineering heritage, executive leadership, global delivery hubs, and mission to engineer resilient enterprise software.',
+          'Learn about Neominds TechHub, our history, engineering principles, core values and global leadership team building AI-powered software.',
         canonicalPath: '/about-us',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+      };
+
+    case 'leaders':
+      return {
+        title: 'Leaders – Neominds TechHub',
+        description:
+          'Meet the leadership team of Neominds TechHub, a software and AI engineering company serving clients in the US, UK, Europe, Australia and the Middle East.',
+        canonicalPath: '/leaders',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+      };
+
+    case 'careers':
+      return {
+        title: 'Careers – Neominds TechHub',
+        description:
+          'Explore careers at Neominds TechHub. Join a software and AI engineering team building web, mobile, cloud and AI products for global clients.',
+        canonicalPath: '/careers',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+      };
+
+    case 'certification':
+      return {
+        title: 'Certifications, Partnerships and Awards – Neominds TechHub',
+        description:
+          'See the certifications, partnerships and compliance practices that back Neominds TechHub’s software and AI engineering work.',
+        canonicalPath: '/certification',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+      };
+
+    case 'services':
+      return {
+        title: 'Software Development Services – Neominds TechHub',
+        description:
+          'Neominds TechHub provides full-cycle web, mobile, cloud and AI software development services for clients in the US, UK, Europe, Australia and the Middle East.',
+        canonicalPath: '/services',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+      };
+
+    case 'industries':
+      return {
+        title: 'Industries We Serve – Neominds TechHub',
+        description:
+          'Neominds TechHub builds custom software for e-commerce, education, healthcare, real estate, enterprise and retail businesses worldwide.',
+        canonicalPath: '/industries',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
       };
 
     case 'contacts':
       return {
-        title: 'Contact Neominds | Request Technical Consultation & RFP',
+        title: 'Contact Us – Neominds TechHub',
         description:
-          'Connect with Neominds principal architects. Submit your project requirements for custom software, cloud modernization, or enterprise AI.',
+          'Get in touch with Neominds TechHub to discuss your software and AI project. Offices in Hyderabad, with clients across the US, UK, Europe, Australia and Middle East.',
         canonicalPath: '/contacts',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -271,9 +321,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     case 'home':
     default:
       return {
-        title: 'Neominds — AI-Enabled Product Engineering & Enterprise Software',
+        title: 'Neominds TechHub: AI-Powered Software Development Company',
         description:
-          'Neominds is an elite product engineering and enterprise AI partner delivering custom cloud software, cognitive agentic pipelines, and regulated mission-critical systems.',
+          'Neominds TechHub is an AI-powered software development company building web, mobile, cloud and AI products for businesses in the US, UK, Europe, Australia and the Middle East.',
         canonicalPath: '/',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -326,7 +376,7 @@ export const updateHeadMetadata = (page: PageType | '404', articleId?: string | 
   updateOrCreateMeta('og:description', meta.description);
   updateOrCreateMeta('og:url', fullCanonicalUrl);
   updateOrCreateMeta('og:type', meta.ogType || 'website');
-  updateOrCreateMeta('og:site_name', 'Neominds');
+  updateOrCreateMeta('og:site_name', 'Neominds TechHub');
   if (meta.ogImage) {
     updateOrCreateMeta('og:image', meta.ogImage);
   }

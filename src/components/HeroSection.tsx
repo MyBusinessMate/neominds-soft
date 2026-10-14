@@ -127,12 +127,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           style={{
             color: '#ffffff',
             maxWidth: '1150px',
-            marginBottom: 'var(--space-8)',
+            marginBottom: 'var(--space-5)',
             textShadow: '0 4px 20px rgba(0,0,0,0.6)',
           }}
         >
-          AI-ENABLED PRODUCT ENGINEERING
+          BUILDING AI-POWERED PRODUCTS
         </h1>
+
+        {/* Sub-line from Homepage.md */}
+        <p
+          style={{
+            color: 'rgba(255, 255, 255, 0.9)',
+            fontSize: 'clamp(16px, 1.4vw, 22px)',
+            maxWidth: '780px',
+            lineHeight: 1.5,
+            fontWeight: 400,
+            marginBottom: 'var(--space-8)',
+            textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+          }}
+        >
+          Neominds TechHub builds web, mobile, cloud and AI software for businesses across the US, UK, Europe, Australia and the Middle East.
+        </p>
 
         {/* Blue rectangular CTA button */}
         <button
@@ -143,7 +158,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             boxShadow: '0 4px 24px rgba(34, 88, 231, 0.45)',
           }}
         >
-          Let’s talk
+          See our AI services
         </button>
       </div>
     </section>
