@@ -66,7 +66,7 @@ const caseStudies: CaseStudy[] = [
     categories: ['Web app', 'Mobile app', 'Trading platform', 'Financial services & Trading', '.NET', 'MS Azure'],
     title: 'A startup idea engineered into a million-user trading platform',
     description:
-      'Neominds joined at the early vision stage and became a core engineering partner behind a multi-asset trading platform that now serves over one million registered users across 50+ countries.',
+      'Neominds TechHub joined the founders to engineer the high-performance infrastructure behind a multi-asset user trading ecosystem.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
     imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137561/960.Website-cover-template-2.jpg',
   },

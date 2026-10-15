@@ -110,20 +110,31 @@ export const IndustryRecognition: React.FC = () => {
               }}
               blurStrength={4}
             >
-              Industry recognition
+              Our commitments
             </ScrollReveal>
 
             <RevealElement variant="text" delay={0.05}>
               <p
                 className="body-lead"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  color: 'rgba(255, 255, 255, 0.92)',
                   fontSize: 'clamp(16px, 1.3vw, 18px)',
-                  lineHeight: 1.6,
                   marginBottom: '20px',
+                  lineHeight: 1.6,
                 }}
               >
-                Neominds is a Select partner in the Claude Partner Network Services Track. We are recognized for AI engineering capabilities in the “Agentic AI in Digital Engineering Market 2025–2029” report by Research and Markets, listed alongside NVIDIA, OpenAI, Google Cloud, and Accenture. Our work is backed by ISO/IEC 27001:2022-certified processes.
+                Every Neominds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
+              </p>
+            </RevealElement>
+
+            <RevealElement variant="text" delay={0.1}>
+              <p
+                className="body-text"
+                style={{
+                  color: 'rgba(255, 255, 255, 0.68)',
+                }}
+              >
+                Backed by ISO/IEC 27001:2022 aligned processes, AWS, Microsoft Azure, and Google Cloud engineering standards.
               </p>
             </RevealElement>
           </div>

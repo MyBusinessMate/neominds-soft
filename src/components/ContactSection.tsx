@@ -114,7 +114,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   marginBottom: 'clamp(32px, 4vw, 56px)',
                 }}
               >
-                Tell us what you are working on, where you want to go, and how we can help.
+                Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
               </p>
             </RevealElement>
 
@@ -148,10 +148,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     marginTop: '2px',
                   }}
                 >
-                  <Check size={14} color="#ffffff" strokeWidth={3} />
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>1</span>
                 </div>
                 <p className="body-text" style={{ color: '#ffffff' }}>
-                  Our expert will follow up after reviewing your needs.
+                  Our expert reviews your request and replies with any questions.
                 </p>
               </div>
 
@@ -169,10 +169,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     marginTop: '2px',
                   }}
                 >
-                  <Check size={14} color="#ffffff" strokeWidth={3} />
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>2</span>
                 </div>
                 <p className="body-text" style={{ color: '#ffffff' }}>
-                  If required, we’ll sign an NDA to ensure privacy.
+                  We sign an NDA if you need one.
                 </p>
               </div>
 
@@ -190,10 +190,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     marginTop: '2px',
                   }}
                 >
-                  <Check size={14} color="#ffffff" strokeWidth={3} />
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>3</span>
                 </div>
                 <p className="body-text" style={{ color: '#ffffff' }}>
-                  Our Pre-Sales Manager will send you a proposal.
+                  We send you a proposal with scope, timeline and cost.
                 </p>
               </div>
 
@@ -214,7 +214,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   <Smile size={14} color="#ffffff" />
                 </div>
                 <p className="body-text" style={{ color: '#ffffff' }}>
-                  Then, we get started on your project.
+                  We kick off your project.
                 </p>
               </div>
             </div>
@@ -291,10 +291,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     color: '#0f172a',
                   }}
                 >
-                  Contact us
+                  Tell us what you want to build
                 </h2>
                 <p className="body-lead" style={{ color: '#475569' }}>
-                  Our team would love to hear from you.
+                  Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
                 </p>
               </div>
 
@@ -302,9 +302,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               <div style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <label htmlFor="challenge" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', fontFamily: 'var(--font-heading)' }}>
-                    Your challenge/goal*
+                    Your project and goals*
                   </label>
-                  <span title="Provide architecture details, system requirements, or project scope" style={{ display: 'inline-flex', cursor: 'pointer' }}>
+                  <span title="Describe your project, goals, timeline, and tech stack if known" style={{ display: 'inline-flex', cursor: 'pointer' }}>
                     <HelpCircle size={14} color="#64748b" />
                   </span>
                 </div>
@@ -312,7 +312,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   id="challenge"
                   type="text"
                   required
-                  placeholder="Describe your project, timeline, and goals..."
+                  placeholder="Describe your project, timeline, tech stack and goals..."
                   value={formData.challenge}
                   onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
                   style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
@@ -410,10 +410,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     onChange={(e) => setFormData({ ...formData, ndaFirst: e.target.checked })}
                     style={{ width: '16px', height: '16px', accentColor: '#2258e7' }}
                   />
-                  <span>Secure data with NDA first</span>
-                  <span title="We execute a mutual NDA before technical discovery" style={{ display: 'inline-flex' }}>
-                    <HelpCircle size={13} color="#64748b" />
-                  </span>
+                  <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
                 </label>
 
                 <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
@@ -435,7 +432,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       cursor: 'pointer',
                     }}
                   >
-                    <Paperclip size={16} /> Attach file
+                    <Paperclip size={16} /> Attach a file (brief, spec or design)
                   </button>
 
                   <button
@@ -457,7 +454,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       transition: 'all 0.2s',
                     }}
                   >
-                    <Mic size={16} /> {isRecording ? 'Recording (Listening...)' : 'Record voice message'}
+                    <Mic size={16} /> {isRecording ? 'Recording (Listening...)' : 'Record a voice message about your project'}
                   </button>
                 </div>
               </div>
@@ -517,7 +514,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   style={{ marginTop: '2px', accentColor: '#2258e7' }}
                 />
                 <span>
-                  I consent to the processing of the personal data as set out in the{' '}
+                  I agree to the processing of my personal data as described in the{' '}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -539,7 +536,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   >
                     Cookie Policy
                   </button>
-                  , and I agree that, given the global nature of Neominds business, such processing may take place outside of my jurisdiction.
+                  , and understand it may be processed outside my country.
                 </span>
               </label>
 

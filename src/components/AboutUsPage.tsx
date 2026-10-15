@@ -90,17 +90,16 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
         <div className="s-superhero__container">
           <div className="s-superhero__badge">
             <Sparkles size={14} />
-            <span>About Neominds</span>
+            <span>About Company</span>
           </div>
 
           <ScrollReveal as="h1" className="s-superhero__title" blurStrength={8}>
-            Fueling <span>Disruption</span>
+            Engineering <span>what's next</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
             <p className="s-superhero__subtitle">
-              We engineer mission-critical software, enterprise AI systems, and high-throughput cloud architectures
-              that turn ambitious capabilities into lasting competitive advantage.
+              Neominds TechHub is a software and AI engineering company delivering web, mobile, cloud and AI solutions for businesses worldwide.
             </p>
           </RevealElement>
 
@@ -122,32 +121,40 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          2. BLOCKQUOTE SECTION (.s-blockquote theme-dark2)
+          2. FOUNDER / CEO MESSAGE (.s-blockquote theme-dark2)
           ======================================================== */}
       <section className="s-blockquote">
         <div className="s-blockquote__container">
           <div className="s-blockquote__author-card">
-            <img
-              src="/uploads/ESThumbnails/81727/660.Alexander-Kachaev-1.png"
-              alt="Alexander Kachaev"
-              className="s-blockquote__avatar"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src =
-                  'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
+            <div
+              style={{
+                width: '84px',
+                height: '84px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(34, 88, 231, 0.2)',
+                border: '2px solid #2258e7',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#60a5fa',
+                marginBottom: '12px',
               }}
-            />
-            <h3 className="s-blockquote__name">Alexander Kachaev</h3>
-            <p className="s-blockquote__role">Chief Executive Officer</p>
+            >
+              CEO
+            </div>
+            <h3 className="s-blockquote__name">Founder &amp; CEO</h3>
+            <p className="s-blockquote__role">Neominds TechHub</p>
           </div>
 
           <div className="s-blockquote__content">
             <div className="s-blockquote__quote-mark">&ldquo;</div>
             <blockquote className="s-blockquote__text">
-              We don’t just get things done—we <em>think bold</em>. It’s our team’s mindset.
+              We build software the way we would want it built for us: clear, honest and made to last.
             </blockquote>
             <p className="s-blockquote__subtext">
-              Over two decades of engineering execution have taught us that cutting-edge software is not defined by novelty,
-              but by structural elegance, mathematical rigor, and uncompromising reliability in production.
+              Every project comes with open sharing of timelines, costs, and risks, backed by weekly demos and full code ownership for our clients.
             </p>
           </div>
         </div>
@@ -204,33 +211,33 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          4. CORE VALUES SECTION (.s-values theme-dark2)
+          3. CORE VALUES SECTION (.s-values theme-dark2)
           ======================================================== */}
       <section className="s-values" id="values">
         <div className="s-values__container">
           <div className="s-values__header">
             <div className="s-values__badge">
-              <span>Principles &amp; Conviction</span>
+              <span>Living our values</span>
             </div>
-            <h2 className="s-values__title">What we stand for?</h2>
+            <h2 className="s-values__title">What we stand for</h2>
           </div>
 
           <div className="s-values__grid">
-            {/* Value 1: Respect */}
+            {/* Value 1: Integrity */}
             <div className="s-values__card">
               <span className="s-values__card-number">01</span>
-              <h3 className="s-values__card-name">Respect</h3>
+              <h3 className="s-values__card-name">Integrity</h3>
               <p className="s-values__card-text">
-                We build strong, healthy relationships by valuing each person in every interaction —whether they’re a client or an employee.
+                We say what we can do, and we do what we say. Timelines, costs and risks are shared openly.
               </p>
             </div>
 
-            {/* Value 2: Common sense */}
+            {/* Value 2: Ownership */}
             <div className="s-values__card">
               <span className="s-values__card-number">02</span>
-              <h3 className="s-values__card-name">Common sense</h3>
+              <h3 className="s-values__card-name">Ownership</h3>
               <p className="s-values__card-text">
-                We always ask ourselves if our actions are reasonable and what value they bring before proceeding.
+                We treat every project as our own and stay responsible for the result, not just the task.
               </p>
             </div>
 
@@ -239,40 +246,25 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <span className="s-values__card-number">03</span>
               <h3 className="s-values__card-name">Curiosity</h3>
               <p className="s-values__card-text">
-                We seek answers to deep-rooted questions and uncover the real business needs behind client requests.
+                We ask why before we build, so we solve the real business problem behind each request.
               </p>
             </div>
 
-            {/* Value 4: Courage */}
+            {/* Value 4: Quality */}
             <div className="s-values__card">
               <span className="s-values__card-number">04</span>
-              <h3 className="s-values__card-name">Courage</h3>
+              <h3 className="s-values__card-name">Quality</h3>
               <p className="s-values__card-text">
-                We tackle every challenge with bravery and determination, always ready to face the unknown. Sounds tough? We’re in!
+                Careful reviews, testing and security checks are part of every sprint.
               </p>
             </div>
 
-            {/* Value 5: Commitment */}
+            {/* Value 5: Collaboration */}
             <div className="s-values__card">
               <span className="s-values__card-number">05</span>
-              <h3 className="s-values__card-name">Commitment</h3>
+              <h3 className="s-values__card-name">Collaboration</h3>
               <p className="s-values__card-text">
-                We stay true to our promises, acting with transparency and responsibility in all our dealings. We said it, we’ll do it.
-              </p>
-            </div>
-
-            {/* Partnership Card */}
-            <div
-              className="s-values__card"
-              style={{
-                background: 'linear-gradient(135deg, #111e40 0%, #0f172a 100%)',
-                borderColor: '#2258e7',
-              }}
-            >
-              <span className="s-values__card-number" style={{ color: '#60a5fa' }}>06</span>
-              <h3 className="s-values__card-name">Long-Term Partnership</h3>
-              <p className="s-values__card-text">
-                We measure our success through client retention and enterprise milestone outcomes that compound over decades of collaboration.
+                We work as one team with our clients, across time zones and cultures, and keep communication simple.
               </p>
             </div>
           </div>
@@ -280,17 +272,17 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          5. VALUES CTA SECTION (.s-cta js-cta)
+          4. VALUES CTA SECTION (.s-cta js-cta)
           ======================================================== */}
       <section className="s-cta-section">
         <div className="s-cta-section__container">
           <h2 className="s-cta-section__title">
-            Do our values align with yours?
+            Do our values match yours?
           </h2>
           <button
             type="button"
             className="s-cta-section__btn"
-            onClick={() => onNavigatePage('contacts')}
+            onClick={() => onNavigatePage('careers')}
           >
             <span>Join us</span>
             <ArrowRight size={16} />
@@ -442,15 +434,15 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          8. CONTACT VIDEO & FORM SECTION (.s-contact-video theme-dark2)
+          7. CONTACT FORM SECTION (.s-contact-video theme-dark2)
           ======================================================== */}
       <section className="s-contact-form-section" id="contact-video">
         <div className="s-contact-form-section__container">
           <h2 className="s-contact-form-section__title">
-            Got a challenge? <span>Let’s discuss it</span>
+            Got a challenge? <span>Let's talk it through</span>
           </h2>
           <p className="s-contact-form-section__desc">
-            Share your technical requirements with our solutions architects for a direct, confidential assessment.
+            Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
           </p>
 
           <form onSubmit={handleFormSubmit} className="s-contact-form">
@@ -468,7 +460,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             <div className="s-contact-form__field">
-              <label htmlFor="c-email" className="s-contact-form__label">Corporate email*</label>
+              <label htmlFor="c-email" className="s-contact-form__label">Work email*</label>
               <input
                 id="c-email"
                 type="email"
@@ -481,25 +473,24 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </div>
 
             <div className="s-contact-form__field">
-              <label htmlFor="c-phone" className="s-contact-form__label">Phone Number</label>
+              <label htmlFor="c-phone" className="s-contact-form__label">Phone number (with country code)</label>
               <input
                 id="c-phone"
                 type="tel"
                 className="s-contact-form__input"
-                placeholder="+1 (555) 000-0000"
+                placeholder="+1 (555) 000-0000 / +91 00000 00000"
                 value={formState.phone}
                 onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
               />
             </div>
 
             <div className="s-contact-form__field">
-              <label htmlFor="c-company" className="s-contact-form__label">Company*</label>
+              <label htmlFor="c-company" className="s-contact-form__label">Company</label>
               <input
                 id="c-company"
                 type="text"
                 className="s-contact-form__input"
                 placeholder="Company name"
-                required
                 value={formState.company}
                 onChange={(e) => setFormState({ ...formState, company: e.target.value })}
               />
@@ -510,7 +501,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <textarea
                 id="c-message"
                 className="s-contact-form__textarea"
-                placeholder="Briefly describe your initiative, tech stack, or engineering bottleneck..."
+                placeholder="Share your idea, goals and timeline..."
                 required
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
@@ -535,7 +526,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               >
                 <Upload size={20} style={{ color: '#38bdf8' }} />
                 <span style={{ fontSize: '14px', color: '#e2e8f0', fontWeight: 500 }}>
-                  {selectedFileName ? selectedFileName : 'Click to upload or drag and drop 1 file'}
+                  {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
                 <span style={{ fontSize: '12px', color: '#64748b' }}>
                   SVG, PNG, JPG, PDF or DOC (max. 33 MB)
@@ -561,7 +552,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 />
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                   <ShieldCheck size={16} style={{ color: '#38bdf8' }} />
-                  Secure data with mutual NDA first
+                  Need an NDA first? We'll sign one before you share any details.
                 </span>
               </label>
             </div>
@@ -575,15 +566,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   onChange={(e) => setFormState({ ...formState, consent: e.target.checked })}
                 />
                 <span>
-                  I consent to the processing of personal data as set out in the Privacy Policy and Cookies Policy,
-                  and agree to receive technical communication regarding my inquiry.
+                  I agree to the processing of my personal data as described in the Privacy Policy and Cookie Policy, and understand it may be processed outside my country.
                 </span>
               </label>
             </div>
 
             <div className="s-contact-form__field s-contact-form__full">
               <button type="submit" className="s-contact-form__submit-btn">
-                Submit challenge &amp; request discovery
+                Send message
               </button>
             </div>
           </form>
@@ -591,17 +581,17 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          9. GLOBAL LOCATIONS SECTION (.s-contacts theme-dark2)
+          8. LOCATIONS SECTION (.s-contacts theme-dark2)
           ======================================================== */}
       <section className="s-about-locations" id="our-locations">
         <div className="s-about-locations__container">
           <div className="s-about-locations__header">
             <h2 className="s-about-locations__title">Our locations</h2>
             <p className="s-about-locations__desc">
-              Say hello to our friendly team at one of these locations.
+              Say hello to our team.
             </p>
             <a
-              href="mailto:rfq@effectivesoft.com"
+              href="mailto:contact@neomindstechhub.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -612,7 +602,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               }}
             >
               <Mail size={16} />
-              <span>rfq@effectivesoft.com</span>
+              <span>contact@neomindstechhub.com</span>
             </a>
           </div>
 

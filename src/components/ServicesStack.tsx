@@ -24,73 +24,73 @@ interface ServiceStackCard {
 const stackCards: ServiceStackCard[] = [
   {
     id: 1,
-    slug: 'product-engineering',
-    category: 'PRODUCT ENGINEERING',
-    title: 'PRODUCT ENGINEERING',
-    tagline: 'Reliable engineering across data growth, integrations, and evolving requirements.',
+    slug: 'software-development',
+    category: 'PILLAR 01 // FOUNDATION',
+    title: 'BUILD',
+    tagline: 'Web, mobile, cross-platform, e-commerce, custom and SaaS software',
     description:
-      'Product engineering forms the core of our work. We build and evolve software that remains reliable as data volumes grow, integrations expand, and requirements change. From architecture and implementation to QA, cloud, security, and ongoing support, we stay involved to keep products stable, maintainable, and ready to advance.',
+      'We create web, mobile, cross-platform, e-commerce, custom and SaaS software that stays reliable as your users, data and features grow. We handle design, development, testing, cloud deployment and ongoing support.',
     links: [
-      { label: 'architecture', slug: 'it-consulting' },
-      { label: 'implementation', slug: 'software-development' },
-      { label: 'QA & testing', slug: 'software-development' },
-      { label: 'cloud engineering', slug: 'devops' },
-      { label: 'cybersecurity', slug: 'security-policy' },
-      { label: 'maintenance & support', slug: 'technical-support' },
+      { label: 'web', slug: 'web-cms-development' },
+      { label: 'mobile', slug: 'mobile-app-development' },
+      { label: 'e-commerce', slug: 'ecommerce-development' },
+      { label: 'SaaS software', slug: 'devops' },
     ],
     servicePills: [
-      { label: 'Architecture', slug: 'it-consulting' },
-      { label: 'Implementation', slug: 'software-development' },
-      { label: 'QA & Cloud', slug: 'devops' },
+      { label: 'Web Development', slug: 'web-cms-development' },
+      { label: 'Mobile App Development', slug: 'mobile-app-development' },
+      { label: 'Custom Software', slug: 'software-development' },
+      { label: 'E-commerce Software', slug: 'ecommerce-development' },
     ],
-    image: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137378/960.product-engineering.jpg',
-    imageAlt: 'Neominds product engineering',
-    bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
+    image: '/services/software-development.png',
+    imageAlt: 'Build Web, Mobile, Custom and SaaS Software',
+    bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
   },
   {
     id: 2,
     slug: 'ai-development',
-    category: 'ARTIFICIAL INTELLIGENCE',
-    title: 'ARTIFICIAL INTELLIGENCE',
-    tagline: 'An engineering layer that extends existing systems rather than replaces them.',
+    category: 'PILLAR 02 // INTELLIGENCE',
+    title: 'AI',
+    tagline: 'Integration, intelligent automation, and AI-native products',
     description:
-      'AI is an engineering layer that extends existing systems rather than replaces them. We apply it where it can improve automation, decision-making, and product behavior in real operational environments. In practice, this includes AI-enabled products, workflow automation, legacy system modernization, and intelligent software delivery.',
+      'We add AI to the software you already run, automate repetitive manual work, and build products that are AI-native from day one. Each solution is built to work inside your real business, not as a demo.',
     links: [
-      { label: 'AI workflow automation', slug: 'ai-automations' },
-      { label: 'legacy modernization', slug: 'software-development' },
-      { label: 'intelligent delivery', slug: 'ai-product-engineering' },
-      { label: 'applied AI', slug: 'applied-ai' },
+      { label: 'add AI to the software', slug: 'ai-development' },
+      { label: 'automate repetitive manual work', slug: 'ai-automations' },
+      { label: 'AI-native from day one', slug: 'ai-agents' },
     ],
     servicePills: [
-      { label: 'AI-Enabled Products', slug: 'ai-product-engineering' },
-      { label: 'Workflow Automation', slug: 'ai-automations' },
-      { label: 'Legacy Modernization', slug: 'software-development' },
+      { label: 'AI Integration', slug: 'ai-development' },
+      { label: 'AI Automation', slug: 'ai-automations' },
+      { label: 'AI-Native Software', slug: 'ai-agents' },
+      { label: 'Chatbots & Assistants', slug: 'chatbot-videobot' },
     ],
-    image: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137365/960.ai2.jpg',
-    imageAlt: 'Neominds artificial intelligence',
-    bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
+    image: '/services/ai-development.png',
+    imageAlt: 'AI Integration and Autonomous Intelligent Systems',
+    bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
   },
   {
     id: 3,
-    slug: 'ui-ux-design',
-    category: 'DESIGN THINKING',
-    title: 'DESIGN THINKING',
-    tagline: 'Where product direction becomes concrete.',
+    slug: 'devops',
+    category: 'PILLAR 03 // EVOLUTION',
+    title: 'MODERNIZE',
+    tagline: 'Moving legacy applications to modern code and cloud platforms in stages',
     description:
-      'Design thinking is where product direction becomes concrete. It helps us align around the problem, user context, and expected outcomes before implementation begins. That clarity carries into product and UX design, where requirements are translated into structure, interaction logic, and system behavior through our dedicated UX practice embedded in delivery. Engineering then turns those decisions into production systems, ensuring the product behaves consistently under production conditions.',
+      'Outdated systems slow teams down and cost more every year. We move legacy applications to modern code and cloud platforms in stages, so your daily operations keep running while the upgrade happens.',
     links: [
-      { label: 'UX practice', slug: 'ui-ux-design' },
-      { label: 'product discovery', slug: 'product-discovery' },
-      { label: 'business analysis', slug: 'business-analysis' },
+      { label: 'legacy applications', slug: 'software-development' },
+      { label: 'cloud platforms', slug: 'devops' },
+      { label: 'daily operations keep running', slug: 'technical-support' },
     ],
     servicePills: [
-      { label: 'UX Practice', slug: 'ui-ux-design' },
-      { label: 'Product Discovery', slug: 'product-discovery' },
-      { label: 'Interaction Logic', slug: 'ui-ux-design' },
+      { label: 'Legacy App Modernization', slug: 'software-development' },
+      { label: 'Cloud Apps Development', slug: 'devops' },
+      { label: 'SaaS Architecture', slug: 'product-engineering' },
+      { label: 'Data Analytics & BI', slug: 'analytics-dashboard' },
     ],
-    image: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137366/960.Image-2.jpg',
-    imageAlt: 'Neominds design thinking',
-    bgGradient: 'linear-gradient(135deg, #f0f9ff 0%, #dbeafe 50%, #bae6fd 100%)',
+    image: '/services/devops.png',
+    imageAlt: 'Legacy Application Modernization and Cloud Migration',
+    bgGradient: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)',
   },
 ];
 
@@ -212,7 +212,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                 textTransform: 'uppercase',
               }}
             >
-              OUR SERVICES // WHAT WE DELIVER
+              OUR THREE PILLARS // BUILD · AI · MODERNIZE
             </span>
           </div>
         </RevealElement>
@@ -232,7 +232,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
           }}
           blurStrength={7}
         >
-          Specialized engineering practices tailored to enterprise scale.
+          Engineering that stays reliable as your business grows.
         </ScrollReveal>
       </div>
 

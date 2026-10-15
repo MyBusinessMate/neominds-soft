@@ -12,36 +12,36 @@ interface Principle {
 
 const principles: Principle[] = [
   {
-    id: 'product',
-    title: 'PRODUCT-CENTRIC',
-    tagline: 'Ideas do not create value until they reach users.',
-    desc: 'Ideas do not create value until they reach users. We cover the full path, from definition to long-term operation, with one accountable team responsible for speed, reliability, and measurable production outcomes.',
+    id: 'outcomes',
+    title: 'BUILT FOR OUTCOMES',
+    tagline: 'We begin with the result you want and plan every sprint around it.',
+    desc: 'We begin with the result you want, such as more sales, lower costs or faster operations, and plan every sprint around it. You see working progress in a demo every week.',
     points: [
-      'Full lifecycle engineering accountability from concept to scale',
-      'Direct focus on speed, reliability, and measurable production outcomes',
-      'One unified cross-functional squad eliminating organizational friction',
+      'Sprint planning directly anchored to your business targets',
+      'Live working progress demo every single week',
+      'Continuous refinement based on real operational feedback',
     ],
   },
   {
-    id: 'ai',
-    title: 'AI-MINDED',
-    tagline: 'AI strengthens how we engineer software.',
-    desc: 'AI strengthens how we engineer software. It helps us explore ideas faster, eliminate routine tasks, and maintain stronger control over quality and implementation.',
+    id: 'ai-value',
+    title: 'AI WHERE IT EARNS ITS PLACE',
+    tagline: 'Applied only where it saves time or improves results.',
+    desc: 'We use AI to speed up our own work and to add smart features to your product, but only where it saves time or improves results.',
     points: [
-      'Accelerate prototyping and ideation cycles safely',
-      'Eliminate routine manual tasks and cognitive bottlenecks',
-      'Maintain rigorous control over code quality, validation, and security',
+      'Targeted AI features that solve actual business bottlenecks',
+      'Rigorous cost-benefit and latency evaluation before deployment',
+      'No vanity demos: production systems designed to work inside your real business',
     ],
   },
   {
-    id: 'industry',
-    title: 'INDUSTRY-FOCUSED',
-    tagline: 'Domain context shapes every engineering decision.',
-    desc: 'Domain context shapes every engineering decision. We build for how industries actually function their systems, constraints, and operational realities, ensuring solutions work in real operational environments.',
+    id: 'sector-focused',
+    title: 'MADE FOR YOUR SECTOR',
+    tagline: 'Tailored to the rules and workflows of your specific industry.',
+    desc: 'Each industry has its own rules and workflows. We learn yours first, including data-privacy needs such as GDPR, so the software fits how you actually operate.',
     points: [
-      'Deep alignment with industry-specific compliance and workflows',
-      'Architectures tailored to existing operational constraints',
-      'Production reliability under strict domain regulatory standards',
+      'Deep domain alignment with your teams and customer processes',
+      'Built with data-privacy and compliance rules (GDPR, HIPAA) in mind',
+      'Seamless integration into your existing operational infrastructure',
     ],
   },
 ];
@@ -136,7 +136,7 @@ export const DeliveryPrinciples: React.FC = () => {
                   textTransform: 'uppercase',
                 }}
               >
-                OUR DELIVERY PRINCIPLES
+                HOW WE WORK
               </span>
             </RevealElement>
           </div>
@@ -157,7 +157,7 @@ export const DeliveryPrinciples: React.FC = () => {
               }}
               blurStrength={6}
             >
-              We own the engineering from early concept to enterprise-scale systems and long-term support.
+              We take your project from first idea to launch and long-term support, with one team responsible throughout.
             </ScrollReveal>
 
             {/* Principle Accordion Items - Pure click-to-expand */}

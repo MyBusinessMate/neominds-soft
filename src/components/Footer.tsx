@@ -9,73 +9,55 @@ const footerColumns: FooterColumn[] = [
   {
     title: 'Services',
     links: [
-      { label: 'Custom software development', target: '#services' },
-      { label: 'Mobile app development', target: '#services' },
-      { label: 'Web & CMS development', target: '#services' },
-      { label: 'Cloud software development', target: '#services' },
-      { label: 'Product engineering', target: '#services' },
-      { label: 'UI/UX design', target: '#services' },
-      { label: 'AI development', target: '#services' },
-      { label: 'Legacy application modernization', target: '#services' },
-      { label: 'Quality assurance & testing', target: '#services' },
-      { label: 'DevOps', target: '#services' },
-      { label: 'Cybersecurity', target: '#services' },
-      { label: 'Software architecture consulting', target: '#services' },
-      { label: 'Strategic tech consulting', target: '#services' },
+      { label: 'Web Development', target: '#web-cms-development' },
+      { label: 'Mobile App Development', target: '#mobile-app-development' },
+      { label: 'Cross-Platform Development', target: '#mobile-app-development' },
+      { label: 'Legacy App Modernization', target: '#software-development' },
+      { label: 'E-commerce Software', target: '#ecommerce-development' },
+      { label: 'Custom Software', target: '#software-development' },
+      { label: 'AI Integration', target: '#ai-development' },
+      { label: 'AI Automation', target: '#ai-automations' },
+      { label: 'AI-Native Software', target: '#ai-agents' },
+      { label: 'Cloud Apps Development', target: '#devops' },
+      { label: 'SaaS Development', target: '#product-engineering' },
     ],
   },
   {
     title: 'Technologies',
     links: [
-      { label: 'Artificial intelligence', target: '#services' },
-      { label: 'Machine learning', target: '#services' },
-      { label: 'Extended reality', target: '#services' },
-      { label: 'Internet of things', target: '#services' },
-      { label: 'Blockchain', target: '#services' },
+      { label: 'Artificial Intelligence', target: '#ai-development' },
+      { label: 'Machine Learning', target: '#ai-development' },
+      { label: 'Web Development', target: '#web-cms-development' },
+      { label: 'Database', target: '#analytics-dashboard' },
+      { label: 'Cloud Computing', target: '#devops' },
+      { label: 'Data Analytics', target: '#analytics-dashboard' },
+      { label: 'Automation', target: '#ai-automations' },
     ],
   },
   {
     title: 'Industries',
     links: [
-      { label: 'Financial services', target: '#experience' },
-      { label: 'Healthcare', target: '#experience' },
-      { label: 'ISV/SaaS', target: '#experience' },
-      { label: 'Automotive', target: '#experience' },
-      { label: 'Logistics & Supply Chain', target: '#experience' },
-      { label: 'CleanTech', target: '#experience' },
-      { label: 'Telecommunications', target: '#experience' },
-      { label: 'Legal', target: '#experience' },
-      { label: 'Energy', target: '#experience' },
-      { label: 'Retail', target: '#experience' },
-      { label: 'Manufacturing', target: '#experience' },
-      { label: 'Biotechnology', target: '#experience' },
-      { label: 'AdTech', target: '#experience' },
-      { label: 'Real Estate', target: '#experience' },
-    ],
-  },
-  {
-    title: 'How we work',
-    links: [
-      { label: 'Nearshore development', target: '#delivery' },
-      { label: 'Agile development', target: '#delivery' },
-      { label: 'Staff augmentation', target: '#delivery' },
-      { label: 'Dedicated development teams', target: '#delivery' },
+      { label: 'E-commerce', target: '#industries' },
+      { label: 'Education', target: '#industries' },
+      { label: 'Healthcare', target: '#industries' },
+      { label: 'Real Estate', target: '#industries' },
+      { label: 'Enterprise', target: '#industries' },
+      { label: 'Retail', target: '#industries' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About us', target: '#about' },
-      { label: 'Case studies', target: '#case-studies' },
-      { label: 'Blog', target: '#insights' },
-      { label: 'News', target: '#recognition' },
-      { label: 'Certifications', target: '#recognition' },
-      { label: 'Careers', target: '#contact' },
-      { label: 'Privacy policy', target: '#privacy', isLegal: 'privacy' },
-      { label: 'Cookie policy', target: '#cookie', isLegal: 'cookie' },
-      { label: 'Information security policy', target: '#security', isLegal: 'security' },
-      { label: 'Attribution', target: '#attribution' },
-      { label: 'Contacts', target: '#contact' },
+      { label: 'About Us', target: '#about-us' },
+      { label: 'Leadership', target: '#leaders' },
+      { label: 'Careers', target: '#careers' },
+      { label: 'Certification', target: '#certification' },
+      { label: 'Case Studies', target: '#portfolio' },
+      { label: 'Blog', target: '#blog' },
+      { label: 'News & Updates', target: '#company-updates' },
+      { label: 'Contacts', target: '#contacts' },
+      { label: 'Privacy Policy', target: '#privacy-policy', isLegal: 'privacy' },
+      { label: 'Cookie Policy', target: '#cookie-policy', isLegal: 'cookie' },
     ],
   },
 ];
@@ -224,10 +206,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenC
               <span style={{ color: '#94a3b8' }}>•</span>
               <span style={{ color: '#64748b' }}>19 reviews</span>
             </div>
+            <span style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 800, letterSpacing: '-0.02em', color: '#121212' }}>
+              Neominds TechHub
+            </span>
           </div>
 
-          <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#64748b', margin: 0 }}>
-            © 2026 Neominds. All rights reserved.
+          <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#666e85', margin: 0 }}>
+            © 2026 Neominds TechHub. All rights reserved.
           </p>
         </div>
       </div>

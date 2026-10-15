@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Mail,
   Phone,
-  CheckCircle2,
   Send,
 } from 'lucide-react';
 import { Footer } from './Footer';
@@ -103,7 +102,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
           }}
         >
           <Mail size={14} />
-          <span>Contact Neominds</span>
+          <span>Contact Neominds TechHub</span>
         </div>
 
         <ScrollReveal
@@ -120,7 +119,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
           }}
           blurStrength={8}
         >
-          Let&#8217;s Start Building <span style={{ color: '#2258e7' }}>Together</span>
+          Get in touch with <span style={{ color: '#2258e7' }}>Neominds TechHub</span>
         </ScrollReveal>
 
         <RevealElement variant="text" delay={0.06}>
@@ -133,14 +132,14 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
               margin: '0 auto 40px',
             }}
           >
-            Reach out to Neominds and unlock the power of innovative software solutions. Fill out the consultation request below to discuss your project scope, timeline, and goals.
+            Tell us about your idea, your system or your challenge. We will reply within one business day and set up a call at a time that suits your time zone.
           </p>
         </RevealElement>
 
         <RevealElement variant="card" delay={0.12}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
             <a
-              href="mailto:rfq@neominds.io"
+              href="mailto:contact@neomindstechhub.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -157,11 +156,11 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
               }}
             >
               <Mail size={18} style={{ color: '#2258e7' }} />
-              <span>rfq@neominds.io</span>
+              <span>contact@neomindstechhub.com</span>
             </a>
 
             <a
-              href="tel:1-800-288-9659"
+              href="tel:+914040000000"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -178,7 +177,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
               }}
             >
               <Phone size={18} style={{ color: '#16a34a' }} />
-              <span>1-800-288-9659</span>
+              <span>+91 40 4000 0000</span>
             </a>
           </div>
         </RevealElement>
@@ -198,18 +197,18 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
           {/* Main Form */}
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: 'clamp(24px, 4vw, 40px)', boxShadow: '0 4px 16px rgba(0,0,0,0.03)', height: '100%' }}>
-              <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Send a Request</h2>
-              <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '28px' }}>Tell us about your project or required technical squad.</p>
+              <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Contact us</h2>
+              <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '28px' }}>Our team would love to hear from you.</p>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Your challenge / goal*</label>
+                  <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Your project and goals*</label>
                   <textarea
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Enter project details, technical goals, deadlines, and required team structure..."
+                    placeholder="Describe your project, deadline, tech stack and team size if known..."
                     style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', resize: 'vertical', outline: 'none' }}
                   />
                 </div>
@@ -220,16 +219,18 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                     <input
                       type="text"
                       required
+                      placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Corporate Email*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Work Email*</label>
                     <input
                       type="email"
                       required
+                      placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
@@ -239,9 +240,10 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Phone Number</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Phone number (with country code)</label>
                     <input
                       type="tel"
+                      placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
@@ -251,6 +253,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                     <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Company</label>
                     <input
                       type="text"
+                      placeholder="Acme Corp"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
@@ -266,25 +269,27 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
                     >
-                      <option value="Turnkey product development">Turnkey product development</option>
-                      <option value="Dedicated engineering team">Dedicated engineering team</option>
-                      <option value="AI & Machine Learning advisory">AI & Machine Learning advisory</option>
-                      <option value="Cloud architecture & DevOps">Cloud architecture & DevOps</option>
-                      <option value="Other technical inquiry">Other technical inquiry</option>
+                      <option value="New product development">New product development</option>
+                      <option value="AI integration or automation">AI integration or automation</option>
+                      <option value="Legacy modernization">Legacy modernization</option>
+                      <option value="Support and enhancement">Support and enhancement</option>
+                      <option value="Careers">Careers</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Estimated Budget</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Project budget (USD)</label>
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
                     >
                       <option value="">Select range...</option>
-                      <option value="<$25k">&lt; $25,000</option>
-                      <option value="$25k-$50k">$25,000 - $50,000</option>
-                      <option value="$50k-$100k">$50,000 - $100,000</option>
-                      <option value="$100k+">$100,000+</option>
+                      <option value="Under $5,000">Under $5,000</option>
+                      <option value="$5,000 to $15,000">$5,000 to $15,000</option>
+                      <option value="$15,000 to $50,000">$15,000 to $50,000</option>
+                      <option value="Over $50,000">Over $50,000</option>
+                      <option value="Not sure yet">Not sure yet</option>
                     </select>
                   </div>
                 </div>
@@ -297,7 +302,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                       onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
                       style={{ accentColor: '#2258e7' }}
                     />
-                    <span>I request an NDA prior to discussing project specifics</span>
+                    <span>Need an NDA first? We'll sign one before you share any details.</span>
                   </label>
 
                   <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '12px', color: '#64748b', cursor: 'pointer', lineHeight: 1.4 }}>
@@ -308,7 +313,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                       onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
                       style={{ accentColor: '#2258e7', marginTop: '2px' }}
                     />
-                    <span>I consent to the processing of personal data in accordance with the Privacy Policy and Cookie Policy.</span>
+                    <span>I agree to the processing of my personal data as described in the Privacy Policy and Cookie Policy, and understand it may be processed outside my country.</span>
                   </label>
                 </div>
 
@@ -322,7 +327,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
                     opacity: isSubmitting ? 0.7 : 1,
                   }}
                 >
-                  <span>{isSubmitting ? 'Sending Request...' : 'Send Message'}</span>
+                  <span>{isSubmitting ? 'Sending Request...' : 'Send message'}</span>
                   <Send size={15} />
                 </button>
               </form>
@@ -346,39 +351,47 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
             >
               <div>
                 <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>
-                  Let&#8217;s Connect
+                  Let's connect
                 </h3>
                 <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '32px' }}>
-                  Fill out the form, and we&#8217;ve got you covered.
+                  Fill out the form and we will take it from there.
                 </p>
 
                 <div style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '18px' }}>
                   What happens next?
                 </div>
 
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '18px' }}>
                   <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ color: '#ffffff', flexShrink: 0, marginTop: '2px' }} />
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', fontWeight: 700, fontSize: '12px' }}>
+                      1
+                    </div>
                     <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
-                      Our Principal Solutions Architect reviews your technical needs.
+                      Our expert reviews your request and replies with any questions.
                     </span>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ color: '#ffffff', flexShrink: 0, marginTop: '2px' }} />
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', fontWeight: 700, fontSize: '12px' }}>
+                      2
+                    </div>
                     <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
-                      If required, we execute an NDA to ensure total data privacy.
+                      We sign an NDA if you need one.
                     </span>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ color: '#ffffff', flexShrink: 0, marginTop: '2px' }} />
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', fontWeight: 700, fontSize: '12px' }}>
+                      3
+                    </div>
                     <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
-                      Our Pre-Sales team prepares a customized proposal & scope estimate.
+                      We send you a proposal with scope, timeline and cost.
                     </span>
                   </li>
                   <li style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                    <CheckCircle2 size={20} style={{ color: '#ffffff', flexShrink: 0, marginTop: '2px' }} />
+                    <div style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '2px', fontWeight: 700, fontSize: '12px' }}>
+                      4
+                    </div>
                     <span style={{ fontSize: '14px', color: 'rgba(255, 255, 255, 0.95)', lineHeight: 1.5 }}>
-                      Kickoff sprint within 5-10 business days of contract execution.
+                      We kick off your project.
                     </span>
                   </li>
                 </ul>
@@ -386,7 +399,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
 
               <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.25)', paddingTop: '24px', marginTop: '36px' }}>
                 <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.9)' }}>
-                  Average initial response time: <strong>&lt; 2 business hours</strong>
+                  Average initial response time: <strong>Within 1 business day</strong>
                 </div>
               </div>
             </div>

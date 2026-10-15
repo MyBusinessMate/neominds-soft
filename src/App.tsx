@@ -41,6 +41,11 @@ const ProductEngineeringPage = lazy(() => import('./components/ProductEngineerin
 const BusinessAnalysisPage = lazy(() => import('./components/BusinessAnalysisPage').then((m) => ({ default: m.BusinessAnalysisPage })));
 const ITConsultingPage = lazy(() => import('./components/ITConsultingPage').then((m) => ({ default: m.ITConsultingPage })));
 const UIUXDesignPage = lazy(() => import('./components/UIUXDesignPage').then((m) => ({ default: m.UIUXDesignPage })));
+const CareersPage = lazy(() => import('./components/CareersPage').then((m) => ({ default: m.CareersPage })));
+const CertificationPage = lazy(() => import('./components/CertificationPage').then((m) => ({ default: m.CertificationPage })));
+const LeadershipPage = lazy(() => import('./components/LeadershipPage').then((m) => ({ default: m.LeadershipPage })));
+const ServicesHubPage = lazy(() => import('./components/ServicesHubPage').then((m) => ({ default: m.ServicesHubPage })));
+const IndustriesHubPage = lazy(() => import('./components/IndustriesHubPage').then((m) => ({ default: m.IndustriesHubPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
 // Lazy Modals & Palettes
@@ -97,6 +102,7 @@ export const App: React.FC = () => {
       if (isServiceSlug(slug)) return slug as PageType;
       if ([
         'insights', 'blog', 'company-updates', 'portfolio', 'about-us', 'contacts',
+        'careers', 'certification', 'leaders', 'services', 'industries',
         'privacy-policy', 'cookie-policy', 'security-policy',
         'product-discovery', 'product-engineering', 'business-analysis',
         'it-consulting', 'ui-ux-design'
@@ -108,6 +114,12 @@ export const App: React.FC = () => {
 
     // 1. Pathname takes primary routing precedence (canonical clean URLs)
     if (cleanPath) {
+      if (cleanPath === 'services') return { page: 'services', articleId: null };
+      if (cleanPath === 'industries') return { page: 'industries', articleId: null };
+      if (cleanPath === 'careers') return { page: 'careers', articleId: null };
+      if (cleanPath === 'certification') return { page: 'certification', articleId: null };
+      if (cleanPath === 'leaders') return { page: 'leaders', articleId: null };
+
       const parts = cleanPath.split('/');
       if (parts[0] === 'services' && parts[1]) {
         const resolved = matchSlug(parts[1]);
@@ -131,9 +143,13 @@ export const App: React.FC = () => {
     // 2. Hash routing fallback (backward compatibility for existing external links)
     if (cleanHash) {
       if (cleanHash === 'casestudies') return { page: 'portfolio', articleId: null };
-      if (cleanHash === 'leaders') return { page: 'about-us', articleId: null };
+      if (cleanHash === 'leaders') return { page: 'leaders', articleId: null };
+      if (cleanHash === 'careers') return { page: 'careers', articleId: null };
+      if (cleanHash === 'certification') return { page: 'certification', articleId: null };
+      if (cleanHash === 'services') return { page: 'services', articleId: null };
+      if (cleanHash === 'industries') return { page: 'industries', articleId: null };
       if (cleanHash === 'contact') return { page: 'contacts', articleId: null };
-      if (['hero', 'services', 'delivery', 'recognition'].includes(cleanHash)) {
+      if (['hero', 'delivery', 'recognition'].includes(cleanHash)) {
         return { page: 'home', articleId: null };
       }
       const resolved = matchSlug(cleanHash);
@@ -431,6 +447,49 @@ export const App: React.FC = () => {
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onSuccessToast={(msg) => addToast('Success', msg, 'success')}
+                />
+              </main>
+            )}
+
+            {/* Careers Page */}
+            {currentPage === 'careers' && (
+              <main id="main-content">
+                <CareersPage onNavigateToContact={() => handleSelectPage('contacts')} />
+              </main>
+            )}
+
+            {/* Certification Page */}
+            {currentPage === 'certification' && (
+              <main id="main-content">
+                <CertificationPage onNavigateToContact={() => handleSelectPage('contacts')} />
+              </main>
+            )}
+
+            {/* Leadership Page */}
+            {currentPage === 'leaders' && (
+              <main id="main-content">
+                <LeadershipPage />
+              </main>
+            )}
+
+            {/* Services Hub Page */}
+            {currentPage === 'services' && (
+              <main id="main-content">
+                <ServicesHubPage
+                  onNavigateToService={(slug) => handleSelectPage(slug as PageType)}
+                  onNavigateToContact={() => handleSelectPage('contacts')}
+                  onNavigateToPortfolio={() => handleSelectPage('portfolio')}
+                  onNavigateToIndustries={() => handleSelectPage('industries')}
+                />
+              </main>
+            )}
+
+            {/* Industries Hub Page */}
+            {currentPage === 'industries' && (
+              <main id="main-content">
+                <IndustriesHubPage
+                  onNavigateToContact={() => handleSelectPage('contacts')}
+                  onNavigateToPortfolio={() => handleSelectPage('portfolio')}
                 />
               </main>
             )}

@@ -82,7 +82,7 @@ export const ExperienceSection: React.FC = () => {
   }, []);
 
   const headlineText =
-    'Backed by 23 years of full-spectrum engineering for healthcare, financial services, and ISV/SaaS companies.';
+    'Delivering software for businesses in e-commerce, education, healthcare, real estate, enterprise and retail across global markets.';
   const wordsList = headlineText.split(' ');
 
   const slotSets = [

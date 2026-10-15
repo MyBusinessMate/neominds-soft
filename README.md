@@ -1,5 +1,5 @@
 # Neominds — AI-Enabled Product Engineering Frontend
-
+    
 Production-ready, animation-heavy corporate software engineering web application built for **Neominds**.
 
 ## 🚀 Key Highlights & Architecture

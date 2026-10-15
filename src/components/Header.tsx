@@ -15,6 +15,11 @@ export type PageType =
   | 'portfolio'
   | 'about-us'
   | 'contacts'
+  | 'careers'
+  | 'certification'
+  | 'leaders'
+  | 'services'
+  | 'industries'
   | 'privacy-policy'
   | 'cookie-policy'
   | 'security-policy'
@@ -255,7 +260,7 @@ export const Header: React.FC<HeaderProps> = ({
                   color: '#ffffff',
                 }}
               >
-                Neominds
+                Neominds TechHub
               </span>
             </div>
           </div>
@@ -396,7 +401,6 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </nav>
 
-          {/* Right CTA Button & Mobile Trigger */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
             <button
               onClick={() => navigateToPage('contacts')}
@@ -846,11 +850,12 @@ export const Header: React.FC<HeaderProps> = ({
               }}
             >
               {[
-                { title: 'About us', page: 'about-us' as const },
-                { title: 'Leadership', page: 'about-us' as const },
-                { title: 'Experts', page: 'about-us' as const },
-                { title: 'Careers', page: 'about-us' as const },
-                { title: 'Certification', page: 'security-policy' as const },
+                { title: 'About Us', page: 'about-us' as const },
+                { title: 'Leadership', page: 'leaders' as const },
+                { title: 'Careers', page: 'careers' as const },
+                { title: 'Certification', page: 'certification' as const },
+                { title: 'Contact', page: 'contacts' as const },
+                { title: 'Security & Compliance', page: 'security-policy' as const },
               ].map((item) => (
                 <div
                   key={item.title}
@@ -1104,26 +1109,70 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Section 2: Who we are */}
-            <button
-              onClick={() => navigateToPage('about-us')}
-              style={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '14px 0',
-                color: currentPage === 'about-us' ? '#2258e7' : '#ffffff',
-                fontSize: '17px',
-                fontWeight: 600,
-                borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              <span>About us</span>
-              <ChevronRight size={16} opacity={0.6} />
-            </button>
+            <div>
+              <button
+                onClick={() => setMobileExpandedSection(mobileExpandedSection === 'who-we-are' ? null : 'who-we-are')}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '14px 0',
+                  color: '#ffffff',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <span>Who we are</span>
+                <ChevronRight
+                  size={16}
+                  style={{
+                    transform: mobileExpandedSection === 'who-we-are' ? 'rotate(90deg)' : 'none',
+                    transition: 'transform 0.2s',
+                    color: mobileExpandedSection === 'who-we-are' ? '#2258e7' : 'inherit',
+                  }}
+                />
+              </button>
+
+              {mobileExpandedSection === 'who-we-are' && (
+                <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div
+                    onClick={() => navigateToPage('about-us')}
+                    style={{ color: currentPage === 'about-us' ? '#2258e7' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                  >
+                    About Us
+                  </div>
+                  <div
+                    onClick={() => navigateToPage('leaders')}
+                    style={{ color: currentPage === 'leaders' ? '#2258e7' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                  >
+                    Leadership
+                  </div>
+                  <div
+                    onClick={() => navigateToPage('careers')}
+                    style={{ color: currentPage === 'careers' ? '#2258e7' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                  >
+                    Careers
+                  </div>
+                  <div
+                    onClick={() => navigateToPage('certification')}
+                    style={{ color: currentPage === 'certification' ? '#2258e7' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                  >
+                    Certification
+                  </div>
+                  <div
+                    onClick={() => navigateToPage('contacts')}
+                    style={{ color: currentPage === 'contacts' ? '#2258e7' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                  >
+                    Contact
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* Section 3: Insights Accordion */}
             <div>
