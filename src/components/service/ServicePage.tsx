@@ -225,17 +225,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         />
       </div>
 
-      {/* 14. Related Services / Ecosystem */}
-      {relatedItems.length > 0 && (
-        <RelatedServices
-          currentSlug={data.slug}
-          currentTitle={data.title}
-          relatedItems={relatedItems}
-          onNavigatePage={onNavigatePage}
-        />
-      )}
-
-
       {/* 12. FAQ Accordion */}
       <ServiceFAQ title={data.title} faqs={data.faqs} />
 
@@ -247,6 +236,16 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         buttonText={data.cta.buttonText}
         onSuccessToast={onSuccessToast}
       />
+
+      {/* 14. Related Services / Ecosystem */}
+      {relatedItems.length > 0 && (
+        <RelatedServices
+          currentSlug={data.slug}
+          currentTitle={data.title}
+          relatedItems={relatedItems}
+          onNavigatePage={onNavigatePage}
+        />
+      )}
 
       {/* 14. Global Consistent Footer */}
       <Footer
