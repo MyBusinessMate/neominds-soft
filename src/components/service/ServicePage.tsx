@@ -26,6 +26,8 @@ import {
   FileCheck,
 } from 'lucide-react';
 import { UniversalServiceData } from '../../types/service';
+import { ServiceProblemAudience } from './ServiceProblemAudience';
+import { ServiceTimelineWhy } from './ServiceTimelineWhy';
 import { ServiceHero } from './ServiceHero';
 import { ServiceTrustStrip } from './ServiceTrustStrip';
 import { ServiceOverview } from './ServiceOverview';
@@ -39,6 +41,7 @@ import { RelatedServices } from './RelatedServices';
 import { ServiceFAQ } from './ServiceFAQ';
 import { ServiceCTA } from './ServiceCTA';
 import { Footer } from '../Footer';
+
 
 interface ServicePageProps {
   data: UniversalServiceData;
@@ -166,14 +169,24 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       {/* 03. Trust / Capability Strip */}
       <ServiceTrustStrip metrics={data.metrics} trustPoints={data.trustPoints} />
 
-      {/* 04. Service Overview (2-Column Editorial) */}
+      {/* 04 & 05. Target Audience & Main Problem Solved */}
+      <ServiceProblemAudience
+        title={data.title}
+        targetAudience={data.targetAudience}
+        mainProblemSolved={data.mainProblemSolved}
+      />
+
+      {/* Strategic Editorial Overview */}
       <ServiceOverview
         statement={data.overview.statement}
         paragraphs={data.overview.paragraphs}
         keyTakeaway={data.overview.keyTakeaway}
       />
 
-      {/* 05. Core Capabilities (Styled with 1 of 7 distinct bespoke design methods) */}
+      {/* 06. Business Outcomes & Key Benefits */}
+      <ServiceOutcomes title={data.title} outcomes={data.outcomes} />
+
+      {/* 07. What's Included / Capabilities */}
       <ServiceCapabilities
         title={data.title}
         capabilities={data.capabilities}
@@ -181,13 +194,26 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         styleVariant={data.capabilityStyle || 'bento-grid'}
       />
 
-      {/* 06. Service-Specific Signature Section */}
+      {/* Service-Specific Architecture / Workflow Signature */}
       <ServiceSignature data={data.signature} />
 
-      {/* 07. Process / How We Work */}
+      {/* 08. Process / How It Works */}
       <ServiceProcess title={data.title} steps={data.process} />
 
-      {/* 08. Horizontal Case Study Showcase (Sticky Desktop / Touch Mobile) */}
+      {/* 09. Technology & Deliverables */}
+      <ServiceTechnology
+        techStack={data.techStack}
+        deliverables={data.deliverables}
+      />
+
+      {/* 10 & 11. Timeline / Duration & Why Choose This Service */}
+      <ServiceTimelineWhy
+        title={data.title}
+        timeline={data.timeline}
+        whyChooseThisService={data.whyChooseThisService}
+      />
+
+      {/* Case Study Showcase */}
       <div id="case-studies-section">
         <ServiceCaseStudies
           caseStudies={data.caseStudies}
@@ -199,16 +225,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         />
       </div>
 
-      {/* 09. Technology & Deliverables */}
-      <ServiceTechnology
-        techStack={data.techStack}
-        deliverables={data.deliverables}
-      />
-
-      {/* 10. Business Outcomes & ROI */}
-      <ServiceOutcomes title={data.title} outcomes={data.outcomes} />
-
-      {/* 11. Related Services / Ecosystem */}
+      {/* 14. Related Services / Ecosystem */}
       {relatedItems.length > 0 && (
         <RelatedServices
           currentSlug={data.slug}
@@ -217,6 +234,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           onNavigatePage={onNavigatePage}
         />
       )}
+
 
       {/* 12. FAQ Accordion */}
       <ServiceFAQ title={data.title} faqs={data.faqs} />

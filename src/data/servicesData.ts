@@ -49,6 +49,37 @@ export interface ServiceData {
   ctaHeadline?: string;
   ctaDescription?: string;
   ctaButtonText?: string;
+  shortDescription?: string;
+  targetAudience?: {
+    heading?: string;
+    description?: string;
+    profiles: { role: string; situation: string }[];
+  };
+  mainProblemSolved?: {
+    problem: string;
+    solution: string;
+    result: string;
+  };
+  keyBenefits?: {
+    title: string;
+    description: string;
+    metric?: string;
+    metricLabel?: string;
+  }[];
+  whatsIncluded?: {
+    title: string;
+    description: string;
+    items?: string[];
+  }[];
+  timeline?: {
+    totalDuration: string;
+    sprintCadence?: string;
+    phases: { phase: string; duration: string; details: string }[];
+  };
+  whyChooseThisService?: {
+    title: string;
+    reasons: { point: string; detail: string }[];
+  };
   architectureMap?: {
     layer: string;
     title: string;
@@ -69,6 +100,7 @@ export interface ServiceData {
   };
   faqs: ServiceFaq[];
 }
+
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
   'software-development': {

@@ -89,23 +89,63 @@ export interface ServiceSignatureData {
   };
 }
 
+export interface ServiceTargetAudienceProfile {
+  role: string;
+  situation: string;
+}
+
+export interface ServiceTargetAudience {
+  heading?: string;
+  description?: string;
+  profiles: ServiceTargetAudienceProfile[];
+}
+
+export interface ServiceMainProblem {
+  problem: string;
+  solution: string;
+  result: string;
+}
+
+export interface ServiceTimelinePhase {
+  phase: string;
+  duration: string;
+  details: string;
+}
+
+export interface ServiceTimeline {
+  totalDuration: string;
+  sprintCadence?: string;
+  phases: ServiceTimelinePhase[];
+}
+
+export interface ServiceWhyChooseReason {
+  point: string;
+  detail: string;
+}
+
+export interface ServiceWhyChoose {
+  title: string;
+  reasons: ServiceWhyChooseReason[];
+}
+
 export interface UniversalServiceData {
   id: string;
   slug: string;
-  title: string;
+  title: string; // 1. Service Name
   category: ServiceCategory;
   tagline: string;
+  shortDescription?: string; // 2. Short Description
 
   // 1. Breadcrumb / Eyebrow
   eyebrow: string;
 
-  // 2. Hero
+  // 2. Hero + 3. Hero Image
   hero: {
     badge: string;
     headline: string;
     headlineHighlight: string;
     description: string;
-    heroImage?: string;
+    heroImage?: string; // 3. Hero Image
     heroImageCaption?: string;
     primaryCtaText?: string;
     secondaryCtaText?: string;
@@ -115,14 +155,28 @@ export interface UniversalServiceData {
   trustPoints: string[];
   metrics: ServiceMetric[];
 
-  // 4. Overview
+  // 4. Target Audience
+  targetAudience?: ServiceTargetAudience;
+
+  // 5. Main Problem Solved
+  mainProblemSolved?: ServiceMainProblem;
+
+  // 4b. Overview (Editorial context)
   overview: {
     statement: string;
     paragraphs: string[];
     keyTakeaway: string;
   };
 
-  // 5. Capabilities (6-8 items)
+  // 6. Key Benefits (Derived from outcomes / metrics)
+  keyBenefits?: {
+    title: string;
+    description: string;
+    metric?: string;
+    metricLabel?: string;
+  }[];
+
+  // 7. What's Included (Capabilities & Scope)
   capabilities: ServiceCapability[];
   capabilityStyle?:
     | 'bento-grid'
@@ -133,26 +187,32 @@ export interface UniversalServiceData {
     | 'timeline-flow'
     | 'minimal-pills';
 
-  // 6. Signature Section (Service-Specific)
+  // Signature Section (Service-Specific)
   signature: ServiceSignatureData;
 
-  // 7. Process / How We Work
+  // 8. Process / How It Works
   process: ServiceProcessStep[];
 
-  // 8. Case Studies (Service-specific verified projects)
+  // Case Studies
   caseStudies: ServiceCaseStudyRef[];
 
-  // 9. Technology / Architecture
+  // 9. Deliverables + Technology
   techStack: ServiceTechCategory[];
   deliverables: ServiceDeliverable[];
 
-  // 10. Business Outcomes
+  // 10. Timeline / Duration
+  timeline?: ServiceTimeline;
+
+  // 11. Why Choose This Service
+  whyChooseThisService?: ServiceWhyChoose;
+
+  // Business Outcomes
   outcomes: ServiceOutcome[];
 
-  // 11. Related Services
+  // 14. Related Services
   relatedServiceSlugs: string[];
 
-  // 12. FAQ
+  // 12. FAQs
   faqs: ServiceFaq[];
 
   // 13. Final CTA
@@ -168,3 +228,4 @@ export interface UniversalServiceData {
     metaDescription: string;
   };
 }
+

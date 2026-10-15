@@ -2,6 +2,8 @@ import { UniversalServiceData, ServiceCategory, ServiceSignatureData } from '../
 import { getCaseStudiesForFamily } from './caseStudiesData';
 import { SERVICES_DATA, ServiceData } from './servicesData';
 import { getCapabilityStyleForService } from './capabilityStyles';
+import { ALL_SERVICES_ENRICHMENT } from './serviceEnrichments';
+
 
 // Map signature modules based on the prompt's exact 28 service mapping rules
 export const getSignatureForService = (slug: string, title: string): ServiceSignatureData => {
@@ -592,24 +594,30 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
   const signature = getSignatureForService(baseData.slug, baseData.title);
   const caseStudies = getCaseStudiesForFamily(family);
   const relatedSlugs = getRelatedSlugs(baseData.slug);
+  const enrichment = ALL_SERVICES_ENRICHMENT[baseData.slug] || {};
+
+  const title = enrichment.title || baseData.title;
+  const shortDescription = enrichment.shortDescription || baseData.heroDescription || baseData.tagline;
 
   return {
     id: baseData.id,
     slug: baseData.slug,
-    title: baseData.title,
+    title,
     category: family,
     tagline: baseData.tagline,
+    shortDescription,
 
     // 1. Breadcrumb / Eyebrow
     eyebrow: `${family} Engineering & Consulting`,
 
-    // 2. Hero
+    // 2. Hero + 3. Hero Image
     hero: {
       badge: baseData.heroBadge || `${family} Engineering`,
-      headline: baseData.heroHeadline || baseData.title,
-      headlineHighlight: baseData.heroHeadlineHighlight || 'Engineering',
-      description: baseData.heroDescription,
+      headline: enrichment.heroHeadline || baseData.heroHeadline || title,
+      headlineHighlight: enrichment.heroHeadlineHighlight || baseData.heroHeadlineHighlight || 'Engineering',
+      description: enrichment.heroDescription || baseData.heroDescription,
       heroImage:
+        enrichment.heroImage ||
         baseData.heroImage ||
         (family === 'Fintech'
           ? 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop'
@@ -618,7 +626,7 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
           : family === 'Enterprise AI'
           ? 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop'
           : 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'),
-      heroImageCaption: baseData.heroImageCaption || `${baseData.title} Production Architecture`,
+      heroImageCaption: enrichment.heroImageCaption || baseData.heroImageCaption || `${title} Production Architecture`,
       primaryCtaText: baseData.primaryCtaText || 'Book Free Consultation',
       secondaryCtaText: baseData.secondaryCtaText || 'View Case Studies',
     },
@@ -632,11 +640,38 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
     ],
     metrics: baseData.metrics,
 
-    // 4. Overview
+    // 4. Target Audience
+    targetAudience: enrichment.targetAudience || baseData.targetAudience || {
+      heading: `Who We Built ${title} For`,
+      description: `Designed for engineering leaders and growing companies that need production-ready systems without the overhead of hiring or managing a dedicated internal division.`,
+      profiles: [
+        {
+          role: 'CTOs & Engineering VPs',
+          situation: `Facing monolithic bottlenecks, scaling constraints, or legacy technical debt that prevents the team from shipping features on schedule.`,
+        },
+        {
+          role: 'Product Directors & Founders',
+          situation: `Need to validate and launch high-reliability software with verified security and compliance before the next funding milestone or enterprise pilot.`,
+        },
+        {
+          role: 'Operations & Tech Leads',
+          situation: `Frustrated by brittle third-party integrations, manual batch jobs, and unpredictable system downtime during peak usage spikes.`,
+        },
+      ],
+    },
+
+    // 5. Main Problem Solved
+    mainProblemSolved: enrichment.mainProblemSolved || baseData.mainProblemSolved || {
+      problem: baseData.overview?.statement || `Off-the-shelf software and bloated legacy systems struggle to handle real-world scale, causing slow response times, security blindspots, and mounting maintenance costs.`,
+      solution: `We engineer clean, decoupled systems designed specifically for your workload. Every component is built with strict boundary separation, automated test suites, and transparent cloud infrastructure.`,
+      result: `Zero vendor lock-in, sub-second API latencies, and total intellectual property ownership from the day we write the first line of code.`,
+    },
+
+    // Strategic Overview (Editorial context)
     overview: baseData.overview || {
-      statement: `Production-grade ${baseData.title} engineering designed for high availability, compliance, and sustained transaction volume.`,
+      statement: `Production-grade ${title} engineering designed for high availability, compliance, and sustained transaction volume.`,
       paragraphs: [
-        baseData.heroDescription,
+        enrichment.heroDescription || baseData.heroDescription,
         `Our senior engineering squads partner directly with your technical leadership to architect, build, and deploy production-hardened solutions tailored to your operational realities. We eliminate technical debt upfront by adhering to strict domain-driven design, clean architecture patterns, and continuous integration protocols.`,
         `From early architecture blueprints to 24/7 global hypercare, every deliverable is verified against industry benchmarks and backed by 100% intellectual property ownership transfer.`,
       ],
@@ -656,11 +691,62 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
     // 8. Case Studies
     caseStudies,
 
-    // 9. Technology
+    // 9. Technology & Deliverables
     techStack: baseData.techStack,
     deliverables: baseData.deliverables,
 
-    // 10. Business Outcomes
+    // 10. Timeline / Duration
+    timeline: enrichment.timeline || baseData.timeline || {
+      totalDuration: '8 to 14 Weeks Typical Delivery',
+      sprintCadence: 'Two-week agile release cycles with live staging demos and direct Slack collaboration.',
+      phases: [
+        {
+          phase: 'Phase 1: Architecture & Technical Discovery',
+          duration: 'Weeks 1–2',
+          details: 'Domain boundary mapping, schema design, infrastructure blueprints, and security risk assessment.',
+        },
+        {
+          phase: 'Phase 2: Core Engineering & Integrations',
+          duration: 'Weeks 3–8',
+          details: 'Iterative sprint delivery of backend APIs, application logic, data pipelines, and third-party integrations.',
+        },
+        {
+          phase: 'Phase 3: Load, Chaos & Security Hardening',
+          duration: 'Weeks 9–11',
+          details: 'Concurrency stress testing, automated penetration scans, memory optimization, and end-to-end regression runs.',
+        },
+        {
+          phase: 'Phase 4: Zero-Downtime Cutover & Hypercare',
+          duration: 'Weeks 12–14',
+          details: 'Blue/green production rollout, live telemetry instrumentation, runbook handoff, and 24/7 post-launch support.',
+        },
+      ],
+    },
+
+    // 11. Why Choose This Service
+    whyChooseThisService: enrichment.whyChooseThisService || baseData.whyChooseThisService || {
+      title: `Why Engineering Leaders Pick Neominds for ${title}`,
+      reasons: [
+        {
+          point: 'Senior Engineers Only, Zero Junior Bench',
+          detail: 'You work directly with principal architects and senior developers who have built and operated systems at scale. No bait-and-switch staffing.',
+        },
+        {
+          point: '100% Direct Code & IP Handover',
+          detail: 'Every repository, database migration script, and deployment workflow belongs entirely to you. No proprietary licensing, no hostage code.',
+        },
+        {
+          point: 'Production-Hardened From Day One',
+          detail: 'We build for failure resilience: automated retries, circuit breakers, structured logging, and CI/CD pipelines that let you deploy on Friday afternoons without dread.',
+        },
+        {
+          point: 'Clear Engineering Cadence',
+          detail: 'Direct Slack/Teams access to the engineers building your product. Weekly sprint demos on staging and transparent Git pull requests.',
+        },
+      ],
+    },
+
+    // 10b. Business Outcomes
     outcomes: baseData.outcomes || [
       {
         metric: baseData.metrics[0]?.value || '99.99%',
@@ -679,8 +765,9 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
       },
     ],
 
-    // 11. Related Services
+    // 14. Related Services
     relatedServiceSlugs: relatedSlugs,
+
 
     // 12. FAQ
     faqs: baseData.faqs,
