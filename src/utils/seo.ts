@@ -18,8 +18,8 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   // 1. 404 Not Found
   if (page === '404') {
     return {
-      title: 'Page Not Found (404) | Neominds',
-      description: 'The page you requested could not be found. Explore Neominds enterprise engineering and AI solutions.',
+      title: 'Page Not Found (404) | Neominds TechHub',
+      description: 'The page you requested could not be found. Explore Neominds TechHub enterprise engineering and AI solutions.',
       canonicalPath: '/404',
       ogType: 'website',
       ogImage: DEFAULT_OG_IMAGE,
@@ -31,7 +31,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     const article = BLOG_POSTS_DATA.find((p) => p.id === articleId || p.slug === articleId);
     if (article) {
       return {
-        title: `${article.title} | Neominds Technical Blog`,
+        title: `${article.title} | Neominds TechHub Technical Blog`,
         description: article.excerpt,
         canonicalPath: `/blog/${article.slug}`,
         ogType: 'article',
@@ -51,7 +51,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
           },
           publisher: {
             '@type': 'Organization',
-            name: 'Neominds',
+            name: 'Neominds TechHub',
             url: PRODUCTION_DOMAIN,
             logo: {
               '@type': 'ImageObject',
@@ -72,7 +72,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     const service = SERVICE_METADATA_MAP[page];
     const canonicalSlug = page === 'chatbot-videobot' ? 'chatbot-videobot' : page;
     return {
-      title: `${service.title} Services | Neominds Enterprise Engineering`,
+      title: `${service.title} Services | Neominds TechHub Enterprise Engineering`,
       description: service.description,
       canonicalPath: `/services/${canonicalSlug}`,
       ogType: 'website',
@@ -108,7 +108,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
             serviceType: service.title,
             provider: {
               '@type': 'Organization',
-              name: 'Neominds',
+              name: 'Neominds TechHub',
               url: PRODUCTION_DOMAIN,
             },
             areaServed: 'Worldwide',
@@ -198,7 +198,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'portfolio':
       return {
-        title: 'Case Studies & Client Portfolio | Neominds Software Engineering',
+        title: 'Case Studies & Client Portfolio | Neominds TechHub Software Engineering',
         description:
           'Explore verified case studies spanning fintech trading terminals, automotive data pipelines, HIPAA-compliant medical coding, and IoT logistics.',
         canonicalPath: '/portfolio',
@@ -208,7 +208,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'insights':
       return {
-        title: 'Technology Insights & Strategic Whitepapers | Neominds',
+        title: 'Technology Insights & Strategic Whitepapers | Neominds TechHub',
         description:
           'In-depth technical papers, enterprise research, and architectural blueprints on agentic AI pipelines, distributed ledgers, and cloud security.',
         canonicalPath: '/insights',
@@ -218,9 +218,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'blog':
       return {
-        title: 'Engineering Blog & Technical Deep Dives | Neominds',
+        title: 'Engineering Blog & Technical Deep Dives | Neominds TechHub',
         description:
-          'Read peer-reviewed engineering articles by Neominds CTOs and architects on zero-downtime migrations, RAG evaluation, and cloud architectures.',
+          'Read peer-reviewed engineering articles by Neominds TechHub CTOs and architects on zero-downtime migrations, RAG evaluation, and cloud architectures.',
         canonicalPath: '/blog',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -228,9 +228,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'company-updates':
       return {
-        title: 'Company Updates & Global Expansion Milestones | Neominds',
+        title: 'Company Updates & Global Expansion Milestones | Neominds TechHub',
         description:
-          'Official announcements, conference keynotes, engineering milestones, and partnership news from Neominds.',
+          'Official announcements, conference keynotes, engineering milestones, and partnership news from Neominds TechHub.',
         canonicalPath: '/company-updates',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -238,9 +238,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'privacy-policy':
       return {
-        title: 'Privacy Policy | Neominds Data Protection Standards',
+        title: 'Privacy Policy | Neominds TechHub Data Protection Standards',
         description:
-          'Neominds enterprise privacy policy, detailing data protection principles, GDPR compliance, and client confidential information security.',
+          'Neominds TechHub enterprise privacy policy, detailing data protection principles, GDPR compliance, and client confidential information security.',
         canonicalPath: '/privacy-policy',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -248,9 +248,9 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'cookie-policy':
       return {
-        title: 'Cookie Policy | Neominds Compliance Standards',
+        title: 'Cookie Policy | Neominds TechHub Compliance Standards',
         description:
-          'Information regarding cookie utilization, functional preferences, and telemetry practices on the Neominds digital platform.',
+          'Information regarding cookie utilization, functional preferences, and telemetry practices on the Neominds TechHub digital platform.',
         canonicalPath: '/cookie-policy',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
@@ -258,7 +258,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'security-policy':
       return {
-        title: 'Security & Compliance Standards | Neominds SIRT',
+        title: 'Security & Compliance Standards | Neominds TechHub SIRT',
         description:
           'SOC 2 Type II, ISO 27001, and HIPAA compliance specifications. Security Incident Response Team contact and vulnerability disclosure guidelines.',
         canonicalPath: '/security-policy',
@@ -269,7 +269,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     // Strategic Legacy Service Pages
     case 'product-discovery':
       return {
-        title: 'Product Discovery & UX Strategy Services | Neominds',
+        title: 'Product Discovery & UX Strategy Services | Neominds TechHub',
         description:
           'Transform ambiguous enterprise requirements into validated technical blueprints, interactive prototypes, and risk-mitigated delivery roadmaps.',
         canonicalPath: '/product-discovery',
@@ -279,7 +279,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'product-engineering':
       return {
-        title: 'Product Engineering Services | Neominds Enterprise Solutions',
+        title: 'Product Engineering Services | Neominds TechHub Enterprise Solutions',
         description:
           'Turnkey software engineering squads delivering resilient cloud architectures, clean domain-driven codebases, and continuous automated testing.',
         canonicalPath: '/product-engineering',
@@ -289,7 +289,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'business-analysis':
       return {
-        title: 'Business Analysis & Requirements Engineering | Neominds',
+        title: 'Business Analysis & Requirements Engineering | Neominds TechHub',
         description:
           'Rigorous functional decomposition, compliance alignment, and technical specification mapping for complex enterprise transformations.',
         canonicalPath: '/business-analysis',
@@ -299,7 +299,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'it-consulting':
       return {
-        title: 'IT Consulting & Cloud Architecture Strategy | Neominds',
+        title: 'IT Consulting & Cloud Architecture Strategy | Neominds TechHub',
         description:
           'Strategic architectural audits, legacy modernization assessments, and infrastructure cost optimization from senior technology consultants.',
         canonicalPath: '/it-consulting',
@@ -309,7 +309,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'ui-ux-design':
       return {
-        title: 'UI/UX Design & Design Systems | Neominds',
+        title: 'UI/UX Design & Design Systems | Neominds TechHub',
         description:
           'Human-centered enterprise interfaces, scalable Figma design systems, and accessible interactive workflows engineered for maximum productivity.',
         canonicalPath: '/ui-ux-design',

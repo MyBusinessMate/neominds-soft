@@ -1105,10 +1105,10 @@ export const ProductEngineeringPage: React.FC<ProductEngineeringPageProps> = ({
                   <span style={{ height: '2px', backgroundColor: '#ffffff', width: '100%' }} />
                   <span style={{ height: '2px', backgroundColor: '#ffffff', width: '100%' }} />
                 </div>
-                <span style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff' }}>EffectiveSoft</span>
+                <span style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff' }}>Neominds TechHub</span>
               </div>
               <p style={{ color: '#8893a7', fontSize: '13px', lineHeight: 1.6 }}>
-                Engineering robust, scalable software solutions with enterprise-grade precision since 2000.
+                Engineering robust, scalable software solutions with enterprise-grade precision.
               </p>
             </div>
 
@@ -1159,7 +1159,7 @@ export const ProductEngineeringPage: React.FC<ProductEngineeringPageProps> = ({
               gap: '12px',
             }}
           >
-            <div>© 2026 EffectiveSoft. All rights reserved.</div>
+            <div>© 2026 Neominds TechHub. All rights reserved.</div>
             <div style={{ display: 'flex', gap: '20px' }}>
               <span onClick={onOpenPrivacy} style={{ cursor: 'pointer' }}>Privacy Policy</span>
               <span>Terms of Service</span>

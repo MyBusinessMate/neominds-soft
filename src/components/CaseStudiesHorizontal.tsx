@@ -87,7 +87,7 @@ const caseStudies: CaseStudy[] = [
     extraTagsCount: 2,
     title: 'A startup idea engineered into a million-user trading platform',
     description:
-      'EffectiveSoft joined the founders to engineer the high-performance infrastructure behind a multi-asset user trading ecosystem.',
+      'Neominds TechHub joined the founders to engineer the high-performance infrastructure behind a multi-asset user trading ecosystem.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1642543492481-44e81e3914a7?q=80&w=1200&auto=format&fit=crop',
   },
