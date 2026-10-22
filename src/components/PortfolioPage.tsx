@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   ArrowRight,
   ChevronRight,
@@ -13,147 +13,42 @@ interface PortfolioPageProps {
   onSuccessToast: (msg: string) => void;
 }
 
-export const PortfolioPage: React.FC<PortfolioPageProps> = ({
+import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
+
+const FILTERS = [
+  'All',
+  'Enterprise',
+  'Healthcare',
+  'EdTech',
+  'FinTech',
+  'Retail',
+  'E-commerce',
+  'Real Estate',
+] as const;
+type FilterType = typeof FILTERS[number];
+
+const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
   onNavigatePage,
   onSuccessToast,
 }) => {
-  const [activeFilter, setActiveFilter] = useState<'All' | 'Fintech' | 'Healthcare' | 'Enterprise' | 'AI'>('All');
+  const [activeFilter, setActiveFilter] = useState<FilterType>('All');
+  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
   const [leadEmail, setLeadEmail] = useState('');
 
-  const handleLeadSubmit = (e: React.FormEvent) => {
+  const handleLeadSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (!leadEmail) return;
     onSuccessToast('Thank you! A custom portfolio case study deck has been sent to your email.');
     setLeadEmail('');
-  };
+  }, [leadEmail, onSuccessToast]);
 
-  const caseStudies = [
-    {
-      id: 'authenticom',
-      category: 'Enterprise',
-      title: 'Automotive Data Ingestion & Integration Platform',
-      client: 'Authenticom',
-      clientLogo: 'Authenticom',
-      stats: '15,000+ Dealerships Connected',
-      metric: '99.99%',
-      metricLabel: 'Data Pipeline Uptime',
-      description:
-        'Engineered high-throughput enterprise data pipelines processing millions of vehicle inventory records daily across 15,000+ North American automotive dealerships with bi-directional DMS synchronization.',
-      tags: ['Data Engineering', 'AWS', 'PostgreSQL', 'Kafka', 'ETL Pipelines'],
-      link: '#contact',
-      highlight: true,
-    },
-    {
-      id: 'trubridge',
-      category: 'Healthcare',
-      title: 'Automated Medical Coding & Claims Verification Engine',
-      client: 'TruBridge (formerly TruCode)',
-      clientLogo: 'TruBridge',
-      stats: '40% Reduction in Claims Denials',
-      metric: '2.4M',
-      metricLabel: 'Patient Encounters Analyzed / Mo',
-      description:
-        'Built a HIPAA-compliant clinical decision support and medical encoder platform that accelerates hospital billing accuracy, integrates ICD-10/CPT guidelines, and cuts insurance claim rejection rates.',
-      tags: ['Healthcare', 'HIPAA / HITECH', 'C# / .NET Core', 'Angular', 'ICD-10 Engine'],
-      link: '#contact',
-      highlight: true,
-    },
-    {
-      id: 'plato',
-      category: 'Enterprise',
-      title: 'Autonomous Delivery Dispatch & Fleet Optimization',
-      client: 'Plato Delivery Systems',
-      clientLogo: 'Plato',
-      stats: '3.5x Increase in Delivery Velocity',
-      metric: '< 150ms',
-      metricLabel: 'Route Optimization Latency',
-      description:
-        'Developed an algorithmic dispatching engine that dynamically pairs on-demand drivers with local retail fulfillment hubs, reducing delivery costs by 28% and driving company profitability.',
-      tags: ['Logistics & IoT', 'Golang', 'Google Cloud', 'Real-Time Geo-Routing', 'React Native'],
-      link: '#contact',
-      highlight: false,
-    },
-    {
-      id: 'adventr',
-      category: 'AI',
-      title: 'Interactive Smart-Video Generation & Analytics Suite',
-      client: 'Adventr',
-      clientLogo: 'Adventr',
-      stats: '600% Higher User Engagement',
-      metric: '4K 60fps',
-      metricLabel: 'Zero-Latency Branching Video',
-      description:
-        'Constructed a cloud-native interactive video authoring suite enabling creators and global brands to build clickable, branching video experiences with real-time viewer behavior heatmaps.',
-      tags: ['Interactive Media', 'WebRTC', 'AWS Elemental', 'React', 'AI Video Analytics'],
-      link: '#contact',
-      highlight: false,
-    },
-    {
-      id: 'cnote',
-      category: 'Fintech',
-      title: 'Community Impact Investing Platform with SEC Compliance',
-      client: 'CNote Financial',
-      clientLogo: 'CNote',
-      stats: '$500M+ Impact Capital Deployed',
-      metric: 'SOC 2',
-      metricLabel: 'Certified Infrastructure',
-      description:
-        'Architected an institutional investment gateway connecting Fortune 500 treasuries to CDFIs and minority-owned business lenders, automating ACH clearing and SEC compliance reporting.',
-      tags: ['Fintech & Banking', 'Node.js', 'React', 'Plaid API', 'Automated ACH / SEC'],
-      link: '#contact',
-      highlight: true,
-    },
-    {
-      id: 'delphi',
-      category: 'AI',
-      title: 'AI Computer Vision & Diagnostic Screening Platform',
-      client: 'Delphi Vision Ltd',
-      clientLogo: 'Delphi Vision',
-      stats: '99.2% Model Classification Accuracy',
-      metric: '18 FPS',
-      metricLabel: 'Edge Inference Throughput',
-      description:
-        'Designed high-speed computer vision pipeline for automated defect detection in industrial manufacturing, deploying PyTorch deep learning models to low-power edge gateways.',
-      tags: ['AI / Computer Vision', 'PyTorch', 'FastAPI', 'Docker Edge', 'Real-Time Ingestion'],
-      link: '#contact',
-      highlight: false,
-    },
-    {
-      id: 'cityindex',
-      category: 'Fintech',
-      title: 'High-Frequency Forex & CFD Trading Execution Terminal',
-      client: 'City Index (StoneX Group)',
-      clientLogo: 'City Index',
-      stats: 'Sub-Millisecond Order Routing',
-      metric: '100,000+',
-      metricLabel: 'Concurrent Trading Sessions',
-      description:
-        'Engineered institutional multi-asset trading engine with FIX 4.4 protocol gateways, live depth-of-market feeds, customizable charting workspaces, and automated margin risk controls.',
-      tags: ['Fintech', 'C++ / Rust', 'WebSockets', 'FIX Protocol', 'Trading Terminal UI'],
-      link: '#contact',
-      highlight: false,
-    },
-    {
-      id: 'maersk',
-      category: 'Enterprise',
-      title: 'Global Supply Chain Telemetry & Container Tracking',
-      client: 'Maersk Line',
-      clientLogo: 'Maersk',
-      stats: 'Global Container Telemetry',
-      metric: '50,000+',
-      metricLabel: 'Connected IoT Beacons',
-      description:
-        'Delivered scalable IoT monitoring platform providing cold-chain integrity tracking, automated customs clearance document generation, and real-time vessel position mapping.',
-      tags: ['Supply Chain', 'Azure IoT Hub', 'Kafka', 'React / TypeScript', 'Microservices'],
-      link: '#contact',
-      highlight: false,
-    },
-  ];
-
-  const filteredCases =
-    activeFilter === 'All'
-      ? caseStudies
-      : caseStudies.filter((item) => item.category === activeFilter);
+  const filteredCases = useMemo(
+    () =>
+      activeFilter === 'All'
+        ? PORTFOLIO_CASE_STUDIES
+        : PORTFOLIO_CASE_STUDIES.filter((item) => item.category === activeFilter),
+    [activeFilter]
+  );
 
   return (
     <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
@@ -320,10 +215,13 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
           }}
         >
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {(['All', 'Fintech', 'Healthcare', 'Enterprise', 'AI'] as const).map((filter) => (
+            {FILTERS.map((filter) => (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setExpandedCardId(null);
+                }}
                 style={{
                   backgroundColor: activeFilter === filter ? '#2258e7' : '#ffffff',
                   color: activeFilter === filter ? '#ffffff' : '#334155',
@@ -336,7 +234,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                   transition: 'all 0.18s',
                 }}
               >
-                {filter} {filter === 'All' ? `(${caseStudies.length})` : ''}
+                {filter} {filter === 'All' ? `(${PORTFOLIO_CASE_STUDIES.length})` : ''}
               </button>
             ))}
           </div>
@@ -358,140 +256,217 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
             gap: '28px',
           }}
         >
-          {filteredCases.map((cs, idx) => (
-            <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
-              <div
-                style={{
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '8px',
-                  padding: '32px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.03)',
-                }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.borderColor = '#2258e7';
-                e.currentTarget.style.boxShadow = '0 16px 36px rgba(34, 88, 231, 0.08)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.borderColor = '#e2e8f0';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.03)';
-              }}
-            >
-              {/* Category & Metric Pill */}
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                  <span
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      color: '#2258e7',
-                      backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                      padding: '4px 10px',
-                      borderRadius: '2px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                    }}
-                  >
-                    {cs.category}
-                  </span>
-                  <div style={{ textAlign: 'right' }}>
-                    <div style={{ fontSize: '20px', fontWeight: 800, color: '#2258e7', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
-                    <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 500 }}>{cs.metricLabel}</div>
-                  </div>
-                </div>
-
-                <div style={{ fontSize: '13px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: '8px' }}>
-                  Client: {cs.client}
-                </div>
-
-                <h3
-                  style={{
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#0f172a',
-                    lineHeight: 1.3,
-                    marginBottom: '16px',
-                    fontFamily: 'var(--font-heading)',
-                  }}
-                >
-                  {cs.title}
-                </h3>
-
-                <p
-                  style={{
-                    fontSize: '15px',
-                    lineHeight: 1.6,
-                    color: '#475569',
-                    marginBottom: '24px',
-                  }}
-                >
-                  {cs.description}
-                </p>
-              </div>
-
-              <div>
-                {/* Tech Tags */}
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-                  {cs.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      style={{
-                        fontSize: '12px',
-                        color: '#334155',
-                        backgroundColor: '#ffffff',
-                        border: '1px solid #e2e8f0',
-                        padding: '4px 10px',
-                        borderRadius: '4px',
-                        fontWeight: 500,
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Bottom Action */}
+          {filteredCases.map((cs, idx) => {
+            const isExpanded = expandedCardId === cs.id;
+            return (
+              <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <div
                   style={{
-                    borderTop: '1px solid #e2e8f0',
-                    paddingTop: '18px',
+                    backgroundColor: '#f8fafc',
+                    border: isExpanded ? '2px solid #2258e7' : '1px solid #e2e8f0',
+                    borderRadius: '8px',
+                    padding: '28px',
                     display: 'flex',
-                    alignItems: 'center',
+                    flexDirection: 'column',
                     justifyContent: 'space-between',
+                    transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    boxShadow: isExpanded ? '0 16px 36px rgba(34, 88, 231, 0.12)' : '0 4px 16px rgba(0, 0, 0, 0.03)',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isExpanded) {
+                      e.currentTarget.style.transform = 'translateY(-4px)';
+                      e.currentTarget.style.borderColor = '#2258e7';
+                      e.currentTarget.style.boxShadow = '0 16px 36px rgba(34, 88, 231, 0.08)';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isExpanded) {
+                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.borderColor = '#e2e8f0';
+                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.03)';
+                    }
                   }}
                 >
-                  <span style={{ fontSize: '13px', fontWeight: 700, color: '#16a34a' }}>{cs.stats}</span>
-                  <button
-                    onClick={() => onNavigatePage('contacts')}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: '#2258e7',
-                      fontSize: '14px',
-                      fontWeight: 600,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      cursor: 'pointer',
-                    }}
-                  >
-                    <span>Read scope</span>
-                    <ChevronRight size={15} />
-                  </button>
+                  {/* Category & Metric Pill */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                      <span
+                        style={{
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          color: '#2258e7',
+                          backgroundColor: 'rgba(34, 88, 231, 0.08)',
+                          padding: '4px 10px',
+                          borderRadius: '2px',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.04em',
+                        }}
+                      >
+                        {cs.category}
+                      </span>
+                      <div style={{ textAlign: 'right' }}>
+                        <div style={{ fontSize: '20px', fontWeight: 800, color: '#2258e7', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
+                        <div style={{ fontSize: '11px', color: '#64748b', fontWeight: 500 }}>{cs.metricLabel}</div>
+                      </div>
+                    </div>
+
+                    {/* Client & Service Subtitle */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
+                      <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+                        Client: {cs.client}
+                      </span>
+                      <span style={{ color: '#cbd5e1' }}>•</span>
+                      <span style={{ fontSize: '12px', color: '#2258e7', fontWeight: 600 }}>
+                        {cs.service}
+                      </span>
+                    </div>
+
+                    <h3
+                      style={{
+                        fontSize: '20px',
+                        fontWeight: 700,
+                        color: '#0f172a',
+                        lineHeight: 1.3,
+                        marginBottom: '12px',
+                        fontFamily: 'var(--font-heading)',
+                      }}
+                    >
+                      {cs.title}
+                    </h3>
+
+                    <p
+                      style={{
+                        fontSize: '14.5px',
+                        lineHeight: 1.55,
+                        color: '#475569',
+                        marginBottom: '18px',
+                      }}
+                    >
+                      {cs.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    {/* Tech Tags */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
+                      {cs.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          style={{
+                            fontSize: '11.5px',
+                            color: '#334155',
+                            backgroundColor: '#ffffff',
+                            border: '1px solid #e2e8f0',
+                            padding: '3px 8px',
+                            borderRadius: '4px',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Full Case Study Template Expansion Area */}
+                    {isExpanded && (
+                      <div
+                        style={{
+                          backgroundColor: '#ffffff',
+                          border: '1px solid #e2e8f0',
+                          borderRadius: '6px',
+                          padding: '18px',
+                          marginBottom: '18px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '14px',
+                          fontSize: '13px',
+                          color: '#334155',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <div>
+                          <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Client Context</strong>
+                          {cs.details.clientContext}
+                        </div>
+                        <div>
+                          <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Challenge & Constraints</strong>
+                          {cs.details.challenge} {cs.details.constraints}
+                        </div>
+                        <div>
+                          <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Engineering Solution</strong>
+                          {cs.details.approach} {cs.details.solution}
+                        </div>
+                        <div>
+                          <strong style={{ color: '#16a34a', display: 'block', marginBottom: '2px' }}>Verified Results</strong>
+                          {cs.details.results}
+                        </div>
+                        <div style={{ backgroundColor: '#f1f5f9', padding: '10px 12px', borderRadius: '4px', borderLeft: '3px solid #2258e7' }}>
+                          <strong style={{ color: '#0f172a', display: 'block', marginBottom: '2px' }}>Key Takeaway</strong>
+                          <span style={{ fontStyle: 'italic', color: '#475569' }}>"{cs.details.takeaway}"</span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Bottom Action */}
+                    <div
+                      style={{
+                        borderTop: '1px solid #e2e8f0',
+                        paddingTop: '14px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#16a34a' }}>{cs.stats}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <button
+                          onClick={() => setExpandedCardId(isExpanded ? null : cs.id)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#2258e7',
+                            fontSize: '13.5px',
+                            fontWeight: 600,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            cursor: 'pointer',
+                            padding: '4px 6px',
+                          }}
+                        >
+                          <span>{isExpanded ? 'Hide scope' : 'Read scope'}</span>
+                          <ChevronRight
+                            size={14}
+                            style={{
+                              transform: isExpanded ? 'rotate(90deg)' : 'none',
+                              transition: 'transform 0.2s',
+                            }}
+                          />
+                        </button>
+                        <button
+                          onClick={() => onNavigatePage('contacts')}
+                          style={{
+                            backgroundColor: '#2258e7',
+                            color: '#ffffff',
+                            border: 'none',
+                            fontSize: '12px',
+                            fontWeight: 600,
+                            padding: '6px 12px',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Inquire
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </RevealElement>
-        ))}
+              </RevealElement>
+            );
+          })}
         </div>
       </section>
 
@@ -579,3 +554,5 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
     </div>
   );
 };
+
+export const PortfolioPage = React.memo(PortfolioPageComponent);

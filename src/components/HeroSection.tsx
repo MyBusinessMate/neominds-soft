@@ -5,7 +5,7 @@ interface HeroSectionProps {
   onTalkClick: () => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
+const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
   const heroRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
@@ -212,3 +212,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
     </section>
   );
 };
+
+export const HeroSection = React.memo(HeroSectionComponent);

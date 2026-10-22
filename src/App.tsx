@@ -99,6 +99,14 @@ export const App: React.FC = () => {
       if (slug === 'chatbot-video-bot-development' || slug === 'chatbot-videobot') {
         return 'chatbot-videobot';
       }
+      // Backwards-compatible aliases mapping legacy slugs to canonical CSV services
+      if (slug === 'web-cms-development') return 'web-development';
+      if (slug === 'mobile-app-development') return 'app-development';
+      if (slug === 'software-development') return 'custom-software-development';
+      if (slug === 'ecommerce-development') return 'ecommerce-platform';
+      if (slug === 'devops') return 'cloud-based-software';
+      if (slug === 'ai-development') return 'ai-integrations';
+      if (slug === 'ai-agents') return 'ai-systems';
       if (isServiceSlug(slug)) return slug as PageType;
       if ([
         'insights', 'blog', 'company-updates', 'portfolio', 'about-us', 'contacts',
@@ -238,43 +246,49 @@ export const App: React.FC = () => {
     [currentPage, scrollTo]
   );
 
-  const handleSelectPage = (page: PageType, articleId?: string | null) => {
-    setCurrentPage(page);
-    if (articleId !== undefined) {
-      setSelectedArticleId(articleId);
-    } else {
-      setSelectedArticleId(null);
-    }
+  const handleSelectPage = useCallback(
+    (page: PageType, articleId?: string | null) => {
+      setCurrentPage(page);
+      if (articleId !== undefined) {
+        setSelectedArticleId(articleId);
+      } else {
+        setSelectedArticleId(null);
+      }
 
-    let targetUrl = '/';
-    if (page === 'home') {
-      targetUrl = '/';
-    } else if (isServiceSlug(page)) {
-      targetUrl = `/services/${page}`;
-    } else if (page === 'blog' && articleId) {
-      targetUrl = `/blog/${articleId}`;
-    } else if (page === '404') {
-      targetUrl = '/404';
-    } else {
-      targetUrl = `/${page}`;
-    }
+      let targetUrl = '/';
+      if (page === 'home') {
+        targetUrl = '/';
+      } else if (isServiceSlug(page)) {
+        targetUrl = `/services/${page}`;
+      } else if (page === 'blog' && articleId) {
+        targetUrl = `/blog/${articleId}`;
+      } else if (page === '404') {
+        targetUrl = '/404';
+      } else {
+        targetUrl = `/${page}`;
+      }
 
-    window.history.pushState(null, '', targetUrl);
-    scrollTo(0, { immediate: true });
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  };
+      window.history.pushState(null, '', targetUrl);
+      scrollTo(0, { immediate: true });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    },
+    [scrollTo]
+  );
 
-  const addToast = (title: string, description?: string, type: 'success' | 'error' | 'info' = 'success') => {
-    const id = Math.random().toString(36).substring(2, 9);
-    setToasts((prev) => [...prev, { id, title, description, type }]);
-    setTimeout(() => {
-      setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 4500);
-  };
+  const addToast = useCallback(
+    (title: string, description?: string, type: 'success' | 'error' | 'info' = 'success') => {
+      const id = Math.random().toString(36).substring(2, 9);
+      setToasts((prev) => [...prev, { id, title, description, type }]);
+      setTimeout(() => {
+        setToasts((prev) => prev.filter((t) => t.id !== id));
+      }, 4500);
+    },
+    []
+  );
 
-  const removeToast = (id: string) => {
+  const removeToast = useCallback((id: string) => {
     setToasts((prev) => prev.filter((t) => t.id !== id));
-  };
+  }, []);
 
   const isOfficialServicePage = isServiceSlug(currentPage);
 
@@ -436,6 +450,11 @@ export const App: React.FC = () => {
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onSuccessToast={(msg) => addToast('Success', msg, 'success')}
+                  onOpenLegal={(tab) => {
+                    if (tab === 'privacy') handleSelectPage('privacy-policy');
+                    else if (tab === 'cookie') handleSelectPage('cookie-policy');
+                    else handleSelectPage('security-policy');
+                  }}
                 />
               </main>
             )}
@@ -447,6 +466,11 @@ export const App: React.FC = () => {
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onSuccessToast={(msg) => addToast('Success', msg, 'success')}
+                  onOpenLegal={(tab) => {
+                    if (tab === 'privacy') handleSelectPage('privacy-policy');
+                    else if (tab === 'cookie') handleSelectPage('cookie-policy');
+                    else handleSelectPage('security-policy');
+                  }}
                 />
               </main>
             )}
@@ -454,21 +478,42 @@ export const App: React.FC = () => {
             {/* Careers Page */}
             {currentPage === 'careers' && (
               <main id="main-content">
-                <CareersPage onNavigateToContact={() => handleSelectPage('contacts')} />
+                <CareersPage
+                  onNavigatePage={(p) => handleSelectPage(p as PageType)}
+                  onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
+                    if (tab === 'privacy') handleSelectPage('privacy-policy');
+                    else if (tab === 'cookie') handleSelectPage('cookie-policy');
+                    else handleSelectPage('security-policy');
+                  }}
+                />
               </main>
             )}
 
             {/* Certification Page */}
             {currentPage === 'certification' && (
               <main id="main-content">
-                <CertificationPage onNavigateToContact={() => handleSelectPage('contacts')} />
+                <CertificationPage
+                  onNavigatePage={(p) => handleSelectPage(p as PageType)}
+                  onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
+                    if (tab === 'privacy') handleSelectPage('privacy-policy');
+                    else if (tab === 'cookie') handleSelectPage('cookie-policy');
+                    else handleSelectPage('security-policy');
+                  }}
+                />
               </main>
             )}
 
             {/* Leadership Page */}
             {currentPage === 'leaders' && (
               <main id="main-content">
-                <LeadershipPage />
+                <LeadershipPage
+                  onNavigatePage={(p) => handleSelectPage(p as PageType)}
+                  onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
+                    if (tab === 'privacy') handleSelectPage('privacy-policy');
+                    else if (tab === 'cookie') handleSelectPage('cookie-policy');
+                    else handleSelectPage('security-policy');
+                  }}
+                />
               </main>
             )}
 

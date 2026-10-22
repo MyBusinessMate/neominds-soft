@@ -5,112 +5,73 @@ export interface ServiceMetaSummary {
 }
 
 export const SERVICE_METADATA_MAP: Record<string, ServiceMetaSummary> = {
-  'software-development': {
-    title: "Software Development",
-    description: "Full-Cycle Custom Software Engineering",
+  // Core Development
+  'web-development': {
+    title: 'Web Development',
+    description: 'Fast, secure websites and web applications built to perform',
   },
-  'ai-development': {
-    title: "AI Development",
-    description: "Production ML, Custom LLMs & Foundation Model Engineering",
+  'app-development': {
+    title: 'App Development',
+    description: 'iOS and Android apps your users will actually keep using',
   },
-  'mobile-app-development': {
-    title: "Mobile App Development",
-    description: "Native iOS, Android & High-Performance Cross-Platform Apps",
+  'cross-platform-app-development': {
+    title: 'Cross-Platform App Development',
+    description: 'One codebase for iOS, Android, and web — shipped together',
   },
-  'web-cms-development': {
-    title: "Web & CMS Development",
-    description: "Headless CMS, Edge-Rendered Web Applications & Sub-Second Page Loads",
+  'custom-software-development': {
+    title: 'Custom Software Development',
+    description: 'Software that fits your workflow, not the other way around',
   },
-  'ecommerce-development': {
-    title: "Ecommerce Development",
-    description: "Headless Commerce, Sub-Second Catalog Search & High-Concurrency Checkout",
+  'ecommerce-platform': {
+    title: 'E-commerce Platform',
+    description: 'Online stores and commerce platforms built for growth and conversion',
   },
-  'ai-agents': {
-    title: "AI Agents",
-    description: "Recursive Reasoning, Dynamic Tool-Calling & Persistent Vector Memory",
+  'saas-development': {
+    title: 'SaaS Development',
+    description: 'Subscription software products built to acquire, retain, and scale',
   },
+  'cloud-based-software': {
+    title: 'Cloud Based Software',
+    description: 'Cloud-native systems that scale without friction',
+  },
+  'legacy-modernisation': {
+    title: 'Legacy System Modernisation',
+    description: 'Replace or modernise outdated systems without stopping your business',
+  },
+
+  // AI & Intelligence
   'ai-automations': {
-    title: "AI Automations",
-    description: "Automated Document Processing, Event-Driven Workflows & Zero-Touch Back-Office",
+    title: 'AI Automations',
+    description: 'Replace repetitive manual work with automated AI-driven workflows',
   },
-  'chatbot-videobot': {
-    title: "Chatbot & Video Bot",
-    description: "Real-Time Conversational AI, Low-Latency Voice & Photorealistic WebRTC Video Avatars",
+  'ai-integrations': {
+    title: 'AI Integrations',
+    description: 'Add AI capabilities to the software your business already runs',
   },
+  'ai-systems': {
+    title: 'AI Systems',
+    description: 'Custom AI systems built for complex reasoning and autonomous task execution',
+  },
+  'ai-native-software': {
+    title: 'AI Native Software',
+    description: 'Products designed around AI from the first line of code',
+  },
+
+  // Specialist
   'analytics-dashboard': {
-    title: "Analytics Dashboard",
-    description: "Real-Time Business Intelligence & Interactive Data Visualization",
+    title: 'Analytics Dashboard',
+    description: 'Dashboards that turn your data into clear, actionable decisions',
   },
-  'technical-support': {
-    title: "Technical Support",
-    description: "24/7 SLA-Backed Maintenance, Monitoring & Incident Management",
+  'custom-health-software': {
+    title: 'Custom Health Software',
+    description: 'Healthcare software built for how clinics and hospitals actually work',
   },
-  'digital-banking': {
-    title: "Digital Banking",
-    description: "Next-Generation Core & Digital Banking Architectures",
+  'training-as-service': {
+    title: 'Training as a Service',
+    description: 'Technical training and knowledge transfer that makes your team self-sufficient',
   },
-  'payment-solutions': {
-    title: "Payment Solutions",
-    description: "High-Throughput Payment Gateways, Tokenization & Multi-Acquirer Routing",
-  },
-  'lending-credit-platforms': {
-    title: "Lending & Credit Platforms",
-    description: "Automated Loan Origination, Credit Decisioning & Servicing Engines",
-  },
-  'investment-wealth-management': {
-    title: "Investment & Wealth Management",
-    description: "Institutional Portfolio Management, Robo-Advisory & Custody Systems",
-  },
-  'financial-analytics': {
-    title: "Financial Analytics",
-    description: "Real-Time Quantitative Analytics, Cash Flow Forecasting & Treasury BI",
-  },
-  'fraud-risk-management': {
-    title: "Fraud & Risk Management",
-    description: "Sub-10ms Transaction Risk Scoring, AML Screening & Anomaly Detection",
-  },
-  'healthcare-management-software': {
-    title: "Healthcare Management Software",
-    description: "Enterprise EHR/EMR Integration, Hospital Operating Systems & FHIR Backends",
-  },
-  'telemedicine-platforms': {
-    title: "Telemedicine Platforms",
-    description: "HIPAA-Compliant Video Consultations, Virtual Waiting Rooms & Clinical Chat",
-  },
-  'patient-engagement': {
-    title: "Patient Engagement",
-    description: "Omnichannel Patient Portals, Automated Scheduling & Care Journeys",
-  },
-  'medical-ai-solutions': {
-    title: "Medical AI Solutions",
-    description: "Clinical Decision Support, Diagnostic Imaging AI & Medical NLP",
-  },
-  'healthcare-analytics': {
-    title: "Healthcare Analytics",
-    description: "Population Health BI, Value-Based Care Telemetry & Epidemiological Dashboards",
-  },
-  'healthcare-automation': {
-    title: "Healthcare Automation",
-    description: "Prior Authorization Automation, Revenue Cycle Management & Clinical Routing",
-  },
-  'ai-product-engineering': {
-    title: "AI Product Engineering",
-    description: "Enterprise AI Product Design, Foundation Model Integration & Production Runtimes",
-  },
-  'applied-ai': {
-    title: "Applied AI",
-    description: "Domain-Specific Machine Learning, Predictive Modeling & Operational AI",
-  },
-  'ai-agent-systems': {
-    title: "AI Agent Systems",
-    description: "Distributed Multi-Agent Architectures, Dynamic Negotiation & Swarm Intelligence",
-  },
-  'intelligent-automation': {
-    title: "Intelligent Automation",
-    description: "Human-in-the-Loop Process Automation, Decision Orchestration & Core Workflows",
-  },
-  'generative-ai': {
-    title: "Generative AI",
-    description: "Enterprise Generative Media, Synthetic Data & Domain-Specific Foundation Models",
+  'product-engineering': {
+    title: 'Product Engineering',
+    description: 'End-to-end product development from discovery to production launch',
   },
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   Sparkles,
   ArrowRight,
@@ -49,17 +49,17 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
   });
   const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     setCurrentTestimonialIndex((prev) => (prev + 1) % ABOUT_TESTIMONIALS.length);
-  };
+  }, []);
 
-  const prevTestimonial = () => {
+  const prevTestimonial = useCallback(() => {
     setCurrentTestimonialIndex((prev) =>
       prev === 0 ? ABOUT_TESTIMONIALS.length - 1 : prev - 1
     );
-  };
+  }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (onSuccessToast) {
       onSuccessToast(
@@ -76,7 +76,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       consent: false,
     });
     setSelectedFileName(null);
-  };
+  }, [formState.name, onSuccessToast]);
 
   const currentTestimonial = ABOUT_TESTIMONIALS[currentTestimonialIndex];
 
@@ -144,14 +144,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             >
               CEO
             </div>
-            <h3 className="s-blockquote__name">Founder &amp; CEO</h3>
+            <h3 className="s-blockquote__name">Executive Leadership</h3>
             <p className="s-blockquote__role">Neominds TechHub</p>
           </div>
 
           <div className="s-blockquote__content">
             <div className="s-blockquote__quote-mark">&ldquo;</div>
             <blockquote className="s-blockquote__text">
-              We build software the way we would want it built for us: clear, honest and made to last.
+              We don’t just get things done—we <span>think bold</span>. It’s our team’s mindset.
             </blockquote>
             <p className="s-blockquote__subtext">
               Every project comes with open sharing of timelines, costs, and risks, backed by weekly demos and full code ownership for our clients.
@@ -211,7 +211,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          3. CORE VALUES SECTION (.s-values theme-dark2)
+          4. CORE VALUES SECTION (.s-values theme-dark2)
           ======================================================== */}
       <section className="s-values" id="values">
         <div className="s-values__container">
@@ -219,25 +219,25 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             <div className="s-values__badge">
               <span>Living our values</span>
             </div>
-            <h2 className="s-values__title">What we stand for</h2>
+            <h2 className="s-values__title">What we stand for?</h2>
           </div>
 
           <div className="s-values__grid">
-            {/* Value 1: Integrity */}
+            {/* Value 1: Respect */}
             <div className="s-values__card">
               <span className="s-values__card-number">01</span>
-              <h3 className="s-values__card-name">Integrity</h3>
+              <h3 className="s-values__card-name">Respect</h3>
               <p className="s-values__card-text">
-                We say what we can do, and we do what we say. Timelines, costs and risks are shared openly.
+                We build strong, healthy relationships by <span>valuing each person in every interaction</span>—whether they’re a client or an employee.
               </p>
             </div>
 
-            {/* Value 2: Ownership */}
+            {/* Value 2: Common sense */}
             <div className="s-values__card">
               <span className="s-values__card-number">02</span>
-              <h3 className="s-values__card-name">Ownership</h3>
+              <h3 className="s-values__card-name">Common sense</h3>
               <p className="s-values__card-text">
-                We treat every project as our own and stay responsible for the result, not just the task.
+                We always ask ourselves <span>if our actions are reasonable</span> and what value they bring before proceeding.
               </p>
             </div>
 
@@ -246,25 +246,25 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <span className="s-values__card-number">03</span>
               <h3 className="s-values__card-name">Curiosity</h3>
               <p className="s-values__card-text">
-                We ask why before we build, so we solve the real business problem behind each request.
+                We seek answers to <span>deep-rooted questions</span> and <span>uncover the real business needs</span> behind client requests.
               </p>
             </div>
 
-            {/* Value 4: Quality */}
+            {/* Value 4: Courage */}
             <div className="s-values__card">
               <span className="s-values__card-number">04</span>
-              <h3 className="s-values__card-name">Quality</h3>
+              <h3 className="s-values__card-name">Courage</h3>
               <p className="s-values__card-text">
-                Careful reviews, testing and security checks are part of every sprint.
+                We tackle every challenge with bravery and determination, always <span>ready to face the unknown</span>. Sounds tough? We’re in!
               </p>
             </div>
 
-            {/* Value 5: Collaboration */}
+            {/* Value 5: Commitment */}
             <div className="s-values__card">
               <span className="s-values__card-number">05</span>
-              <h3 className="s-values__card-name">Collaboration</h3>
+              <h3 className="s-values__card-name">Commitment</h3>
               <p className="s-values__card-text">
-                We work as one team with our clients, across time zones and cultures, and keep communication simple.
+                We stay true to our promises, acting with <span>transparency and responsibility</span> in all our dealings. We said it, we’ll do it.
               </p>
             </div>
           </div>

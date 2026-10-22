@@ -27,19 +27,19 @@ const slides: RecognitionSlide[] = [
   },
 ];
 
-export const IndustryRecognition: React.FC = () => {
+const IndustryRecognitionComponent: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const cardRef = useRef<HTMLDivElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const nextSlide = () => {
+  const nextSlide = React.useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);
-  };
+  }, []);
 
-  const prevSlide = () => {
+  const prevSlide = React.useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  }, []);
 
   // 5-second automatic switching
   useEffect(() => {
@@ -309,3 +309,5 @@ export const IndustryRecognition: React.FC = () => {
     </section>
   );
 };
+
+export const IndustryRecognition = React.memo(IndustryRecognitionComponent);

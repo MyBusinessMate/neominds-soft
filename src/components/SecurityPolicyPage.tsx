@@ -1,5 +1,7 @@
 import React from 'react';
 import { Lock, ShieldCheck, Key, Server, FileCheck2 } from 'lucide-react';
+import { ContactSection } from './ContactSection';
+import { LocationsSection } from './LocationsSection';
 import { Footer } from './Footer';
 
 interface SecurityPolicyPageProps {
@@ -89,17 +91,15 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
         </div>
       </section>
 
+      {/* Contact Section */}
+      <ContactSection />
+
+      {/* Locations Section */}
+      <LocationsSection />
+
       {/* Global Footer */}
       <Footer
-        onNavigate={(target) => {
-          if (target === '#contact') {
-            onNavigatePage('contacts');
-          } else if (target === '#casestudies') {
-            onNavigatePage('portfolio');
-          } else {
-            onNavigatePage('home');
-          }
-        }}
+        onNavigate={(target) => onNavigatePage(target.replace('#', ''))}
         onOpenLegal={onOpenLegal}
       />
     </div>

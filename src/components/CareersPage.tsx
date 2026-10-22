@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   Briefcase,
   MapPin,
@@ -10,14 +10,91 @@ import {
   CheckCircle2,
   Send,
 } from 'lucide-react';
-import { ScrollReveal, RevealElement } from './scroll-reveal';
-import { LocationsSection } from './LocationsSection';
+import { Footer } from './Footer';
 
 interface CareersPageProps {
-  onNavigateToContact?: () => void;
+  onNavigatePage?: (page: string) => void;
+  onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
 }
 
-export const CareersPage: React.FC<CareersPageProps> = () => {
+// Hoisted static arrays to eliminate render-time re-allocation
+const DEPARTMENTS = ['All', 'Engineering', 'AI & Data', 'Cloud & DevOps', 'Product & QA'] as const;
+
+const OPEN_POSITIONS = [
+  {
+    title: 'Senior Full-Stack Engineer (React & Node.js)',
+    department: 'Engineering',
+    location: 'Remote / Hybrid (Americas, Europe & APAC)',
+    type: 'Full-time',
+    experience: '5+ years',
+    desc: 'Build high-performance web applications and cloud integrations for enterprise clients worldwide.',
+  },
+  {
+    title: 'Lead AI / Machine Learning Engineer',
+    department: 'AI & Data',
+    location: 'Remote / Hybrid',
+    type: 'Full-time',
+    experience: '4+ years',
+    desc: 'Design, fine-tune and integrate enterprise LLMs, agentic workflows and production RAG pipelines.',
+  },
+  {
+    title: 'Cloud DevOps & Infrastructure Architect',
+    department: 'Cloud & DevOps',
+    location: 'Remote / Delivery Hub',
+    type: 'Full-time',
+    experience: '5+ years',
+    desc: 'Architect secure, auto-scaling AWS/GCP cloud environments, zero-trust networks, and CI/CD pipelines.',
+  },
+  {
+    title: 'Mobile App Developer (Flutter & React Native)',
+    department: 'Engineering',
+    location: 'Remote / Hybrid',
+    type: 'Full-time',
+    experience: '3-5 years',
+    desc: 'Develop cross-platform iOS and Android applications with clean UI, responsive animations and offline-first capabilities.',
+  },
+  {
+    title: 'Senior Quality Assurance Automation Engineer',
+    department: 'Product & QA',
+    location: 'Remote / Delivery Hub',
+    type: 'Full-time',
+    experience: '4+ years',
+    desc: 'Build end-to-end Playwright and Cypress test suites, performance regression benches, and CI gates.',
+  },
+];
+
+const FAQS = [
+  {
+    q: 'How soon will I hear back after applying?',
+    a: 'We aim to reply within 3 to 5 business days after reviewing your application and technical background.',
+  },
+  {
+    q: 'Can I apply for more than one role?',
+    a: 'Yes. Apply to any role that aligns with your expertise, career stage, and professional aspirations.',
+  },
+  {
+    q: 'Is my application confidential?',
+    a: 'Yes. We use your details strictly for recruitment and never share them with third parties without your explicit permission.',
+  },
+  {
+    q: 'How many interview stages are there?',
+    a: 'Typically 3 steps: an initial introductory call with our talent team, a technical architectural deep-dive with engineering leads, and a final alignment discussion with leadership.',
+  },
+  {
+    q: 'Can I work 100% remotely?',
+    a: 'Yes! Most engineering, AI, and design positions at Neominds TechHub are fully remote-friendly across compatible time zones.',
+  },
+  {
+    q: 'I applied before and was not selected. Can I apply again?',
+    a: 'Absolutely. You are always welcome to reapply as your skillset evolves or when new specialized openings launch.',
+  },
+];
+
+const CareersPageComponent: React.FC<CareersPageProps> = ({
+  onNavigatePage,
+  onOpenLegal,
+}) => {
+  const [selectedDept, setSelectedDept] = useState('All');
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: '',
@@ -29,12 +106,14 @@ export const CareersPage: React.FC<CareersPageProps> = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
 
-  const toggleFaq = (index: number) => {
-    setActiveFaq(activeFaq === index ? null : index);
-  };
+  const toggleFaq = useCallback((index: number) => {
+    setActiveFaq((prev) => (prev === index ? null : index));
+  }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
     if (type === 'checkbox') {
       const checked = (e.target as HTMLInputElement).checked;
@@ -42,609 +121,403 @@ export const CareersPage: React.FC<CareersPageProps> = () => {
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
-  };
+  }, []);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setFileName(e.target.files[0].name);
     }
-  };
+  }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.consent) {
       alert('Please complete your name, email and accept the privacy consent.');
       return;
     }
     setSubmitted(true);
-  };
+  }, [formData.name, formData.email, formData.consent]);
 
-  const scrollToCvForm = () => {
+  const handleNewsletterSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      setNewsletterSubmitted(true);
+      setNewsletterEmail('');
+      setTimeout(() => setNewsletterSubmitted(false), 4000);
+    }
+  }, [newsletterEmail]);
+
+  const scrollToCvForm = useCallback((roleTitle?: string) => {
+    if (roleTitle) {
+      setFormData((prev) => ({ ...prev, position: roleTitle }));
+    }
     const el = document.getElementById('cv-form');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
-  };
+  }, []);
 
-  const openPositions = [
-    {
-      title: 'Senior Full-Stack Engineer (React & Node.js)',
-      department: 'Engineering',
-      location: 'Hyderabad, India / Remote',
-      type: 'Full-time',
-      experience: '4-7 years',
-      desc: 'Build high-performance web applications and cloud integrations for enterprise clients in North America and Europe.',
-    },
-    {
-      title: 'AI / Machine Learning Engineer',
-      department: 'AI & Data',
-      location: 'Hyderabad, India / Remote',
-      type: 'Full-time',
-      experience: '3-6 years',
-      desc: 'Design, fine-tune and integrate LLMs, RAG architectures and predictive models into client software systems.',
-    },
-    {
-      title: 'Cloud DevOps & Infrastructure Architect',
-      department: 'Cloud & Infrastructure',
-      location: 'Hyderabad, India',
-      type: 'Full-time',
-      experience: '5+ years',
-      desc: 'Architect secure, auto-scaling AWS/GCP cloud environments, CI/CD deployment pipelines and container clusters.',
-    },
-    {
-      title: 'Mobile App Developer (Flutter & React Native)',
-      department: 'Mobile Engineering',
-      location: 'Hyderabad, India / Remote',
-      type: 'Full-time',
-      experience: '3-5 years',
-      desc: 'Develop cross-platform iOS and Android applications with clean UI, responsive animations and offline-first capabilities.',
-    },
-  ];
+  const scrollToVacancies = useCallback(() => {
+    const el = document.getElementById('vacancies');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  }, []);
 
-  const faqs = [
-    {
-      q: 'How soon will I hear back after applying?',
-      a: 'We aim to reply within 3 to 5 working days after reviewing your application.',
-    },
-    {
-      q: 'Can I apply for more than one role?',
-      a: 'Yes. Apply to every role that matches your skills and career ambitions.',
-    },
-    {
-      q: 'Is my application confidential?',
-      a: 'Yes. We use your details strictly for hiring and never share them with outside parties without your explicit permission.',
-    },
-    {
-      q: 'How many interviews are there?',
-      a: 'Usually 2 to 3 steps: an initial HR conversation, a technical round with deep-dive problem solving, and a final discussion with an engineering lead.',
-    },
-    {
-      q: 'I applied before and was not selected. Can I apply again?',
-      a: 'Yes. You are always welcome to reapply when you have gained new experience or when a different role opens up.',
-    },
-  ];
+  const filteredPositions = useMemo(
+    () =>
+      selectedDept === 'All'
+        ? OPEN_POSITIONS
+        : OPEN_POSITIONS.filter((pos) => pos.department === selectedDept),
+    [selectedDept]
+  );
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '80px', color: '#0f172a' }}>
-      {/* ========================================================
-          1. HERO SECTION
-          ======================================================== */}
-      <section style={{ backgroundColor: '#070b14', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden' }}>
-        <div
-          style={{
-            position: 'absolute',
-            top: '-20%',
-            right: '-10%',
-            width: '600px',
-            height: '600px',
-            background: 'radial-gradient(circle, rgba(34, 88, 231, 0.18) 0%, rgba(7, 11, 20, 0) 70%)',
-            pointerEvents: 'none',
-          }}
-        />
-
-        <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <div style={{ maxWidth: '820px' }}>
-            <span
-              style={{
-                display: 'inline-block',
-                fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#2258e7',
-                marginBottom: '16px',
-              }}
-            >
-              Careers at Neominds TechHub
-            </span>
-
-            <ScrollReveal
-              as="h1"
-              style={{
-                fontSize: 'clamp(36px, 5.5vw, 62px)',
-                fontWeight: 800,
-                letterSpacing: '-0.03em',
-                lineHeight: 1.1,
-                marginBottom: '20px',
-                fontFamily: 'var(--font-heading)',
-              }}
-            >
-              Build your career at Neominds TechHub
-            </ScrollReveal>
-
-            <h2
-              style={{
-                fontSize: 'clamp(20px, 2.5vw, 26px)',
-                fontWeight: 500,
-                color: 'rgba(255, 255, 255, 0.9)',
-                marginBottom: '20px',
-                lineHeight: 1.35,
-              }}
-            >
-              Work on products people really use
-            </h2>
-
-            <p
-              style={{
-                fontSize: '17px',
-                lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.72)',
-                maxWidth: '680px',
-                marginBottom: '36px',
-              }}
-            >
-              We hire curious, capable people and give them room to grow. You will work with international clients across the US, UK, Europe, Australia and the Middle East, learn modern technologies, and see your work go live in production.
-            </p>
-
-            <button
-              onClick={scrollToCvForm}
-              style={{
-                backgroundColor: '#2258e7',
-                color: '#ffffff',
-                border: 'none',
-                padding: '14px 28px',
-                borderRadius: '8px',
-                fontSize: '15px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: '0 8px 24px rgba(34, 88, 231, 0.35)',
-                transition: 'all 0.25s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#1d4ed8';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#2258e7';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <span>Send us your CV</span>
-              <ArrowRight size={16} />
-            </button>
+    <div className="p-careers-page" style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '68px', color: '#0f172a', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+      {/* 1. s-hero g-section theme-light g-section--pb-0 s-hero--centered */}
+      <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: '#f8fafc', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '840px', margin: '0 auto' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '2px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
+            <Briefcase size={14} />
+            <span>Join Our Global Team</span>
           </div>
+
+          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
+            Find your dream job at Neominds TechHub
+          </h1>
+
+          <p style={{ fontSize: '18px', color: '#475569', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
+            Work alongside experienced engineers, architects, and AI pioneers building impactful digital products for industry leaders across the globe.
+          </p>
+
+          <button
+            type="button"
+            onClick={scrollToVacancies}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '14px 28px',
+              backgroundColor: '#2258e7',
+              color: '#ffffff',
+              fontSize: '14px',
+              fontWeight: 600,
+              border: 'none',
+              borderRadius: '2px',
+              cursor: 'pointer',
+            }}
+          >
+            <span>Explore open positions</span>
+            <ArrowRight size={16} />
+          </button>
         </div>
       </section>
 
-      {/* ========================================================
-          2. OPEN VACANCIES
-          ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#f8fafc' }}>
+      {/* 2. g-section s-vacancies theme-light js-explore-vacancies */}
+      <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#ffffff' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '44px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px' }}>
-            <div>
-              <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Join the Team
-              </span>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-                Open vacancies
-              </h2>
-            </div>
-            <div style={{ fontSize: '14px', color: '#64748b' }}>
-              Showing {openPositions.length} active positions
-            </div>
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px auto' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
+              Start doing work that matters
+            </h2>
+            <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+              Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+            </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(540px, 1fr))', gap: '24px' }}>
-            {openPositions.map((job, idx) => (
-              <RevealElement
-                key={idx}
-                variant="card"
-                delay={idx * 0.05}
+          {/* Department Filters */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '8px', marginBottom: '40px' }}>
+            {DEPARTMENTS.map((dept) => (
+              <button
+                key={dept}
+                type="button"
+                onClick={() => setSelectedDept(dept)}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '12px',
-                  padding: '28px',
-                  boxShadow: '0 4px 12px rgba(15, 23, 42, 0.04)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
+                  padding: '10px 20px',
+                  borderRadius: '2px',
+                  border: `1px solid ${selectedDept === dept ? '#2258e7' : '#e2e8f0'}`,
+                  backgroundColor: selectedDept === dept ? '#2258e7' : '#ffffff',
+                  color: selectedDept === dept ? '#ffffff' : '#475569',
+                  fontSize: '14px',
+                  fontWeight: selectedDept === dept ? 600 : 500,
+                  cursor: 'pointer',
+                  transition: 'all 0.15s ease',
                 }}
               >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 600, color: '#2258e7', backgroundColor: '#eff6ff', padding: '4px 10px', borderRadius: '4px' }}>
-                      {job.department}
-                    </span>
-                    <span style={{ fontSize: '12px', fontWeight: 500, color: '#64748b', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                      <Clock size={12} /> {job.type}
-                    </span>
-                    <span style={{ fontSize: '12px', fontWeight: 500, color: '#64748b', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                      <Briefcase size={12} /> {job.experience}
-                    </span>
-                  </div>
-
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0f172a', marginBottom: '8px', lineHeight: 1.3 }}>
-                    {job.title}
-                  </h3>
-
-                  <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.6, marginBottom: '20px' }}>
-                    {job.desc}
-                  </p>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '16px', borderTop: '1px solid #f1f5f9', marginTop: '12px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: '#64748b' }}>
-                    <MapPin size={14} color="#94a3b8" />
-                    <span>{job.location}</span>
-                  </div>
-
-                  <button
-                    onClick={scrollToCvForm}
-                    style={{
-                      backgroundColor: 'transparent',
-                      color: '#2258e7',
-                      border: '1px solid #2258e7',
-                      padding: '8px 16px',
-                      borderRadius: '6px',
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      transition: 'all 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#2258e7';
-                      e.currentTarget.style.color = '#ffffff';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'transparent';
-                      e.currentTarget.style.color = '#2258e7';
-                    }}
-                  >
-                    <span>View role & apply</span>
-                    <ArrowRight size={12} />
-                  </button>
-                </div>
-              </RevealElement>
+                {dept}
+              </button>
             ))}
           </div>
 
-          {/* ========================================================
-              3. NO SUITABLE VACANCY
-              ======================================================== */}
-          <div
-            style={{
-              marginTop: '48px',
-              backgroundColor: '#ffffff',
-              border: '1px solid #e2e8f0',
-              borderRadius: '12px',
-              padding: '36px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              flexWrap: 'wrap',
-              gap: '24px',
-            }}
-          >
-            <div style={{ maxWidth: '680px' }}>
-              <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-                Don't see a role that fits?
-              </h3>
-              <p style={{ fontSize: '15px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
-                Send your CV through the form below or by email to <strong style={{ color: '#0f172a' }}>careers@neomindstechhub.com</strong>. We read every application and get back to you when an aligned position opens.
-              </p>
-            </div>
+          {/* Vacancy Cards */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {filteredPositions.map((pos, idx) => (
+              <div
+                key={idx}
+                style={{
+                  backgroundColor: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '4px',
+                  padding: '28px 32px',
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  gap: '24px',
+                  transition: 'border-color 0.2s ease, transform 0.2s ease',
+                }}
+              >
+                <div style={{ flex: '1 1 500px' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', marginBottom: '10px' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#2258e7', backgroundColor: 'rgba(34, 88, 231, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
+                      {pos.department}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <Clock size={13} />
+                      {pos.type}
+                    </span>
+                    <span style={{ fontSize: '13px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <MapPin size={13} />
+                      {pos.location}
+                    </span>
+                  </div>
 
-            <button
-              onClick={scrollToCvForm}
-              style={{
-                backgroundColor: '#0f172a',
-                color: '#ffffff',
-                border: 'none',
-                padding: '12px 24px',
-                borderRadius: '8px',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                transition: 'background-color 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#0f172a')}
-            >
-              Write to us
-            </button>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: '0 0 8px 0' }}>
+                    {pos.title}
+                  </h3>
+                  <p style={{ fontSize: '14.5px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                    {pos.desc}
+                  </p>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => scrollToCvForm(pos.title)}
+                  style={{
+                    padding: '12px 24px',
+                    backgroundColor: '#070b14',
+                    color: '#ffffff',
+                    border: 'none',
+                    borderRadius: '2px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    flexShrink: 0,
+                    transition: 'background 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#070b14')}
+                >
+                  <span>Apply now</span>
+                  <ArrowRight size={15} />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ========================================================
-          4. FAQ: CAREERS AT NEOMINDS TECHHUB
-          ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff' }}>
-        <div style={{ maxWidth: '840px', margin: '0 auto' }}>
+      {/* 3. s-faq g-section theme-light */}
+      <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Questions & Answers
-            </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 38px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              FAQ: careers at Neominds TechHub
+            <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+              Frequently asked questions
             </h2>
+            <p style={{ fontSize: '15.5px', color: '#64748b', margin: 0 }}>
+              Find quick answers to common questions about our hiring, engineering culture, and work environment.
+            </p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {faqs.map((faq, idx) => {
-              const isOpen = activeFaq === idx;
-              return (
-                <div
-                  key={idx}
+            {FAQS.map((faq, idx) => (
+              <div
+                key={idx}
+                style={{
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '4px',
+                  overflow: 'hidden',
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => toggleFaq(idx)}
                   style={{
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '8px',
-                    overflow: 'hidden',
-                    backgroundColor: isOpen ? '#f8fafc' : '#ffffff',
-                    transition: 'all 0.2s ease',
+                    width: '100%',
+                    padding: '20px 24px',
+                    textAlign: 'left',
+                    background: 'none',
+                    border: 'none',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    gap: '16px',
+                    cursor: 'pointer',
                   }}
                 >
-                  <button
-                    onClick={() => toggleFaq(idx)}
+                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#070b14' }}>
+                    {faq.q}
+                  </span>
+                  <ChevronDown
+                    size={18}
+                    color="#64748b"
                     style={{
-                      width: '100%',
-                      padding: '20px 24px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      border: 'none',
-                      backgroundColor: 'transparent',
-                      textAlign: 'left',
-                      cursor: 'pointer',
-                      gap: '16px',
+                      transform: activeFaq === idx ? 'rotate(180deg)' : 'none',
+                      transition: 'transform 0.2s ease',
+                      flexShrink: 0,
                     }}
-                  >
-                    <span style={{ fontSize: '16px', fontWeight: 600, color: '#0f172a' }}>{faq.q}</span>
-                    <ChevronDown
-                      size={18}
-                      color="#64748b"
-                      style={{
-                        transform: isOpen ? 'rotate(180deg)' : 'none',
-                        transition: 'transform 0.2s ease',
-                        flexShrink: 0,
-                      }}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div style={{ padding: '0 24px 20px', color: '#475569', fontSize: '15px', lineHeight: 1.65 }}>
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+                  />
+                </button>
+
+                {activeFaq === idx && (
+                  <div style={{ padding: '0 24px 20px 24px', color: '#475569', fontSize: '14.5px', lineHeight: 1.65 }}>
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Fraud Alert Notice */}
+          <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#fffbeb', border: '1px solid #fef3c7', borderRadius: '4px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+            <ShieldAlert size={22} color="#b45309" style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div style={{ fontSize: '13.5px', color: '#78350f', lineHeight: 1.6 }}>
+              <strong>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ========================================================
-          5. FRAUD ALERT
-          ======================================================== */}
-      <section style={{ padding: '24px 24px', backgroundColor: '#fef2f2', borderTop: '1px solid #fee2e2', borderBottom: '1px solid #fee2e2' }}>
-        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <ShieldAlert size={28} color="#dc2626" style={{ flexShrink: 0 }} />
-          <div>
-            <strong style={{ color: '#991b1b', fontSize: '15px', display: 'block', marginBottom: '2px' }}>
-              Hiring Fraud Alert
-            </strong>
-            <p style={{ margin: 0, fontSize: '14px', color: '#b91c1c', lineHeight: 1.5 }}>
-              Neominds TechHub never asks candidates for money at any stage of hiring. If someone asks you to pay fees or purchase equipment, please report it immediately to{' '}
-              <a href="mailto:careers@neomindstechhub.com" style={{ color: '#991b1b', fontWeight: 600, textDecoration: 'underline' }}>
-                careers@neomindstechhub.com
-              </a>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          6. SEND YOUR CV (FORM)
-          ======================================================== */}
-      <section id="cv-form" style={{ padding: '80px 24px', backgroundColor: '#ffffff' }}>
-        <div style={{ maxWidth: '780px', margin: '0 auto' }}>
+      {/* 4. theme-dark g-section s-request (CV Application Form) */}
+      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#070b14', color: '#ffffff' }}>
+        <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Apply Today
-            </span>
-            <h2 style={{ fontSize: '32px', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              Send us your CV
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+              We look forward to reviewing your resume!
             </h2>
-            <p style={{ fontSize: '16px', color: '#64748b', marginTop: '8px' }}>
-              We look forward to reading it.
+            <p style={{ fontSize: '16px', color: '#94a3b8', margin: 0 }}>
+              Don’t see an exact match above? Submit an open application and let us know what makes you thrive.
             </p>
           </div>
 
           {submitted ? (
-            <div
-              style={{
-                backgroundColor: '#f0fdf4',
-                border: '1px solid #bbf7d0',
-                borderRadius: '12px',
-                padding: '40px',
-                textAlign: 'center',
-              }}
-            >
-              <CheckCircle2 size={48} color="#16a34a" style={{ margin: '0 auto 16px' }} />
-              <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#166534', marginBottom: '8px' }}>
-                Application Received!
+            <div style={{ padding: '48px', backgroundColor: 'rgba(34, 88, 231, 0.1)', border: '1px solid rgba(34, 88, 231, 0.3)', borderRadius: '4px', textAlign: 'center' }}>
+              <CheckCircle2 size={48} color="#60a5fa" style={{ margin: '0 auto 16px auto' }} />
+              <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
+                We're in!
               </h3>
-              <p style={{ fontSize: '15px', color: '#15803d', maxWidth: '480px', margin: '0 auto', lineHeight: 1.6 }}>
-                Thank you, {formData.name}. Our talent acquisition team will review your CV and respond within 3 to 5 business days.
+              <p style={{ fontSize: '15px', color: '#94a3b8', maxWidth: '520px', margin: '0 auto' }}>
+                Thanks for sharing your application with us. We're already gearing up to review it and will get back to you within 3–5 business days.
               </p>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #e2e8f0',
-                borderRadius: '12px',
-                padding: '40px',
-                boxShadow: '0 4px 16px rgba(15, 23, 42, 0.05)',
-              }}
-            >
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '20px' }}>
+            <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                    Full Name *
+                  <label htmlFor="cv-name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                    Full Name*
                   </label>
                   <input
-                    type="text"
+                    id="cv-name"
                     name="name"
+                    type="text"
                     required
+                    placeholder="Your full name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Jane Doe"
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      borderRadius: '6px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
+                  <label htmlFor="cv-email" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                    Email Address*
+                  </label>
+                  <input
+                    id="cv-email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+                <div>
+                  <label htmlFor="cv-position" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
                     Position of Interest
                   </label>
                   <input
-                    type="text"
+                    id="cv-position"
                     name="position"
+                    type="text"
+                    placeholder="e.g. Senior Full-Stack Engineer"
                     value={formData.position}
                     onChange={handleInputChange}
-                    placeholder="e.g. Senior Full-Stack Engineer"
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      borderRadius: '6px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px', marginBottom: '20px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="jane@example.com"
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      borderRadius: '6px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
+                  <label htmlFor="cv-phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
                     Phone Number
                   </label>
                   <input
-                    type="tel"
+                    id="cv-phone"
                     name="phone"
+                    type="tel"
+                    placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="+91 90000 00000"
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      borderRadius: '6px',
-                      border: '1px solid #cbd5e1',
-                      fontSize: '14px',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
 
-              <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Message (anything else about your experience or links to your work)
+              <div>
+                <label htmlFor="cv-message" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  Cover Note / Portfolio Links
                 </label>
                 <textarea
+                  id="cv-message"
                   name="message"
                   rows={4}
+                  placeholder="Tell us about yourself, your GitHub or portfolio links..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Share details about your recent projects, GitHub or portfolio..."
-                  style={{
-                    width: '100%',
-                    padding: '12px 14px',
-                    borderRadius: '6px',
-                    border: '1px solid #cbd5e1',
-                    fontSize: '14px',
-                    outline: 'none',
-                    boxSizing: 'border-box',
-                    resize: 'vertical',
-                  }}
+                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
                 />
               </div>
 
-              {/* Attach CV */}
-              <div style={{ marginBottom: '24px' }}>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#334155', marginBottom: '6px' }}>
-                  Attach CV (PDF, DOCX up to 10MB)
+              {/* Resume File Upload */}
+              <div>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  Upload Resume / CV (PDF, DOCX)
                 </label>
                 <div
+                  onClick={() => document.getElementById('resume-upload-input')?.click()}
                   style={{
-                    border: '2px dashed #cbd5e1',
-                    borderRadius: '8px',
+                    border: '1px dashed #334155',
+                    borderRadius: '2px',
                     padding: '24px',
                     textAlign: 'center',
                     cursor: 'pointer',
-                    backgroundColor: '#f8fafc',
+                    backgroundColor: '#0b1120',
+                    transition: 'border-color 0.2s',
                   }}
-                  onClick={() => document.getElementById('cv-file-input')?.click()}
                 >
-                  <Upload size={24} color="#64748b" style={{ margin: '0 auto 8px' }} />
-                  <div style={{ fontSize: '14px', color: '#334155', fontWeight: 500 }}>
-                    {fileName ? fileName : 'Click to select or drag and drop your resume'}
+                  <Upload size={22} color="#60a5fa" style={{ margin: '0 auto 8px auto' }} />
+                  <div style={{ fontSize: '13.5px', color: '#cbd5e1' }}>
+                    {fileName ? fileName : 'Click to select or drag and drop your resume file'}
                   </div>
                   <input
-                    id="cv-file-input"
+                    id="resume-upload-input"
                     type="file"
                     accept=".pdf,.doc,.docx"
                     onChange={handleFileChange}
@@ -653,53 +526,110 @@ export const CareersPage: React.FC<CareersPageProps> = () => {
                 </div>
               </div>
 
-              {/* Consent Checkbox */}
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '24px' }}>
+              {/* Consent */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
                 <input
-                  type="checkbox"
+                  id="cv-consent"
                   name="consent"
-                  id="consent"
+                  type="checkbox"
                   required
                   checked={formData.consent}
                   onChange={handleInputChange}
-                  style={{ marginTop: '3px', cursor: 'pointer' }}
+                  style={{ marginTop: '3px', cursor: 'pointer', accentColor: '#2258e7' }}
                 />
-                <label htmlFor="consent" style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.5, cursor: 'pointer' }}>
-                  I agree to the processing of my personal data as described in the Privacy Policy and Cookie Policy.
+                <label htmlFor="cv-consent" style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5, cursor: 'pointer' }}>
+                  I agree to the processing of my personal data for recruitment purposes in accordance with the Privacy Policy.
                 </label>
               </div>
 
               <button
                 type="submit"
                 style={{
-                  width: '100%',
+                  padding: '16px 32px',
                   backgroundColor: '#2258e7',
                   color: '#ffffff',
                   border: 'none',
-                  padding: '14px 24px',
-                  borderRadius: '8px',
+                  borderRadius: '2px',
                   fontSize: '15px',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  display: 'flex',
+                  display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '8px',
-                  transition: 'background-color 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1d4ed8')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
               >
+                <span>Send application</span>
                 <Send size={16} />
-                <span>Send message</span>
               </button>
             </form>
           )}
         </div>
       </section>
 
-      {/* Shared Locations and Newsletter Block */}
-      <LocationsSection />
+      {/* 5. s-newsletter g-section js-newsletter theme-light */}
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #eef2f6' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div className="s-newsletter__headline">
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+              Join our newsletter
+            </h2>
+            <p style={{ fontSize: '15px', color: '#64748b', margin: '8px 0 0 0', maxWidth: '580px' }}>
+              Stay up to date with the latest engineering insights, tech announcements, and articles.
+            </p>
+          </div>
+
+          <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', maxWidth: '540px' }}>
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              style={{
+                flex: '1 1 280px',
+                padding: '14px 18px',
+                fontSize: '14px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
+                borderRadius: '2px',
+                color: '#0f172a',
+                outline: 'none',
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '14px 28px',
+                backgroundColor: '#2258e7',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: 600,
+                border: 'none',
+                borderRadius: '2px',
+                cursor: 'pointer',
+              }}
+            >
+              <span>Subscribe</span>
+              <ArrowRight size={16} />
+            </button>
+          </form>
+
+          {newsletterSubmitted && (
+            <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
+              Thank you for subscribing to Neominds TechHub insights.
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* 6. Footer */}
+      <Footer onNavigate={(target) => onNavigatePage && onNavigatePage(target.replace('#', ''))} onOpenLegal={onOpenLegal} />
     </div>
   );
 };
+
+export const CareersPage = React.memo(CareersPageComponent);

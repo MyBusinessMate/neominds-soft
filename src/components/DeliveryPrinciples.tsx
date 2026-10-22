@@ -53,7 +53,7 @@ const statsData = [
   { label: 'LONGEST ENGAGEMENT IN YEARS', target: 18, suffix: '' },
 ];
 
-export const DeliveryPrinciples: React.FC = () => {
+const DeliveryPrinciplesComponent: React.FC = () => {
   const [activePrinciple, setActivePrinciple] = useState<string>(''); // Collapsed by default until clicked
   const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
@@ -405,3 +405,5 @@ export const DeliveryPrinciples: React.FC = () => {
     </section>
   );
 };
+
+export const DeliveryPrinciples = React.memo(DeliveryPrinciplesComponent);

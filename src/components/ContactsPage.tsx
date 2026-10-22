@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   Mail,
   Phone,
@@ -11,13 +11,37 @@ interface ContactsPageProps {
   onNavigateHome?: () => void;
   onNavigatePage: (page: string) => void;
   onSuccessToast: (msg: string) => void;
+  onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
 }
 
-export const ContactsPage: React.FC<ContactsPageProps> = ({
+const REGIONS = ['Headquarters', 'Americas', 'Europe'] as const;
+type RegionType = typeof REGIONS[number];
+
+const HQ_LOCATIONS = [
+  { title: 'Hyderabad, India (Global HQ)', address: 'Moguls Court 7th Floor, Basheer Bagh, Hyderabad, Telangana, India', phone: '+91 40 4000 0000' },
+];
+
+const AMERICAS_LOCATIONS = [
+  { title: 'San Diego, California', address: '4445 Eastgate Mall, Suite 200, 92121', phone: '1-800-288-9659' },
+  { title: 'San Francisco, California', address: '50 California St #1500, 94111', phone: '1-800-288-9659' },
+  { title: 'Pittsburgh, Pennsylvania', address: 'One Oxford Centre, 500 Grant St Suite 2900, 15219', phone: '1-800-288-9659' },
+  { title: 'Durham, North Carolina', address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300, 27713', phone: '1-800-288-9659' },
+  { title: 'San Jose, Costa Rica', address: 'C. 118B, Trejos Montealegre, 10203', phone: '1-800-288-9659' },
+];
+
+const EUROPE_LOCATIONS = [
+  { title: 'Warsaw, Poland', address: '126/134 Marszalkowska Street, 00-008', phone: '1-800-288-9659' },
+  { title: 'Wroclaw, Poland', address: '13 Pilsudskiego Street, 2nd floor, 50-996', phone: '1-800-288-9659' },
+  { title: 'Gdańsk, Poland', address: 'Opera Office, 13A Zwycięstwa Street, 80-219', phone: '1-800-288-9659' },
+  { title: 'Dubai, UAE', address: 'Dubai Silicon Oasis, DDP, Building A1', phone: '1-800-288-9659' },
+];
+
+const ContactsPageComponent: React.FC<ContactsPageProps> = ({
   onNavigatePage,
   onSuccessToast,
+  onOpenLegal,
 }) => {
-  const [activeRegion, setActiveRegion] = useState<'Headquarters' | 'Americas' | 'Europe'>('Headquarters');
+  const [activeRegion, setActiveRegion] = useState<RegionType>('Headquarters');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,7 +55,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
     setIsSubmitting(true);
@@ -50,26 +74,13 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
         consent: true,
       });
     }, 600);
-  };
+  }, [formData.name, formData.email, onSuccessToast]);
 
-  const hqLocations = [
-    { title: 'Hyderabad, India (Global HQ)', address: 'Moguls Court 7th Floor, Basheer Bagh, Hyderabad, Telangana, India', phone: '+91 40 4000 0000' },
-  ];
-
-  const americasLocations = [
-    { title: 'San Diego, California', address: '4445 Eastgate Mall, Suite 200, 92121', phone: '1-800-288-9659' },
-    { title: 'San Francisco, California', address: '50 California St #1500, 94111', phone: '1-800-288-9659' },
-    { title: 'Pittsburgh, Pennsylvania', address: 'One Oxford Centre, 500 Grant St Suite 2900, 15219', phone: '1-800-288-9659' },
-    { title: 'Durham, North Carolina', address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300, 27713', phone: '1-800-288-9659' },
-    { title: 'San Jose, Costa Rica', address: 'C. 118B, Trejos Montealegre, 10203', phone: '1-800-288-9659' },
-  ];
-
-  const europeLocations = [
-    { title: 'Warsaw, Poland', address: '126/134 Marszalkowska Street, 00-008', phone: '1-800-288-9659' },
-    { title: 'Wroclaw, Poland', address: '13 Pilsudskiego Street, 2nd floor, 50-996', phone: '1-800-288-9659' },
-    { title: 'Gdańsk, Poland', address: 'Opera Office, 13A Zwycięstwa Street, 80-219', phone: '1-800-288-9659' },
-    { title: 'Dubai, UAE', address: 'Dubai Silicon Oasis, DDP, Building A1', phone: '1-800-288-9659' },
-  ];
+  const displayedLocations = useMemo(() => {
+    if (activeRegion === 'Headquarters') return HQ_LOCATIONS;
+    if (activeRegion === 'Americas') return AMERICAS_LOCATIONS;
+    return EUROPE_LOCATIONS;
+  }, [activeRegion]);
 
   return (
     <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
@@ -427,7 +438,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
             </div>
 
             <div className="btn-group">
-              {(['Headquarters', 'Americas', 'Europe'] as const).map((region) => (
+              {REGIONS.map((region) => (
                 <button
                   key={region}
                   onClick={() => setActiveRegion(region)}
@@ -441,7 +452,7 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
-            {(activeRegion === 'Headquarters' ? hqLocations : activeRegion === 'Americas' ? americasLocations : europeLocations).map((loc, idx) => (
+            {displayedLocations.map((loc, idx) => (
               <RevealElement key={loc.title} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <div
                   style={{
@@ -478,7 +489,10 @@ export const ContactsPage: React.FC<ContactsPageProps> = ({
             onNavigatePage('home');
           }
         }}
+        onOpenLegal={onOpenLegal}
       />
     </div>
   );
 };
+
+export const ContactsPage = React.memo(ContactsPageComponent);

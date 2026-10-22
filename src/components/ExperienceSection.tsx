@@ -26,7 +26,7 @@ const clientLogos: ClientLogo[] = [
   { id: 'adventr', name: 'Adventr', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Adventr.svg' },
 ];
 
-export const ExperienceSection: React.FC = () => {
+const ExperienceSectionComponent: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const [logoBatch, setLogoBatch] = useState(0);
@@ -236,3 +236,5 @@ export const ExperienceSection: React.FC = () => {
     </section>
   );
 };
+
+export const ExperienceSection = React.memo(ExperienceSectionComponent);

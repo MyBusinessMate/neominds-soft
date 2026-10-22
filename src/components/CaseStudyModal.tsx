@@ -1,6 +1,8 @@
 import React from 'react';
 import { X, ArrowRight } from 'lucide-react';
 
+import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
+
 export interface CaseStudyDetail {
   id: string;
   title: string;
@@ -13,6 +15,11 @@ export interface CaseStudyDetail {
   solution: string;
   metrics: { label: string; value: string }[];
   technologies: string[];
+  clientContext?: string;
+  constraints?: string;
+  approach?: string;
+  results?: string;
+  takeaway?: string;
 }
 
 const rawCaseStudyDetails: Record<string, CaseStudyDetail> = {
@@ -102,9 +109,39 @@ const rawCaseStudyDetails: Record<string, CaseStudyDetail> = {
   },
 };
 
+// Build portfolio items dynamically from the 30 client portfolio dataset
+const portfolioCaseStudiesMap: Record<string, CaseStudyDetail> = {};
+
+PORTFOLIO_CASE_STUDIES.forEach((item) => {
+  portfolioCaseStudiesMap[item.id] = {
+    id: item.id,
+    title: item.title,
+    client: item.client,
+    industry: item.category,
+    duration: 'Production Deployment',
+    tags: item.tags,
+    summary: item.description,
+    challenge: item.details?.challenge || item.description,
+    solution: item.details?.solution || item.description,
+    metrics: [
+      { label: item.metricLabel || 'Core Metric', value: item.metric || 'Verified' },
+      { label: 'Scope / Scale', value: item.stats || 'Enterprise Grade' },
+    ],
+    technologies: [item.technology, ...item.tags],
+    clientContext: item.details?.clientContext,
+    constraints: item.details?.constraints,
+    approach: item.details?.approach,
+    results: item.details?.results,
+    takeaway: item.details?.takeaway,
+  };
+});
+
 export const caseStudyDetails: Record<string, CaseStudyDetail> = {
+  ...portfolioCaseStudiesMap,
   ...rawCaseStudyDetails,
-  // Backward-compatibility aliases
+  // Backward-compatibility and verified registry aliases
+  'authenticom': rawCaseStudyDetails['authenticom-ai-etl'],
+  'trubridge': rawCaseStudyDetails['trubridge-medical-ai'],
   'enterprise-ai-etl': rawCaseStudyDetails['authenticom-ai-etl'],
   'cloud-commerce-platform': rawCaseStudyDetails['trading-platform'],
   'healthcare-clinical-ai': rawCaseStudyDetails['trubridge-medical-ai'],
@@ -279,8 +316,19 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
           ))}
         </div>
 
-        {/* Challenge & Solution */}
+        {/* Detailed Structured Case Study Sections */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '36px' }}>
+          {data.clientContext && (
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                Client Context & Background
+              </h3>
+              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
+                {data.clientContext}
+              </p>
+            </div>
+          )}
+
           <div>
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
               The Engineering Challenge
@@ -290,6 +338,28 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
             </p>
           </div>
 
+          {data.constraints && (
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                Constraints & Edge Conditions
+              </h3>
+              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
+                {data.constraints}
+              </p>
+            </div>
+          )}
+
+          {data.approach && (
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                Architectural Approach
+              </h3>
+              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
+                {data.approach}
+              </p>
+            </div>
+          )}
+
           <div>
             <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
               Our Architectural Solution
@@ -298,6 +368,28 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
               {data.solution}
             </p>
           </div>
+
+          {data.results && (
+            <div>
+              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                Verified Results & Impact
+              </h3>
+              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
+                {data.results}
+              </p>
+            </div>
+          )}
+
+          {data.takeaway && (
+            <div style={{ backgroundColor: 'rgba(34, 88, 231, 0.08)', border: '1px solid rgba(34, 88, 231, 0.25)', padding: '16px 20px', borderRadius: '0px' }}>
+              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '12px', fontWeight: 700, color: '#93c5fd', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+                Key Engineering Takeaway
+              </div>
+              <p className="body-text" style={{ color: '#ffffff', margin: 0, lineHeight: 1.6 }}>
+                {data.takeaway}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Technologies Used */}

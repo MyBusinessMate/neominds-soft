@@ -1,11 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import {
   ChevronRight,
   ChevronDown,
   Menu,
   X,
   ArrowUpRight,
+  Mail,
 } from 'lucide-react';
+
+import { ServiceSlug } from '../data/serviceSlugs';
 
 export type PageType =
   | 'home'
@@ -23,6 +26,7 @@ export type PageType =
   | 'privacy-policy'
   | 'cookie-policy'
   | 'security-policy'
+  | ServiceSlug
   | 'software-development'
   | 'ai-development'
   | 'mobile-app-development'
@@ -93,7 +97,7 @@ export const Header: React.FC<HeaderProps> = ({
 
       const currentScrollY = window.scrollY || document.documentElement.scrollTop;
       const scrolled = currentScrollY > 20;
-      setIsScrolled(scrolled);
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
       setIsVisible(true);
 
       // Close open dropdowns during active scroll
@@ -104,7 +108,7 @@ export const Header: React.FC<HeaderProps> = ({
 
     // Initial check on mount
     const initialScrollY = window.scrollY || document.documentElement.scrollTop;
-    setIsScrolled(initialScrollY > 30);
+    setIsScrolled(initialScrollY > 20);
     setIsVisible(true);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -117,77 +121,84 @@ export const Header: React.FC<HeaderProps> = ({
         clearTimeout(scrollStopTimerRef.current);
       }
     };
-  }, [mobileMenuOpen]);
+  }, [mobileMenuOpen, activeMenu]);
 
-  const handleMouseEnter = (menu: 'what-we-do' | 'who-we-are' | 'insights') => {
+  const handleMouseEnter = useCallback((menu: 'what-we-do' | 'who-we-are' | 'insights') => {
     setActiveMenu(menu);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setActiveMenu(null);
-  };
+  }, []);
 
-  const handleMenuToggle = (e: React.MouseEvent, menu: 'what-we-do' | 'who-we-are' | 'insights') => {
+  const handleMenuToggle = useCallback((e: React.MouseEvent, menu: 'what-we-do' | 'who-we-are' | 'insights') => {
     e.stopPropagation();
     setActiveMenu((prev) => (prev === menu ? null : menu));
-  };
+  }, []);
 
-  const navigateToPage = (page: PageType) => {
+  const navigateToPage = useCallback((page: PageType) => {
     setActiveMenu(null);
     setMobileMenuOpen(false);
     if (onSelectPage) {
       onSelectPage(page);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  }, [onSelectPage]);
 
-  const handleLogoClick = () => {
+  const handleLogoClick = useCallback(() => {
     navigateToPage('home');
     onNavigate('#hero');
-  };
+  }, [navigateToPage, onNavigate]);
 
   /* =========================================================================
      NAVBAR WHAT WE DO - 4 CLEAN COLUMNS (MATCHES USER IMAGE 2)
      ========================================================================= */
 
-  // Column 1: Neominds services
+  // Column 1: Core Development & Engineering (8 of 16 CSV services)
   const ourServicesList = [
-    { title: 'Web Development', page: 'web-cms-development' as const, hasExternalArrow: false },
-    { title: 'Cross-Platform Development', page: 'mobile-app-development' as const, hasExternalArrow: false },
-    { title: 'Mobile App Development', page: 'mobile-app-development' as const, hasExternalArrow: false },
-    { title: 'Legacy App Modernization', page: 'software-development' as const, hasExternalArrow: false },
-    { title: 'E-Commerce Software', page: 'ecommerce-development' as const, hasExternalArrow: false },
-    { title: 'Custom Software', page: 'software-development' as const, hasExternalArrow: false },
+    { title: 'Web Development', page: 'web-development' as const, hasExternalArrow: false },
+    { title: 'App Development', page: 'app-development' as const, hasExternalArrow: false },
+    { title: 'Cross-Platform Mobile App Development', page: 'cross-platform-app-development' as const, hasExternalArrow: false },
+    { title: 'Custom Software Development', page: 'custom-software-development' as const, hasExternalArrow: false },
+    { title: 'E-commerce Platform', page: 'ecommerce-platform' as const, hasExternalArrow: false },
+    { title: 'SaaS Development', page: 'saas-development' as const, hasExternalArrow: false },
+    { title: 'Cloud Based Softwares', page: 'cloud-based-software' as const, hasExternalArrow: false },
+    { title: 'Legacy System Modernisation', page: 'legacy-modernisation' as const, hasExternalArrow: false },
   ];
 
-  // Column 2: AI and cloud services
+  // Column 2: AI & Specialist Services (8 of 16 CSV services)
   const artificialIntelligenceList = [
-    { title: 'AI Integration', page: 'ai-development' as const, hasExternalArrow: true },
-    { title: 'AI Automation', page: 'ai-automations' as const },
-    { title: 'AI-Native Software', page: 'ai-product-engineering' as const },
-    { title: 'Cloud Apps Development', page: 'devops' as const },
-    { title: 'SaaS Development', page: 'product-engineering' as const },
+    { title: 'AI Automations', page: 'ai-automations' as const, hasExternalArrow: false },
+    { title: 'AI Integrations', page: 'ai-integrations' as const, hasExternalArrow: false },
+    { title: 'AI Systems', page: 'ai-systems' as const, hasExternalArrow: false },
+    { title: 'AI Native Softwares', page: 'ai-native-software' as const, hasExternalArrow: false },
+    { title: 'Analytic Dashboard', page: 'analytics-dashboard' as const, hasExternalArrow: false },
+    { title: 'Custom Health Softwares', page: 'custom-health-software' as const, hasExternalArrow: false },
+    { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false },
+    { title: 'Product Engineering', page: 'product-engineering' as const, hasExternalArrow: false },
   ];
 
-  // Column 3: Technology capabilities
+  // Column 3: Technologies (7 from CSV)
   const fintechList = [
-    { title: 'Artificial Intelligence', page: 'ai-development' as const },
-    { title: 'Machine Learning', page: 'applied-ai' as const },
-    { title: 'Web Development', page: 'web-cms-development' as const },
-    { title: 'Database', page: 'analytics-dashboard' as const },
-    { title: 'Cloud Computing', page: 'devops' as const },
+    { title: 'Web Development', page: 'web-development' as const },
+    { title: 'Artificial Intelligence', page: 'ai-systems' as const },
+    { title: 'Machine Learning', page: 'ai-native-software' as const },
+    { title: 'Data Management', page: 'cloud-based-software' as const },
     { title: 'Data Analytics', page: 'analytics-dashboard' as const },
-    { title: 'Automation', page: 'ai-automations' as const },
+    { title: 'Automations', page: 'ai-automations' as const },
+    { title: 'Product Engineering', page: 'product-engineering' as const },
   ];
 
-  // Column 4: Industries
+  // Column 4: Industries (8 from CSV)
   const healthcareList = [
-    { title: 'E-Commerce', page: 'ecommerce-development' as const },
-    { title: 'Education', page: 'software-development' as const },
-    { title: 'Healthcare', page: 'healthcare-management-software' as const },
-    { title: 'Real Estate', page: 'software-development' as const },
-    { title: 'Enterprise', page: 'product-engineering' as const },
-    { title: 'Retail', page: 'ecommerce-development' as const },
+    { title: 'Enterprise', page: 'industries' as const },
+    { title: 'Financial Tech', page: 'industries' as const },
+    { title: 'Retail', page: 'industries' as const },
+    { title: 'Education', page: 'industries' as const },
+    { title: 'Healthcare', page: 'industries' as const },
+    { title: 'E-commerce', page: 'industries' as const },
+    { title: 'Real Estate', page: 'industries' as const },
+    { title: 'E-learning', page: 'industries' as const },
   ];
 
   return (
@@ -204,35 +215,48 @@ export const Header: React.FC<HeaderProps> = ({
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          backgroundColor: isScrolled || activeMenu ? 'rgba(21, 23, 27, 0.98)' : 'transparent',
-          backdropFilter: isScrolled || activeMenu ? 'blur(16px)' : 'none',
-          borderBottom: isScrolled || activeMenu ? '1px solid rgba(255, 255, 255, 0.12)' : 'none',
-          boxShadow: 'none',
+          paddingTop: isScrolled ? '12px' : '0px',
+          paddingInline: isScrolled ? '16px' : '0px',
           boxSizing: 'border-box',
           transform: isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, -140%, 0)',
           opacity: isVisible ? 1 : 0,
           willChange: 'transform, opacity',
-          transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, background-color 0.25s ease',
+          transition: 'padding-top 0.45s cubic-bezier(0.19, 1, 0.22, 1), padding-inline 0.45s cubic-bezier(0.19, 1, 0.22, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease',
         }}
       >
         {/* ========================================================
-            EFFECTIVESOFT ARCHITECTURAL FULL-WIDTH NAVBAR
-            Pinned clean edge-to-edge bar with zero border radius & zero shadows
+            EFFECTIVESOFT ARCHITECTURAL SHRINKING FLOATING NAVBAR PILL
+            Starts full-width edge-to-edge (100% width, 64px height).
+            When scrolled, smoothly shrinks to 46.5rem (~744px) matching EffectiveSoft!
             ======================================================== */}
         <div
           style={{
-            width: '100%',
-            maxWidth: '1320px',
-            height: '64px',
-            borderRadius: '0px',
-            backgroundColor: 'transparent',
-            border: 'none',
-            boxShadow: 'none',
+            width: isScrolled ? 'min(92%, 744px)' : '100%',
+            maxWidth: isScrolled ? '744px' : '1320px',
+            height: isScrolled ? '46px' : '64px',
+            borderRadius: isScrolled ? '4px' : '0px',
+            backgroundColor: isScrolled
+              ? 'rgba(21, 23, 27, 0.88)'
+              : activeMenu
+              ? 'rgba(21, 23, 27, 0.98)'
+              : 'transparent',
+            backdropFilter: isScrolled || activeMenu ? 'blur(25px)' : 'none',
+            borderTop: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
+            borderLeft: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
+            borderRight: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
+            borderBottom: isScrolled || activeMenu ? '1px solid rgba(255, 255, 255, 0.12)' : 'none',
+            boxShadow: isScrolled
+              ? '0 16px 36px rgba(0, 0, 0, 0.65)'
+              : 'none',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingInline: 'clamp(20px, 3.5vw, 44px)',
+            paddingInline: isScrolled ? '10px' : 'clamp(20px, 3.5vw, 44px)',
+            boxSizing: 'border-box',
             pointerEvents: 'auto',
+            willChange: 'width, max-width, height, transform',
+            transform: 'translateZ(0)',
+            transition: 'width 0.45s cubic-bezier(0.19, 1, 0.22, 1), max-width 0.45s cubic-bezier(0.19, 1, 0.22, 1), height 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-radius 0.4s ease, padding 0.4s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
           }}
         >
           {/* Left Brand Logo: Matches EffectiveSoft structure with Neominds identity */}
@@ -244,25 +268,48 @@ export const Header: React.FC<HeaderProps> = ({
               cursor: 'pointer',
               userSelect: 'none',
               transition: 'all 0.3s ease',
+              flexShrink: 0,
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              {/* EffectiveSoft Authentic 5-Horizontal-Bars Vector Icon */}
-              <svg width="24" height="21" viewBox="0 0 32 28" fill="#ffffff">
-                <path d="M6.857 0c-.89 0-1.613.705-1.613 1.575S5.966 3.15 6.857 3.15H29.81c.891 0 1.614-.705 1.614-1.575S30.7 0 29.809 0H6.857ZM3.934 7.76c0-.87.723-1.575 1.614-1.575H28.5c.89 0 1.613.705 1.613 1.575s-.722 1.575-1.613 1.575H5.548c-.891 0-1.614-.705-1.614-1.575ZM4.235 12.37c-.892 0-1.614.706-1.614 1.576 0 .87.722 1.575 1.614 1.575h22.951c.892 0 1.614-.706 1.614-1.575 0-.87-.723-1.575-1.614-1.575H4.235ZM1.31 20.13c0-.87.722-1.574 1.613-1.574h22.952c.891 0 1.614.705 1.614 1.575s-.723 1.575-1.614 1.575H2.923c-.89 0-1.613-.706-1.613-1.575ZM0 26.316c0-.87.723-1.575 1.614-1.575h22.951c.892 0 1.614.705 1.614 1.575s-.722 1.575-1.613 1.575H1.613C.723 27.89 0 27.186 0 26.316Z" />
-              </svg>
-              <span
+            {isScrolled ? (
+              /* Shrunk Scrolled State: Blue Square Badge (#2258e7) with 5 white horizontal lines matching EffectiveSoft */
+              <div
                 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '20px',
-                  fontWeight: 700,
-                  letterSpacing: '-0.02em',
-                  color: '#ffffff',
+                  width: '32px',
+                  height: '32px',
+                  backgroundColor: '#2258e7',
+                  borderRadius: '4px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: '0 2px 6px rgba(34, 88, 231, 0.4)',
+                  transition: 'all 0.3s ease',
                 }}
               >
-                Neominds TechHub
-              </span>
-            </div>
+                <svg width="18" height="16" viewBox="0 0 32 28" fill="#ffffff">
+                  <path d="M6.857 0c-.89 0-1.613.705-1.613 1.575S5.966 3.15 6.857 3.15H29.81c.891 0 1.614-.705 1.614-1.575S30.7 0 29.809 0H6.857ZM3.934 7.76c0-.87.723-1.575 1.614-1.575H28.5c.89 0 1.613.705 1.613 1.575s-.722 1.575-1.613 1.575H5.548c-.891 0-1.614-.705-1.614-1.575ZM4.235 12.37c-.892 0-1.614.706-1.614 1.576 0 .87.722 1.575 1.614 1.575h22.951c.892 0 1.614-.706 1.614-1.575 0-.87-.723-1.575-1.614-1.575H4.235ZM1.31 20.13c0-.87.722-1.574 1.613-1.574h22.952c.891 0 1.614.705 1.614 1.575s-.723 1.575-1.614 1.575H2.923c-.89 0-1.613-.706-1.613-1.575ZM0 26.316c0-.87.723-1.575 1.614-1.575h22.951c.892 0 1.614.705 1.614 1.575s-.722 1.575-1.613 1.575H1.613C.723 27.89 0 27.186 0 26.316Z" />
+                </svg>
+              </div>
+            ) : (
+              /* Unscrolled Full-Width State: White 5-bar icon + "Neominds TechHub" typography */
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <svg width="24" height="21" viewBox="0 0 32 28" fill="#ffffff">
+                  <path d="M6.857 0c-.89 0-1.613.705-1.613 1.575S5.966 3.15 6.857 3.15H29.81c.891 0 1.614-.705 1.614-1.575S30.7 0 29.809 0H6.857ZM3.934 7.76c0-.87.723-1.575 1.614-1.575H28.5c.89 0 1.613.705 1.613 1.575s-.722 1.575-1.613 1.575H5.548c-.891 0-1.614-.705-1.614-1.575ZM4.235 12.37c-.892 0-1.614.706-1.614 1.576 0 .87.722 1.575 1.614 1.575h22.951c.892 0 1.614-.706 1.614-1.575 0-.87-.723-1.575-1.614-1.575H4.235ZM1.31 20.13c0-.87.722-1.574 1.613-1.574h22.952c.891 0 1.614.705 1.614 1.575s-.723 1.575-1.614 1.575H2.923c-.89 0-1.613-.706-1.613-1.575ZM0 26.316c0-.87.723-1.575 1.614-1.575h22.951c.892 0 1.614.705 1.614 1.575s-.722 1.575-1.613 1.575H1.613C.723 27.89 0 27.186 0 26.316Z" />
+                </svg>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-heading)',
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
+                    color: '#ffffff',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  Neominds TechHub
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Center Navigation Links (Pure Text with subtle arrow indicators) */}
@@ -270,8 +317,9 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: 'clamp(24px, 2.5vw, 36px)',
+              gap: isScrolled ? '18px' : 'clamp(24px, 2.5vw, 36px)',
               height: '100%',
+              transition: 'gap 0.4s ease',
             }}
             className="desktop-nav"
           >
@@ -401,34 +449,66 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           </nav>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-            <button
-              onClick={() => navigateToPage('contacts')}
-              className="desktop-send-btn"
-              style={{
-                height: '40px',
-                paddingInline: '24px',
-                fontSize: '14px',
-                fontWeight: 600,
-                letterSpacing: '-0.01em',
-                lineHeight: 1,
-                borderRadius: '0px',
-                backgroundColor: '#2258e7',
-                color: '#ffffff',
-                border: 'none',
-                boxShadow: 'none',
-                transition: 'background-color 0.2s ease',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                whiteSpace: 'nowrap',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
-            >
-              Send request
-            </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: isScrolled ? '8px' : '14px' }}>
+            {isScrolled ? (
+              /* Shrunk Scrolled State: Blue Square Envelope Icon button matching EffectiveSoft */
+              <button
+                onClick={() => navigateToPage('contacts')}
+                className="desktop-send-btn"
+                title="Send request"
+                aria-label="Send request"
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '4px',
+                  backgroundColor: '#2258e7',
+                  color: '#ffffff',
+                  border: 'none',
+                  boxShadow: '0 2px 6px rgba(34, 88, 231, 0.4)',
+                  transition: 'background-color 0.2s ease, transform 0.2s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  padding: 0,
+                  flexShrink: 0,
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+              >
+                <Mail size={16} color="#ffffff" />
+              </button>
+            ) : (
+              /* Unscrolled Full-Width State: Full Blue "Send request" button */
+              <button
+                onClick={() => navigateToPage('contacts')}
+                className="desktop-send-btn"
+                style={{
+                  height: '38px',
+                  paddingInline: '22px',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  letterSpacing: '-0.01em',
+                  lineHeight: 1,
+                  borderRadius: '4px',
+                  backgroundColor: '#2258e7',
+                  color: '#ffffff',
+                  border: 'none',
+                  boxShadow: 'none',
+                  transition: 'background-color 0.2s ease',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  whiteSpace: 'nowrap',
+                  cursor: 'pointer',
+                  flexShrink: 0,
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+              >
+                Send request
+              </button>
+            )}
 
             {/* Mobile Menu Hamburger */}
             <button
@@ -438,14 +518,15 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '36px',
-                height: '36px',
+                width: isScrolled ? '32px' : '36px',
+                height: isScrolled ? '32px' : '36px',
                 color: '#ffffff',
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '0px',
+                borderRadius: '4px',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
+                flexShrink: 0,
               }}
               aria-label="Open Mobile Menu"
             >
@@ -463,8 +544,8 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 1020px)',
               maxWidth: '1020px',
-              marginTop: '0px',
-              borderRadius: '0px',
+              marginTop: isScrolled ? '8px' : '0px',
+              borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               backgroundColor: '#15171b',
               backdropFilter: 'blur(16px)',
@@ -473,6 +554,7 @@ export const Header: React.FC<HeaderProps> = ({
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
               overflow: 'hidden',
+              transition: 'margin-top 0.3s ease, border-radius 0.3s ease',
             }}
           >
             <div
@@ -524,10 +606,10 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               </div>
 
-              {/* Column 2: AI & Cloud */}
+              {/* Column 2: AI & Specialist */}
               <div>
                 <div style={{ fontSize: '12px', fontWeight: 600, color: 'rgba(255, 255, 255, 0.5)', marginBottom: '16px', letterSpacing: '0.02em' }}>
-                  AI & Cloud
+                  AI & Specialist
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   {artificialIntelligenceList.map((item) => (
@@ -645,8 +727,8 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 880px)',
               maxWidth: '880px',
-              marginTop: '0px',
-              borderRadius: '0px',
+              marginTop: isScrolled ? '8px' : '0px',
+              borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               backgroundColor: '#15171b',
               backdropFilter: 'blur(16px)',
@@ -655,6 +737,7 @@ export const Header: React.FC<HeaderProps> = ({
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
               overflow: 'hidden',
+              transition: 'margin-top 0.3s ease, border-radius 0.3s ease',
             }}
           >
             <div
@@ -824,8 +907,8 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 660px)',
               maxWidth: '660px',
-              marginTop: '0px',
-              borderRadius: '0px',
+              marginTop: isScrolled ? '8px' : '0px',
+              borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
               backgroundColor: '#15171b',
               backdropFilter: 'blur(16px)',
@@ -836,6 +919,7 @@ export const Header: React.FC<HeaderProps> = ({
               overflow: 'hidden',
               display: 'grid',
               gridTemplateColumns: '210px 1fr',
+              transition: 'margin-top 0.3s ease, border-radius 0.3s ease',
             }}
           >
             {/* Left Column: 5 Vertical Navigation Links matching Image 1 */}
@@ -1051,10 +1135,10 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   </div>
 
-                  {/* Sub-block: AI & Cloud */}
+                  {/* Sub-block: AI & Specialist */}
                   <div>
                     <div style={{ fontSize: '12px', fontWeight: 700, color: '#5f85ed', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      AI & Cloud
+                      AI & Specialist
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {artificialIntelligenceList.map((srv) => (

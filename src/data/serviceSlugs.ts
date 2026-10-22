@@ -1,45 +1,27 @@
-// Lightweight lookup table for canonical services to avoid loading full service data dictionaries into the main bundle
+// Canonical service slugs — 16 services exactly as defined in the services CSV
 export const ALL_SERVICE_SLUGS = [
-  // Core Technology
-  'software-development',
-  'ai-development',
-  'mobile-app-development',
-  'web-cms-development',
-  'ecommerce-development',
-  'devops',
-  'ai-agents',
+  // Core Development
+  'web-development',
+  'app-development',
+  'cross-platform-app-development',
+  'custom-software-development',
+  'ecommerce-platform',
+  'saas-development',
+  'cloud-based-software',
+  'legacy-modernisation',
+  // AI & Intelligence
   'ai-automations',
-  'chatbot-videobot',
-  'chatbot-video-bot-development',
+  'ai-integrations',
+  'ai-systems',
+  'ai-native-software',
+  // Specialist
   'analytics-dashboard',
-  'technical-support',
-  // Fintech
-  'digital-banking',
-  'payment-solutions',
-  'lending-credit-platforms',
-  'investment-wealth-management',
-  'financial-analytics',
-  'fraud-risk-management',
-  // Healthcare
-  'healthcare-management-software',
-  'telemedicine-platforms',
-  'patient-engagement',
-  'medical-ai-solutions',
-  'healthcare-analytics',
-  'healthcare-automation',
-  // Enterprise AI
-  'ai-product-engineering',
-  'applied-ai',
-  'ai-agent-systems',
-  'intelligent-automation',
-  'generative-ai',
-  // Legacy / Strategy
-  'product-discovery',
+  'custom-health-software',
+  'training-as-service',
   'product-engineering',
-  'business-analysis',
-  'it-consulting',
-  'ui-ux-design',
 ] as const;
+
+export type ServiceSlug = typeof ALL_SERVICE_SLUGS[number];
 
 const SERVICE_SLUG_SET = new Set<string>(ALL_SERVICE_SLUGS);
 

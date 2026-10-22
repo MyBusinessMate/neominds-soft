@@ -20,91 +20,132 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    id: 'authenticom-ai-etl',
-    clientName: 'AUTHENTICOM',
-    clientLogo: (
-      <img
-        src="https://www.effectivesoft.com/wp/wp-content/uploads/2025/12/authenticom-color-2.svg"
-        alt="Authenticom"
-        style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
-        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
-      />
-    ),
-    categories: ['Artificial intelligence', 'Data related', 'Data services', 'Modernization', 'Migration'],
-    title: 'Mission-critical ETL platform, modernized with agentic AI',
-    description:
-      'We transformed ETL modernization approach from manual rewrites into a governed, multi-agent AI system designed for scale, control, and long-term growth.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #2a5298 0%, #1a3668 50%, #0c1c38 100%)',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/142814/960.authenticom-cover-template.jpg',
-  },
-  {
-    id: 'trading-platform',
-    clientName: 'TRADING PLATFORM',
+    id: 'mindspace-mobile-app',
+    clientName: 'MINDSPACE.AI',
     clientLogo: (
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <div
           style={{
-            width: '24px',
-            height: '24px',
-            borderRadius: '0px',
-            backgroundColor: '#2258e7',
+            width: '28px',
+            height: '28px',
+            backgroundColor: '#38bdf8',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#001334',
+            fontWeight: 900,
+            fontSize: '13px',
+          }}
+        >
+          M
+        </div>
+        <span style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
+          MINDSPACE.AI
+        </span>
+      </div>
+    ),
+    categories: ['Healthcare', 'App Development', 'React Native', 'WebRTC'],
+    title: 'Mindspace.ai: Healthcare Telehealth & Clinical Wellness Mobile App',
+    description:
+      'Engineered a HIPAA-compliant iOS and Android telehealth platform with offline biometrics, encrypted WebRTC video, and sub-100ms session sync.',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'fundbot-sql-chatbot',
+    clientName: 'FUNDBOT',
+    clientLogo: (
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div
+          style={{
+            width: '28px',
+            height: '28px',
+            backgroundColor: '#10b981',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#001334',
+            fontWeight: 900,
+            fontSize: '13px',
+          }}
+        >
+          FB
+        </div>
+        <span style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
+          FUNDBOT
+        </span>
+      </div>
+    ),
+    categories: ['FinTech', 'Artificial Intelligence', 'Web Development', 'SQL AI'],
+    title: 'Natural Language AI SQL Financial Query Engine',
+    description:
+      'Built an intelligent enterprise SQL copilot converting natural-language finance inquiries into audited, schema-safe read operations in milliseconds.',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #103247 0%, #0d233a 50%, #081624 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80',
+  },
+  {
+    id: 'dotcomweavers-project-buddy',
+    clientName: 'DOTCOMWEAVERS',
+    clientLogo: (
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div
+          style={{
+            width: '28px',
+            height: '28px',
+            backgroundColor: '#6366f1',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             color: '#ffffff',
-            fontWeight: 800,
-            fontSize: '12px',
+            fontWeight: 900,
+            fontSize: '13px',
           }}
         >
-          FX
+          DW
         </div>
-        <span style={{ fontSize: '13px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.05em' }}>
-          MULTI-ASSET TRADING
+        <span style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
+          DOTCOMWEAVERS
         </span>
       </div>
     ),
-    categories: ['Web app', 'Mobile app', 'Trading platform', 'Financial services & Trading', '.NET', 'MS Azure'],
-    title: 'A startup idea engineered into a million-user trading platform',
+    categories: ['Enterprise', 'Artificial Intelligence', 'Automations', 'LLM Agents'],
+    title: 'Autonomous Multi-Project AI Assistant & Velocity Engine',
     description:
-      'Neominds TechHub joined the founders to engineer the high-performance infrastructure behind a multi-asset user trading ecosystem.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137561/960.Website-cover-template-2.jpg',
+      'Integrated Claude and multi-agent AI routines to track sprint scope drift, automate client status summaries, and cut delivery overhead by 68%.',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #2a5298 0%, #1a3668 50%, #0c1c38 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80',
   },
   {
-    id: 'motive-retail-ai',
-    clientName: 'MOTIVE RETAIL',
+    id: 'flooring-inc-dashboard',
+    clientName: 'FLOORING INC',
     clientLogo: (
-      <img
-        src="https://www.effectivesoft.com/wp/wp-content/uploads/2026/08/motiveretail-color-4.svg"
-        alt="Motive Retail"
-        style={{ height: '36px', width: 'auto', objectFit: 'contain' }}
-        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
-      />
+      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div
+          style={{
+            width: '28px',
+            height: '28px',
+            backgroundColor: '#f59e0b',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#001334',
+            fontWeight: 900,
+            fontSize: '13px',
+          }}
+        >
+          FI
+        </div>
+        <span style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff', letterSpacing: '0.08em' }}>
+          FLOORING INC
+        </span>
+      </div>
     ),
-    categories: ['Artificial intelligence', 'Automotive', 'Claude Code', 'Development'],
-    title: 'Improving onboarding capacity for a leading automotive integration platform with Claude',
+    categories: ['E-commerce', 'Data Analytics', 'Dashboards', 'Retail Tech'],
+    title: 'High-Volume E-Commerce Inventory & Analytics Dashboard',
     description:
-      'We developed a governed agentic AI workflow to scale integration onboarding while maintaining Motive Retail’s existing engineering and validation standards.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1b4b66 0%, #103247 50%, #091c29 100%)',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/142785/960.motiveretail-cover-template.jpg',
-  },
-  {
-    id: 'trubridge-medical-ai',
-    clientName: 'TRUBRIDGE',
-    clientLogo: (
-      <img
-        src="https://www.effectivesoft.com/wp/wp-content/uploads/2019/11/TruBridge-logo-color.svg"
-        alt="TruBridge"
-        style={{ height: '32px', width: 'auto', objectFit: 'contain' }}
-        onError={(e) => { (e.currentTarget as HTMLElement).style.display = 'none'; }}
-      />
-    ),
-    categories: ['Healthcare', 'Artificial intelligence', 'Python', 'ASP.NET', 'Microsoft Azure', 'Integration'],
-    title: 'AI integration for medical coding software',
-    description:
-      'We integrated an AI-powered assistant and intelligent checks into a medical coding platform to help coders work faster, improve accuracy, and reduce manual effort.',
+      'Constructed an executive real-time dashboard unifying multi-warehouse inventory telemetry, SKU velocity, and live retail order attribution.',
     bgGradient: 'radial-gradient(ellipse at 40% 30%, #1c3d5a 0%, #0f2438 50%, #091522 100%)',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/101598/960.Optimized-revenue-cycle-management-with-Power-BI-dashboards.png',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80',
   },
 ];
 

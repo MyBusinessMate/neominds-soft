@@ -30,7 +30,7 @@ export interface ServiceData {
   slug: string;
   title: string;
   tagline: string;
-  category: 'Core Engineering' | 'AI & Intelligence' | 'Cloud & Operations';
+  category: 'Core Development' | 'AI & Intelligence' | 'Specialist' | 'Core Engineering' | 'Cloud & Operations';
   heroBadge: string;
   heroHeadline: string;
   heroHeadlineHighlight: string;
@@ -103,2108 +103,1987 @@ export interface ServiceData {
 
 
 export const SERVICES_DATA: Record<string, ServiceData> = {
-  'software-development': {
-    id: 'software-development',
-    slug: 'software-development',
-    title: 'Software Development',
-    tagline: 'Full-Cycle Custom Software Engineering',
-    category: 'Core Engineering',
-    heroBadge: 'Enterprise Software Engineering',
-    heroHeadline: 'Custom Enterprise',
-    heroHeadlineHighlight: 'Software Development',
+
+  // ─────────────────────────────────────────────────────────────
+  // 1. WEB DEVELOPMENT
+  // ─────────────────────────────────────────────────────────────
+  'web-development': {
+    id: 'web-development',
+    slug: 'web-development',
+    title: 'Web Development',
+    tagline: 'Fast, secure websites and web apps that scale with your business',
+    category: 'Core Development',
+    heroBadge: 'Web Development',
+    heroHeadline: 'Websites and Web Apps',
+    heroHeadlineHighlight: 'Built to Perform',
     heroDescription:
-      'We architect and ship production-hardened software systems engineered to withstand extreme concurrency, eliminate architectural bottlenecks, and scale with your business. Clean architecture, zero tech-debt shortcuts, and 100% intellectual property transfer.',
-    heroImage: '/services/software-development.png',
-    heroImageCaption: 'Software Development Production Architecture',
-    primaryCtaText: 'Architect Your System',
-    secondaryCtaText: 'View Production Systems',
+      'We build web applications, portals, and marketing sites that load fast, hold up under traffic, and give your team full ownership. No bloated frameworks that slow you down three months later.',
+    heroImage: '/services/web-development.png',
+    heroImageCaption: 'Web application architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'View Our Work',
     trustPoints: [
-      'Multi-region active-active cloud failover',
-      'SOC 2 Type II & ISO 27001 secure SDLC',
-      'Zero-downtime blue/green deployment pipelines',
-      'Complete source code, CI/CD, and IP handover',
-    ],
-    metrics: [
-      { value: '99.99%', label: 'System Uptime SLA' },
-      { value: '< 15ms', label: 'P99 API Latency' },
-      { value: '10M+', label: 'Daily Transactions Handled' },
-      { value: '100%', label: 'Direct IP Ownership' },
+      'Sub-second page load times',
+      'Responsive across all devices',
+      'SEO-ready from day one',
+      'Full source code handover',
     ],
     overview: {
-      statement:
-        'Modern enterprise software must survive high concurrency, sudden traffic spikes, and relentless operational pressure without human babysitting.',
+      statement: 'Your website is often the first place a customer or partner forms an opinion about your business. It has to work properly — fast, clear, and reliable.',
       paragraphs: [
-        'Off-the-shelf SaaS and bloated legacy architectures collapse when transaction volumes surge. When systems lock up under load, revenue evaporates and engineering teams burn out fighting fires. We engineer decoupled, high-performance backends and mission-critical application architectures built for uncompromised resilience.',
-        'Our engineering squads apply domain-driven design, stateless microservices, and event-driven streaming pipelines in Go, TypeScript, Python, and Java. We enforce strict boundary encapsulation, transactional outbox patterns, and distributed tracing across every microservice.',
-        'From initial schema modeling to production deployment on multi-zone Kubernetes, every deliverable is verified against strict performance benchmarks and backed by 100% intellectual property ownership transfer.',
+        'We plan, design, and build web applications that fit how your business actually operates. Whether you need a customer-facing portal, an internal tool, or a high-traffic public site, we start from your requirements and build from there.',
+        'Our web projects use React, Next.js, TypeScript, and Node.js — technologies that are proven in production and that your own engineers can understand and maintain after we hand over.',
       ],
-      keyTakeaway:
-        'Battle-tested microservices and distributed databases engineered for sub-second execution, zero data drift, and absolute architectural transparency.',
+      keyTakeaway: 'Reliable web software built by engineers who care about long-term quality, not just getting something live.',
     },
+    mainProblemSolved: {
+      problem: 'Your current site is slow, hard to update, or built on something your team cannot easily maintain.',
+      solution: 'We rebuild or build fresh with modern tools — clean architecture, clear documentation, and a codebase your developers can actually work in.',
+      result: 'A fast, reliable web product your team owns completely, with no dependency on the agency that built it.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Product Manager', situation: 'Needs a new web app shipped quickly with measurable performance targets' },
+        { role: 'CTO / Tech Lead', situation: 'Wants a replacement for a legacy web system that has become too slow to change' },
+        { role: 'Business Owner', situation: 'Wants a professional site that generates leads and does not require constant agency involvement' },
+      ],
+    },
+    metrics: [
+      { value: '<1s', label: 'Target Page Load Time' },
+      { value: '100', label: 'Lighthouse Score Target' },
+      { value: '100%', label: 'Code Ownership Transferred' },
+    ],
     capabilities: [
       {
-        title: 'Decoupled Microservices & Event-Driven Topology',
-        description:
-          'High-throughput distributed systems built with Go, Node.js, and Java. We decouple business domains with Apache Kafka and RabbitMQ streams to eliminate database lock contention.',
-        tags: ['Go / Node.js / Java', 'Kafka & RabbitMQ', 'gRPC & REST', 'Docker & Kubernetes'],
+        title: 'Web Application Development',
+        description: 'Custom web apps built around your workflows — not adapted from a generic template. We cover frontend, backend, APIs, and database architecture.',
+        tags: ['React', 'Next.js', 'Node.js', 'TypeScript'],
       },
       {
-        title: 'Monolithic Modernization & Strangler Migrations',
-        description:
-          'Systematic monolithic migrations using the Martin Fowler strangler fig pattern. We extract bounded contexts, refactor databases, and reroute live traffic with zero downtime.',
-        tags: ['Strangler Pattern', 'Zero-Downtime Cutover', 'Database Refactoring', 'API Facades'],
+        title: 'CMS and Content Sites',
+        description: 'Headless CMS setups that let your marketing team update content without filing a ticket. We connect Sanity, Strapi, or Contentful to your frontend.',
+        tags: ['Sanity', 'Strapi', 'Headless CMS', 'Static Generation'],
       },
       {
-        title: 'Enterprise Workflow Engines & ERP Core',
-        description:
-          'Custom internal business operating systems, multi-tenant SaaS backends, automated approval pipelines, and deep enterprise integrations with SAP, Salesforce, and NetSuite.',
-        tags: ['Multi-Tenant SaaS', 'BPMN State Machines', 'Enterprise Connectors', 'RBAC / ABAC Security'],
+        title: 'Web Portals and Dashboards',
+        description: 'Role-based portals for customers, partners, or internal staff. Secure login, data views, and actions specific to each user type.',
+        tags: ['Auth systems', 'Role-based access', 'API integrations'],
       },
       {
-        title: 'High-Performance API Design & Service Meshes',
-        description:
-          'Sub-millisecond rate-limited API gateways with OAuth2/OIDC authentication, mutual TLS, automated OpenAPI specifications, distributed caching, and OpenTelemetry instrumentation.',
-        tags: ['Kong / Envoy', 'OpenAPI 3.1 Specs', 'Redis Caching', 'Token-Bucket Rate Limiting'],
-      },
-      {
-        title: 'Distributed Persistence & Sharded Databases',
-        description:
-          'High-availability relational and distributed databases, read-replica clusters, horizontal sharding, vector stores, and automated schema migration pipelines.',
-        tags: ['PostgreSQL & TimescaleDB', 'MongoDB & Cassandra', 'Pinecone & pgvector', 'Flyway Migrations'],
-      },
-      {
-        title: 'Security-Hardened SDLC & QA Automation',
-        description:
-          'Automated regression testing, end-to-end integration suites, static code analysis (SAST/DAST), and ISO 27001-compliant development lifecycles with continuous verification.',
-        tags: ['Jest / PyTest / Playwright', 'SAST & DAST Scans', 'ISO 27001 SDLC', 'Chaos Engineering'],
+        title: 'Performance and SEO Engineering',
+        description: 'We build with Core Web Vitals in mind from the start — not as an afterthought. Schema markup, fast images, and proper server-side rendering included.',
+        tags: ['Core Web Vitals', 'Schema markup', 'SSR/SSG', 'Image optimisation'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Discovery & Architecture Scoping',
-        description:
-          'Domain-driven design workshops, event-storming sessions, data flow modeling, and non-functional requirements definition.',
-        deliverables: ['System Architecture Document (SAD)', 'Domain Entity Models', 'Technical Risk Matrix'],
+        title: 'Discovery and scoping',
+        description: 'We map your requirements, user flows, and technical constraints before writing any code.',
+        deliverables: ['Scope document', 'Technical requirements', 'Sitemap / IA diagram'],
       },
       {
         step: '02',
-        title: 'Core Engine & API Prototyping',
-        description:
-          'Iterative sprint development of core business logic, schema migrations, and REST/gRPC endpoints with automated unit test coverage.',
-        deliverables: ['Working API Sandbox', 'Database Schema DDL', 'Automated Test Suites'],
+        title: 'Design and architecture',
+        description: 'UI designs and technical architecture decisions are locked in before development starts.',
+        deliverables: ['Wireframes', 'Component library', 'Architecture diagram'],
       },
       {
         step: '03',
-        title: 'Concurrency & Security Hardening',
-        description:
-          'Connecting third-party systems, stress-testing under simulated concurrency, and optimizing memory allocation and database query execution plans.',
-        deliverables: ['Load Testing Benchmarks', 'Integration Test Reports', 'Security Penetration Audit'],
+        title: 'Development and integration',
+        description: 'Two-week sprints with staging demos. You see progress every two weeks, not at the end.',
+        deliverables: ['Working features per sprint', 'API integrations', 'Test coverage'],
       },
       {
         step: '04',
-        title: 'Production Deployment & SLA Handover',
-        description:
-          'Zero-downtime blue/green deployment to cloud infrastructure with Prometheus/Grafana monitoring, runbooks, and 24/7 hypercare support.',
-        deliverables: ['Production Release Pipeline', 'Infrastructure Runbooks', 'SLA Support Governance'],
+        title: 'Testing and launch',
+        description: 'Cross-browser testing, performance benchmarks, and a clean deployment to your hosting.',
+        deliverables: ['QA report', 'Performance audit', 'Launch runbook'],
       },
     ],
     deliverables: [
-      {
-        title: 'Full Source Code & Git Repositories',
-        category: 'Codebase',
-        description: 'Clean, documented TypeScript, Python, and Go source code with 100% intellectual property ownership transfer.',
-        format: 'GitHub / GitLab / Bitbucket',
-      },
-      {
-        title: 'System Architecture Blueprint',
-        category: 'Architecture',
-        description: 'Cloud topology, network boundary diagrams, data dictionaries, and sequence workflows.',
-        format: 'PDF & Interactive Diagrams',
-      },
-      {
-        title: 'CI/CD Automated Deployment Pipeline',
-        category: 'DevOps',
-        description: 'GitHub Actions and GitLab CI workflows for automated linting, security scanning, and multi-stage deployments.',
-        format: 'YAML Scripts & Dockerfiles',
-      },
-      {
-        title: 'OpenAPI 3.1 & gRPC Specifications',
-        category: 'Docs',
-        description: 'Interactive OpenAPI specifications with request contracts, error schemas, and Postman collections.',
-        format: 'OpenAPI 3.1 & Postman Collection',
-      },
+      { title: 'Production-ready web app', category: 'Code', description: 'Fully tested, documented codebase', format: 'GitHub repository' },
+      { title: 'CMS setup', category: 'Content', description: 'Admin panel for content updates', format: 'CMS environment' },
+      { title: 'Performance report', category: 'Quality', description: 'Lighthouse and Core Web Vitals audit', format: 'PDF report' },
     ],
     techStack: [
-      { category: 'Languages', items: ['TypeScript', 'Python', 'Go', 'Java', 'C# / .NET', 'Rust'] },
-      { category: 'Frameworks', items: ['Node.js / NestJS', 'FastAPI / Django', 'Spring Boot', 'Next.js', 'ASP.NET Core'] },
-      { category: 'Databases', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'Cassandra', 'pgvector'] },
-      { category: 'Cloud & Infrastructure', items: ['AWS', 'Google Cloud', 'Microsoft Azure', 'Kubernetes', 'Docker', 'Terraform'] },
+      { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Go'] },
+      { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+      { category: 'CMS', items: ['Sanity', 'Strapi', 'Contentful'] },
+      { category: 'Hosting', items: ['Vercel', 'AWS', 'Google Cloud'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds engineered our distributed data processing platform from the ground up, reducing batch latency from 4 hours to 12 minutes while maintaining 99.99% uptime across 12M daily transactions.',
-      author: 'Thomas Golden',
-      role: 'VP of Engineering',
-      company: 'TruBridge',
-      metric: '95% Latency Reduction',
+      quote: 'The web app went from a slow, confusing experience to something our customers actually praise. The team understood our product, not just the technology.',
+      author: 'Product Lead',
+      role: 'Product Manager',
+      company: 'Enterprise Client',
+      metric: 'Response time cut by 60%',
     },
-    outcomes: [
-      {
-        metric: '99.99%',
-        label: 'Production Uptime SLA',
-        description: 'Guaranteed high availability through multi-zone failover, circuit-breaking proxies, and zero single points of failure.',
-      },
-      {
-        metric: '70%',
-        label: 'Batch Latency Reduction',
-        description: 'Optimized distributed queries and event queues slashing end-of-day transaction reconciliation from hours to minutes.',
-      },
-      {
-        metric: '100%',
-        label: 'Codebase & IP Ownership',
-        description: 'Complete source code, deployment scripts, and architectural documentation handed directly to your engineering team with zero lock-in.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Do we own 100% of the software source code and IP?',
-        answer:
-          'Yes, absolutely. All code, architecture specifications, database schemas, and intellectual property developed during the engagement belong entirely to your company from day one.',
-      },
-      {
-        question: 'How do you ensure zero downtime during legacy system modernization?',
-        answer:
-          'We employ the Martin Fowler Strangler Fig pattern, routing traffic incrementally through modern microservices while keeping legacy databases synchronized with bi-directional event queues until full cutover is certified.',
-      },
-      {
-        question: 'What engagement models do you offer for software development?',
-        answer:
-          'We provide Dedicated Engineering Squads (cross-functional teams managed end-to-end), Staff Augmentation (senior engineers integrated into your team), and Fixed-Price Project Delivery for defined scopes.',
-      },
-      {
-        question: 'How do you handle software maintenance after launch?',
-        answer:
-          'We offer SLA-backed technical maintenance packages covering 24/7 incident monitoring, security patch management, framework upgrades, and continuous feature enhancements.',
-      },
+      { question: 'What does web development include?', answer: 'It includes planning, UI/UX design, frontend and backend development, database setup, integrations with third-party services, testing, and deployment. You get full source code.' },
+      { question: 'Who is this for?', answer: 'Businesses that need a professional web presence, internal tools, or customer-facing web apps — from startups to enterprise teams.' },
+      { question: 'How long does it take?', answer: 'A simple site or app takes 4–8 weeks. A complex web application with custom logic and integrations typically takes 10–16 weeks.' },
+      { question: 'Can you integrate with systems we already use?', answer: 'Yes. We connect to payment gateways, CRMs, ERPs, analytics platforms, and any service that provides an API.' },
     ],
-    ctaHeadline: 'Ready to Build Software That Doesn’t Break Under Scale?',
-    ctaDescription:
-      'Speak directly with a Principal Solutions Architect. We review your architecture, diagnose bottlenecks, and deliver an actionable execution plan within 24 hours.',
-    ctaButtonText: 'Request Technical Proposal',
   },
 
-  'ai-development': {
-    id: 'ai-development',
-    slug: 'ai-development',
-    title: 'AI Development',
-    tagline: 'Production ML, Custom LLMs & Foundation Model Engineering',
-    category: 'AI & Intelligence',
-    heroBadge: 'Production AI & LLM Systems',
-    heroHeadline: 'Production-Grade AI',
-    heroHeadlineHighlight: 'Models & Engineering',
+  // ─────────────────────────────────────────────────────────────
+  // 2. APP DEVELOPMENT
+  // ─────────────────────────────────────────────────────────────
+  'app-development': {
+    id: 'app-development',
+    slug: 'app-development',
+    title: 'App Development',
+    tagline: 'iOS and Android apps your users will actually keep',
+    category: 'Core Development',
+    heroBadge: 'Mobile App Development',
+    heroHeadline: 'Mobile Apps Built for',
+    heroHeadlineHighlight: 'Real People',
     heroDescription:
-      'We engineer private, production-grade AI systems that run on your infrastructure with deterministic accuracy. From vector-grounded RAG architectures to private open-source model fine-tuning, we eliminate hallucinations and protect your proprietary IP.',
-    heroImage: '/services/ai-development.png',
-    heroImageCaption: 'AI Development Production Architecture',
-    primaryCtaText: 'Build Your AI System',
-    secondaryCtaText: 'Review AI Architectures',
+      'We build iOS and Android applications that are smooth, reliable, and purpose-built for your users. Not reskinned templates — real apps designed around how people actually behave.',
+    heroImage: '/services/app-development.png',
+    heroImageCaption: 'Mobile app development — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Our Apps',
     trustPoints: [
-      'Zero training on your proprietary data by public models',
-      'Strict NeMo guardrails blocking prompt injections & PII leaks',
-      'Self-hosted vLLM inference on AWS, GCP, or on-prem GPUs',
-      'Continuous evaluation with Ragas & automated benchmark suites',
-    ],
-    metrics: [
-      { value: '98.4%', label: 'Context Grounding Accuracy' },
-      { value: '< 180ms', label: 'Time to First Token (TTFT)' },
-      { value: '100%', label: 'Air-Gapped Data Privacy' },
-      { value: '65%', label: 'Compute Cost Reduction' },
+      'Native iOS and Android experience',
+      'Offline-first where it matters',
+      'App Store and Play Store ready',
+      'Full IP transfer on launch',
     ],
     overview: {
-      statement:
-        'Commercial AI wrappers break down in production when accuracy, data security, and unit economics actually matter.',
+      statement: 'Most apps fail because they are built for a demo, not for actual daily use. We build with the opposite priority.',
       paragraphs: [
-        'Generic API wrappers fail enterprise requirements because they leak proprietary IP, suffer uncontrolled latency spikes, and hallucinate under real-world ambiguity. Enterprise AI requires deterministic grounding, strict boundary validation, and private inference infrastructure.',
-        'We build production AI systems around private open-source foundation models (Llama, Mistral, DeepSeek) and enterprise vector databases. We implement semantic hybrid chunking, reranking pipelines, and multi-stage guardrails that mathematically ground model responses in your verified company data.',
-        'By quantizing models (AWQ, GPTQ) and orchestrating high-throughput vLLM clusters, we slash inference costs by up to 65% compared to commercial API pay-per-token models while maintaining enterprise data privacy.',
+        'Every app we build goes through real-world performance testing — network conditions, device memory limits, edge case flows that users always find but developers miss in testing.',
+        'We work in Swift, Kotlin, and React Native. The choice depends on your audience, your timeline, and what will actually serve your users best. We tell you which and why before we start.',
       ],
-      keyTakeaway:
-        'Private, low-latency AI architectures built for zero hallucinations, strict regulatory compliance, and predictable unit economics.',
+      keyTakeaway: 'Apps that ship on time, hold up in production, and get used — not abandoned after the first week.',
     },
+    mainProblemSolved: {
+      problem: 'Your app crashes, loads slowly, or users churn because the experience is frustrating.',
+      solution: 'We rebuild or build fresh with proper architecture — offline sync, optimised rendering, and a test suite that catches problems before your users do.',
+      result: 'A stable, performant app that earns good reviews and keeps users coming back.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Founder / Product Owner', situation: 'Has an idea and needs a mobile product built properly from scratch' },
+        { role: 'CTO', situation: 'Needs to replace an existing app that has become too expensive to maintain' },
+        { role: 'Enterprise Team', situation: 'Needs a mobile tool for field staff, customers, or partners' },
+      ],
+    },
+    metrics: [
+      { value: '60fps', label: 'Smooth Rendering Standard' },
+      { value: '<100ms', label: 'Cold Launch Target' },
+      { value: '100%', label: 'Source Code Ownership' },
+    ],
     capabilities: [
       {
-        title: 'Vector-Grounded Hybrid RAG Pipelines',
-        description:
-          'Dense semantic vector retrieval combined with sparse BM25 keyword matching and cross-encoder rerankers, guaranteeing accurate context retrieval from millions of enterprise documents.',
-        tags: ['pgvector & Qdrant', 'Hybrid Retrieval', 'Cross-Encoder Rerankers', 'Context Compression'],
+        title: 'Native iOS Development',
+        description: 'Swift-based iOS apps built to Apple platform guidelines, supporting the latest hardware features and OS versions.',
+        tags: ['Swift', 'SwiftUI', 'UIKit', 'Core Data'],
       },
       {
-        title: 'Private Foundation Model Fine-Tuning',
-        description:
-          'Domain adaptation of open-source weights (Llama 3, Mistral, DeepSeek) using LoRA and QLoRA on private enterprise datasets without leaking intellectual property.',
-        tags: ['LoRA / QLoRA', 'Synthetic Data Generation', 'Domain Adaptation', 'PEFT Workflows'],
+        title: 'Native Android Development',
+        description: 'Kotlin apps optimised for the Android ecosystem — across screen sizes, memory profiles, and manufacturer variations.',
+        tags: ['Kotlin', 'Jetpack Compose', 'Room DB', 'WorkManager'],
       },
       {
-        title: 'High-Throughput vLLM & Quantization',
-        description:
-          'Deploying models with 4-bit/8-bit AWQ and GPTQ quantization using vLLM and TensorRT-LLM, maximizing token throughput per GPU and slashing cloud infrastructure costs.',
-        tags: ['vLLM Acceleration', 'AWQ / GPTQ 4-Bit', 'TensorRT-LLM', 'PagedAttention'],
+        title: 'Offline and Sync Architecture',
+        description: 'We build offline-first where your users need it — local data storage with background sync and conflict resolution.',
+        tags: ['SQLite', 'WatermelonDB', 'Background sync', 'CRDT'],
       },
       {
-        title: 'Prompt Injection Defense & NeMo Guardrails',
-        description:
-          'Multi-layered security boundaries blocking jailbreaks, adversarial prompt injections, toxic content, and automated PII data redaction before inference.',
-        tags: ['NeMo Guardrails', 'PII Redaction', 'Adversarial Defense', 'Factuality Scoring'],
-      },
-      {
-        title: 'Multimodal Vision & Document Intelligence',
-        description:
-          'Vision-language models extracting dense tabular data, complex PDF layouts, architectural diagrams, and handwritten documents into verified structured JSON schemas.',
-        tags: ['Vision LLMs', 'LayoutLM', 'Table Extraction', 'Structured JSON Output'],
-      },
-      {
-        title: 'Continuous Evaluation & Drift Telemetry',
-        description:
-          'Automated Ragas benchmarking, faithfulness scoring, token latency monitoring, and continuous regression suites so models maintain verified accuracy across releases.',
-        tags: ['Ragas Benchmarking', 'Drift Detection', 'Weights & Biases', 'Continuous Eval CI'],
+        title: 'App Store Launch and CI/CD',
+        description: 'Automated build pipelines that compile, test, and submit to TestFlight and Play Console on every commit.',
+        tags: ['Fastlane', 'GitHub Actions', 'TestFlight', 'Play Console'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Data Audit & Semantic Taxonomy',
-        description:
-          'Auditing enterprise knowledge assets, designing semantic chunking strategies, and establishing baseline accuracy evaluation benchmarks.',
-        deliverables: ['Data Ingestion Pipeline', 'Semantic Chunking Spec', 'Baseline Evaluation Benchmark'],
+        title: 'User research and scoping',
+        description: 'We map user journeys, prioritise features, and define what the MVP needs to do well.',
+        deliverables: ['User flow diagrams', 'Feature priority list', 'Technical scope'],
       },
       {
         step: '02',
-        title: 'Model Adaptation & RAG Scaffolding',
-        description:
-          'Setting up vector stores, fine-tuning foundation weights, and implementing hybrid retrieval pipelines with cross-encoder reranking.',
-        deliverables: ['Fine-Tuned Model Weights', 'Vector Store Schema', 'Interactive Test Console'],
+        title: 'UX design and prototyping',
+        description: 'High-fidelity Figma prototypes tested before any code is written.',
+        deliverables: ['Wireframes', 'UI design', 'Interactive prototype'],
       },
       {
         step: '03',
-        title: 'Guardrail Enforcement & Latency Tuning',
-        description:
-          'Enforcing NeMo guardrails, PII sanitization filters, and optimizing vLLM GPU inference runtimes for sub-200ms token generation.',
-        deliverables: ['Guardrail Policy Matrix', 'vLLM Latency Benchmark', 'Security Penetration Report'],
+        title: 'Development and testing',
+        description: 'Sprints with working builds on physical devices every two weeks. You install and use what we build.',
+        deliverables: ['TestFlight / Play builds', 'Test suite', 'API integrations'],
       },
       {
         step: '04',
-        title: 'Production GPU Orchestration & Monitoring',
-        description:
-          'Deploying auto-scaling GPU clusters on Kubernetes with Ragas continuous evaluation suites and live telemetry dashboards.',
-        deliverables: ['Kubernetes GPU Manifests', 'Telemetry Dashboard', 'Model Governance Runbook'],
+        title: 'Launch and post-launch',
+        description: 'App Store submission, production monitoring, and a 30-day hypercare window after launch.',
+        deliverables: ['App Store listing', 'Crash monitoring', 'Handover documentation'],
       },
     ],
     deliverables: [
-      {
-        title: 'Containerized Inference Engine & Model Weights',
-        category: 'AI Core',
-        description: 'Quantized, fine-tuned model artifacts and containerized vLLM inference services ready for private cloud deployment.',
-        format: 'Docker Containers & SafeTensors',
-      },
-      {
-        title: 'Hybrid Vector Retrieval & Semantic Search Core',
-        category: 'Data Architecture',
-        description: 'High-performance vector database schema with automated chunking, embedding, and reranking pipelines.',
-        format: 'pgvector / Qdrant DDL & Code',
-      },
-      {
-        title: 'Automated Ragas Evaluation Suite',
-        category: 'QA / Eval',
-        description: 'Test harness verifying context precision, answer relevance, and factual grounding across model updates.',
-        format: 'Python Test Harness & CI Suite',
-      },
-      {
-        title: 'Enterprise Security & PII Redaction Guardrail Config',
-        category: 'Security',
-        description: 'NeMo guardrails configuration preventing prompt injection attacks and redacting sensitive PII data.',
-        format: 'Colang Scripts & Python Runtimes',
-      },
+      { title: 'Published mobile apps', category: 'Apps', description: 'iOS and Android builds submitted and live', format: 'App Store / Play Store' },
+      { title: 'Source code', category: 'Code', description: 'Full Xcode and Android Studio projects', format: 'GitHub repository' },
+      { title: 'Test suite', category: 'Quality', description: 'Unit and integration tests', format: 'XCTest / JUnit' },
     ],
     techStack: [
-      { category: 'Foundation Models', items: ['Llama 3.3', 'Mistral Large', 'DeepSeek R1', 'Claude API', 'OpenAI API'] },
-      { category: 'Frameworks & Runtimes', items: ['vLLM', 'LangChain', 'LlamaIndex', 'TensorRT-LLM', 'HuggingFace', 'PyTorch'] },
-      { category: 'Vector Databases', items: ['pgvector', 'Qdrant', 'Pinecone', 'Milvus', 'ChromaDB'] },
-      { category: 'Guardrails & Telemetry', items: ['NeMo Guardrails', 'Ragas', 'Weights & Biases', 'Trulens', 'OpenTelemetry'] },
+      { category: 'iOS', items: ['Swift', 'SwiftUI', 'UIKit', 'Core Data'] },
+      { category: 'Android', items: ['Kotlin', 'Jetpack Compose', 'Room', 'Retrofit'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Firebase'] },
+      { category: 'Database', items: ['PostgreSQL', 'Firebase Firestore', 'SQLite'] },
+      { category: 'CI/CD', items: ['Fastlane', 'GitHub Actions', 'Bitrise'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds engineered a private RAG pipeline indexing 400,000 internal engineering documents. Our technical support engineers now resolve tier-3 escalations 60% faster with zero hallucinations.',
-      author: 'Dr. Michael Chen',
-      role: 'Chief AI Officer',
-      company: 'Aetheria Systems',
-      metric: '98.4% Factuality Grounding',
+      quote: 'Users stopped complaining the day we launched. The app actually worked. That had never happened before with our previous vendors.',
+      author: 'Head of Product',
+      role: 'VP Product',
+      company: 'Healthcare Client',
+      metric: '4.7 App Store rating at launch',
     },
-    outcomes: [
-      {
-        metric: '98.4%',
-        label: 'Factuality Grounding Rate',
-        description: 'Eliminates hallucinations across technical documentation through dense semantic embeddings and cross-encoder rerankers.',
-      },
-      {
-        metric: '65%',
-        label: 'Inference Cost Reduction',
-        description: 'Self-hosted quantized models replace expensive commercial per-token API subscriptions at scale.',
-      },
-      {
-        metric: '100%',
-        label: 'Data Isolation Guarantee',
-        description: 'Proprietary training data, embeddings, and user queries remain strictly within your private VPC boundary.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Will our proprietary data be used to train external public models?',
-        answer:
-          'Never. We deploy private models inside your own AWS, GCP, or on-premise infrastructure. No prompts, embeddings, or training datasets ever leave your isolated network perimeter.',
-      },
-      {
-        question: 'How do you prevent hallucinations in technical or regulated domains?',
-        answer:
-          'We implement strict context grounding using hybrid search (BM25 + dense vectors), cross-encoder rerankers, and NeMo guardrails that mathematically require every answer to cite exact source chunks.',
-      },
-      {
-        question: 'What hardware or GPU infrastructure is required to host private LLMs?',
-        answer:
-          'Through modern 4-bit and 8-bit quantization (AWQ/GPTQ) and vLLM acceleration, models like Llama 3 70B run efficiently on a single or dual NVIDIA A10G/L40S instance, drastically reducing hosting costs.',
-      },
-      {
-        question: 'How do you measure and maintain model accuracy over time?',
-        answer:
-          'We implement automated evaluation suites using the Ragas framework, continuously scoring context recall, answer relevance, and faithfulness against curated gold-standard test sets.',
-      },
+      { question: 'What does app development include?', answer: 'Discovery, UX/UI design, iOS and/or Android development, API integration, QA testing, App Store submission, and post-launch support.' },
+      { question: 'Who is this for?', answer: 'Founders building their first product, companies replacing an outdated app, and enterprises that need mobile tools for their teams or customers.' },
+      { question: 'How long does it take?', answer: 'A focused MVP typically takes 8–12 weeks. A full-featured app with complex integrations usually takes 14–20 weeks.' },
+      { question: 'Can it work with our existing backend?', answer: 'Yes. We connect to your existing API or build one alongside the app, depending on what you already have.' },
     ],
-    ctaHeadline: 'Ready to Deploy AI That Solves Real Enterprise Problems?',
-    ctaDescription:
-      'Consult with our Principal AI Engineers. We evaluate your dataset, map your inference architecture, and outline a concrete deployment roadmap.',
-    ctaButtonText: 'Request AI Architecture Review',
   },
 
-  'mobile-app-development': {
-    id: 'mobile-app-development',
-    slug: 'mobile-app-development',
-    title: 'Mobile App Development',
-    tagline: 'Native iOS, Android & High-Performance Cross-Platform Apps',
-    category: 'Core Engineering',
-    heroBadge: 'Native Mobile Engineering',
-    heroHeadline: 'High-Performance Mobile',
-    heroHeadlineHighlight: 'App Development',
+  // ─────────────────────────────────────────────────────────────
+  // 3. CROSS-PLATFORM APP DEVELOPMENT
+  // ─────────────────────────────────────────────────────────────
+  'cross-platform-app-development': {
+    id: 'cross-platform-app-development',
+    slug: 'cross-platform-app-development',
+    title: 'Cross-Platform App Development',
+    tagline: 'One codebase. iOS, Android, and web — shipped together',
+    category: 'Core Development',
+    heroBadge: 'Cross-Platform Development',
+    heroHeadline: 'Build Once,',
+    heroHeadlineHighlight: 'Deploy Everywhere',
     heroDescription:
-      'We design and build buttery-smooth 60fps mobile applications engineered for offline-first reliability, instant cold starts, and intuitive ergonomics. Trusted across financial services, logistics, and high-growth consumer apps.',
-    heroImage: '/services/mobile-app-development.png',
-    heroImageCaption: 'Mobile App Development Production Architecture',
-    primaryCtaText: 'Launch Your Mobile App',
-    secondaryCtaText: 'Inspect Mobile Architecture',
+      'We build cross-platform apps using React Native and Flutter that run on iOS, Android, and sometimes web — from a single shared codebase. You launch faster and maintain less.',
+    heroImage: '/services/cross-platform-app-development.png',
+    heroImageCaption: 'Cross-platform app architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'View Cross-Platform Work',
     trustPoints: [
-      'Offline-first sync using conflict-free CRDT data structures',
-      'Biometric hardware encryption via Secure Enclave & KeyStore',
-      'Automated Fastlane pipelines with TestFlight & Play Console distribution',
-      'WCAG 2.1 AA accessibility & pixel-perfect mobile ergonomics',
-    ],
-    metrics: [
-      { value: '60 FPS', label: 'Sustained UI Rendering Rate' },
-      { value: '< 100ms', label: 'Cold Start Launch Speed' },
-      { value: '99.9%', label: 'Crash-Free Session Rate' },
-      { value: '4.9 ★', label: 'Average App Store Rating' },
+      'Single codebase for iOS and Android',
+      'Near-native performance',
+      'Faster time to market',
+      'Lower ongoing maintenance cost',
     ],
     overview: {
-      statement:
-        'Mobile users abandon clunky apps in three seconds. High-retention mobile software requires native-grade speed, tactile responsiveness, and flawless offline state management.',
+      statement: 'Building separate iOS and Android apps doubles your cost and your maintenance burden. Cross-platform development solves that without sacrificing quality.',
       paragraphs: [
-        'Users do not forgive laggy animations, drained batteries, or screens that lock up when cellular signal drops in an elevator. Modern mobile apps must feel weightless, respond instantly to touch, and maintain local state without waiting on the network.',
-        'We engineer native iOS (Swift/SwiftUI), native Android (Kotlin/Jetpack Compose), and high-performance React Native / Flutter apps with offline-first synchronization engines. We use SQLite and WatermelonDB with optimistic UI updates, background sync workers, and biometric authentication.',
-        'Our release engineering uses Fastlane and automated cloud test devices to run end-to-end user journeys before any build hits TestFlight or Google Play. Zero regressions, zero unexpected crash spikes.',
+        'React Native and Flutter have matured significantly. The gap between cross-platform and native performance is small for most app types — and the cost savings are real.',
+        'We are honest about the trade-offs. If your app needs deep platform integration or extreme performance, we say so and recommend native. If cross-platform fits, it saves you time and money without compromise.',
       ],
-      keyTakeaway:
-        'Fluid 60fps mobile experiences with sub-100ms launch times, rock-solid offline sync, and automated app store release pipelines.',
+      keyTakeaway: 'Faster delivery, lower cost, and quality that holds up — when cross-platform is the right tool for your product.',
     },
+    mainProblemSolved: {
+      problem: 'Maintaining two separate native codebases doubles your engineering cost and slows down every feature release.',
+      solution: 'A shared cross-platform codebase with platform-specific optimisations where they matter.',
+      result: 'One team, one codebase, two fully working apps — shipped and updated at the same time.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Startup Founder', situation: 'Needs both iOS and Android but cannot afford two separate native teams' },
+        { role: 'Product Manager', situation: 'Wants to ship faster and keep the apps in sync feature-for-feature' },
+        { role: 'Business Owner', situation: 'Has a web product and wants to extend it to mobile without rebuilding everything' },
+      ],
+    },
+    metrics: [
+      { value: '60%', label: 'Code Shared Between Platforms' },
+      { value: '2x', label: 'Faster Release Cycles' },
+      { value: '100%', label: 'IP Transferred to You' },
+    ],
     capabilities: [
       {
-        title: 'Native iOS Engineering (Swift & SwiftUI)',
-        description:
-          'Crafted with Swift 6 and SwiftUI. We use Metal hardware acceleration, Secure Enclave cryptography, WidgetKit, Live Activities, and CoreBluetooth for platform-native speed.',
-        tags: ['Swift / SwiftUI', 'Metal Acceleration', 'Secure Enclave', 'Live Activities'],
+        title: 'React Native Development',
+        description: 'JavaScript-based apps that call native modules where needed, giving you real platform behaviour with a shared codebase.',
+        tags: ['React Native', 'TypeScript', 'Expo', 'Native modules'],
       },
       {
-        title: 'Native Android Engineering (Kotlin & Compose)',
-        description:
-          'Engineered with modern Kotlin, Jetpack Compose, Coroutines, Flow, and Room DB. Built for multi-device responsiveness, battery efficiency, and Android Keystore encryption.',
-        tags: ['Kotlin / Jetpack Compose', 'Coroutines & Flow', 'Room Database', 'Android Keystore'],
+        title: 'Flutter Development',
+        description: 'Dart-based apps with a single rendering engine that produces consistent, smooth UIs across iOS and Android.',
+        tags: ['Flutter', 'Dart', 'Material 3', 'Cupertino widgets'],
       },
       {
-        title: 'Cross-Platform React Native & Expo Core',
-        description:
-          'High-performance cross-platform apps using the React Native New Architecture (TurboModules & Fabric). Single codebase efficiency with native-grade frame rates.',
-        tags: ['React Native', 'Expo EAS', 'Fabric Architecture', 'TurboModules'],
+        title: 'Shared Backend and APIs',
+        description: 'We build the backend alongside the app so both platforms hit the same endpoints and get the same data.',
+        tags: ['REST API', 'GraphQL', 'Node.js', 'Firebase'],
       },
       {
-        title: 'Offline-First Sync & Conflict Resolution',
-        description:
-          'Local-first architectures with WatermelonDB and SQLite. Background CRDT synchronization queues guarantee zero data loss and instant optimistic UI responses.',
-        tags: ['WatermelonDB', 'CRDT Sync', 'SQLite', 'Optimistic UI Updates'],
-      },
-      {
-        title: 'Biometric Security & Mobile Encryption',
-        description:
-          'FIDO2 biometric authentication (FaceID, TouchID, BiometricPrompt), hardware-backed certificate pinning, anti-tamper jailbreak detection, and encrypted local storage.',
-        tags: ['FaceID / TouchID', 'Certificate Pinning', 'Anti-Tamper & Root Check', 'FIDO2 Auth'],
-      },
-      {
-        title: 'Automated CI/CD & Fastlane Release Ops',
-        description:
-          'Continuous integration pipelines that compile, run automated device test suites, generate app store screenshots, and deploy release builds to TestFlight and Play Store.',
-        tags: ['Fastlane', 'TestFlight / Play Console', 'App Store Optimization', 'Automated Screenshots'],
+        title: 'Cross-Platform CI/CD',
+        description: 'Automated pipelines that build, test, and submit both apps simultaneously on every commit.',
+        tags: ['GitHub Actions', 'Fastlane', 'EAS Build', 'Codemagic'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Mobile UX & Tactile Prototyping',
-        description:
-          'User flow mapping, interactive Figma prototypes, mobile design tokens, and tactile ergonomics testing across iOS and Android form factors.',
-        deliverables: ['Interactive Mobile Prototypes', 'Mobile Design System Kit', 'Navigation Architecture'],
+        title: 'Platform assessment',
+        description: 'We evaluate whether cross-platform is the right choice for your specific requirements before committing to an approach.',
+        deliverables: ['Technical recommendation', 'Platform comparison', 'Risk assessment'],
       },
       {
         step: '02',
-        title: 'Core Engine & Offline Database Setup',
-        description:
-          'Building the local-first database, establishing offline sync protocols, and implementing API integration clients with mock sandboxes.',
-        deliverables: ['Local Database Schema', 'State Machine Architecture', 'API Client SDK'],
+        title: 'Shared UX design',
+        description: 'One design system that works naturally on both iOS and Android — not a compromise between the two.',
+        deliverables: ['UI kit', 'Platform adaptations', 'Prototype'],
       },
       {
         step: '03',
-        title: 'Sensor Integration & 60fps Profiling',
-        description:
-          'Integrating native hardware sensors, biometric auth, push notification queues, and profiling memory allocations for sustained 60fps rendering.',
-        deliverables: ['Hardware Sensor Integration', '60fps Profiling Report', 'Security Audit Certificate'],
+        title: 'Development and device testing',
+        description: 'Development on real iOS and Android devices throughout — not just simulators.',
+        deliverables: ['Working builds', 'Device test matrix', 'Performance benchmarks'],
       },
       {
         step: '04',
-        title: 'Automated Testing & App Store Deployment',
-        description:
-          'Configuring Fastlane build pipelines, running automated device tests, and submitting production releases to Apple App Store and Google Play.',
-        deliverables: ['Fastlane Deployment Workflows', 'TestFlight Beta Release', 'App Store / Play Store Approvals'],
+        title: 'Simultaneous launch',
+        description: 'Both apps submitted and reviewed together, launching at the same time.',
+        deliverables: ['App Store listings', 'Monitoring setup', 'Handover docs'],
       },
     ],
     deliverables: [
-      {
-        title: 'Production Mobile Codebases (iOS & Android)',
-        category: 'Mobile Core',
-        description: 'Complete native Swift/Kotlin or React Native source code with full IP ownership and clean architecture patterns.',
-        format: 'Xcode / Android Studio Repositories',
-      },
-      {
-        title: 'Automated Fastlane Deployment Workflows',
-        category: 'DevOps',
-        description: 'Configured Fastlane scripts managing app signing, certificates, metadata, screenshots, and store submissions.',
-        format: 'Fastlane Ruby / YAML Scripts',
-      },
-      {
-        title: 'Tactile Mobile Design System & UI Kit',
-        category: 'Design',
-        description: 'Complete Figma design system with components, dark/light themes, and tactile motion tokens.',
-        format: 'Figma Library & Asset Packages',
-      },
-      {
-        title: 'App Store Optimization & Compliance Pack',
-        category: 'Compliance',
-        description: 'Privacy declarations, App Store compliance documentation, Apple HIG audit, and Google Play Data Safety forms.',
-        format: 'Compliance Dossier & Assets',
-      },
+      { title: 'Cross-platform app codebase', category: 'Code', description: 'Single shared repository for both platforms', format: 'GitHub repository' },
+      { title: 'Published apps', category: 'Deployment', description: 'Both iOS and Android live simultaneously', format: 'App Store + Play Store' },
+      { title: 'CI/CD pipeline', category: 'DevOps', description: 'Automated build and release system', format: 'GitHub Actions / Fastlane' },
     ],
     techStack: [
-      { category: 'Platforms', items: ['iOS', 'Android', 'iPadOS', 'watchOS', 'macOS Catalyst'] },
-      { category: 'Languages & Frameworks', items: ['Swift / SwiftUI', 'Kotlin / Jetpack Compose', 'React Native / Expo', 'Flutter', 'TypeScript'] },
-      { category: 'Local Storage & Sync', items: ['SQLite', 'WatermelonDB', 'MMKV', 'Realm', 'Room DB'] },
-      { category: 'DevOps & Testing', items: ['Fastlane', 'GitHub Actions', 'TestFlight', 'Google Play Console', 'Detox / Maestro'] },
+      { category: 'Framework', items: ['React Native', 'Flutter', 'Expo'] },
+      { category: 'Language', items: ['TypeScript', 'Dart', 'JavaScript'] },
+      { category: 'Backend', items: ['Node.js', 'Firebase', 'Supabase'] },
+      { category: 'State Management', items: ['Redux Toolkit', 'Zustand', 'Riverpod'] },
+      { category: 'CI/CD', items: ['EAS Build', 'Codemagic', 'GitHub Actions'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds rebuilt our mobile app from scratch. We went from a 3.1-star rating with constant offline crashes to a 4.9-star rating across 250,000 active monthly users.',
-      author: 'Marcus Vance',
-      role: 'Head of Mobile Product',
-      company: 'Kinetic Financial',
-      metric: '4.9 ★ Rating & 60 FPS',
+      quote: 'We launched both apps on the same day for the first time in our company history. The shared codebase meant fixes went out to both platforms at once.',
+      author: 'Engineering Director',
+      role: 'Director of Engineering',
+      company: 'Enterprise Client',
+      metric: 'Development cost reduced by 40%',
     },
-    outcomes: [
-      {
-        metric: '99.9%',
-        label: 'Crash-Free Session Rate',
-        description: 'Eliminates unexpected app crashes through memory profiling, strict type checking, and automated device lab testing.',
-      },
-      {
-        metric: '< 100ms',
-        label: 'Cold Start Velocity',
-        description: 'Sub-100ms startup launch eliminates user drop-off and maintains top search engine store rankings.',
-      },
-      {
-        metric: '100%',
-        label: 'Offline Functionality',
-        description: 'Core mobile workflows continue executing smoothly without active cellular connection, syncing when connectivity resumes.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Should we build Native (Swift/Kotlin) or Cross-Platform (React Native)?',
-        answer:
-          'If your app requires heavy hardware sensor integration, complex 3D graphics, or audio/video processing, pure native Swift and Kotlin are optimal. For most enterprise and consumer apps, React Native with the New Architecture delivers identical 60fps performance while reducing development costs by 40%.',
-      },
-      {
-        question: 'How do you handle offline functionality and data conflicts?',
-        answer:
-          'We build offline-first using SQLite and WatermelonDB with Conflict-Free Replicated Data Types (CRDTs). Users can create and edit records without internet, and changes synchronize deterministically in the background when connectivity resumes.',
-      },
-      {
-        question: 'Will you manage the App Store and Google Play review process?',
-        answer:
-          'Yes. We handle the complete submission lifecycle, including code signing, provisioning profiles, privacy declarations, App Store guidelines review, and resolving any reviewer inquiries until approved.',
-      },
-      {
-        question: 'How do you keep user biometrics and sensitive credentials secure?',
-        answer:
-          'We never store plaintext tokens. All cryptographic keys and authentication tokens are encrypted using the iOS Secure Enclave and Android Keystore, guarded by hardware-enforced biometric authentication.',
-      },
+      { question: 'What does cross-platform development include?', answer: 'A single shared codebase for iOS and Android, shared backend API, automated build pipelines, QA on real devices, and submission to both app stores.' },
+      { question: 'When is cross-platform the wrong choice?', answer: 'If your app needs deep hardware integration, real-time graphics, or very platform-specific behaviour, native development may be worth the extra cost. We help you make that call honestly.' },
+      { question: 'How long does it take?', answer: 'A cross-platform MVP typically takes 8–14 weeks. Complex apps with many integrations take 14–22 weeks.' },
+      { question: 'Can you maintain an existing React Native or Flutter app?', answer: 'Yes. We take on maintenance and feature work for existing codebases, including upgrading outdated dependencies.' },
     ],
-    ctaHeadline: 'Ready to Ship a 5-Star Mobile Experience?',
-    ctaDescription:
-      'Schedule a discovery session with our Lead Mobile Architect. We review your UX flows, offline data requirements, and deliver a detailed technical breakdown.',
-    ctaButtonText: 'Request Mobile Discovery',
   },
 
-  'web-cms-development': {
-    id: 'web-cms-development',
-    slug: 'web-cms-development',
-    title: 'Web & CMS Development',
-    tagline: 'Headless CMS, Edge-Rendered Web Applications & Sub-Second Page Loads',
-    category: 'Core Engineering',
-    heroBadge: 'Headless CMS & Web Platforms',
-    heroHeadline: 'Next-Generation Web',
-    heroHeadlineHighlight: '& Headless CMS',
+  // ─────────────────────────────────────────────────────────────
+  // 4. CUSTOM SOFTWARE DEVELOPMENT
+  // ─────────────────────────────────────────────────────────────
+  'custom-software-development': {
+    id: 'custom-software-development',
+    slug: 'custom-software-development',
+    title: 'Custom Software Development',
+    tagline: 'Software that fits your workflow — not the other way around',
+    category: 'Core Development',
+    heroBadge: 'Custom Software',
+    heroHeadline: 'Software Designed',
+    heroHeadlineHighlight: 'Around Your Business',
     heroDescription:
-      'We engineer lightning-fast headless web architectures and intuitive editorial systems built for global scale. Combining decoupled CMS backends (Sanity, Strapi) with modern edge frontends (Next.js, Vite), we deliver 100 Lighthouse scores so marketing teams publish without waiting on engineering.',
-    heroImage: '/services/web-cms-development.png',
-    heroImageCaption: 'Web & CMS Development Production Architecture',
-    primaryCtaText: 'Build Your Web Platform',
-    secondaryCtaText: 'Explore Headless Architectures',
+      'Off-the-shelf software rarely fits how your business actually works. We build custom software systems — web apps, internal tools, process automation platforms — that match your operations exactly.',
+    heroImage: '/services/custom-software-development.png',
+    heroImageCaption: 'Custom software development — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'View Case Studies',
     trustPoints: [
-      'Decoupled Sanity / Strapi headless schemas with live previews',
-      'Edge SSR / ISR static pre-rendering across global CDNs',
-      'Automated structured data (JSON-LD) for maximum SEO search rankings',
-      'Enterprise multi-lingual localization with role-based editing permissions',
-    ],
-    metrics: [
-      { value: '100', label: 'Core Web Vitals Lighthouse Score' },
-      { value: '< 400ms', label: 'Global Largest Contentful Paint' },
-      { value: '0.00', label: 'Cumulative Layout Shift (CLS)' },
-      { value: '4x', label: 'Faster Editorial Publishing Speed' },
+      'Built for your exact workflow',
+      'Integrates with tools you already use',
+      'You own 100% of the code',
+      'Grows with your business',
     ],
     overview: {
-      statement:
-        'Monolithic WordPress sites and rigid page builders slow down your brand, bloat bundle sizes, and frustrate content editors.',
+      statement: 'The best software for your business is the software that fits how your team actually works — not how a SaaS vendor thinks you should work.',
       paragraphs: [
-        'Traditional monolithic CMS platforms buckle under high traffic spikes, create security vulnerabilities through unvetted plugins, and render sluggish pages that kill search rankings. Modern digital products demand a headless separation between content storage and frontend rendering.',
-        'We architect modular web applications pairing headless content lakes (Sanity, Strapi, Contentful) with modern edge-rendered frontends (Next.js, Vite, Cloudflare Pages). We design custom drag-and-drop block builders that give non-technical marketing teams total layout freedom within strict brand design tokens.',
-        'Every page is optimized for Google Core Web Vitals: sub-second Largest Contentful Paint, zero cumulative layout shift, dynamic OpenGraph image generation, and programmatic SEO indexing.',
+        'We build custom software for businesses that have outgrown generic tools or have processes that do not fit any off-the-shelf product. That means internal platforms, operational systems, client-facing tools, and anything in between.',
+        'The process starts with understanding your workflow. We spend time with your team before writing code, because misunderstanding a process at the start costs far more to fix later.',
       ],
-      keyTakeaway:
-        'Lightning-fast edge-rendered websites that let marketing teams publish in minutes while maintaining perfect 100 performance scores.',
+      keyTakeaway: 'Software that fits your team, your data, and your process — owned entirely by you.',
     },
+    mainProblemSolved: {
+      problem: 'You are running business-critical processes through spreadsheets, emails, and tools that do not talk to each other.',
+      solution: 'A custom platform that connects your data, automates your repetitive steps, and gives your team a single place to work.',
+      result: 'Fewer manual errors, faster turnaround on tasks, and a system your team prefers over the spreadsheets.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Operations Lead', situation: 'Managing complex workflows through spreadsheets and email that are becoming unmanageable' },
+        { role: 'CTO', situation: 'Needs internal tooling that off-the-shelf products cannot provide' },
+        { role: 'Business Owner', situation: 'Has a process that is genuinely unique and cannot be configured in any existing SaaS product' },
+      ],
+    },
+    metrics: [
+      { value: '30–60%', label: 'Reduction in Manual Steps' },
+      { value: '100%', label: 'IP Ownership Transferred' },
+      { value: '2–4 wks', label: 'First Working Version' },
+    ],
     capabilities: [
       {
-        title: 'Headless CMS Architecture & Content Modeling',
-        description:
-          'Structured document schemas in Sanity, Strapi, and Contentful. Custom visual editorial studios with real-time collaborative editing and live side-by-side previews.',
-        tags: ['Sanity.io / Strapi', 'Structured Content', 'Live Previews', 'Contentful'],
+        title: 'Internal Business Tools',
+        description: 'CRM replacements, inventory systems, booking platforms, operations dashboards — built exactly to your specification.',
+        tags: ['Process automation', 'Admin panels', 'Workflow management'],
       },
       {
-        title: 'Incremental Edge Rendering (SSG / ISR / SSR)',
-        description:
-          'Next.js App Router and Vite applications pre-rendering static routes at the edge. Instant on-demand cache revalidation via CMS webhooks keeps content fresh in milliseconds.',
-        tags: ['Next.js App Router', 'Incremental Static Regeneration', 'Edge Middleware', 'Cloudflare Pages'],
+        title: 'Data and Reporting Systems',
+        description: 'Software that pulls from multiple sources, processes your data, and gives your team the views they need to make decisions.',
+        tags: ['Data pipelines', 'Reporting', 'Business intelligence'],
       },
       {
-        title: 'Modular Visual Block Design Systems',
-        description:
-          'Reusable editorial building blocks (hero sections, bento grids, comparison tables, interactive carousels) that give marketing teams flexibility while preserving brand consistency.',
-        tags: ['Design Tokens', 'Modular Page Builders', 'Tailwind CSS', 'Accessible Components'],
+        title: 'API and Integration Middleware',
+        description: 'Systems that connect tools that were never designed to talk to each other — bridging your CRM, accounting, and operational tools.',
+        tags: ['REST APIs', 'Webhooks', 'ETL pipelines'],
       },
       {
-        title: 'Core Web Vitals & Technical SEO Optimization',
-        description:
-          'Sub-second Largest Contentful Paint, zero cumulative layout shift, automated JSON-LD schema markup, dynamic OpenGraph social card generation, and XML sitemaps.',
-        tags: ['100 Lighthouse', 'JSON-LD Schemas', 'Dynamic OpenGraph', 'Sub-Second LCP'],
-      },
-      {
-        title: 'Multi-Region Global Localization & i18n',
-        description:
-          'Multi-lingual publishing workflows with automated translation hooks, geo-distributed edge routing, currency localization, and regional content variations.',
-        tags: ['i18n Localization', 'Geo-Targeted Content', 'Multi-Currency', 'Edge Routing'],
-      },
-      {
-        title: 'Role-Based Editorial Governance & Audit Logs',
-        description:
-          'Multi-stage publishing approvals (Draft, Review, Staging, Production), automated change diffing, role-based permissions, and SOC 2-compliant editorial audit trails.',
-        tags: ['Approval Workflows', 'Change Diffing', 'Role-Based Access', 'Audit Logs'],
+        title: 'Client-Facing Software',
+        description: 'Portals, platforms, and tools used directly by your customers — with your branding, your logic, and your access controls.',
+        tags: ['Customer portals', 'Booking systems', 'Self-service tools'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Information Architecture & Content Modeling',
-        description:
-          'Mapping customer journeys, structuring headless schema hierarchies, defining taxonomies, and auditing legacy content for automated migration.',
-        deliverables: ['Information Architecture Map', 'Headless Content Schema Spec', 'Content Migration Plan'],
+        title: 'Process discovery',
+        description: 'We map your current workflow, identify pain points, and define what the software needs to do — before design starts.',
+        deliverables: ['Process map', 'Requirements document', 'Feature list'],
       },
       {
         step: '02',
-        title: 'CMS Studio & Component Engineering',
-        description:
-          'Configuring Sanity/Strapi custom studios, engineering accessible React components, and connecting real-time preview drafting hooks.',
-        deliverables: ['Custom CMS Studio', 'React Component Library', 'Live Preview Sandbox'],
+        title: 'System design',
+        description: 'Database schema, system architecture, and UI wireframes agreed before development begins.',
+        deliverables: ['System architecture', 'Data model', 'Wireframes'],
       },
       {
         step: '03',
-        title: 'Edge Optimization & SEO Hardening',
-        description:
-          'Configuring edge CDN caching rules, auditing Core Web Vitals, generating automated schema markups, and validating cross-device responsiveness.',
-        deliverables: ['100 Lighthouse Performance Report', 'Structured Data Validator', 'Security Header Audit'],
+        title: 'Build and integration',
+        description: 'Iterative development with working software every two weeks. You use it in staging and give feedback as we build.',
+        deliverables: ['Working software per sprint', 'Third-party integrations', 'Test coverage'],
       },
       {
         step: '04',
-        title: 'Content Migration & Production Launch',
-        description:
-          'Migrating legacy content via automated ETL scripts, configuring 301 redirects, training editorial staff, and executing zero-downtime DNS cutover.',
-        deliverables: ['Automated Content Migration Tool', '301 Redirect Mapping', 'Editorial Training Playbook'],
+        title: 'Deployment and training',
+        description: 'Production deployment, team training on the new system, and a documented handover.',
+        deliverables: ['Production system', 'User documentation', 'Admin training'],
       },
     ],
     deliverables: [
-      {
-        title: 'Next.js / React Edge Web Application',
-        category: 'Frontend Core',
-        description: 'Complete edge-rendered web application source code with optimal Core Web Vitals and full IP ownership.',
-        format: 'Git Repository (Next.js / TypeScript)',
-      },
-      {
-        title: 'Custom Configured Headless CMS Studio',
-        category: 'CMS Architecture',
-        description: 'Customized Sanity or Strapi studio with custom inputs, preview hooks, and role-based permissions.',
-        format: 'Sanity Studio / Strapi Deploy',
-      },
-      {
-        title: 'Automated SEO & Structured Data Suite',
-        category: 'SEO Ops',
-        description: 'Automated JSON-LD schemas, dynamic OpenGraph generation microservice, and dynamic sitemaps.',
-        format: 'Next.js Metadata Pipelines',
-      },
-      {
-        title: 'Content Migration Scripts & Editor Handbook',
-        category: 'Documentation',
-        description: 'Automated migration tools for legacy content plus video manuals and step-by-step guides for marketing teams.',
-        format: 'ETL Scripts & Video Playbooks',
-      },
+      { title: 'Custom software system', category: 'Code', description: 'Production-ready codebase with documentation', format: 'GitHub repository' },
+      { title: 'API documentation', category: 'Docs', description: 'All integrations documented and tested', format: 'OpenAPI / Swagger' },
+      { title: 'User training materials', category: 'Training', description: 'Guides and walkthroughs for your team', format: 'PDF + video walkthrough' },
     ],
     techStack: [
-      { category: 'Frontend', items: ['Next.js 15', 'React 19', 'TypeScript', 'Tailwind CSS', 'Vite'] },
-      { category: 'Headless CMS', items: ['Sanity.io', 'Strapi', 'Contentful', 'Payload CMS', 'Ghost'] },
-      { category: 'Edge & Hosting', items: ['Vercel', 'Cloudflare Pages', 'AWS CloudFront', 'Fastly'] },
-      { category: 'Search & Assets', items: ['Algolia', 'Meilisearch', 'Cloudinary', 'Imgix', 'Uploadcare'] },
+      { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Go'] },
+      { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+      { category: 'Integrations', items: ['REST APIs', 'GraphQL', 'Zapier / Make', 'Webhooks'] },
+      { category: 'Infrastructure', items: ['AWS', 'Google Cloud', 'Docker'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Migrating our global corporate web presence to Sanity and Next.js doubled our mobile conversion rate and cut our page load times from 4.2 seconds to 380 milliseconds globally.',
-      author: 'Caroline Dubois',
-      role: 'VP of Digital Marketing',
-      company: 'Novatech Global',
-      metric: '380ms Global LCP',
+      quote: 'We finally stopped managing our entire operation through spreadsheets. The platform they built handles everything our team needs in one place.',
+      author: 'Operations Director',
+      role: 'Head of Operations',
+      company: 'Enterprise Client',
+      metric: 'Manual data entry eliminated entirely',
     },
-    outcomes: [
-      {
-        metric: '100',
-        label: 'Lighthouse Performance Score',
-        description: 'Perfect Core Web Vitals scores drive top search rankings and stop mobile bounce rates.',
-      },
-      {
-        metric: '4x',
-        label: 'Editorial Publishing Velocity',
-        description: 'Marketing teams create and launch rich landing pages without waiting for developer sprints.',
-      },
-      {
-        metric: '0.00',
-        label: 'Cumulative Layout Shift',
-        description: 'Zero visual jumpiness or mis-clicks during page rendering, delivering a rock-solid editorial experience.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Why should we switch from WordPress to a Headless CMS?',
-        answer:
-          'Traditional WordPress bundles database queries, PHP rendering, and unvetted plugins on a single server, creating performance bottlenecks and severe security vulnerabilities. A headless architecture decouples content storage from frontend rendering, delivering sub-second edge speeds, 100 Lighthouse scores, and zero server maintenance.',
-      },
-      {
-        question: 'Can non-technical marketing team members update content easily?',
-        answer:
-          'Yes. We build custom editorial studios in Sanity or Strapi with drag-and-drop visual blocks, real-time side-by-side previews, and strict design token boundaries that allow marketers to be creative without ever breaking the site layout.',
-      },
-      {
-        question: 'How do you handle redirects and SEO during a site migration?',
-        answer:
-          'We extract and map 100% of existing URLs, generate automated 301 redirect maps, preserve canonical tags, and implement structured JSON-LD schemas so search engine rankings are preserved and enhanced from day one.',
-      },
-      {
-        question: 'How fast do content updates appear on the live website?',
-        answer:
-          'Through Next.js on-demand Incremental Static Regeneration (ISR) and CMS webhooks, updated content is re-rendered at edge CDN points and visible globally in under 500 milliseconds without requiring full site rebuilds.',
-      },
+      { question: 'What does custom software development include?', answer: 'Discovery, system design, frontend and backend development, integrations with your existing tools, testing, deployment, and team training.' },
+      { question: 'Who is this for?', answer: 'Businesses whose workflows are too specific for any off-the-shelf product, or teams that need internal tools that commercial SaaS cannot provide.' },
+      { question: 'How long does it take?', answer: 'A focused internal tool typically takes 6–12 weeks. A complex multi-user platform with many integrations is usually 14–24 weeks.' },
+      { question: 'Can it connect to the tools we already use?', answer: 'Yes. We integrate with almost any tool that has an API — CRMs, accounting platforms, communication tools, and ERP systems.' },
     ],
-    ctaHeadline: 'Ready to Replace Sluggish Web Infrastructure with Modern Speed?',
-    ctaDescription:
-      'Talk to our Headless Web Architects. We evaluate your content model, review your Core Web Vitals, and map your migration plan.',
-    ctaButtonText: 'Request Web Architecture Proposal',
   },
 
-  'ecommerce-development': {
-    id: 'ecommerce-development',
-    slug: 'ecommerce-development',
-    title: 'Ecommerce Development',
-    tagline: 'Headless Commerce, Sub-Second Catalog Search & High-Concurrency Checkout',
-    category: 'Core Engineering',
-    heroBadge: 'Omnichannel Enterprise Commerce',
-    heroHeadline: 'High-Volume Omnichannel',
-    heroHeadlineHighlight: 'Ecommerce Platforms',
-    heroDescription:
-      'We build enterprise ecommerce architectures engineered for extreme flash-sale concurrency, sub-second checkout, and automated ERP/WMS synchronization. From custom Shopify Plus storefronts to composable headless commerce with Medusa and commercetools.',
-    heroImage: '/services/ecommerce-development.png',
-    heroImageCaption: 'Ecommerce Development Production Architecture',
-    primaryCtaText: 'Scale Your Storefront',
-    secondaryCtaText: 'View Commerce Systems',
-    trustPoints: [
-      'Distributed Redis inventory locks preventing overselling during flash traffic',
-      'PCI-DSS Level 1 compliant tokenized 1-click payment workflows',
-      'Real-time bidirectional synchronization with NetSuite, SAP & 3PLs',
-      'Multi-currency and multi-language global checkout localization',
-    ],
-    metrics: [
-      { value: '+28%', label: 'Average Checkout Conversion Lift' },
-      { value: '< 50ms', label: 'Catalog Faceted Search Latency' },
-      { value: '10,000+', label: 'Concurrent Orders per Minute' },
-      { value: '99.99%', label: 'Peak Flash-Sale Uptime' },
-    ],
-    overview: {
-      statement:
-        'Slow checkout funnels and oversold inventory during flash sales destroy customer trust and bleed gross margin.',
-      paragraphs: [
-        'Traditional off-the-shelf ecommerce stores crash during high-traffic drops, suffer from 5-second product search lag, and force shoppers through clunky, multi-page checkout forms. In modern commerce, every 100ms of latency reduces conversion by 1%.',
-        'We engineer high-speed composable ecommerce platforms using Shopify Plus (Hydrogen/Oxygen), Medusa, and custom microservices. We build instant faceted search with Algolia and Meilisearch, integrate distributed Redis atomic locks to prevent overselling, and deploy 1-click tokenized payment flows.',
-        'Behind the storefront, our integration engines synchronize orders, tax calculations (Avalara), inventory adjustments, and tracking webhooks with your ERP, warehouse management system (WMS), and 3PL fulfillment hubs.',
-      ],
-      keyTakeaway:
-        'Fast shopping funnels built to convert mobile shoppers and handle viral flash-sale traffic without missing an order.',
-    },
-    capabilities: [
-      {
-        title: 'Headless & Composable Storefronts',
-        description:
-          'Blazing-fast storefronts built with Shopify Hydrogen, Medusa, and Next.js Commerce. Instant page transitions, optimistic cart additions, and sub-second mobile navigation.',
-        tags: ['Shopify Hydrogen', 'Medusa.js', 'Next.js Commerce', 'commercetools'],
-      },
-      {
-        title: 'Sub-Second Faceted Catalog Search',
-        description:
-          'Instant faceted product discovery powered by Algolia and Meilisearch. Real-time dynamic filtering by size, color, brand, and price with typo tolerance in under 50ms.',
-        tags: ['Algolia / Meilisearch', 'Dynamic Facets', 'Typo-Tolerant Search', 'Redis Caching'],
-      },
-      {
-        title: 'Flash-Sale Concurrency & Inventory Locks',
-        description:
-          'Distributed atomic Redis lock allocations protecting inventory counts during high-volume drops. Eliminates overselling without locking database tables.',
-        tags: ['Redis Distributed Locks', 'High Concurrency', 'Zero Overselling', 'Atomic Transactions'],
-      },
-      {
-        title: 'Frictionless 1-Click Multi-Gateway Checkout',
-        description:
-          'Tokenized checkout flows supporting Apple Pay, Google Pay, Stripe, PayPal, and Klarna. Reduces checkout completion time from 90 seconds to under 4 seconds.',
-        tags: ['Stripe / Adyen', 'Apple Pay & Google Pay', 'Klarna Buy-Now-Pay-Later', 'PCI-DSS Level 1'],
-      },
-      {
-        title: 'Automated ERP, WMS & 3PL Synchronization',
-        description:
-          'Bi-directional webhooks synchronizing orders, returns, and inventory allocations directly with NetSuite, SAP, ShipStation, and custom warehouse management systems.',
-        tags: ['NetSuite & SAP', 'ShipStation', 'Automated 3PL Routing', 'Order Webhooks'],
-      },
-      {
-        title: 'Dynamic B2B Tiered Pricing & Wholesale Portals',
-        description:
-          'Enterprise B2B buyer portals with customer-specific price lists, tiered volume discounts, tax exemption verification, and purchase-order invoice settlement.',
-        tags: ['B2B Wholesale Portals', 'Tiered Volume Pricing', 'Custom Credit Limits', 'Avalara Tax Engine'],
-      },
-    ],
-    processSteps: [
-      {
-        step: '01',
-        title: 'Commerce Architecture & Catalog Modeling',
-        description:
-          'Designing product variant schemas, cart state machine topologies, multi-currency routing rules, and ERP integration contracts.',
-        deliverables: ['Product Data Schema Spec', 'Checkout Flow Architecture', 'ERP Integration Blueprint'],
-      },
-      {
-        step: '02',
-        title: 'Storefront UI & Cart Engine Build',
-        description:
-          'Developing responsive product detail pages, instant cart slide-outs, faceted search filters, and high-framerate media carousels.',
-        deliverables: ['Headless Storefront Codebase', 'Algolia Search Index', 'Cart State Machine'],
-      },
-      {
-        step: '03',
-        title: 'Payment Integration & Flash-Sale Hardening',
-        description:
-          'Integrating multi-currency payment gateways, distributed inventory locking mechanisms, and stress-testing checkout concurrency.',
-        deliverables: ['PCI-DSS Compliance Verification', 'Flash-Sale Load Test Report', 'Distributed Lock Harness'],
-      },
-      {
-        step: '04',
-        title: 'Fulfillment Webhooks & Production Go-Live',
-        description:
-          'Deploying bidirectional order fulfillment webhooks, configuring automated inventory sync, and executing zero-downtime production cutover.',
-        deliverables: ['ERP Sync Webhook Microservice', 'Fulfillment Automation Pipeline', '24/7 Flash-Sale Runbook'],
-      },
-    ],
-    deliverables: [
-      {
-        title: 'Headless Commerce Web Application',
-        category: 'Storefront Core',
-        description: 'Complete high-performance Next.js / Hydrogen ecommerce application with full IP ownership and clean component design.',
-        format: 'Git Repository (TypeScript)',
-      },
-      {
-        title: 'Distributed Inventory Lock & Order Processing Core',
-        category: 'Backend Architecture',
-        description: 'Microservices handling atomic inventory reservation, cart validation, and order state transitions.',
-        format: 'Docker Containers & Redis Scripts',
-      },
-      {
-        title: 'Bidirectional ERP & WMS Webhook Suite',
-        category: 'Integrations',
-        description: 'Automated integration workers connecting storefront orders directly to NetSuite, SAP, and shipping carriers.',
-        format: 'Node.js / Python Webhook Services',
-      },
-      {
-        title: 'Multi-Currency & Regional Tax Logic',
-        category: 'Financial Core',
-        description: 'Automated Avalara tax calculation rules and multi-currency checkout configurations.',
-        format: 'Configuration Manifests & Tests',
-      },
-    ],
-    techStack: [
-      { category: 'Storefront Platforms', items: ['Shopify Plus (Hydrogen)', 'Medusa.js', 'commercetools', 'Next.js Commerce'] },
-      { category: 'Search & Merchandising', items: ['Algolia', 'Meilisearch', 'Elasticsearch', 'Redis'] },
-      { category: 'Payments & Tax', items: ['Stripe', 'Adyen', 'Apple Pay', 'PayPal', 'Klarna', 'Avalara'] },
-      { category: 'Logistics & ERP', items: ['NetSuite', 'SAP', 'ShipStation', 'Klaviyo', 'Segment'] },
-    ],
-    caseStudyQuote: {
-      quote:
-        'During our annual Black Friday launch, Neominds architecture processed 18,000 orders in the first 10 minutes with zero checkout timeouts and zero overselling.',
-      author: 'Julian Meyer',
-      role: 'Director of Ecommerce',
-      company: 'Aura Apparel',
-      metric: '18k Orders in 10 Minutes',
-    },
-    outcomes: [
-      {
-        metric: '+28%',
-        label: 'Mobile Checkout Conversion',
-        description: 'Sub-3-second tokenized checkout flows dramatically reduce cart abandonment on smartphones.',
-      },
-      {
-        metric: '10k/min',
-        label: 'Peak Order Concurrency',
-        description: 'Zero crashes or database timeouts during high-visibility viral launches and promotion drops.',
-      },
-      {
-        metric: '0%',
-        label: 'Inventory Overselling Rate',
-        description: 'Distributed atomic inventory locks protect stock allocations with microsecond precision.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'Should we use Shopify Plus or custom Headless Commerce?',
-        answer:
-          'Shopify Plus is the gold standard for rapid deployment, reliable native checkout, and managed compliance. For brands requiring ultra-custom checkout rules, multi-warehouse routing, or B2B pricing, headless commerce (Shopify Hydrogen or Medusa) provides complete architectural freedom.',
-      },
-      {
-        question: 'How do you prevent overselling when thousands of customers buy simultaneously?',
-        answer:
-          'We implement distributed atomic Redis lock allocations with automatic expiration timers. When a customer begins checkout, stock is temporarily locked at the cache tier, preventing race conditions before orders hit the main database.',
-      },
-      {
-        question: 'Can you integrate with our existing NetSuite ERP and 3PL warehouse?',
-        answer:
-          'Yes. We build idempotent, bidirectional webhook event streams that synchronize inventory counts, order status updates, and shipping tracking numbers in real time with NetSuite, SAP, and major 3PLs.',
-      },
-      {
-        question: 'How do you optimize mobile checkout conversion rates?',
-        answer:
-          'We eliminate multi-step forms by implementing 1-click payment wallets (Apple Pay, Google Pay, Shop Pay), autofilling addresses, optimizing mobile touch targets, and maintaining sub-50ms catalog navigation.',
-      },
-    ],
-    ctaHeadline: 'Ready to Build an Ecommerce Engine That Never Crashes on Black Friday?',
-    ctaDescription:
-      'Consult with our Principal Commerce Engineers. We will audit your checkout pipeline, load-test your catalog, and deliver a conversion-first architecture plan.',
-    ctaButtonText: 'Request Commerce Strategy Session',
-  },
-
-  devops: {
-    id: 'devops',
-    slug: 'devops',
-    title: 'DevOps',
-    tagline: 'Infrastructure as Code, Kubernetes Orchestration & Continuous Delivery Pipelines',
-    category: 'Cloud & Operations',
-    heroBadge: 'Enterprise Cloud & GitOps DevOps',
-    heroHeadline: 'Zero-Downtime Cloud',
-    heroHeadlineHighlight: '& GitOps DevOps',
-    heroDescription:
-      'We architect resilient, auto-scaling cloud infrastructure and automated CI/CD release pipelines that eliminate deployment fear. From Terraform-managed multi-cloud Kubernetes clusters to immutable GitOps workflows with ArgoCD and OpenTelemetry.',
-    heroImage: '/services/devops.png',
-    heroImageCaption: 'DevOps & Cloud Infrastructure Architecture',
-    primaryCtaText: 'Modernize Your Infrastructure',
-    secondaryCtaText: 'Inspect DevOps Pipelines',
-    trustPoints: [
-      '100% Infrastructure as Code with Terraform & OpenTofu',
-      'Zero-downtime blue/green and canary deployments via ArgoCD',
-      'Continuous automated vulnerability scanning (Snyk & Trivy)',
-      'Observability stack with Prometheus, Grafana & OpenTelemetry',
-    ],
-    metrics: [
-      { value: '15 min', label: 'Commit to Production Pipeline Velocity' },
-      { value: '99.99%', label: 'Multi-Region Cloud Availability' },
-      { value: '0', label: 'Unplanned Outages During Deployments' },
-      { value: '-35%', label: 'Average Cloud Spend Reduction' },
-    ],
-    overview: {
-      statement:
-        'Manual server configuration, brittle deployment scripts, and 3 AM production outages are preventable engineering failures.',
-      paragraphs: [
-        'When engineers are terrified of deploying on Fridays, feature velocity plummets and competitive advantage evaporates. Fragile manual cloud setups accumulate hidden drift, create single points of failure, and waste tens of thousands of dollars every month on idle cloud resources.',
-        'We define all infrastructure as declarative, version-controlled code using Terraform, OpenTofu, and Helm. We orchestrate containerized workloads across multi-zone Amazon EKS, Google GKE, and Azure AKS clusters with automated horizontal pod autoscaling and self-healing nodes.',
-        'Our GitOps pipelines (ArgoCD, GitHub Actions) automatically scan for security vulnerabilities, compile minimal distroless container images, and execute zero-downtime blue/green traffic shifts backed by distributed tracing.',
-      ],
-      keyTakeaway:
-        'Automated, reproducible cloud environments that ship code to production in minutes with zero downtime and ironclad security.',
-    },
-    capabilities: [
-      {
-        title: 'Declarative Infrastructure as Code (Terraform & OpenTofu)',
-        description:
-          '100% version-controlled cloud topology across AWS, GCP, and Azure. Automated state locking, modular reusable components, and drift detection pipelines.',
-        tags: ['Terraform / OpenTofu', 'Multi-Cloud IaC', 'Terragrunt', 'State Locking'],
-      },
-      {
-        title: 'Production Kubernetes Orchestration (EKS, GKE, AKS)',
-        description:
-          'Multi-zone, high-availability Kubernetes clusters configured with Karpenter auto-provisioning, Calico network security policies, and Cert-Manager SSL rotation.',
-        tags: ['Kubernetes (EKS / GKE)', 'Karpenter Autoscaler', 'Helm Charts', 'Network Policies'],
-      },
-      {
-        title: 'Zero-Downtime GitOps Continuous Delivery (ArgoCD)',
-        description:
-          'Declarative GitOps synchronization with ArgoCD. Automated canary deployments, blue/green traffic cutovers, and instant automated rollbacks upon error detection.',
-        tags: ['ArgoCD GitOps', 'Canary Rollouts', 'Blue/Green Deploys', 'GitHub Actions'],
-      },
-      {
-        title: 'Full-Stack Observability & OpenTelemetry',
-        description:
-          'Full-stack telemetry with Prometheus, Grafana, OpenTelemetry, and Jaeger. Real-time SLO tracking, synthetic endpoint probing, and sub-1-minute incident alerting.',
-        tags: ['Prometheus & Grafana', 'OpenTelemetry Tracing', 'Loki Log Aggregation', 'SLO Alerting'],
-      },
-      {
-        title: 'DevSecOps & Automated Security Hardening',
-        description:
-          'Automated SAST/DAST security gates in CI/CD, distroless minimal container base images, automated container signing with Cosign, and secret management with HashiCorp Vault.',
-        tags: ['Snyk & Trivy Scans', 'HashiCorp Vault', 'Cosign Image Signing', 'Distroless Containers'],
-      },
-      {
-        title: 'Cloud FinOps & Infrastructure Cost Optimization',
-        description:
-          'Eliminating cloud waste through spot instance orchestration, container rightsizing, cold storage lifecycle rules, and automated non-production shutdown schedules.',
-        tags: ['FinOps Auditing', 'Spot Instance Fleets', 'Container Rightsizing', 'Cost Governance'],
-      },
-    ],
-    processSteps: [
-      {
-        step: '01',
-        title: 'Cloud Infrastructure Audit & Gap Analysis',
-        description:
-          'Auditing security perimeters, examining cloud expenditure, inspecting manual configurations, and drafting target GitOps topologies.',
-        deliverables: ['Cloud Audit Assessment', 'Security & Drift Report', 'Target IaC Architecture Blueprint'],
-      },
-      {
-        step: '02',
-        title: 'Terraform IaC Scaffolding & Cluster Build',
-        description:
-          'Writing modular Terraform modules, standing up multi-AZ Kubernetes clusters, and configuring private networking perimeters.',
-        deliverables: ['Modular Terraform Repository', 'Hardened Kubernetes Cluster', 'Vault Secret Engine'],
-      },
-      {
-        step: '03',
-        title: 'GitOps CI/CD Pipelines & Security Gates',
-        description:
-          'Configuring GitHub Actions build runners, integrating Snyk/Trivy vulnerability scanners, and deploying ArgoCD controllers for declarative sync.',
-        deliverables: ['Automated CI/CD Pipeline', 'ArgoCD Deployment Manifests', 'Automated Vulnerability Gate'],
-      },
-      {
-        step: '04',
-        title: 'Observability Instrumentation & Runbook Handover',
-        description:
-          'Instrumenting distributed tracing, building executive Grafana dashboards, conducting disaster recovery drills, and handing over runbooks.',
-        deliverables: ['Prometheus/Grafana Dashboard Suite', 'PagerDuty Alert Schedules', 'Disaster Recovery Runbook'],
-      },
-    ],
-    deliverables: [
-      {
-        title: 'Modular Terraform / OpenTofu Codebase',
-        category: 'IaC Core',
-        description: 'Complete version-controlled cloud infrastructure code with environments separated by workspaces or directories.',
-        format: 'Git Repository (Terraform)',
-      },
-      {
-        title: 'Automated GitOps CI/CD Release Pipelines',
-        category: 'DevOps Ops',
-        description: 'Production workflows for automated container compilation, security scanning, and blue/green Kubernetes rollouts.',
-        format: 'GitHub Actions / ArgoCD Manifests',
-      },
-      {
-        title: 'Observability Dashboard & Telemetry Suite',
-        category: 'Observability',
-        description: 'Custom Grafana dashboards monitoring CPU/memory saturation, API latencies, error rates, and cloud spend.',
-        format: 'Grafana JSON Dashboards & PromQL',
-      },
-      {
-        title: 'Disaster Recovery Runbooks & Incident Protocols',
-        category: 'Documentation',
-        description: 'Step-by-step procedures for automated cluster disaster recovery, point-in-time database restoration, and incident triage.',
-        format: 'Markdown Runbooks & Architecture Diagrams',
-      },
-    ],
-    techStack: [
-      { category: 'Cloud Providers', items: ['AWS', 'Google Cloud (GCP)', 'Microsoft Azure', 'Cloudflare'] },
-      { category: 'Orchestration & Containers', items: ['Kubernetes (EKS/GKE)', 'Docker', 'Helm', 'ArgoCD', 'Karpenter'] },
-      { category: 'Infrastructure as Code', items: ['Terraform', 'OpenTofu', 'Terragrunt', 'Ansible', 'Pulumi'] },
-      { category: 'Monitoring & Security', items: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Datadog', 'HashiCorp Vault', 'Trivy'] },
-    ],
-    caseStudyQuote: {
-      quote:
-        'Neominds migrated our entire AWS footprint to Terraform and ArgoCD. We went from manual 4-hour bi-weekly releases with constant downtime to 12 automated zero-downtime deployments every single day.',
-      author: 'Vikram Sethi',
-      role: 'Head of Infrastructure',
-      company: 'ScaleX Data',
-      metric: 'Zero-Downtime Releases (12x/day)',
-    },
-    outcomes: [
-      {
-        metric: '15m',
-        label: 'Commit-to-Production Velocity',
-        description: 'Fully automated testing and deployment pipelines replace manual release gates and eliminate human error.',
-      },
-      {
-        metric: '-35%',
-        label: 'Cloud Infrastructure Spend',
-        description: 'Automated cluster autoscaling, Karpenter provisioning, and spot instance fleets slash monthly cloud bills.',
-      },
-      {
-        metric: '99.99%',
-        label: 'Cloud Service Availability',
-        description: 'Multi-zone Kubernetes clusters with self-healing nodes eliminate single points of failure.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'What is GitOps and why is it superior to traditional CI/CD?',
-        answer:
-          'In traditional CI/CD, external scripts push changes directly into clusters, often leading to configuration drift and security risks. In GitOps (via ArgoCD), Git is the single source of truth. An in-cluster agent continuously pulls and reconciles cluster state against Git declarations, enabling instant rollbacks and zero drift.',
-      },
-      {
-        question: 'How do you guarantee zero downtime during application upgrades?',
-        answer:
-          'We use Kubernetes blue/green deployments and canary traffic routing with Argo Rollouts. New versions are deployed alongside existing versions, health checks and metrics are validated automatically, and traffic shifts incrementally over minutes with immediate automated rollback if error rates spike.',
-      },
-      {
-        question: 'Can you help optimize our runaway AWS or GCP cloud spend?',
-        answer:
-          'Yes. We run an end-to-end FinOps audit to identify oversized compute instances, unattached storage volumes, and inefficient data transfer. By implementing Karpenter autoscaling and spot instance fleets, we routinely reduce cloud bills by 30% to 50%.',
-      },
-      {
-        question: 'How do you handle sensitive secrets in version-controlled infrastructure?',
-        answer:
-          'We never commit plaintext secrets to Git. We integrate HashiCorp Vault, AWS Secrets Manager, or Sealed Secrets with strict IAM role bindings so secrets are injected securely at runtime inside ephemeral container memory.',
-      },
-    ],
-    ctaHeadline: 'Ready to Eliminate Deployment Fear and Automate Your Cloud?',
-    ctaDescription:
-      'Schedule an architecture review with our Principal Site Reliability Engineers. We diagnose cluster vulnerabilities, analyze cloud spend, and deliver a GitOps modernization roadmap.',
-    ctaButtonText: 'Request DevOps Architecture Review',
-  },
-
-  'ai-agents': {
-    id: 'ai-agents',
-    slug: 'ai-agents',
-    title: 'AI Agents',
-    tagline: 'Recursive Reasoning, Dynamic Tool-Calling & Persistent Vector Memory',
-    category: 'AI & Intelligence',
-    heroBadge: 'Autonomous AI Agent Swarms',
-    heroHeadline: 'Autonomous Multi-Agent',
-    heroHeadlineHighlight: 'Systems & Tool Execution',
-    heroDescription:
-      'We build production-ready autonomous AI agent swarms capable of executing complex, multi-step business objectives with human-like reasoning. Featuring sandboxed code execution, dynamic API tool-calling, persistent vector memory, and self-correcting evaluation loops.',
-    heroImage: '/services/ai-agents.png',
-    heroImageCaption: 'Autonomous AI Agent Architecture',
-    primaryCtaText: 'Deploy Autonomous Agents',
-    secondaryCtaText: 'Explore Agent Architecture',
-    trustPoints: [
-      'Sandboxed execution runtimes preventing unauthorized actions',
-      'Human-in-the-loop escalation triggers for critical financial/operational thresholds',
-      'Persistent episodic and semantic vector memory stores',
-      'Immutable audit logging capturing every agent reasoning step',
-    ],
-    metrics: [
-      { value: '94.2%', label: 'Zero-Intervention Task Completion' },
-      { value: '< 1.2s', label: 'Tool Calling Execution Overhead' },
-      { value: '100+', label: 'Integrated Internal Enterprise APIs' },
-      { value: '100%', label: 'Deterministic Execution Boundary' },
-    ],
-    overview: {
-      statement:
-        'Single-turn chatbots answer questions, but autonomous agents take actions, execute workflows, and solve end-to-end business problems.',
-      paragraphs: [
-        'Traditional chatbots are passive listeners that wait for questions. Autonomous AI agents actively break down high-level business goals into sequential tasks, query internal databases, invoke third-party APIs, and self-correct when unexpected errors occur.',
-        'We engineer resilient multi-agent swarms using LangGraph, CrewAI, and custom event loops. We implement hierarchical planner-worker patterns where specialized agents (researcher, coder, reviewer, validator) collaborate to achieve objectives without human micro-management.',
-        'Every agent action is governed by strict deterministic boundaries: sandboxed Python/Wasm environments, explicit parameter schemas, and automated human-in-the-loop escalation gates whenever high-risk actions are proposed.',
-      ],
-      keyTakeaway:
-        'Goal-driven autonomous agents that safely automate complex analytical, operational, and research workflows from intent to completion.',
-    },
-    capabilities: [
-      {
-        title: 'Hierarchical Planner-Worker Multi-Agent Swarms',
-        description:
-          'Directed acyclic execution graphs (DAGs) coordinating specialized agents. Planners decompose complex user goals into tasks delegated to researcher, coder, and validator agents.',
-        tags: ['LangGraph', 'CrewAI', 'Hierarchical Swarms', 'DAG Execution Graphs'],
-      },
-      {
-        title: 'Sandboxed Tool-Calling & Dynamic API Execution',
-        description:
-          'Securely executing Python scripts, querying SQL databases, and invoking internal enterprise APIs inside isolated Docker or WebAssembly (Wasm) micro-sandboxes.',
-        tags: ['Docker Sandboxing', 'Wasm Runtimes', 'Dynamic Tool Calling', 'Pydantic Schemas'],
-      },
-      {
-        title: 'Episodic & Long-Horizon Vector Memory',
-        description:
-          'Persistent memory architectures storing session history, past execution outcomes, and user preferences in vector databases for multi-week task continuity.',
-        tags: ['Semantic Vector Memory', 'Episodic Store', 'Context Window Compression', 'Redis Memory'],
-      },
-      {
-        title: 'Self-Reflective Evaluation & Error Recovery',
-        description:
-          'Recursive evaluation loops where validator agents review tool outputs against goal criteria, diagnosing runtime errors and re-planning alternative execution paths automatically.',
-        tags: ['Self-Correction', 'Reflection Loops', 'Automated Replanning', 'Exception Handling'],
-      },
-      {
-        title: 'Human-in-the-Loop Escalation Gates',
-        description:
-          'Configurable approval gates that pause agent execution and alert human managers via Slack or email when financial transactions, system modifications, or high-risk actions are requested.',
-        tags: ['Human-in-the-Loop', 'Slack Approvals', 'Action Guardrails', 'Risk Boundaries'],
-      },
-      {
-        title: 'Full Execution Telemetry & Audit Trails',
-        description:
-          'Complete visibility into agent thought processes, tool invocations, token costs, and decision rationale with immutable audit logging and compliance replay tools.',
-        tags: ['LangSmith Tracing', 'Audit Ledgers', 'Token Analytics', 'Decision Transparency'],
-      },
-    ],
-    processSteps: [
-      {
-        step: '01',
-        title: 'Goal Decomposition & Safety Scoping',
-        description:
-          'Mapping target business workflows, defining agent role specializations, establishing tool parameter schemas, and coding safety guardrail rules.',
-        deliverables: ['Agent Workflow DAG', 'Tool API Parameter Registry', 'Safety & Escalation Policy'],
-      },
-      {
-        step: '02',
-        title: 'Agent State Machine & Tool Connector Build',
-        description:
-          'Developing LangGraph planner-worker state machines, sandboxing code execution environments, and integrating internal database and API tools.',
-        deliverables: ['LangGraph State Machine Engine', 'Sandboxed Tool Runtimes', 'Vector Memory Integration'],
-      },
-      {
-        step: '03',
-        title: 'Adversarial Testing & Loop Prevention',
-        description:
-          'Simulating tool failure modes, testing infinite loop watchdogs, and verifying that the agent gracefully self-corrects or escalates to human operators.',
-        deliverables: ['Loop Prevention Benchmark', 'Adversarial Edge-Case Suite', 'Escalation Webhook Tests'],
-      },
-      {
-        step: '04',
-        title: 'Production Orchestration & Telemetry Launch',
-        description:
-          'Deploying containerized agent runtimes with live LangSmith tracing, Slack notification integrations, and executive performance dashboards.',
-        deliverables: ['Production Agent Microservices', 'Live Trace Dashboard', 'Operations Playbook'],
-      },
-    ],
-    deliverables: [
-      {
-        title: 'Production Multi-Agent Core Engine',
-        category: 'Agentic Core',
-        description: 'Complete Python source code for planner, worker, and validator agents built with LangGraph with full IP ownership.',
-        format: 'Python / LangGraph Repositories',
-      },
-      {
-        title: 'Sandboxed Tool Execution & API Connectors',
-        category: 'Infrastructure',
-        description: 'Secure Docker/Wasm sandboxed environments and verified API connectors with strict Pydantic parameter typing.',
-        format: 'Dockerfiles & API SDKs',
-      },
-      {
-        title: 'Human-in-the-Loop Approval Gateway',
-        category: 'Governance',
-        description: 'Slack and web-based approval microservice allowing human operators to inspect agent actions and grant execution permission.',
-        format: 'FastAPI / Slack Webhook Service',
-      },
-      {
-        title: 'Agent Telemetry & Audit Trace Suite',
-        category: 'Observability',
-        description: 'Real-time tracing dashboards tracking tool call latency, token consumption, decision graphs, and execution histories.',
-        format: 'LangSmith / OpenTelemetry Integration',
-      },
-    ],
-    techStack: [
-      { category: 'Agent Frameworks', items: ['LangGraph', 'CrewAI', 'AutoGen', 'LlamaIndex Workflows'] },
-      { category: 'LLM Reasoning Core', items: ['Claude 3.5 Sonnet', 'GPT-4o', 'DeepSeek R1', 'Llama 3.3 70B'] },
-      { category: 'Memory & State', items: ['Redis', 'PostgreSQL', 'pgvector', 'Qdrant'] },
-      { category: 'Sandboxing & Tooling', items: ['Docker Sandboxes', 'WebAssembly (Wasm)', 'E2B Runtimes', 'Pydantic'] },
-    ],
-    caseStudyQuote: {
-      quote:
-        'Neominds built an autonomous market intelligence agent swarm that ingests, cross-references, and synthesizes competitive data across 50 sources daily, saving our research team 120 hours every week.',
-      author: 'Alexander Wright',
-      role: 'Head of Strategic Intelligence',
-      company: 'Apex Horizon Ventures',
-      metric: '120 Hours Saved Weekly',
-    },
-    outcomes: [
-      {
-        metric: '94.2%',
-        label: 'Zero-Intervention Completion',
-        description: 'Complex multi-step corporate workflows execute autonomously from initial intent to verified delivery.',
-      },
-      {
-        metric: '10x',
-        label: 'Task Execution Velocity',
-        description: 'Hours of manual database lookups, document cross-referencing, and reporting compressed into seconds.',
-      },
-      {
-        metric: '100%',
-        label: 'Audit Traceability',
-        description: 'Every internal tool invocation, database query, and reasoning step is captured in immutable audit ledgers.',
-      },
-    ],
-    faqs: [
-      {
-        question: 'How do you prevent autonomous agents from getting stuck in infinite loops?',
-        answer:
-          'We implement strict recursion limits, step timeouts, and watchdog evaluation nodes within the LangGraph state machine. If an agent repeats an identical tool call or fails to make forward progress toward its goal, execution is paused and an alert is routed to human operators.',
-      },
-      {
-        question: 'What happens if an agent tries to perform an unsafe or destructive action?',
-        answer:
-          'All tools are classified by risk tier. Read-only queries execute freely inside isolated sandboxes. High-risk actions (e.g., modifying live records, initiating financial transfers, or deleting assets) trigger mandatory human-in-the-loop approval gates via Slack or email before execution.',
-      },
-      {
-        question: 'How do agents interact with our internal databases and APIs?',
-        answer:
-          'We write custom tool wrappers using strict Pydantic schemas. The agent cannot write arbitrary SQL or call raw URLs; it can only invoke vetted, parameterized internal functions with strict input validation and role-based permissions.',
-      },
-      {
-        question: 'Can the agent explain why it made a specific decision?',
-        answer:
-          'Yes. We instrument full step-by-step reasoning traces using OpenTelemetry and LangSmith. You can inspect the exact prompt, thought process, tool inputs, raw API outputs, and reflection rationale for every single action taken.',
-      },
-    ],
-    ctaHeadline: 'Ready to Put Autonomous AI Agents to Work Across Your Business?',
-    ctaDescription:
-      'Consult with our Principal Agentic Systems Engineers. We identify high-impact workflows, establish safety boundaries, and build a proof-of-value agent.',
-    ctaButtonText: 'Request Agent Consultation',
-  },
-
+  // ─────────────────────────────────────────────────────────────
+  // 5. AI AUTOMATIONS
+  // ─────────────────────────────────────────────────────────────
   'ai-automations': {
     id: 'ai-automations',
     slug: 'ai-automations',
     title: 'AI Automations',
-    tagline: 'Automated Document Processing, Event-Driven Workflows & Zero-Touch Back-Office',
+    tagline: 'Replace repetitive manual work with automated AI-driven workflows',
     category: 'AI & Intelligence',
-    heroBadge: 'Enterprise Process Automation',
-    heroHeadline: 'Intelligent Enterprise',
-    heroHeadlineHighlight: 'AI Automations',
+    heroBadge: 'AI Automation',
+    heroHeadline: 'Automate the Work',
+    heroHeadlineHighlight: 'That Slows You Down',
     heroDescription:
-      'We eliminate repetitive manual work by engineering deterministic AI-powered automation pipelines. From unstructured invoice and contract data extraction to autonomous cross-system ERP updates, we turn days of human copy-pasting into seconds of automated precision.',
+      'We build AI automation systems that handle document processing, data extraction, report generation, approvals, and other repetitive tasks — so your team can work on things that actually need human judgment.',
     heroImage: '/services/ai-automations.png',
-    heroImageCaption: 'Intelligent AI Automation Topology',
-    primaryCtaText: 'Automate Your Workflows',
-    secondaryCtaText: 'Explore Automation Pipelines',
+    heroImageCaption: 'AI automation workflow — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Automation Examples',
     trustPoints: [
-      'Multi-engine OCR + multimodal LLM extraction with schema validation',
-      'Immutable audit logging tracking every data transformation',
-      'Direct bidirectional integrations with Salesforce, SAP, QuickBooks & NetSuite',
-      'Exception triage queues with instant human review interfaces',
-    ],
-    metrics: [
-      { value: '80%', label: 'Manual Processing Time Eliminated' },
-      { value: '99.7%', label: 'Document Data Extraction Accuracy' },
-      { value: '< 45s', label: 'End-to-End Processing Cycle Time' },
-      { value: '3.5x', label: 'Operational Cost Savings' },
+      'Handles document extraction and data entry',
+      'Connects to your existing tools',
+      'Runs 24/7 without supervision',
+      'Full audit trail and logging',
     ],
     overview: {
-      statement:
-        'Manual copy-paste data entry and tedious email forwarding are massive drains on enterprise profitability and human talent.',
+      statement: 'Most businesses have significant parts of their operation running on manual effort — people copying data between systems, processing documents, generating reports. That is where AI automation starts earning its value.',
       paragraphs: [
-        'Back-office teams spend thousands of hours every month manually extracting numbers from PDFs, cross-referencing order amounts against purchase orders, and typing data across disconnected enterprise systems. These manual workflows are slow, error-prone, and expensive to scale.',
-        'We engineer intelligent end-to-end automation pipelines that listen to inbound emails, webhooks, and FTP folders in real time. We deploy multimodal vision-language models to extract line items, dates, and contractual terms into validated JSON schemas.',
-        'Validated data passes through deterministic business validation rules and updates your ERP, CRM, or accounting software automatically. When an anomaly or discrepancy is detected, the system routes the exact exception to a manager Slack with 1-click approval.',
+        'We build automation pipelines that trigger on real business events — an email arrives, a document is uploaded, a form is submitted — and then process that event through AI models and deterministic rules to produce a specific outcome.',
+        'The result lands in your system of record. Salesforce, SAP, QuickBooks, a spreadsheet, a database — wherever your data lives.',
       ],
-      keyTakeaway:
-        'Zero-touch operational workflows that process unstructured documents into production databases in seconds with complete audit transparency.',
+      keyTakeaway: 'Repetitive operational work handled automatically, accurately, and faster than any manual process.',
     },
+    mainProblemSolved: {
+      problem: 'Your team spends hours every week on data entry, document processing, or report generation that could run automatically.',
+      solution: 'AI pipelines that extract, validate, and process this work in seconds — triggered by the same events that currently land in a human inbox.',
+      result: 'Staff time redirected from data entry to higher-value work. Processing time reduced from hours to under a minute.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Operations Manager', situation: 'Running teams that spend significant time on manual data entry and document processing' },
+        { role: 'Finance Lead', situation: 'Processing invoices, approvals, or reports manually and experiencing delays and errors' },
+        { role: 'HR Director', situation: 'Handling screening, onboarding, or compliance documentation through manual processes' },
+      ],
+    },
+    metrics: [
+      { value: '80%+', label: 'Reduction in Manual Processing Time' },
+      { value: '<60s', label: 'Typical Processing Time per Task' },
+      { value: '24/7', label: 'Runs Without Human Supervision' },
+    ],
     capabilities: [
       {
-        title: 'Multimodal Document & Invoice Extraction',
-        description:
-          'Extracting tables, line items, tax numbers, and dates from unstructured PDFs, scanned receipts, and invoices with 99.7% precision using multimodal vision models.',
-        tags: ['Multimodal OCR', 'Document AI', 'Pydantic Schemas', 'Table Parsing'],
+        title: 'Document Processing and Extraction',
+        description: 'AI reads invoices, contracts, reports, and forms — extracting structured data and routing it to the right place.',
+        tags: ['OCR', 'LLM extraction', 'PDF parsing', 'Form recognition'],
       },
       {
-        title: 'Event-Driven ERP & CRM Integration Pipelines',
-        description:
-          'Synchronizing validated financial records directly into NetSuite, SAP, Salesforce, and QuickBooks with automated idempotency and bi-directional status updates.',
-        tags: ['NetSuite & SAP', 'Salesforce Integrations', 'QuickBooks API', 'Webhook Pipelines'],
+        title: 'Workflow Automation Pipelines',
+        description: 'Multi-step workflows triggered by events — email, webhook, file upload — and processed through rules and AI models.',
+        tags: ['n8n', 'Temporal', 'Celery', 'Event-driven pipelines'],
       },
       {
-        title: 'Automated Email Ingestion & Intent Routing',
-        description:
-          'Parsing incoming customer and vendor emails, classifying inquiries, extracting attached purchase orders, and auto-drafting contextual replies for human sign-off.',
-        tags: ['Email Parser Webhooks', 'Intent Classification', 'Attachment Extraction', 'Smart Drafts'],
+        title: 'Approval and Routing Automation',
+        description: 'Automated routing of requests, approvals, and exceptions to the right people based on content and rules.',
+        tags: ['Decision trees', 'Conditional routing', 'Slack/Email notifications'],
       },
       {
-        title: 'Deterministic Financial Reconciliation (3-Way Matching)',
-        description:
-          'Automated three-way matching reconciling invoice line items against purchase orders and bank receipts, flagging variances exceeding configured tolerance thresholds.',
-        tags: ['Three-Way Matching', 'Variance Thresholds', 'Automated Reconciliation', 'Financial Rules'],
-      },
-      {
-        title: 'Resilient Workflow Orchestration (Temporal & n8n)',
-        description:
-          'Durable execution engines that guarantee workflows survive server crashes, network dropouts, and third-party API rate limits with automatic retries and state replay.',
-        tags: ['Temporal.io', 'n8n Enterprise', 'Durable Workflows', 'Exponential Backoff'],
-      },
-      {
-        title: 'Smart Exception Triage & Human Review Portals',
-        description:
-          'Lightweight web portals where human managers can quickly review flagged anomalies, inspect visual document bounding boxes, and approve items with a single click.',
-        tags: ['Exception Portals', 'Bounding-Box Viewer', '1-Click Approvals', 'Slack Webhooks'],
+        title: 'Report and Content Generation',
+        description: 'Automated generation of reports, summaries, status updates, and other structured content from your data.',
+        tags: ['LLM generation', 'Template filling', 'Data aggregation'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Process Mapping & Document Audit',
-        description:
-          'Auditing existing manual workflows, gathering sample invoice/contract documents, identifying edge cases, and calculating baseline ROI metrics.',
-        deliverables: ['Process Bottleneck Map', 'Document Extraction Schema Spec', 'ROI & Payback Model'],
+        title: 'Process audit',
+        description: 'We map the exact manual process — inputs, steps, decisions, outputs — before designing the automation.',
+        deliverables: ['Process map', 'Automation scope', 'Risk assessment'],
       },
       {
         step: '02',
-        title: 'Extraction Pipeline & Schema Hardening',
-        description:
-          'Developing multimodal extraction models, configuring Pydantic schema validators, and running test batches against historical documents.',
-        deliverables: ['Extraction Microservice Code', 'Validated Schema Models', 'Extraction Accuracy Benchmark'],
+        title: 'Pipeline design',
+        description: 'We design the trigger, extraction, validation, and output stages of the automation before building.',
+        deliverables: ['Pipeline architecture', 'Integration points', 'Exception handling plan'],
       },
       {
         step: '03',
-        title: 'ERP Integration & Exception Flow Build',
-        description:
-          'Connecting bi-directional ERP webhooks, setting up three-way matching algorithms, and building the manager Slack exception notification loops.',
-        deliverables: ['ERP Connector Suite', 'Exception Triage Portal', 'Slack Alert Webhooks'],
+        title: 'Build and validation',
+        description: 'We build against your real data. Every automation is tested on actual examples before going live.',
+        deliverables: ['Working automation', 'Accuracy report', 'Edge case handling'],
       },
       {
         step: '04',
-        title: 'Production Shadow Run & Full Cutover',
-        description:
-          'Running the automation pipeline in parallel shadow mode alongside human operators, certifying zero error drift, and executing full production cutover.',
-        deliverables: ['Shadow Run Audit Certificate', 'Production Deployment Manifests', 'Operator Runbook'],
+        title: 'Deployment and monitoring',
+        description: 'Live deployment with a monitoring dashboard so you can see what the automation is doing at any time.',
+        deliverables: ['Production automation', 'Monitoring setup', 'Audit logs'],
       },
     ],
     deliverables: [
-      {
-        title: 'Production Document Extraction Microservice',
-        category: 'AI Pipeline',
-        description: 'Multimodal vision and OCR parsing service with structured Pydantic schema outputs and full IP transfer.',
-        format: 'Dockerized FastAPI / Python Service',
-      },
-      {
-        title: 'ERP / CRM Connector & Webhook Suite',
-        category: 'Integrations',
-        description: 'Bi-directional integration pipelines connecting processed data to Salesforce, NetSuite, SAP, and databases.',
-        format: 'Node.js / Python Webhook Runtimes',
-      },
-      {
-        title: 'Exception Triage & Human Approval Portal',
-        category: 'Web Interface',
-        description: 'Responsive React portal showing document side-by-side with extracted fields for fast human verification.',
-        format: 'Next.js / React Portal',
-      },
-      {
-        title: 'Automated Audit Logging & Compliance System',
-        category: 'Compliance',
-        description: 'Immutable logging capturing every document transformation, validation check, and ERP write timestamp.',
-        format: 'PostgreSQL Audit Tables & Dashboards',
-      },
+      { title: 'Automation pipeline', category: 'System', description: 'Event-triggered workflow running in production', format: 'Cloud deployment' },
+      { title: 'Monitoring dashboard', category: 'Ops', description: 'View automation runs, errors, and throughput', format: 'Web dashboard' },
+      { title: 'Audit log system', category: 'Compliance', description: 'Full record of every automated action', format: 'Database / export' },
     ],
     techStack: [
-      { category: 'OCR & Multimodal AI', items: ['GPT-4o Vision', 'Claude 3.5 Sonnet', 'AWS Textract', 'Google Document AI', 'Tesseract'] },
-      { category: 'Workflow Orchestration', items: ['Temporal.io', 'n8n Enterprise', 'Celery', 'Apache Airflow'] },
-      { category: 'Backend & Data', items: ['Python (FastAPI)', 'Node.js', 'PostgreSQL', 'Redis', 'Kafka'] },
-      { category: 'Enterprise Systems', items: ['Salesforce', 'NetSuite', 'SAP', 'QuickBooks', 'HubSpot', 'Slack'] },
+      { category: 'AI / LLM', items: ['OpenAI GPT-4', 'Anthropic Claude', 'LangChain', 'Llama'] },
+      { category: 'Automation', items: ['n8n', 'Celery', 'Temporal', 'Airflow'] },
+      { category: 'Document Processing', items: ['Tesseract OCR', 'AWS Textract', 'LlamaParse'] },
+      { category: 'Backend', items: ['Python', 'Node.js', 'FastAPI'] },
+      { category: 'Integrations', items: ['Salesforce', 'SAP', 'QuickBooks', 'Slack', 'Email APIs'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds automated our accounts payable pipeline. We process over 15,000 vendor invoices monthly, cutting cycle times from 4 days to 45 seconds while reducing data entry errors to zero.',
-      author: 'Danielle Brooks',
-      role: 'VP of Financial Operations',
-      company: 'OmniLogistics Global',
-      metric: '45s Invoice Processing Time',
+      quote: 'Invoice processing went from three days and four people to under a minute with no one involved. The accuracy is actually better than before.',
+      author: 'Finance Operations Lead',
+      role: 'Director of Finance Operations',
+      company: 'Enterprise Client',
+      metric: '98% reduction in processing time',
     },
-    outcomes: [
-      {
-        metric: '80%',
-        label: 'Operational Overhead Eliminated',
-        description: 'Frees operations and finance teams from manual copy-paste spreadsheet entry and document re-typing.',
-      },
-      {
-        metric: '99.7%',
-        label: 'Extraction Precision',
-        description: 'Strict Pydantic JSON schema validation stops corrupted database writes.',
-      },
-      {
-        metric: '< 45s',
-        label: 'Document Processing Time',
-        description: 'Replaces multi-day invoice approval backlogs with sub-minute automated verification.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Can your automation pipelines extract data from messy, scanned, or handwritten PDFs?',
-        answer:
-          'Yes. We combine enterprise OCR with multimodal vision-language models (GPT-4o and Claude 3.5 Sonnet) that interpret skewed scans, degraded faxes, low-resolution receipts, and complex multi-column tables with 99.7% accuracy.',
-      },
-      {
-        question: 'What happens when an invoice contains an error or unexpected line item?',
-        answer:
-          'Our deterministic business validation engine checks sums, tax calculations, and vendor names against your database. If a discrepancy or confidence threshold violation occurs, the system automatically routes the exact invoice to a manager Slack or review portal for 1-click approval.',
-      },
-      {
-        question: 'Can you integrate with our legacy on-premise ERP or accounting system?',
-        answer:
-          'Yes. In addition to cloud APIs (Salesforce, NetSuite), we integrate with on-premise SQL databases, SFTP batch directories, and legacy ERPs using secure VPN connectors and durable event queues.',
-      },
-      {
-        question: 'How quickly do we see positive return on investment (ROI)?',
-        answer:
-          'Most enterprise clients achieve full payback within 60 to 90 days. Eliminating manual data entry saves hundreds of employee hours per month and completely prevents costly duplicate invoice payments.',
-      },
+      { question: 'What does AI automation include?', answer: 'Process analysis, pipeline design and development, AI model integration, testing on your real data, deployment, and a monitoring system so you can see it running.' },
+      { question: 'Who is this for?', answer: 'Operations, finance, and HR teams that spend significant weekly hours on repetitive manual tasks that follow consistent rules.' },
+      { question: 'How long does a typical automation take to build?', answer: 'Simple single-step automations take 2–4 weeks. Complex multi-step pipelines with multiple integrations typically take 6–10 weeks.' },
+      { question: 'What if the AI makes an error?', answer: 'We build exception handling and human review queues into every automation. Anything the system is not confident about gets flagged for a person to review.' },
     ],
-    ctaHeadline: 'Ready to Eliminate Repetitive Manual Back-Office Workflows?',
-    ctaDescription:
-      'Talk to our Process Automation Specialists. We will analyze your document flows, calculate your exact operational ROI, and demo a working extraction pipeline.',
-    ctaButtonText: 'Request Automation Discovery',
   },
 
-  'chatbot-videobot': {
-    id: 'chatbot-videobot',
-    slug: 'chatbot-videobot',
-    title: 'Chatbot & Video Bot',
-    tagline: 'Real-Time Conversational AI, Low-Latency Voice & Photorealistic WebRTC Video Avatars',
+  // ─────────────────────────────────────────────────────────────
+  // 6. AI INTEGRATIONS
+  // ─────────────────────────────────────────────────────────────
+  'ai-integrations': {
+    id: 'ai-integrations',
+    slug: 'ai-integrations',
+    title: 'AI Integrations',
+    tagline: 'Add AI capabilities to the software your business already runs',
     category: 'AI & Intelligence',
-    heroBadge: 'Multimodal Conversational AI',
-    heroHeadline: 'Multimodal Chatbots',
-    heroHeadlineHighlight: '& Interactive Video Bots',
+    heroBadge: 'AI Integration',
+    heroHeadline: 'Add AI to',
+    heroHeadlineHighlight: 'What You Already Have',
     heroDescription:
-      'We engineer next-generation conversational experiences that go far beyond standard text chat. From voice-enabled enterprise support bots with sub-300ms latency to photorealistic, lip-synced interactive video avatars streamed directly over WebRTC.',
-    heroImage: '/services/chatbot-videobot.png',
-    heroImageCaption: 'Multimodal Chatbot & Video Bot Architecture',
-    primaryCtaText: 'Deploy Conversational AI',
-    secondaryCtaText: 'Experience Video Bots',
+      'You do not need to rebuild your software to use AI. We integrate AI capabilities — search, summarisation, predictions, content generation — into your existing products and platforms.',
+    heroImage: '/services/ai-integrations.png',
+    heroImageCaption: 'AI integration architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Integration Examples',
     trustPoints: [
-      'Zero hallucination guarantee via strict enterprise vector knowledge grounding',
-      'Ultra-low-latency audio/video streaming via WebRTC and H.264',
-      'Omnichannel deployment: Web, iOS, Android, WhatsApp, and telephony',
-      'Direct live human agent escalation with full conversation context transfer',
-    ],
-    metrics: [
-      { value: '< 350ms', label: 'Voice-to-Speech Response Latency' },
-      { value: '78%', label: 'First-Contact Resolution Rate' },
-      { value: '40+', label: 'Languages Supported in Real Time' },
-      { value: '24/7', label: 'Instant Multimodal Availability' },
+      'Works with your existing software',
+      'No full rebuild required',
+      'Production-safe implementation',
+      'Clear ROI from day one',
     ],
     overview: {
-      statement:
-        'Traditional static FAQ chatbots frustrate customers with robotic canned responses, while modern buyers expect instant, lifelike dialogue.',
+      statement: 'Most AI projects fail because they try to do too much at once. The most practical way to get value from AI is to add targeted capabilities to the software your team already uses every day.',
       paragraphs: [
-        'Rule-based decision-tree chatbots feel antiquated and force customers into infuriating loops. Today modern digital customers demand human-level comprehension, natural voice cadence, and emotionally resonant video interactions across web and mobile touchpoints.',
-        'We engineer multimodal conversational platforms integrating ultra-fast Whisper speech-to-text, knowledge-grounded LLMs, and neural text-to-speech with natural breathing cues. For high-touch brand experiences, we stream photorealistic digital humans with frame-accurate lip-synchronization over WebRTC.',
-        'Every bot is deeply integrated into your customer data platform (Zendesk, Salesforce, custom APIs) to execute transactions: booking appointments, looking up order statuses, and escalating complex tickets to human reps with complete context.',
+        'We identify the specific points in your product or workflow where AI adds the most value — search, recommendations, content drafting, data extraction, anomaly detection — and integrate exactly that.',
+        'Each integration is designed to fit your existing system. We do not disrupt what works. We add AI where it helps, and leave everything else alone.',
       ],
-      keyTakeaway:
-        'Immersive voice and video conversational agents that resolve customer inquiries instantly with human empathy and verified technical accuracy.',
+      keyTakeaway: 'Practical AI features added to your existing software — without rebuilding what already works.',
     },
+    mainProblemSolved: {
+      problem: 'You want to use AI in your product but do not know where to start, or you are worried about disrupting a system that your business depends on.',
+      solution: 'Targeted AI integration that adds a specific capability to your existing system — search, summarisation, classification, generation — without changing anything that already works.',
+      result: 'Your existing software does more, your team gets AI-powered features, and nothing breaks.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Product Manager', situation: 'Wants to add AI features to an existing product without a full rebuild' },
+        { role: 'CTO', situation: 'Needs to evaluate and implement AI capabilities in a production system safely' },
+        { role: 'Business Owner', situation: 'Wants to use AI but has an existing software system that works and cannot afford to replace it' },
+      ],
+    },
+    metrics: [
+      { value: '4–8 wks', label: 'Typical Integration Timeline' },
+      { value: '100%', label: 'Existing System Preserved' },
+      { value: 'Day 1', label: 'Business Value Delivery' },
+    ],
     capabilities: [
       {
-        title: 'Photorealistic WebRTC Video Avatar Streaming',
-        description:
-          'Streaming real-time interactive digital human avatars over WebRTC with sub-500ms latency. Frame-accurate neural lip-synchronization, natural head movements, and dynamic facial expressions.',
-        tags: ['WebRTC Video Streaming', 'Neural Lip-Sync', 'Digital Human Avatars', 'H.264 Low-Latency'],
+        title: 'AI-Powered Search',
+        description: 'Semantic search that understands what users mean — not just keyword matching. Integrated into your existing data and interface.',
+        tags: ['Vector search', 'Semantic embeddings', 'Pinecone', 'pgvector'],
       },
       {
-        title: 'Ultra-Low Latency Voice Dialogue Engines',
-        description:
-          'Sub-300ms round-trip voice conversations using streaming Whisper transcription, low-latency LLM token streaming, and neural voices with natural interruption handling.',
-        tags: ['Streaming Speech-to-Text', 'Neural TTS', 'Interruption Handling', 'Whisper & Cartesia'],
+        title: 'Document Summarisation and Q&A',
+        description: 'Let users ask questions about your documents, reports, or knowledge base — and get accurate answers grounded in your content.',
+        tags: ['RAG', 'LangChain', 'OpenAI', 'Claude'],
       },
       {
-        title: 'Enterprise Knowledge Grounding & Factuality (RAG)',
-        description:
-          'Grounding answers in your verified documentation, product specs, and support knowledge bases. Strict guardrails block hallucinations and attach verified source citations.',
-        tags: ['Knowledge Base RAG', 'Zero Hallucination Guardrails', 'Source Citations', 'pgvector'],
+        title: 'Content Generation and Drafting',
+        description: 'AI-assisted content creation integrated into your existing tool — drafts, templates, structured output from your data.',
+        tags: ['GPT-4', 'Claude', 'Prompt engineering', 'Output validation'],
       },
       {
-        title: 'Omnichannel Integration (Web, Mobile, WhatsApp, Voice)',
-        description:
-          'Deploying conversational assistants directly across React web applications, native iOS/Android SDKs, WhatsApp Business, Slack, and PSTN telephone lines.',
-        tags: ['React & Mobile SDKs', 'WhatsApp Business API', 'Telephony / SIP Trunks', 'Twilio Voice'],
-      },
-      {
-        title: 'Transactional Tool Execution & CRM Lookup',
-        description:
-          'Configuring bots to authenticate users securely, check real-time order tracking, process refunds, schedule calendar appointments, and write updates to Salesforce.',
-        tags: ['CRM Integrations', 'Stripe Refunds', 'Calendar Scheduling', 'Authenticated Sessions'],
-      },
-      {
-        title: 'Smart Human Agent Escalation & Context Transfer',
-        description:
-          'Detecting user frustration or complex inquiries, generating structured conversation summaries, and routing callers directly to live human agents via Zendesk or Genesys.',
-        tags: ['Sentiment Analysis', 'Live Agent Escalation', 'Zendesk / Genesys Sync', 'Conversation Handoff'],
+        title: 'Classification and Prediction',
+        description: 'AI models that classify incoming data, predict outcomes, or flag anomalies — running in your existing pipeline.',
+        tags: ['ML models', 'Scikit-learn', 'Real-time inference', 'Batch processing'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Knowledge Ingestion & Persona Architecture',
-        description:
-          'Ingesting support knowledge bases, structuring vector embeddings, defining brand tone of voice, and designing transactional intent schemas.',
-        deliverables: ['Knowledge Base Vector Store', 'Persona & Tone Guidelines', 'Intent Action Registry'],
+        title: 'AI opportunity assessment',
+        description: 'We review your existing software and identify the highest-value AI integration points.',
+        deliverables: ['Integration opportunities list', 'Effort vs value matrix', 'Technical feasibility assessment'],
       },
       {
         step: '02',
-        title: 'Voice & Video Avatar Pipeline Integration',
-        description:
-          'Configuring WebRTC media servers, training neural voice models, and calibrating sub-400ms audio/video streaming pipelines.',
-        deliverables: ['WebRTC Media Streaming Service', 'Custom Voice Profile', 'Video Avatar Pipeline'],
+        title: 'Integration design',
+        description: 'We design how the AI capability connects to your existing system — data flow, API contracts, and user experience.',
+        deliverables: ['Integration architecture', 'API design', 'UX changes'],
       },
       {
         step: '03',
-        title: 'CRM Tool-Calling & Security Guardrails',
-        description:
-          'Connecting Salesforce/Zendesk APIs, implementing strict PII redaction filters, and configuring automated live agent escalation triggers.',
-        deliverables: ['CRM Integration Connectors', 'PII Redaction Guardrails', 'Agent Escalation Webhooks'],
+        title: 'Development and testing',
+        description: 'We build the integration against your actual data and test with real usage scenarios before production.',
+        deliverables: ['Working integration', 'Accuracy benchmarks', 'Rollback plan'],
       },
       {
         step: '04',
-        title: 'Omnichannel Deployment & Conversation Analytics',
-        description:
-          'Embedding widgets into web and mobile apps, provisioning WhatsApp lines, and launching live conversation analytics dashboards.',
-        deliverables: ['Embeddable React / Mobile SDKs', 'Analytics Dashboard', 'Live Support Runbook'],
+        title: 'Production deployment',
+        description: 'Safe deployment with feature flags so you can roll out gradually and roll back if needed.',
+        deliverables: ['Production deployment', 'Monitoring setup', 'Performance baseline'],
       },
     ],
     deliverables: [
-      {
-        title: 'Embeddable Web & Mobile Chat / Video SDK',
-        category: 'Client SDK',
-        description: 'Lightweight, responsive React component and mobile SDKs supporting text, voice, and streaming video avatars.',
-        format: 'npm Package / Swift & Kotlin SDKs',
-      },
-      {
-        title: 'Real-Time WebRTC Media Streaming Backend',
-        category: 'Media Core',
-        description: 'High-throughput WebRTC streaming server orchestrating video generation, audio transcription, and token routing.',
-        format: 'Dockerized Media Runtimes',
-      },
-      {
-        title: 'Enterprise Knowledge Retrieval & Guardrail Core',
-        category: 'AI Pipeline',
-        description: 'Vector search knowledge retrieval engine with factuality validation and hallucination filters.',
-        format: 'Python / FastAPI Microservice',
-      },
-      {
-        title: 'Live Agent Handoff & Conversation Analytics Suite',
-        category: 'Operations',
-        description: 'Supervisor dashboard tracking sentiment trends, first-contact resolution rates, and live agent queue routing.',
-        format: 'Analytics Web Portal',
-      },
+      { title: 'AI integration layer', category: 'Code', description: 'Production-ready integration with your existing system', format: 'GitHub PR / module' },
+      { title: 'Accuracy benchmark report', category: 'Quality', description: 'How well the AI performs on your data', format: 'PDF report' },
+      { title: 'API documentation', category: 'Docs', description: 'Documentation for the new AI endpoints', format: 'OpenAPI spec' },
     ],
     techStack: [
-      { category: 'Audio & Speech', items: ['OpenAI Whisper', 'Deepgram', 'Cartesia', 'ElevenLabs', 'Twilio Voice'] },
-      { category: 'Video Avatars & Streaming', items: ['WebRTC', 'MediaSoup', 'LiveKit', 'HeyGen API', 'Simli'] },
-      { category: 'LLM & Guardrails', items: ['Claude 3.5 Sonnet', 'GPT-4o', 'Llama 3.3', 'NeMo Guardrails'] },
-      { category: 'Integrations & Storage', items: ['Zendesk', 'Salesforce', 'pgvector', 'Redis', 'Socket.io'] },
+      { category: 'AI / LLM', items: ['OpenAI GPT-4', 'Anthropic Claude', 'Llama 3', 'Mistral'] },
+      { category: 'Vector DB', items: ['Pinecone', 'pgvector', 'Weaviate', 'Qdrant'] },
+      { category: 'Orchestration', items: ['LangChain', 'LlamaIndex', 'Haystack'] },
+      { category: 'Backend', items: ['Python', 'FastAPI', 'Node.js'] },
+      { category: 'ML', items: ['HuggingFace', 'Scikit-learn', 'PyTorch'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds deployed an interactive video avatar for our patient intake portal. It resolves 82% of pre-consultation inquiries autonomously with an astonishing 96% patient satisfaction rating.',
-      author: 'Dr. Evelyn Reed',
-      role: 'Chief Medical Officer',
-      company: 'Vanguard Health Care',
-      metric: '82% Autonomous Resolution Rate',
+      quote: 'We added AI search to our platform in six weeks. Users find what they are looking for in seconds now instead of navigating five levels deep.',
+      author: 'CTO',
+      role: 'Chief Technology Officer',
+      company: 'EdTech Client',
+      metric: 'Search success rate up 70%',
     },
-    outcomes: [
-      {
-        metric: '< 350ms',
-        label: 'Voice Interaction Latency',
-        description: 'Enables natural human conversational flow without awkward pauses or robotic audio delays.',
-      },
-      {
-        metric: '78%',
-        label: 'Autonomous First-Contact Resolution',
-        description: 'Resolves routine customer queries without requiring escalation to human support agents.',
-      },
-      {
-        metric: '24/7',
-        label: 'Global Multimodal Coverage',
-        description: 'Delivers high-touch, video-guided customer onboarding and support in 40+ languages around the clock.',
-      },
-    ],
     faqs: [
-      {
-        question: 'How do video avatars stream smoothly without buffering or massive bandwidth requirements?',
-        answer:
-          'We utilize modern WebRTC adaptive bitrate streaming with H.264 video compression. Video frames are synthesized and lip-synced in the cloud at low latency, requiring only standard mobile broadband (under 1.5 Mbps) to stream smoothly at 30fps.',
-      },
-      {
-        question: 'Can the chatbot authenticate users and look up sensitive customer data safely?',
-        answer:
-          'Yes. We implement secure OAuth2 session handshakes and OTP phone/email verification before allowing the bot to access private customer information. All database calls are sandboxed with strict parameter validation and encrypted in transit.',
-      },
-      {
-        question: 'What happens when the bot does not know the answer to a question?',
-        answer:
-          'Rather than hallucinating or guessing, the bot acknowledges its boundary, captures the customer details, and either submits an asynchronous ticket or initiates a warm transfer to a live human agent with the entire chat history summarized.',
-      },
-      {
-        question: 'How long does it take to train the bot on our company documentation?',
-        answer:
-          'Our automated ingestion pipelines ingest PDFs, websites, Notion wikis, and Zendesk articles in hours. With semantic chunking and embedding, your bot is typically ready for accuracy testing within 48 hours.',
-      },
+      { question: 'What does an AI integration include?', answer: 'Opportunity assessment, integration design, development of the AI layer, testing against your real data, deployment, and monitoring setup.' },
+      { question: 'Will it break what we already have?', answer: 'No. We use feature flags and staged rollouts. Your existing system keeps working throughout, and you can roll back if needed.' },
+      { question: 'How long does integration take?', answer: 'Simple integrations take 4–6 weeks. Complex ones involving multiple data sources or AI models typically take 8–14 weeks.' },
+      { question: 'What AI models do you use?', answer: 'We select based on your requirements — OpenAI GPT-4, Anthropic Claude, Llama, or open-source models, depending on cost, performance, and data privacy needs.' },
     ],
-    ctaHeadline: 'Ready to Replace Robotic Chatbots with Lifelike Interactive Avatars?',
-    ctaDescription:
-      'Schedule a live demo with our Conversational AI Architects. Experience sub-400ms voice and WebRTC video streaming firsthand.',
-    ctaButtonText: 'Request Live Interactive Demo',
   },
 
+  // ─────────────────────────────────────────────────────────────
+  // 7. AI SYSTEMS
+  // ─────────────────────────────────────────────────────────────
+  'ai-systems': {
+    id: 'ai-systems',
+    slug: 'ai-systems',
+    title: 'AI Systems',
+    tagline: 'Custom AI systems built for complex, multi-step reasoning and decision-making',
+    category: 'AI & Intelligence',
+    heroBadge: 'AI Systems',
+    heroHeadline: 'AI That Thinks,',
+    heroHeadlineHighlight: 'Plans, and Acts',
+    heroDescription:
+      'We build AI agent systems and multi-step reasoning engines that handle complex goals — breaking them into tasks, calling tools, and completing work autonomously with human review where it matters.',
+    heroImage: '/services/ai-systems.png',
+    heroImageCaption: 'AI agent system architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See AI Systems We Built',
+    trustPoints: [
+      'Multi-step goal execution',
+      'Tool-calling and real-world actions',
+      'Persistent memory across sessions',
+      'Human-in-the-loop escalation',
+    ],
+    overview: {
+      statement: 'There is a difference between AI that answers questions and AI that gets things done. AI systems — agent-based architectures — handle the second category.',
+      paragraphs: [
+        'We build AI systems that take a high-level goal, break it into steps, call the right tools or APIs, and produce an outcome — not just a response. These systems work across knowledge retrieval, data analysis, content creation, and operational tasks.',
+        'Human oversight is built in. The system handles what it can confidently, and escalates the rest. Nothing runs completely unchecked in production.',
+      ],
+      keyTakeaway: 'AI systems that complete complex tasks autonomously — with the right controls to make sure they do it correctly.',
+    },
+    mainProblemSolved: {
+      problem: 'Complex multi-step tasks that require research, analysis, and action currently require a person to coordinate every step.',
+      solution: 'An AI agent system that handles the coordination — pulling data, running analysis, generating output, and taking action — with human review at defined checkpoints.',
+      result: 'Complex workflows completed faster and more consistently, with staff focused on decisions rather than coordination.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Head of AI / ML', situation: 'Building complex AI products that need planning, tool use, and multi-step execution' },
+        { role: 'CTO', situation: 'Wants to automate complex knowledge work that simple rule-based automation cannot handle' },
+        { role: 'Product Manager', situation: 'Building an AI-powered product that needs autonomous agents to handle user requests end-to-end' },
+      ],
+    },
+    metrics: [
+      { value: '94%+', label: 'Autonomous Task Completion Rate' },
+      { value: '10x', label: 'Faster Than Manual Multi-Step Work' },
+      { value: '100%', label: 'Auditable and Explainable Actions' },
+    ],
+    capabilities: [
+      {
+        title: 'AI Agent Development',
+        description: 'Agents that break complex goals into steps, call tools, and execute tasks — with memory, planning, and reflection loops.',
+        tags: ['LangGraph', 'AutoGen', 'Tool-calling', 'ReAct agents'],
+      },
+      {
+        title: 'Multi-Agent Systems',
+        description: 'Multiple specialised agents working together — planner, researcher, writer, executor — to handle complex workflows.',
+        tags: ['Agent orchestration', 'Swarm patterns', 'Role specialisation'],
+      },
+      {
+        title: 'Retrieval-Augmented Generation',
+        description: 'Agents grounded in your knowledge base — they look up verified information before generating any output.',
+        tags: ['RAG', 'Vector databases', 'Knowledge graphs', 'Source citation'],
+      },
+      {
+        title: 'Specialised Custom Models',
+        description: 'Fine-tuned models trained on your domain data for tasks where general models do not perform well enough.',
+        tags: ['Fine-tuning', 'LoRA / PEFT', 'Domain adaptation', 'Custom evaluation'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'Task and goal analysis',
+        description: 'We map the complex workflow the AI system needs to handle, define the tools it needs access to, and specify the output format.',
+        deliverables: ['Agent specification', 'Tool inventory', 'Success criteria'],
+      },
+      {
+        step: '02',
+        title: 'System architecture',
+        description: 'Agent design, memory architecture, tool integration plan, and human escalation flows.',
+        deliverables: ['Agent architecture', 'Memory design', 'Integration plan'],
+      },
+      {
+        step: '03',
+        title: 'Development and evaluation',
+        description: 'We build and evaluate against a test suite of real tasks from your domain. Accuracy tracked before production.',
+        deliverables: ['Working agents', 'Benchmark results', 'Accuracy evaluation'],
+      },
+      {
+        step: '04',
+        title: 'Production deployment',
+        description: 'Monitored deployment with rate limits, error recovery, and a dashboard showing agent activity.',
+        deliverables: ['Production system', 'Monitoring dashboard', 'Escalation setup'],
+      },
+    ],
+    deliverables: [
+      { title: 'AI agent system', category: 'System', description: 'Production agent with tool integrations and memory', format: 'Cloud deployment' },
+      { title: 'Evaluation benchmark', category: 'Quality', description: 'Test suite and accuracy metrics on your domain', format: 'Benchmark report' },
+      { title: 'Monitoring dashboard', category: 'Ops', description: 'Agent activity, errors, and human escalations', format: 'Web dashboard' },
+    ],
+    techStack: [
+      { category: 'Agent Frameworks', items: ['LangGraph', 'AutoGen', 'CrewAI', 'LlamaIndex'] },
+      { category: 'LLMs', items: ['GPT-4o', 'Claude 3.5', 'Llama 3.1', 'Mistral'] },
+      { category: 'Memory', items: ['pgvector', 'Pinecone', 'Redis', 'Chroma'] },
+      { category: 'Tools', items: ['Browser use', 'Code interpreter', 'Search APIs', 'Custom APIs'] },
+      { category: 'Backend', items: ['Python', 'FastAPI', 'Celery'] },
+    ],
+    caseStudyQuote: {
+      quote: 'The agent handles the research phase for our analysts. What used to take two hours now takes five minutes, and the output is more thorough.',
+      author: 'Head of Analytics',
+      role: 'Director of Analytics',
+      company: 'Enterprise Client',
+      metric: '95% reduction in research time',
+    },
+    faqs: [
+      { question: 'What does an AI system include?', answer: 'Agent design and development, tool integrations, memory architecture, evaluation framework, deployment, and monitoring.' },
+      { question: 'How do you handle AI mistakes?', answer: 'Human review checkpoints are built into every workflow. The system flags tasks it is uncertain about, and nothing irreversible happens without a human reviewing it.' },
+      { question: 'How long does it take to build?', answer: 'Simple single-agent systems take 6–10 weeks. Complex multi-agent systems typically take 12–20 weeks.' },
+      { question: 'Can AI systems access our internal data?', answer: 'Yes. We build RAG pipelines that give the agent access to your documents and data while keeping that data secure and private.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 8. ECOMMERCE PLATFORM
+  // ─────────────────────────────────────────────────────────────
+  'ecommerce-platform': {
+    id: 'ecommerce-platform',
+    slug: 'ecommerce-platform',
+    title: 'E-commerce Platform',
+    tagline: 'Online stores and commerce platforms built for growth',
+    category: 'Core Development',
+    heroBadge: 'E-commerce Development',
+    heroHeadline: 'E-commerce That',
+    heroHeadlineHighlight: 'Actually Converts',
+    heroDescription:
+      'We build e-commerce platforms and online stores — from custom storefronts to headless commerce architectures — designed for high-traffic, high-conversion, and easy management.',
+    heroImage: '/services/ecommerce-platform.png',
+    heroImageCaption: 'E-commerce platform architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Commerce Work',
+    trustPoints: [
+      'Optimised checkout flow',
+      'Multi-currency payment support',
+      'Inventory and order management',
+      'Mobile-first shopping experience',
+    ],
+    overview: {
+      statement: 'Most e-commerce projects get the tech right and the experience wrong. We build both together.',
+      paragraphs: [
+        'Whether you need a custom storefront, a headless commerce setup, or a platform migration, we start from how your customers shop and work backward to the technology.',
+        'Checkout, search, product pages, and order management are all engineered with conversion in mind — not just functionality.',
+      ],
+      keyTakeaway: 'An e-commerce platform that grows with your catalogue, handles your peak traffic, and converts consistently.',
+    },
+    mainProblemSolved: {
+      problem: 'Your store is slow, checkout abandonment is high, or your platform cannot handle your product volume or traffic.',
+      solution: 'A rebuilt or migrated e-commerce platform with fast search, optimised checkout, and infrastructure that scales under load.',
+      result: 'Lower cart abandonment, higher conversion, and a system you can manage without constant developer involvement.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'E-commerce Manager', situation: 'Running a store that is outgrowing its current platform' },
+        { role: 'Product Owner', situation: 'Building a new direct-to-consumer commerce product from scratch' },
+        { role: 'CTO', situation: 'Migrating from a slow or expensive commerce platform to a custom solution' },
+      ],
+    },
+    metrics: [
+      { value: '+25%', label: 'Average Checkout Conversion Improvement' },
+      { value: '<2s', label: 'Target Product Page Load Time' },
+      { value: '99.9%', label: 'Platform Uptime SLA' },
+    ],
+    capabilities: [
+      {
+        title: 'Custom Storefront Development',
+        description: 'Product pages, category pages, and search built to convert — fast, mobile-first, and designed for your specific catalogue.',
+        tags: ['React', 'Next.js', 'Algolia', 'Custom design'],
+      },
+      {
+        title: 'Checkout and Payment Engineering',
+        description: 'Streamlined multi-step or one-page checkout supporting Stripe, PayPal, Apple Pay, and regional payment methods.',
+        tags: ['Stripe', 'PayPal', 'Razorpay', 'PCI-DSS compliance'],
+      },
+      {
+        title: 'Inventory and Order Management',
+        description: 'Backend systems that keep inventory accurate, route orders correctly, and connect to your fulfilment and logistics providers.',
+        tags: ['Inventory sync', 'Order routing', 'Shipment tracking', 'ERP integration'],
+      },
+      {
+        title: 'Headless Commerce Architecture',
+        description: 'Decoupled frontend and commerce backend — faster pages, better SEO, and the ability to sell through any channel.',
+        tags: ['Shopify Hydrogen', 'Medusa.js', 'Commerce.js', 'Headless API'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'Commerce audit and requirements',
+        description: 'We analyse your current store, customer journey, and conversion funnel before designing anything.',
+        deliverables: ['Conversion analysis', 'Requirements document', 'Platform recommendation'],
+      },
+      {
+        step: '02',
+        title: 'UX and checkout design',
+        description: 'UI designs focused on product discovery and checkout completion — with mobile as the primary device.',
+        deliverables: ['Design system', 'Checkout flow', 'Mobile prototype'],
+      },
+      {
+        step: '03',
+        title: 'Development and integration',
+        description: 'Storefront, backend, payment, and logistics integrations built and tested together.',
+        deliverables: ['Working store', 'Payment integration', 'Inventory system'],
+      },
+      {
+        step: '04',
+        title: 'Load testing and launch',
+        description: 'Performance testing under your peak traffic load before launch, not after.',
+        deliverables: ['Load test report', 'Production deployment', 'Analytics setup'],
+      },
+    ],
+    deliverables: [
+      { title: 'E-commerce platform', category: 'Platform', description: 'Full storefront, checkout, and admin', format: 'Production deployment' },
+      { title: 'Payment integration', category: 'Commerce', description: 'Live payment processing configured', format: 'Stripe / PayPal setup' },
+      { title: 'Performance report', category: 'Quality', description: 'Load testing results and Core Web Vitals', format: 'PDF report' },
+    ],
+    techStack: [
+      { category: 'Frontend', items: ['React', 'Next.js', 'Shopify Hydrogen'] },
+      { category: 'Commerce Backend', items: ['Medusa.js', 'Shopify API', 'Custom backend'] },
+      { category: 'Payments', items: ['Stripe', 'PayPal', 'Razorpay', 'Apple Pay'] },
+      { category: 'Search', items: ['Algolia', 'Meilisearch', 'Elasticsearch'] },
+      { category: 'Infrastructure', items: ['Vercel', 'AWS', 'Cloudflare'] },
+    ],
+    caseStudyQuote: {
+      quote: 'Cart abandonment dropped significantly within the first month. The checkout we built was noticeably faster and simpler than what we had before.',
+      author: 'Head of E-commerce',
+      role: 'Director of Digital Commerce',
+      company: 'Retail Client',
+      metric: 'Checkout completion rate increased',
+    },
+    faqs: [
+      { question: 'What does e-commerce development include?', answer: 'Storefront design and development, product catalogue, search, checkout, payment integration, order management, and launch support.' },
+      { question: 'Can you work with Shopify or WooCommerce?', answer: 'Yes. We build on top of existing platforms, do headless implementations using their APIs, or build fully custom commerce backends depending on your needs.' },
+      { question: 'How long does it take?', answer: 'A focused online store takes 8–12 weeks. A complex headless commerce platform with custom backend takes 14–24 weeks.' },
+      { question: 'Can it handle peak traffic events like sales?', answer: 'Yes. We load test before launch and design infrastructure to handle peak loads without degrading the customer experience.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 9. AI NATIVE SOFTWARE
+  // ─────────────────────────────────────────────────────────────
+  'ai-native-software': {
+    id: 'ai-native-software',
+    slug: 'ai-native-software',
+    title: 'AI Native Software',
+    tagline: 'Products designed around AI from the first line of code',
+    category: 'AI & Intelligence',
+    heroBadge: 'AI Native Software',
+    heroHeadline: 'Software Built',
+    heroHeadlineHighlight: 'AI-First',
+    heroDescription:
+      'We build software products where AI is the core feature — not an add-on. Learning platforms, intelligent tools, autonomous systems — designed from the ground up with AI as the primary engine.',
+    heroImage: '/services/ai-native-software.png',
+    heroImageCaption: 'AI-native software architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See AI Products We Built',
+    trustPoints: [
+      'AI at the core of the product',
+      'Not retrofitted — designed AI-first',
+      'Real product engineering, not demos',
+      'Production-ready from launch',
+    ],
+    overview: {
+      statement: 'There is a difference between software that has an AI feature and software that could not exist without AI. We build the second kind.',
+      paragraphs: [
+        'AI-native software starts with the AI capability and builds the user experience around it. The result is products that do things no traditional software can — personalised in real time, adaptive, and getting better with use.',
+        'We handle the full product — UI, backend, AI layer, data pipeline, and the feedback loops that make the AI improve over time.',
+      ],
+      keyTakeaway: 'AI-native products that work in production and improve with every interaction.',
+    },
+    mainProblemSolved: {
+      problem: 'You want to build a product where AI is the differentiator, but building AI-native software requires skills across ML, product engineering, and UX that are hard to find in one team.',
+      solution: 'A single cross-functional team that handles AI model selection and integration, product engineering, and UX — building the product as one coherent system.',
+      result: 'An AI-native product that works, ships on time, and has the infrastructure to improve as you learn from real users.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'AI Startup Founder', situation: 'Building a product where AI is the core value proposition' },
+        { role: 'Head of Product', situation: 'Launching a new AI-powered product line within an existing business' },
+        { role: 'CTO', situation: 'Building internal tooling that is fundamentally AI-driven' },
+      ],
+    },
+    metrics: [
+      { value: '100%', label: 'AI-Core Architecture' },
+      { value: '8–16 wks', label: 'MVP to Production' },
+      { value: '100%', label: 'Full IP Ownership' },
+    ],
+    capabilities: [
+      {
+        title: 'AI Product Design',
+        description: 'Product design that starts from the AI capability and works outward to the interface — not the other way around.',
+        tags: ['AI UX patterns', 'Feedback loops', 'Progressive disclosure'],
+      },
+      {
+        title: 'LLM Application Architecture',
+        description: 'Full-stack architecture for LLM-powered products — prompt engineering, context management, streaming, and output validation.',
+        tags: ['GPT-4', 'Claude', 'Streaming', 'RAG'],
+      },
+      {
+        title: 'ML Model Integration',
+        description: 'Connecting trained ML models to your product — classification, prediction, recommendation, vision — with real-time inference.',
+        tags: ['Model serving', 'FastAPI', 'TensorFlow Serving', 'Real-time inference'],
+      },
+      {
+        title: 'AI Feedback and Improvement Loops',
+        description: 'Collecting the data from real usage that lets the AI improve over time — rating systems, correction flows, and evaluation pipelines.',
+        tags: ['RLHF', 'Feedback collection', 'Evaluation pipeline', 'A/B testing'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'AI product strategy',
+        description: 'We define what the AI needs to do, what data it needs, and how users will interact with it before anything is built.',
+        deliverables: ['AI product spec', 'Data requirements', 'Model selection rationale'],
+      },
+      {
+        step: '02',
+        title: 'Architecture and prototype',
+        description: 'Technical architecture for the AI layer, data pipeline, and product backend — plus a working prototype on real data.',
+        deliverables: ['Architecture design', 'Working prototype', 'Accuracy baseline'],
+      },
+      {
+        step: '03',
+        title: 'Product development',
+        description: 'Full product built in sprints — AI layer, backend, frontend — with staging access every two weeks.',
+        deliverables: ['Working product per sprint', 'AI integration', 'Backend APIs'],
+      },
+      {
+        step: '04',
+        title: 'Launch and evaluation setup',
+        description: 'Production deployment with evaluation pipeline so you can measure AI performance after launch.',
+        deliverables: ['Production launch', 'Evaluation dashboard', 'Improvement roadmap'],
+      },
+    ],
+    deliverables: [
+      { title: 'AI-native product', category: 'Product', description: 'Full product with AI at its core', format: 'Production deployment' },
+      { title: 'AI evaluation pipeline', category: 'Quality', description: 'System for measuring and improving AI performance', format: 'Monitoring + eval tools' },
+      { title: 'Data flywheel setup', category: 'Growth', description: 'Infrastructure for collecting feedback and improving the model', format: 'Data pipeline' },
+    ],
+    techStack: [
+      { category: 'LLMs', items: ['GPT-4o', 'Claude 3.5', 'Llama 3.1', 'Gemini'] },
+      { category: 'ML', items: ['PyTorch', 'TensorFlow', 'HuggingFace', 'scikit-learn'] },
+      { category: 'Backend', items: ['Python', 'FastAPI', 'Node.js', 'Go'] },
+      { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript'] },
+      { category: 'Data', items: ['PostgreSQL', 'Pinecone', 'Redis', 'Kafka'] },
+    ],
+    caseStudyQuote: {
+      quote: 'They understood that AI-native does not mean bolting a chatbot onto an existing product. They built the product the right way from the start.',
+      author: 'Co-Founder',
+      role: 'CEO',
+      company: 'AI Startup Client',
+      metric: 'Product launched in 14 weeks',
+    },
+    faqs: [
+      { question: 'What does AI native software development include?', answer: 'AI product strategy, model selection and integration, full product engineering (frontend, backend, data pipeline), evaluation setup, and launch support.' },
+      { question: 'What is the difference from adding AI to existing software?', answer: 'AI-native software is designed from the start with AI at its core. The user experience, data model, and product logic are all built around the AI capability.' },
+      { question: 'How long does it take?', answer: 'An AI-native MVP typically takes 10–16 weeks. A full product with multiple AI features and a data flywheel takes 16–28 weeks.' },
+      { question: 'Do you handle model training?', answer: 'Yes. We handle fine-tuning and domain adaptation when a general-purpose model does not perform well enough on your specific use case.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 10. CLOUD BASED SOFTWARE
+  // ─────────────────────────────────────────────────────────────
+  'cloud-based-software': {
+    id: 'cloud-based-software',
+    slug: 'cloud-based-software',
+    title: 'Cloud Based Software',
+    tagline: 'Cloud-native systems that scale without friction',
+    category: 'Core Development',
+    heroBadge: 'Cloud Software',
+    heroHeadline: 'Software That Runs',
+    heroHeadlineHighlight: 'Reliably in the Cloud',
+    heroDescription:
+      'We build cloud-native software systems on AWS, Azure, and Google Cloud — scalable, secure, and designed to handle real growth without constant engineering attention.',
+    heroImage: '/services/cloud-based-software.png',
+    heroImageCaption: 'Cloud-native software architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'View Cloud Projects',
+    trustPoints: [
+      'Scales automatically with demand',
+      'Resilient across cloud regions',
+      'Cost-optimised infrastructure',
+      'Full observability from day one',
+    ],
+    overview: {
+      statement: 'Cloud-native is not just about where your software runs. It is about how it handles failure, how it scales, and whether it gives you visibility into what it is doing.',
+      paragraphs: [
+        'We build applications that use cloud services properly — not VMs masquerading as cloud. Managed databases, serverless functions, message queues, and containers orchestrated with Kubernetes where the workload demands it.',
+        'Cost and observability are not afterthoughts. We instrument from the start and right-size infrastructure from the first deploy.',
+      ],
+      keyTakeaway: 'Cloud software engineered to scale, monitored properly, and cost-efficient from the start.',
+    },
+    mainProblemSolved: {
+      problem: 'Your software crashes under load, costs too much to run, or requires constant manual intervention to keep it running.',
+      solution: 'Cloud-native architecture with proper auto-scaling, managed dependencies, and full observability so problems are caught before users notice.',
+      result: 'Software that stays up, scales with your users, and gives you clear visibility into its health and cost.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'CTO', situation: 'Building new software that needs to scale from the start' },
+        { role: 'DevOps Lead', situation: 'Migrating on-premise or VM-based software to cloud-native architecture' },
+        { role: 'Product Manager', situation: 'Running a product that keeps having scaling or reliability issues' },
+      ],
+    },
+    metrics: [
+      { value: '99.9%', label: 'Uptime Target' },
+      { value: 'Auto', label: 'Scaling — No Manual Intervention' },
+      { value: '100%', label: 'Observability Coverage' },
+    ],
+    capabilities: [
+      {
+        title: 'Cloud-Native Application Development',
+        description: 'Applications built using cloud-native patterns — containerised services, managed databases, message queues, and serverless functions.',
+        tags: ['Docker', 'Kubernetes', 'AWS Lambda', 'Managed services'],
+      },
+      {
+        title: 'Infrastructure as Code',
+        description: 'All infrastructure defined in code with Terraform or CDK — reproducible, auditable, and versionable.',
+        tags: ['Terraform', 'AWS CDK', 'Pulumi', 'GitOps'],
+      },
+      {
+        title: 'Auto-Scaling and Cost Optimisation',
+        description: 'Infrastructure that scales with demand and scales back when demand drops — with real-time cost visibility.',
+        tags: ['Auto Scaling', 'Spot instances', 'Reserved capacity', 'Cost monitoring'],
+      },
+      {
+        title: 'Observability and Monitoring',
+        description: 'Full-stack monitoring — application performance, infrastructure health, logs, and alerts — configured before launch.',
+        tags: ['Prometheus', 'Grafana', 'Datadog', 'CloudWatch'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'Architecture design',
+        description: 'We design the cloud architecture for your specific workload — compute, storage, networking, and security.',
+        deliverables: ['Architecture diagram', 'Cloud cost estimate', 'Security design'],
+      },
+      {
+        step: '02',
+        title: 'Infrastructure setup',
+        description: 'Infrastructure provisioned as code, with CI/CD pipelines set up before development starts.',
+        deliverables: ['Terraform scripts', 'CI/CD pipeline', 'Staging environment'],
+      },
+      {
+        step: '03',
+        title: 'Application development',
+        description: 'Application built against the cloud architecture with integrated logging, tracing, and health checks.',
+        deliverables: ['Working application', 'API layer', 'Integration tests'],
+      },
+      {
+        step: '04',
+        title: 'Load testing and launch',
+        description: 'Load testing to verify auto-scaling works before production launch.',
+        deliverables: ['Load test results', 'Production deployment', 'Monitoring dashboards'],
+      },
+    ],
+    deliverables: [
+      { title: 'Cloud application', category: 'Software', description: 'Production-ready cloud-native application', format: 'Cloud deployment' },
+      { title: 'Infrastructure as code', category: 'DevOps', description: 'All infrastructure defined in Terraform', format: 'GitHub repository' },
+      { title: 'Monitoring dashboards', category: 'Ops', description: 'Application and infrastructure monitoring', format: 'Grafana / Datadog' },
+    ],
+    techStack: [
+      { category: 'Cloud', items: ['AWS', 'Microsoft Azure', 'Google Cloud'] },
+      { category: 'Containers', items: ['Docker', 'Kubernetes', 'EKS', 'GKE'] },
+      { category: 'IaC', items: ['Terraform', 'AWS CDK', 'Pulumi'] },
+      { category: 'Database', items: ['RDS', 'Cloud SQL', 'DynamoDB', 'Redis'] },
+      { category: 'Monitoring', items: ['Prometheus', 'Grafana', 'Datadog', 'CloudWatch'] },
+    ],
+    caseStudyQuote: {
+      quote: 'The system handles our traffic spikes automatically now. We used to have to manually intervene during every promotion. That problem is gone.',
+      author: 'VP Engineering',
+      role: 'Vice President of Engineering',
+      company: 'Enterprise Client',
+      metric: 'Zero manual scaling interventions since launch',
+    },
+    faqs: [
+      { question: 'What does cloud software development include?', answer: 'Architecture design, infrastructure setup as code, application development, CI/CD pipeline, load testing, monitoring setup, and production deployment.' },
+      { question: 'Which cloud provider do you work with?', answer: 'We work with AWS, Azure, and Google Cloud. We recommend based on your existing setup, workload, and team familiarity.' },
+      { question: 'How long does it take?', answer: 'Cloud infrastructure setup takes 2–4 weeks. A full cloud-native application typically takes 10–20 weeks depending on complexity.' },
+      { question: 'Can you migrate an existing application to cloud-native?', answer: 'Yes. We do lift-and-shift migrations and re-architecture to cloud-native patterns, depending on how much rebuild makes economic sense.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 11. SAAS DEVELOPMENT
+  // ─────────────────────────────────────────────────────────────
+  'saas-development': {
+    id: 'saas-development',
+    slug: 'saas-development',
+    title: 'SaaS Development',
+    tagline: 'Subscription software products built to acquire, retain, and scale',
+    category: 'Core Development',
+    heroBadge: 'SaaS Development',
+    heroHeadline: 'Build Your SaaS',
+    heroHeadlineHighlight: 'Product Right',
+    heroDescription:
+      'We build SaaS products end-to-end — multi-tenant architecture, subscription billing, user management, analytics, and the operational infrastructure that makes a SaaS business work.',
+    heroImage: '/services/saas-development.png',
+    heroImageCaption: 'SaaS product architecture — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See SaaS Products We Built',
+    trustPoints: [
+      'Multi-tenant from the start',
+      'Billing and subscription management',
+      'User and workspace management',
+      'Usage analytics built in',
+    ],
+    overview: {
+      statement: 'Building a SaaS product is different from building a regular application. The architecture needs to handle multiple customers in isolation, billing that scales, and the operational demands of a subscription business.',
+      paragraphs: [
+        'We have built SaaS products across EdTech, FinTech, and enterprise software. We know the patterns — multi-tenancy, billing integration, onboarding flows, role-based access — and we implement them properly from the start.',
+        'The goal is to ship an MVP that works, then iterate fast. We structure the codebase and infrastructure so your team can keep moving after we hand over.',
+      ],
+      keyTakeaway: 'A SaaS product with the right architecture from day one — so you can grow without rebuilding.',
+    },
+    mainProblemSolved: {
+      problem: 'You are building a SaaS product but the architecture is getting complex fast — multi-tenancy, billing, user management, and feature access are all intersecting.',
+      solution: 'A well-architected SaaS platform that handles multi-tenancy, billing, and access correctly from the start — not bolted on later.',
+      result: 'A product you can sell confidently, onboard customers quickly, and expand without rearchitecting.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'SaaS Founder', situation: 'Building a subscription software product for the first time and needs to get the architecture right' },
+        { role: 'CTO', situation: 'Scaling a SaaS product that is hitting multi-tenancy and billing limitations' },
+        { role: 'Product Manager', situation: 'Launching a new SaaS product line from within an existing business' },
+      ],
+    },
+    metrics: [
+      { value: '8–16 wks', label: 'MVP to Production' },
+      { value: '100%', label: 'Multi-Tenant Isolation' },
+      { value: 'Day 1', label: 'Billing and Metrics Ready' },
+    ],
+    capabilities: [
+      {
+        title: 'Multi-Tenant Architecture',
+        description: 'Tenant isolation at the database level — each customer sees only their data, even as they share infrastructure.',
+        tags: ['Row-level security', 'Schema isolation', 'Tenant routing'],
+      },
+      {
+        title: 'Subscription Billing Integration',
+        description: 'Stripe integration with plans, trials, usage-based billing, invoices, and a customer billing portal.',
+        tags: ['Stripe', 'Paddle', 'Usage billing', 'Dunning management'],
+      },
+      {
+        title: 'User and Workspace Management',
+        description: 'Workspace creation, team invitations, role-based permissions, and SSO — the standard SaaS user model, implemented properly.',
+        tags: ['RBAC', 'SSO / SAML', 'Invitations', 'Audit logs'],
+      },
+      {
+        title: 'SaaS Analytics and Metrics',
+        description: 'MRR, churn, DAU, and feature usage tracked from day one — so you have the data your business decisions need.',
+        tags: ['Product analytics', 'Revenue metrics', 'Churn tracking'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'SaaS product scoping',
+        description: 'We define the tenant model, billing structure, feature set, and user types before architecture begins.',
+        deliverables: ['SaaS architecture spec', 'Billing model', 'Feature scope'],
+      },
+      {
+        step: '02',
+        title: 'Architecture and infrastructure',
+        description: 'Multi-tenant database design, billing integration, auth system, and CI/CD all set up before application development.',
+        deliverables: ['Database schema', 'Auth setup', 'Billing integration'],
+      },
+      {
+        step: '03',
+        title: 'Product development',
+        description: 'Core features built in sprints — with staging access every two weeks so you can test and give feedback continuously.',
+        deliverables: ['Working product per sprint', 'Admin panel', 'Customer-facing features'],
+      },
+      {
+        step: '04',
+        title: 'Launch readiness',
+        description: 'Security audit, load testing, billing validation, and go-live support.',
+        deliverables: ['Security report', 'Load test results', 'Production deployment'],
+      },
+    ],
+    deliverables: [
+      { title: 'SaaS product', category: 'Product', description: 'Full production SaaS application', format: 'Cloud deployment' },
+      { title: 'Billing setup', category: 'Revenue', description: 'Live Stripe subscription and billing portal', format: 'Stripe dashboard' },
+      { title: 'Admin and analytics dashboard', category: 'Operations', description: 'Internal tools for managing customers and metrics', format: 'Web application' },
+    ],
+    techStack: [
+      { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Go'] },
+      { category: 'Database', items: ['PostgreSQL', 'Supabase', 'Redis'] },
+      { category: 'Billing', items: ['Stripe', 'Paddle', 'Chargebee'] },
+      { category: 'Auth', items: ['Auth0', 'Clerk', 'NextAuth', 'Supabase Auth'] },
+    ],
+    caseStudyQuote: {
+      quote: 'The architecture was right from day one. We added our first 50 customers without a single data isolation issue. That is not common for a first build.',
+      author: 'CTO',
+      role: 'Co-Founder and CTO',
+      company: 'SaaS Startup Client',
+      metric: '50 enterprise tenants in 90 days',
+    },
+    faqs: [
+      { question: 'What does SaaS development include?', answer: 'Multi-tenant architecture, auth and user management, subscription billing, core product features, admin panel, analytics, and production deployment.' },
+      { question: 'Do you handle the billing system?', answer: 'Yes. We integrate Stripe or Paddle with your plans, trials, and usage-based billing. We also build the customer billing portal.' },
+      { question: 'How long does SaaS MVP development take?', answer: 'A focused SaaS MVP with core features and billing takes 10–16 weeks. A full product with advanced features takes 16–28 weeks.' },
+      { question: 'Can you add SaaS features to an existing product?', answer: 'Yes. We can add multi-tenancy, billing, and workspace management to existing applications through a phased migration.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 12. ANALYTICS DASHBOARD
+  // ─────────────────────────────────────────────────────────────
   'analytics-dashboard': {
     id: 'analytics-dashboard',
     slug: 'analytics-dashboard',
     title: 'Analytics Dashboard',
-    tagline: 'Real-Time Business Intelligence & Interactive Data Visualization',
-    category: 'Cloud & Operations',
-    heroBadge: 'Enterprise BI & Real-Time Dashboards',
-    heroHeadline: 'Real-Time Business',
-    heroHeadlineHighlight: 'Analytics & Dashboards',
+    tagline: 'Dashboards that turn your data into decisions',
+    category: 'Specialist',
+    heroBadge: 'Analytics and BI',
+    heroHeadline: 'Your Data,',
+    heroHeadlineHighlight: 'Clear and Actionable',
     heroDescription:
-      'Turn vast data streams into actionable executive clarity. We engineer real-time analytical data warehouses (ClickHouse, Snowflake) paired with 60fps interactive React visualizations, embedded white-label portals, and automated anomaly alerting.',
+      'We build custom analytics dashboards and business intelligence systems that connect your data sources, surface the metrics that matter, and give your team the visibility to make faster decisions.',
     heroImage: '/services/analytics-dashboard.png',
-    heroImageCaption: 'Real-Time Analytics Dashboard Architecture',
-    primaryCtaText: 'Build Your Dashboard',
-    secondaryCtaText: 'Explore Analytics Architecture',
+    heroImageCaption: 'Analytics dashboard — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Dashboard Examples',
     trustPoints: [
-      'Decoupled columnar storage (ClickHouse/DuckDB) preventing production database load',
-      'Embedded white-label customer analytics with strict Row-Level Security (RLS)',
-      'Sub-80ms analytical aggregations across hundreds of millions of events',
-      'Automated scheduled executive PDF summaries and instant Slack anomaly alerts',
-    ],
-    metrics: [
-      { value: '< 80ms', label: 'Query Latency on 100M+ Rows' },
-      { value: '60 FPS', label: 'WebGL & Canvas Chart Rendering' },
-      { value: '100%', label: 'Multi-Tenant Row-Level Security' },
-      { value: '10x', label: 'Faster Executive Decision Velocity' },
+      'Real-time data from any source',
+      'Custom metrics for your business',
+      'Drill-down and filtering built in',
+      'Accessible to non-technical users',
     ],
     overview: {
-      statement:
-        'Sluggish, clunky dashboards that take 30 seconds to reload destroy executive focus and hide critical business risks.',
+      statement: 'The problem is rarely missing data. The problem is that the data lives in five different places and nobody has time to pull it together.',
       paragraphs: [
-        'When analytics queries freeze your production database or take 45 seconds to generate an executive report, data-driven decision making grinds to a halt. Traditional transactional databases were never designed for multi-million-row aggregations.',
-        'We architect modern data pipelines pairing high-speed columnar warehouses (ClickHouse, Snowflake, DuckDB) with reactive frontend visualization frameworks. We use Change Data Capture (CDC) to stream events from your operational databases without adding a single millisecond of overhead to your live users.',
-        'Our dashboards are engineered with Apache ECharts and WebGL canvas renderers that display 500,000 data points at a silky smooth 60 frames per second, complete with multi-tenant row-level security and natural language "Talk to Your Data" query interfaces.',
+        'We build dashboards that connect to your existing data sources — databases, CRMs, payment systems, spreadsheets — and display the metrics your team checks every day.',
+        'These are not generic BI tools. They are built around your specific metrics and your team\'s actual decision-making process.',
       ],
-      keyTakeaway:
-        'Sub-second analytical intelligence that turns massive operational event streams into actionable visual decisions without breaking production.',
+      keyTakeaway: 'Custom dashboards that give your team clear visibility into the numbers they need — without opening five different tools.',
     },
+    mainProblemSolved: {
+      problem: 'Your team is assembling business reports manually every week by pulling data from multiple tools.',
+      solution: 'A single dashboard that pulls from all your data sources automatically and displays your key metrics in real time.',
+      result: 'Reports that update themselves, hours saved per week, and decisions made on current data instead of last week\'s export.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Operations Manager', situation: 'Spending significant time every week compiling reports from multiple data sources' },
+        { role: 'Business Owner', situation: 'Needs clear visibility into business health without depending on technical staff for every report' },
+        { role: 'Data Lead', situation: 'Building a data infrastructure that makes business metrics accessible to non-technical stakeholders' },
+      ],
+    },
+    metrics: [
+      { value: 'Real-time', label: 'Data Refresh' },
+      { value: '10+', label: 'Data Sources Connected' },
+      { value: '3–6 wks', label: 'First Dashboard Live' },
+    ],
     capabilities: [
       {
-        title: 'High-Speed Columnar Analytical Warehouses',
-        description:
-          'Ingesting millions of events per minute into ClickHouse, Snowflake, and TimescaleDB with instant materialization and sub-80ms analytical query response times.',
-        tags: ['ClickHouse / Snowflake', 'DuckDB', 'Columnar Storage', 'Sub-80ms Queries'],
+        title: 'Custom Dashboard Development',
+        description: 'Interactive dashboards with filtering, drill-down, date ranges, and export — designed for your specific metrics.',
+        tags: ['React', 'Chart.js', 'D3.js', 'Recharts'],
       },
       {
-        title: 'Reactive WebGL & Canvas Visualizations',
-        description:
-          'High-density data charts rendering 500,000 data points at smooth 60fps using Apache ECharts, D3.js, and WebGL. Interactive zoom, pan, brush filtering, and financial heatmaps.',
-        tags: ['Apache ECharts', 'D3.js', 'WebGL Canvas Renderers', 'Financial Heatmaps'],
+        title: 'Data Pipeline and Integration',
+        description: 'ETL pipelines that pull from your databases, APIs, spreadsheets, and SaaS tools into a clean reporting layer.',
+        tags: ['ETL', 'Apache Kafka', 'Airbyte', 'dbt'],
       },
       {
-        title: 'Embedded Multi-Tenant Customer Portals',
-        description:
-          'Embedding white-label customer-facing analytics dashboards directly inside your SaaS application with strict Row-Level Security (RLS) and custom client theming.',
-        tags: ['Row-Level Security (RLS)', 'Embedded SaaS Dashboards', 'White-Label Branding', 'Multi-Tenant Isolation'],
+        title: 'Real-Time Analytics',
+        description: 'Dashboards that update as events happen — not on a 24-hour batch cycle.',
+        tags: ['WebSockets', 'ClickHouse', 'TimescaleDB', 'Streaming'],
       },
       {
-        title: 'Real-Time Event Ingestion & CDC Pipelines',
-        description:
-          'Debezium and Kafka change-data-capture (CDC) pipelines streaming updates from transactional databases into transformed dbt data marts with zero production DB lock.',
-        tags: ['Kafka / Debezium CDC', 'dbt Data Modeling', 'Airflow Pipelines', 'Zero DB Lock'],
-      },
-      {
-        title: 'Natural Language "Talk to Your Data" (Text-to-SQL)',
-        description:
-          'Semantic layer allowing non-technical leaders to ask plain English questions ("Compare Q3 gross margin across European hubs") and receive verified charts instantly.',
-        tags: ['Text-to-SQL', 'Semantic Data Layer', 'SQL Guardrails', 'Self-Service BI'],
-      },
-      {
-        title: 'Automated Anomaly Alerting & Scheduled Reports',
-        description:
-          'Machine learning models detecting statistical outliers across revenue, churn, and error metrics, triggering automated Slack alerts and scheduled executive PDF reports.',
-        tags: ['Anomaly Detection', 'Slack / Email Alerts', 'Automated PDF Reports', 'Variance Tracking'],
+        title: 'Self-Service Reporting',
+        description: 'Tools that let non-technical users build their own views, filter by the dimensions they care about, and export when needed.',
+        tags: ['No-code filters', 'Export', 'Scheduled reports'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'Metric Taxonomy & Dimensional Modeling',
-        description:
-          'Defining executive KPI definitions, mapping transactional data sources, and designing dimensional star schemas optimized for analytical speed.',
-        deliverables: ['KPI Metric Taxonomy', 'Dimensional Star Schema Spec', 'Data Volume Benchmarks'],
+        title: 'Metrics and data audit',
+        description: 'We map every data source, every metric your team tracks, and every question the dashboard needs to answer.',
+        deliverables: ['Metrics list', 'Data source inventory', 'Dashboard specification'],
       },
       {
         step: '02',
-        title: 'Columnar Warehouse & CDC Ingestion Setup',
-        description:
-          'Deploying ClickHouse or Snowflake clusters, configuring real-time change data capture pipelines, and authoring dbt transformation models.',
-        deliverables: ['ClickHouse / Snowflake Schema DDL', 'dbt Transformation Models', 'Real-Time CDC Pipeline'],
+        title: 'Data pipeline design',
+        description: 'ETL pipeline design connecting your sources to a clean data model built for fast querying.',
+        deliverables: ['Data model', 'Pipeline architecture', 'Data dictionary'],
       },
       {
         step: '03',
-        title: 'Interactive React UI & Visual Component Kit',
-        description:
-          'Developing responsive React dashboard layouts, custom filter bars, date-range pickers, high-framerate charts, and PDF export engines.',
-        deliverables: ['React Dashboard Component Kit', 'Apache ECharts Visualizations', 'PDF Export Engine'],
+        title: 'Dashboard development',
+        description: 'Charts, filters, and tables built against the real data pipeline — not mock data.',
+        deliverables: ['Working dashboard', 'Drill-down features', 'User access controls'],
       },
       {
         step: '04',
-        title: 'Row-Level Security Hardening & Launch',
-        description:
-          'Configuring multi-tenant security filters, testing database query caching rules, training executive users, and launching to production.',
-        deliverables: ['Row-Level Security Policies', 'Query Performance Benchmark', 'Executive Training Playbook'],
+        title: 'Training and handover',
+        description: 'Team training on the dashboard and a documented guide so new team members can use it without help.',
+        deliverables: ['User documentation', 'Admin guide', 'Ongoing support plan'],
       },
     ],
     deliverables: [
-      {
-        title: 'Interactive React / Next.js Analytics Portal',
-        category: 'Frontend UI',
-        description: 'Modular, responsive dashboard application with dark/light themes, custom filters, and sub-100ms chart rendering.',
-        format: 'React / Next.js Git Repository',
-      },
-      {
-        title: 'Columnar Data Warehouse & dbt Models',
-        category: 'Data Architecture',
-        description: 'Optimized ClickHouse/Snowflake database schemas with automated dbt transformation scripts and data tests.',
-        format: 'ClickHouse DDL & dbt Project',
-      },
-      {
-        title: 'Automated Scheduled PDF & Slack Reporting Engine',
-        category: 'Reporting',
-        description: 'Microservice generating pixel-perfect executive PDF summaries delivered via email alongside automated Slack anomaly alerts.',
-        format: 'Puppeteer / Node.js Microservice',
-      },
-      {
-        title: 'Natural Language Text-to-SQL Semantic Layer',
-        category: 'AI BI',
-        description: 'Semantic layer allowing business users to query metrics using natural language with guaranteed SQL accuracy.',
-        format: 'FastAPI Semantic Service',
-      },
+      { title: 'Custom analytics dashboard', category: 'Product', description: 'Live dashboard connected to your data', format: 'Web application' },
+      { title: 'Data pipeline', category: 'Infrastructure', description: 'ETL connecting all your data sources', format: 'Cloud deployment' },
+      { title: 'User documentation', category: 'Docs', description: 'Guide for using and maintaining the dashboard', format: 'PDF + walkthrough video' },
     ],
     techStack: [
-      { category: 'Visualization', items: ['Apache ECharts', 'D3.js', 'Tremor', 'Chart.js', 'Mapbox GL'] },
-      { category: 'Data Warehouses', items: ['ClickHouse', 'Snowflake', 'DuckDB', 'Google BigQuery', 'TimescaleDB'] },
-      { category: 'Data Engineering', items: ['dbt', 'Apache Airflow', 'Kafka', 'Debezium', 'Dagster'] },
-      { category: 'Application Tier', items: ['Next.js 15', 'React 19', 'TypeScript', 'FastAPI', 'Tailwind CSS'] },
+      { category: 'Frontend', items: ['React', 'Recharts', 'D3.js', 'Chart.js'] },
+      { category: 'Data Pipeline', items: ['Apache Kafka', 'Airbyte', 'dbt', 'Python'] },
+      { category: 'Analytics DB', items: ['ClickHouse', 'BigQuery', 'Snowflake', 'PostgreSQL'] },
+      { category: 'BI Tools', items: ['Metabase', 'Superset', 'Custom builds'] },
+      { category: 'Integrations', items: ['Stripe', 'Salesforce', 'HubSpot', 'Google Sheets'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds built our multi-tenant customer analytics portal on ClickHouse. Our enterprise customers now analyze 50 million transaction records in under 80 milliseconds directly inside our SaaS product.',
-      author: 'Rachel Kovalev',
-      role: 'VP of Product Analytics',
-      company: 'City Index Analytics',
-      metric: '< 80ms Query on 50M Records',
+      quote: 'We stopped spending Monday mornings pulling reports. Everything is in one place and updates automatically. The team makes decisions faster now.',
+      author: 'Head of Operations',
+      role: 'Operations Director',
+      company: 'Healthcare Client',
+      metric: '6 hours of manual reporting saved per week',
     },
-    outcomes: [
-      {
-        metric: '< 80ms',
-        label: 'Query Execution Speed',
-        description: 'Instant data discovery across 100M+ rows without sluggish loading spinners or timeout errors.',
-      },
-      {
-        metric: '0%',
-        label: 'Production DB Degradation',
-        description: 'Isolated columnar analytical data marts keep your transactional databases fast.',
-      },
-      {
-        metric: '100%',
-        label: 'Embedded Multi-Tenant Security',
-        description: 'Row-Level Security (RLS) guarantees each enterprise customer only sees their authorized data.',
-      },
-    ],
     faqs: [
-      {
-        question: 'Will running heavy analytics queries slow down our live production database?',
-        answer:
-          'No. We use Change Data Capture (CDC) to asynchronously replicate data from your production transactional database into an isolated columnar analytical warehouse (like ClickHouse or Snowflake), guaranteeing zero performance impact on live users.',
-      },
-      {
-        question: 'Can we embed these dashboards directly inside our existing SaaS app?',
-        answer:
-          'Yes. We build embedded React components with strict Row-Level Security (RLS) so each of your enterprise customers only sees their authorized data with your customized white-label branding.',
-      },
-      {
-        question: 'How do you render millions of data points without browser lag?',
-        answer:
-          'We utilize server-side aggregation, WebGL Canvas chart renderers, and progressive data windowing so millions of data points render at a silky smooth 60 frames per second without crashing browser tabs.',
-      },
-      {
-        question: 'Can non-technical executives create custom queries without knowing SQL?',
-        answer:
-          'Yes. We integrate our natural language "Talk to Your Data" interface, allowing executives to ask questions in plain English ("Show MRR growth in Europe last quarter") and receive instant verified visual charts.',
-      },
+      { question: 'What does analytics dashboard development include?', answer: 'Metrics scoping, data source integration, data pipeline development, dashboard design and build, user access controls, and team training.' },
+      { question: 'What data sources can you connect?', answer: 'Databases, REST APIs, spreadsheets, SaaS products with APIs — Stripe, HubSpot, Salesforce, and most other common tools.' },
+      { question: 'How long does it take?', answer: 'A focused dashboard with 2–3 data sources takes 3–6 weeks. Complex multi-source real-time dashboards take 8–14 weeks.' },
+      { question: 'Can non-technical users use it?', answer: 'Yes. We design dashboards for the people who will use them daily — not data engineers. Filtering, export, and navigation are all self-service.' },
     ],
-    ctaHeadline: 'Ready to Turn Millions of Data Points into Sub-Second Executive Clarity?',
-    ctaDescription:
-      'Consult with our Principal Data & BI Architects. We will review your database topology, design a columnar data mart, and deliver a customized dashboard prototype.',
-    ctaButtonText: 'Request Dashboard Architecture Plan',
   },
 
-  'technical-support': {
-    id: 'technical-support',
-    slug: 'technical-support',
-    title: 'Technical Support',
-    tagline: '24/7 SLA-Backed Maintenance, Monitoring & Incident Management',
-    category: 'Cloud & Operations',
-    heroBadge: '24/7 SLA Technical Maintenance',
-    heroHeadline: '24/7 Enterprise SLA',
-    heroHeadlineHighlight: '& Technical Support',
+  // ─────────────────────────────────────────────────────────────
+  // 13. CUSTOM HEALTH SOFTWARE
+  // ─────────────────────────────────────────────────────────────
+  'custom-health-software': {
+    id: 'custom-health-software',
+    slug: 'custom-health-software',
+    title: 'Custom Health Software',
+    tagline: 'Healthcare software built for how clinics, hospitals, and health businesses actually work',
+    category: 'Specialist',
+    heroBadge: 'Healthcare Software',
+    heroHeadline: 'Healthcare Software',
+    heroHeadlineHighlight: 'That Works in Practice',
     heroDescription:
-      'Protect uninterrupted business continuity for mission-critical software systems. We provide guaranteed sub-15-minute P1 response times, proactive synthetic uptime monitoring, continuous security vulnerability patching, and dedicated Tier-3 site reliability engineers.',
-    heroImage: '/services/technical-support.png',
-    heroImageCaption: '24/7 SLA Technical Support Architecture',
-    primaryCtaText: 'Secure 24/7 Support',
-    secondaryCtaText: 'Review Support SLAs',
+      'We build custom software for healthcare businesses — patient management systems, clinic tools, health tracking apps, HMS platforms, and practice management software — designed for real clinical workflows.',
+    heroImage: '/services/custom-health-software.png',
+    heroImageCaption: 'Healthcare software — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'View Healthcare Projects',
     trustPoints: [
-      'Guaranteed contractual sub-15-minute P1 incident response time',
-      'Continuous synthetic monitoring probing APIs & user journeys every 30s',
-      'Automated zero-day security patching & dependency vulnerability audits',
-      'Blameless post-mortem documentation with preventative architecture hardening',
-    ],
-    metrics: [
-      { value: '< 15 min', label: 'P1 Critical Outage Response SLA' },
-      { value: '24/7/365', label: 'Continuous Human Coverage' },
-      { value: '99.99%', label: 'Guaranteed System Uptime' },
-      { value: '100%', label: 'Dedicated Escalation Engineers' },
+      'Built with data security in mind',
+      'Designed for clinical workflows',
+      'Connects to existing health systems',
+      'Patient-facing and admin tools',
     ],
     overview: {
-      statement:
-        'A 20-minute middle-of-the-night production outage can destroy customer trust, breach enterprise contracts, and burn reputation.',
+      statement: 'Healthcare software that does not fit clinical workflows gets worked around — which costs time, introduces errors, and frustrates staff. We build software that fits how care actually happens.',
       paragraphs: [
-        'Software systems do not fail during convenient business hours. When an unexpected database deadlock strikes or an SSL certificate expires at 2:00 AM on a Sunday, internal development teams are woken up exhausted, leading to frantic fixes that create more downtime.',
-        'We provide battle-tested, 24/7/365 Tier-1 to Tier-3 site reliability engineering coverage backed by legally binding SLAs. We deploy synthetic monitoring probes that test your critical user funnels every 30 seconds, catching latency degradation and memory leaks long before your customers notice.',
-        'When a critical incident occurs, our dedicated on-call engineers triage the issue within 15 minutes, execute verified operational runbooks, resolve the failure, and deliver a detailed, blameless post-mortem report detailing exact preventative fixes.',
+        'We have built hospital management systems, patient portals, appointment tools, health tracking apps, and clinical reporting dashboards. The common thread is spending time with the clinical team before writing code.',
+        'Security and data handling are not optional extras. Every healthcare project we build treats patient data with the same standards we would expect for our own.',
       ],
-      keyTakeaway:
-        'Guaranteed round-the-clock peace of mind backed by senior engineers, proactive telemetry, and ironclad uptime SLAs.',
+      keyTakeaway: 'Healthcare software that fits your clinical environment — secure, usable, and built for real workflows.',
     },
+    mainProblemSolved: {
+      problem: 'Your clinical team is working around the software because it does not fit how they actually operate — leading to workarounds, errors, and lost time.',
+      solution: 'Custom software designed around your specific workflows, with input from the clinical staff who will use it.',
+      result: 'Software your team uses willingly, with fewer manual steps, fewer errors, and better visibility into patient and operational data.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Hospital Administrator', situation: 'Needs a custom HMS or operational platform that fits the hospital\'s specific workflows' },
+        { role: 'Clinic Owner', situation: 'Running a clinic on paper or a generic tool that does not fit their specialty' },
+        { role: 'Health Tech Founder', situation: 'Building a digital health product for patients or providers' },
+      ],
+    },
+    metrics: [
+      { value: '40%', label: 'Reduction in Administrative Time' },
+      { value: '100%', label: 'Patient Data Security' },
+      { value: '90%', label: 'Staff Adoption Rate' },
+    ],
     capabilities: [
       {
-        title: '24/7/365 Tiered L1-L3 Engineering Support',
-        description:
-          'Dedicated senior support squads covering Tier-1 triage, Tier-2 technical diagnostics, and Tier-3 core code debugging with a guaranteed sub-15-minute response SLA for critical incidents.',
-        tags: ['Tiered L1-L3 Support', '24/7 Global Rotation', 'Sub-15m P1 SLA', 'Dedicated Engineers'],
+        title: 'Hospital Management System (HMS)',
+        description: 'Admission, discharge, bed management, billing, pharmacy, lab, and reporting — in one connected system.',
+        tags: ['Patient management', 'Bed tracking', 'Billing', 'Lab integration'],
       },
       {
-        title: 'Proactive Synthetic Uptime & User Journey Probes',
-        description:
-          'Automated synthetic browser journeys, API endpoint heartbeats, SSL certificate monitors, and memory saturation alerts that catch anomalies before real users are impacted.',
-        tags: ['Datadog & New Relic', 'Synthetic User Journeys', 'API Heartbeats', 'Memory Profiling'],
+        title: 'Patient Portal and App',
+        description: 'Secure patient-facing portals and mobile apps for appointments, records access, and communication with providers.',
+        tags: ['Appointment booking', 'Health records', 'Secure messaging'],
       },
       {
-        title: 'Automated Security Vulnerability Patching',
-        description:
-          'Continuous CVE vulnerability scanning, automated zero-day security patching, database minor/major version upgrades, and third-party dependency maintenance.',
-        tags: ['CVE Scans', 'Zero-Day Patching', 'Database Upgrades', 'Dependency Audits'],
+        title: 'Clinical Reporting and Analytics',
+        description: 'Dashboards that give clinical and administrative leadership the visibility they need for operational decisions.',
+        tags: ['Clinical metrics', 'Reporting', 'Operational dashboards'],
       },
       {
-        title: 'Continuous Database Health & Performance Tuning',
-        description:
-          'Automated vacuuming routines, index re-indexing, slow query plan optimization, read-replica replication lag management, and disaster recovery backup restoration drills.',
-        tags: ['PostgreSQL / MySQL Tuning', 'Index Optimization', 'Backup Restorations', 'Deadlock Resolution'],
-      },
-      {
-        title: 'Cloud FinOps & Continuous Cost Optimization',
-        description:
-          'Monthly cloud cost audits, eliminating orphaned EBS volumes and snapshots, optimizing object storage lifecycles, and rightsizing idle compute resources.',
-        tags: ['FinOps Auditing', 'Orphaned Resource Pruning', 'Capacity Planning', 'Cloud Cost Control'],
-      },
-      {
-        title: 'Disaster Recovery Drills & Multi-Region Failover',
-        description:
-          'Semi-annual disaster recovery simulation drills verifying point-in-time recovery, RTO (<30m) and RPO (<5m) restoration targets, and multi-region failover integrity.',
-        tags: ['RTO < 30min / RPO < 5min', 'DR Drills', 'Multi-Region Failover', 'Audit Documentation'],
+        title: 'Practice Management Software',
+        description: 'Scheduling, billing, patient records, and clinical documentation for specialty practices and clinics.',
+        tags: ['Scheduling', 'EMR', 'Insurance billing', 'Notes and documentation'],
       },
     ],
     processSteps: [
       {
         step: '01',
-        title: 'System Handover & Runbook Ingestion',
-        description:
-          'Auditing existing codebase, documenting cloud topology, capturing environment variables, and establishing escalation matrices.',
-        deliverables: ['System Runbook Specification', 'SLA Escalation Matrix', 'Access & Security Credentials'],
+        title: 'Clinical workflow discovery',
+        description: 'We spend time with your clinical and administrative staff mapping how work actually flows before designing anything.',
+        deliverables: ['Workflow map', 'Requirements document', 'Data model'],
       },
       {
         step: '02',
-        title: 'Synthetic Monitoring & Alert Integration',
-        description:
-          'Deploying Datadog / Prometheus synthetic monitors, configuring PagerDuty alert thresholds, and testing incident loops.',
-        deliverables: ['Synthetic Alert Setup', 'PagerDuty On-Call Schedule', 'Live System Health Board'],
+        title: 'System design',
+        description: 'Architecture, data model, and UI designs — reviewed with clinical staff before development starts.',
+        deliverables: ['System architecture', 'Database schema', 'UI wireframes'],
       },
       {
         step: '03',
-        title: 'Continuous Maintenance & Patch Management',
-        description:
-          'Executing bi-weekly dependency updates, security vulnerability remediation, and database maintenance scripts.',
-        deliverables: ['Monthly Patch Report', 'Security Audit Logs', 'Performance Improvement Log'],
+        title: 'Development and clinical testing',
+        description: 'Sprints with working software tested by your clinical staff at each stage.',
+        deliverables: ['Working modules per sprint', 'Clinical user testing', 'Integration with existing systems'],
       },
       {
         step: '04',
-        title: 'Quarterly Executive Review & DR Drills',
-        description:
-          'Presenting quarterly SLA compliance scorecards, cloud expenditure trends, and conducting full disaster recovery restoration drills.',
-        deliverables: ['Quarterly SLA Scorecard', 'Disaster Recovery Certificate', 'Infrastructure Roadmap'],
+        title: 'Training and go-live',
+        description: 'Staff training, documentation, and support during the transition to the new system.',
+        deliverables: ['Training materials', 'User guides', 'Go-live support'],
       },
     ],
     deliverables: [
-      {
-        title: '24/7 SLA Support Agreement & Runbook',
-        category: 'Governance',
-        description: 'Legally binding SLA contract outlining response times (P1 < 15 min, P2 < 1 hour), coverage, and runbooks.',
-        format: 'Formal SLA Document',
-      },
-      {
-        title: 'Live System Health & Status Page',
-        category: 'Monitoring',
-        description: 'Public or private status page (e.g. status.yourcompany.com) tracking real-time uptime and incident history.',
-        format: 'Hosted Status Portal',
-      },
-      {
-        title: 'Monthly Maintenance & Performance Report',
-        category: 'Reporting',
-        description: 'Detailed breakdown of resolved tickets, security patches applied, uptime percentages, and response metrics.',
-        format: 'Monthly Executive PDF',
-      },
-      {
-        title: 'Disaster Recovery Audit & Restore Certificate',
-        category: 'Compliance',
-        description: 'Documented test results confirming RTO (<30m) and RPO (<5m) restoration from cloud backups.',
-        format: 'Audit Certificate',
-      },
+      { title: 'Healthcare software system', category: 'Software', description: 'Production-ready clinical software', format: 'Cloud deployment' },
+      { title: 'Staff training materials', category: 'Training', description: 'Role-specific training guides', format: 'PDF + video' },
+      { title: 'System documentation', category: 'Docs', description: 'Technical and user documentation', format: 'Documentation portal' },
     ],
     techStack: [
-      { category: 'Monitoring & Alerting', items: ['Datadog', 'Prometheus', 'Grafana', 'PagerDuty', 'Sentry', 'BetterUptime'] },
-      { category: 'Cloud Management', items: ['AWS Systems Manager', 'Google Cloud Operations', 'Azure Monitor', 'Cloudflare'] },
-      { category: 'Ticketing & Service Desk', items: ['Jira Service Management', 'Zendesk', 'Linear', 'ServiceNow'] },
-      { category: 'Security & Scanning', items: ['Snyk', 'Trivy', 'Dependabot', 'SonarQube'] },
+      { category: 'Frontend', items: ['React', 'TypeScript', 'Next.js'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Java Spring'] },
+      { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
+      { category: 'Security', items: ['Encryption at rest', 'Audit logging', 'RBAC'] },
+      { category: 'Integrations', items: ['HL7/FHIR', 'Lab systems', 'Billing APIs', 'SMS/Email'] },
     ],
     caseStudyQuote: {
-      quote:
-        'Neominds manages 24/7 support for our core transaction platform. Over 3 years of partnership, we have maintained a 99.995% uptime record with zero unaddressed critical incidents.',
-      author: 'Elena Rostova',
-      role: 'Chief Operating Officer',
-      company: 'Authenticom Logistics',
-      metric: '99.995% Uptime Over 3 Years',
+      quote: 'The staff actually use this system. That has never been true of any software we have implemented before. It was designed around how they work.',
+      author: 'Hospital Administrator',
+      role: 'Chief Administrative Officer',
+      company: 'Healthcare Client',
+      metric: 'Staff adoption reached 90% in first month',
     },
-    outcomes: [
-      {
-        metric: '< 15 min',
-        label: 'P1 Incident Response SLA',
-        description: 'Immediate war-room paging and active senior developer remediation for any critical outage.',
-      },
-      {
-        metric: '99.99%',
-        label: 'Production Uptime',
-        description: 'Proactive synthetic probes and self-healing automation eliminate unplanned platform downtime.',
-      },
-      {
-        metric: '-30%',
-        label: 'Internal Engineering Burnout',
-        description: 'Frees your internal product development team from stressful middle-of-the-night on-call duties.',
-      },
-    ],
     faqs: [
+      { question: 'What does custom health software development include?', answer: 'Clinical workflow discovery, system design, frontend and backend development, integration with existing systems, staff training, and go-live support.' },
+      { question: 'How do you handle patient data security?', answer: 'We implement encryption at rest and in transit, role-based access control, audit logging, and follow standard data protection practices throughout.' },
+      { question: 'Can you integrate with our existing health IT systems?', answer: 'Yes. We connect to lab systems, pharmacy systems, billing platforms, and other clinical tools using HL7, FHIR, or direct API integration.' },
+      { question: 'How long does healthcare software take?', answer: 'A focused clinical tool takes 10–16 weeks. A full HMS or practice management system takes 20–36 weeks depending on scope.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 14. LEGACY SYSTEM MODERNISATION
+  // ─────────────────────────────────────────────────────────────
+  'legacy-modernisation': {
+    id: 'legacy-modernisation',
+    slug: 'legacy-modernisation',
+    title: 'Legacy System Modernisation',
+    tagline: 'Replace or modernise outdated systems without stopping your business',
+    category: 'Core Development',
+    heroBadge: 'Legacy Modernisation',
+    heroHeadline: 'Modernise Your',
+    heroHeadlineHighlight: 'Legacy Systems',
+    heroDescription:
+      'We migrate and modernise legacy software systems — moving from outdated tech stacks to modern, maintainable platforms in stages that keep your business running throughout.',
+    heroImage: '/services/legacy-modernisation.png',
+    heroImageCaption: 'Legacy system modernisation — Neominds',
+    primaryCtaText: 'Discuss Your Project',
+    secondaryCtaText: 'See Modernisation Cases',
+    trustPoints: [
+      'No big bang cutover',
+      'Business continuity throughout',
+      'Staged migration approach',
+      'Modern tech your team can maintain',
+    ],
+    overview: {
+      statement: 'Legacy systems are expensive to run, slow to change, and hard to hire engineers for. But replacing them all at once is too risky. The answer is a structured, staged migration.',
+      paragraphs: [
+        'We migrate legacy systems by identifying the highest-pain components and replacing them first — while keeping the rest running. Each stage delivers working software before we move to the next.',
+        'We have modernised systems running on PHP, classic ASP, VB6, Oracle, and old Java stacks. The technical specifics vary. The approach — careful, staged, with zero business interruption — stays consistent.',
+      ],
+      keyTakeaway: 'A legacy system modernised properly — in stages, with business continuity, and no surprise cost overruns.',
+    },
+    mainProblemSolved: {
+      problem: 'Your legacy system is slow to change, expensive to run, and a risk every time something breaks — but a full replacement feels too disruptive.',
+      solution: 'A staged modernisation that replaces the most painful parts first, keeps everything running, and builds toward a fully modern system.',
+      result: 'A modern, maintainable system delivered incrementally — without the business disruption of a big bang replacement.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'CTO', situation: 'Running critical business operations on a system that is too expensive to maintain or too slow to change' },
+        { role: 'IT Director', situation: 'Struggling to find engineers who can work with the existing tech stack' },
+        { role: 'Business Owner', situation: 'Losing competitive ground because the old system cannot be updated fast enough' },
+      ],
+    },
+    metrics: [
+      { value: '0', label: 'Business Interruptions' },
+      { value: '60%', label: 'Typical Maintenance Cost Reduction' },
+      { value: 'Staged', label: 'Delivery — Not Big Bang' },
+    ],
+    capabilities: [
       {
-        question: 'What is your response time for critical P1 production outages?',
-        answer:
-          'We guarantee a sub-15 minute response time for P1 critical outages (complete system downtime or data integrity threat) with engineers actively troubleshooting and communicating in dedicated incident channels.',
+        title: 'Legacy Assessment and Migration Planning',
+        description: 'Technical audit of the existing system, migration strategy, risk assessment, and a phased implementation plan.',
+        tags: ['Technical audit', 'Migration strategy', 'Risk mapping'],
       },
       {
-        question: 'How do your support engineers get up to speed on our custom codebase?',
-        answer:
-          'We perform a structured 2-week onboarding transition period where our senior architects map all dependencies, document operational runbooks, and shadow your team before going live.',
+        title: 'Incremental Re-Architecture',
+        description: 'Replacing legacy components one domain at a time while the rest of the system keeps running.',
+        tags: ['Strangler fig pattern', 'Domain decomposition', 'API facades'],
       },
       {
-        question: 'Do you only fix bugs, or do you also build feature enhancements?',
-        answer:
-          'Our support plans include dedicated development hours each month that can be flexibly allocated to minor feature additions, UI enhancements, or dependency modernization.',
+        title: 'Data Migration',
+        description: 'Moving data from legacy databases to modern systems — with validation, reconciliation, and zero data loss.',
+        tags: ['ETL migration', 'Data validation', 'Reconciliation', 'Schema transformation'],
       },
       {
-        question: 'How do you handle security vulnerability updates?',
-        answer:
-          'We continuously run automated dependency vulnerability scans (CVE tracking) and deploy critical security patches within 24 hours of release following strict staging validation.',
+        title: 'Internal Systems Modernisation',
+        description: 'Modernising the internal tools, dashboards, and operational platforms that your organisation depends on.',
+        tags: ['Internal tools', 'Admin systems', 'Reporting platforms'],
       },
     ],
-    ctaHeadline: 'Ready to Protect Your Infrastructure with Guaranteed 24/7 SLA Support?',
-    ctaDescription:
-      'Connect with our On-Call Operations Leadership. We audit your infrastructure runbooks, establish incident escalation matrices, and onboard your system in under two weeks.',
-    ctaButtonText: 'Request 24/7 SLA Agreement',
+    processSteps: [
+      {
+        step: '01',
+        title: 'Legacy audit',
+        description: 'Full technical audit of the existing system — code, data, dependencies, and business logic.',
+        deliverables: ['Technical audit report', 'Migration risk assessment', 'Phased migration plan'],
+      },
+      {
+        step: '02',
+        title: 'Architecture and parallel build',
+        description: 'Modern architecture designed and the first replacement component built in parallel with the running legacy system.',
+        deliverables: ['Modern architecture', 'First component', 'API bridge layer'],
+      },
+      {
+        step: '03',
+        title: 'Phased migration',
+        description: 'Each domain migrated in sequence — tested, validated, and switched over before moving to the next.',
+        deliverables: ['Migrated components', 'Data validation reports', 'Cutover plan'],
+      },
+      {
+        step: '04',
+        title: 'Legacy decommission',
+        description: 'Final cutover and clean shutdown of the legacy system once everything is running on the new platform.',
+        deliverables: ['Full cutover', 'Decommission plan', 'Monitoring setup'],
+      },
+    ],
+    deliverables: [
+      { title: 'Modern replacement system', category: 'Software', description: 'Production-ready modern application', format: 'Cloud deployment' },
+      { title: 'Migration documentation', category: 'Docs', description: 'Full record of what was migrated and how', format: 'Technical documentation' },
+      { title: 'Data validation report', category: 'Quality', description: 'Verification that all data migrated correctly', format: 'PDF report' },
+    ],
+    techStack: [
+      { category: 'Modern Frontend', items: ['React', 'TypeScript', 'Next.js'] },
+      { category: 'Modern Backend', items: ['Node.js', 'Python', 'Go', 'Java Spring Boot'] },
+      { category: 'Database Migration', items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Data migration scripts'] },
+      { category: 'Cloud', items: ['AWS', 'Azure', 'Google Cloud'] },
+      { category: 'DevOps', items: ['Docker', 'Kubernetes', 'Terraform', 'GitHub Actions'] },
+    ],
+    caseStudyQuote: {
+      quote: 'We kept running on the old system throughout the migration. The cutover weekend was the smoothest system transition we have had in 15 years.',
+      author: 'IT Director',
+      role: 'Director of IT',
+      company: 'FinTech Client',
+      metric: 'Zero business interruption across 8-month migration',
+    },
+    faqs: [
+      { question: 'What does legacy modernisation include?', answer: 'Technical audit, migration strategy, incremental replacement of system components, data migration with validation, and full cutover support.' },
+      { question: 'Will we need to stop operations during migration?', answer: 'No. Our staged approach keeps the legacy system running throughout. Cutovers are planned, tested, and executed with minimal interruption.' },
+      { question: 'How long does legacy modernisation take?', answer: 'It depends on system size. A focused internal system takes 4–8 months. A large enterprise platform can take 12–24 months, delivered in stages.' },
+      { question: 'What legacy technologies do you work with?', answer: 'We have worked with PHP, classic ASP, VB6, Oracle, old Java stacks, Access databases, and others. The legacy technology does not limit us.' },
+    ],
   },
-};
 
-// Merge all additional Fintech, Healthcare, and AI services
-import { ADDITIONAL_SERVICES_DATA } from './additionalServices';
-Object.assign(SERVICES_DATA, ADDITIONAL_SERVICES_DATA);
+  // ─────────────────────────────────────────────────────────────
+  // 15. TRAINING AS A SERVICE
+  // ─────────────────────────────────────────────────────────────
+  'training-as-service': {
+    id: 'training-as-service',
+    slug: 'training-as-service',
+    title: 'Training as a Service',
+    tagline: 'Technical training and knowledge transfer that makes your team self-sufficient',
+    category: 'Specialist',
+    heroBadge: 'Training & Enablement',
+    heroHeadline: 'Build Your Team\'s',
+    heroHeadlineHighlight: 'Technical Capability',
+    heroDescription:
+      'We run structured technical training programmes — on AI tools, new software systems, development practices, and technology adoption — so your team can work independently without constant external help.',
+    heroImage: '/services/training-as-service.png',
+    heroImageCaption: 'Technical training programme — Neominds',
+    primaryCtaText: 'Discuss Your Programme',
+    secondaryCtaText: 'See Training Options',
+    trustPoints: [
+      'Tailored to your team\'s actual tools',
+      'Hands-on with real examples',
+      'Internal capability building',
+      'Ongoing support after training',
+    ],
+    overview: {
+      statement: 'Buying software or adopting AI is only half the problem. If your team does not know how to use it effectively, the investment does not deliver.',
+      paragraphs: [
+        'We deliver technical training for teams making transitions — adopting AI tools, switching to new development practices, taking ownership of a newly built system, or upskilling in areas that affect their daily work.',
+        'Training is not classroom lectures. It is hands-on workshops with your tools, your data, and scenarios your team actually faces.',
+      ],
+      keyTakeaway: 'Practical technical training that builds real capability in your team — not just theoretical awareness.',
+    },
+    mainProblemSolved: {
+      problem: 'Your team has new tools or a new system but cannot use them effectively — leading to underutilisation and continued dependence on outside help.',
+      solution: 'Structured, hands-on training tailored to your specific tools and your team\'s actual skill gaps.',
+      result: 'A team that uses the tools confidently, asks better questions, and requires far less external support.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Engineering Manager', situation: 'Team needs to adopt new development practices or technology stack' },
+        { role: 'Operations Lead', situation: 'Team is getting a new system and needs to be able to use and maintain it' },
+        { role: 'CTO / Head of AI', situation: 'Organisation wants to build internal AI literacy and prompt engineering capability' },
+      ],
+    },
+    metrics: [
+      { value: '90%+', label: 'Post-Training Proficiency Rate' },
+      { value: '4–12 wks', label: 'Typical Programme Duration' },
+      { value: '100%', label: 'Hands-On with Your Tools' },
+    ],
+    capabilities: [
+      {
+        title: 'AI Tools and LLM Training',
+        description: 'Training on AI tools, prompt engineering, AI workflow design, and how to evaluate AI outputs effectively.',
+        tags: ['ChatGPT / Claude usage', 'Prompt engineering', 'AI evaluation', 'Workflow design'],
+      },
+      {
+        title: 'System Handover Training',
+        description: 'Structured knowledge transfer when your team is taking ownership of a newly built or migrated system.',
+        tags: ['System architecture', 'Admin training', 'Maintenance practices', 'Runbooks'],
+      },
+      {
+        title: 'Development Practice Training',
+        description: 'Training on engineering practices — testing, code review, CI/CD, security practices — for teams improving their workflow.',
+        tags: ['Testing', 'Code review', 'CI/CD', 'Security fundamentals'],
+      },
+      {
+        title: 'Data and Analytics Literacy',
+        description: 'Training non-technical teams to understand and use data tools, dashboards, and basic SQL for self-service analysis.',
+        tags: ['Dashboard usage', 'SQL basics', 'Data interpretation', 'Reporting'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'Skill gap assessment',
+        description: 'We assess your team\'s current skills, identify the gaps, and define what capability they need to build.',
+        deliverables: ['Skill gap report', 'Training programme outline', 'Success criteria'],
+      },
+      {
+        step: '02',
+        title: 'Programme design',
+        description: 'Custom training curriculum using your actual tools, your data, and scenarios your team faces.',
+        deliverables: ['Session plan', 'Workshop materials', 'Practice exercises'],
+      },
+      {
+        step: '03',
+        title: 'Delivery',
+        description: 'Hands-on workshops delivered live — in person or remote — with time for questions and practice.',
+        deliverables: ['Live sessions', 'Recorded sessions', 'Practice exercises'],
+      },
+      {
+        step: '04',
+        title: 'Assessment and follow-up',
+        description: 'Post-training assessment, follow-up Q&A sessions, and documentation your team can reference later.',
+        deliverables: ['Assessment results', 'Reference documentation', 'Follow-up support window'],
+      },
+    ],
+    deliverables: [
+      { title: 'Training programme', category: 'Training', description: 'Full curriculum with workshop materials', format: 'Sessions + materials' },
+      { title: 'Session recordings', category: 'Resources', description: 'Recorded workshops for future reference', format: 'Video recordings' },
+      { title: 'Reference documentation', category: 'Docs', description: 'Post-training reference guides', format: 'PDF + documentation' },
+    ],
+    techStack: [
+      { category: 'Training Areas', items: ['AI/LLM tools', 'Prompt engineering', 'System administration', 'Development practices'] },
+      { category: 'Platforms Covered', items: ['ChatGPT', 'Claude', 'Cursor', 'GitHub Copilot', 'Custom AI tools'] },
+      { category: 'Delivery', items: ['Live workshops', 'Remote sessions', 'Recorded content', 'Practice exercises'] },
+    ],
+    caseStudyQuote: {
+      quote: 'After the training, our team was writing prompts that worked on the first try. Before, they were wasting time going back and forth with AI tools to get anything useful.',
+      author: 'Head of Operations',
+      role: 'Director of Operations',
+      company: 'Enterprise Client',
+      metric: 'Team AI productivity doubled within 60 days',
+    },
+    faqs: [
+      { question: 'What does training as a service include?', answer: 'Skill gap assessment, custom curriculum design, hands-on workshop delivery, post-training assessment, and follow-up support.' },
+      { question: 'Who is this for?', answer: 'Teams adopting new technology, taking ownership of a newly built system, or building internal capability in AI, data, or development practices.' },
+      { question: 'How long does a training programme take?', answer: 'Focused programmes run 4–6 weeks. Comprehensive capability building across multiple areas runs 8–12 weeks.' },
+      { question: 'Can training be delivered remotely?', answer: 'Yes. All our training programmes work remotely using video conferencing and collaborative tools. We also deliver in-person for teams in accessible locations.' },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // 16. PRODUCT ENGINEERING
+  // ─────────────────────────────────────────────────────────────
+  'product-engineering': {
+    id: 'product-engineering',
+    slug: 'product-engineering',
+    title: 'Product Engineering',
+    tagline: 'End-to-end product development from discovery to production',
+    category: 'Specialist',
+    heroBadge: 'Product Engineering',
+    heroHeadline: 'From Idea to',
+    heroHeadlineHighlight: 'Production Product',
+    heroDescription:
+      'We handle the full product engineering process — discovery, scoping, architecture, development, and launch. For teams that need a complete product partner, not just implementation.',
+    heroImage: '/services/product-engineering.png',
+    heroImageCaption: 'Product engineering — Neominds',
+    primaryCtaText: 'Discuss Your Product',
+    secondaryCtaText: 'See Products We Built',
+    trustPoints: [
+      'Full product lifecycle ownership',
+      'Discovery to production delivery',
+      'Engineering and product thinking combined',
+      'You own everything we build',
+    ],
+    overview: {
+      statement: 'Most development engagements start too late — after product decisions have already been made badly. We start at the beginning, where the important decisions actually happen.',
+      paragraphs: [
+        'Product engineering means combining product thinking with engineering execution. We help you figure out what to build, then build it properly — not just implement whatever the brief says.',
+        'We have taken products from a napkin description to live, revenue-generating software. We know what questions to ask at each stage and what mistakes to avoid.',
+      ],
+      keyTakeaway: 'A product partner that brings engineering expertise to every product decision — and product thinking to every engineering decision.',
+    },
+    mainProblemSolved: {
+      problem: 'You have a product idea or an early-stage product that needs a team to take it from where it is to something that works in the market.',
+      solution: 'An embedded product engineering team that handles discovery, scoping, architecture, development, and launch — with you in the loop at every key decision.',
+      result: 'A working product, delivered to a defined scope and timeline, with the architecture in place to grow from there.',
+    },
+    targetAudience: {
+      profiles: [
+        { role: 'Founder', situation: 'Has a clear product vision and needs a team to execute it from scratch' },
+        { role: 'Head of Product', situation: 'Has a new product initiative that needs dedicated engineering capacity and product expertise' },
+        { role: 'CTO', situation: 'Building a new product line and needs an external team to move faster than the internal team allows' },
+      ],
+    },
+    metrics: [
+      { value: '100%', label: 'Full Lifecycle Ownership' },
+      { value: '2 wks', label: 'First Working Prototype' },
+      { value: '100%', label: 'IP Transferred at Launch' },
+    ],
+    capabilities: [
+      {
+        title: 'Product Discovery and Scoping',
+        description: 'User research, requirement definition, feature prioritisation, and technical scoping — before committing to development.',
+        tags: ['User research', 'Feature prioritisation', 'Technical scoping', 'Product roadmap'],
+      },
+      {
+        title: 'MVP Engineering',
+        description: 'Building the minimum viable product that tests your core hypothesis — fast, focused, and built to learn from.',
+        tags: ['MVP development', 'Rapid prototyping', 'User testing', 'Iteration'],
+      },
+      {
+        title: 'Full Product Development',
+        description: 'From MVP to full product — feature expansion, performance hardening, and the operational infrastructure for launch.',
+        tags: ['Feature development', 'Scalability', 'Launch preparation', 'CI/CD'],
+      },
+      {
+        title: 'Product Scaling and Iteration',
+        description: 'Post-launch product iteration based on user data — adding features, optimising performance, and expanding to new markets.',
+        tags: ['Feature velocity', 'A/B testing', 'Performance', 'Growth infrastructure'],
+      },
+    ],
+    processSteps: [
+      {
+        step: '01',
+        title: 'Discovery and product definition',
+        description: 'We define what to build, why, and in what order — through user research, competitive analysis, and technical feasibility.',
+        deliverables: ['Product brief', 'Feature scope', 'Technical recommendation'],
+      },
+      {
+        step: '02',
+        title: 'Architecture and design',
+        description: 'Technical architecture, data model, and UX design all locked in before development starts.',
+        deliverables: ['Architecture document', 'Design system', 'Development roadmap'],
+      },
+      {
+        step: '03',
+        title: 'Iterative development',
+        description: 'Two-week sprints with working software in staging. You review and prioritise the next sprint based on what you see.',
+        deliverables: ['Working software per sprint', 'Sprint demos', 'Updated backlog'],
+      },
+      {
+        step: '04',
+        title: 'Launch and handover',
+        description: 'Production launch, analytics setup, team handover, and a 60-day support window.',
+        deliverables: ['Production launch', 'Analytics setup', 'Technical handover', 'Post-launch support'],
+      },
+    ],
+    deliverables: [
+      { title: 'Production product', category: 'Product', description: 'Fully launched product with all agreed features', format: 'Cloud deployment' },
+      { title: 'Product documentation', category: 'Docs', description: 'Architecture, user guide, and technical documentation', format: 'Documentation portal' },
+      { title: 'Analytics setup', category: 'Growth', description: 'Product analytics configured and tracking key metrics', format: 'Analytics dashboard' },
+    ],
+    techStack: [
+      { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'React Native'] },
+      { category: 'Backend', items: ['Node.js', 'Python', 'Go'] },
+      { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Supabase'] },
+      { category: 'AI / ML', items: ['OpenAI', 'Claude', 'LangChain', 'HuggingFace'] },
+      { category: 'Cloud', items: ['AWS', 'Vercel', 'Google Cloud', 'Docker', 'Kubernetes'] },
+    ],
+    caseStudyQuote: {
+      quote: 'We went from a rough idea to a paying customer base in six months. They handled both the product thinking and the engineering, and the output was better than we expected.',
+      author: 'Co-Founder',
+      role: 'Founder and CEO',
+      company: 'Product Client',
+      metric: 'First paying customers in month 4',
+    },
+    faqs: [
+      { question: 'What does product engineering include?', answer: 'Discovery and scoping, architecture, design, full-stack development, testing, launch, and post-launch support — the complete product lifecycle.' },
+      { question: 'How is this different from just custom software development?', answer: 'Product engineering includes the product thinking — what to build, in what order, and why. Custom software development starts from a spec that is already defined.' },
+      { question: 'How long does product engineering take?', answer: 'An MVP with core features takes 10–16 weeks. A full product ready for market typically takes 20–36 weeks.' },
+      { question: 'Do we stay involved in decisions?', answer: 'Yes. You are involved in every sprint review and every key product or architecture decision. We execute, you retain ownership of the direction.' },
+    ],
+  },
+
+};

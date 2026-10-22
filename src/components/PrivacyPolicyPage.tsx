@@ -1,5 +1,7 @@
-import React from 'react';
-import { Shield, Mail } from 'lucide-react';
+import React, { useState, useCallback } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { ContactSection } from './ContactSection';
+import { LocationsSection } from './LocationsSection';
 import { Footer } from './Footer';
 
 interface PrivacyPolicyPageProps {
@@ -8,126 +10,324 @@ interface PrivacyPolicyPageProps {
   onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
 }
 
-export const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({
+const NAV_ITEMS = [
+  { id: 'information-we-collect', label: 'Information We Collect' },
+  { id: 'purposes-legal-bases', label: 'Purposes and Legal Bases' },
+  { id: 'how-we-share', label: 'How We Share Personal Information' },
+  { id: 'international-transfers', label: 'International Transfers' },
+  { id: 'information-retention', label: 'Information Retention' },
+  { id: 'what-safeguards', label: 'What Safeguards We Use' },
+  { id: 'data-protection-rights', label: 'Your Data Protection Rights' },
+  { id: 'links-cookies', label: 'Links & Cookies' },
+  { id: 'changes-contact', label: 'Changes & Contact Us' },
+] as const;
+
+const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
   onNavigatePage,
   onOpenLegal,
 }) => {
-  return (
-    <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: 'var(--navbar-height)', fontFamily: 'var(--font-body)' }}>
-      {/* Hero */}
-      <section style={{ paddingBlock: 'var(--section-small-y)', paddingInline: 'var(--page-padding)', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-        <div className="container-reading">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', padding: 'var(--badge-pad-y) var(--badge-pad-x)', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: 'var(--badge-radius)', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 'var(--space-4)' }}>
-            <Shield size={14} />
-            <span>Data Protection & Transparency</span>
-          </div>
+  const [activeSection, setActiveSection] = useState('information-we-collect');
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
 
-          <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#0f172a', marginBottom: 'var(--space-3)' }}>
+  const scrollTo = useCallback((id: string) => {
+    setActiveSection(id);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
+
+  const handleNewsletterSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (newsletterEmail.trim()) {
+      setNewsletterSubmitted(true);
+      setNewsletterEmail('');
+      setTimeout(() => setNewsletterSubmitted(false), 4000);
+    }
+  }, [newsletterEmail]);
+
+  return (
+    <div className="p-privacy-policy-page" style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+      {/* 1. p-content-intro */}
+      <section className="p-content-intro" style={{ backgroundColor: '#f8fafc', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #e2e8f0' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <p style={{ fontSize: '13px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+            Last updated: October 13, 2025
+          </p>
+          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', margin: 0, lineHeight: 1.1 }}>
             Privacy Policy
           </h1>
-          <p style={{ fontSize: '15px', color: '#64748b', margin: 0 }}>
-            Last updated: February 2026 • Compliant with EU GDPR, California CCPA/CPRA, and ISO/IEC 27001
-          </p>
         </div>
       </section>
 
-      {/* Main Content */}
-      <section style={{ paddingBlock: 'var(--section-padding-y)', paddingInline: 'var(--page-padding)' }}>
-        <div className="container-reading" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)', lineHeight: 1.7, color: '#334155', fontSize: '15px' }}>
-          <div>
-            <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: 'var(--space-3)' }}>
-              1. Overview & Scope
+      {/* 2. s-mediatext with c-sidenav */}
+      <section className="g-section theme-light s-mediatext" style={{ padding: 'clamp(48px, 6vw, 84px) 24px' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <style>{`
+            @media (min-width: 992px) {
+              .p-legal-grid {
+                display: grid !important;
+                grid-template-columns: 280px 1fr !important;
+                gap: 64px !important;
+                align-items: start !important;
+              }
+              .c-sidenav-sticky {
+                position: sticky !important;
+                top: 96px !important;
+              }
+            }
+          `}</style>
+
+          <div className="p-legal-grid" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+            {/* Sticky Table of Contents */}
+            <aside className="c-sidenav-sticky" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#94a3b8', marginBottom: '8px' }}>
+                Table of Contents
+              </div>
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => scrollTo(item.id)}
+                  style={{
+                    textAlign: 'left',
+                    background: 'none',
+                    border: 'none',
+                    borderLeft: `2px solid ${activeSection === item.id ? '#2258e7' : '#e2e8f0'}`,
+                    padding: '8px 14px',
+                    color: activeSection === item.id ? '#2258e7' : '#475569',
+                    fontWeight: activeSection === item.id ? 700 : 500,
+                    fontSize: '13.5px',
+                    cursor: 'pointer',
+                    transition: 'all 0.15s ease',
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </aside>
+
+            {/* Main Editorial Articles */}
+            <article style={{ lineHeight: 1.75, color: '#334155', fontSize: '15px' }}>
+              <p style={{ fontSize: '16.5px', color: '#1e293b', marginBottom: '24px', fontWeight: 400 }}>
+                Neominds TechHub (“Neominds”) has created this Privacy Policy in line with our commitment to your privacy. This Notice sets out how Neominds collects, uses, shares, and protects personal information.
+              </p>
+              <p style={{ marginBottom: '32px' }}>
+                In different countries, there are different definitions of “personal information” and “personal data”. For the purposes of this Privacy Policy, personal information means any information relating to an identified or identifiable natural person.
+              </p>
+
+              {/* Information We Collect */}
+              <div id="information-we-collect" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Information We Collect
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  We collect information directly from you when you complete our RFP forms, request technical consultations, or subscribe to engineering digests:
+                </p>
+                <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '16px' }}>
+                  <li><strong>Contact Details:</strong> First and last name, business email address, phone number, company name, and job title.</li>
+                  <li><strong>Project Discovery Materials:</strong> Architectural specifications, RFPs, technology stack requirements, and uploaded challenge briefs.</li>
+                  <li><strong>Communication Records:</strong> Notes and timestamps from technical discovery calls and correspondence.</li>
+                  <li><strong>Automated Telemetry:</strong> Device identifiers, IP addresses (anonymized), browser types, and usage data collected via essential telemetry.</li>
+                </ul>
+              </div>
+
+              {/* Purposes and Legal Bases */}
+              <div id="purposes-legal-bases" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Purposes and Legal Bases for Data Processing
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  We only process personal information where we have a lawful legal basis under GDPR, CCPA/CPRA, and relevant data protection laws:
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '16px' }}>
+                  <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '4px' }}>
+                    <div style={{ fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>Contractual Performance</div>
+                    <div style={{ fontSize: '14px', color: '#64748b' }}>Evaluating and fulfilling consulting agreements, NDAs, and software engineering services requested by you.</div>
+                  </div>
+                  <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '4px' }}>
+                    <div style={{ fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>Legitimate Interests</div>
+                    <div style={{ fontSize: '14px', color: '#64748b' }}>Ensuring platform security, preventing fraud, managing client relationships, and optimizing our technical web services.</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* How We Share */}
+              <div id="how-we-share" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  How We Share Personal Information
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  We never sell, rent, or trade your personal information. We only share information with:
+                </p>
+                <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li><strong>Affiliated Neominds Delivery Centers:</strong> Wholly-owned global development centers operating under binding corporate rules and mutual confidentiality.</li>
+                  <li><strong>Certified Infrastructure Providers:</strong> Cloud hosting, CRM, and communication platforms bound by rigorous Data Processing Agreements (DPAs).</li>
+                  <li><strong>Legal Compliance:</strong> When required by lawful judicial subpoena, regulatory investigation, or applicable law.</li>
+                </ul>
+              </div>
+
+              {/* International Transfers */}
+              <div id="international-transfers" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  International Transfers
+                </h3>
+                <p>
+                  As a global software engineering firm, personal information may be transferred to and processed in countries outside your country of residence. Where transfers occur across borders, we implement EU Standard Contractual Clauses (SCCs), UK Addendums, and strict technical safeguards including end-to-end encryption.
+                </p>
+              </div>
+
+              {/* Information Retention */}
+              <div id="information-retention" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Information Retention
+                </h3>
+                <p>
+                  We retain personal information only for as long as necessary to fulfill the purposes for which it was collected, comply with legal and audit obligations, resolve disputes, and enforce our enterprise agreements. Discovery proposals that do not proceed to execution are securely purged in accordance with our data lifecycle policies.
+                </p>
+              </div>
+
+              {/* What Safeguards We Use */}
+              <div id="what-safeguards" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  What Safeguards We Use
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  We implement robust administrative, physical, and technical safeguards designed to protect personal information against unauthorized access, destruction, loss, alteration, or disclosure:
+                </p>
+                <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li>TLS 1.3 encryption in transit and AES-256 encryption at rest.</li>
+                  <li>Role-based access controls (RBAC) and mandatory multi-factor authentication (MFA).</li>
+                  <li>Annual third-party security audits, ISO 27001 certification standards, and regular vulnerability scanning.</li>
+                </ul>
+              </div>
+
+              {/* Your Rights */}
+              <div id="data-protection-rights" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Your Data Protection Rights
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  Depending on your jurisdiction, you may exercise specific rights regarding your personal information:
+                </p>
+                <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <li><strong>Right to Access &amp; Portability:</strong> Obtain confirmation and a structured copy of your processed personal data.</li>
+                  <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete records.</li>
+                  <li><strong>Right to Erasure:</strong> Request the deletion of personal information where statutory grounds apply.</li>
+                  <li><strong>Right to Object or Restrict Processing:</strong> Restrict or object to processing under legitimate interests or direct communications.</li>
+                </ul>
+              </div>
+
+              {/* Links & Cookies */}
+              <div id="links-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Links &amp; Cookies
+                </h3>
+                <p style={{ marginBottom: '12px' }}>
+                  Our Websites may contain links to third-party services. We are not responsible for the privacy practices of external domains. We encourage you to review their specific policies upon visiting.
+                </p>
+                <p>
+                  To learn more about our use of cookies, tracking pixels, and how to configure your browser preferences, please review our comprehensive{' '}
+                  <button
+                    type="button"
+                    onClick={() => onNavigatePage('cookie-policy')}
+                    style={{ background: 'none', border: 'none', color: '#2258e7', textDecoration: 'underline', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600 }}
+                  >
+                    Cookie Policy
+                  </button>.
+                </p>
+              </div>
+
+              {/* Changes & Contact */}
+              <div id="changes-contact" style={{ scrollMarginTop: '100px', borderTop: '1px solid #f1f5f9', paddingTop: '32px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                  Changes to Privacy Policy &amp; Contact Us
+                </h3>
+                <p style={{ marginBottom: '16px' }}>
+                  We may periodically update this Privacy Policy to reflect evolving technical and regulatory requirements. The “Last updated” date at the top indicates when the latest modifications took effect.
+                </p>
+                <p>
+                  If you have questions, comments, or wish to exercise your data subject rights, please contact our Data Protection Officer at{' '}
+                  <a href="mailto:privacy@neominds.com" style={{ color: '#2258e7', textDecoration: 'underline', fontWeight: 600 }}>
+                    privacy@neominds.com
+                  </a>.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Contact Us Section (theme-dark g-section s-request) */}
+      <ContactSection />
+
+      {/* 4. Locations Section (s-contacts g-section theme-light) */}
+      <LocationsSection />
+
+      {/* 5. Newsletter Section (s-newsletter g-section js-newsletter theme-light) */}
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #eef2f6' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
+          <div className="s-newsletter__headline">
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+              Join our newsletter
             </h2>
-            <p style={{ marginBottom: 'var(--space-4)' }}>
-              Neominds Inc. (&quot;Neominds&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to safeguarding the privacy of visitors, clients, and technical partners. This Privacy Policy details the types of information we collect, how it is processed, stored, and protected in compliance with the European General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA), and global security benchmarks.
+            <p style={{ fontSize: '15px', color: '#64748b', margin: '8px 0 0 0', maxWidth: '580px' }}>
+              Stay up to date with the latest engineering insights, tech announcements, and articles.
             </p>
           </div>
 
-          <div>
-            <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
-              2. Information We Collect
-            </h2>
-            <p style={{ marginBottom: '12px' }}>
-              We collect information to facilitate technical discovery, process requests for proposal (RFP), and improve our digital experiences:
-            </p>
-            <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li><strong>Directly Provided Data:</strong> Name, corporate email address, phone number, company name, project specifications, and NDA preferences submitted via contact forms.</li>
-              <li><strong>Technical Telemetry:</strong> Anonymized IP address, browser user-agent, operating system, referrer URL, and interaction timestamps.</li>
-              <li><strong>Client Project Information:</strong> Technical architecture requirements, API specifications, and shared repositories covered under strict mutual NDAs.</li>
-            </ul>
-          </div>
+          <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', maxWidth: '540px' }}>
+            <input
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
+              style={{
+                flex: '1 1 280px',
+                padding: '14px 18px',
+                fontSize: '14px',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #cbd5e1',
+                borderRadius: '2px',
+                color: '#0f172a',
+                outline: 'none',
+              }}
+            />
+            <button
+              type="submit"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '14px 28px',
+                backgroundColor: '#2258e7',
+                color: '#ffffff',
+                fontSize: '14px',
+                fontWeight: 600,
+                border: 'none',
+                borderRadius: '2px',
+                cursor: 'pointer',
+              }}
+            >
+              <span>Subscribe</span>
+              <ArrowRight size={16} />
+            </button>
+          </form>
 
-          <div>
-            <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
-              3. Legal Basis & How We Use Your Data
-            </h2>
-            <p style={{ marginBottom: '12px' }}>
-              We process personal and technical data under lawful bases including contractual necessity, legitimate business interests, and explicit consent:
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px', marginTop: '12px' }}>
-              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '0px' }}>
-                <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>RFP & Advisory Delivery</div>
-                <div style={{ fontSize: '13px', color: '#64748b' }}>Evaluating project scope, preparing technical proposals, and executing Non-Disclosure Agreements.</div>
-              </div>
-              <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '0px' }}>
-                <div style={{ fontWeight: 700, color: '#0f172a', marginBottom: '4px' }}>Security & Zero-Trust</div>
-                <div style={{ fontSize: '13px', color: '#64748b' }}>Preventing unauthorized intrusion, defending against DDoS threats, and verifying API client integrity.</div>
-              </div>
+          {newsletterSubmitted && (
+            <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
+              Thank you for subscribing to Neominds TechHub insights.
             </div>
-          </div>
-
-          <div>
-            <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
-              4. Data Retention & Zero AI Training on Client Code
-            </h2>
-            <p>
-              We retain personal data only as long as necessary to fulfill the operational purposes outlined herein or as required by statutory recordkeeping laws. <strong>Critical Note on AI:</strong> Neominds strictly adheres to zero-retention policies with LLM providers. Client source code, database dumps, and architectural schematics are never used to train public or foundation AI models.
-            </p>
-          </div>
-
-          <div>
-            <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: '12px' }}>
-              5. Your Rights (GDPR & CCPA)
-            </h2>
-            <p style={{ marginBottom: '12px' }}>
-              Under applicable international privacy legislation, you retain the following rights:
-            </p>
-            <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <li><strong>Right to Access:</strong> Request a complete copy of personal records held by Neominds.</li>
-              <li><strong>Right to Erasure (&quot;Right to be Forgotten&quot;):</strong> Request immediate deletion of personal records.</li>
-              <li><strong>Right to Rectification:</strong> Correct inaccurate or incomplete contact records.</li>
-              <li><strong>Right to Opt-Out:</strong> Unsubscribe from marketing briefs with a single click at any time.</li>
-            </ul>
-          </div>
-
-          <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '0px', padding: '24px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              Data Protection Officer (DPO) Contact
-            </h3>
-            <p style={{ fontSize: '14px', color: '#475569', marginBottom: '12px' }}>
-              For formal data inquiries, GDPR erasure requests, or compliance documentation, contact our Data Protection Officer:
-            </p>
-            <a href="mailto:privacy@neominds.io" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: '#2258e7', fontWeight: 600, fontSize: '15px' }}>
-              <Mail size={16} />
-              <span>privacy@neominds.io</span>
-            </a>
-          </div>
+          )}
         </div>
       </section>
 
-      {/* Global Footer */}
-      <Footer
-        onNavigate={(target) => {
-          if (target === '#contact') {
-            onNavigatePage('contacts');
-          } else if (target === '#casestudies') {
-            onNavigatePage('portfolio');
-          } else {
-            onNavigatePage('home');
-          }
-        }}
-        onOpenLegal={onOpenLegal}
-      />
+      {/* 6. Footer */}
+      <Footer onNavigate={(target) => onNavigatePage(target.replace('#', ''))} onOpenLegal={onOpenLegal} />
     </div>
   );
 };
+
+export const PrivacyPolicyPage = React.memo(PrivacyPolicyPageComponent);
