@@ -219,7 +219,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               Start doing work that matters
             </h2>
             <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
-              Our philosophy is simple—hire a team of diverse, passionate people and foster a culture that empowers you to do your best work.
+              Our philosophy is direct: hire talented engineers, give them clear ownership, and build an environment where craft and technical excellence come first.
             </p>
           </div>
 

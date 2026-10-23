@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Insights & Architectural Publications | Neominds</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .blog-hero {
+      padding-top: 150px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+    .featured-article-card {
+      background: linear-gradient(135deg, rgba(34, 88, 231, 0.12) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 40px;
+      margin: 40px 0;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      transition: all var(--transition-smooth);
+    }
+    .featured-article-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px var(--primary-glow);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+    }
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-smooth);
+    }
+    .article-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+    .newsletter-box {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(10, 16, 32, 0.9) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: var(--radius-md);
+      padding: 48px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    @media (max-width: 900px) {
+      .featured-article-card {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html" class="active">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Insights Hero -->
+  <section class="blog-hero">
+    <div class="container">
+      <span class="section-tag">Engineering Thought Leadership</span>
+      <h1 class="section-title">Architectural Deep-Dives & Research</h1>
+      <p class="section-desc" style="margin: 0 auto;">
+        Peer-reviewed technical whitepapers, distributed systems design patterns, and enterprise AI production breakdowns authored by our principal engineering team.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured Article -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="featured-article-card">
+        <div>
+          <div style="display: flex; gap: 8px; margin-bottom: 14px; align-items: center;">
+            <span class="pill pill-blue">Featured Whitepaper</span>
+            <span style="font-size: 0.8rem; color: var(--text-dim);">14 min read · Published March 2026</span>
+          </div>
+          <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; line-height: 1.25; margin-bottom: 16px;">
+            CPQ for B2B Commerce: Architectural Blueprint for Multi-Tiered ERP Catalogs
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px;">
+            A complete guide on configuring dynamic price-matrix rules, exploded schematic parts lookup, and sub-second caching strategies between SAP S/4HANA, Epicor Prophet 21, and headless web commerce.
+          </p>
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <a href="service-detail.html" class="btn btn-primary">Read Architectural Breakdown →</a>
+            <span style="font-size: 0.85rem; color: var(--text-dim);">Author: Lead Solutions Architect</span>
+          </div>
+        </div>
+
+        <div style="background: #070b14; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; font-family: var(--font-mono); font-size: 0.82rem; color: #94a3b8; line-height: 1.7;">
+          <div style="color: #60a5fa;">// ERP Cache Layer Invalidation</div>
+          <div style="color: #ffffff;">async function evaluateContractPricing(buyerId, sku) {</div>
+          <div style="padding-left: 16px; color: #34d399;">const tier = await redis.get(`tier:${buyerId}`);</div>
+          <div style="padding-left: 16px; color: #38bdf8;">if (!tier) return sapConnector.fetchLive(buyerId);</div>
+          <div style="padding-left: 16px; color: #fbbf24;">return calculateMatrixDiscount(tier, sku);</div>
+          <div style="color: #ffffff;">}</div>
+          <div style="margin-top: 14px; color: #64748b; font-size: 0.75rem;">⚡ Benchmark: 22ms p99 response time</div>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-grid">
+
+        <!-- Article 1 -->
+        <div class="article-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 14px;">
+              <span class="pill pill-cyan">Enterprise AI</span>
+              <span style="font-size: 0.78rem; color: var(--text-dim);">8 min read</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">
+              Eliminating Model Hallucination in Transactional Ledgers
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 18px;">
+              How we use Pydantic schema validation, deterministic retry loops, and double-entry ledger verification to deploy LLMs in zero-tolerance financial workflows.
+            </p>
+          </div>
+          <div>
+            <span style="font-size: 0.78rem; color: #60a5fa; font-weight: 600;">Read Whitepaper →</span>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 14px;">
+              <span class="pill pill-emerald">Healthcare Architecture</span>
+              <span style="font-size: 0.78rem; color: var(--text-dim);">11 min read</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">
+              Building HIPAA-Compliant Telehealth Infrastructure on AWS
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 18px;">
+              A step-by-step walkthrough of WebRTC encryption, zero-knowledge patient data partitioning, and FHIR interoperability pipelines for scalable digital clinics.
+            </p>
+          </div>
+          <div>
+            <span style="font-size: 0.78rem; color: #34d399; font-weight: 600;">Read Whitepaper →</span>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card">
+          <div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 14px;">
+              <span class="pill pill-blue">Cloud & DevOps</span>
+              <span style="font-size: 0.78rem; color: var(--text-dim);">9 min read</span>
+            </div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">
+              Epicor Prophet 21 + BigCommerce Integration Architecture
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; margin-bottom: 18px;">
+              Practical architectures for plumbing, HVAC, and industrial distributors handling 50,000+ SKUs with dynamic multi-warehouse order routing.
+            </p>
+          </div>
+          <div>
+            <span style="font-size: 0.78rem; color: #60a5fa; font-weight: 600;">Read Whitepaper →</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Newsletter Box -->
+      <div class="newsletter-box">
+        <span class="section-tag" style="background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.4); color: #67e8f9;">CTO & Architect Dispatch</span>
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin: 12px 0;">Stay Ahead of the Enterprise Engineering Curve</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 580px; margin: 0 auto 24px;">
+          Monthly technical deep-dives into autonomous agents, ERP middleware, and high-scale cloud architectures. Strictly zero marketing fluff.
+        </p>
+
+        <form style="display: flex; gap: 10px; max-width: 480px; margin: 0 auto; flex-wrap: wrap;" onsubmit="event.preventDefault(); alert('Subscribed! Thank you for joining our engineering dispatch.');">
+          <input type="email" required placeholder="Enter your work email..." class="form-input" style="flex: 1; min-width: 240px; border-radius: var(--radius-pill);">
+          <button type="submit" class="btn btn-primary">Subscribe →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC · Insights Hub Prototype</span>
+        <a href="index.html" style="color: var(--primary);">← Return to Prototype Directory</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

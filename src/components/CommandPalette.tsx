@@ -21,8 +21,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   isOpen,
   onClose,
   onSelect,
-  onOpenCaseStudy,
-  onOpenService,
+  onOpenCaseStudy: _onOpenCaseStudy,
+  onOpenService: _onOpenService,
 }) => {
   const [query, setQuery] = useState('');
 
@@ -48,67 +48,71 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 's-1',
       category: 'Service',
-      title: 'Design Thinking & UX Studio',
-      subtitle: 'Product discovery, UX logic, design systems',
+      title: 'Web & App Development',
+      subtitle: 'Native iOS, Android, cross-platform and responsive web applications',
       action: () => {
         onClose();
-        if (onOpenService) onOpenService(1);
-        else onSelect('#services');
+        onSelect('#web-development');
       },
     },
     {
       id: 's-2',
       category: 'Service',
       title: 'Custom Software Development',
-      subtitle: 'Distributed cloud microservices, scalable backends',
+      subtitle: 'Bespoke enterprise systems, microservices, and workflows',
       action: () => {
         onClose();
-        if (onOpenService) onOpenService(2);
-        else onSelect('#services');
+        onSelect('#custom-software-development');
       },
     },
     {
       id: 's-3',
       category: 'Service',
-      title: 'AI & Machine Learning Integration',
-      subtitle: 'Agentic workflows, RAG pipelines, LLM fine-tuning',
+      title: 'AI Automations & Integrations',
+      subtitle: 'Agentic workflows, document intelligence, automated processes',
       action: () => {
         onClose();
-        if (onOpenService) onOpenService(3);
-        else onSelect('#services');
+        onSelect('#ai-automations');
       },
     },
     {
       id: 's-4',
       category: 'Service',
-      title: 'Cloud & DevOps Engineering',
-      subtitle: 'Kubernetes, multi-cloud CI/CD, GitOps automation',
+      title: 'Cloud Based Softwares & SaaS',
+      subtitle: 'Cloud-native multi-tenant architectures and SaaS platforms',
       action: () => {
         onClose();
-        if (onOpenService) onOpenService(4);
-        else onSelect('#services');
+        onSelect('#cloud-based-software');
+      },
+    },
+    {
+      id: 's-5',
+      category: 'Service',
+      title: 'Analytic Dashboard',
+      subtitle: 'Real-time telemetry, executive reporting, and data analytics',
+      action: () => {
+        onClose();
+        onSelect('#analytics-dashboard');
       },
     },
     {
       id: 'cs-1',
       category: 'Case Study',
-      title: 'Medical Coding AI Assistant',
-      subtitle: 'Healthcare ICD-10 automated copilot on Azure',
+      title: 'Mindspace.ai Healthcare Telehealth App',
+      subtitle: 'HIPAA-compliant mobile wellness & telemetry platform',
       action: () => {
         onClose();
-        if (onOpenCaseStudy) onOpenCaseStudy('1');
-        else onSelect('#casestudies');
+        onSelect('#portfolio');
       },
     },
     {
       id: 'cs-2',
       category: 'Case Study',
-      title: 'Algorithmic High-Frequency Trading Platform',
-      subtitle: 'Sub-millisecond Rust order matching on AWS',
+      title: 'Fundbot AI SQL Chatbot',
+      subtitle: 'Natural language database assistant for fintech operations',
       action: () => {
         onClose();
-        if (onOpenCaseStudy) onOpenCaseStudy('2');
-        else onSelect('#casestudies');
+        onSelect('#portfolio');
       },
     },
     {

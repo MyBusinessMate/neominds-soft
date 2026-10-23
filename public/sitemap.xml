@@ -3,7 +3,7 @@
   <!-- 1. Homepage -->
   <url>
     <loc>https://neominds.io/</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,309 +11,193 @@
   <!-- 2. Core Corporate Pages -->
   <url>
     <loc>https://neominds.io/about-us</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neominds.io/contacts</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neominds.io/portfolio</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neominds.io/insights</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://neominds.io/blog</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://neominds.io/leaders</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://neominds.io/careers</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://neominds.io/certification</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://neominds.io/services</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://neominds.io/industries</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://neominds.io/company-updates</loc>
-    <lastmod>2026-10-14</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 3. Strategic Legacy & Strategy Capabilities -->
+  <!-- 3. Neominds Official Services (15 Canonical Services) -->
   <url>
-    <loc>https://neominds.io/product-discovery</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/product-engineering</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/business-analysis</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/it-consulting</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/ui-ux-design</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 4. Core Technology & Engineering Services -->
-  <url>
-    <loc>https://neominds.io/services/software-development</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/ai-development</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/mobile-app-development</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/web-cms-development</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/ecommerce-development</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/devops</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/ai-agents</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/ai-automations</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/chatbot-videobot</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/analytics-dashboard</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/technical-support</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- 5. Specialized Enterprise AI Solutions -->
-  <url>
-    <loc>https://neominds.io/services/ai-product-engineering</loc>
-    <lastmod>2026-09-06</lastmod>
+    <loc>https://neominds.io/services/web-development</loc>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/applied-ai</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/app-development</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neominds.io/services/cross-platform-app-development</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/ai-agent-systems</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/custom-software-development</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://neominds.io/services/ecommerce-platform</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/intelligent-automation</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/saas-development</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neominds.io/services/cloud-based-software</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://neominds.io/services/legacy-modernisation</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/generative-ai</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- 6. Regulated Fintech Practice -->
-  <url>
-    <loc>https://neominds.io/services/digital-banking</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <loc>https://neominds.io/services/ai-automations</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/payment-solutions</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://neominds.io/services/ai-integrations</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/lending-credit-platforms</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://neominds.io/services/ai-systems</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/investment-wealth-management</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://neominds.io/services/ai-native-software</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/financial-analytics</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/fraud-risk-management</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 7. Regulated Healthcare Practice -->
-  <url>
-    <loc>https://neominds.io/services/healthcare-management-software</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/analytics-dashboard</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/telemedicine-platforms</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/patient-engagement</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/medical-ai-solutions</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/custom-health-software</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/healthcare-analytics</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://neominds.io/services/healthcare-automation</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://neominds.io/services/training-as-service</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- 8. Technical Articles & Deep Dives -->
+  <!-- 4. Technical Articles -->
   <url>
     <loc>https://neominds.io/blog/why-ai-projects-fail-in-enterprises</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://neominds.io/blog/event-driven-microservices-zero-downtime</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- 9. Institutional Legal Policies -->
+  <!-- 5. Policies -->
   <url>
     <loc>https://neominds.io/privacy-policy</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://neominds.io/cookie-policy</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://neominds.io/security-policy</loc>
-    <lastmod>2026-09-06</lastmod>
+    <lastmod>2026-10-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

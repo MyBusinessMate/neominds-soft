@@ -16,6 +16,7 @@ export type PageType =
   | 'blog'
   | 'company-updates'
   | 'portfolio'
+  | 'project'
   | 'about-us'
   | 'contacts'
   | 'careers'
@@ -34,36 +35,7 @@ export type PageType =
   | 'ecommerce-development'
   | 'devops'
   | 'ai-agents'
-  | 'ai-automations'
-  | 'chatbot-videobot'
-  | 'chatbot-video-bot-development'
-  | 'analytics-dashboard'
-  | 'technical-support'
-  | 'product-discovery'
-  | 'product-engineering'
-  | 'business-analysis'
-  | 'it-consulting'
-  | 'ui-ux-design'
-  // Fintech
-  | 'digital-banking'
-  | 'payment-solutions'
-  | 'lending-credit-platforms'
-  | 'investment-wealth-management'
-  | 'financial-analytics'
-  | 'fraud-risk-management'
-  // Healthcare
-  | 'healthcare-management-software'
-  | 'telemedicine-platforms'
-  | 'patient-engagement'
-  | 'medical-ai-solutions'
-  | 'healthcare-analytics'
-  | 'healthcare-automation'
-  // AI
   | 'ai-product-engineering'
-  | 'applied-ai'
-  | 'ai-agent-systems'
-  | 'intelligent-automation'
-  | 'generative-ai'
   | '404';
 
 interface HeaderProps {
@@ -166,7 +138,7 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'Legacy System Modernisation', page: 'legacy-modernisation' as const, hasExternalArrow: false },
   ];
 
-  // Column 2: AI & Specialist Services (8 of 16 CSV services)
+  // Column 2: AI & Specialist Services (7 of 15 CSV services)
   const artificialIntelligenceList = [
     { title: 'AI Automations', page: 'ai-automations' as const, hasExternalArrow: false },
     { title: 'AI Integrations', page: 'ai-integrations' as const, hasExternalArrow: false },
@@ -175,7 +147,6 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'Analytic Dashboard', page: 'analytics-dashboard' as const, hasExternalArrow: false },
     { title: 'Custom Health Softwares', page: 'custom-health-software' as const, hasExternalArrow: false },
     { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false },
-    { title: 'Product Engineering', page: 'product-engineering' as const, hasExternalArrow: false },
   ];
 
   // Column 3: Technologies (7 from CSV)
@@ -186,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'Data Management', page: 'cloud-based-software' as const },
     { title: 'Data Analytics', page: 'analytics-dashboard' as const },
     { title: 'Automations', page: 'ai-automations' as const },
-    { title: 'Product Engineering', page: 'product-engineering' as const },
+    { title: 'Product Engineering', page: 'custom-software-development' as const },
   ];
 
   // Column 4: Industries (8 from CSV)

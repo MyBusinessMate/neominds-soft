@@ -1,6 +1,7 @@
 import { PageType } from '../components/Header';
 import { SERVICE_METADATA_MAP } from '../data/serviceMetadata';
 import { BLOG_POSTS_DATA } from '../data/blogData';
+import { getUnifiedProject } from '../data/projectsData';
 
 export interface PageMeta {
   title: string;
@@ -23,6 +24,29 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
       canonicalPath: '/404',
       ogType: 'website',
       ogImage: DEFAULT_OG_IMAGE,
+    };
+  }
+
+  // 1b. Project Case Study Page
+  if (page === 'project' && articleId) {
+    const project = getUnifiedProject(articleId);
+    return {
+      title: `${project.title} | Neominds`,
+      description: `${project.projectName} case study. ${project.solution}`,
+      canonicalPath: `/projects/${project.id}`,
+      ogType: 'article',
+      ogImage: DEFAULT_OG_IMAGE,
+      schema: {
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: project.title,
+        description: project.solution,
+        publisher: {
+          '@type': 'Organization',
+          name: 'Neominds',
+          url: PRODUCTION_DOMAIN,
+        },
+      },
     };
   }
 
@@ -274,56 +298,6 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
         ogImage: DEFAULT_OG_IMAGE,
       };
 
-    // Strategic Service Pages
-    case 'product-discovery':
-      return {
-        title: 'Product Discovery & UX Strategy Services | Neominds TechHub',
-        description:
-          'Transform ambiguous enterprise requirements into validated technical blueprints, interactive prototypes, and risk-mitigated delivery roadmaps.',
-        canonicalPath: '/product-discovery',
-        ogType: 'website',
-        ogImage: DEFAULT_OG_IMAGE,
-      };
-
-    case 'product-engineering':
-      return {
-        title: 'Product Engineering Services | Neominds TechHub Enterprise Solutions',
-        description:
-          'Turnkey software engineering squads delivering resilient cloud architectures, clean domain-driven codebases, and continuous automated testing.',
-        canonicalPath: '/product-engineering',
-        ogType: 'website',
-        ogImage: DEFAULT_OG_IMAGE,
-      };
-
-    case 'business-analysis':
-      return {
-        title: 'Business Analysis & Requirements Engineering | Neominds TechHub',
-        description:
-          'Rigorous functional decomposition, compliance alignment, and technical specification mapping for complex enterprise transformations.',
-        canonicalPath: '/business-analysis',
-        ogType: 'website',
-        ogImage: DEFAULT_OG_IMAGE,
-      };
-
-    case 'it-consulting':
-      return {
-        title: 'IT Consulting & Cloud Architecture Strategy | Neominds TechHub',
-        description:
-          'Strategic architectural audits, legacy modernization assessments, and infrastructure cost optimization from senior technology consultants.',
-        canonicalPath: '/it-consulting',
-        ogType: 'website',
-        ogImage: DEFAULT_OG_IMAGE,
-      };
-
-    case 'ui-ux-design':
-      return {
-        title: 'UI/UX Design & Design Systems | Neominds TechHub',
-        description:
-          'Human-centered enterprise interfaces, scalable Figma design systems, and accessible interactive workflows engineered for maximum productivity.',
-        canonicalPath: '/ui-ux-design',
-        ogType: 'website',
-        ogImage: DEFAULT_OG_IMAGE,
-      };
 
     // Homepage Default
     case 'home':

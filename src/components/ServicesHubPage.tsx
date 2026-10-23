@@ -8,7 +8,6 @@ import {
   Cpu,
   Bot,
   Zap,
-  Sparkles,
   Cloud,
   Globe,
   ArrowRight,
@@ -35,12 +34,12 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
     {
       title: 'Artificial intelligence',
       desc: 'AI now supports work from customer service to forecasting. We help you use it where it saves time or improves decisions.',
-      icon: <Sparkles size={22} color="#2258e7" />,
+      icon: <Cpu size={22} color="#2258e7" />,
     },
     {
       title: 'Machine learning',
       desc: 'Models that learn from your own data to predict demand, flag risk or personalize what customers see.',
-      icon: <Cpu size={22} color="#2258e7" />,
+      icon: <Layers size={22} color="#2258e7" />,
     },
     {
       title: 'Cloud computing',
@@ -127,7 +126,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       title: 'AI Integrations',
       slug: 'ai-integrations',
       desc: 'Embed semantic search, LLM reasoning, and intelligent document processing into existing stacks.',
-      icon: <Sparkles size={20} color="#2258e7" />,
+      icon: <Layers size={20} color="#2258e7" />,
     },
     {
       num: '07',

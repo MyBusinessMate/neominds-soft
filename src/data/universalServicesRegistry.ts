@@ -519,72 +519,38 @@ export const getFamilyForService = (slug: string): ServiceCategory => {
 // Map adjacent services in the ecosystem
 export const getRelatedSlugs = (slug: string): string[] => {
   switch (slug) {
-    // Core Tech
-    case 'software-development':
-      return ['ai-development', 'mobile-app-development', 'web-cms-development', 'devops'];
-    case 'ai-development':
-      return ['ai-agents', 'generative-ai', 'ai-product-engineering', 'software-development'];
-    case 'mobile-app-development':
-      return ['software-development', 'web-cms-development', 'ui-ux-design', 'analytics-dashboard'];
-    case 'web-cms-development':
-      return ['ecommerce-development', 'software-development', 'mobile-app-development', 'devops'];
-    case 'ecommerce-development':
-      return ['payment-solutions', 'web-cms-development', 'analytics-dashboard', 'devops'];
-    case 'devops':
-      return ['software-development', 'analytics-dashboard', 'technical-support', 'ai-development'];
-    case 'ai-agents':
-      return ['ai-automations', 'ai-agent-systems', 'chatbot-videobot', 'generative-ai'];
+    case 'web-development':
+      return ['app-development', 'custom-software-development', 'ecommerce-platform', 'cloud-based-software'];
+    case 'app-development':
+      return ['cross-platform-app-development', 'web-development', 'custom-software-development', 'analytics-dashboard'];
+    case 'cross-platform-app-development':
+      return ['app-development', 'web-development', 'custom-software-development', 'cloud-based-software'];
+    case 'custom-software-development':
+      return ['saas-development', 'cloud-based-software', 'ai-integrations', 'legacy-modernisation'];
+    case 'ecommerce-platform':
+      return ['web-development', 'custom-software-development', 'analytics-dashboard', 'cloud-based-software'];
+    case 'saas-development':
+      return ['custom-software-development', 'cloud-based-software', 'ai-native-software', 'analytics-dashboard'];
+    case 'cloud-based-software':
+      return ['saas-development', 'custom-software-development', 'legacy-modernisation', 'analytics-dashboard'];
+    case 'legacy-modernisation':
+      return ['custom-software-development', 'cloud-based-software', 'web-development', 'analytics-dashboard'];
     case 'ai-automations':
-      return ['ai-agents', 'intelligent-automation', 'applied-ai', 'devops'];
-    case 'chatbot-videobot':
-      return ['ai-agents', 'generative-ai', 'mobile-app-development', 'customer-service'];
+      return ['ai-integrations', 'ai-systems', 'ai-native-software', 'custom-software-development'];
+    case 'ai-integrations':
+      return ['ai-automations', 'ai-systems', 'custom-software-development', 'ai-native-software'];
+    case 'ai-systems':
+      return ['ai-native-software', 'ai-automations', 'ai-integrations', 'custom-software-development'];
+    case 'ai-native-software':
+      return ['ai-systems', 'ai-integrations', 'saas-development', 'custom-software-development'];
     case 'analytics-dashboard':
-      return ['financial-analytics', 'healthcare-analytics', 'software-development', 'devops'];
-    case 'technical-support':
-      return ['devops', 'software-development', 'analytics-dashboard', 'ai-automations'];
-
-    // Fintech
-    case 'digital-banking':
-      return ['payment-solutions', 'fraud-risk-management', 'lending-credit-platforms', 'financial-analytics'];
-    case 'payment-solutions':
-      return ['digital-banking', 'fraud-risk-management', 'ecommerce-development', 'financial-analytics'];
-    case 'lending-credit-platforms':
-      return ['digital-banking', 'fraud-risk-management', 'financial-analytics', 'payment-solutions'];
-    case 'investment-wealth-management':
-      return ['financial-analytics', 'digital-banking', 'fraud-risk-management', 'analytics-dashboard'];
-    case 'financial-analytics':
-      return ['analytics-dashboard', 'fraud-risk-management', 'investment-wealth-management', 'digital-banking'];
-    case 'fraud-risk-management':
-      return ['digital-banking', 'payment-solutions', 'financial-analytics', 'ai-development'];
-
-    // Healthcare
-    case 'healthcare-management-software':
-      return ['telemedicine-platforms', 'patient-engagement', 'healthcare-analytics', 'healthcare-automation'];
-    case 'telemedicine-platforms':
-      return ['healthcare-management-software', 'patient-engagement', 'medical-ai-solutions', 'healthcare-automation'];
-    case 'patient-engagement':
-      return ['telemedicine-platforms', 'healthcare-management-software', 'healthcare-automation', 'chatbot-videobot'];
-    case 'medical-ai-solutions':
-      return ['healthcare-analytics', 'healthcare-management-software', 'ai-development', 'telemedicine-platforms'];
-    case 'healthcare-analytics':
-      return ['healthcare-management-software', 'medical-ai-solutions', 'analytics-dashboard', 'healthcare-automation'];
-    case 'healthcare-automation':
-      return ['healthcare-management-software', 'intelligent-automation', 'patient-engagement', 'healthcare-analytics'];
-
-    // Enterprise AI
-    case 'ai-product-engineering':
-      return ['applied-ai', 'ai-agent-systems', 'generative-ai', 'software-development'];
-    case 'applied-ai':
-      return ['ai-product-engineering', 'intelligent-automation', 'generative-ai', 'ai-development'];
-    case 'ai-agent-systems':
-      return ['ai-agents', 'ai-product-engineering', 'intelligent-automation', 'generative-ai'];
-    case 'intelligent-automation':
-      return ['ai-automations', 'applied-ai', 'ai-agent-systems', 'healthcare-automation'];
-    case 'generative-ai':
-      return ['ai-product-engineering', 'ai-agents', 'applied-ai', 'ai-development'];
-
+      return ['custom-software-development', 'cloud-based-software', 'custom-health-software', 'saas-development'];
+    case 'custom-health-software':
+      return ['app-development', 'analytics-dashboard', 'custom-software-development', 'ai-automations'];
+    case 'training-as-service':
+      return ['custom-software-development', 'ai-automations', 'ai-systems', 'cloud-based-software'];
     default:
-      return ['software-development', 'ai-development', 'devops', 'analytics-dashboard'];
+      return ['custom-software-development', 'web-development', 'ai-automations', 'analytics-dashboard'];
   }
 };
 

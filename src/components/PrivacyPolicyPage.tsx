@@ -194,7 +194,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                   What Safeguards We Use
                 </h3>
                 <p style={{ marginBottom: '16px' }}>
-                  We implement robust administrative, physical, and technical safeguards designed to protect personal information against unauthorized access, destruction, loss, alteration, or disclosure:
+                  We implement comprehensive administrative, physical, and technical safeguards designed to protect personal information against unauthorized access, destruction, loss, alteration, or disclosure:
                 </p>
                 <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <li>TLS 1.3 encryption in transit and AES-256 encryption at rest.</li>

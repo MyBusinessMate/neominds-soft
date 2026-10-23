@@ -21,7 +21,6 @@ import {
   HeartHandshake,
   Stethoscope,
   Workflow,
-  Sparkles,
   Layers,
   FileCheck,
 } from 'lucide-react';
@@ -112,7 +111,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       case 'ai-product-engineering':
         return Layers;
       case 'applied-ai':
-        return Sparkles;
+        return Cpu;
       case 'ai-agent-systems':
         return Bot;
       case 'intelligent-automation':

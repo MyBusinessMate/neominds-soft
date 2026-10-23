@@ -41,7 +41,7 @@ const principles: Principle[] = [
     points: [
       'Deep domain alignment with your teams and customer processes',
       'Built with data-privacy and compliance rules (GDPR, HIPAA) in mind',
-      'Seamless integration into your existing operational infrastructure',
+      'Direct, friction-free integration into your existing operational infrastructure',
     ],
   },
 ];

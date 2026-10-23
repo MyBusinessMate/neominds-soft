@@ -16,7 +16,7 @@ export const SERVICE_METADATA_MAP: Record<string, ServiceMetaSummary> = {
   },
   'cross-platform-app-development': {
     title: 'Cross-Platform App Development',
-    description: 'One codebase for iOS, Android, and web — shipped together',
+    description: 'One codebase for iOS, Android, and web - shipped together',
   },
   'custom-software-development': {
     title: 'Custom Software Development',

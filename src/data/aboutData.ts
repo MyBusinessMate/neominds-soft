@@ -248,7 +248,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 2,
     quote:
-      'We have had a very positive experience with Neominds’ staff augmentation and dedicated engineering services. Their skilled, knowledgeable professionals integrated seamlessly with our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds for any organization seeking top-tier talent to augment their teams and drive successful outcomes.',
+      'We have had a very positive experience with Neominds’ staff augmentation and dedicated engineering services. Their skilled, knowledgeable professionals integrated directly into our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds for any organization seeking top-tier talent to augment their teams and drive successful outcomes.',
     author: 'Philipe Araujo',
     role: 'Director of Technology, MotiveRetail',
     logo: '/uploads/2010/04/motiveretail-color-1.svg',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { ServiceProcessStep } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -144,9 +144,9 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
         >
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', alignItems: 'start' }}>
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase', marginBottom: '8px' }}>
-                <Sparkles size={14} />
-                <span>Active Phase: Stage {steps[activeStep].step}</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 700, color: '#2258e7', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+                <span style={{ width: '10px', height: '2px', backgroundColor: '#2258e7' }} />
+                <span>Active Phase // Stage 0{steps[activeStep].step}</span>
               </div>
               <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0' }}>
                 {steps[activeStep].title}

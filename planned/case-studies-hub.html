@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Case Studies & Client Work | Neominds</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .hub-hero {
+      padding-top: 150px;
+      padding-bottom: 50px;
+      text-align: center;
+    }
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px 0 40px;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+    .search-input-wrap {
+      max-width: 480px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 20px 12px 42px;
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-pill);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-light);
+    }
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+    }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px var(--primary-glow);
+    }
+    .project-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .metric-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-sm);
+      color: #34d399;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html" class="active">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hub Hero -->
+  <section class="hub-hero">
+    <div class="container">
+      <span class="section-tag">Case Studies & Engineering Track Record</span>
+      <h1 class="section-title">Proven Results for Industry Innovators</h1>
+      <p class="section-desc" style="margin: 0 auto;">
+        Explore 30+ real-world deployments across Healthcare, Logistics, FinTech, and B2B Commerce. Every project built on robust architecture with measurable business outcomes.
+      </p>
+
+      <!-- Search Input -->
+      <div class="search-input-wrap" style="margin-top: 36px;">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-box" placeholder="Search by client, industry, or tech (e.g. AI, ERP, Mobile)..." oninput="filterCards()">
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="setCategory('all', this)">All Work (30)</button>
+        <button class="filter-btn" onclick="setCategory('ai', this)">AI & Automations</button>
+        <button class="filter-btn" onclick="setCategory('enterprise', this)">Enterprise Systems</button>
+        <button class="filter-btn" onclick="setCategory('healthcare', this)">Healthcare</button>
+        <button class="filter-btn" onclick="setCategory('fintech', this)">FinTech</button>
+        <button class="filter-btn" onclick="setCategory('ecomm', this)">Digital Commerce</button>
+        <button class="filter-btn" onclick="setCategory('edtech', this)">EdTech</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="projects-grid" id="projects-container">
+
+        <!-- Card 1 -->
+        <div class="project-card" data-cat="ecomm enterprise" data-search="apex beverage b2b ecommerce sap erp">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-blue">Digital Commerce</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Industrial</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Apex Beverage</h3>
+            <span class="metric-badge">+86% Revenue | 2.5× Order Volume</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Replaced legacy paper catalogs with an interactive exploded-schematic B2B store synced with SAP ERP in real-time.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">Adobe Commerce</span>
+              <span class="pill">SAP S/4HANA</span>
+              <span class="pill">Redis</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card" data-cat="healthcare ai" data-search="mindspace.ai healthcare app mobile analytics dashboard">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-cyan">Healthcare & AI</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Mental Health</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Mindspace.ai</h3>
+            <span class="metric-badge">4.9★ App Store | 100k+ Active Patients</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              HIPAA-compliant cross-platform mobile app and clinician analytics dashboard powered by proactive symptom evaluation algorithms.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">Flutter</span>
+              <span class="pill">pgvector</span>
+              <span class="pill">HIPAA Cloud</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card" data-cat="enterprise ai" data-search="flexport enterprise automation logistics freight">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-emerald">Logistics & AI</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Global Freight</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Flexport</h3>
+            <span class="metric-badge">98% Latency Drop | Zero Manual Entry</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Automated financial burn report compilation across multimodal freight shipments, reducing reporting cycles from days to minutes.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">Python</span>
+              <span class="pill">EventBridge</span>
+              <span class="pill">Autonomous Pipeline</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="project-card" data-cat="enterprise ai" data-search="fero invoice automation enterprise ocr">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-blue">Enterprise AI</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Supply Chain</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Fero</h3>
+            <span class="metric-badge">99.4% Accuracy | $210k Annual Savings</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Autonomous document and invoice ingestion pipeline parsing carrier bills across 14 currencies with zero human intervention.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">Vision AI</span>
+              <span class="pill">FastAPI</span>
+              <span class="pill">ERP Connect</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="project-card" data-cat="ecomm" data-search="flooring inc ecomm analytic dashboard retail">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-cyan">Commerce Analytics</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">E-Commerce</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Flooring Inc</h3>
+            <span class="metric-badge">38% Higher AOV | Real-Time Sync</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Custom commercial analytics dashboard reconciling inventory across multiple distribution centers with dynamic margin calculation.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">React</span>
+              <span class="pill">Node.js</span>
+              <span class="pill">BigCommerce</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="project-card" data-cat="fintech ai" data-search="fundbot fintech ai chatbot sql database">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-emerald">FinTech</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Banking & AI</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">Fundbot</h3>
+            <span class="metric-badge">&lt; 150ms SQL Query | Zero Injection</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Natural language text-to-SQL conversational engine allowing investment executives to interrogate complex ledger data instantly.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">PostgreSQL</span>
+              <span class="pill">LangChain</span>
+              <span class="pill">FastAPI</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="project-card" data-cat="edtech" data-search="bytexl edtech lms learning platform">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-blue">EdTech</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Higher Education</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">ByteXL</h3>
+            <span class="metric-badge">50,000+ Students | 99.99% Uptime</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Enterprise Learning Management System with automated coding sandboxes, proctored exams, and real-time student skill graphs.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">React</span>
+              <span class="pill">Go Microservices</span>
+              <span class="pill">Docker Sandboxes</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="project-card" data-cat="enterprise" data-search="dotcomweavers enterprise ai integration project buddy">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-cyan">Enterprise AI</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Agency Intelligence</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">DotcomWeavers</h3>
+            <span class="metric-badge">3.2× Sprint Velocity | 100% On-Time</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              "Project Buddy" intelligent copilot orchestrating contractor delivery, code review queues, and sprint milestone tracking.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">Custom LLM Agent</span>
+              <span class="pill">Jira API</span>
+              <span class="pill">Slack Webhooks</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="project-card" data-cat="enterprise ai" data-search="keocapital hr screening automation ai enterprise">
+          <div>
+            <div class="project-card-header">
+              <span class="pill pill-emerald">Venture & HR</span>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Talent Intelligence</span>
+            </div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 8px;">KeoCapital</h3>
+            <span class="metric-badge">85% Screening Speedup | Zero Bias</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 18px;">
+              Automated candidate screening and onboarding verification pipeline evaluating thousands of engineering candidates.
+            </p>
+          </div>
+          <div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;">
+              <span class="pill">AI Agent Workflow</span>
+              <span class="pill">Greenhouse API</span>
+              <span class="pill">Python</span>
+            </div>
+            <a href="case-study-detail.html" class="btn btn-secondary btn-sm" style="width: 100%;">View Full Case Study →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC · Case Studies Hub Prototype</span>
+        <a href="index.html" style="color: var(--primary);">← Return to Prototype Directory</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let activeCat = 'all';
+
+    function setCategory(cat, btn) {
+      activeCat = cat;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterCards();
+    }
+
+    function filterCards() {
+      const q = document.getElementById('search-box').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.project-card');
+
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat') || '';
+        const search = card.getAttribute('data-search') || '';
+        const matchesCat = (activeCat === 'all') || cat.includes(activeCat);
+        const matchesSearch = !q || search.includes(q) || card.textContent.toLowerCase().includes(q);
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

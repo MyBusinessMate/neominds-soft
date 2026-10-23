@@ -33,7 +33,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Motive Retail',
       logoUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/motiveretail-color-1.svg',
       quote:
-        'We have had a very positive experience with Neominds’s staff augmentation services. Their skilled, knowledgeable professionals integrated seamlessly with our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds.',
+        'We have had a very positive experience with Neominds’s staff augmentation services. Their skilled, knowledgeable professionals integrated directly into our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds.',
       author: 'Philipe Araujo',
       title: 'Business Analyst and Quality Engineer',
     },

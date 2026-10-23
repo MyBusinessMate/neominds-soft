@@ -12,10 +12,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
   onNavigatePage,
 }) => {
   const topServices = [
-    { name: 'AI Product Engineering', slug: 'ai-product-engineering' },
-    { name: 'Software Development', slug: 'software-development' },
-    { name: 'Digital Banking Platform', slug: 'digital-banking' },
-    { name: 'Healthcare Management Software', slug: 'healthcare-management-software' },
+    { name: 'AI Automations', slug: 'ai-automations' },
+    { name: 'Custom Software Development', slug: 'custom-software-development' },
+    { name: 'Web Development', slug: 'web-development' },
+    { name: 'App Development', slug: 'app-development' },
     { name: 'Client Case Studies', slug: 'portfolio' },
     { name: 'Technical Consultation & RFP', slug: 'contacts' },
   ];

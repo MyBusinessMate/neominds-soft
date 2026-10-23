@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LucideIcon, ArrowRight, Sparkles, CheckCircle2, Shield, Layers, ChevronRight, Terminal } from 'lucide-react';
+import { LucideIcon, ArrowRight, CheckCircle2, Shield, Layers, ChevronRight, Terminal } from 'lucide-react';
 import { ServiceCapability } from '../../types/service';
 import { CapabilityStyleType } from '../../data/capabilityStyles';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
@@ -269,9 +269,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           }}
         >
           <div>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '4px 12px', backgroundColor: 'rgba(34, 88, 231, 0.25)', borderRadius: '4px', color: '#60a5fa', fontSize: '12px', fontWeight: 700, marginBottom: '20px' }}>
-              <Sparkles size={14} />
-              <span>Specification Inspector: Module 0{activeTabIdx + 1}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+              <span style={{ width: '12px', height: '2px', backgroundColor: '#60a5fa' }} />
+              <span style={{ fontFamily: 'monospace', fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                Specification Inspector // Module 0{activeTabIdx + 1}
+              </span>
             </div>
 
             <h3
@@ -710,10 +712,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 fontSize: '11px',
                 fontWeight: 700,
                 color: '#2258e7',
-                backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                padding: '4px 10px',
-                borderRadius: '100px',
-                letterSpacing: '0.04em',
+                fontFamily: 'monospace',
+                borderLeft: '2px solid #2258e7',
+                paddingLeft: '6px',
+                letterSpacing: '0.06em',
               }}
             >
               MODULE 0{idx + 1}

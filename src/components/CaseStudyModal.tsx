@@ -1,168 +1,25 @@
-import React from 'react';
-import { X, ArrowRight } from 'lucide-react';
-
-import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
-
-export interface CaseStudyDetail {
-  id: string;
-  title: string;
-  client: string;
-  industry: string;
-  duration: string;
-  tags: string[];
-  summary: string;
-  challenge: string;
-  solution: string;
-  metrics: { label: string; value: string }[];
-  technologies: string[];
-  clientContext?: string;
-  constraints?: string;
-  approach?: string;
-  results?: string;
-  takeaway?: string;
-}
-
-const rawCaseStudyDetails: Record<string, CaseStudyDetail> = {
-  'authenticom-ai-etl': {
-    id: 'authenticom-ai-etl',
-    title: 'Mission-Critical ETL Platform Modernization with Agentic AI',
-    client: 'Authenticom Inc.',
-    industry: 'Automotive & Data Integration',
-    duration: '12 Months',
-    tags: ['Automotive', 'Artificial Intelligence', 'Data Pipelines', 'Modernization', 'Cloud Native'],
-    summary:
-      'Modernized a mission-critical automotive ETL data pipeline with Claude AI agents to automate data ingestion, mapping, validation, and real-time schema reconciliation.',
-    challenge:
-      'Authenticom handles massive data feeds from thousands of automotive dealerships. Legacy batch ETL pipelines struggled with varied proprietary schemas, frequent field drift, and costly manual onboarding.',
-    solution:
-      'Neominds designed an intelligent event-driven pipeline powered by Claude agentic models. The solution automatically interprets unstructured data formats, standardizes feeds, validates data integrity, and flags anomalies with zero human overhead.',
-    metrics: [
-      { label: 'Ingestion Throughput', value: '4.8x Faster' },
-      { label: 'Manual Mapping Overhead', value: '-74%' },
-      { label: 'Platform Availability', value: '99.99%' },
-      { label: 'Schema Adaptation', value: 'Real-time' },
-    ],
-    technologies: ['Python / FastAPI', 'Claude 3.5 Sonnet', 'Apache Kafka', 'PostgreSQL', 'AWS Cloud', 'Docker / Kubernetes'],
-  },
-  'trading-platform': {
-    id: 'trading-platform',
-    title: 'High-Throughput Trading Engine for 1M+ Active Traders',
-    client: 'Global FinTech Exchange',
-    industry: 'Financial Services & Trading',
-    duration: '18 Months',
-    tags: ['Financial Services', 'Trading Engine', 'Ultra-Low Latency', 'Microservices', 'High Concurrency'],
-    summary:
-      'Engineered a scalable multi-asset trading and risk management platform handling ultra-low latency execution and millions of active market participants.',
-    challenge:
-      'The client needed to replace a legacy trading stack incapable of handling high-volatility spikes during global market openings, resulting in execution bottlenecks and slippage.',
-    solution:
-      'Neominds architected an event-driven microservices platform utilizing memory-optimized distributed caches, real-time WebSockets, and resilient regulatory compliance reporting.',
-    metrics: [
-      { label: 'Active Users', value: '1M+' },
-      { label: 'Execution Latency', value: '< 12 ms' },
-      { label: 'Order Throughput', value: '50k+ req/sec' },
-      { label: 'System Uptime', value: '99.999%' },
-    ],
-    technologies: ['C# / .NET Core', 'Go', 'Redis Cluster', 'Kafka', 'React / TypeScript', 'Kubernetes / Azure'],
-  },
-  'motive-retail-ai': {
-    id: 'motive-retail-ai',
-    title: 'Claude AI Automated Dealer Management Integration',
-    client: 'Motive Retail',
-    industry: 'Automotive Tech & ISV',
-    duration: '9 Months',
-    tags: ['Automotive', 'AI Integration', 'Claude Partner', 'API Automation', 'Cloud'],
-    summary:
-      'Partnered to deploy Claude-powered agentic systems for accelerated automotive dealer software certification and documentation validation.',
-    challenge:
-      'Automotive dealership integration and certification required weeks of back-and-forth technical documentation review, creating severe onboarding friction for OEMs.',
-    solution:
-      'As a Claude Partner Network member, Neominds built an intelligent agent assistant that reviews API specifications, validates test suites against dealer systems, and automatically surfaces integration corrections.',
-    metrics: [
-      { label: 'Integration Cycle', value: '-65%' },
-      { label: 'Automated Certification', value: '92%' },
-      { label: 'Dealer Onboarding', value: '3x Faster' },
-      { label: 'API Accuracy', value: '99.8%' },
-    ],
-    technologies: ['Claude AI', 'TypeScript', 'Node.js', 'AWS Lambda', 'GraphQL', 'Terraform'],
-  },
-  'trubridge-medical-ai': {
-    id: 'trubridge-medical-ai',
-    title: 'AI-Powered Clinical Record Analysis & Medical Coding Automation',
-    client: 'TruBridge',
-    industry: 'Healthcare & HealthTech',
-    duration: '14 Months',
-    tags: ['Healthcare', 'Applied AI', 'HIPAA Compliant', 'Medical Coding', 'Cloud Security'],
-    summary:
-      'Engineered an enterprise healthcare AI platform that parses unstructured Electronic Health Records (EHR) and suggests ICD-10 medical codes with high clinical precision.',
-    challenge:
-      'Manual medical chart coding created multi-week billing delays, high administrative overhead, and susceptibility to coding audit rejections across community hospitals.',
-    solution:
-      'Neominds engineered a HIPAA-compliant, private AI pipeline that extracts clinical terms from physician notes, correlates diagnoses with lab results, and cross-references ICD-10 guidelines.',
-    metrics: [
-      { label: 'Coding Turnaround', value: '3.4x Faster' },
-      { label: 'Coding Error Reduction', value: '-52%' },
-      { label: 'HIPAA Isolation', value: '100% Zero-Leak' },
-      { label: 'Billing Claim Acceptance', value: '98.6%' },
-    ],
-    technologies: ['Python', 'PyTorch / Transformers', 'FastAPI', 'Vector Databases', 'AWS GovCloud', 'PostgreSQL'],
-  },
-};
-
-// Build portfolio items dynamically from the 30 client portfolio dataset
-const portfolioCaseStudiesMap: Record<string, CaseStudyDetail> = {};
-
-PORTFOLIO_CASE_STUDIES.forEach((item) => {
-  portfolioCaseStudiesMap[item.id] = {
-    id: item.id,
-    title: item.title,
-    client: item.client,
-    industry: item.category,
-    duration: 'Production Deployment',
-    tags: item.tags,
-    summary: item.description,
-    challenge: item.details?.challenge || item.description,
-    solution: item.details?.solution || item.description,
-    metrics: [
-      { label: item.metricLabel || 'Core Metric', value: item.metric || 'Verified' },
-      { label: 'Scope / Scale', value: item.stats || 'Enterprise Grade' },
-    ],
-    technologies: [item.technology, ...item.tags],
-    clientContext: item.details?.clientContext,
-    constraints: item.details?.constraints,
-    approach: item.details?.approach,
-    results: item.details?.results,
-    takeaway: item.details?.takeaway,
-  };
-});
-
-export const caseStudyDetails: Record<string, CaseStudyDetail> = {
-  ...portfolioCaseStudiesMap,
-  ...rawCaseStudyDetails,
-  // Backward-compatibility and verified registry aliases
-  'authenticom': rawCaseStudyDetails['authenticom-ai-etl'],
-  'trubridge': rawCaseStudyDetails['trubridge-medical-ai'],
-  'enterprise-ai-etl': rawCaseStudyDetails['authenticom-ai-etl'],
-  'cloud-commerce-platform': rawCaseStudyDetails['trading-platform'],
-  'healthcare-clinical-ai': rawCaseStudyDetails['trubridge-medical-ai'],
-  'etl-modernization': rawCaseStudyDetails['authenticom-ai-etl'],
-  'medical-coding': rawCaseStudyDetails['trubridge-medical-ai'],
-  '1': rawCaseStudyDetails['authenticom-ai-etl'],
-  '2': rawCaseStudyDetails['trading-platform'],
-  '3': rawCaseStudyDetails['motive-retail-ai'],
-  '4': rawCaseStudyDetails['trubridge-medical-ai'],
-};
+import React, { useMemo } from 'react';
+import { X, ArrowRight, ExternalLink, Check, Code2, Layers, Database, Cpu } from 'lucide-react';
+import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
 
 interface CaseStudyModalProps {
   studyId: string | null;
   onClose: () => void;
   onRequestQuote: () => void;
+  onViewProjectPage?: (id: string) => void;
 }
 
-export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose, onRequestQuote }) => {
-  if (!studyId || !caseStudyDetails[studyId]) return null;
+export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
+  studyId,
+  onClose,
+  onRequestQuote,
+  onViewProjectPage,
+}) => {
+  if (!studyId) return null;
 
-  const data = caseStudyDetails[studyId];
+  const project: UnifiedProject = useMemo(() => {
+    return getUnifiedProject(studyId);
+  }, [studyId]);
 
   return (
     <div
@@ -172,7 +29,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 19, 52, 0.85)',
+        backgroundColor: 'rgba(15, 23, 42, 0.75)',
         backdropFilter: 'blur(8px)',
         zIndex: 1000,
         display: 'flex',
@@ -183,7 +40,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
       onClick={onClose}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="modal-case-study-title"
+      aria-labelledby="modal-project-title"
     >
       <div
         data-lenis-prevent
@@ -191,229 +48,286 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
           width: '100%',
           maxWidth: '860px',
           maxHeight: '90vh',
-          backgroundColor: '#001334',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
-          color: '#ffffff',
-          borderRadius: '0px',
+          backgroundColor: '#ffffff',
+          border: '1px solid #e2e8f0',
+          color: '#0f172a',
+          borderRadius: '8px',
           overflowY: 'auto',
-          boxShadow: 'none',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
           position: 'relative',
-          padding: 'clamp(24px, 4vw, 48px)',
+          padding: 'clamp(24px, 4vw, 44px)',
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
+        {/* Top Header Row with Actions */}
+        <div
           style={{
-            position: 'absolute',
-            top: '16px',
-            right: '16px',
-            color: '#ffffff',
-            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-            border: 'none',
-            minWidth: '44px',
-            minHeight: '44px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            borderRadius: '0px',
-            transition: 'background-color 0.2s',
+            justifyContent: 'space-between',
+            marginBottom: '20px',
+            borderBottom: '1px solid #eaeaea',
+            paddingBottom: '14px',
           }}
-          aria-label="Close modal"
         >
-          <X size={22} />
-        </button>
+          <div
+            style={{
+              fontFamily: "'SF Mono', 'Geist Mono', monospace",
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#2258e7',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
+            }}
+          >
+            PROJECT // CASE STUDY
+          </div>
 
-        {/* Tags */}
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '20px', paddingRight: '48px' }}>
-          {data.tags.map((t, idx) => (
-            <span
-              key={idx}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {onViewProjectPage && (
+              <button
+                onClick={() => {
+                  onClose();
+                  onViewProjectPage(project.id);
+                }}
+                style={{
+                  backgroundColor: '#f1f5f9',
+                  border: '1px solid #cbd5e1',
+                  color: '#0f172a',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  padding: '6px 12px',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                }}
+              >
+                <span>Full Project Page</span>
+                <ExternalLink size={12} />
+              </button>
+            )}
+
+            <button
+              onClick={onClose}
               style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#93c5fd',
-                backgroundColor: 'rgba(34, 88, 231, 0.2)',
-                padding: '4px 12px',
-                border: '1px solid rgba(34, 88, 231, 0.4)',
-                borderRadius: '0px',
+                color: '#64748b',
+                backgroundColor: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                width: '36px',
+                height: '36px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                borderRadius: '4px',
               }}
+              aria-label="Close modal"
             >
-              {t}
-            </span>
-          ))}
+              <X size={18} />
+            </button>
+          </div>
         </div>
 
-        {/* Title */}
+        {/* Title: [Project Name]. Case Study */}
         <h2
-          id="modal-case-study-title"
+          id="modal-project-title"
           style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(24px, 3vw, 36px)',
-            fontWeight: 700,
+            fontSize: 'clamp(22px, 3.2vw, 32px)',
+            fontWeight: 800,
             lineHeight: 1.2,
             marginBottom: '16px',
             letterSpacing: '-0.02em',
+            color: '#0f172a',
           }}
         >
-          {data.title}
+          {project.title}
         </h2>
 
-        {/* Client & Metadata */}
+        {/* Project Overview Bento Box */}
         <div
           style={{
-            display: 'flex',
-            gap: '24px',
-            flexWrap: 'wrap',
-            paddingBottom: '20px',
+            backgroundColor: '#f8fafc',
+            border: '1px solid #e2e8f0',
+            borderRadius: '6px',
+            padding: '20px',
             marginBottom: '28px',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            fontSize: '14px',
-            fontFamily: 'var(--font-body)',
-            color: '#8893a7',
           }}
         >
-          <div>
-            Client: <strong style={{ color: '#ffffff' }}>{data.client}</strong>
+          <div
+            style={{
+              fontFamily: "'SF Mono', 'Geist Mono', monospace",
+              fontSize: '11px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              color: '#64748b',
+              marginBottom: '12px',
+            }}
+          >
+            Project Overview
           </div>
-          <div>
-            Industry: <strong style={{ color: '#ffffff' }}>{data.industry}</strong>
-          </div>
-          <div>
-            Duration: <strong style={{ color: '#ffffff' }}>{data.duration}</strong>
-          </div>
-        </div>
-
-        {/* Key Metrics Grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-            gap: '16px',
-            marginBottom: '36px',
-          }}
-        >
-          {data.metrics.map((m, idx) => (
-            <div
-              key={idx}
-              style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.04)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                padding: '16px',
-                borderRadius: '0px',
-              }}
-            >
-              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '28px', fontWeight: 800, color: '#2258e7', marginBottom: '4px' }}>
-                {m.value}
-              </div>
-              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '12px', fontWeight: 600, color: '#8893a7', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-                {m.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Detailed Structured Case Study Sections */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '36px' }}>
-          {data.clientContext && (
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '12px 18px',
+              fontSize: '13.5px',
+            }}
+          >
             <div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-                Client Context & Background
-              </h3>
-              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-                {data.clientContext}
-              </p>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Client</span>
+              <strong style={{ color: '#0f172a' }}>{project.overview.client}</strong>
             </div>
-          )}
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Industry</span>
+              <span style={{ color: '#0f172a', fontWeight: 500 }}>{project.overview.industry}</span>
+            </div>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Project Type</span>
+              <span style={{ color: '#0f172a', fontWeight: 500 }}>{project.overview.projectType}</span>
+            </div>
+            <div>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Duration</span>
+              <span style={{ color: '#0f172a', fontWeight: 500 }}>{project.overview.projectDuration}</span>
+            </div>
+            <div style={{ gridColumn: '1 / -1' }}>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Services Delivered</span>
+              <span style={{ color: '#2258e7', fontWeight: 600 }}>{project.overview.services}</span>
+            </div>
+            <div style={{ gridColumn: '1 / -1' }}>
+              <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Technology Stack</span>
+              <span style={{ color: '#334155', fontFamily: "'SF Mono', 'Geist Mono', monospace", fontSize: '12.5px' }}>{project.overview.technologyStack}</span>
+            </div>
+          </div>
+        </div>
 
+        {/* 7 Numbered Sections */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
           <div>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-              The Engineering Challenge
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>1.</span> Client Context
             </h3>
-            <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-              {data.challenge}
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
+              {project.clientContext}
             </p>
           </div>
 
-          {data.constraints && (
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-                Constraints & Edge Conditions
-              </h3>
-              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-                {data.constraints}
-              </p>
-            </div>
-          )}
-
-          {data.approach && (
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-                Architectural Approach
-              </h3>
-              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-                {data.approach}
-              </p>
-            </div>
-          )}
-
           <div>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-              Our Architectural Solution
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>2.</span> The Challenge
             </h3>
-            <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-              {data.solution}
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
+              {project.challenge}
             </p>
           </div>
 
-          {data.results && (
-            <div>
-              <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
-                Verified Results & Impact
-              </h3>
-              <p className="body-text" style={{ color: '#d0d3dd', lineHeight: 1.65 }}>
-                {data.results}
-              </p>
-            </div>
-          )}
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>3.</span> Project Constraints
+            </h3>
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
+              {project.constraints}
+            </p>
+          </div>
 
-          {data.takeaway && (
-            <div style={{ backgroundColor: 'rgba(34, 88, 231, 0.08)', border: '1px solid rgba(34, 88, 231, 0.25)', padding: '16px 20px', borderRadius: '0px' }}>
-              <div style={{ fontFamily: 'var(--font-heading)', fontSize: '12px', fontWeight: 700, color: '#93c5fd', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
-                Key Engineering Takeaway
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>4.</span> Our Approach
+            </h3>
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
+              {project.approach}
+            </p>
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>5.</span> The Solution
+            </h3>
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
+              {project.solution}
+            </p>
+
+            {/* Key Features */}
+            <div style={{ backgroundColor: '#fafafa', border: '1px solid #eaeaea', borderRadius: '4px', padding: '16px', marginBottom: '16px' }}>
+              <div style={{ fontSize: '13px', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>
+                Key Features and Capabilities
               </div>
-              <p className="body-text" style={{ color: '#ffffff', margin: 0, lineHeight: 1.6 }}>
-                {data.takeaway}
-              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {project.keyFeatures.map((f, idx) => (
+                  <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#334155' }}>
+                    <Check size={14} color="#2258e7" strokeWidth={2.5} />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          )}
-        </div>
 
-        {/* Technologies Used */}
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>
-            Technology & Infrastructure Stack
-          </h3>
-          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            {data.technologies.map((tech, idx) => (
-              <span
-                key={idx}
-                style={{
-                  fontFamily: 'var(--font-body)',
-                  fontSize: '13px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  padding: '6px 14px',
-                  color: '#ffffff',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '0px',
-                }}
-              >
-                {tech}
-              </span>
-            ))}
+            {/* Tech Implementation */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+                <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Code2 size={13} color="#2258e7" /> FRONTEND
+                </div>
+                <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.frontend}</div>
+              </div>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+                <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Layers size={13} color="#2258e7" /> BACKEND
+                </div>
+                <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.backend}</div>
+              </div>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+                <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Database size={13} color="#2258e7" /> DATABASE
+                </div>
+                <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.database}</div>
+              </div>
+              {project.technologyImplementation.aiAutomation && (
+                <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+                  <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Cpu size={13} color="#2258e7" /> AI / AUTOMATION
+                  </div>
+                  <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.aiAutomation}</div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div>
+            <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>6.</span> Results and Business Impact
+            </h3>
+            <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
+              {project.resultsAndImpact.summary}
+            </p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', backgroundColor: '#f8fafc' }}>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Efficiency</span>
+                <strong style={{ fontSize: '13.5px', color: '#0f172a' }}>{project.resultsAndImpact.efficiency}</strong>
+              </div>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', backgroundColor: '#f8fafc' }}>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Time Saved</span>
+                <strong style={{ fontSize: '13.5px', color: '#0f172a' }}>{project.resultsAndImpact.timeSaved}</strong>
+              </div>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', backgroundColor: '#f8fafc' }}>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Cost Reduction</span>
+                <strong style={{ fontSize: '13.5px', color: '#0f172a' }}>{project.resultsAndImpact.costReduction}</strong>
+              </div>
+              <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', backgroundColor: '#f8fafc' }}>
+                <span style={{ fontSize: '11px', color: '#64748b', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Performance</span>
+                <strong style={{ fontSize: '13.5px', color: '#0f172a' }}>{project.resultsAndImpact.performance}</strong>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ backgroundColor: '#f8fafc', borderLeft: '3px solid #2258e7', padding: '16px', borderRadius: '4px' }}>
+            <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>
+              <span style={{ color: '#2258e7', marginRight: '6px' }}>7.</span> Key Takeaway
+            </h3>
+            <p style={{ color: '#334155', fontStyle: 'italic', margin: 0, fontSize: '14.5px', lineHeight: 1.55 }}>
+              "{project.keyTakeaway}"
+            </p>
           </div>
         </div>
 
@@ -424,9 +338,9 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '16px',
-            paddingTop: '24px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            gap: '12px',
+            paddingTop: '20px',
+            borderTop: '1px solid #eaeaea',
           }}
         >
           <button
@@ -434,14 +348,34 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ studyId, onClose
               onClose();
               onRequestQuote();
             }}
-            className="btn btn-primary btn-lg"
+            style={{
+              backgroundColor: '#0f172a',
+              color: '#ffffff',
+              border: 'none',
+              padding: '10px 20px',
+              borderRadius: '4px',
+              fontWeight: 700,
+              fontSize: '14px',
+              cursor: 'pointer',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
           >
-            Discuss similar project <ArrowRight size={16} style={{ marginLeft: '8px' }} />
+            <span>{project.ctaText}</span>
+            <ArrowRight size={15} />
           </button>
 
           <button
             onClick={onClose}
-            style={{ color: '#8893a7', fontSize: '14px', cursor: 'pointer', fontFamily: 'var(--font-heading)', minHeight: '44px', padding: '8px 16px', background: 'none', border: 'none' }}
+            style={{
+              color: '#64748b',
+              fontSize: '13.5px',
+              cursor: 'pointer',
+              background: 'none',
+              border: 'none',
+              padding: '8px 12px',
+            }}
           >
             Close Overview
           </button>

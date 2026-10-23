@@ -330,7 +330,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudyItem[] = [
       constraints:
         'Must function in basements and plant rooms without Wi-Fi, support OCR barcode and serial plate scanning, and export certified PDF audit certificates.',
       approach:
-        'Created a robust cross-platform mobile suite with on-device vision OCR and structured SQLite document generation.',
+        'Engineered a hardened cross-platform mobile application with on-device vision OCR and structured SQLite document generation.',
       solution:
         'Auditors scan equipment nameplates, verify safety checklists, attach timestamped photos, and instantly generate tamper-evident audit logs.',
       results:
@@ -429,7 +429,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudyItem[] = [
     highlight: false,
     details: {
       clientContext:
-        'The1AM is a fast-paced creative agency producing multi-channel marketing campaigns for global consumer brands.',
+        'The1AM is a digital production agency delivering multi-channel marketing campaigns for global consumer brands.',
       challenge:
         'Copywriters and art directors struggled to maintain brand voice guidelines across hundreds of localized ad copy variations and banner adaptations.',
       constraints:
@@ -651,7 +651,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudyItem[] = [
       results:
         'Test execution time shrank from 4 days to 45 minutes; release cadence increased 4.5x with zero critical production bugs reported over 6 months.',
       takeaway:
-        'Automated QA suites built on resilient semantic locators prevent developer fatigue and empower daily continuous delivery.',
+        'Automated QA suites built on resilient semantic locators prevent developer fatigue and enable daily production deployments without fear.',
     },
   },
 
@@ -888,7 +888,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudyItem[] = [
       challenge:
         'Inbound enterprise advertising leads waited up to 24 hours for manual SDR qualification, during which buyer intent rapidly cooled.',
       constraints:
-        'Must integrate seamlessly with existing CRM (HubSpot), verify email deliverability in real time, and route based on account territory rules.',
+        'Must connect directly to existing HubSpot CRM via idempotent webhooks, verify email deliverability in real time, and route based on account territory rules.',
       approach:
         'Designed an automated webhook pipeline that captures form submissions, enriches company data via Clearbit/Apollo APIs, and scores buyer potential.',
       solution:
@@ -1063,7 +1063,7 @@ export const PORTFOLIO_CASE_STUDIES: CaseStudyItem[] = [
       challenge:
         'Commercial general-purpose frontier LLMs were too costly at scale ($200k/mo API fees) and exhibited hallucination rates on proprietary engineering standards.',
       constraints:
-        'Complete data privacy—proprietary patents and designs could never leave company VPCs; models had to run locally on dedicated GPU clusters.',
+        'Complete data privacy: proprietary patents and schematics could never leave company VPCs, requiring models to execute entirely on self-hosted GPU clusters.',
       approach:
         'Fine-tuned open-source foundational models using LoRA on curated technical documents, deploying with vLLM acceleration on private cloud instances.',
       solution:

@@ -45,20 +45,23 @@
   z-index: 2;
 }
 
-.s-superhero__badge {
+.s-superhero__kicker {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background-color: rgba(34, 88, 231, 0.12);
-  border: 1px solid rgba(34, 88, 231, 0.3);
-  border-radius: 2px;
-  color: #60a5fa;
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  gap: 12px;
   margin-bottom: 24px;
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #60a5fa;
+}
+
+.s-superhero__kicker-line {
+  width: 20px;
+  height: 2px;
+  background-color: #60a5fa;
 }
 
 .s-superhero__title {

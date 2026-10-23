@@ -1,6 +1,6 @@
 /* ==========================================================================
-   AI SERVICES PAGE (Bespoke Ultra-Sharp Dark Aesthetic Inspired by EffectiveSoft.ai)
-   Strict Sharp Edges (0px border-radius) & Seamless Background Blending
+   AI SERVICES PAGE (Bespoke Ultra-Sharp Dark Aesthetic)
+   Strict Sharp Edges (0px border-radius) & Full Black Surface Blending
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
@@ -499,7 +499,7 @@
   opacity: 0.8;
 }
 
-/* Right Content: Seamlessly integrated inside the frame (NO nested card) */
+/* Right Content: Directly integrated inside the frame (NO nested card) */
 .ai-pillars-content-col {
   background: #000000;
   display: flex;
@@ -626,7 +626,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. How We Partner (Seamlessly Blended Architecture Columns)
+   6. How We Partner (Blended Architecture Columns)
    -------------------------------------------------------------------------- */
 .ai-partner-section {
   padding: 120px 24px;

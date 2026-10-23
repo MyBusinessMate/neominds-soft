@@ -282,7 +282,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               Custom software for these industries
             </h2>
             <p style={{ fontSize: '16px', color: '#64748b', maxWidth: '680px', marginTop: '8px' }}>
-              We build specialized platforms with sector compliance, enterprise security, and seamless workflows baked into every release.
+              We build specialized platforms with sector compliance, enterprise security, and verified high-throughput workflows baked into every release.
             </p>
           </div>
 
@@ -386,7 +386,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               Stack & infrastructure
             </h2>
             <p style={{ fontSize: '16px', color: '#64748b', maxWidth: '680px', marginTop: '8px' }}>
-              We select robust, battle-tested tools matching your industry requirements and scale targets.
+              We select battle-tested, production-proven tools matching your industry requirements and scale targets.
             </p>
           </div>
 

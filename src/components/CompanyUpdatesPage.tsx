@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  Sparkles,
   ArrowRight,
   Calendar,
   MapPin,
@@ -140,8 +139,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       padding: '24px',
                     }}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: '#2258e7', color: '#ffffff', padding: '4px 10px', borderRadius: '3px', fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
-                      <Sparkles size={12} />
+                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#0f172a', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#ffffff', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
                       {update.type}
                     </span>
 
@@ -195,7 +193,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       <blockquote style={{ borderLeft: '3px solid #2258e7', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#475569' }}>
                         "{update.content.quote.text}"
                         <div style={{ fontStyle: 'normal', fontWeight: 700, color: '#0f172a', marginTop: '4px', fontSize: '12px' }}>
-                          — {update.content.quote.author}, {update.content.quote.role}
+                          // {update.content.quote.author}, {update.content.quote.role}
                         </div>
                       </blockquote>
                     )}

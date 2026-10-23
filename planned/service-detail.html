@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Systems & Autonomous Workflow Automations | Neominds Services</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .service-hero {
+      padding-top: 150px;
+      padding-bottom: 70px;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(34, 88, 231, 0.12);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-pill);
+      color: #93c5fd;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .trust-ribbon {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .trust-badge strong {
+      color: var(--text-main);
+    }
+    .interactive-architecture {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      margin-top: 40px;
+    }
+    .arch-tabs {
+      display: flex;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+    }
+    .arch-tab-btn {
+      padding: 8px 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .arch-tab-btn.active, .arch-tab-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 0 16px var(--primary-glow);
+    }
+    .calculator-box {
+      background: linear-gradient(135deg, rgba(34, 88, 231, 0.08) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      margin-top: 40px;
+    }
+    .calc-slider-group {
+      margin-bottom: 24px;
+    }
+    .calc-label-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .calc-slider {
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .calc-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--primary);
+      cursor: pointer;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html" class="active">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Service Hero -->
+  <section class="service-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-tag">Enterprise Service Blueprint · AI & Automation</span>
+          <h1 class="hero-title">
+            AI Systems, Agents &<br>
+            <span style="background: linear-gradient(135deg, #60a5fa 30%, #2258e7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Autonomous Workflows</span>
+          </h1>
+          <p class="hero-lead">
+            We design, build, and deploy production-grade multi-agent architectures, enterprise LLM pipelines, and automated decision engines. Eliminate operational latency, integrate fragmented ERP/CRM systems, and scale revenue without headcount creep.
+          </p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px;">
+            <a href="#consultation-booking" class="btn btn-primary">Book Architecture Workshop →</a>
+            <a href="case-study-detail.html" class="btn btn-secondary">Explore Case Study Proof</a>
+          </div>
+          <div class="trust-ribbon">
+            <div class="trust-badge">
+              <span style="color: #fbbf24;">★ ★ ★ ★ ★</span>
+              <span><strong>4.9/5</strong> Clutch Enterprise Rating</span>
+            </div>
+            <div class="trust-badge">
+              <span style="color: #38bdf8;">⚡</span>
+              <span><strong>30+</strong> Live Production Systems</span>
+            </div>
+            <div class="trust-badge">
+              <span style="color: #34d399;">🛡️</span>
+              <span><strong>SOC2 & HIPAA</strong> Compliance Frameworks</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Visual Card -->
+        <div class="card card-glow" style="padding: 32px; background: rgba(14, 23, 42, 0.85);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <span class="pill pill-blue">Real-Time Autonomous Agent Run</span>
+            <span style="font-size: 0.75rem; color: #34d399; font-family: var(--font-mono);">● RUNNING 99.98% SLA</span>
+          </div>
+
+          <div style="background: #070b14; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px; font-family: var(--font-mono); font-size: 0.82rem; color: #94a3b8; line-height: 1.7; margin-bottom: 20px;">
+            <div style="color: #38bdf8;">[14:22:01] &gt; Ingestion: Multi-page Vendor Invoice ($248,500.00)</div>
+            <div style="color: #60a5fa;">[14:22:02] &gt; OCR & Vision Agent: Extracted 42 line items w/ 99.8% confidence</div>
+            <div style="color: #fbbf24;">[14:22:03] &gt; Policy Agent: Validated PO match against ERP NetSuite ledger</div>
+            <div style="color: #34d399;">[14:22:04] &gt; Execution: Automated journal entry posted. 0 humans required.</div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 14px; border-radius: var(--radius-sm);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #ffffff;">&lt; 3.2s</div>
+              <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Average Processing Time</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); padding: 14px; border-radius: var(--radius-sm);">
+              <div style="font-size: 1.5rem; font-weight: 800; color: #34d399;">$185,000+</div>
+              <div style="font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Avg Annual Operational Savings</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Context / Urgent Driver -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">The 2026 Shift</span>
+      <h2 class="section-title">Manual Operational Workflows Are Leaking Margins</h2>
+      <p class="section-desc">
+        Modern businesses do not fail from lack of ambition—they stall because critical data is locked in unstructured silos, teams spend 40% of their day on repetitive reconciliation, and legacy systems refuse to talk to each other.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 40px;">
+        <div class="card">
+          <div style="width: 44px; height: 44px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 10px; display: grid; place-items: center; color: #f87171; margin-bottom: 20px; font-size: 1.2rem;">✕</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">Manual Coordination Lag</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            High-volume order approvals, invoice verification, and support triage route through back-and-forth emails. Every delay costs client trust and compounds staffing overhead.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="width: 44px; height: 44px; background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 10px; display: grid; place-items: center; color: #fbbf24; margin-bottom: 20px; font-size: 1.2rem;">⚠</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">ERP & Commerce Data Disconnect</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            When ecommerce orders, pricing rules, and inventory levels are not synchronized in real time with your ERP (SAP, Prophet 21, NetSuite), false stockouts and margin leakage run rampant.
+          </p>
+        </div>
+
+        <div class="card">
+          <div style="width: 44px; height: 44px; background: rgba(34, 88, 231, 0.15); border: 1px solid var(--border-accent); border-radius: 10px; display: grid; place-items: center; color: #60a5fa; margin-bottom: 20px; font-size: 1.2rem;">⚡</div>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 12px;">The Autonomous Solution</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Neominds engineers deterministic AI agents that execute transactional workflows autonomously while enforcing strict business guardrails, human approvals, and cryptographic audit trails.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Capabilities Grid -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">Architectural Capabilities</span>
+      <h2 class="section-title">Engineered for Enterprise Complexity</h2>
+      <p class="section-desc">Six core specializations built to transform high-overhead manual operations into high-velocity autonomous systems.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; margin-top: 40px;">
+        <div class="card">
+          <span class="pill pill-blue" style="margin-bottom: 16px;">Agentic Swarms</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Autonomous Multi-Agent Pipelines</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Specialized collaborative agent teams executing multi-step research, document analysis, contract validation, and customer support triage with automatic error-recovery loops.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill pill-cyan" style="margin-bottom: 16px;">System Integration</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">ERP, CRM & Commerce Sync</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Real-time, bidirectional event-driven pipelines between modern web apps and legacy backbones including SAP, Epicor Prophet 21, NetSuite, Salesforce, and Adobe Commerce.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill pill-emerald" style="margin-bottom: 16px;">OCR & Vision AI</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Intelligent Document & Invoice Automation</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Zero-shot document parsing extracting line items, tax IDs, and vendor terms from messy PDFs, bills of lading, and purchase orders with 99.4% verifiable accuracy.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill pill-blue" style="margin-bottom: 16px;">Retrieval Engines</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Hybrid Vector & Semantic Knowledge Hubs</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Enterprise RAG systems combining dense embeddings (pgvector, Qdrant) with sparse keyword indexing (BM25) for sub-50ms precise technical catalog lookup and instant Q&A.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill pill-cyan" style="margin-bottom: 16px;">Predictive Intel</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Operational & Burn Rate Forecasting</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Automated intelligence pipelines providing real-time financial burn projections, automated logistics tracking, and dynamic pricing adjustments based on real demand signals.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="pill pill-emerald" style="margin-bottom: 16px;">Governance</span>
+          <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">Human-in-the-Loop & Audit Compliance</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6;">
+            Configurable confidence thresholds triggering mandatory human reviews for outlier transactions, backed by immutable audit trails and SOC2/HIPAA security standards.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive System Architecture Radar -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">Full-Stack Blueprint</span>
+      <h2 class="section-title">Enterprise System Architecture Blueprint</h2>
+      <p class="section-desc">Click between layers to inspect how Neominds coordinates data from ingestion to autonomous execution.</p>
+
+      <div class="interactive-architecture">
+        <div class="arch-tabs">
+          <button class="arch-tab-btn active" onclick="switchArch('ingest', this)">1. Ingestion Layer</button>
+          <button class="arch-tab-btn" onclick="switchArch('core', this)">2. Reasoning & Agent Core</button>
+          <button class="arch-tab-btn" onclick="switchArch('guard', this)">3. Safety & Policy Guardrails</button>
+          <button class="arch-tab-btn" onclick="switchArch('action', this)">4. ERP & Action Execution</button>
+        </div>
+
+        <div id="arch-display" style="padding: 20px; background: #070b14; border: 1px solid var(--border); border-radius: var(--radius-sm);">
+          <h4 id="arch-title" style="font-size: 1.15rem; color: #60a5fa; margin-bottom: 10px;">Ingestion & Normalization Layer</h4>
+          <p id="arch-desc" style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+            Supports streaming webhooks, batch EDI files, scanned PDF documents, and direct API endpoints. Automatically validates schemas, strips malicious payloads, and vectorizes content into memory buffers.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <span class="pill">Apache Kafka</span>
+            <span class="pill">AWS S3 EventBridge</span>
+            <span class="pill">FastAPI Gateway</span>
+            <span class="pill">OCR Vision Pipeline</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI Calculator -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">Value Quantification</span>
+      <h2 class="section-title">Calculate Your Automation ROI</h2>
+      <p class="section-desc">Estimate the direct monthly dollar savings and hours recovered by deploying Neominds autonomous workflow systems.</p>
+
+      <div class="calculator-box">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <div class="calc-slider-group">
+              <div class="calc-label-row">
+                <span>Monthly Manual Transactions</span>
+                <span id="tx-val" style="color: #60a5fa; font-family: var(--font-mono);">5,000 tx</span>
+              </div>
+              <input type="range" min="500" max="50000" step="500" value="5000" class="calc-slider" id="tx-slider" oninput="updateRoi()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-label-row">
+                <span>Minutes Spent Per Transaction</span>
+                <span id="min-val" style="color: #60a5fa; font-family: var(--font-mono);">12 mins</span>
+              </div>
+              <input type="range" min="2" max="60" step="1" value="12" class="calc-slider" id="min-slider" oninput="updateRoi()">
+            </div>
+
+            <div class="calc-slider-group">
+              <div class="calc-label-row">
+                <span>Average Team Hourly Cost ($)</span>
+                <span id="rate-val" style="color: #60a5fa; font-family: var(--font-mono);">$45 / hr</span>
+              </div>
+              <input type="range" min="20" max="150" step="5" value="45" class="calc-slider" id="rate-slider" oninput="updateRoi()">
+            </div>
+          </div>
+
+          <div style="background: rgba(10, 16, 32, 0.95); border: 1px solid var(--border-accent); border-radius: var(--radius-md); padding: 32px; text-align: center;">
+            <span style="font-size: 0.85rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em;">Estimated Monthly Cost Reduction</span>
+            <div id="monthly-savings" style="font-size: 3rem; font-weight: 800; color: #34d399; margin: 10px 0; letter-spacing: -0.03em;">$45,000</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
+              Hours recovered: <strong id="hours-saved" style="color: #ffffff;">1,000 hrs/mo</strong> · Payback period: <strong style="color: #60a5fa;">&lt; 2.5 months</strong>
+            </p>
+            <a href="#consultation-booking" class="btn btn-primary" style="width: 100%;">Lock In Architecture Scope →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Transformation Evidence -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">Verified Production Impact</span>
+      <h2 class="section-title">Measurable Outcomes from Real Client Deployments</h2>
+      <p class="section-desc">Projects from our active dataset delivering verified business transformation.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-top: 40px;">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <strong style="color: #ffffff; font-size: 1.1rem;">Flexport</strong>
+            <span class="pill pill-blue">Enterprise Logistics</span>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Burn Report & Reconciliation Automation</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Automated cross-border burn report generation across freight partners, reducing executive reporting latency from 3 days to under 4 minutes.
+          </p>
+          <div class="kpi-banner" style="margin: 0; padding: 18px;">
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">98%</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Latency Reduction</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">0</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Manual Steps</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <strong style="color: #ffffff; font-size: 1.1rem;">Fero</strong>
+            <span class="pill pill-cyan">Enterprise Supply Chain</span>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">Intelligent Invoice Ingestion System</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            Autonomous invoice capture and validation engine parsing thousands of unstructured bills per week across 14 global carrier formats.
+          </p>
+          <div class="kpi-banner" style="margin: 0; padding: 18px;">
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">99.4%</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Extraction Accuracy</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">$210k</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Annual Savings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <strong style="color: #ffffff; font-size: 1.1rem;">DotcomWeavers</strong>
+            <span class="pill pill-emerald">Enterprise AI Integration</span>
+          </div>
+          <h4 style="font-size: 1.1rem; margin-bottom: 8px;">"Project Buddy" Workflow Intelligence</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+            AI orchestration copilot synchronizing project milestones, contractor deliverables, and real-time sprint status directly inside internal ops.
+          </p>
+          <div class="kpi-banner" style="margin: 0; padding: 18px;">
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">3.2×</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Sprint Velocity</span>
+            </div>
+            <div class="kpi-item">
+              <span class="kpi-num" style="font-size: 1.8rem;">100%</span>
+              <span class="kpi-label" style="font-size: 0.72rem;">Delivery On-Time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section">
+    <div class="container" style="max-width: 900px;">
+      <span class="section-tag">Frequently Asked Questions</span>
+      <h2 class="section-title">Technical & Delivery Inquiries</h2>
+      <p class="section-desc" style="margin-bottom: 36px;">Common engineering and business questions from our enterprise clients.</p>
+
+      <div class="accordion">
+        <div class="accordion-item active">
+          <div class="accordion-header" onclick="toggleFaq(this)">
+            <span>Can your AI systems integrate with our legacy on-premise ERP or database?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            Yes. We build custom reverse proxies, secure VPN relays, and CDC (Change Data Capture) connectors that integrate with legacy ERPs like SAP ECC/S4, Epicor Prophet 21, AS400, and NetSuite without requiring risky overhaul of your core transaction database.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleFaq(this)">
+            <span>How do you guarantee against model hallucination in financial/transactional flows?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            We enforce deterministic validation frameworks. LLM agents do not write directly to databases; they generate structured schema payloads (JSON Schema / Pydantic) that must pass automated unit constraints, reference checks against ERP ledgers, and confidence threshold gates before execution.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleFaq(this)">
+            <span>What are the typical project timelines from architecture to production?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            Phase 1 (Architecture & Pilot Sandbox) ships in 2 to 3 weeks. Phase 2 (Enterprise staging with full ERP integration) takes 4 to 6 weeks. Full production deployment with automated monitoring and load testing typically concludes within 8 to 12 weeks.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleFaq(this)">
+            <span>Who owns the IP and custom code developed during the engagement?</span>
+            <span class="icon">▼</span>
+          </div>
+          <div class="accordion-content">
+            You own 100% of all intellectual property, custom models, training pipelines, and codebase from day one. Neominds works strictly on a work-for-hire basis with full mutual NDA protection.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Consultation Booking Form -->
+  <section id="consultation-booking" class="section" style="background: rgba(10, 16, 32, 0.7); border-top: 1px solid var(--border);">
+    <div class="container" style="max-width: 800px;">
+      <div style="text-align: center; margin-bottom: 36px;">
+        <span class="section-tag">Direct Engineering Intake</span>
+        <h2 class="section-title">Schedule an Architecture Workshop</h2>
+        <p class="section-desc" style="margin: 0 auto;">Speak directly with a Principal AI Systems Architect. Under 2-hour response SLA.</p>
+      </div>
+
+      <div class="card card-glow" style="padding: 36px;">
+        <form onsubmit="handleInquiry(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" required class="form-input" placeholder="Sarah Jenkins">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Work Email *</label>
+              <input type="email" required class="form-input" placeholder="s.jenkins@company.com">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="form-group">
+              <label class="form-label">Company Name *</label>
+              <input type="text" required class="form-input" placeholder="Acme Logistics Corp">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Estimated Timeline</label>
+              <select class="form-select">
+                <option>Immediate (&lt; 30 Days)</option>
+                <option>Q1 - Q2 2026</option>
+                <option>Discovery & Budget Planning</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Operational Bottleneck or Architecture Goal</label>
+            <textarea rows="4" class="form-textarea" placeholder="Describe the workflow you want to automate (e.g. ERP invoice reconciliation, multi-agent customer support, catalog indexing)..."></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;">
+            <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+              <input type="checkbox" checked style="accent-color: var(--primary);"> Send Mutual NDA First
+            </label>
+            <span style="font-size: 0.78rem; color: #34d399;">🔒 256-Bit SSL Encrypted</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
+            Request Technical Architecture Call →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC · Service Prototype</span>
+        <a href="index.html" style="color: var(--primary);">← Return to Prototype Directory</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      item.classList.toggle('active');
+    }
+
+    const archData = {
+      ingest: {
+        title: "1. Ingestion & Normalization Layer",
+        desc: "Supports streaming webhooks, batch EDI files, scanned PDF documents, and direct API endpoints. Automatically validates schemas, strips malicious payloads, and vectorizes content into memory buffers.",
+        pills: ["Apache Kafka", "AWS S3 EventBridge", "FastAPI Gateway", "OCR Vision Pipeline"]
+      },
+      core: {
+        title: "2. Reasoning & Agent Core",
+        desc: "Coordinates multi-agent task planning, recursive sub-goal evaluation, and contextual prompt engineering. Dynamically routes queries between fast lightweight LLMs and high-capacity reasoning models.",
+        pills: ["LangGraph / Custom State Machine", "Claude 3.7 / GPT-4o", "DeepSeek R1 Reasoning", "Vector Embeddings (pgvector)"]
+      },
+      guard: {
+        title: "3. Safety & Policy Guardrails",
+        desc: "Deterministic schema validation ensuring models cannot output arbitrary commands. Enforces role-based permissions, financial transaction thresholds, and sensitive PII redactors.",
+        pills: ["Pydantic Validation", "Granular RBAC", "PII Redaction Engine", "Human-in-the-Loop Thresholds"]
+      },
+      action: {
+        title: "4. ERP & Action Execution",
+        desc: "Dispatches atomic, rollback-capable mutations to external databases, payment gateways, and enterprise ERP backbones with complete webhook confirmations.",
+        pills: ["SAP / NetSuite Connectors", "Stripe Enterprise API", "Salesforce CRM Webhooks", "Automated Slack / Email Alerts"]
+      }
+    };
+
+    function switchArch(key, btn) {
+      document.querySelectorAll('.arch-tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const data = archData[key];
+      document.getElementById('arch-title').textContent = data.title;
+      document.getElementById('arch-desc').textContent = data.desc;
+    }
+
+    function updateRoi() {
+      const tx = parseInt(document.getElementById('tx-slider').value);
+      const min = parseInt(document.getElementById('min-slider').value);
+      const rate = parseInt(document.getElementById('rate-slider').value);
+
+      document.getElementById('tx-val').textContent = tx.toLocaleString() + ' tx';
+      document.getElementById('min-val').textContent = min + ' mins';
+      document.getElementById('rate-val').textContent = '$' + rate + ' / hr';
+
+      const totalHours = (tx * min) / 60;
+      const hoursSaved = totalHours * 0.85; // 85% automated
+      const monthlySavings = hoursSaved * rate;
+
+      document.getElementById('hours-saved').textContent = Math.round(hoursSaved).toLocaleString() + ' hrs/mo';
+      document.getElementById('monthly-savings').textContent = '$' + Math.round(monthlySavings).toLocaleString();
+    }
+
+    function handleInquiry(e) {
+      e.preventDefault();
+      alert('Thank you! Your technical inquiry has been submitted. A Principal Architect will reach out in under 2 hours.');
+    }
+  </script>
+</body>
+</html>

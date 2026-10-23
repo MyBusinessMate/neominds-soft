@@ -119,7 +119,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build web applications, portals, and marketing sites that load fast, hold up under traffic, and give your team full ownership. No bloated frameworks that slow you down three months later.',
     heroImage: '/services/web-development.png',
-    heroImageCaption: 'Web application architecture — Neominds',
+    heroImageCaption: 'Web application architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Our Work',
     trustPoints: [
@@ -129,16 +129,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'Full source code handover',
     ],
     overview: {
-      statement: 'Your website is often the first place a customer or partner forms an opinion about your business. It has to work properly — fast, clear, and reliable.',
+      statement: 'Your website is often the first place a customer or partner forms an opinion about your business. It has to work properly: fast, clear, and reliable under heavy load.',
       paragraphs: [
         'We plan, design, and build web applications that fit how your business actually operates. Whether you need a customer-facing portal, an internal tool, or a high-traffic public site, we start from your requirements and build from there.',
-        'Our web projects use React, Next.js, TypeScript, and Node.js — technologies that are proven in production and that your own engineers can understand and maintain after we hand over.',
+        'Our web projects use React, Next.js, TypeScript, and Node.js: proven production technologies that your in-house engineers can readily understand, audit, and maintain.',
       ],
       keyTakeaway: 'Reliable web software built by engineers who care about long-term quality, not just getting something live.',
     },
     mainProblemSolved: {
       problem: 'Your current site is slow, hard to update, or built on something your team cannot easily maintain.',
-      solution: 'We rebuild or build fresh with modern tools — clean architecture, clear documentation, and a codebase your developers can actually work in.',
+      solution: 'We rebuild or build fresh with modern tools: clean architecture, explicit documentation, and a codebase your engineers can actively ship in.',
       result: 'A fast, reliable web product your team owns completely, with no dependency on the agency that built it.',
     },
     targetAudience: {
@@ -156,7 +156,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Web Application Development',
-        description: 'Custom web apps built around your workflows — not adapted from a generic template. We cover frontend, backend, APIs, and database architecture.',
+        description: 'Custom web apps built around your specific business workflows rather than adapted from generic templates. We cover frontend, backend, APIs, and database architecture.',
         tags: ['React', 'Next.js', 'Node.js', 'TypeScript'],
       },
       {
@@ -171,7 +171,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Performance and SEO Engineering',
-        description: 'We build with Core Web Vitals in mind from the start — not as an afterthought. Schema markup, fast images, and proper server-side rendering included.',
+        description: 'We build with Core Web Vitals in mind from day one, never as an afterthought. Schema markup, fast images, and proper server-side rendering included.',
         tags: ['Core Web Vitals', 'Schema markup', 'SSR/SSG', 'Image optimisation'],
       },
     ],
@@ -222,7 +222,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     },
     faqs: [
       { question: 'What does web development include?', answer: 'It includes planning, UI/UX design, frontend and backend development, database setup, integrations with third-party services, testing, and deployment. You get full source code.' },
-      { question: 'Who is this for?', answer: 'Businesses that need a professional web presence, internal tools, or customer-facing web apps — from startups to enterprise teams.' },
+      { question: 'Who is this for?', answer: 'Businesses that need a professional web presence, internal tools, or customer-facing web apps across early-stage startups and enterprise organizations.' },
       { question: 'How long does it take?', answer: 'A simple site or app takes 4–8 weeks. A complex web application with custom logic and integrations typically takes 10–16 weeks.' },
       { question: 'Can you integrate with systems we already use?', answer: 'Yes. We connect to payment gateways, CRMs, ERPs, analytics platforms, and any service that provides an API.' },
     ],
@@ -241,9 +241,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Mobile Apps Built for',
     heroHeadlineHighlight: 'Real People',
     heroDescription:
-      'We build iOS and Android applications that are smooth, reliable, and purpose-built for your users. Not reskinned templates — real apps designed around how people actually behave.',
+      'We build iOS and Android applications that are smooth, reliable, and purpose-built for your users. We avoid reskinned templates and build native experiences shaped around real human workflows.',
     heroImage: '/services/app-development.png',
-    heroImageCaption: 'Mobile app development — Neominds',
+    heroImageCaption: 'Mobile app development // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Our Apps',
     trustPoints: [
@@ -255,14 +255,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Most apps fail because they are built for a demo, not for actual daily use. We build with the opposite priority.',
       paragraphs: [
-        'Every app we build goes through real-world performance testing — network conditions, device memory limits, edge case flows that users always find but developers miss in testing.',
+        'Every app we build goes through real-world performance benchmarking under throttling, low memory, and edge-case battery states.',
         'We work in Swift, Kotlin, and React Native. The choice depends on your audience, your timeline, and what will actually serve your users best. We tell you which and why before we start.',
       ],
-      keyTakeaway: 'Apps that ship on time, hold up in production, and get used — not abandoned after the first week.',
+      keyTakeaway: 'Apps that ship on time, hold up in production, and get used daily and deliver sustained retention.',
     },
     mainProblemSolved: {
       problem: 'Your app crashes, loads slowly, or users churn because the experience is frustrating.',
-      solution: 'We rebuild or build fresh with proper architecture — offline sync, optimised rendering, and a test suite that catches problems before your users do.',
+      solution: 'We rebuild or build fresh with deterministic architecture: offline synchronization, optimized rendering cycles, and automated regression tests.',
       result: 'A stable, performant app that earns good reviews and keeps users coming back.',
     },
     targetAudience: {
@@ -285,12 +285,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Native Android Development',
-        description: 'Kotlin apps optimised for the Android ecosystem — across screen sizes, memory profiles, and manufacturer variations.',
+        description: 'Kotlin apps optimised for the Android ecosystem across thousands of screen geometries, chipsets, and vendor OS forks.',
         tags: ['Kotlin', 'Jetpack Compose', 'Room DB', 'WorkManager'],
       },
       {
         title: 'Offline and Sync Architecture',
-        description: 'We build offline-first where your users need it — local data storage with background sync and conflict resolution.',
+        description: 'We build offline-first where your users need it: local SQLite encryption, deterministic background synchronization, and automated conflict resolution.',
         tags: ['SQLite', 'WatermelonDB', 'Background sync', 'CRDT'],
       },
       {
@@ -359,15 +359,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: 'cross-platform-app-development',
     slug: 'cross-platform-app-development',
     title: 'Cross-Platform App Development',
-    tagline: 'One codebase. iOS, Android, and web — shipped together',
+    tagline: 'One codebase. One codebase across iOS, Android, and web platforms',
     category: 'Core Development',
     heroBadge: 'Cross-Platform Development',
     heroHeadline: 'Build Once,',
     heroHeadlineHighlight: 'Deploy Everywhere',
     heroDescription:
-      'We build cross-platform apps using React Native and Flutter that run on iOS, Android, and sometimes web — from a single shared codebase. You launch faster and maintain less.',
+      'We build cross-platform apps using React Native and Flutter that run on iOS, Android, and sometimes web: from a single shared codebase. You launch faster and maintain less.',
     heroImage: '/services/cross-platform-app-development.png',
-    heroImageCaption: 'Cross-platform app architecture — Neominds',
+    heroImageCaption: 'Cross-platform app architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Cross-Platform Work',
     trustPoints: [
@@ -379,15 +379,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Building separate iOS and Android apps doubles your cost and your maintenance burden. Cross-platform development solves that without sacrificing quality.',
       paragraphs: [
-        'React Native and Flutter have matured significantly. The gap between cross-platform and native performance is small for most app types — and the cost savings are real.',
+        'React Native and Flutter have matured significantly. The gap between cross-platform and native performance is small for most app types: and the cost savings are real.',
         'We are honest about the trade-offs. If your app needs deep platform integration or extreme performance, we say so and recommend native. If cross-platform fits, it saves you time and money without compromise.',
       ],
-      keyTakeaway: 'Faster delivery, lower cost, and quality that holds up — when cross-platform is the right tool for your product.',
+      keyTakeaway: 'Faster delivery, lower cost, and quality that holds up: when cross-platform is the right tool for your product.',
     },
     mainProblemSolved: {
       problem: 'Maintaining two separate native codebases doubles your engineering cost and slows down every feature release.',
       solution: 'A shared cross-platform codebase with platform-specific optimisations where they matter.',
-      result: 'One team, one codebase, two fully working apps — shipped and updated at the same time.',
+      result: 'One team, one codebase, two fully working apps: shipped and updated at the same time.',
     },
     targetAudience: {
       profiles: [
@@ -433,13 +433,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '02',
         title: 'Shared UX design',
-        description: 'One design system that works naturally on both iOS and Android — not a compromise between the two.',
+        description: 'One design system that works naturally on both iOS and Android: not a compromise between the two.',
         deliverables: ['UI kit', 'Platform adaptations', 'Prototype'],
       },
       {
         step: '03',
         title: 'Development and device testing',
-        description: 'Development on real iOS and Android devices throughout — not just simulators.',
+        description: 'Development on real iOS and Android devices throughout: not just simulators.',
         deliverables: ['Working builds', 'Device test matrix', 'Performance benchmarks'],
       },
       {
@@ -483,15 +483,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     id: 'custom-software-development',
     slug: 'custom-software-development',
     title: 'Custom Software Development',
-    tagline: 'Software that fits your workflow — not the other way around',
+    tagline: 'Software that fits your workflow: not the other way around',
     category: 'Core Development',
     heroBadge: 'Custom Software',
     heroHeadline: 'Software Designed',
     heroHeadlineHighlight: 'Around Your Business',
     heroDescription:
-      'Off-the-shelf software rarely fits how your business actually works. We build custom software systems — web apps, internal tools, process automation platforms — that match your operations exactly.',
+      'Off-the-shelf software rarely fits how your business actually works. We build custom software systems: web apps, internal tools, process automation platforms: that match your operations exactly.',
     heroImage: '/services/custom-software-development.png',
-    heroImageCaption: 'Custom software development — Neominds',
+    heroImageCaption: 'Custom software development // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Case Studies',
     trustPoints: [
@@ -501,12 +501,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'Grows with your business',
     ],
     overview: {
-      statement: 'The best software for your business is the software that fits how your team actually works — not how a SaaS vendor thinks you should work.',
+      statement: 'The best software for your business is the software that fits how your team actually works: not how a SaaS vendor thinks you should work.',
       paragraphs: [
         'We build custom software for businesses that have outgrown generic tools or have processes that do not fit any off-the-shelf product. That means internal platforms, operational systems, client-facing tools, and anything in between.',
         'The process starts with understanding your workflow. We spend time with your team before writing code, because misunderstanding a process at the start costs far more to fix later.',
       ],
-      keyTakeaway: 'Software that fits your team, your data, and your process — owned entirely by you.',
+      keyTakeaway: 'Software that fits your team, your data, and your process: owned entirely by you.',
     },
     mainProblemSolved: {
       problem: 'You are running business-critical processes through spreadsheets, emails, and tools that do not talk to each other.',
@@ -528,7 +528,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Internal Business Tools',
-        description: 'CRM replacements, inventory systems, booking platforms, operations dashboards — built exactly to your specification.',
+        description: 'CRM replacements, inventory systems, booking platforms, operations dashboards: built exactly to your specification.',
         tags: ['Process automation', 'Admin panels', 'Workflow management'],
       },
       {
@@ -538,12 +538,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'API and Integration Middleware',
-        description: 'Systems that connect tools that were never designed to talk to each other — bridging your CRM, accounting, and operational tools.',
+        description: 'Systems that connect tools that were never designed to talk to each other: bridging your CRM, accounting, and operational tools.',
         tags: ['REST APIs', 'Webhooks', 'ETL pipelines'],
       },
       {
         title: 'Client-Facing Software',
-        description: 'Portals, platforms, and tools used directly by your customers — with your branding, your logic, and your access controls.',
+        description: 'Portals, platforms, and tools used directly by your customers: with your branding, your logic, and your access controls.',
         tags: ['Customer portals', 'Booking systems', 'Self-service tools'],
       },
     ],
@@ -551,7 +551,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '01',
         title: 'Process discovery',
-        description: 'We map your current workflow, identify pain points, and define what the software needs to do — before design starts.',
+        description: 'We map your current workflow, identify pain points, and define what the software needs to do: before design starts.',
         deliverables: ['Process map', 'Requirements document', 'Feature list'],
       },
       {
@@ -596,7 +596,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { question: 'What does custom software development include?', answer: 'Discovery, system design, frontend and backend development, integrations with your existing tools, testing, deployment, and team training.' },
       { question: 'Who is this for?', answer: 'Businesses whose workflows are too specific for any off-the-shelf product, or teams that need internal tools that commercial SaaS cannot provide.' },
       { question: 'How long does it take?', answer: 'A focused internal tool typically takes 6–12 weeks. A complex multi-user platform with many integrations is usually 14–24 weeks.' },
-      { question: 'Can it connect to the tools we already use?', answer: 'Yes. We integrate with almost any tool that has an API — CRMs, accounting platforms, communication tools, and ERP systems.' },
+      { question: 'Can it connect to the tools we already use?', answer: 'Yes. We integrate with almost any tool that has an API: CRMs, accounting platforms, communication tools, and ERP systems.' },
     ],
   },
 
@@ -613,9 +613,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Automate the Work',
     heroHeadlineHighlight: 'That Slows You Down',
     heroDescription:
-      'We build AI automation systems that handle document processing, data extraction, report generation, approvals, and other repetitive tasks — so your team can work on things that actually need human judgment.',
+      'We build AI automation systems that handle document processing, data extraction, report generation, approvals, and other repetitive tasks: so your team can work on things that actually need human judgment.',
     heroImage: '/services/ai-automations.png',
-    heroImageCaption: 'AI automation workflow — Neominds',
+    heroImageCaption: 'AI automation workflow // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Automation Examples',
     trustPoints: [
@@ -625,16 +625,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'Full audit trail and logging',
     ],
     overview: {
-      statement: 'Most businesses have significant parts of their operation running on manual effort — people copying data between systems, processing documents, generating reports. That is where AI automation starts earning its value.',
+      statement: 'Most businesses have significant parts of their operation running on manual effort: people copying data between systems, processing documents, generating reports. That is where AI automation starts earning its value.',
       paragraphs: [
-        'We build automation pipelines that trigger on real business events — an email arrives, a document is uploaded, a form is submitted — and then process that event through AI models and deterministic rules to produce a specific outcome.',
-        'The result lands in your system of record. Salesforce, SAP, QuickBooks, a spreadsheet, a database — wherever your data lives.',
+        'We build automation pipelines that trigger on real business events: an email arrives, a document is uploaded, a form is submitted: and then process that event through AI models and deterministic rules to produce a specific outcome.',
+        'The result lands in your system of record. Salesforce, SAP, QuickBooks, a spreadsheet, a database: wherever your data lives.',
       ],
       keyTakeaway: 'Repetitive operational work handled automatically, accurately, and faster than any manual process.',
     },
     mainProblemSolved: {
       problem: 'Your team spends hours every week on data entry, document processing, or report generation that could run automatically.',
-      solution: 'AI pipelines that extract, validate, and process this work in seconds — triggered by the same events that currently land in a human inbox.',
+      solution: 'AI pipelines that extract, validate, and process this work in seconds: triggered by the same events that currently land in a human inbox.',
       result: 'Staff time redirected from data entry to higher-value work. Processing time reduced from hours to under a minute.',
     },
     targetAudience: {
@@ -652,12 +652,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Document Processing and Extraction',
-        description: 'AI reads invoices, contracts, reports, and forms — extracting structured data and routing it to the right place.',
+        description: 'AI reads invoices, contracts, reports, and forms: extracting structured data and routing it to the right place.',
         tags: ['OCR', 'LLM extraction', 'PDF parsing', 'Form recognition'],
       },
       {
         title: 'Workflow Automation Pipelines',
-        description: 'Multi-step workflows triggered by events — email, webhook, file upload — and processed through rules and AI models.',
+        description: 'Multi-step workflows triggered by events: email, webhook, file upload: and processed through rules and AI models.',
         tags: ['n8n', 'Temporal', 'Celery', 'Event-driven pipelines'],
       },
       {
@@ -675,7 +675,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '01',
         title: 'Process audit',
-        description: 'We map the exact manual process — inputs, steps, decisions, outputs — before designing the automation.',
+        description: 'We map the exact manual process: inputs, steps, decisions, outputs: before designing the automation.',
         deliverables: ['Process map', 'Automation scope', 'Risk assessment'],
       },
       {
@@ -737,9 +737,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Add AI to',
     heroHeadlineHighlight: 'What You Already Have',
     heroDescription:
-      'You do not need to rebuild your software to use AI. We integrate AI capabilities — search, summarisation, predictions, content generation — into your existing products and platforms.',
+      'You do not need to rebuild your software to use AI. We integrate AI capabilities: search, summarisation, predictions, content generation: into your existing products and platforms.',
     heroImage: '/services/ai-integrations.png',
-    heroImageCaption: 'AI integration architecture — Neominds',
+    heroImageCaption: 'AI integration architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Integration Examples',
     trustPoints: [
@@ -751,14 +751,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Most AI projects fail because they try to do too much at once. The most practical way to get value from AI is to add targeted capabilities to the software your team already uses every day.',
       paragraphs: [
-        'We identify the specific points in your product or workflow where AI adds the most value — search, recommendations, content drafting, data extraction, anomaly detection — and integrate exactly that.',
+        'We identify the specific points in your product or workflow where AI adds the most value: search, recommendations, content drafting, data extraction, anomaly detection: and integrate exactly that.',
         'Each integration is designed to fit your existing system. We do not disrupt what works. We add AI where it helps, and leave everything else alone.',
       ],
-      keyTakeaway: 'Practical AI features added to your existing software — without rebuilding what already works.',
+      keyTakeaway: 'Practical AI features added to your existing software: without rebuilding what already works.',
     },
     mainProblemSolved: {
       problem: 'You want to use AI in your product but do not know where to start, or you are worried about disrupting a system that your business depends on.',
-      solution: 'Targeted AI integration that adds a specific capability to your existing system — search, summarisation, classification, generation — without changing anything that already works.',
+      solution: 'Targeted AI integration that adds a specific capability to your existing system: search, summarisation, classification, generation: without changing anything that already works.',
       result: 'Your existing software does more, your team gets AI-powered features, and nothing breaks.',
     },
     targetAudience: {
@@ -776,22 +776,22 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'AI-Powered Search',
-        description: 'Semantic search that understands what users mean — not just keyword matching. Integrated into your existing data and interface.',
+        description: 'Semantic search that understands what users mean: not just keyword matching. Integrated into your existing data and interface.',
         tags: ['Vector search', 'Semantic embeddings', 'Pinecone', 'pgvector'],
       },
       {
         title: 'Document Summarisation and Q&A',
-        description: 'Let users ask questions about your documents, reports, or knowledge base — and get accurate answers grounded in your content.',
+        description: 'Let users ask questions about your documents, reports, or knowledge base: and get accurate answers grounded in your content.',
         tags: ['RAG', 'LangChain', 'OpenAI', 'Claude'],
       },
       {
         title: 'Content Generation and Drafting',
-        description: 'AI-assisted content creation integrated into your existing tool — drafts, templates, structured output from your data.',
+        description: 'AI-assisted content creation integrated into your existing tool: drafts, templates, structured output from your data.',
         tags: ['GPT-4', 'Claude', 'Prompt engineering', 'Output validation'],
       },
       {
         title: 'Classification and Prediction',
-        description: 'AI models that classify incoming data, predict outcomes, or flag anomalies — running in your existing pipeline.',
+        description: 'AI models that classify incoming data, predict outcomes, or flag anomalies: running in your existing pipeline.',
         tags: ['ML models', 'Scikit-learn', 'Real-time inference', 'Batch processing'],
       },
     ],
@@ -805,7 +805,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '02',
         title: 'Integration design',
-        description: 'We design how the AI capability connects to your existing system — data flow, API contracts, and user experience.',
+        description: 'We design how the AI capability connects to your existing system: data flow, API contracts, and user experience.',
         deliverables: ['Integration architecture', 'API design', 'UX changes'],
       },
       {
@@ -844,7 +844,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       { question: 'What does an AI integration include?', answer: 'Opportunity assessment, integration design, development of the AI layer, testing against your real data, deployment, and monitoring setup.' },
       { question: 'Will it break what we already have?', answer: 'No. We use feature flags and staged rollouts. Your existing system keeps working throughout, and you can roll back if needed.' },
       { question: 'How long does integration take?', answer: 'Simple integrations take 4–6 weeks. Complex ones involving multiple data sources or AI models typically take 8–14 weeks.' },
-      { question: 'What AI models do you use?', answer: 'We select based on your requirements — OpenAI GPT-4, Anthropic Claude, Llama, or open-source models, depending on cost, performance, and data privacy needs.' },
+      { question: 'What AI models do you use?', answer: 'We select based on your requirements: OpenAI GPT-4, Anthropic Claude, Llama, or open-source models, depending on cost, performance, and data privacy needs.' },
     ],
   },
 
@@ -861,9 +861,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'AI That Thinks,',
     heroHeadlineHighlight: 'Plans, and Acts',
     heroDescription:
-      'We build AI agent systems and multi-step reasoning engines that handle complex goals — breaking them into tasks, calling tools, and completing work autonomously with human review where it matters.',
+      'We build AI agent systems and multi-step reasoning engines that handle complex goals: breaking them into tasks, calling tools, and completing work autonomously with human review where it matters.',
     heroImage: '/services/ai-systems.png',
-    heroImageCaption: 'AI agent system architecture — Neominds',
+    heroImageCaption: 'AI agent system architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See AI Systems We Built',
     trustPoints: [
@@ -873,16 +873,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'Human-in-the-loop escalation',
     ],
     overview: {
-      statement: 'There is a difference between AI that answers questions and AI that gets things done. AI systems — agent-based architectures — handle the second category.',
+      statement: 'There is a difference between AI that answers questions and AI that gets things done. AI systems: agent-based architectures: handle the second category.',
       paragraphs: [
-        'We build AI systems that take a high-level goal, break it into steps, call the right tools or APIs, and produce an outcome — not just a response. These systems work across knowledge retrieval, data analysis, content creation, and operational tasks.',
+        'We build AI systems that take a high-level goal, break it into steps, call the right tools or APIs, and produce an outcome: not just a response. These systems work across knowledge retrieval, data analysis, content creation, and operational tasks.',
         'Human oversight is built in. The system handles what it can confidently, and escalates the rest. Nothing runs completely unchecked in production.',
       ],
-      keyTakeaway: 'AI systems that complete complex tasks autonomously — with the right controls to make sure they do it correctly.',
+      keyTakeaway: 'AI systems that complete complex tasks autonomously: with the right controls to make sure they do it correctly.',
     },
     mainProblemSolved: {
       problem: 'Complex multi-step tasks that require research, analysis, and action currently require a person to coordinate every step.',
-      solution: 'An AI agent system that handles the coordination — pulling data, running analysis, generating output, and taking action — with human review at defined checkpoints.',
+      solution: 'An AI agent system that handles the coordination: pulling data, running analysis, generating output, and taking action: with human review at defined checkpoints.',
       result: 'Complex workflows completed faster and more consistently, with staff focused on decisions rather than coordination.',
     },
     targetAudience: {
@@ -900,17 +900,17 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'AI Agent Development',
-        description: 'Agents that break complex goals into steps, call tools, and execute tasks — with memory, planning, and reflection loops.',
+        description: 'Agents that break complex goals into steps, call tools, and execute tasks: with memory, planning, and reflection loops.',
         tags: ['LangGraph', 'AutoGen', 'Tool-calling', 'ReAct agents'],
       },
       {
         title: 'Multi-Agent Systems',
-        description: 'Multiple specialised agents working together — planner, researcher, writer, executor — to handle complex workflows.',
+        description: 'Multiple specialised agents working together: planner, researcher, writer, executor: to handle complex workflows.',
         tags: ['Agent orchestration', 'Swarm patterns', 'Role specialisation'],
       },
       {
         title: 'Retrieval-Augmented Generation',
-        description: 'Agents grounded in your knowledge base — they look up verified information before generating any output.',
+        description: 'Agents grounded in your knowledge base: they look up verified information before generating any output.',
         tags: ['RAG', 'Vector databases', 'Knowledge graphs', 'Source citation'],
       },
       {
@@ -985,9 +985,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'E-commerce That',
     heroHeadlineHighlight: 'Actually Converts',
     heroDescription:
-      'We build e-commerce platforms and online stores — from custom storefronts to headless commerce architectures — designed for high-traffic, high-conversion, and easy management.',
+      'We build e-commerce platforms and online stores: from custom storefronts to headless commerce architectures: designed for high-traffic, high-conversion, and easy management.',
     heroImage: '/services/ecommerce-platform.png',
-    heroImageCaption: 'E-commerce platform architecture — Neominds',
+    heroImageCaption: 'E-commerce platform architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Commerce Work',
     trustPoints: [
@@ -1000,7 +1000,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       statement: 'Most e-commerce projects get the tech right and the experience wrong. We build both together.',
       paragraphs: [
         'Whether you need a custom storefront, a headless commerce setup, or a platform migration, we start from how your customers shop and work backward to the technology.',
-        'Checkout, search, product pages, and order management are all engineered with conversion in mind — not just functionality.',
+        'Checkout, search, product pages, and order management are all engineered with conversion in mind: not just functionality.',
       ],
       keyTakeaway: 'An e-commerce platform that grows with your catalogue, handles your peak traffic, and converts consistently.',
     },
@@ -1024,7 +1024,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Custom Storefront Development',
-        description: 'Product pages, category pages, and search built to convert — fast, mobile-first, and designed for your specific catalogue.',
+        description: 'Product pages, category pages, and search built to convert: fast, mobile-first, and designed for your specific catalogue.',
         tags: ['React', 'Next.js', 'Algolia', 'Custom design'],
       },
       {
@@ -1039,7 +1039,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Headless Commerce Architecture',
-        description: 'Decoupled frontend and commerce backend — faster pages, better SEO, and the ability to sell through any channel.',
+        description: 'Decoupled frontend and commerce backend: faster pages, better SEO, and the ability to sell through any channel.',
         tags: ['Shopify Hydrogen', 'Medusa.js', 'Commerce.js', 'Headless API'],
       },
     ],
@@ -1053,7 +1053,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '02',
         title: 'UX and checkout design',
-        description: 'UI designs focused on product discovery and checkout completion — with mobile as the primary device.',
+        description: 'UI designs focused on product discovery and checkout completion: with mobile as the primary device.',
         deliverables: ['Design system', 'Checkout flow', 'Mobile prototype'],
       },
       {
@@ -1109,28 +1109,28 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Software Built',
     heroHeadlineHighlight: 'AI-First',
     heroDescription:
-      'We build software products where AI is the core feature — not an add-on. Learning platforms, intelligent tools, autonomous systems — designed from the ground up with AI as the primary engine.',
+      'We build software products where AI is the core feature: not an add-on. Learning platforms, intelligent tools, autonomous systems: designed from the ground up with AI as the primary engine.',
     heroImage: '/services/ai-native-software.png',
-    heroImageCaption: 'AI-native software architecture — Neominds',
+    heroImageCaption: 'AI-native software architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See AI Products We Built',
     trustPoints: [
       'AI at the core of the product',
-      'Not retrofitted — designed AI-first',
+      'Not retrofitted: designed AI-first',
       'Real product engineering, not demos',
       'Production-ready from launch',
     ],
     overview: {
       statement: 'There is a difference between software that has an AI feature and software that could not exist without AI. We build the second kind.',
       paragraphs: [
-        'AI-native software starts with the AI capability and builds the user experience around it. The result is products that do things no traditional software can — personalised in real time, adaptive, and getting better with use.',
-        'We handle the full product — UI, backend, AI layer, data pipeline, and the feedback loops that make the AI improve over time.',
+        'AI-native software starts with the AI capability and builds the user experience around it. The result is products that do things no traditional software can: personalised in real time, adaptive, and getting better with use.',
+        'We handle the full product: UI, backend, AI layer, data pipeline, and the feedback loops that make the AI improve over time.',
       ],
       keyTakeaway: 'AI-native products that work in production and improve with every interaction.',
     },
     mainProblemSolved: {
       problem: 'You want to build a product where AI is the differentiator, but building AI-native software requires skills across ML, product engineering, and UX that are hard to find in one team.',
-      solution: 'A single cross-functional team that handles AI model selection and integration, product engineering, and UX — building the product as one coherent system.',
+      solution: 'A single cross-functional team that handles AI model selection and integration, product engineering, and UX: building the product as one coherent system.',
       result: 'An AI-native product that works, ships on time, and has the infrastructure to improve as you learn from real users.',
     },
     targetAudience: {
@@ -1148,22 +1148,22 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'AI Product Design',
-        description: 'Product design that starts from the AI capability and works outward to the interface — not the other way around.',
+        description: 'Product design that starts from the AI capability and works outward to the interface: not the other way around.',
         tags: ['AI UX patterns', 'Feedback loops', 'Progressive disclosure'],
       },
       {
         title: 'LLM Application Architecture',
-        description: 'Full-stack architecture for LLM-powered products — prompt engineering, context management, streaming, and output validation.',
+        description: 'Full-stack architecture for LLM-powered products: prompt engineering, context management, streaming, and output validation.',
         tags: ['GPT-4', 'Claude', 'Streaming', 'RAG'],
       },
       {
         title: 'ML Model Integration',
-        description: 'Connecting trained ML models to your product — classification, prediction, recommendation, vision — with real-time inference.',
+        description: 'Connecting trained ML models to your product: classification, prediction, recommendation, vision: with real-time inference.',
         tags: ['Model serving', 'FastAPI', 'TensorFlow Serving', 'Real-time inference'],
       },
       {
         title: 'AI Feedback and Improvement Loops',
-        description: 'Collecting the data from real usage that lets the AI improve over time — rating systems, correction flows, and evaluation pipelines.',
+        description: 'Collecting the data from real usage that lets the AI improve over time: rating systems, correction flows, and evaluation pipelines.',
         tags: ['RLHF', 'Feedback collection', 'Evaluation pipeline', 'A/B testing'],
       },
     ],
@@ -1177,13 +1177,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '02',
         title: 'Architecture and prototype',
-        description: 'Technical architecture for the AI layer, data pipeline, and product backend — plus a working prototype on real data.',
+        description: 'Technical architecture for the AI layer, data pipeline, and product backend: plus a working prototype on real data.',
         deliverables: ['Architecture design', 'Working prototype', 'Accuracy baseline'],
       },
       {
         step: '03',
         title: 'Product development',
-        description: 'Full product built in sprints — AI layer, backend, frontend — with staging access every two weeks.',
+        description: 'Full product built in sprints: AI layer, backend, frontend: with staging access every two weeks.',
         deliverables: ['Working product per sprint', 'AI integration', 'Backend APIs'],
       },
       {
@@ -1233,9 +1233,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Software That Runs',
     heroHeadlineHighlight: 'Reliably in the Cloud',
     heroDescription:
-      'We build cloud-native software systems on AWS, Azure, and Google Cloud — scalable, secure, and designed to handle real growth without constant engineering attention.',
+      'We build cloud-native software systems on AWS, Azure, and Google Cloud: scalable, secure, and designed to handle real growth without constant engineering attention.',
     heroImage: '/services/cloud-based-software.png',
-    heroImageCaption: 'Cloud-native software architecture — Neominds',
+    heroImageCaption: 'Cloud-native software architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Cloud Projects',
     trustPoints: [
@@ -1247,7 +1247,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Cloud-native is not just about where your software runs. It is about how it handles failure, how it scales, and whether it gives you visibility into what it is doing.',
       paragraphs: [
-        'We build applications that use cloud services properly — not VMs masquerading as cloud. Managed databases, serverless functions, message queues, and containers orchestrated with Kubernetes where the workload demands it.',
+        'We build applications that use cloud services properly: not VMs masquerading as cloud. Managed databases, serverless functions, message queues, and containers orchestrated with Kubernetes where the workload demands it.',
         'Cost and observability are not afterthoughts. We instrument from the start and right-size infrastructure from the first deploy.',
       ],
       keyTakeaway: 'Cloud software engineered to scale, monitored properly, and cost-efficient from the start.',
@@ -1266,28 +1266,28 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     },
     metrics: [
       { value: '99.9%', label: 'Uptime Target' },
-      { value: 'Auto', label: 'Scaling — No Manual Intervention' },
+      { value: 'Auto', label: 'Scaling: No Manual Intervention' },
       { value: '100%', label: 'Observability Coverage' },
     ],
     capabilities: [
       {
         title: 'Cloud-Native Application Development',
-        description: 'Applications built using cloud-native patterns — containerised services, managed databases, message queues, and serverless functions.',
+        description: 'Applications built using cloud-native patterns: containerised services, managed databases, message queues, and serverless functions.',
         tags: ['Docker', 'Kubernetes', 'AWS Lambda', 'Managed services'],
       },
       {
         title: 'Infrastructure as Code',
-        description: 'All infrastructure defined in code with Terraform or CDK — reproducible, auditable, and versionable.',
+        description: 'All infrastructure defined in code with Terraform or CDK: reproducible, auditable, and versionable.',
         tags: ['Terraform', 'AWS CDK', 'Pulumi', 'GitOps'],
       },
       {
         title: 'Auto-Scaling and Cost Optimisation',
-        description: 'Infrastructure that scales with demand and scales back when demand drops — with real-time cost visibility.',
+        description: 'Infrastructure that scales with demand and scales back when demand drops: with real-time cost visibility.',
         tags: ['Auto Scaling', 'Spot instances', 'Reserved capacity', 'Cost monitoring'],
       },
       {
         title: 'Observability and Monitoring',
-        description: 'Full-stack monitoring — application performance, infrastructure health, logs, and alerts — configured before launch.',
+        description: 'Full-stack monitoring: application performance, infrastructure health, logs, and alerts: configured before launch.',
         tags: ['Prometheus', 'Grafana', 'Datadog', 'CloudWatch'],
       },
     ],
@@ -1295,7 +1295,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '01',
         title: 'Architecture design',
-        description: 'We design the cloud architecture for your specific workload — compute, storage, networking, and security.',
+        description: 'We design the cloud architecture for your specific workload: compute, storage, networking, and security.',
         deliverables: ['Architecture diagram', 'Cloud cost estimate', 'Security design'],
       },
       {
@@ -1357,9 +1357,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Build Your SaaS',
     heroHeadlineHighlight: 'Product Right',
     heroDescription:
-      'We build SaaS products end-to-end — multi-tenant architecture, subscription billing, user management, analytics, and the operational infrastructure that makes a SaaS business work.',
+      'We build SaaS products end-to-end: multi-tenant architecture, subscription billing, user management, analytics, and the operational infrastructure that makes a SaaS business work.',
     heroImage: '/services/saas-development.png',
-    heroImageCaption: 'SaaS product architecture — Neominds',
+    heroImageCaption: 'SaaS product architecture // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See SaaS Products We Built',
     trustPoints: [
@@ -1371,14 +1371,14 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Building a SaaS product is different from building a regular application. The architecture needs to handle multiple customers in isolation, billing that scales, and the operational demands of a subscription business.',
       paragraphs: [
-        'We have built SaaS products across EdTech, FinTech, and enterprise software. We know the patterns — multi-tenancy, billing integration, onboarding flows, role-based access — and we implement them properly from the start.',
+        'We have built SaaS products across EdTech, FinTech, and enterprise software. We know the patterns: multi-tenancy, billing integration, onboarding flows, role-based access: and we implement them properly from the start.',
         'The goal is to ship an MVP that works, then iterate fast. We structure the codebase and infrastructure so your team can keep moving after we hand over.',
       ],
-      keyTakeaway: 'A SaaS product with the right architecture from day one — so you can grow without rebuilding.',
+      keyTakeaway: 'A SaaS product with the right architecture from day one: so you can grow without rebuilding.',
     },
     mainProblemSolved: {
-      problem: 'You are building a SaaS product but the architecture is getting complex fast — multi-tenancy, billing, user management, and feature access are all intersecting.',
-      solution: 'A well-architected SaaS platform that handles multi-tenancy, billing, and access correctly from the start — not bolted on later.',
+      problem: 'You are building a SaaS product but the architecture is getting complex fast: multi-tenancy, billing, user management, and feature access are all intersecting.',
+      solution: 'A well-architected SaaS platform that handles multi-tenancy, billing, and access correctly from the start: not bolted on later.',
       result: 'A product you can sell confidently, onboard customers quickly, and expand without rearchitecting.',
     },
     targetAudience: {
@@ -1396,7 +1396,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Multi-Tenant Architecture',
-        description: 'Tenant isolation at the database level — each customer sees only their data, even as they share infrastructure.',
+        description: 'Tenant isolation at the database level: each customer sees only their data, even as they share infrastructure.',
         tags: ['Row-level security', 'Schema isolation', 'Tenant routing'],
       },
       {
@@ -1406,12 +1406,12 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'User and Workspace Management',
-        description: 'Workspace creation, team invitations, role-based permissions, and SSO — the standard SaaS user model, implemented properly.',
+        description: 'Workspace creation, team invitations, role-based permissions, and SSO: the standard SaaS user model, implemented properly.',
         tags: ['RBAC', 'SSO / SAML', 'Invitations', 'Audit logs'],
       },
       {
         title: 'SaaS Analytics and Metrics',
-        description: 'MRR, churn, DAU, and feature usage tracked from day one — so you have the data your business decisions need.',
+        description: 'MRR, churn, DAU, and feature usage tracked from day one: so you have the data your business decisions need.',
         tags: ['Product analytics', 'Revenue metrics', 'Churn tracking'],
       },
     ],
@@ -1431,7 +1431,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '03',
         title: 'Product development',
-        description: 'Core features built in sprints — with staging access every two weeks so you can test and give feedback continuously.',
+        description: 'Core features built in sprints: with staging access every two weeks so you can test and give feedback continuously.',
         deliverables: ['Working product per sprint', 'Admin panel', 'Customer-facing features'],
       },
       {
@@ -1483,7 +1483,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build custom analytics dashboards and business intelligence systems that connect your data sources, surface the metrics that matter, and give your team the visibility to make faster decisions.',
     heroImage: '/services/analytics-dashboard.png',
-    heroImageCaption: 'Analytics dashboard — Neominds',
+    heroImageCaption: 'Analytics dashboard // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Dashboard Examples',
     trustPoints: [
@@ -1495,10 +1495,10 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'The problem is rarely missing data. The problem is that the data lives in five different places and nobody has time to pull it together.',
       paragraphs: [
-        'We build dashboards that connect to your existing data sources — databases, CRMs, payment systems, spreadsheets — and display the metrics your team checks every day.',
+        'We build dashboards that connect to your existing data sources: databases, CRMs, payment systems, spreadsheets: and display the metrics your team checks every day.',
         'These are not generic BI tools. They are built around your specific metrics and your team\'s actual decision-making process.',
       ],
-      keyTakeaway: 'Custom dashboards that give your team clear visibility into the numbers they need — without opening five different tools.',
+      keyTakeaway: 'Custom dashboards that give your team clear visibility into the numbers they need: without opening five fragmented SaaS platforms.',
     },
     mainProblemSolved: {
       problem: 'Your team is assembling business reports manually every week by pulling data from multiple tools.',
@@ -1520,7 +1520,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Custom Dashboard Development',
-        description: 'Interactive dashboards with filtering, drill-down, date ranges, and export — designed for your specific metrics.',
+        description: 'Interactive dashboards with filtering, drill-down, date ranges, and export functionality, tailored to your exact operational metrics.',
         tags: ['React', 'Chart.js', 'D3.js', 'Recharts'],
       },
       {
@@ -1530,7 +1530,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Real-Time Analytics',
-        description: 'Dashboards that update as events happen — not on a 24-hour batch cycle.',
+        description: 'Dashboards that update as events happen: not on a 24-hour batch cycle.',
         tags: ['WebSockets', 'ClickHouse', 'TimescaleDB', 'Streaming'],
       },
       {
@@ -1555,7 +1555,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '03',
         title: 'Dashboard development',
-        description: 'Charts, filters, and tables built against the real data pipeline — not mock data.',
+        description: 'Charts, filters, and tables built against live staging data pipelines rather than synthetic mock fixtures.',
         deliverables: ['Working dashboard', 'Drill-down features', 'User access controls'],
       },
       {
@@ -1586,9 +1586,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     },
     faqs: [
       { question: 'What does analytics dashboard development include?', answer: 'Metrics scoping, data source integration, data pipeline development, dashboard design and build, user access controls, and team training.' },
-      { question: 'What data sources can you connect?', answer: 'Databases, REST APIs, spreadsheets, SaaS products with APIs — Stripe, HubSpot, Salesforce, and most other common tools.' },
+      { question: 'What data sources can you connect?', answer: 'Databases, REST APIs, spreadsheets, SaaS products with APIs: Stripe, HubSpot, Salesforce, and all standard enterprise endpoints.' },
       { question: 'How long does it take?', answer: 'A focused dashboard with 2–3 data sources takes 3–6 weeks. Complex multi-source real-time dashboards take 8–14 weeks.' },
-      { question: 'Can non-technical users use it?', answer: 'Yes. We design dashboards for the people who will use them daily — not data engineers. Filtering, export, and navigation are all self-service.' },
+      { question: 'Can non-technical users use it?', answer: 'Yes. We design dashboards for the people who will use them daily: not data engineers. Filtering, CSV/PDF exports, and metric drill-downs are entirely self-service.' },
     ],
   },
 
@@ -1605,9 +1605,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Healthcare Software',
     heroHeadlineHighlight: 'That Works in Practice',
     heroDescription:
-      'We build custom software for healthcare businesses — patient management systems, clinic tools, health tracking apps, HMS platforms, and practice management software — designed for real clinical workflows.',
+      'We build custom software for healthcare businesses: patient portals, clinical telemetry tools, health tracking apps, and hospital management software designed for real clinical workflows.',
     heroImage: '/services/custom-health-software.png',
-    heroImageCaption: 'Healthcare software — Neominds',
+    heroImageCaption: 'Healthcare software // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Healthcare Projects',
     trustPoints: [
@@ -1617,15 +1617,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'Patient-facing and admin tools',
     ],
     overview: {
-      statement: 'Healthcare software that does not fit clinical workflows gets worked around — which costs time, introduces errors, and frustrates staff. We build software that fits how care actually happens.',
+      statement: 'Healthcare software that does not fit clinical workflows gets worked around by clinicians: introducing errors, delaying treatments, and frustrating staff. We build software that fits how care actually happens.',
       paragraphs: [
         'We have built hospital management systems, patient portals, appointment tools, health tracking apps, and clinical reporting dashboards. The common thread is spending time with the clinical team before writing code.',
         'Security and data handling are not optional extras. Every healthcare project we build treats patient data with the same standards we would expect for our own.',
       ],
-      keyTakeaway: 'Healthcare software that fits your clinical environment — secure, usable, and built for real workflows.',
+      keyTakeaway: 'Healthcare software that fits your clinical environment: secure, intuitive, and built for real practitioner workflows.',
     },
     mainProblemSolved: {
-      problem: 'Your clinical team is working around the software because it does not fit how they actually operate — leading to workarounds, errors, and lost time.',
+      problem: 'Your clinical team is working around the software because it does not fit how they actually operate, causing manual workarounds, chart errors, and lost billing hours.',
       solution: 'Custom software designed around your specific workflows, with input from the clinical staff who will use it.',
       result: 'Software your team uses willingly, with fewer manual steps, fewer errors, and better visibility into patient and operational data.',
     },
@@ -1644,7 +1644,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Hospital Management System (HMS)',
-        description: 'Admission, discharge, bed management, billing, pharmacy, lab, and reporting — in one connected system.',
+        description: 'Admission, discharge, bed management, billing, pharmacy, lab, and reporting consolidated in one unified system.',
         tags: ['Patient management', 'Bed tracking', 'Billing', 'Lab integration'],
       },
       {
@@ -1673,7 +1673,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '02',
         title: 'System design',
-        description: 'Architecture, data model, and UI designs — reviewed with clinical staff before development starts.',
+        description: 'Architecture, data model, and UI designs: reviewed and signed off with clinical staff before coding begins.',
         deliverables: ['System architecture', 'Database schema', 'UI wireframes'],
       },
       {
@@ -1729,9 +1729,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Modernise Your',
     heroHeadlineHighlight: 'Legacy Systems',
     heroDescription:
-      'We migrate and modernise legacy software systems — moving from outdated tech stacks to modern, maintainable platforms in stages that keep your business running throughout.',
+      'We migrate and modernise legacy software systems: moving from outdated tech stacks to modern, maintainable architectures in phased stages that preserve zero-downtime business continuity.',
     heroImage: '/services/legacy-modernisation.png',
-    heroImageCaption: 'Legacy system modernisation — Neominds',
+    heroImageCaption: 'Legacy system modernisation // Neominds',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Modernisation Cases',
     trustPoints: [
@@ -1743,15 +1743,15 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Legacy systems are expensive to run, slow to change, and hard to hire engineers for. But replacing them all at once is too risky. The answer is a structured, staged migration.',
       paragraphs: [
-        'We migrate legacy systems by identifying the highest-pain components and replacing them first — while keeping the rest running. Each stage delivers working software before we move to the next.',
-        'We have modernised systems running on PHP, classic ASP, VB6, Oracle, and old Java stacks. The technical specifics vary. The approach — careful, staged, with zero business interruption — stays consistent.',
+        'We migrate legacy systems by identifying the highest-risk components and replacing them first while keeping existing operations live. Each stage delivers working software before we move to the next.',
+        'We have modernised systems running on PHP, classic ASP, VB6, Oracle, and old Java stacks. The technical specifics vary. Our approach stays consistent: structured, phased migrations with zero operational disruption.',
       ],
-      keyTakeaway: 'A legacy system modernised properly — in stages, with business continuity, and no surprise cost overruns.',
+      keyTakeaway: 'A legacy system modernised properly in phased stages, with continuous business uptime and no surprise cost overruns.',
     },
     mainProblemSolved: {
-      problem: 'Your legacy system is slow to change, expensive to run, and a risk every time something breaks — but a full replacement feels too disruptive.',
+      problem: 'Your legacy system is slow to change, expensive to run, and a risk every time something breaks, yet a full forklift replacement carries unacceptable operational risk.',
       solution: 'A staged modernisation that replaces the most painful parts first, keeps everything running, and builds toward a fully modern system.',
-      result: 'A modern, maintainable system delivered incrementally — without the business disruption of a big bang replacement.',
+      result: 'A modern, maintainable system delivered incrementally without the operational disruption of a risky big bang replacement.',
     },
     targetAudience: {
       profiles: [
@@ -1763,7 +1763,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     metrics: [
       { value: '0', label: 'Business Interruptions' },
       { value: '60%', label: 'Typical Maintenance Cost Reduction' },
-      { value: 'Staged', label: 'Delivery — Not Big Bang' },
+      { value: 'Staged', label: 'Phased Delivery // Zero Downtime' },
     ],
     capabilities: [
       {
@@ -1778,7 +1778,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Data Migration',
-        description: 'Moving data from legacy databases to modern systems — with validation, reconciliation, and zero data loss.',
+        description: 'Moving data from legacy databases to modern systems with automated data reconciliation and verified zero loss.',
         tags: ['ETL migration', 'Data validation', 'Reconciliation', 'Schema transformation'],
       },
       {
@@ -1791,7 +1791,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '01',
         title: 'Legacy audit',
-        description: 'Full technical audit of the existing system — code, data, dependencies, and business logic.',
+        description: 'Full technical audit of the existing system: codebases, schemas, dependencies, and business logic.',
         deliverables: ['Technical audit report', 'Migration risk assessment', 'Phased migration plan'],
       },
       {
@@ -1803,7 +1803,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '03',
         title: 'Phased migration',
-        description: 'Each domain migrated in sequence — tested, validated, and switched over before moving to the next.',
+        description: 'Each domain migrated in sequence: tested, validated, and safely switched over before moving to the next module.',
         deliverables: ['Migrated components', 'Data validation reports', 'Cutover plan'],
       },
       {
@@ -1853,9 +1853,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'Build Your Team\'s',
     heroHeadlineHighlight: 'Technical Capability',
     heroDescription:
-      'We run structured technical training programmes — on AI tools, new software systems, development practices, and technology adoption — so your team can work independently without constant external help.',
+      'We run structured technical training programmes: on AI tools, new software platforms, development practices, and modern tooling, enabling your in-house team to build independently without external agency reliance.',
     heroImage: '/services/training-as-service.png',
-    heroImageCaption: 'Technical training programme — Neominds',
+    heroImageCaption: 'Technical training programme // Neominds',
     primaryCtaText: 'Discuss Your Programme',
     secondaryCtaText: 'See Training Options',
     trustPoints: [
@@ -1867,13 +1867,13 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     overview: {
       statement: 'Buying software or adopting AI is only half the problem. If your team does not know how to use it effectively, the investment does not deliver.',
       paragraphs: [
-        'We deliver technical training for teams making transitions — adopting AI tools, switching to new development practices, taking ownership of a newly built system, or upskilling in areas that affect their daily work.',
+        'We deliver technical training for teams making transitions: adopting AI tools, switching to new development practices, taking ownership of a newly built system, or upskilling in areas that directly accelerate their daily delivery velocity.',
         'Training is not classroom lectures. It is hands-on workshops with your tools, your data, and scenarios your team actually faces.',
       ],
-      keyTakeaway: 'Practical technical training that builds real capability in your team — not just theoretical awareness.',
+      keyTakeaway: 'Practical technical training that builds real operational competence in your team rather than surface-level theory.',
     },
     mainProblemSolved: {
-      problem: 'Your team has new tools or a new system but cannot use them effectively — leading to underutilisation and continued dependence on outside help.',
+      problem: 'Your team has new tools or a new system but cannot use them effectively: leading to underutilisation and continued dependence on external contractors.',
       solution: 'Structured, hands-on training tailored to your specific tools and your team\'s actual skill gaps.',
       result: 'A team that uses the tools confidently, asks better questions, and requires far less external support.',
     },
@@ -1902,7 +1902,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       },
       {
         title: 'Development Practice Training',
-        description: 'Training on engineering practices — testing, code review, CI/CD, security practices — for teams improving their workflow.',
+        description: 'Training on engineering practices: testing, code review, CI/CD automation, and secure coding for teams upgrading their engineering maturity.',
         tags: ['Testing', 'Code review', 'CI/CD', 'Security fundamentals'],
       },
       {
@@ -1927,7 +1927,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '03',
         title: 'Delivery',
-        description: 'Hands-on workshops delivered live — in person or remote — with time for questions and practice.',
+        description: 'Hands-on workshops delivered live: in person or remote with live interactive exercises and dedicated Q&A.',
         deliverables: ['Live sessions', 'Recorded sessions', 'Practice exercises'],
       },
       {
@@ -1975,9 +1975,9 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroHeadline: 'From Idea to',
     heroHeadlineHighlight: 'Production Product',
     heroDescription:
-      'We handle the full product engineering process — discovery, scoping, architecture, development, and launch. For teams that need a complete product partner, not just implementation.',
+      'We handle the full product engineering process: discovery, scoping, architecture, development, and launch. Built for teams that need a true product engineering partner, not just code monkeys.',
     heroImage: '/services/product-engineering.png',
-    heroImageCaption: 'Product engineering — Neominds',
+    heroImageCaption: 'Product engineering // Neominds',
     primaryCtaText: 'Discuss Your Product',
     secondaryCtaText: 'See Products We Built',
     trustPoints: [
@@ -1987,16 +1987,16 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'You own everything we build',
     ],
     overview: {
-      statement: 'Most development engagements start too late — after product decisions have already been made badly. We start at the beginning, where the important decisions actually happen.',
+      statement: 'Most development engagements start too late: after product decisions have already been made badly. We start at the beginning, where the highest-leverage product decisions are shaped.',
       paragraphs: [
-        'Product engineering means combining product thinking with engineering execution. We help you figure out what to build, then build it properly — not just implement whatever the brief says.',
+        'Product engineering means combining product thinking with engineering execution. We help you figure out what to build, then build it with architectural rigor rather than blindly executing a flawed brief.',
         'We have taken products from a napkin description to live, revenue-generating software. We know what questions to ask at each stage and what mistakes to avoid.',
       ],
-      keyTakeaway: 'A product partner that brings engineering expertise to every product decision — and product thinking to every engineering decision.',
+      keyTakeaway: 'A product partner that brings engineering expertise to every product choice, and rigorous product thinking to every engineering decision.',
     },
     mainProblemSolved: {
       problem: 'You have a product idea or an early-stage product that needs a team to take it from where it is to something that works in the market.',
-      solution: 'An embedded product engineering team that handles discovery, scoping, architecture, development, and launch — with you in the loop at every key decision.',
+      solution: 'An embedded product engineering team that handles discovery, scoping, architecture, development, and launch: keeping your executive team in the loop at every key architectural gate.',
       result: 'A working product, delivered to a defined scope and timeline, with the architecture in place to grow from there.',
     },
     targetAudience: {
@@ -2014,22 +2014,22 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     capabilities: [
       {
         title: 'Product Discovery and Scoping',
-        description: 'User research, requirement definition, feature prioritisation, and technical scoping — before committing to development.',
+        description: 'User research, requirement definition, feature prioritisation, and technical scoping before committing engineering capital.',
         tags: ['User research', 'Feature prioritisation', 'Technical scoping', 'Product roadmap'],
       },
       {
         title: 'MVP Engineering',
-        description: 'Building the minimum viable product that tests your core hypothesis — fast, focused, and built to learn from.',
+        description: 'Building the minimum viable product that tests your core hypothesis: fast, focused, and instrumented to generate real user insight.',
         tags: ['MVP development', 'Rapid prototyping', 'User testing', 'Iteration'],
       },
       {
         title: 'Full Product Development',
-        description: 'From MVP to full product — feature expansion, performance hardening, and the operational infrastructure for launch.',
+        description: 'From MVP to full product: feature expansion, performance hardening, and production infrastructure for general availability.',
         tags: ['Feature development', 'Scalability', 'Launch preparation', 'CI/CD'],
       },
       {
         title: 'Product Scaling and Iteration',
-        description: 'Post-launch product iteration based on user data — adding features, optimising performance, and expanding to new markets.',
+        description: 'Post-launch product iteration based on telemetry: introducing requested features, optimizing query latencies, and scaling into new markets.',
         tags: ['Feature velocity', 'A/B testing', 'Performance', 'Growth infrastructure'],
       },
     ],
@@ -2037,7 +2037,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       {
         step: '01',
         title: 'Discovery and product definition',
-        description: 'We define what to build, why, and in what order — through user research, competitive analysis, and technical feasibility.',
+        description: 'We define what to build, why, and in what sequence through direct user research, competitive analysis, and technical feasibility.',
         deliverables: ['Product brief', 'Feature scope', 'Technical recommendation'],
       },
       {
@@ -2079,8 +2079,8 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       metric: 'First paying customers in month 4',
     },
     faqs: [
-      { question: 'What does product engineering include?', answer: 'Discovery and scoping, architecture, design, full-stack development, testing, launch, and post-launch support — the complete product lifecycle.' },
-      { question: 'How is this different from just custom software development?', answer: 'Product engineering includes the product thinking — what to build, in what order, and why. Custom software development starts from a spec that is already defined.' },
+      { question: 'What does product engineering include?', answer: 'Discovery and scoping, architecture, design, full-stack development, testing, launch, and post-launch support: the full product development lifecycle.' },
+      { question: 'How is this different from just custom software development?', answer: 'Product engineering includes the product thinking: what to build, in what priority sequence, and why. Custom software development starts from an existing technical specification.' },
       { question: 'How long does product engineering take?', answer: 'An MVP with core features takes 10–16 weeks. A full product ready for market typically takes 20–36 weeks.' },
       { question: 'Do we stay involved in decisions?', answer: 'Yes. You are involved in every sprint review and every key product or architecture decision. We execute, you retain ownership of the direction.' },
     ],

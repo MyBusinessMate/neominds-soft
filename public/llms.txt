@@ -1,8 +1,8 @@
-# Neominds
+# Neominds TechHub
 
-> Neominds is an enterprise software engineering and AI solutions partner backed by 23 years of execution, delivering custom digital platforms, autonomous AI agent pipelines, distributed cloud microservices, and regulated mission-critical architectures.
+> Neominds TechHub is an AI-powered software development company building web, mobile, cloud and AI products for businesses in the US, UK, Europe, Australia, and the Middle East.
 
-Neominds operates as a high-velocity engineering organization partnering with global enterprises, high-growth startups, and regulated institutions across North America, Europe, and Asia-Pacific.
+Neominds operates as a high-velocity engineering partner delivering production software with clear scope, weekly demos, and dedicated squads.
 
 Key Operating Principles:
 - 100% Intellectual Property and code ownership transfer to clients upon milestone completion.
@@ -10,70 +10,62 @@ Key Operating Principles:
 - Strict security adherence to SOC 2 Type II, ISO/IEC 27001, and HIPAA / HITECH regulatory frameworks.
 - Production-grade engineering: zero mock code, deterministic tests, sub-second latency targets, and robust observability.
 
-Global Contact & Headquarters:
-- Global Headquarters: Moguls Court 7th Floor, Basheer Bagh, Hyderabad, Telangana, India
-- North America Hub: 50 California St #1500, San Francisco, CA 94111, United States
+Global Contact:
 - Contact Email: rfq@neominds.io / contact@neominds.io
-- Phone: +1 (800) 288-9659
+- Website: https://neominds.io
 
-Guidance for AI Agents:
-- Each service document linked below contains complete phase-gate architecture, technology matrices, deliverables, and engineering methodologies in clean markdown format.
-- For complete consolidated reference in one document, fetch the full documentation index at https://neominds.io/llms-full.txt.
+## Neominds Services (15 Canonical Services)
 
-## Core Services
+1. **Web Development** (/services/web-development): Fast, secure, and responsive web applications, portals, and websites that scale with business traffic.
+2. **App Development** (/services/app-development): iOS and Android mobile apps engineered for high performance, smooth UX, and reliable updates.
+3. **Cross-Platform Mobile App Development** (/services/cross-platform-app-development): Unified React Native & Flutter codebases running natively across iOS, Android, and web.
+4. **Custom Software Development** (/services/custom-software-development): Bespoke enterprise software tailored to exact operational workflows, internal systems, and data pipelines.
+5. **AI Automations** (/services/ai-automations): Automated workflows eliminating manual effort across invoice processing, HR screening, QA, and data synchronization.
+6. **AI Integrations** (/services/ai-integrations): Embedding cognitive capabilities, LLM reasoning, intelligent document processing, and vector search into existing software.
+7. **AI Systems** (/services/ai-systems): Autonomous multi-agent architectures, reasoning models, and production RAG pipelines.
+8. **E-commerce Platform** (/services/ecommerce-platform): High-volume storefronts, checkout engines, payment gateway integrations, and inventory synchronization.
+9. **AI Native Softwares** (/services/ai-native-software): Digital products designed from the ground up around artificial intelligence and generative models.
+10. **Cloud Based Softwares** (/services/cloud-based-software): Resilient cloud-native systems, distributed microservices, and auto-scaling cloud infrastructure on AWS, Azure, and GCP.
+11. **SaaS Development** (/services/saas-development): Multi-tenant subscription platforms with tenant isolation, subscription billing, and user role management.
+12. **Analytic Dashboard** (/services/analytics-dashboard): Real-time clinical, operational, and financial telemetry dashboards with sub-50ms query latencies.
+13. **Custom Health Softwares** (/services/custom-health-software): HIPAA-compliant hospital management systems, clinical telemetry, patient engagement, and telehealth platforms.
+14. **Legacy System Modernisation** (/services/legacy-modernisation): Incremental refactoring and cloud migration of monolithic legacy codebases with zero downtime.
+15. **Training as a Service** (/services/training-as-service): Technical enablement, AI upskilling, and architectural knowledge transfer for internal engineering teams.
 
-- [Software Development](https://neominds.io/docs/software-development.md): Custom enterprise web and backend architectures, distributed microservices, clean domain-driven design, and legacy system modernization.
-- [AI Development](https://neominds.io/docs/ai-development.md): Machine learning engineering, cognitive workflows, predictive models, and LLM fine-tuning pipelines.
-- [Mobile App Development](https://neominds.io/docs/mobile-app-development.md): High-performance native iOS, Android, and cross-platform React Native and Flutter applications.
-- [Web & CMS Development](https://neominds.io/docs/web-cms-development.md): Composable web architectures, headless CMS implementations, enterprise portals, and high-conversion web applications.
-- [Ecommerce Development](https://neominds.io/docs/ecommerce-development.md): Headless commerce architectures, custom checkout orchestration, high-throughput product catalogs, and payment gateway integrations.
-- [DevOps & Cloud Engineering](https://neominds.io/docs/devops.md): Multi-cloud infrastructure on AWS, Azure, and GCP, Kubernetes orchestration, Infrastructure as Code (Terraform), and GitOps CI/CD pipelines.
-- [AI Agents & Orchestration](https://neominds.io/docs/ai-agents.md): Autonomous multi-agent workflows, tool-augmented LLM orchestration, structured memory systems, and deterministic guardrails.
-- [AI Automations](https://neominds.io/docs/ai-automations.md): Intelligent robotic process automation, unstructured document intelligence, and automated backend decision loops.
-- [Chatbots & Video Bots](https://neominds.io/docs/chatbot-videobot.md): Multimodal conversational assistants, real-time AI avatar video streaming, and CRM omnichannel integrations.
-- [Analytics Dashboards](https://neominds.io/docs/analytics-dashboard.md): Real-time streaming analytics, executive telemetry, business intelligence platforms, and anomaly detection.
-- [Technical Support & SRE](https://neominds.io/docs/technical-support.md): 24/7 mission-critical site reliability engineering, L1-L4 incident management, and SLA-governed support.
+## Technologies Provided
 
-## Fintech Solutions
+1. Web Development
+2. Artificial Intelligence
+3. Machine Learning
+4. Data Management
+5. Data Analytics
+6. Automations
+7. Product Engineering (routed to Custom Software Development)
 
-- [Digital Banking](https://neominds.io/docs/digital-banking.md): Omnichannel digital banking platforms, core banking integrations, multi-currency accounts, and strict compliance controls.
-- [Payment Solutions](https://neominds.io/docs/payment-solutions.md): Payment gateway orchestration, ISO 20022 compliance, tokenization, real-time clearing, and multi-rail settlement engines.
-- [Lending & Credit Platforms](https://neominds.io/docs/lending-credit-platforms.md): Digital loan origination systems, automated algorithmic underwriting, risk scoring, and servicing workflows.
-- [Investment & Wealth Management](https://neominds.io/docs/investment-wealth-management.md): Algorithmic portfolio management, robo-advisory engines, asset allocation, and real-time market data pipelines.
-- [Financial Analytics](https://neominds.io/docs/financial-analytics.md): Quantitative financial modeling, cash flow forecasting, regulatory capital reporting, and risk intelligence.
-- [Fraud & Risk Management](https://neominds.io/docs/fraud-risk-management.md): Sub-25ms transaction scoring, fraud detection models, anti-money laundering (AML), and behavioral anomaly engines.
+## Industries Served
 
-## Healthcare Systems
-
-- [Healthcare Management Software](https://neominds.io/docs/healthcare-management-software.md): Hospital Information Systems (HIS), electronic health record (EHR) interoperability via HL7/FHIR, and clinical workflows.
-- [Telemedicine Platforms](https://neominds.io/docs/telemedicine-platforms.md): HIPAA-compliant WebRTC video consultations, secure asynchronous doctor-patient messaging, and remote patient monitoring.
-- [Patient Engagement](https://neominds.io/docs/patient-engagement.md): Patient portals, interactive mobile care companions, personalized treatment adherence, and appointment management.
-- [Medical AI Solutions](https://neominds.io/docs/medical-ai-solutions.md): Diagnostic computer vision assistance, clinical NLP document summarization, and radiological imaging analysis.
-- [Healthcare Analytics](https://neominds.io/docs/healthcare-analytics.md): Population health analytics, clinical trial data pipelines, hospital operational optimization, and outcomes tracking.
-- [Healthcare Automation](https://neominds.io/docs/healthcare-automation.md): Prior authorization automation, claims processing scrubbers, and clinical documentation assistance.
-
-## Enterprise AI Capabilities
-
-- [AI Product Engineering](https://neominds.io/docs/ai-product-engineering.md): End-to-end commercial AI product architecture, model fine-tuning, evaluation harnesses, and scalable inference infrastructure.
-- [Applied AI Systems](https://neominds.io/docs/applied-ai.md): Pragmatic enterprise AI integrations, enterprise search, semantic RAG systems, and domain-adapted models.
-- [AI Agent Systems](https://neominds.io/docs/ai-agent-systems.md): Autonomous goal-seeking multi-agent swarms with guardrails, evals, and auditability.
-- [Intelligent Automation](https://neominds.io/docs/intelligent-automation.md): Cognitive workflow automation orchestrating human-in-the-loop validation and automated agent decisions.
-- [Generative AI](https://neominds.io/docs/generative-ai.md): Custom enterprise generative models, multimodal content pipelines, prompt engineering frameworks, and safety guardrails.
+1. Enterprise
+2. Financial Tech
+3. Retail
+4. Education
+5. Healthcare
+6. E-commerce
+7. Real Estate
+8. E-learning
 
 ## Canonical Web Pages
 
-- [Homepage](https://neominds.io/): Neominds corporate homepage with interactive engineering showcases, core capabilities, and client results.
-- [About Neominds](https://neominds.io/about-us): Corporate heritage, 23+ years track record, executive leadership, engineering culture, and global offices.
-- [Portfolio & Case Studies](https://neominds.io/portfolio): Verified client case studies across healthcare, fintech, supply chain, and enterprise platforms.
-- [Strategic Insights](https://neominds.io/insights): Executive whitepapers, technology perspectives, and engineering industry reports.
-- [Engineering Blog](https://neominds.io/blog): Technical articles, architectural guides, and AI engineering practices.
-- [Company Updates](https://neominds.io/company-updates): Press releases, partnership announcements, and corporate milestones.
-- [Technical Consultation & RFQ](https://neominds.io/contacts): Enterprise consultation booking, RFQ submission form, and global contact details.
-
-## Optional
-
-- [Privacy Policy](https://neominds.io/privacy): Data protection practices, GDPR/CCPA compliance, and intellectual property confidentiality policies.
-- [Cookie Policy](https://neominds.io/cookies): Browser cookie management, analytics tracking policies, and user consent controls.
-- [Security Policy](https://neominds.io/security): Corporate security posture, SOC 2 compliance, vulnerability disclosure program, and encryption standards.
-- [XML Sitemap](https://neominds.io/sitemap.xml): Complete machine-readable XML sitemap indexing all canonical routes for search engines and crawlers.
-- [Full LLM Documentation](https://neominds.io/llms-full.txt): Complete concatenated single-file documentation of all services and architectural blueprints for agents with large context windows.
+- [Homepage](https://neominds.io/): Main corporate portal, interactive demos, and client reviews.
+- [Services Hub](https://neominds.io/services): Comprehensive directory of all 15 Neominds services.
+- [Industries Hub](https://neominds.io/industries): Domain-specific engineering capabilities across 8 key sectors.
+- [Portfolio & Case Studies](https://neominds.io/portfolio): 30 verified production client case studies with metrics.
+- [About Us](https://neominds.io/about-us): Corporate profile, engineering methodology, and global delivery standards.
+- [Leadership](https://neominds.io/leaders): Executive leadership and principal engineering bios.
+- [Careers](https://neominds.io/careers): Open engineering roles and career opportunities.
+- [Certification](https://neominds.io/certification): Compliance standards, security certifications, and industry recognitions.
+- [Blog & Publications](https://neominds.io/blog): Technical articles, architectural breakdowns, and AI engineering analysis.
+- [Company Updates](https://neominds.io/company-updates): Press releases, announcements, and milestones.
+- [Contact & RFQ](https://neominds.io/contacts): Project consultation, RFP submission, and NDA requests.
+- [Privacy Policy](https://neominds.io/privacy-policy): Privacy and data processing terms.
+- [Cookie Policy](https://neominds.io/cookie-policy): Cookie usage and consent management.
+- [Security Policy](https://neominds.io/security-policy): Security posture and vulnerability disclosure.

@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import {
-  Sparkles,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
@@ -88,9 +87,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-superhero" data-block-name="about-first-window">
         <div className="s-superhero__glow"></div>
         <div className="s-superhero__container">
-          <div className="s-superhero__badge">
-            <Sparkles size={14} />
-            <span>About Company</span>
+          <div className="s-superhero__kicker">
+            <span className="s-superhero__kicker-line"></span>
+            <span>About Neominds TechHub</span>
           </div>
 
           <ScrollReveal as="h1" className="s-superhero__title" blurStrength={8}>
@@ -151,7 +150,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           <div className="s-blockquote__content">
             <div className="s-blockquote__quote-mark">&ldquo;</div>
             <blockquote className="s-blockquote__text">
-              We don’t just get things done—we <span>think bold</span>. It’s our team’s mindset.
+              We don’t just get things done: we <span>think bold</span>. It is our team’s core standard.
             </blockquote>
             <p className="s-blockquote__subtext">
               Every project comes with open sharing of timelines, costs, and risks, backed by weekly demos and full code ownership for our clients.
@@ -228,7 +227,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <span className="s-values__card-number">01</span>
               <h3 className="s-values__card-name">Respect</h3>
               <p className="s-values__card-text">
-                We build strong, healthy relationships by <span>valuing each person in every interaction</span>—whether they’re a client or an employee.
+                We build enduring partnerships by <span>valuing each person in every interaction</span>, whether collaborating with a client or teammate.
               </p>
             </div>
 

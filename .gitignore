@@ -35,12 +35,22 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 
-# Offline Markdown Documentation
+# Internal spreadsheets & scratch reference docs
+*.csv
+DESIGN-effectivesoft-com.md
+llmstxtdocs.md
 /docs/
-!public/docs/
+public/docs/
+
+# Scratch & Temporary Scripts / Agent Files
+scratch*
+serve.js
+scripts/
+*.py
 
 # Playwright & Testing MCP artifacts
 .playwright-mcp/
 test-results/
 playwright-report/
 blob-report/
+

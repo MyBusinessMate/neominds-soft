@@ -24,7 +24,6 @@ const servicesLinks: FooterLink[] = [
   { label: 'Custom Health Softwares', target: '#custom-health-software' },
   { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
   { label: 'Training as a Service', target: '#training-as-service' },
-  { label: 'Product Engineering', target: '#product-engineering' },
 ];
 
 const technologiesLinks: FooterLink[] = [
@@ -34,7 +33,7 @@ const technologiesLinks: FooterLink[] = [
   { label: 'Data Management', target: '#cloud-based-software' },
   { label: 'Data Analytics', target: '#analytics-dashboard' },
   { label: 'Automations', target: '#ai-automations' },
-  { label: 'Product Engineering', target: '#product-engineering' },
+  { label: 'Product Engineering', target: '#custom-software-development' },
 ];
 
 const industriesLinks: FooterLink[] = [
@@ -162,7 +161,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
             {/* Action Buttons */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap' }}>
-              {/* Primary Pill Button: Get in touch */}
+              {/* Primary Button: Get in touch */}
               <button
                 onClick={() => onNavigate('#contacts')}
                 className="nm-btn-primary"
@@ -176,7 +175,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   fontSize: '14px',
                   fontWeight: 600,
                   padding: '13px 26px',
-                  borderRadius: '9999px',
+                  borderRadius: '2px',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',

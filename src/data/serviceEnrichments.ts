@@ -376,7 +376,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
           detail: 'We build pages that load instantly and pass Google Core Web Vitals with flying colors, directly boosting your organic SEO rank.',
         },
         {
-          point: 'Empowered Content Teams',
+          point: 'Autonomous Content Publishing',
           detail: 'Your marketing team can create new landing pages using pre-tested design blocks without touching code or writing developer tickets.',
         },
         {
@@ -402,7 +402,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
     heroHeadline: 'High-Volume & Resilient',
     heroHeadlineHighlight: 'E-Commerce Engineering',
     heroDescription:
-      'From high-throughput custom shopping carts and headless Shopify storefronts to multi-warehouse inventory synchronizations. Engineered for sub-second catalog search, seamless checkout, and high conversion rates.',
+      'From high-throughput custom shopping carts and headless Shopify storefronts to multi-warehouse inventory synchronizations. Engineered for sub-second catalog search, frictionless checkout, and high conversion rates.',
     heroImage: 'https://images.unsplash.com/photo-1556742049-0a67e557224f?q=80&w=1200&auto=format&fit=crop',
     heroImageCaption: 'High-Throughput E-Commerce Platform Architecture',
     targetAudience: {
@@ -749,7 +749,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
         },
         {
           point: 'API-First Architecture',
-          detail: 'We integrate directly via robust APIs (Kafka, REST, webhooks) rather than fragile screen scraping, guaranteeing reliable operation.',
+          detail: 'We integrate directly via hardened APIs (Kafka, REST, webhooks) rather than fragile screen scraping, guaranteeing reliable operation.',
         },
         {
           point: 'Zero Per-Transaction Penalties',
@@ -770,7 +770,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
     heroHeadline: 'Context-Aware & Responsive',
     heroHeadlineHighlight: 'Chatbots & Video Bots',
     heroDescription:
-      'From high-accuracy customer service chatbots to sub-second interactive video avatars. Engineered with retrieval-augmented generation, strict guardrails, and seamless human escalation workflows.',
+      'From high-accuracy customer service chatbots to sub-second interactive video avatars. Engineered with retrieval-augmented generation, strict guardrails, and deterministic human escalation workflows.',
     heroImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1200&auto=format&fit=crop',
     heroImageCaption: 'Real-Time Conversational AI & WebRTC Video Pipeline',
     targetAudience: {
@@ -1354,7 +1354,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
       solution:
         'We build automated portfolio management engines with algorithmic rebalancing, direct custodial clearing APIs (Apex, DriveWealth, Interactive Brokers), and real-time market data feeds.',
       result:
-        'Real-time portfolio valuation, automated tax-loss harvesting that saves clients money, and seamless mobile and web investor portals.',
+        'Real-time portfolio valuation, automated tax-loss harvesting that saves clients money, and responsive investor portals across mobile and web.',
     },
     timeline: {
       totalDuration: '12 to 18 Weeks Typical Delivery',
@@ -1390,7 +1390,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
           detail: 'Our drift-detection engines calculate rebalancing trades across thousands of client portfolios in seconds without human calculation errors.',
         },
         {
-          point: 'Seamless Custody Clearing Integration',
+          point: 'Direct Custody & Clearing Settlement Integration',
           detail: 'Deep integration with leading custodians for fractional share trading, ACATS account transfers, and instant ACH funding.',
         },
         {
@@ -1575,7 +1575,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
         },
         {
           point: 'Dramatic Reduction in False Declines',
-          detail: 'Machine learning anomaly models evaluate holistic customer patterns, ensuring legitimate customers never get turned away.',
+          detail: 'Machine learning anomaly models evaluate multi-dimensional customer patterns, ensuring legitimate customers never get turned away.',
         },
         {
           point: 'Automated AML & Sanctions Screening',
@@ -1603,7 +1603,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
     heroHeadline: 'HIPAA-Compliant & Interoperable',
     heroHeadlineHighlight: 'Healthcare Management Systems',
     heroDescription:
-      'From modular EHR/EMR platforms and patient scheduling engines to revenue cycle management (RCM) and HL7/FHIR interoperability bridges. Engineered for strict clinical compliance and seamless clinical workflows.',
+      'From modular EHR/EMR platforms and patient scheduling engines to revenue cycle management (RCM) and HL7/FHIR interoperability bridges. Engineered for strict clinical compliance and uninterrupted clinical workflows.',
     heroImage: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop',
     heroImageCaption: 'HIPAA-Compliant EHR & FHIR Interoperability Topology',
     targetAudience: {
@@ -1633,7 +1633,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
       solution:
         'We build modern, modular healthcare management platforms with fast, intuitive clinical charting, automated patient intake, and native HL7/FHIR APIs that connect with external labs and hospitals.',
       result:
-        '50% faster clinical charting workflows, full HIPAA/HITECH compliance with zero data leaks, and seamless interoperability across healthcare providers.',
+        '50% faster clinical charting workflows, full HIPAA/HITECH compliance with zero data leaks, and direct HL7/FHIR interoperability across healthcare providers.',
     },
     timeline: {
       totalDuration: '12 to 20 Weeks Typical Delivery',
@@ -1774,7 +1774,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
         },
       ],
     },
-    ctaHeadline: 'Ready to Launch a Seamless Virtual Care Platform?',
+    ctaHeadline: 'Ready to Launch a Production-Grade Virtual Care Platform?',
     ctaDescription:
       'Schedule a consultation with a Principal Telehealth Architect. We will review your clinical requirements, demonstrate a live WebRTC consultation prototype, and provide an exact project plan.',
     ctaButtonText: 'Schedule Telehealth Consultation',
@@ -1945,7 +1945,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
           detail: 'Our models are evaluated against rigorous clinical sensitivity and specificity thresholds established by board-certified specialists.',
         },
         {
-          point: 'Seamless PACS & DICOM Integration',
+          point: 'Direct PACS & DICOM Imaging Integration',
           detail: 'Scans are pulled directly from hospital PACS archives, processed on local GPU clusters, and results sent back as DICOM Structured Reports.',
         },
         {
@@ -2184,7 +2184,7 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
     },
     mainProblemSolved: {
       problem:
-        'Bolting a generic chatbot onto an existing app creates an awkward gimmick that users abandon after a few days. AI-native products require completely reimagined UX, streaming state management, and robust error recovery.',
+        'Bolting a generic chatbot onto an existing app creates an awkward gimmick that users abandon after a few days. AI-native products require completely reimagined UX, streaming state management, and resilient failure recovery.',
       solution:
         'We architect AI-native products from the ground up: optimistic streaming frontends, low-latency vLLM model serving clusters, semantic caching, and continuous evaluation benchmarks.',
       result:
@@ -2504,8 +2504,8 @@ export const ALL_SERVICES_ENRICHMENT: Record<string, ServiceEnrichmentItem> = {
           detail: 'When confidence scores fall below thresholds, exceptions are routed to human reviewers with highlighted discrepancies for quick approval.',
         },
         {
-          point: 'Seamless Legacy & Cloud ERP Integration',
-          detail: 'We integrate with SAP, Oracle, NetSuite, and custom legacy databases via robust APIs and database connectors.',
+          point: 'Unified Legacy & Cloud ERP Integration',
+          detail: 'We integrate with SAP, Oracle, NetSuite, and custom legacy databases via hardened API bridges and direct database connectors.',
         },
         {
           point: 'Zero Per-Transaction Licensing Fees',

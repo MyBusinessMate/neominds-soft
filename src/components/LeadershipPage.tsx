@@ -6,7 +6,6 @@ import {
   Mail,
   CheckCircle2,
   ChevronRight,
-  Sparkles,
 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
@@ -139,7 +138,7 @@ const LEADERS: Leader[] = [
       bio: 'Carlos leads our nearshore development hub in Central America, facilitating real-time timezone collaboration with North American enterprise accounts.',
       background: '12+ years directing distributed engineering teams across the United States and Latin America.',
       focus: ['Nearshore team scaling', 'US timezone synchronization', 'Cloud architecture', 'Bilingual team leadership'],
-      quote: 'Seamless timezone alignment means engineering issues are addressed in real time with zero handoff delay.',
+      quote: 'Direct timezone overlap means engineering issues are resolved in real time with zero handoff delay.',
     },
     {
       id: 'elena-rostova',
@@ -260,8 +259,8 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
           >
             {/* Left Headline */}
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#2258e7', fontSize: '13px', fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: '14px' }}>
-                <Sparkles size={14} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2258e7', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
+                <span style={{ width: '16px', height: '2px', backgroundColor: '#2258e7' }} />
                 <span>Executive Leadership</span>
               </div>
 
@@ -271,10 +270,10 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
 
               <RevealElement variant="text" delay={0.06}>
                 <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#475067', margin: '0 0 16px', fontWeight: 400 }}>
-                  We invite you on a captivating journey into the realm of inspiring leaders and strategists. Discover stories and insights that unveil unique approaches to success from the forefront personalities at Neominds TechHub.
+                  Meet the architects, engineering leads, and technology directors guiding client delivery at Neominds TechHub. Our leadership team brings decades of direct production experience across enterprise cloud, distributed systems, and applied AI.
                 </p>
                 <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#666e85', margin: 0, fontWeight: 400 }}>
-                  From transparent profiles of key executives to narratives about our engineering culture, this section highlights the values and vision that form the core of Neominds TechHub.
+                  We stay hands-on with architecture and delivery: establishing code quality standards, auditing distributed systems, and ensuring every project meets our rigorous technical requirements.
                 </p>
               </RevealElement>
             </div>

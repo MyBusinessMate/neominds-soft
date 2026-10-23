@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Healthcare & Life Sciences Digital Systems | Neominds Industries</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .ind-hero {
+      padding-top: 150px;
+      padding-bottom: 60px;
+    }
+    .compliance-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 36px 0;
+    }
+    .compliance-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .compliance-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html" class="active">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Industry Hero -->
+  <section class="ind-hero">
+    <div class="container">
+      <div style="display: flex; gap: 8px; margin-bottom: 18px;">
+        <span class="pill pill-cyan">Industry Vertical Blueprint</span>
+        <span class="pill pill-emerald">HIPAA & SOC2 Validated</span>
+      </div>
+      <h1 class="section-title" style="max-width: 960px;">
+        Healthcare & Life Sciences<br>
+        <span style="background: linear-gradient(135deg, #38bdf8 30%, #2258e7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Digital Systems Engineering</span>
+      </h1>
+      <p class="section-desc" style="max-width: 820px; font-size: 1.15rem;">
+        We build HIPAA-compliant telehealth applications, FHIR/EHR interoperability bridges, diagnostic AI co-pilots, and clinician analytics portals engineered for zero downtime and rigorous regulatory compliance.
+      </p>
+
+      <div class="compliance-grid">
+        <div class="compliance-badge">
+          <div class="compliance-icon">🛡️</div>
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 700;">HIPAA Compliant</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">End-to-End BAA Supported</div>
+          </div>
+        </div>
+        <div class="compliance-badge">
+          <div class="compliance-icon">✓</div>
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 700;">HL7 & FHIR V4</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">Epic, Cerner & AthenaHealth</div>
+          </div>
+        </div>
+        <div class="compliance-badge">
+          <div class="compliance-icon">🔒</div>
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 700;">SOC2 Type II</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">Immutable Audit Ledgers</div>
+          </div>
+        </div>
+        <div class="compliance-badge">
+          <div class="compliance-icon">⚡</div>
+          <div>
+            <div style="font-size: 0.88rem; font-weight: 700;">99.99% Uptime</div>
+            <div style="font-size: 0.75rem; color: var(--text-dim);">High-Availability Medical SLA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Healthcare Friction Points -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">Industry Realities</span>
+      <h2 class="section-title">The 3 Critical Bottlenecks in Modern Healthcare Tech</h2>
+      <p class="section-desc">Why off-the-shelf software consistently fails healthcare providers and patient care teams.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 40px;">
+        <div class="card">
+          <span style="color: #f87171; font-size: 1.5rem; font-weight: 800;">01</span>
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin: 12px 0 8px;">EHR Silos & Data Fragmentation</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Critical patient histories remain trapped in legacy EHR formats. Without high-speed FHIR normalization, clinicians spend 16 minutes per patient simply piecing together medication records.
+          </p>
+        </div>
+
+        <div class="card">
+          <span style="color: #fbbf24; font-size: 1.5rem; font-weight: 800;">02</span>
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin: 12px 0 8px;">Compliance vs. Velocity Dilemma</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Generic cloud developers build apps that fail HIPAA audits, expose ePHI in unencrypted caches, or lack mandatory cryptographic access logging required by federal regulators.
+          </p>
+        </div>
+
+        <div class="card">
+          <span style="color: #38bdf8; font-size: 1.5rem; font-weight: 800;">03</span>
+          <h3 style="font-size: 1.15rem; font-weight: 700; margin: 12px 0 8px;">Patient Engagement Friction</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Clunky web portals suffer from 65%+ patient drop-off rates. Patients demand mobile-first, biometrically authenticated apps with asynchronous chat and instant prescription renewals.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Healthcare Deployment: Mindspace.ai -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">Case Study Spotlight</span>
+      <h2 class="section-title">Mindspace.ai: Intelligent Healthcare Platform</h2>
+      <p class="section-desc">How Neominds engineered a scalable, HIPAA-secure ecosystem for behavioral healthcare.</p>
+
+      <div class="card card-glow" style="margin-top: 36px; padding: 40px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+          <div>
+            <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+              <span class="pill pill-cyan">Mobile Application</span>
+              <span class="pill pill-blue">Clinician Dashboard</span>
+            </div>
+            <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 14px;">Full-Stack Behavioral Platform</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px;">
+              Engineered from day one for strict HIPAA compliance: biometric touch/face login, zero-knowledge encrypted messaging, automated mood analytics, and real-time clinician escalation alerts.
+            </p>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <span class="pill">Flutter / iOS & Android</span>
+              <span class="pill">FastAPI & Python</span>
+              <span class="pill">AWS HIPAA Tier</span>
+              <span class="pill">pgvector Secure Search</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="kpi-banner" style="margin: 0;">
+              <div class="kpi-item">
+                <span class="kpi-num">100k+</span>
+                <span class="kpi-label">Active Patients</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-num">4.9★</span>
+                <span class="kpi-label">Average App Store Rating</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-num">100%</span>
+                <span class="kpi-label">HIPAA Audit Compliance</span>
+              </div>
+              <div class="kpi-item">
+                <span class="kpi-num">&lt; 100ms</span>
+                <span class="kpi-label">Clinician Alert Latency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Healthcare Solutions Matrix -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.4); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">Target Capabilities</span>
+      <h2 class="section-title">What We Build For Healthcare Organizations</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 36px;">
+        <div class="card">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #60a5fa; margin-bottom: 8px;">Telehealth & Remote Care Apps</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            WebRTC low-latency HD video consultations, virtual waiting rooms, in-call screen sharing, and integrated electronic prescriptions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #38bdf8; margin-bottom: 8px;">Hospital Management Systems (HMS)</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            End-to-end bed allocation, ER patient intake, surgery schedule coordination, and unified insurance billing reconciliations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4 style="font-size: 1.15rem; font-weight: 700; color: #34d399; margin-bottom: 8px;">Medical AI & Diagnostic Assistants</h4>
+          <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+            Assistive medical research agents, automated clinical trial eligibility matching, and clinical chart summarization with doctor-in-the-loop signoff.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Healthcare Consultation CTA -->
+  <section class="section" style="border-top: 1px solid var(--border); text-align: center;">
+    <div class="container" style="max-width: 800px;">
+      <span class="section-tag">Confidential Healthcare Architecture Call</span>
+      <h2 class="section-title">Discuss Your Healthcare Engineering Roadmap</h2>
+      <p class="section-desc" style="margin: 0 auto 30px;">
+        Our principal healthcare software architects provide mutual BAA/NDA agreements prior to any technical discovery discussions.
+      </p>
+      <a href="contact-consultation.html" class="btn btn-primary" style="padding: 14px 28px;">Schedule HIPAA Discovery Session →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC · Healthcare Industry Prototype</span>
+        <a href="index.html" style="color: var(--primary);">← Return to Prototype Directory</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

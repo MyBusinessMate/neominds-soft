@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neominds Next-Gen Architecture & Prototype Directory | Planned</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .showcase-hero {
+      padding-top: 140px;
+      padding-bottom: 60px;
+      text-align: center;
+      position: relative;
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 28px;
+      margin-top: 40px;
+    }
+    .preview-card {
+      border: 1px solid var(--border-light);
+      background: linear-gradient(180deg, rgba(20, 30, 55, 0.7) 0%, rgba(10, 16, 32, 0.9) 100%);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-smooth);
+      position: relative;
+    }
+    .preview-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px var(--primary-glow);
+    }
+    .preview-card-header {
+      padding: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .preview-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .feature-list {
+      list-style: none;
+      margin: 16px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .feature-list li::before {
+      content: "✓";
+      color: #38bdf8;
+      font-weight: 700;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 0.92rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-table th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-main);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+    .badge-approved {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-planned {
+      background: rgba(34, 88, 231, 0.15);
+      border: 1px solid var(--border-accent);
+      color: #60a5fa;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Showcase Hero -->
+  <section class="showcase-hero">
+    <div class="container">
+      <span class="section-tag">Interactive Architecture & Blueprint Review</span>
+      <h1 class="section-title">Neominds Next-Generation<br><span style="background: linear-gradient(135deg, #60a5fa, #2258e7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Information Architecture & Pages</span></h1>
+      <p class="section-desc" style="margin: 0 auto;">
+        An exhaustive synthesis of high-converting B2B patterns from <strong>DotcomWeavers</strong> engineered into a bespoke, high-performance web experience for Neominds. Inspect, interact, and approve each page archetype below.
+      </p>
+
+      <div style="display: flex; gap: 14px; justify-content: center; margin-top: 28px;">
+        <span class="badge-approved">✓ Homepage UI Preserved (Untouched)</span>
+        <span class="badge-planned">⚡ 8 High-Fidelity Prototypes Built</span>
+        <span class="badge-approved">✓ Clean Canonical URL Hierarchy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Prototypes Grid -->
+  <section class="section" style="padding-top: 10px;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+        <div>
+          <span class="section-tag">Interactive Preview Deck</span>
+          <h2 style="font-size: 2rem; font-weight: 700;">Planned Page Prototypes</h2>
+        </div>
+        <p style="color: var(--text-dim); font-size: 0.9rem;">Click any prototype card to open and inspect the full design.</p>
+      </div>
+
+      <div class="preview-grid">
+
+        <!-- Prototype 1: Service Detail -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-blue">Core Service Blueprint</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">AI Systems & Intelligent Automation</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/services/ai-systems</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Combines DotcomWeavers' proven enterprise breakdown with Neominds' deep AI capabilities: urgent market driver, 6-card capability matrix, interactive architecture diagram, live ROI estimator, and real client KPI proof.
+            </p>
+            <ul class="feature-list">
+              <li>Executive Value Proposition & Trust Ribbon</li>
+              <li>Interactive System Integration Radar (ERP, CRM, LLMs)</li>
+              <li>Real Case Transformation (Flexport / Fero automation)</li>
+              <li>Dynamic Scope & ROI Estimator</li>
+              <li>Schema-Ready FAQ Accordion & Instant Lead Funnel</li>
+            </ul>
+            <a href="service-detail.html" class="btn btn-primary" style="width: 100%;">Inspect Service Page Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 2: Case Study Detail -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-cyan">Deep Project Case Study</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">Apex Beverage B2B Transformation</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/work/apex-beverage</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              The definitive B2B technical case study template: massive KPI stat banner (+86% Revenue, 2.5× Order Volume), system architecture diagram, categorized tech radar, and before/after metrics.
+            </p>
+            <ul class="feature-list">
+              <li>High-Impact KPI Banner with 3 Hero Numbers</li>
+              <li>Full System Architecture Blueprint</li>
+              <li>Exploded Diagrams & B2B Rules Breakdown</li>
+              <li>Categorized Tech Radar (Platform, ERP, Analytics)</li>
+              <li>Verified Client Testimonial & Next Project Link</li>
+            </ul>
+            <a href="case-study-detail.html" class="btn btn-primary" style="width: 100%;">Inspect Case Study Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 3: Case Studies Hub -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-emerald">Portfolio & Client Work Hub</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">Case Studies & Work Archive</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/work</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Showcases all 30 real clients from Neominds' dataset (Mindspace.ai, Flooring Inc, Flexport, Fero, DotcomWeavers, Fundbot) with dynamic industry and technology filters.
+            </p>
+            <ul class="feature-list">
+              <li>Interactive Multi-Filter (Industry + Service)</li>
+              <li>Real Metric Badges on each project card</li>
+              <li>Quick Preview Drawer & Live Search</li>
+              <li>Client Trust Grid & Verified Clutch Rating</li>
+            </ul>
+            <a href="case-studies-hub.html" class="btn btn-primary" style="width: 100%;">Inspect Work Hub Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 4: Industry Detail -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-blue">Industry Vertical Blueprint</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">Healthcare & Life Sciences Digital Systems</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/industries/healthcare</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Solves industry-specific pain points (HIPAA, EHR/FHIR integration, AI diagnostics) instead of generic filler. Features real Neominds projects like Mindspace.ai and custom HMS.
+            </p>
+            <ul class="feature-list">
+              <li>Top 3 Vertical Friction Points & Engineering Fixes</li>
+              <li>HIPAA & SOC2 Compliance Security Architecture</li>
+              <li>Featured Case Transformation (Mindspace.ai)</li>
+              <li>Industry Specific Tech Stack & Consultation Form</li>
+            </ul>
+            <a href="industry-detail.html" class="btn btn-primary" style="width: 100%;">Inspect Industry Detail Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 5: Industries Hub -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-cyan">Industries Matrix Hub</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">8 Core Industry Sectors</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/industries</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Overview matrix of all 8 primary industries served: Enterprise, FinTech, Retail, Education, Healthcare, E-Commerce, Real Estate, and E-Learning.
+            </p>
+            <ul class="feature-list">
+              <li>8 Dedicated Vertical Panels with Key Challenges</li>
+              <li>Verified Client Cross-References</li>
+              <li>Enterprise Scale & Integration Capabilities</li>
+            </ul>
+            <a href="industries-hub.html" class="btn btn-primary" style="width: 100%;">Inspect Industries Hub Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 6: About Company -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-emerald">Company & Culture</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">About Neominds, Leadership & Culture</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/company</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Transforms corporate "About Us" into an engineering authority page: our architectural manifesto, founders & lead architects, global delivery hubs, and industry certifications.
+            </p>
+            <ul class="feature-list">
+              <li>Engineering Manifesto: "No Technical Debt"</li>
+              <li>Leadership & Principal Architect Profiles</li>
+              <li>Global Engineering Delivery Centers</li>
+              <li>SOC2, ISO 27001, AWS Partner Certifications</li>
+            </ul>
+            <a href="about-company.html" class="btn btn-primary" style="width: 100%;">Inspect About Company Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 7: Insights Hub -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-blue">Insights & Thought Leadership</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">Engineering Publications & Blog</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/insights</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              Editorial layout optimized for AI Engineers, CTOs, and Product Leaders. Features deep architectural breakdowns, whitepapers, and technical case breakdowns.
+            </p>
+            <ul class="feature-list">
+              <li>Hero Architectural Deep-Dive Feature</li>
+              <li>Tag-Based Filtering (AI Systems, Cloud, B2B)</li>
+              <li>Interactive Code Snippets & Diagram Previews</li>
+              <li>Executive Newsletter & Technical Whitepaper Downloads</li>
+            </ul>
+            <a href="blog-hub.html" class="btn btn-primary" style="width: 100%;">Inspect Insights Hub Prototype →</a>
+          </div>
+        </div>
+
+        <!-- Prototype 8: Consultation & Contact -->
+        <div class="preview-card">
+          <div class="preview-card-header">
+            <span class="pill pill-cyan">Conversion Engine</span>
+            <h3 style="font-size: 1.35rem; margin-top: 12px; font-weight: 700;">Technical Consultation & Discovery</h3>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 6px;">URL Route: <code>/contact</code></p>
+          </div>
+          <div class="preview-card-body">
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              High-converting technical project intake: multi-step scope selector, strict NDA checkbox, direct architect calendar scheduler, and instant SLA commitment (&lt; 2h).
+            </p>
+            <ul class="feature-list">
+              <li>Multi-Select Capability & Stack Requirement</li>
+              <li>Mutual NDA Instant Guarantee</li>
+              <li>Office Locations (US, Europe, India) & Direct Lines</li>
+              <li>Lead Architect Direct Callback Guarantee</li>
+            </ul>
+            <a href="contact-consultation.html" class="btn btn-primary" style="width: 100%;">Inspect Consultation Prototype →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Architectural Interrogation & Comparison -->
+  <section class="section" style="background: rgba(10, 16, 32, 0.5); border-top: 1px solid var(--border);">
+    <div class="container">
+      <span class="section-tag">Deep Codebase Interrogation</span>
+      <h2 class="section-title">DotcomWeavers vs. Next-Gen Neominds</h2>
+      <p class="section-desc">
+        A breakdown of what DotcomWeavers did in their crawl, how Neominds currently handles it, and how the planned architecture outperforms them.
+      </p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Dimension</th>
+            <th>DotcomWeavers Pattern</th>
+            <th>Current Neominds State</th>
+            <th>Planned Architecture Solution</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Information Architecture</strong></td>
+            <td>6 Root Navs: Work, Services, Platforms, Industries, About Us, Resources.</td>
+            <td>What We Do (15 services, 7 tech, 8 industries), Who We Are, Insights.</td>
+            <td><strong>Strict 5-Pillar Architecture</strong>: Services, Technologies, Industries, Work, Company. No redundant overlap.</td>
+          </tr>
+          <tr>
+            <td><strong>Service Page Hierarchy</strong></td>
+            <td>Platform-first (Adobe, BigCommerce). Focuses heavily on ERP and eCommerce.</td>
+            <td>Generic ServicePageTemplate with tabs for features, process, and tech.</td>
+            <td><strong>Capability-First & Outcome-Driven</strong>: Solves real business bottlenecks, live ROI estimator, deep integration matrix, and verified proof.</td>
+          </tr>
+          <tr>
+            <td><strong>Case Study Depth</strong></td>
+            <td>Apex Beverage: Great KPI header (2.5× growth, 86% revenue), challenges, tech stack, solution.</td>
+            <td>Clean Apple-inspired ProjectPage with breadcrumbs, challenges, and solutions.</td>
+            <td><strong>Executive KPI Ribbon + System Architecture Blueprint</strong>: Adds visual engineering blueprints, verified client quotes, and live before/after metrics.</td>
+          </tr>
+          <tr>
+            <td><strong>Industry Pages</strong></td>
+            <td>Deep, tailored copy per industry (Flooring nuances, HVAC distribution rules, Automotive fitment).</td>
+            <td>Hub page with short cards for each industry.</td>
+            <td><strong>Dedicated Industry Deep Dives</strong>: Detailed technical breakdown of vertical compliance, ERP synchronization, and domain-specific challenges.</td>
+          </tr>
+          <tr>
+            <td><strong>Conversion & Lead Gen</strong></td>
+            <td>Standard Contact Form 7 on every page with phone & address footer.</td>
+            <td>Modal forms and inline contact section on homepage.</td>
+            <td><strong>Dedicated Multi-Step Project Estimator</strong>: Direct lead routing, mutual NDA guarantee, and instant architect scheduler.</td>
+          </tr>
+          <tr>
+            <td><strong>Performance & Tech Stack</strong></td>
+            <td>WordPress + Elementor + jQuery + heavy plugin waterfalls (&gt;4s load time).</td>
+            <td>React 19 + Vite + TypeScript + Lenis smooth scroll (&lt;0.5s load time).</td>
+            <td><strong>Zero-bloat React 19 + Clean Standalone SSR/Prerender Readiness</strong>. 100/100 Lighthouse performance.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Proposed Clean URL Hierarchy -->
+  <section class="section">
+    <div class="container">
+      <span class="section-tag">Clean Routing System</span>
+      <h2 class="section-title">Canonical URL Architecture</h2>
+      <p class="section-desc">Clean, predictable, SEO-optimized paths matching the 15 services, 7 technologies, and 8 industries from our CSV datasets.</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px;">
+        <div class="card">
+          <h4 style="color: #60a5fa; margin-bottom: 12px; font-size: 1.05rem;">Services (15 Routes)</h4>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono);">
+            <li>/services/web-development</li>
+            <li>/services/app-development</li>
+            <li>/services/custom-software-development</li>
+            <li>/services/ai-automations</li>
+            <li>/services/ai-integrations</li>
+            <li>/services/ai-systems</li>
+            <li>/services/ecommerce-platform</li>
+            <li>/services/ai-native-software</li>
+            <li>/services/cloud-based-software</li>
+            <li>/services/saas-development</li>
+            <li>/services/analytics-dashboard</li>
+            <li>/services/custom-health-software</li>
+            <li>/services/legacy-modernisation</li>
+            <li>/services/training-as-service</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="color: #67e8f9; margin-bottom: 12px; font-size: 1.05rem;">Industries (8 Routes)</h4>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono);">
+            <li>/industries/enterprise</li>
+            <li>/industries/financial-tech</li>
+            <li>/industries/retail</li>
+            <li>/industries/education</li>
+            <li>/industries/healthcare</li>
+            <li>/industries/e-commerce</li>
+            <li>/industries/real-estate</li>
+            <li>/industries/e-learning</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="color: #34d399; margin-bottom: 12px; font-size: 1.05rem;">Work & Case Studies</h4>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono);">
+            <li>/work (Hub with filter)</li>
+            <li>/work/apex-beverage</li>
+            <li>/work/mindspace-ai</li>
+            <li>/work/flooring-inc</li>
+            <li>/work/dotcomweavers-ai</li>
+            <li>/work/flexport-automation</li>
+            <li>/work/fero-invoice</li>
+            <li>/work/fundbot-sql</li>
+            <li>/work/bytexl-lms</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4 style="color: #c084fc; margin-bottom: 12px; font-size: 1.05rem;">Company & Insights</h4>
+          <ul style="list-style: none; font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px; font-family: var(--font-mono);">
+            <li>/company (About, Team, Culture)</li>
+            <li>/company/careers</li>
+            <li>/company/certifications</li>
+            <li>/insights (Blog & Publications)</li>
+            <li>/insights/:article-slug</li>
+            <li>/contact (Technical Consultation)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="nav-brand" style="margin-bottom: 14px;">
+            <div class="nav-brand-logo">N</div>
+            <span>neominds<span style="color: var(--primary);">.soft</span></span>
+          </div>
+          <p style="color: var(--text-dim); font-size: 0.88rem; line-height: 1.6; max-width: 320px;">
+            AI-Native Software Engineering, Enterprise Platforms, and Intelligent Automation for Market Leaders.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="service-detail.html">AI Systems & Automations</a></li>
+            <li><a href="service-detail.html">Custom Software Development</a></li>
+            <li><a href="service-detail.html">Cloud Native SaaS</a></li>
+            <li><a href="service-detail.html">Legacy Modernization</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Industries</h4>
+          <ul class="footer-links">
+            <li><a href="industry-detail.html">Healthcare & Life Sciences</a></li>
+            <li><a href="industry-detail.html">Enterprise & FinTech</a></li>
+            <li><a href="industry-detail.html">E-Commerce & Retail</a></li>
+            <li><a href="industry-detail.html">EdTech & Learning</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Case Studies</h4>
+          <ul class="footer-links">
+            <li><a href="case-study-detail.html">Apex Beverage (+86% Rev)</a></li>
+            <li><a href="case-studies-hub.html">Mindspace.ai Healthcare</a></li>
+            <li><a href="case-studies-hub.html">Flexport Automation</a></li>
+            <li><a href="case-studies-hub.html">View All 30+ Projects →</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about-company.html">About Neominds</a></li>
+            <li><a href="about-company.html#leadership">Leadership Team</a></li>
+            <li><a href="blog-hub.html">Insights & Research</a></li>
+            <li><a href="contact-consultation.html">Schedule Discovery</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC. All rights reserved.</span>
+        <span>Planned Architecture Review Build v2.4</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Architecture Consultation & Project Discovery | Neominds</title>
+  <link rel="stylesheet" href="planned-design-system.css">
+  <style>
+    .contact-hero {
+      padding-top: 150px;
+      padding-bottom: 70px;
+    }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+    }
+    .capability-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .pill-select {
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+      transition: all var(--transition-fast);
+    }
+    .pill-select.selected {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    .office-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .sla-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-sm);
+      color: #34d399;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    @media (max-width: 900px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Navigation -->
+  <header class="planned-nav">
+    <div class="nav-pill">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-logo">N</div>
+        <span>neominds<span style="color: var(--primary);">.soft</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="service-detail.html">Services</a></li>
+        <li class="nav-item"><a href="case-studies-hub.html">Work</a></li>
+        <li class="nav-item"><a href="industries-hub.html">Industries</a></li>
+        <li class="nav-item"><a href="about-company.html">Company</a></li>
+        <li class="nav-item"><a href="blog-hub.html">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact-consultation.html" class="btn btn-primary btn-sm">Schedule Consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Hero & Form Layout -->
+  <section class="contact-hero">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: Form -->
+        <div>
+          <span class="section-tag">Direct Architect Intake</span>
+          <h1 class="section-title">Schedule a Technical Architecture Consultation</h1>
+          <p class="section-desc" style="margin-bottom: 28px;">
+            Speak directly with a Principal Software Architect. We evaluate your system topology, scope delivery timelines, and sign mutual NDAs before any deep code review.
+          </p>
+
+          <div class="card card-glow" style="padding: 36px;">
+            <form onsubmit="handleSubmit(event)">
+
+              <!-- Capabilities Multi-Select -->
+              <div class="form-group">
+                <label class="form-label">Capabilities You Need (Select all that apply)</label>
+                <div class="capability-pills">
+                  <div class="pill-select selected" onclick="togglePill(this)">AI Systems & Automations</div>
+                  <div class="pill-select" onclick="togglePill(this)">Custom Software Development</div>
+                  <div class="pill-select" onclick="togglePill(this)">Mobile App (iOS/Android)</div>
+                  <div class="pill-select" onclick="togglePill(this)">ERP & System Integrations</div>
+                  <div class="pill-select" onclick="togglePill(this)">Analytics Dashboard</div>
+                  <div class="pill-select" onclick="togglePill(this)">Legacy Modernization</div>
+                </div>
+              </div>
+
+              <!-- Name & Email -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Your Name *</label>
+                  <input type="text" required placeholder="Alex Mercer" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Work Email *</label>
+                  <input type="email" required placeholder="a.mercer@enterprise.com" class="form-input">
+                </div>
+              </div>
+
+              <!-- Company & Budget -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div class="form-group">
+                  <label class="form-label">Company Name *</label>
+                  <input type="text" required placeholder="Apex Logistics Corp" class="form-input">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Estimated Project Budget</label>
+                  <select class="form-select">
+                    <option>$25,000 - $50,000</option>
+                    <option selected>$50,000 - $100,000</option>
+                    <option>$100,000 - $250,000</option>
+                    <option>$250,000+</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label class="form-label">System Bottleneck or Project Goals</label>
+                <textarea rows="4" class="form-textarea" placeholder="Tell us about the architecture you're planning, current operational challenges, or integrations needed..."></textarea>
+              </div>
+
+              <!-- Checkbox & Security -->
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 10px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+                  <input type="checkbox" checked style="accent-color: var(--primary);"> Send Mutual NDA First
+                </label>
+                <div class="sla-badge">⚡ &lt; 2-Hour Response SLA</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem;">
+                Submit Technical Discovery Request →
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Right: Trust Signals & Global Offices -->
+        <div style="padding-top: 40px;">
+          <div style="margin-bottom: 36px;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 14px;">What Happens Next?</h3>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;">1</div>
+                <div>
+                  <strong style="color: #ffffff; font-size: 0.95rem;">Mutual NDA Execution</strong>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2px;">We execute our standard bilateral NDA within 30 minutes to protect your proprietary data.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;">2</div>
+                <div>
+                  <strong style="color: #ffffff; font-size: 0.95rem;">Technical Discovery Call</strong>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2px;">45-minute architectural deep-dive with a Principal Architect—not a sales representative.</p>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 14px; align-items: flex-start;">
+                <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0;">3</div>
+                <div>
+                  <strong style="color: #ffffff; font-size: 0.95rem;">Architecture Blueprint & Fixed Scope</strong>
+                  <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 2px;">Comprehensive system topology diagram, technology stack recommendation, and fixed delivery milestones.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Global Offices -->
+          <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 14px;">Global Engineering Locations</h3>
+
+          <div class="office-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: #ffffff; font-size: 0.95rem;">North America Client Advisory</strong>
+              <span class="pill pill-blue">US Operations</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+              Executive Strategy, Compliance Verification, and Contract Governance.
+            </p>
+          </div>
+
+          <div class="office-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: #ffffff; font-size: 0.95rem;">Europe & EMEA Delivery Hub</strong>
+              <span class="pill pill-cyan">EMEA</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+              Cross-border cloud infrastructure and GDPR regulatory audits.
+            </p>
+          </div>
+
+          <div class="office-card">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+              <strong style="color: #ffffff; font-size: 0.95rem;">High-Scale Development Center</strong>
+              <span class="pill pill-emerald">24/7 Operations</span>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+              Round-the-clock continuous deployment, regression testing, and production support.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="planned-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>© 2026 Neominds Software LLC · Consultation Prototype</span>
+        <a href="index.html" style="color: var(--primary);">← Return to Prototype Directory</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function togglePill(el) {
+      el.classList.toggle('selected');
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Thank you! Your technical consultation request has been submitted. A Principal Solutions Architect will contact you in under 2 hours.');
+    }
+  </script>
+</body>
+</html>

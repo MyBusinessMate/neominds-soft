@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import {
   Search,
-  Sparkles,
   ArrowRight,
   Clock,
   BookOpen,
@@ -262,8 +261,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   minHeight: '280px',
                 }}
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', backgroundColor: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(4px)', padding: '4px 12px', borderRadius: '100px', width: 'fit-content', fontSize: '12px', fontWeight: 600 }}>
-                  <Sparkles size={13} color="#60a5fa" />
+                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #60a5fa', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   <span>Featured Engineering Teardown</span>
                 </div>
 

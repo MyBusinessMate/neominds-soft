@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { ServiceSignatureData } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -22,23 +22,25 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
         <div style={{ maxWidth: '780px', marginBottom: '56px' }}>
           <div
             style={{
-              display: 'inline-flex',
+              display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              backgroundColor: 'rgba(34, 88, 231, 0.2)',
-              border: '1px solid rgba(34, 88, 231, 0.4)',
-              borderRadius: '3px',
-              color: '#60a5fa',
-              fontSize: '12px',
-              fontWeight: 700,
-              letterSpacing: '0.05em',
+              gap: '10px',
               marginBottom: '16px',
-              textTransform: 'uppercase',
             }}
           >
-            <Sparkles size={14} />
-            <span>{data.badge}</span>
+            <span style={{ width: '16px', height: '2px', backgroundColor: '#60a5fa' }} />
+            <span
+              style={{
+                fontFamily: 'monospace',
+                fontSize: '12px',
+                fontWeight: 700,
+                color: '#60a5fa',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
+              {data.badge}
+            </span>
           </div>
 
           <ScrollReveal

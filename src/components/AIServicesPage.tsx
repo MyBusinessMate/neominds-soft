@@ -232,7 +232,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
       context:
         'We integrated an AI-powered assistant and intelligent checks into a medical coding platform to help coders work faster, improve accuracy, and reduce manual effort.',
       problem:
-        'Medical coders spent too much time searching reference materials and interpreting coding guidelines while content teams manually maintained complex coding rules and updates—slowing productivity and limiting scale.',
+        'Medical coders spent too much time searching reference materials and interpreting coding guidelines while content teams manually maintained complex rules, which slowed productivity and restricted throughput.',
       solution:
         'Neominds integrated an AI-powered coding assistant and automated validation capabilities that streamlined coding workflows and reduced the effort required to manage coding content.',
       metrics: [
@@ -449,7 +449,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
                 title={logo.name}
               />
             ))}
-            {/* Seamless Repeat Set */}
+            {/* Continuous Marquee Loop Set */}
             {AI_CLIENT_LOGOS.map((logo, idx) => (
               <div
                 key={`logo-2-${idx}`}
@@ -523,7 +523,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
             ))}
           </div>
 
-          {/* Right Column: Active Content (Blended seamlessly into unified frame) */}
+          {/* Right Column: Active Content (Blended directly into unified frame) */}
           <div className="ai-pillars-content-col">
             <AnimatePresence mode="wait">
               <motion.div
@@ -756,11 +756,11 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           <div className="ai-footer-top">
             <div className="ai-footer-brand-col">
               <div className="ai-nav-brand" onClick={onNavigateHome}>
-                <div className="ai-nav-logo-icon">E</div>
-                <span className="ai-nav-brand-text">EFFECTIVESOFT.AI</span>
+                <div className="ai-nav-logo-icon">N</div>
+                <span className="ai-nav-brand-text">NEOMINDS.AI</span>
               </div>
               <p className="ai-footer-desc">
-                AI-enabled product engineering—from idea to production. 23+
+                AI-enabled product engineering from architecture through production. Over 23
                 years of engineering excellence and rigorous execution.
               </p>
             </div>

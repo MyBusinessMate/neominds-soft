@@ -1,4 +1,4 @@
-// Canonical service slugs — 16 services exactly as defined in the services CSV
+// Canonical service slugs: 16 services exactly as defined in the services CSV
 export const ALL_SERVICE_SLUGS = [
   // Core Development
   'web-development',

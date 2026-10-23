@@ -8,7 +8,7 @@ import {
   Mail,
   Phone,
   CheckCircle2,
-  Sparkles,
+  Layers,
 } from 'lucide-react';
 import { BLOG_POSTS_DATA } from '../data/blogData';
 import { Footer } from './Footer';
@@ -138,7 +138,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
           <div className="b-hero__media">
             <div className="b-hero__media-card">
               <div className="b-hero__media-graphic">
-                <Sparkles size={36} style={{ color: '#60a5fa', marginBottom: '16px' }} />
+                <Layers size={36} style={{ color: '#60a5fa', marginBottom: '16px' }} />
                 <h3 style={{ fontSize: '20px', fontWeight: 700, margin: '0 0 8px 0', textAlign: 'center' }}>
                   Enterprise Engineering Intelligence
                 </h3>

@@ -383,7 +383,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                     transform: 'scale(1.02)',
                   }}
                 />
-                {/* Subtle cinematic gradient overlay for seamless contrast */}
+                {/* Subtle cinematic gradient overlay for readable contrast */}
                 <div
                   style={{
                     position: 'absolute',

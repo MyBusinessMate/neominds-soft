@@ -2,14 +2,13 @@ import React, { useState, useCallback, useMemo } from 'react';
 import {
   ArrowRight,
   ChevronRight,
-  Sparkles,
 } from 'lucide-react';
 import { Footer } from './Footer';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface PortfolioPageProps {
   onNavigateHome?: () => void;
-  onNavigatePage: (page: string) => void;
+  onNavigatePage: (page: string, articleId?: string) => void;
   onSuccessToast: (msg: string) => void;
 }
 
@@ -69,23 +68,25 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
         <div>
           <div
             style={{
-              display: 'inline-flex',
+              display: 'flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '6px 14px',
-              backgroundColor: 'rgba(34, 88, 231, 0.08)',
-              border: '1px solid rgba(34, 88, 231, 0.25)',
-              borderRadius: '2px',
-              color: '#2258e7',
-              fontSize: '13px',
-              fontWeight: 600,
-              letterSpacing: '0.04em',
+              gap: '12px',
               marginBottom: '24px',
-              textTransform: 'uppercase',
             }}
           >
-            <Sparkles size={14} />
-            <span>Success Stories & Client Results</span>
+            <span style={{ width: '20px', height: '2px', backgroundColor: '#2258e7' }} />
+            <span
+              style={{
+                fontFamily: 'monospace',
+                fontSize: '13px',
+                fontWeight: 700,
+                color: '#2258e7',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+              }}
+            >
+              Verified Case Studies // Production Results
+            </span>
           </div>
 
           <ScrollReveal
@@ -154,10 +155,11 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid #e2e8f0', paddingBottom: '12px' }}>
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ff5f56' }} />
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#ffbd2e' }} />
-                <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: '#27c93f' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <span style={{ width: '8px', height: '8px', backgroundColor: '#16a34a' }} />
+                <span style={{ fontSize: '11px', color: '#16a34a', fontFamily: 'monospace', fontWeight: 700, letterSpacing: '0.04em' }}>
+                  AUDITED PRODUCTION LOG
+                </span>
               </div>
               <span style={{ fontSize: '12px', color: '#64748b', fontFamily: 'monospace', fontWeight: 600 }}>
                 DELIVERY METRICS // 2003–2026
@@ -297,11 +299,11 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           fontSize: '11px',
                           fontWeight: 700,
                           color: '#2258e7',
-                          backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                          padding: '4px 10px',
-                          borderRadius: '2px',
+                          fontFamily: 'monospace',
+                          letterSpacing: '0.06em',
                           textTransform: 'uppercase',
-                          letterSpacing: '0.04em',
+                          borderLeft: '2px solid #2258e7',
+                          paddingLeft: '6px',
                         }}
                       >
                         {cs.category}
@@ -324,6 +326,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                     </div>
 
                     <h3
+                      onClick={() => onNavigatePage('project', cs.id)}
                       style={{
                         fontSize: '20px',
                         fontWeight: 700,
@@ -331,7 +334,11 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                         lineHeight: 1.3,
                         marginBottom: '12px',
                         fontFamily: 'var(--font-heading)',
+                        cursor: 'pointer',
+                        transition: 'color 0.15s ease',
                       }}
+                      onMouseEnter={(e) => (e.currentTarget.style.color = '#2258e7')}
+                      onMouseLeave={(e) => (e.currentTarget.style.color = '#0f172a')}
                     >
                       {cs.title}
                     </h3>
@@ -446,9 +453,9 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           />
                         </button>
                         <button
-                          onClick={() => onNavigatePage('contacts')}
+                          onClick={() => onNavigatePage('project', cs.id)}
                           style={{
-                            backgroundColor: '#2258e7',
+                            backgroundColor: '#0f172a',
                             color: '#ffffff',
                             border: 'none',
                             fontSize: '12px',
@@ -456,9 +463,13 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                             padding: '6px 12px',
                             borderRadius: '4px',
                             cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
                           }}
                         >
-                          Inquire
+                          <span>Full Project</span>
+                          <ArrowRight size={12} />
                         </button>
                       </div>
                     </div>
