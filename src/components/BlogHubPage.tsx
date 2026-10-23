@@ -352,7 +352,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
               Say hello to our friendly team at one of these locations.
             </p>
             <a
-              href="mailto:rfq@effectivesoft.com"
+              href="mailto:contact@neomindstechhub.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -363,8 +363,9 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
               }}
             >
               <Mail size={16} />
-              <span>rfq@effectivesoft.com</span>
+              <span>contact@neomindstechhub.com</span>
             </a>
+
           </div>
 
           {/* Region Tabs */}

@@ -47,6 +47,8 @@ scratch*
 serve.js
 scripts/
 *.py
+ui-slop/
+
 
 # Playwright & Testing MCP artifacts
 .playwright-mcp/

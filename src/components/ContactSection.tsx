@@ -22,6 +22,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
   const [isRecording, setIsRecording] = useState(false);
   const [recordedAudio, setRecordedAudio] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,12 +54,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.challenge || !formData.name || !formData.email || !formData.consent) {
-      alert('Please fill in required fields (*) and accept privacy terms.');
+      setFormError('Please fill in required fields (*) and accept privacy terms.');
       return;
     }
+    setFormError('');
     setSubmitted(true);
     if (onSuccessToast) onSuccessToast('Your message and project requirements have been submitted.');
   };
+
 
   return (
     <section
@@ -552,7 +555,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                 >
                   Send message
                 </button>
+                {formError && (
+                  <p style={{ color: '#f87171', fontSize: '13px', marginTop: '10px', fontWeight: 500 }}>
+                    {formError}
+                  </p>
+                )}
               </div>
+
             </form>
           )}
         </div>

@@ -80,22 +80,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               transition: 'transform 0.25s ease, box-shadow 0.25s ease',
             }}
           >
-            {isFeatured && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '-50px',
-                  right: '-50px',
-                  width: '180px',
-                  height: '180px',
-                  borderRadius: '50%',
-                  background: 'radial-gradient(circle, rgba(34, 88, 231, 0.25) 0%, transparent 70%)',
-                  pointerEvents: 'none',
-                }}
-              />
-            )}
-
             <div>
+
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
                 <div
                   style={{

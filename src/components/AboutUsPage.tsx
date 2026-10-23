@@ -183,8 +183,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               autoPlay
             >
               <source src="/uploads/2025/06/Video-About-us.mp4" type="video/mp4" />
-              <source src="/uploads/2025/07/about-effectivesoft.webm" type="video/webm" />
+              <source src="/uploads/2025/07/about-neominds.webm" type="video/webm" />
             </video>
+
             <div
               style={{
                 position: 'absolute',

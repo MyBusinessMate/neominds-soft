@@ -11,20 +11,21 @@ interface ClientLogo {
 }
 
 const clientLogos: ClientLogo[] = [
-  { id: 'migiagnostics', name: 'Migiagnostics', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2025/02/Migiagnostics.svg' },
-  { id: 'plato', name: 'Plato', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Plato.svg' },
-  { id: 'authenticom', name: 'Authenticom', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/authenticom-white.svg' },
-  { id: 'webbula', name: 'Webbula', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/07/webbula-white2.svg' },
-  { id: 'waterway', name: 'Waterway', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Waterway.svg' },
-  { id: 'motiveretail', name: 'Motive Retail', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/motiveretail-white.svg' },
-  { id: 'yfc', name: 'YourFitnessCoach', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/YourFitnessCoach.svg' },
-  { id: 'maersk', name: 'Maersk', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/maersk-white.svg' },
-  { id: 'nissin', name: 'Nissin', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Nissin.svg' },
-  { id: 'medscope', name: 'MedScope', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/MedScope.svg' },
-  { id: 'trubridge', name: 'TruBridge', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2025/02/TruBridge.svg' },
-  { id: 'delphivision', name: 'Delphi Vision', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/delphivision-white.svg' },
-  { id: 'adventr', name: 'Adventr', url: 'https://www.effectivesoft.com/wp/wp-content/uploads/2010/04/Adventr.svg' },
+  { id: 'migiagnostics', name: 'Migiagnostics', url: '/uploads/2025/02/Migiagnostics.svg' },
+  { id: 'plato', name: 'Plato', url: '/uploads/2010/04/Plato.svg' },
+  { id: 'authenticom', name: 'Authenticom', url: '/uploads/2026/05/authenticom-white.svg' },
+  { id: 'webbula', name: 'Webbula', url: '/uploads/2026/07/webbula-white2.svg' },
+  { id: 'waterway', name: 'Waterway', url: '/uploads/2010/04/Waterway.svg' },
+  { id: 'motiveretail', name: 'Motive Retail', url: '/uploads/2026/05/motiveretail-white.svg' },
+  { id: 'yfc', name: 'YourFitnessCoach', url: '/uploads/2010/04/YourFitnessCoach.svg' },
+  { id: 'maersk', name: 'Maersk', url: '/uploads/2026/05/maersk-white.svg' },
+  { id: 'nissin', name: 'Nissin', url: '/uploads/2010/04/Nissin.svg' },
+  { id: 'medscope', name: 'MedScope', url: '/uploads/2010/04/MedScope.svg' },
+  { id: 'trubridge', name: 'TruBridge', url: '/uploads/2025/02/TruBridge.svg' },
+  { id: 'delphivision', name: 'Delphi Vision', url: '/uploads/2026/05/delphivision-white.svg' },
+  { id: 'adventr', name: 'Adventr', url: '/uploads/2010/04/Adventr.svg' },
 ];
+
 
 const ExperienceSectionComponent: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);

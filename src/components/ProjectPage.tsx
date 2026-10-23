@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -25,6 +25,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   onNavigatePage,
   onOpenContact,
 }) => {
+  const [copied, setCopied] = useState(false);
+
   const project: UnifiedProject = useMemo(() => {
     return getUnifiedProject(projectId);
   }, [projectId]);
@@ -42,17 +44,19 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   }, [project.relatedProjectIds]);
 
   const handleShare = () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } else if (typeof navigator !== 'undefined' && navigator.share) {
       navigator.share({
         title: project.title,
         text: project.overview.services,
         url: window.location.href,
       }).catch(() => {});
-    } else if (typeof navigator !== 'undefined' && navigator.clipboard) {
-      navigator.clipboard.writeText(window.location.href);
-      alert('Link copied to clipboard');
     }
   };
+
 
   const handleDiscussClick = () => {
     if (onOpenContact) {
@@ -218,13 +222,38 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             fontSize: 'clamp(16px, 1.8vw, 19px)',
             lineHeight: 1.6,
             color: '#475569',
-            margin: 0,
+            margin: '0 0 24px 0',
             maxWidth: '820px',
           }}
         >
           {project.solution}
         </p>
+
+        <div>
+          <button
+            onClick={handleShare}
+            aria-label="Share case study link"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 18px',
+              fontSize: '13px',
+              fontWeight: 600,
+              color: copied ? '#15803d' : '#0f172a',
+              backgroundColor: copied ? '#f0fdf4' : '#f8fafc',
+              border: copied ? '1px solid #86efac' : '1px solid #e2e8f0',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              transition: 'all 0.15s ease',
+            }}
+          >
+            {copied ? <Check size={14} /> : <Share2 size={14} />}
+            <span>{copied ? 'Link Copied to Clipboard' : 'Share Case Study'}</span>
+          </button>
+        </div>
       </header>
+
 
       {/* ========================================================
           PROJECT OVERVIEW (Bento Meta Grid)

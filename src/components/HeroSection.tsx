@@ -107,10 +107,10 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           }}
           poster="/images/hero-ribbon.jpg"
         >
-          <source src="https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/new-cover.webm" type="video/webm" />
-          <source src="https://www.effectivesoft.com/wp/wp-content/uploads/2026/05/new-cover.mp4" type="video/mp4" />
+          <source src="/uploads/2026/05/new-cover.mp4" type="video/mp4" />
         </video>
       </div>
+
 
       {/* Subtle overlay vignette for perfect readability */}
       <div

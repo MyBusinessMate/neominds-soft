@@ -108,6 +108,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
   const [fileName, setFileName] = useState<string | null>(null);
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [formError, setFormError] = useState('');
 
   const toggleFaq = useCallback((index: number) => {
     setActiveFaq((prev) => (prev === index ? null : index));
@@ -132,11 +133,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
   const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.consent) {
-      alert('Please complete your name, email and accept the privacy consent.');
+      setFormError('Please complete your name, email and accept the privacy consent.');
       return;
     }
+    setFormError('');
     setSubmitted(true);
   }, [formData.name, formData.email, formData.consent]);
+
 
   const handleNewsletterSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
@@ -562,7 +565,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 <span>Send application</span>
                 <Send size={16} />
               </button>
+              {formError && (
+                <div style={{ color: '#f87171', fontSize: '13px', marginTop: '12px', fontWeight: 500 }}>
+                  {formError}
+                </div>
+              )}
             </form>
+
           )}
         </div>
       </section>

@@ -22,20 +22,13 @@
   justify-content: center;
   text-align: center;
   padding: clamp(64px, 10vw, 120px) 24px clamp(48px, 8vw, 80px);
-  background: radial-gradient(circle at 50% 30%, #111d3d 0%, #070b14 70%);
+  background: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
 }
 
 .s-superhero__glow {
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(34, 88, 231, 0.2) 0%, transparent 70%);
-  pointer-events: none;
-  filter: blur(40px);
+  display: none;
 }
 
 .s-superhero__container {
@@ -50,9 +43,9 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 24px;
-  font-family: monospace;
+  font-family: var(--font-mono, monospace);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #60a5fa;
@@ -75,11 +68,9 @@
 }
 
 .s-superhero__title span {
-  color: #2258e7;
-  background: linear-gradient(135deg, #3b82f6 0%, #2258e7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #3b82f6;
 }
+
 
 .s-superhero__subtitle {
   font-size: clamp(17px, 2vw, 22px);

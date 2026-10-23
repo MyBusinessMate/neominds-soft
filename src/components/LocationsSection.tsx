@@ -18,6 +18,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
   const [activeTab, setActiveTab] = useState<'americas' | 'europe'>('americas');
   const [email, setEmail] = useState('');
   const [newsletterConsent, setNewsletterConsent] = useState(false);
+  const [subError, setSubError] = useState('');
+
 
   const americasLocations: LocationItem[] = [
     {
@@ -66,12 +68,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !newsletterConsent) {
-      alert('Please enter your email and accept terms.');
+      setSubError('Please enter your email and accept terms.');
       return;
     }
+    setSubError('');
     if (onSuccessToast) onSuccessToast(`Subscribed "${email}" to Neominds newsletter.`);
     setEmail('');
   };
+
 
   return (
     <section
@@ -492,7 +496,13 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 />
                 <span>I agree to receive practical updates on AI, software and cloud from Neominds TechHub.</span>
               </label>
+              {subError && (
+                <p style={{ color: '#ef4444', fontSize: '12px', marginTop: '8px', fontWeight: 500 }}>
+                  {subError}
+                </p>
+              )}
             </form>
+
           </div>
         </RevealElement>
       </div>

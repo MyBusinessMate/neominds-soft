@@ -55,10 +55,12 @@ html.lenis body {
   --dark-text-muted: #d0d3dd;
   --dark-border: #1e2430;
 
-  /* 2. Typography Design Tokens (EffectiveSoft Official Typography) */
-  --font-heading: 'Inter', 'Mona Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* 2. Typography Design Tokens (Apple HIG & Minimalist Editorial Typography) */
+  --font-heading: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Mona Sans', 'Inter', 'Helvetica Neue', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Mona Sans', 'Inter', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SF Mono', 'Geist Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
   --font-family: var(--font-body);
+
 
   /* 3. CORE SPACING SCALE (4px foundation, 8px primary rhythm) */
   --space-1: 4px;    /* micro adjustment */
@@ -309,13 +311,19 @@ img, svg {
   max-width: 100%;
 }
 
-/* Headings Typography Rules (Bricolage Grotesque) */
+/* Headings Typography Rules (Apple HIG Display Scale) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
   color: inherit;
+  text-wrap: balance;
 }
+
+h1 {
+  letter-spacing: -0.035em;
+}
+
 
 /* Containers */
 .container {

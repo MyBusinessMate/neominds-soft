@@ -804,14 +804,15 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   {/* Schematic Icon Graphics matching reference image */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ width: '30px', height: '30px', borderRadius: '0px', backgroundColor: '#2563eb', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '13px', fontWeight: 700 }}>
-                      🤖
+                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(37, 99, 235, 0.25)', border: '1px solid rgba(37, 99, 235, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#60a5fa' }} aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
                     </div>
-                    <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '16px', fontWeight: 300 }}>≠</span>
-                    <div style={{ width: '30px', height: '30px', borderRadius: '0px', backgroundColor: '#1d4ed8', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '13px' }}>
-                      ⚙️
+                    <span style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '14px', fontWeight: 400 }}>≠</span>
+                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(30, 58, 138, 0.3)', border: '1px solid rgba(59, 130, 246, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#93c5fd' }} aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
                   </div>
+
                 </div>
 
                 <div
@@ -945,8 +946,10 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: 'radial-gradient(ellipse at bottom right, rgba(34, 88, 231, 0.25) 0%, rgba(19, 22, 31, 0.98) 72%)',
+                background: '#0c0f17',
+                borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
               }}
+
             >
               <div>
                 {/* Header with Quote Icon & Canopy Logo */}

@@ -321,10 +321,11 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           -------------------------------------------------------------------- */}
       <nav className="ai-nav" aria-label="AI Services Navigation">
         <div className="ai-nav-brand" onClick={onNavigateHome}>
-          <div className="ai-nav-logo-icon">E</div>
-          <span className="ai-nav-brand-text">EFFECTIVESOFT</span>
+          <div className="ai-nav-logo-icon">N</div>
+          <span className="ai-nav-brand-text">NEOMINDS</span>
           <span className="ai-nav-brand-badge">AI CORE</span>
         </div>
+
 
         <div className="ai-nav-links">
           <button
@@ -811,7 +812,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
               <div className="ai-footer-links">
                 <a
                   className="ai-footer-link"
-                  href="https://www.linkedin.com/company/effectivesoft"
+                  href="https://www.linkedin.com/company/neominds-techhub"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -819,12 +820,13 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
                 </a>
                 <a
                   className="ai-footer-link"
-                  href="https://twitter.com/effectivesoft"
+                  href="https://x.com/neomindstechhub"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Twitter / X
                 </a>
+
                 <a
                   className="ai-footer-link"
                   href="https://github.com/neominds"

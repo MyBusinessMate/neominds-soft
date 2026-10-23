@@ -12,20 +12,21 @@ interface RecognitionSlide {
 const slides: RecognitionSlide[] = [
   {
     title: 'Claude Partner Network Services Track',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/145843/660.vertical.jpg',
+    imageUrl: '/uploads/ESThumbnails/145843/660.vertical.jpg',
     caption: 'Select partner in Claude Partner Network',
   },
   {
     title: 'Agentic AI in Digital Engineering Market 2025–2029',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/137362/660.Image.jpg',
+    imageUrl: '/uploads/ESThumbnails/137362/660.Image.jpg',
     caption: 'Research and Markets Report recognition',
   },
   {
     title: 'Top AI Company',
-    imageUrl: 'https://www.effectivesoft.com/wp/wp-content/uploads/ESThumbnails/131881/660.Top-AI-company-Clutch.jpg',
+    imageUrl: '/uploads/ESThumbnails/131881/660.Top-AI-company-Clutch.jpg',
     caption: 'Clutch Top AI Company Award',
   },
 ];
+
 
 const IndustryRecognitionComponent: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -283,18 +283,17 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               <div
                 style={{
                   position: 'relative',
-                  borderRadius: '16px',
+                  borderRadius: '0px',
                   overflow: 'hidden',
-                  background: 'linear-gradient(135deg, #121826 0%, #090e17 100%)',
+                  background: '#0c1019',
                   padding: '36px',
-                  border: '1px solid #e4e4e7',
-                  boxShadow: '0 20px 48px rgba(0, 0, 0, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.12)',
                 }}
               >
-                <div style={{ position: 'absolute', top: '-40px', right: '-40px', width: '220px', height: '220px', background: 'radial-gradient(circle, rgba(34, 88, 231, 0.3) 0%, rgba(34, 88, 231, 0) 70%)', pointerEvents: 'none' }} />
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#5f85ed', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
                   Our Philosophy
                 </div>
+
                 <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#ffffff', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
                   Engineering grounded in clarity, technical mastery, and long-term partnership.
                 </h3>
