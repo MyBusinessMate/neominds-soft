@@ -43,7 +43,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'E-commerce Platform', slug: 'ecommerce-platform' },
     ],
     image: '/services/software-development.png',
-    imageAlt: 'Build Web, Mobile, Custom and SaaS Software',
+    imageAlt: 'Neominds Core Engineering - Web, Mobile, Custom Software and SaaS Development',
     bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
   },
   {
@@ -66,7 +66,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'AI-Native Software', slug: 'ai-native-software' },
     ],
     image: '/services/ai-development.png',
-    imageAlt: 'AI Integration and Autonomous Intelligent Systems',
+    imageAlt: 'Neominds AI Systems - Intelligent Automation, LLM Integration, and Autonomous AI Agents',
     bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
   },
   {
@@ -89,7 +89,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'Analytic Dashboard', slug: 'analytics-dashboard' },
     ],
     image: '/services/devops.png',
-    imageAlt: 'Legacy Application Modernization and Cloud Migration',
+    imageAlt: 'Neominds Cloud Evolution - Cloud-Native Architecture and Zero-Downtime Legacy Modernization',
     bgGradient: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)',
   },
 ];

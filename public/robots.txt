@@ -2,5 +2,22 @@ User-agent: *
 Allow: /
 Allow: /assets/
 Allow: /images/
+Allow: /services/
+Allow: /projects/
+Allow: /blog/
+Allow: /llms.txt
+
+# Explicit AI Engine Permissions for AEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
 
 Sitemap: https://neominds.io/sitemap.xml

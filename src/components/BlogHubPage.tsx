@@ -208,7 +208,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                     >
                       <img
                         src={post.coverImage}
-                        alt={post.title}
+                        alt={`${post.title} - Neominds Engineering Technical Analysis`}
                         loading="lazy"
                         onError={(e) => {
                           // Fallback if local image fails

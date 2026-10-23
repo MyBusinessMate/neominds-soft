@@ -24,6 +24,7 @@ const servicesLinks: FooterLink[] = [
   { label: 'Custom Health Softwares', target: '#custom-health-software' },
   { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
   { label: 'Training as a Service', target: '#training-as-service' },
+  { label: 'Product Engineering', target: '#product-engineering' },
 ];
 
 const technologiesLinks: FooterLink[] = [

@@ -198,7 +198,8 @@ const ExperienceSectionComponent: React.FC = () => {
                 >
                   <img
                     src={activeLogo.url}
-                    alt={activeLogo.name}
+                    alt={`${activeLogo.name} - Enterprise Client, Neominds Software Partner`}
+                    loading="lazy"
                     style={{
                       maxHeight: '32px',
                       maxWidth: '160px',

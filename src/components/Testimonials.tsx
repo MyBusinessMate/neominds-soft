@@ -214,7 +214,8 @@ export const Testimonials: React.FC = () => {
                     {item.logoUrl ? (
                       <img
                         src={item.logoUrl}
-                        alt={item.clientName}
+                        alt={`${item.clientName} enterprise client logo`}
+                        loading="lazy"
                         style={{ maxHeight: '36px', maxWidth: '140px', objectFit: 'contain' }}
                         onError={(e) => {
                           (e.currentTarget as HTMLElement).style.display = 'none';
@@ -258,7 +259,8 @@ export const Testimonials: React.FC = () => {
                   {item.photoUrl ? (
                     <img
                       src={item.photoUrl}
-                      alt={item.author}
+                      alt={`${item.author}, ${item.title} at ${item.clientName}`}
+                      loading="lazy"
                       style={{
                         width: '42px',
                         height: '42px',

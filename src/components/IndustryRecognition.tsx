@@ -231,7 +231,7 @@ const IndustryRecognitionComponent: React.FC = () => {
               >
                 <img
                   src={currentSlide.imageUrl}
-                  alt={currentSlide.title}
+                  alt={`${currentSlide.title} - ${currentSlide.caption} (Neominds Industry Recognition)`}
                   style={{
                     width: '100%',
                     maxHeight: '380px',

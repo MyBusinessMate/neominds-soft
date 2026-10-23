@@ -170,14 +170,26 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 overflow: 'hidden',
                 boxShadow: '0 20px 48px rgba(15, 23, 42, 0.12)',
                 border: '1px solid #e2e8f0',
-                backgroundImage: `url(${
-                  heroImage ||
-                  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'
-                })`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundColor: '#0f172a',
               }}
             >
+              <img
+                src={
+                  heroImage ||
+                  'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop'
+                }
+                alt={heroImageCaption || `${headline} ${headlineHighlight} - Neominds Enterprise Software Architecture`}
+                loading="eager"
+                decoding="async"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                }}
+              />
               <div
                 style={{
                   position: 'absolute',

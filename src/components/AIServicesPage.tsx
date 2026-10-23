@@ -642,7 +642,11 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
               </div>
 
               <div className="ai-phase-visual">
-                <img src={phase.image} alt={phase.title} />
+                <img
+                  src={phase.image}
+                  alt={`${phase.badge}: ${phase.title} - Neominds Enterprise AI Delivery Model`}
+                  loading="lazy"
+                />
               </div>
             </div>
           ))}

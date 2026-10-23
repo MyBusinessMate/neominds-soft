@@ -379,7 +379,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <div style={{ position: 'relative', width: '100%', height: '320px', overflow: 'hidden', backgroundColor: '#e9eefd' }}>
                   <img
                     src={leader.image}
-                    alt={leader.name}
+                    alt={`${leader.name} - ${leader.role} at Neominds TechHub`}
                     loading="lazy"
                     style={{
                       width: '100%',
@@ -497,7 +497,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <div style={{ width: '100%', height: '340px', borderRadius: '12px', overflow: 'hidden', marginBottom: '20px' }}>
                   <img
                     src={selectedLeader.image}
-                    alt={selectedLeader.name}
+                    alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds TechHub`}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
                   />
                 </div>

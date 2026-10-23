@@ -372,7 +372,9 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
               >
                 <img
                   src={cs.imageUrl}
-                  alt={cs.title}
+                  alt={`${cs.title} - ${cs.clientName} Case Study Architecture | Neominds TechHub`}
+                  loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',

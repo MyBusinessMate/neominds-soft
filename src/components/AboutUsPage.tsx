@@ -311,7 +311,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 <div className="s-team-section__media">
                   <img
                     src={member.image}
-                    alt={member.name}
+                    alt={`${member.name} - ${member.position} at Neominds TechHub`}
                     loading="lazy"
                     decoding="async"
                     width="280"
@@ -374,7 +374,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 {currentTestimonial.avatar && (
                   <img
                     src={currentTestimonial.avatar}
-                    alt={currentTestimonial.author}
+                    alt={`${currentTestimonial.author} - Client Testimonial, Neominds TechHub`}
                     className="s-testimonials__avatar"
                     loading="lazy"
                     decoding="async"
@@ -396,7 +396,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               {currentTestimonial.logo && (
                 <img
                   src={currentTestimonial.logo}
-                  alt={`${currentTestimonial.author} company logo`}
+                  alt={`${currentTestimonial.author} Enterprise Client Organization Logo`}
                   className="s-testimonials__logo"
                   loading="lazy"
                   decoding="async"
