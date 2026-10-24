@@ -384,17 +384,17 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
           </div>
 
           {/* Fraud Alert Notice */}
-          <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#fffbeb', border: '1px solid #fef3c7', borderRadius: '4px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-            <ShieldAlert size={22} color="#b45309" style={{ flexShrink: 0, marginTop: '2px' }} />
-            <div style={{ fontSize: '13.5px', color: '#78350f', lineHeight: 1.6 }}>
-              <strong>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
+          <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#121212', border: '1px solid #FF5500', borderRadius: '4px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+            <ShieldAlert size={22} color="#FF5500" style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div style={{ fontSize: '13.5px', color: '#D1D5DB', lineHeight: 1.6 }}>
+              <strong style={{ color: '#FFFFFF' }}>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. theme-dark g-section s-request (CV Application Form) */}
-      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#070b14', color: '#ffffff' }}>
+      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#000000', color: '#ffffff' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -430,7 +430,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="Your full name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
@@ -446,7 +446,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="e.g. Senior Full-Stack Engineer"
                     value={formData.position}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
@@ -478,7 +478,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -494,7 +494,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   placeholder="Tell us about yourself, your GitHub or portfolio links..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
                 />
               </div>
 

@@ -243,14 +243,14 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         {/* Right Column: Deep Inspection Inspector Card */}
         <div
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: '#0a0a0a',
             color: '#ffffff',
             borderRadius: '8px',
             padding: 'clamp(28px, 4vw, 44px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            border: '1px solid #1e293b',
+            border: '1px solid #1F1F23',
             position: 'relative',
           }}
         >

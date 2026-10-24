@@ -77,8 +77,8 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
           {/* Left Column: Interactive Terminal Spec Sheet for Tech Stack */}
           <div
             style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #1e293b',
+              backgroundColor: '#0a0a0a',
+              border: '1px solid #1F1F23',
               borderRadius: '10px',
               padding: 'clamp(24px, 3.5vw, 36px)',
               display: 'flex',
@@ -163,8 +163,8 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
           {/* Right Column: Editorial Deliverable Spec Table (Not box cards!) */}
           <div
             style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #1e293b',
+              backgroundColor: '#0a0a0a',
+              border: '1px solid #1F1F23',
               borderRadius: '10px',
               padding: 'clamp(24px, 3.5vw, 36px)',
               display: 'flex',

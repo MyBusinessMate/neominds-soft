@@ -501,17 +501,17 @@ a.btn {
   transform: translateY(1px);
 }
 
-/* White High-Contrast Button */
+/* Primary Action Button */
 .btn-white {
-  background-color: #ffffff;
-  color: #0c0e12;
-  border-color: #ffffff;
+  background-color: var(--color-primary);
+  color: #000000;
+  border-color: var(--color-primary);
   font-weight: 700;
 }
 
 .btn-white:hover {
-  background-color: #f0f3fa;
-  border-color: #f0f3fa;
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
   box-shadow: none !important;
 }
 
@@ -526,7 +526,7 @@ a.btn {
   gap: var(--space-2);
   background: transparent;
   border: none;
-  color: #5f85ed;
+  color: var(--color-primary);
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;

@@ -528,18 +528,18 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 style={{
                   padding: '12px 18px',
                   fontSize: '14px',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #ffffff',
+                  backgroundColor: '#0A0A0A',
+                  border: '1px solid #27272A',
                   borderRadius: '4px',
-                  color: '#0f172a',
+                  color: '#FFFFFF',
                   minWidth: '280px',
                   outline: 'none',
                 }}
               />
               <button
                 type="submit"
-                className="btn btn-white btn-md"
-                style={{ backgroundColor: '#ffffff', color: '#FF5500', fontWeight: 700 }}
+                className="btn btn-md"
+                style={{ backgroundColor: '#FF5500', color: '#000000', border: 'none', fontWeight: 700, cursor: 'pointer' }}
               >
                 Get Custom Deck
               </button>

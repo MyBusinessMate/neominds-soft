@@ -242,8 +242,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               {section.codeSnippet && (
                 <pre
                   style={{
-                    backgroundColor: '#ffffff',
-                    color: '#1e293b',
+                    backgroundColor: '#0A0A0A',
+                    color: '#FFFFFF',
                     padding: '20px',
                     borderRadius: '6px',
                     overflowX: 'auto',
@@ -251,7 +251,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                     fontFamily: 'Consolas, Monaco, monospace',
                     lineHeight: 1.5,
                     marginBottom: '20px',
-                    border: '1px solid #1e293b',
+                    border: '1px solid #27272A',
                   }}
                 >
                   <code>{section.codeSnippet}</code>

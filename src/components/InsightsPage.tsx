@@ -242,13 +242,14 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: '#0a0a0a',
+                border: '1px solid #1F1F23',
                 color: '#ffffff',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                boxShadow: '0 16px 36px rgba(15, 23, 42, 0.12)',
+                boxShadow: '0 16px 36px rgba(0, 0, 0, 0.4)',
               }}
             >
               {/* Visual Header */}
@@ -394,7 +395,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           4. NEWSLETTER SUBSCRIPTION STRIP
           ======================================================== */}
       <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section style={{ backgroundColor: '#ffffff', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1e293b' }}>
+        <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead

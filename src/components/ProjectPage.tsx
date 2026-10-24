@@ -921,7 +921,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         >
           <div
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: '#0a0a0a',
+              border: '1px solid #1F1F23',
               color: '#ffffff',
               borderRadius: '8px',
               padding: 'clamp(32px, 5vw, 48px)',
@@ -937,7 +938,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 700,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#93c5fd',
+                  color: '#FF5500',
                   marginBottom: '12px',
                 }}
               >
@@ -971,8 +972,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               <button
                 onClick={handleDiscussClick}
                 style={{
-                  backgroundColor: '#000000',
-                  color: '#ffffff',
+                  backgroundColor: '#FF5500',
+                  color: '#000000',
                   border: 'none',
                   fontSize: '15px',
                   fontWeight: 700,
@@ -1193,8 +1194,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         <button
           onClick={handleDiscussClick}
           style={{
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
+            backgroundColor: '#FF5500',
+            color: '#000000',
             border: 'none',
             fontSize: '14px',
             fontWeight: 700,

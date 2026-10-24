@@ -23,8 +23,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
   return (
     <div
       style={{
-        backgroundColor: '#ffffff',
-        color: '#0f172a',
+        backgroundColor: '#000000',
+        color: '#ffffff',
         minHeight: '100vh',
         paddingTop: '80px',
         fontFamily: 'var(--font-body)',
@@ -49,10 +49,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             alignItems: 'center',
             gap: '8px',
             padding: '6px 14px',
-            backgroundColor: 'rgba(239, 68, 68, 0.08)',
-            border: '1px solid rgba(239, 68, 68, 0.25)',
+            backgroundColor: '#0A0A0A',
+            border: '1px solid #FF5500',
             borderRadius: '2px',
-            color: '#dc2626',
+            color: '#FF5500',
             fontSize: '13px',
             fontWeight: 700,
             letterSpacing: '0.06em',
@@ -71,7 +71,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             fontWeight: 800,
             lineHeight: 1.08,
             letterSpacing: '-0.03em',
-            color: '#0f172a',
+            color: '#ffffff',
             marginBottom: '20px',
             fontFamily: 'var(--font-heading)',
           }}
@@ -84,7 +84,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
           style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)',
             lineHeight: 1.6,
-            color: '#475067',
+            color: '#94a3b8',
             maxWidth: '620px',
             margin: '0 auto 40px auto',
           }}
@@ -110,16 +110,16 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               gap: '8px',
               padding: '14px 28px',
               backgroundColor: '#FF5500',
-              color: '#ffffff',
+              color: '#000000',
               border: 'none',
               borderRadius: '2px',
               fontSize: '15px',
               fontWeight: 700,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'opacity 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
             <ArrowLeft size={16} />
             <span>Return to Homepage</span>
@@ -132,17 +132,23 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: '#f8fafc',
-              color: '#0f172a',
-              border: '1px solid #d0d3dd',
+              backgroundColor: '#0A0A0A',
+              color: '#FF5500',
+              border: '1px solid #FF5500',
               borderRadius: '2px',
               fontSize: '15px',
               fontWeight: 700,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'all 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f1f5f9')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#f8fafc')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#FF5500';
+              e.currentTarget.style.color = '#000000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#0A0A0A';
+              e.currentTarget.style.color = '#FF5500';
+            }}
           >
             <span>Contact Engineering Team</span>
             <ArrowRight size={16} />
@@ -153,8 +159,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
         <div
           style={{
             padding: '36px 32px',
-            backgroundColor: '#f8fafc',
-            border: '1px solid #e2e8f0',
+            backgroundColor: '#0A0A0A',
+            border: '1px solid #1F1F23',
             borderRadius: '2px',
             textAlign: 'left',
           }}
@@ -165,7 +171,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               marginBottom: '20px',
-              color: '#0f172a',
+              color: '#ffffff',
               fontWeight: 700,
               fontSize: '15px',
               textTransform: 'uppercase',
@@ -192,10 +198,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '12px 16px',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#121212',
+                  border: '1px solid #27272A',
                   borderRadius: '2px',
-                  color: '#1e293b',
+                  color: '#ffffff',
                   fontSize: '14px',
                   fontWeight: 600,
                   textAlign: 'left',
@@ -207,8 +213,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
                   e.currentTarget.style.color = '#FF5500';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0';
-                  e.currentTarget.style.color = '#1e293b';
+                  e.currentTarget.style.borderColor = '#27272A';
+                  e.currentTarget.style.color = '#ffffff';
                 }}
               >
                 <span>{item.name}</span>

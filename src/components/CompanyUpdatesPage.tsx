@@ -139,7 +139,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       padding: '24px',
                     }}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#ffffff', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#ffffff', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', border: '1px solid #FF5500', color: '#FF5500', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
                       {update.type}
                     </span>
 
@@ -223,7 +223,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
       {/* ========================================================
           3. PRESS & MEDIA CONTACT STRIP
           ======================================================== */}
-      <section style={{ backgroundColor: '#ffffff', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1e293b' }}>
+      <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
             Media & Investor Relations
