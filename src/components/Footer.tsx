@@ -213,12 +213,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
           {/* RIGHT COLUMNS: 4 Columns + Far-Right Vertical Decorator */}
           <div className="nm-footer-columns-wrap">
-            {/* 01 Services */}
+            {/* Services */}
             <div className="nm-col">
-              <div className="nm-col-header">
-                <span className="nm-col-number">01</span>
-                <div className="nm-col-line" />
-              </div>
               <h4 className="nm-col-title">Services</h4>
               <ul className="nm-col-links">
                 {servicesLinks.map((link, idx) => (
@@ -235,12 +231,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </ul>
             </div>
 
-            {/* 02 Technologies */}
+            {/* Technologies */}
             <div className="nm-col">
-              <div className="nm-col-header">
-                <span className="nm-col-number">02</span>
-                <div className="nm-col-line" />
-              </div>
               <h4 className="nm-col-title">Technologies</h4>
               <ul className="nm-col-links">
                 {technologiesLinks.map((link, idx) => (
@@ -257,12 +249,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </ul>
             </div>
 
-            {/* 03 Industries */}
+            {/* Industries */}
             <div className="nm-col">
-              <div className="nm-col-header">
-                <span className="nm-col-number">03</span>
-                <div className="nm-col-line" />
-              </div>
               <h4 className="nm-col-title">Industries</h4>
               <ul className="nm-col-links">
                 {industriesLinks.map((link, idx) => (
@@ -279,12 +267,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </ul>
             </div>
 
-            {/* 04 Company */}
+            {/* Company */}
             <div className="nm-col">
-              <div className="nm-col-header">
-                <span className="nm-col-number">04</span>
-                <div className="nm-col-line" />
-              </div>
               <h4 className="nm-col-title">Company</h4>
               <ul className="nm-col-links">
                 {companyLinks.map((link, idx) => (
@@ -428,35 +412,6 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               >
                 <Instagram size={16} />
               </a>
-            </div>
-
-            <div style={{ width: '1px', height: '18px', backgroundColor: '#D2D8E2' }} />
-
-            {/* Blue dot + BUILT FOR A SMARTER TOMORROW */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span
-                style={{
-                  width: '7px',
-                  height: '7px',
-                  borderRadius: '50%',
-                  backgroundColor: '#0052FF',
-                  display: 'inline-block',
-                }}
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '9.5px',
-                  fontWeight: 700,
-                  letterSpacing: '0.14em',
-                  lineHeight: 1.25,
-                  color: '#667085',
-                  textTransform: 'uppercase',
-                }}
-              >
-                BUILT FOR <br />
-                A SMARTER TOMORROW
-              </span>
             </div>
           </div>
         </div>
