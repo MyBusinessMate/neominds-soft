@@ -603,8 +603,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         /* BOTTOM BAR */
         .nm-footer-bottom {
           width: 100%;
-          border-top: 1px solid #1e293b;
-          background-color: #050505;
+          border-top: none;
+          background-color: transparent;
           padding: 20px clamp(24px, 4.5vw, 68px);
         }
 
