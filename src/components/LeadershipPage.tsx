@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import {
   Linkedin,
-  ArrowUpRight,
   X,
   Mail,
   CheckCircle2,
@@ -11,6 +10,7 @@ import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
 import { LocationsSection } from './LocationsSection';
 import { Footer } from './Footer';
+import { LeadershipCarousel } from './LeadershipCarousel';
 
 interface Leader {
   id: string;
@@ -29,166 +29,6 @@ interface LeadershipPageProps {
   onNavigatePage?: (page: string) => void;
   onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
 }
-
-// 13 Executive Leaders exactly mirroring EffectiveSoft's leadership roster hoisted outside component to eliminate render-time re-allocation
-const LEADERS: Leader[] = [
-  {
-    id: 'shezan-khan',
-    name: 'Shezan Khan',
-    role: 'Chief Executive Officer',
-    image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India / London, UK',
-      bio: 'Shezan leads the overall vision, engineering culture, and strategic client partnerships at Neominds TechHub. With over 15 years in enterprise software and technology innovation, he helps international businesses modernize legacy applications and build production AI systems.',
-      background: 'Previously led enterprise engineering transformations and cloud migration programs across North American and European enterprise sectors.',
-      focus: ['Long-term technical strategy', 'Enterprise client advisory', 'Engineering quality standards', 'Global market expansion'],
-      quote: 'We build software the way we would want it built for us: clear, honest, and made to last.',
-    },
-    {
-      id: 'vikram-reddy',
-      name: 'Dr. Vikram Reddy',
-      role: 'Chief Technology Officer',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Dr. Reddy steers technological architecture, R&D in applied AI, and technical excellence across all Neominds TechHub delivery centers.',
-      background: 'Ph.D. in Computer Science with a specialization in distributed systems and applied machine learning; 14+ years designing high-throughput data platforms.',
-      focus: ['Applied AI & LLM architectures', 'Cloud-native infrastructure (AWS & Azure)', 'System scalability & security', 'Technical mentoring'],
-      quote: 'AI adds real business value only when the software foundation around it is rock-solid.',
-    },
-    {
-      id: 'ananya-sharma',
-      name: 'Ananya Sharma',
-      role: 'Chief Operating Officer',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Ananya oversees global operations, delivery governance, and operational resilience, ensuring project milestones are met with absolute predictability.',
-      background: 'Former operations leader at tier-1 technology consultancy; managed cross-border engineering teams across 5 countries.',
-      focus: ['Agile delivery operations', 'Resource optimization', 'Cross-time-zone synchronization', 'Quality metrics & SLA adherence'],
-      quote: 'Transparency and predictability are what turn one-off projects into multi-year partnerships.',
-    },
-    {
-      id: 'rajesh-iyer',
-      name: 'Rajesh Iyer',
-      role: 'Director, Global Delivery',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Rajesh directs our software delivery teams, establishing consistent sprint cadences, automated CI/CD practices, and weekly demonstration rituals.',
-      background: '12+ years directing end-to-end agile delivery for healthcare, SaaS, and financial services products.',
-      focus: ['Full-cycle software delivery', 'CI/CD & release engineering', 'Scrum & Kanban governance', 'Technical risk mitigation'],
-      quote: 'Weekly working software demos are the ultimate truth in engineering delivery.',
-    },
-    {
-      id: 'arjun-verma',
-      name: 'Arjun Verma',
-      role: 'Director, Global IT & Security',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Arjun oversees information security, ISO 27001 compliance protocols, zero-trust infrastructure, and enterprise data protection standards.',
-      background: 'Certified Information Systems Security Professional (CISSP) with 11+ years leading cyber defense in financial and cloud environments.',
-      focus: ['ISO 27001 & SOC 2 compliance', 'Zero-trust infrastructure', 'Data protection (GDPR / HIPAA)', 'Penetration testing & code audits'],
-      quote: 'Enterprise security is not a checkpoint at release; it is engineered into every line of code from day zero.',
-    },
-    {
-      id: 'kavita-menon',
-      name: 'Kavita Menon',
-      role: 'Director, Human Resources',
-      image: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Kavita drives talent strategy, technical recruitment, and engineer development programs across Neominds TechHub.',
-      background: 'Over a decade building high-retention engineering cultures for fast-growing technology companies.',
-      focus: ['Engineering talent acquisition', 'Continuous learning & certification', 'Inclusive engineering culture', 'People operations'],
-      quote: 'A software company is only as exceptional as the daily environment it creates for its engineers.',
-    },
-    {
-      id: 'marcus-sterling',
-      name: 'Marcus Sterling',
-      role: 'Executive Client Partner',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'New York, USA / London, UK',
-      bio: 'Marcus manages senior client relationships across North America and the United Kingdom, aligning business requirements with technical delivery teams.',
-      background: '15+ years in digital consulting and software delivery partnerships between London and New York.',
-      focus: ['Client relationship management', 'Scoping & commercial frameworks', 'Time-zone alignment', 'Executive governance'],
-      quote: 'Our clients value that our engineers speak plainly, meet deadlines, and operate as an extension of their own internal teams.',
-    },
-    {
-      id: 'pooja-nair',
-      name: 'Pooja Nair',
-      role: 'Head of Digital Experience & UX',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Hyderabad, India',
-      bio: 'Pooja leads user experience design and product discovery, turning complex enterprise workflows into intuitive, clean digital interfaces.',
-      background: 'Senior design strategist with a background in cognitive psychology and complex data visualization interfaces.',
-      focus: ['Product discovery & UX research', 'Design systems (Figma)', 'Complex workflow simplification', 'Accessibility & usability testing'],
-      quote: 'Good design removes friction. When enterprise software is easy to use, adoption takes care of itself.',
-    },
-    {
-      id: 'carlos-ramirez',
-      name: 'Carlos Ramirez',
-      role: 'Location Head, Americas',
-      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'San Jose, Costa Rica / Austin, USA',
-      bio: 'Carlos leads our nearshore development hub in Central America, facilitating real-time timezone collaboration with North American enterprise accounts.',
-      background: '12+ years directing distributed engineering teams across the United States and Latin America.',
-      focus: ['Nearshore team scaling', 'US timezone synchronization', 'Cloud architecture', 'Bilingual team leadership'],
-      quote: 'Direct timezone overlap means engineering issues are resolved in real time with zero handoff delay.',
-    },
-    {
-      id: 'elena-rostova',
-      name: 'Elena Rostova',
-      role: 'Location Head, Europe',
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Warsaw, Poland',
-      bio: 'Elena directs our European delivery center in Poland, ensuring strict GDPR compliance, European engineering standards, and direct client touchpoints across EMEA.',
-      background: 'Senior software engineering director with deep experience in European fintech and healthcare integrations.',
-      focus: ['EMEA delivery management', 'GDPR governance', 'Cross-border engineering squads', 'Client liaison'],
-      quote: 'Engineering excellence is about precision: predictable sprints, transparent code reviews, and dependable delivery.',
-    },
-    {
-      id: 'michael-ross',
-      name: 'Michael Ross',
-      role: 'Head of Growth & Solutions',
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Chicago, USA',
-      bio: 'Michael collaborates with enterprise stakeholders during discovery to formulate architectural solution roadmaps, ROI estimates, and phased migration strategies.',
-      background: 'Former technology consultant at Fortune 500 enterprise consultancy; architected 40+ large-scale digital software programs.',
-      focus: ['Solution discovery & scoping', 'Enterprise software feasibility', 'TCO & ROI optimization', 'Technical pre-sales advisory'],
-      quote: 'We focus on business outcomes first, selecting tech stacks that serve long-term maintainability over transient hype.',
-    },
-    {
-      id: 'david-vance',
-      name: 'David Vance',
-      role: 'Chief Financial Officer',
-      image: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'London, UK',
-      bio: 'David directs fiscal governance, compliance controls, and long-term financial modeling across our worldwide delivery entities.',
-      background: 'Chartered accountant with 16+ years overseeing multi-jurisdictional financial frameworks in the tech sector.',
-      focus: ['Corporate fiscal governance', 'International contracts & compliance', 'Financial risk management', 'Sustainable growth'],
-      quote: 'Financial discipline and clear commercial terms ensure stability and peace of mind for our international clients.',
-    },
-    {
-      id: 'sophie-laurent',
-      name: 'Sophie Laurent',
-      role: 'Head of Communications',
-      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
-      linkedin: 'https://www.linkedin.com',
-      location: 'Zurich, Switzerland',
-      bio: 'Sophie articulates Neominds TechHub’s thought leadership, engineering case studies, whitepapers, and international communications.',
-      background: '10+ years shaping technology narratives and executive communications for enterprise software leaders.',
-      focus: ['Technical whitepapers & case studies', 'Brand positioning', 'Industry analyst relations', 'Engineering storytelling'],
-      quote: 'We let our engineering work speak for itself through concrete metrics, clean code, and delivered client milestones.',
-    },
-  ];
 
 const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage, onOpenLegal }) => {
   const [selectedLeader, setSelectedLeader] = useState<Leader | null>(null);
@@ -231,7 +71,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <span
               style={{ cursor: 'pointer', color: '#666e85', transition: 'color 0.2s' }}
               onClick={() => onNavigatePage && onNavigatePage('home')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#2258e7')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#666e85')}
             >
               Home
@@ -240,7 +80,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <span
               style={{ cursor: 'pointer', color: '#666e85', transition: 'color 0.2s' }}
               onClick={() => onNavigatePage && onNavigatePage('about-us')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#2258e7')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
               onMouseLeave={(e) => (e.currentTarget.style.color = '#666e85')}
             >
               Who we are
@@ -259,13 +99,13 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
           >
             {/* Left Headline */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2258e7', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
-                <span style={{ width: '16px', height: '2px', backgroundColor: '#2258e7' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FF5500', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
+                <span style={{ width: '16px', height: '2px', backgroundColor: '#FF5500' }} />
                 <span>Executive Leadership</span>
               </div>
 
               <ScrollReveal as="h1" blurStrength={8} style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: '#121212', margin: '0 0 24px' }}>
-                Guiding minds<span style={{ color: '#2258e7' }}>.</span>
+                Guiding minds<span style={{ color: '#FF5500' }}>.</span>
               </ScrollReveal>
 
               <RevealElement variant="text" delay={0.06}>
@@ -323,115 +163,9 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
       </section>
 
       {/* ========================================================
-          2. LEADERSHIP MOSAIC GRID (Exact EffectiveSoft s-leadership)
+          2. LEADERSHIP CAROUSEL (Exact 7-Leader Sliding Showcase)
           ======================================================== */}
-      <section className="g-section s-leadership theme-light" style={{ padding: '72px 24px 96px', backgroundColor: '#ffffff' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '44px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
-            <div>
-              <div style={{ fontSize: '13px', fontWeight: 600, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
-                Executive Board & Directors
-              </div>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 700, letterSpacing: '-0.02em', color: '#121212', margin: 0 }}>
-                Meet the minds behind our delivery
-              </h2>
-            </div>
-            <div style={{ fontSize: '14px', color: '#666e85' }}>
-              Click on any profile to explore executive background & focus areas
-            </div>
-          </div>
-
-          {/* Responsive Mosaic Grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-              gap: '24px',
-            }}
-          >
-            {LEADERS.map((leader) => (
-              <div
-                key={leader.id}
-                onClick={() => handleSelectLeader(leader)}
-                style={{
-                  position: 'relative',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#fafbff',
-                  border: '1px solid #e4e4e7',
-                  cursor: 'pointer',
-                  transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px)';
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.08)';
-                  e.currentTarget.style.borderColor = '#2258e7';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                  e.currentTarget.style.borderColor = '#e4e4e7';
-                }}
-              >
-                {/* Photo with Overlay */}
-                <div style={{ position: 'relative', width: '100%', height: '320px', overflow: 'hidden', backgroundColor: '#e9eefd' }}>
-                  <img
-                    src={leader.image}
-                    alt={`${leader.name} - ${leader.role} at Neominds TechHub`}
-                    loading="lazy"
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'top center',
-                      transition: 'transform 0.5s ease',
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '12px',
-                      right: '12px',
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '50%',
-                      backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#2258e7',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
-                    }}
-                  >
-                    <ArrowUpRight size={18} />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div style={{ padding: '20px 22px 24px', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                  <div style={{ fontSize: '12px', fontWeight: 600, color: '#2258e7', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: '6px' }}>
-                    {leader.role}
-                  </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#121212', margin: '0 0 8px', letterSpacing: '-0.01em' }}>
-                    {leader.name}
-                  </h3>
-                  <p style={{ fontSize: '13.5px', color: '#666e85', lineHeight: 1.55, margin: '0 0 16px', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                    {leader.bio}
-                  </p>
-                  <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #f6f6f6', paddingTop: '14px' }}>
-                    <span style={{ fontSize: '12px', color: '#989fb3' }}>{leader.location}</span>
-                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#2258e7', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      View Bio →
-                    </span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LeadershipCarousel onSelectLeader={(l) => handleSelectLeader(l as unknown as Leader)} />
 
       {/* ========================================================
           3. LEADER PROFILE MODAL / DRAWER
@@ -536,7 +270,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       padding: '10px 18px',
                       borderRadius: '8px',
                       backgroundColor: '#f5f7fc',
-                      color: '#2258e7',
+                      color: '#FF5500',
                       border: '1px solid #d0d3dd',
                       fontSize: '13.5px',
                       fontWeight: 600,
@@ -551,7 +285,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
 
               {/* Bio & Focus Details */}
               <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                   {selectedLeader.role}
                 </div>
                 <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#121212', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
@@ -565,8 +299,8 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                   {selectedLeader.bio}
                 </div>
 
-                <div style={{ backgroundColor: '#fafbff', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #2258e7', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase', marginBottom: '4px' }}>
+                <div style={{ backgroundColor: '#fafbff', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #FF5500', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Track Record & Background
                   </div>
                   <div style={{ fontSize: '14px', color: '#364c72', lineHeight: 1.55 }}>
@@ -587,7 +321,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
                     {selectedLeader.focus.map((item, idx) => (
                       <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#475067' }}>
-                        <CheckCircle2 size={16} color="#2258e7" style={{ flexShrink: 0 }} />
+                        <CheckCircle2 size={16} color="#FF5500" style={{ flexShrink: 0 }} />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -647,7 +381,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 height: '46px',
                 padding: '0 24px',
                 borderRadius: '6px',
-                backgroundColor: '#2258e7',
+                backgroundColor: '#FF5500',
                 color: '#ffffff',
                 border: 'none',
                 fontWeight: 600,
@@ -655,8 +389,8 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 cursor: 'pointer',
                 transition: 'background-color 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
             >
               {newsletterSubmitted ? 'Subscribed!' : 'Subscribe'}
             </button>
