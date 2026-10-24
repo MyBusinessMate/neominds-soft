@@ -108,20 +108,20 @@ const DeliveryPrinciplesComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
-        paddingTop: 'clamp(80px, 9vw, 120px)',
-        paddingBottom: 'clamp(60px, 7vw, 100px)',
-        color: '#F2F0EC',
+        backgroundColor: '#f1efeb',
+        paddingTop: 'clamp(64px, 8vw, 80px)',
+        paddingBottom: 'clamp(64px, 8vw, 80px)',
+        color: '#000000',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Asymmetrical Editorial Header & Principle Rows */}
+        {/* Asymmetrical Freehand Editorial Header & Principle Rows */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
             gap: 'clamp(40px, 6vw, 80px)',
-            marginBottom: 'clamp(64px, 8vw, 100px)',
+            marginBottom: 'clamp(48px, 6vw, 64px)',
             alignItems: 'start',
           }}
           className="principles-grid"
@@ -130,14 +130,13 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           <div>
             <RevealElement variant="text">
               <span
-                className="eyebrow-tag"
                 style={{
                   display: 'inline-block',
-                  fontFamily: 'var(--font-subheading)',
+                  fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
                   fontSize: '13px',
-                  fontWeight: 600,
-                  letterSpacing: '0.12em',
-                  color: '#A94F0B',
+                  fontWeight: 500,
+                  letterSpacing: '0.08em',
+                  color: '#fe6200',
                   textTransform: 'uppercase',
                   marginBottom: '16px',
                 }}
@@ -149,13 +148,13 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             <ScrollReveal
               as="h2"
               style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(28px, 3.2vw, 42px)',
-                fontWeight: 700,
-                lineHeight: 1.22,
-                color: '#F2F0EC',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(28px, 3vw, 36px)',
+                fontWeight: 400,
+                lineHeight: 1.2,
+                color: '#000000',
                 marginBottom: '20px',
-                letterSpacing: '-0.02em',
+                letterSpacing: '-0.01em',
                 display: 'block',
               }}
               blurStrength={6}
@@ -165,10 +164,10 @@ const DeliveryPrinciplesComponent: React.FC = () => {
 
             <p
               style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: '15px',
-                lineHeight: 1.65,
-                color: '#A3A3A3',
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '16px',
+                lineHeight: 1.5,
+                color: '#868683',
                 maxWidth: '440px',
               }}
             >
@@ -176,10 +175,10 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             </p>
           </div>
 
-          {/* Right Column: Architectural Ledger Rows (No Boxed Cards) */}
+          {/* Right Column: Freehand Principle Rows */}
           <div
             style={{
-              borderTop: '1px solid #292522',
+              borderTop: '1px solid #e4e2e1',
             }}
           >
             {principles.map((p) => {
@@ -188,8 +187,8 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 <div
                   key={p.id}
                   style={{
-                    borderBottom: '1px solid #292522',
-                    transition: 'border-color 0.2s ease',
+                    borderBottom: '1px solid #e4e2e1',
+                    transition: 'border-color 0.38s ease',
                   }}
                 >
                   <button
@@ -212,22 +211,22 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
                       <span
                         style={{
-                          fontFamily: 'var(--font-metrics)',
+                          fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
                           fontSize: '13px',
-                          color: isActive ? '#A94F0B' : '#777777',
-                          transition: 'color 0.2s ease',
+                          color: isActive ? '#fe6200' : '#868683',
+                          transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                         }}
                       >
                         {p.num}
                       </span>
                       <span
                         style={{
-                          fontFamily: 'var(--font-heading)',
-                          fontSize: 'clamp(18px, 1.8vw, 22px)',
-                          fontWeight: 700,
-                          color: isActive ? '#F2F0EC' : '#A3A3A3',
+                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                          fontSize: 'clamp(20px, 2vw, 24px)',
+                          fontWeight: 400,
+                          color: isActive ? '#000000' : '#868683',
                           letterSpacing: '-0.01em',
-                          transition: 'color 0.2s ease',
+                          transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                         }}
                       >
                         {p.title}
@@ -241,8 +240,8 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: isActive ? '#A94F0B' : '#777777',
-                        transition: 'color 0.2s ease, transform 0.25s ease',
+                        color: isActive ? '#fe6200' : '#868683',
+                        transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                         flexShrink: 0,
                       }}
                     >
@@ -256,16 +255,16 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                       maxHeight: isActive ? '320px' : '0px',
                       opacity: isActive ? 1 : 0,
                       overflow: 'hidden',
-                      transition: 'max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
+                      transition: 'max-height 0.38s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.25s ease',
                     }}
                   >
                     <div style={{ paddingBottom: '24px', paddingLeft: '32px' }}>
                       <p
                         style={{
-                          fontFamily: 'var(--font-body)',
-                          fontSize: '15px',
-                          lineHeight: 1.65,
-                          color: '#A3A3A3',
+                          fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                          fontSize: '16px',
+                          lineHeight: 1.5,
+                          color: '#868683',
                           margin: '0 0 16px 0',
                         }}
                       >
@@ -280,9 +279,9 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                               display: 'flex',
                               alignItems: 'flex-start',
                               gap: '10px',
-                              fontSize: '13.5px',
-                              fontFamily: 'var(--font-body)',
-                              color: '#F2F0EC',
+                              fontSize: '14px',
+                              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                              color: '#000000',
                               lineHeight: 1.5,
                             }}
                           >
@@ -291,7 +290,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                                 width: '16px',
                                 height: '16px',
                                 borderRadius: '50%',
-                                backgroundColor: 'rgba(169, 79, 11, 0.15)',
+                                backgroundColor: 'rgba(254, 98, 0, 0.12)',
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -299,7 +298,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                                 marginTop: '2px',
                               }}
                             >
-                              <Check size={11} color="#A94F0B" />
+                              <Check size={11} color="#fe6200" />
                             </span>
                             <span>{point}</span>
                           </div>
@@ -313,46 +312,40 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           </div>
         </div>
 
-        {/* Architectural Statistics Ledger (No Boxed Cards) */}
+        {/* Freehand Statistics Ledger (10px card radius, surface-light cards on white or elevated) */}
         <RevealElement variant="card">
           <div
             ref={statsRef}
             style={{
-              borderTop: '1px solid #292522',
-              borderBottom: '1px solid #292522',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '1px',
-              backgroundColor: '#292522',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '16px',
             }}
             className="stats-ledger"
           >
             {statsData.map((stat, index) => (
               <div
                 key={stat.label}
+                className="card-standard"
                 style={{
-                  backgroundColor: '#000000',
-                  padding: 'clamp(28px, 4vw, 40px) clamp(20px, 2.5vw, 32px)',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e4e2e1',
+                  borderRadius: '10px',
+                  padding: '32px 24px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   minHeight: '170px',
-                  transition: 'background-color 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(169, 79, 11, 0.04)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#000000';
+                  transition: 'transform 0.38s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                 }}
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-subheading)',
-                    fontSize: '12px',
-                    fontWeight: 600,
-                    letterSpacing: '0.1em',
-                    color: '#A3A3A3',
+                    fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    letterSpacing: '0.04em',
+                    color: '#868683',
                     textTransform: 'uppercase',
                     lineHeight: 1.4,
                     marginBottom: '20px',
@@ -364,12 +357,12 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 <div
                   className="stat-metric"
                   style={{
-                    fontFamily: 'var(--font-metrics)',
-                    fontSize: 'clamp(40px, 4.5vw, 64px)',
-                    fontWeight: 700,
-                    color: '#A94F0B',
-                    lineHeight: 1,
-                    letterSpacing: '-0.03em',
+                    fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                    fontSize: 'clamp(36px, 4vw, 56px)',
+                    fontWeight: 400,
+                    color: '#fe6200',
+                    lineHeight: 1.1,
+                    letterSpacing: '-0.02em',
                   }}
                 >
                   {counts[index]}

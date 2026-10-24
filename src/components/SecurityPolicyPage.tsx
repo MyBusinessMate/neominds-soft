@@ -19,7 +19,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
       {/* Hero */}
       <section style={{ paddingBlock: 'var(--section-small-y)', paddingInline: 'var(--page-padding)', backgroundColor: '#0a0a0a', borderBottom: '1px solid #292522' }}>
         <div className="container-reading">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', padding: 'var(--badge-pad-y) var(--badge-pad-x)', backgroundColor: 'rgba(169, 79, 11, 0.08)', borderRadius: 'var(--badge-radius)', color: '#A94F0B', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 'var(--space-4)' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', padding: 'var(--badge-pad-y) var(--badge-pad-x)', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: 'var(--badge-radius)', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 'var(--space-4)' }}>
             <Lock size={14} />
             <span>Information Security & Compliance</span>
           </div>
@@ -48,7 +48,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
           {/* 4 Pillars of Security */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
             <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '0px', padding: '24px' }}>
-              <ShieldCheck size={28} color="#A94F0B" style={{ marginBottom: '12px' }} />
+              <ShieldCheck size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>ISO/IEC 27001 Certified</h3>
               <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
                 Rigorous Information Security Management System (ISMS) governing access, personnel security, and physical workstation hardening.
@@ -56,7 +56,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             </div>
 
             <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '0px', padding: '24px' }}>
-              <Key size={28} color="#A94F0B" style={{ marginBottom: '12px' }} />
+              <Key size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Cryptographic Encryption</h3>
               <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
                 AES-256 encryption for all data at rest and mandatory TLS 1.3 encryption with Perfect Forward Secrecy (PFS) for all data in transit.
@@ -64,7 +64,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             </div>
 
             <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '0px', padding: '24px' }}>
-              <Server size={28} color="#A94F0B" style={{ marginBottom: '12px' }} />
+              <Server size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Air-Gapped AI Isolation</h3>
               <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
                 Private enterprise LLM inference runtimes running inside client VPCs with zero data retention and strict network boundary controls.
@@ -72,7 +72,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             </div>
 
             <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '0px', padding: '24px' }}>
-              <FileCheck2 size={28} color="#A94F0B" style={{ marginBottom: '12px' }} />
+              <FileCheck2 size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Automated DevSecOps</h3>
               <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
                 Automated static code analysis (SonarQube), container CVE scans (Trivy), and quarterly external third-party penetration testing.
@@ -85,7 +85,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               2. Vulnerability Disclosure & Incident Response
             </h2>
             <p>
-              We maintain a dedicated Security Incident Response Team (SIRT) on standby 24/7/365. Security researchers and enterprise partners can report vulnerabilities directly to our security engineering team at <a href="mailto:security@neominds.io" style={{ color: '#A94F0B', fontWeight: 600 }}>security@neominds.io</a>. We acknowledge receipt within 4 business hours.
+              We maintain a dedicated Security Incident Response Team (SIRT) on standby 24/7/365. Security researchers and enterprise partners can report vulnerabilities directly to our security engineering team at <a href="mailto:security@neominds.io" style={{ color: '#fe6200', fontWeight: 600 }}>security@neominds.io</a>. We acknowledge receipt within 4 business hours.
             </p>
           </div>
         </div>

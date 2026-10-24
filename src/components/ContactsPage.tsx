@@ -84,10 +84,10 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             alignItems: 'center',
             gap: '8px',
             padding: '6px 14px',
-            backgroundColor: 'rgba(169, 79, 11, 0.12)',
-            border: '1px solid rgba(169, 79, 11, 0.3)',
+            backgroundColor: 'rgba(254, 98, 0, 0.12)',
+            border: '1px solid rgba(254, 98, 0, 0.3)',
             borderRadius: '0px',
-            color: '#A94F0B',
+            color: '#fe6200',
             fontSize: '13px',
             fontWeight: 600,
             letterSpacing: '0.04em',
@@ -113,7 +113,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
           }}
           blurStrength={8}
         >
-          Get in touch with <span style={{ color: '#A94F0B' }}>Neominds TechHub</span>
+          Get in touch with <span style={{ color: '#fe6200' }}>Neominds TechHub</span>
         </ScrollReveal>
 
         <RevealElement variant="text" delay={0.06}>
@@ -149,7 +149,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 boxShadow: 'none',
               }}
             >
-              <Mail size={18} style={{ color: '#A94F0B' }} />
+              <Mail size={18} style={{ color: '#fe6200' }} />
               <span>contact@neomindstechhub.com</span>
             </a>
 
@@ -170,7 +170,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 boxShadow: 'none',
               }}
             >
-              <Phone size={18} style={{ color: '#A94F0B' }} />
+              <Phone size={18} style={{ color: '#fe6200' }} />
               <span>+91 40 4000 0000</span>
             </a>
           </div>
@@ -294,7 +294,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       type="checkbox"
                       checked={formData.ndaRequired}
                       onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
-                      style={{ accentColor: '#A94F0B' }}
+                      style={{ accentColor: '#fe6200' }}
                     />
                     <span>Need an NDA first? We'll sign one before you share any details.</span>
                   </label>
@@ -305,7 +305,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       required
                       checked={formData.consent}
                       onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                      style={{ accentColor: '#A94F0B', marginTop: '2px' }}
+                      style={{ accentColor: '#fe6200', marginTop: '2px' }}
                     />
                     <span>I agree to the processing of my personal data as described in the Privacy Policy and Cookie Policy, and understand it may be processed outside my country.</span>
                   </label>
@@ -332,7 +332,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: '#A94F0B',
+                backgroundColor: '#fe6200',
                 borderRadius: '0px',
                 padding: '40px',
                 display: 'flex',
@@ -426,7 +426,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 style={{
                   backgroundColor: '#0a0a0a',
                   border: '1px solid #292522',
-                  borderLeft: '4px solid #A94F0B',
+                  borderLeft: '4px solid #fe6200',
                   borderRadius: '0px',
                   padding: '32px',
                 }}
@@ -434,14 +434,14 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 <div
                   style={{
                     display: 'inline-block',
-                    backgroundColor: 'rgba(169, 79, 11, 0.12)',
-                    border: '1px solid rgba(169, 79, 11, 0.3)',
+                    backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                    border: '1px solid rgba(254, 98, 0, 0.3)',
                     padding: '4px 10px',
                     borderRadius: '0px',
                     fontSize: '11px',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
-                    color: '#A94F0B',
+                    color: '#fe6200',
                     textTransform: 'uppercase',
                     marginBottom: '14px',
                   }}
@@ -472,7 +472,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 >
                   <div>
                     <span style={{ fontWeight: 600, color: '#ffffff' }}>Email: </span>
-                    <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#A94F0B', textDecoration: 'none', fontWeight: 600 }}>
+                    <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#fe6200', textDecoration: 'none', fontWeight: 600 }}>
                       {OFFICE_LOCATION.email}
                     </a>
                   </div>

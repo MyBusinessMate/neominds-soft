@@ -27,189 +27,102 @@ html.lenis body {
    ========================================================================== */
 
 :root {
-  /* 1. Core Brand Colors - Design System Source of Truth */
-  --color-bg-primary: #000000;
-  --color-brand: #A94F0B;
-  --color-brand-hover: #BF641A;
-  --color-brand-active: #873F09;
-  --color-brand-focus: #D8945A;
-  --color-text-primary: #F2F0EC;
-  --color-text-secondary: #A3A3A3;
-  --color-border: #292522;
-  --color-border-secondary: #49413A;
-  --color-disabled-bg: #292522;
-  --color-disabled-text: #777777;
-  --color-destructive: #8F2929;
-  --color-text-link: #C87535;
-  --color-btn-filled-text: #FFFFFF;
+  /* ==========================================================================
+     FREEHAND DESIGN SYSTEM TOKENS (Source: DESIGN-freehand-ai.md)
+     ========================================================================== */
+  --colors-primary: #fe6200;
+  --colors-primary-hover: #cf5000;
+  --colors-background: #ffffff;
+  --colors-surface-light: #f1efeb;
+  --colors-background-dark: #200b00;
+  --colors-surface-dark-subtle: #351505;
+  --colors-text-primary: #000000;
+  --colors-text-muted: #868683;
+  --colors-text-inverse: #ffffff;
+  --colors-border-light: #e4e2e1;
+  --colors-border-dark: #351505;
+  --colors-fail-contrast-orange: #fe6507;
 
-  /* Legacy mappings to ensure site-wide system compliance */
-  --color-primary: var(--color-brand);
-  --color-primary-hover: var(--color-brand-hover);
-  --color-primary-light: rgba(169, 79, 11, 0.15);
-  --color-background: #000000;
-  --color-background-tint: #050505;
-  --color-background-dark: #000000;
-  --color-background-dark-alt: #0a0a0a;
-  --color-background-black: #000000;
-  
-  --color-text-muted: #777777;
-  --color-text-dark-on-light: #A3A3A3;
-  --color-text-inverse: #000000;
-  --color-text-inverse-muted: #292522;
-  
-  --color-border-subtle: #292522;
-  --color-border-active: var(--color-brand);
-  --color-border-input: #292522;
-  --color-link-hover: var(--color-text-link);
-  
-  --dark-surface: #000000;
-  --dark-text: #F2F0EC;
-  --dark-text-muted: #A3A3A3;
-  --dark-border: #292522;
+  /* Aliases for site-wide component compatibility */
+  --color-brand: #fe6200;
+  --color-brand-hover: #cf5000;
+  --color-brand-active: #cf5000;
+  --color-brand-focus: #fe6200;
+  --color-bg-primary: #200b00;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #868683;
+  --color-border: #351505;
+  --color-border-secondary: #351505;
+  --color-disabled-bg: #e4e2e1;
+  --color-disabled-text: #868683;
+  --color-text-link: #fe6200;
+  --color-btn-filled-text: #ffffff;
 
-  /* 2. Typography Design Tokens (DM Sans, Barlow Condensed, IBM Plex Sans, Space Mono) */
-  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-subheading: 'Barlow Condensed', sans-serif;
-  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-metrics: 'Space Mono', monospace;
-  --font-mono: 'Space Mono', monospace;
+  /* Legacy aliases */
+  --color-primary: var(--colors-primary);
+  --color-primary-hover: var(--colors-primary-hover);
+  --color-primary-light: rgba(254, 98, 0, 0.12);
+  --color-background: #ffffff;
+  --color-background-dark: #200b00;
+  --color-background-black: #200b00;
+  --dark-surface: #200b00;
+  --dark-text: #ffffff;
+  --dark-text-muted: #868683;
+  --dark-border: #351505;
+
+  /* Typography Design Tokens */
+  --typography-display-family: 'BL Pylon Serif', 'Newsreader', 'Playfair Display', Georgia, serif;
+  --typography-body-family: 'Fustat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --typography-mono-family: 'Geist Mono', monospace;
+
+  --font-heading: var(--typography-display-family);
+  --font-subheading: var(--typography-body-family);
+  --font-body: var(--typography-body-family);
+  --font-metrics: var(--typography-mono-family);
+  --font-mono: var(--typography-mono-family);
   --font-family: var(--font-body);
 
+  /* Spacing Scale [0, 8, 12, 16, 20, 24, 32, 48, 64, 80] */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
 
-  /* 3. CORE SPACING SCALE (4px foundation, 8px primary rhythm) */
-  --space-1: 4px;    /* micro adjustment */
-  --space-2: 8px;    /* extra-small */
-  --space-3: 12px;   /* small */
-  --space-4: 16px;   /* base */
-  --space-5: 24px;   /* medium */
-  --space-6: 32px;   /* large */
-  --space-7: 40px;   /* extra-large */
-  --space-8: 48px;   /* 2XL */
-  --space-9: 64px;   /* 3XL */
-  --space-10: 80px;  /* 4XL */
-  --space-11: 96px;  /* 5XL */
-  --space-12: 128px; /* 6XL */
-  --space-13: 160px; /* 7XL */
+  /* Radius Scale: sm: 1px, md: 10px, full: 9999px */
+  --radius-sm: 1px;
+  --radius-md: 10px;
+  --radius-full: 9999px;
 
-  /* 4. BORDER RADIUS SYSTEM - EffectiveSoft Strict Sharp/Crisp Architecture */
-  --radius-subtle: 0px;
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
-  --radius-xl: 0px;
-  --radius-2xl: 0px;
-  --radius-pill: 0px;
+  /* Elevation Scale */
+  --elevation-dropdown-nested: 1;
+  --elevation-dropdown-main: 3;
+  --elevation-resources-wrap: 5;
+  --elevation-nav-overlay: 9;
+  --elevation-cookie-banner: 10;
+  --elevation-dropdown-toggle: 900;
+  --elevation-navbar-component: 999;
+  --elevation-modal: 1000;
 
-  /* 5. CONTAINERS */
-  --container-md: 640px;
-  --container-reading: 720px;
-  --container-content: 760px;
-  --container-lg: 1200px;
-  --container-xl: 1280px;
+  /* Motion */
+  --motion-duration-base: 0.38s;
+  --motion-easing-standard: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --motion-easing-button: cubic-bezier(0.187, 0.938, 0.355, 1);
 
-  /* 6. PAGE LAYOUT PADDING */
-  --page-padding: var(--space-9);          /* 64px desktop */
-  --page-padding-lg: var(--space-10);      /* 80px large desktop */
-  --page-padding-tablet: var(--space-6);   /* 32px tablet */
-  --page-padding-mobile: 20px;             /* 20px mobile */
-
-  /* 7. SECTION SPACING */
-  --section-padding-y: var(--space-11);    /* 96px standard desktop */
-  --section-hero-y: var(--space-12);       /* 128px hero */
-  --section-break-y: var(--space-13);      /* 160px major break */
-  --section-small-y: var(--space-8);       /* 48px small */
-  --section-standard-y: var(--space-9);    /* 64px standard */
-  --section-large-y: var(--space-10);      /* 80px large */
-  --section-premium-y: var(--space-11);    /* 96px premium */
-
-  /* 8. SECTION INTERNAL SPACING */
-  --space-eyebrow-to-heading: var(--space-2);      /* 8px */
-  --space-heading-to-description: var(--space-4);  /* 16px */
-  --space-description-to-cta: var(--space-5);      /* 24px */
-  --space-header-to-content: var(--space-8);       /* 48px */
-  --space-heading-to-content: var(--space-6);      /* 32px */
-  --space-paragraph-to-paragraph: var(--space-4);  /* 16px */
-
-  /* 9. CARDS (Zero radius & flat architectural borders) */
-  --card-padding-compact: var(--space-4);  /* 16px */
-  --card-padding-standard: var(--space-5); /* 24px */
-  --card-padding-large: var(--space-6);    /* 32px */
-  --card-gap-compact: var(--space-4);      /* 16px */
-  --card-gap-standard: var(--space-5);     /* 24px */
-  --card-gap-spacious: var(--space-6);     /* 32px */
-  --card-radius-standard: 0px;
-  --card-radius-large: 0px;
-
-  /* 10. BUTTONS (Standardized UX Scale - Crisp Rectangular) */
-  --btn-font-family: var(--font-body);
-  --btn-font-weight: 600;
-  --btn-letter-spacing: -0.01em;
-  --btn-line-height: 1;
-
-  --btn-height-sm: 34px;
-  --btn-padding-x-sm: 16px;
-  --btn-font-size-sm: 13px;
-
-  --btn-height-md: 42px;
-  --btn-padding-x-md: 22px;
-  --btn-font-size-md: 14px;
-
-  --btn-height-lg: 50px;
-  --btn-padding-x-lg: 28px;
-  --btn-font-size-lg: 15px;
-
-  --btn-radius: 0px;
-  --btn-gap: var(--space-2);               /* 8px */
-  --btn-group-gap-tight: var(--space-2);       /* 8px */
-  --btn-group-gap-standard: var(--space-3);    /* 12px */
-  --btn-group-gap-comfortable: var(--space-4); /* 16px */
-
-  /* 11. NAVIGATION */
-  --navbar-height: 72px;
-  --nav-gap: var(--space-6);               /* 32px */
-  --nav-logo-gap: var(--space-8);          /* 48px */
-  --nav-cta-gap: var(--space-6);           /* 32px */
-
-  /* 12. GRID SYSTEM */
-  --grid-gap-sm: var(--space-4);           /* 16px */
-  --grid-gap-std: var(--space-5);          /* 24px */
-  --grid-gap-lg: var(--space-6);           /* 32px */
-  --grid-gap-col: var(--space-8);          /* 48px */
-
-  /* 13. FORMS (Zero Radius) */
-  --form-label-gap: var(--space-2);        /* 8px */
-  --form-input-gap: var(--space-4);        /* 16px */
-  --form-group-gap: var(--space-5);        /* 24px */
-  --form-cta-gap: var(--space-6);          /* 32px */
-  --input-height: 48px;
-  --input-radius: 0px;
-
-  /* 14. ICONS */
-  --icon-xs: 16px;
-  --icon-sm: 20px;
-  --icon-md: 24px;
-  --icon-lg: 32px;
-  --icon-xl: 40px;
-  --icon-2xl: 48px;
-  --icon-text-gap: var(--space-2);         /* 8px */
-
-  /* 15. BADGES / CHIPS (Sharp Rectangular) */
-  --badge-pad-x: var(--space-3);           /* 12px */
-  --badge-pad-y: 6px;
-  --badge-radius: 0px;
-
-  /* 16. FOOTER */
-  --footer-padding-top: var(--space-10);   /* 80px */
-  --footer-padding-bottom: var(--space-9); /* 64px */
-  --footer-col-gap: var(--space-8);        /* 48px */
-  --footer-link-gap: var(--space-3);       /* 12px */
-  --footer-section-gap: var(--space-6);    /* 32px */
-
-  /* Transitions */
-  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-standard: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Containers & Layout */
+  --container-lg: 1280px;
+  --container-xl: 1360px;
+  --container-reading: 760px;
+  --page-padding: 80px;
+  --page-padding-mobile: 24px;
+  --section-padding-y: 80px;
+  --section-hero-y: 96px;
 }
 
 /* Tablet Responsive Token Adjustments */
@@ -451,13 +364,10 @@ h1 {
 }
 
 /* ==========================================================================
-   BUTTON SPACING & SIZING SYSTEM (Standardized)
+   FREEHAND COMPONENT STYLINGS (Source: DESIGN-freehand-ai.md)
    ========================================================================== */
 
-/* ==========================================================================
-   BUTTON DESIGN SYSTEM (Source of Truth: Sizing, Hierarchy, States)
-   ========================================================================== */
-
+/* Universal Button Base */
 .btn,
 button.btn,
 a.btn {
@@ -465,26 +375,26 @@ a.btn {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  line-height: 1;
-  border-radius: 8px;
-  border: 1px solid transparent;
+  font-family: var(--typography-body-family, 'Fustat'), sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 0px; /* Freehand strict 0px radius */
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
   text-decoration: none;
-  transition: background-color 175ms ease, color 175ms ease, border-color 175ms ease, transform 150ms ease;
   outline: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--motion-duration-base, 0.38s) var(--motion-easing-button, cubic-bezier(0.187, 0.938, 0.355, 1)),
+              color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1)),
+              border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
 }
 
 /* Keyboard Focus Ring */
 .btn:focus-visible,
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--color-brand-focus) !important;
+  outline: 2px solid var(--colors-primary, #fe6200) !important;
   outline-offset: 2px !important;
 }
 
@@ -492,180 +402,210 @@ a:focus-visible {
 .btn:disabled,
 .btn[aria-disabled="true"],
 button:disabled {
-  background-color: var(--color-disabled-bg) !important;
-  color: var(--color-disabled-text) !important;
-  border-color: var(--color-disabled-bg) !important;
+  background-color: var(--colors-border-light, #e4e2e1) !important;
+  color: var(--colors-text-muted, #868683) !important;
+  border-color: var(--colors-border-light, #e4e2e1) !important;
   cursor: not-allowed !important;
   pointer-events: none !important;
   transform: none !important;
 }
 
-/* A. Primary Button */
-.btn-primary {
-  height: 48px;
-  min-width: 120px;
-  padding-inline: 24px;
+/* A. Primary Button (Solid Orange Rectangle, 12.8px 24px, 0px radius) */
+.button-primary,
+.btn-primary,
+.btn-large-cta,
+.btn-cta {
+  background-color: var(--colors-primary, #fe6200);
+  color: var(--colors-text-inverse, #ffffff);
+  font-family: var(--typography-body-family, 'Fustat'), sans-serif;
   font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: var(--color-brand);
-  color: var(--color-btn-filled-text);
-  border: 1px solid var(--color-brand);
+  font-weight: 500;
+  padding: 12.8px 24px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color var(--motion-duration-base, 0.38s) var(--motion-easing-button, cubic-bezier(0.187, 0.938, 0.355, 1));
 }
 
-.btn-primary:hover {
-  background-color: var(--color-brand-hover);
-  border-color: var(--color-brand-hover);
+.button-primary:hover,
+.btn-primary:hover,
+.btn-large-cta:hover,
+.btn-cta:hover {
+  background-color: var(--colors-primary-hover, #cf5000);
 }
 
-.btn-primary:active {
-  background-color: var(--color-brand-active);
-  border-color: var(--color-brand-active);
-  transform: translateY(1px);
+.button-primary:active,
+.btn-primary:active,
+.btn-large-cta:active,
+.btn-cta:active {
+  background-color: var(--colors-primary-hover, #cf5000);
 }
 
 /* B. Secondary Button */
-.btn-secondary {
-  height: 48px;
-  padding-inline: 24px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border-secondary);
-}
-
-.btn-secondary:hover {
-  border-color: var(--color-brand);
-  color: #FFFFFF;
-  background-color: rgba(169, 79, 11, 0.08);
-}
-
-.btn-secondary:active {
-  border-color: var(--color-brand-active);
-  transform: translateY(1px);
-}
-
-/* C. Large CTA Button */
-.btn-large-cta,
-.btn-cta {
-  height: 56px;
-  min-width: 160px;
-  padding-inline: 28px;
-  font-size: 17px;
-  font-weight: 600;
-  border-radius: 8px;
-  background-color: var(--color-brand);
-  color: var(--color-btn-filled-text);
-  border: 1px solid var(--color-brand);
-}
-
-.btn-large-cta:hover,
-.btn-cta:hover {
-  background-color: var(--color-brand-hover);
-  border-color: var(--color-brand-hover);
-}
-
-.btn-large-cta:active,
-.btn-cta:active {
-  background-color: var(--color-brand-active);
-  border-color: var(--color-brand-active);
-  transform: translateY(1px);
-}
-
-/* D. Outline Button */
+.button-secondary,
+.btn-secondary,
 .btn-outline {
-  height: 48px;
-  padding-inline: 24px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
   background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-brand);
+  color: currentColor;
+  font-family: var(--typography-body-family, 'Fustat'), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12.8px 24px;
+  border: 1px solid currentColor;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1)),
+              border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
 }
 
+.button-secondary:hover,
+.btn-secondary:hover,
 .btn-outline:hover {
-  background-color: var(--color-brand);
-  color: var(--color-btn-filled-text);
+  color: var(--colors-primary, #fe6200);
+  border-color: var(--colors-primary, #fe6200);
 }
 
-.btn-outline:active {
-  background-color: var(--color-brand-active);
-  border-color: var(--color-brand-active);
-  transform: translateY(1px);
-}
-
-/* E. Ghost Button */
+/* C. Ghost Button */
+.button-ghost,
 .btn-ghost {
-  height: 40px;
-  padding-inline: 16px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 6px;
   background-color: transparent;
-  color: var(--color-text-primary);
+  color: inherit;
+  font-family: var(--typography-body-family, 'Fustat'), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 8px 12px;
   border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
 }
 
+.button-ghost:hover,
 .btn-ghost:hover {
-  background-color: rgba(242, 240, 236, 0.06);
-  color: #FFFFFF;
+  color: var(--colors-primary, #fe6200);
 }
 
-.btn-ghost:active {
-  background-color: rgba(242, 240, 236, 0.1);
-  transform: translateY(1px);
-}
-
-/* F. Small Button */
+/* D. Small Button */
 .btn-small,
 .btn-sm {
-  height: 36px !important;
-  padding-inline: 12px !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  border-radius: 6px !important;
-  background-color: var(--color-brand) !important;
-  color: var(--color-btn-filled-text) !important;
-  border: 1px solid var(--color-brand) !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  border-radius: 0px !important;
+  background-color: var(--colors-primary, #fe6200) !important;
+  color: var(--colors-text-inverse, #ffffff) !important;
+  border: none !important;
 }
 
 .btn-small:hover,
 .btn-sm:hover {
-  background-color: var(--color-brand-hover) !important;
-  border-color: var(--color-brand-hover) !important;
+  background-color: var(--colors-primary-hover, #cf5000) !important;
 }
 
-.btn-small:active,
-.btn-sm:active {
-  background-color: var(--color-brand-active) !important;
-  transform: translateY(1px);
-}
-
-/* G. Icon-Only Button */
+/* E. Icon-Only Button */
 .btn-icon-only,
 .btn-icon {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0;
-  border-radius: 8px;
+  border-radius: 0px;
   background-color: transparent;
-  color: var(--color-text-primary);
-  border: 1px solid var(--color-border);
+  color: inherit;
+  border: 1px solid var(--colors-border-dark, #351505);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard),
+              border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard);
 }
 
 .btn-icon-only:hover,
 .btn-icon:hover {
-  border-color: var(--color-brand);
-  color: #FFFFFF;
-  background-color: rgba(169, 79, 11, 0.08);
+  border-color: var(--colors-primary, #fe6200);
+  color: var(--colors-primary, #fe6200);
+}
+
+/* F. Standard Card (10px radius, surface-light, hover elevation) */
+.card-standard,
+.card {
+  background-color: var(--colors-surface-light, #f1efeb);
+  color: var(--colors-text-primary, #000000);
+  padding: 32px;
+  border: 1px solid var(--colors-border-light, #e4e2e1);
+  border-radius: var(--radius-md, 10px);
+  transition: transform var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1)),
+              box-shadow var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
+}
+
+.card-standard:hover,
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* G. Dark Card */
+.card-dark {
+  background-color: var(--colors-surface-dark-subtle, #351505);
+  color: var(--colors-text-inverse, #ffffff);
+  padding: 32px;
+  border: 1px solid var(--colors-border-dark, #351505);
+  border-radius: var(--radius-md, 10px);
+}
+
+/* H. Inputs & Forms (1px radius, focus 2px orange ring) */
+.input-text,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  background-color: var(--colors-background, #ffffff);
+  color: var(--colors-text-primary, #000000);
+  font-family: var(--typography-body-family, 'Fustat'), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 16px;
+  border: 1px solid var(--colors-border-light, #e4e2e1);
+  border-radius: var(--radius-sm, 1px);
+  outline: none;
+  transition: border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard),
+              box-shadow var(--motion-duration-base, 0.38s) var(--motion-easing-standard);
+}
+
+.input-text:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--colors-primary, #fe6200);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--colors-primary, #fe6200);
+}
+
+/* I. Links */
+.link-standard {
+  color: var(--colors-text-primary, #000000);
+  text-decoration: underline;
+  transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard);
+}
+
+.link-standard:hover {
+  color: var(--colors-primary, #fe6200);
+  text-decoration: none;
+}
+
+.link-secondary {
+  color: var(--colors-text-muted, #868683);
+  text-decoration: none;
+  transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard);
+}
+
+.link-secondary:hover {
+  color: var(--colors-primary, #fe6200);
+  text-decoration: underline;
 }
 
 /* H. Destructive Button */

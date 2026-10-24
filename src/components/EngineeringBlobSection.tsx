@@ -28,7 +28,7 @@ export const EngineeringBlobSection: React.FC = () => {
       }
       if (headlineRef.current) gsap.set(headlineRef.current, { color: '#ffffff' });
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
-      if (dots.length > 0) gsap.set(dots, { color: '#A94F0B' });
+      if (dots.length > 0) gsap.set(dots, { color: '#fe6200' });
       if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#94a3b8' });
       return;
     }
@@ -84,13 +84,13 @@ export const EngineeringBlobSection: React.FC = () => {
         );
       }
 
-      // Dots color: Starts White (#ffffff) -> Turns vivid Orange (#A94F0B)
+      // Dots color: Starts White (#ffffff) -> Turns vivid Orange (#fe6200)
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
       if (dots.length > 0) {
         tl.fromTo(
           dots,
           { color: '#ffffff' },
-          { color: '#A94F0B', ease: 'power1.out', duration: 0.8 },
+          { color: '#fe6200', ease: 'power1.out', duration: 0.8 },
           0.15
         );
       }
@@ -124,7 +124,7 @@ export const EngineeringBlobSection: React.FC = () => {
         position: 'relative',
         width: '100%',
         height: '100vh',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -143,7 +143,7 @@ export const EngineeringBlobSection: React.FC = () => {
           width: '100%',
           height: '100%',
           borderRadius: '0%',
-          background: 'radial-gradient(ellipse at 50% 95%, #ff3b00 0%, #A94F0B 45%, #BF641A 75%, #b33900 100%)',
+          background: 'radial-gradient(ellipse at 50% 95%, #fe6200 0%, #cf5000 45%, #873F09 75%, #200b00 100%)',
           zIndex: 1,
           pointerEvents: 'none',
           willChange: 'width, height, bottom, border-radius, filter',
@@ -165,27 +165,27 @@ export const EngineeringBlobSection: React.FC = () => {
           padding: '0 var(--container-padding)',
         }}
       >
-        {/* Headline */}
+        {/* Headline in BL Pylon Serif Display */}
         <h2
           ref={headlineRef}
           style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(38px, 6.2vw, 92px)',
-            fontWeight: 700,
+            fontFamily: 'var(--typography-display-family)',
+            fontSize: 'clamp(42px, 6.6vw, 96px)',
+            fontWeight: 400,
             lineHeight: 1.1,
-            letterSpacing: '-0.035em',
+            letterSpacing: '-0.025em',
             marginBottom: 'clamp(24px, 3.8vw, 42px)',
-            color: '#ffffff',
-            transition: 'color 0.3s ease',
+            color: 'var(--colors-text-inverse)',
+            transition: 'color 0.38s ease',
           }}
         >
           Strong software
           <span
             ref={dotLeftRef}
             style={{
-              color: '#ffffff',
+              color: 'var(--colors-text-inverse)',
               marginLeft: '0.04em',
-              transition: 'color 0.3s ease',
+              transition: 'color 0.38s ease',
             }}
           >
             .
@@ -195,28 +195,29 @@ export const EngineeringBlobSection: React.FC = () => {
           <span
             ref={dotRightRef}
             style={{
-              color: '#ffffff',
+              color: 'var(--colors-text-inverse)',
               marginLeft: '0.04em',
-              transition: 'color 0.3s ease',
+              transition: 'color 0.38s ease',
             }}
           >
             .
           </span>
         </h2>
 
-        {/* Lead Paragraph Text */}
+        {/* Lead Paragraph Text in Fustat */}
         <p
           ref={paragraphRef}
           className="body-lead"
           style={{
-            color: 'rgba(255, 255, 255, 0.95)',
+            color: 'rgba(255, 255, 255, 0.85)',
             maxWidth: '780px',
-            fontSize: 'clamp(15px, 1.45vw, 20px)',
+            fontFamily: 'var(--typography-body-family)',
+            fontSize: 'clamp(16px, 1.45vw, 20px)',
             lineHeight: 1.6,
-            fontWeight: 450,
+            fontWeight: 400,
             letterSpacing: '-0.01em',
             margin: '0 auto',
-            transition: 'color 0.3s ease',
+            transition: 'color 0.38s ease',
           }}
         >
           AI adds real value only when the software around it is solid. Neominds TechHub builds the application, the cloud setup and the AI features together, so your product is secure, fast, easy to maintain and ready to grow with your business.

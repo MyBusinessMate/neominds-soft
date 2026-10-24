@@ -100,9 +100,9 @@ const ExperienceSectionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
-        paddingTop: 'clamp(80px, 9vw, 120px)',
-        paddingBottom: 'clamp(60px, 7vw, 100px)',
+        backgroundColor: '#f1efeb',
+        paddingTop: 'clamp(64px, 8vw, 80px)',
+        paddingBottom: 'clamp(64px, 8vw, 80px)',
         overflow: 'hidden',
         border: 'none',
       }}
@@ -111,13 +111,12 @@ const ExperienceSectionComponent: React.FC = () => {
         {/* Editorial Eyebrow Tag */}
         <div style={{ marginBottom: '24px' }}>
           <span
-            className="eyebrow-tag"
             style={{
-              fontFamily: 'var(--font-subheading)',
+              fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
               fontSize: '13px',
-              fontWeight: 600,
-              letterSpacing: '0.12em',
-              color: '#A94F0B',
+              fontWeight: 500,
+              letterSpacing: '0.08em',
+              color: '#fe6200',
               textTransform: 'uppercase',
             }}
           >
@@ -135,11 +134,11 @@ const ExperienceSectionComponent: React.FC = () => {
         >
           <h2
             style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(28px, 4.2vw, 56px)',
-              fontWeight: 700,
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(30px, 3.8vw, 48px)',
+              fontWeight: 400,
               lineHeight: 1.25,
-              letterSpacing: '-0.025em',
+              letterSpacing: '-0.015em',
               margin: 0,
               display: 'flex',
               flexWrap: 'wrap',
@@ -153,8 +152,8 @@ const ExperienceSectionComponent: React.FC = () => {
                 style={{
                   display: 'inline-block',
                   marginRight: '0.28em',
-                  opacity: 0.18,
-                  color: 'rgba(242, 240, 236, 0.25)',
+                  opacity: 0.2,
+                  color: 'rgba(0, 0, 0, 0.25)',
                   willChange: 'opacity, color, transform',
                 }}
               >
@@ -175,8 +174,8 @@ const ExperienceSectionComponent: React.FC = () => {
             gap: 'clamp(20px, 3vw, 40px)',
             paddingTop: '28px',
             paddingBottom: '28px',
-            borderTop: '1px solid #292522',
-            borderBottom: '1px solid #292522',
+            borderTop: '1px solid #e4e2e1',
+            borderBottom: '1px solid #e4e2e1',
           }}
         >
           {slotSets.map((set, slotIdx) => {
@@ -218,10 +217,10 @@ const ExperienceSectionComponent: React.FC = () => {
                       maxHeight: '32px',
                       maxWidth: '160px',
                       objectFit: 'contain',
-                      opacity: 0.9,
+                      opacity: 0.85,
+                      filter: 'invert(1) brightness(0.2)', // crisp dark logo on light background
                     }}
                     onError={(e) => {
-                      // Fallback text if network blocked
                       (e.currentTarget as HTMLElement).style.display = 'none';
                     }}
                   />

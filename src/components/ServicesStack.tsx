@@ -125,7 +125,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
+        backgroundColor: '#ffffff',
       }}
     >
       {/* Embedded Responsive Styles for Smooth Performance on Any Viewport */}
@@ -137,7 +137,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
             min-height: auto !important;
             height: auto !important;
             box-shadow: none !important;
-            border-top: 1px solid #292522 !important;
+            border-top: 1px solid #e4e2e1 !important;
           }
           .services-stack-grid {
             display: flex !important;
@@ -195,22 +195,21 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         className="container"
         style={{
           maxWidth: '1280px',
-          paddingTop: '40px',
-          paddingBottom: 'clamp(32px, 4vw, 56px)',
-          borderBottom: '1px solid #292522',
+          paddingTop: '64px',
+          paddingBottom: '48px',
+          borderBottom: '1px solid #e4e2e1',
         }}
       >
         <RevealElement variant="text">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#A94F0B' }} />
+            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#fe6200' }} />
             <span
-              className="eyebrow-tag"
               style={{
-                fontFamily: 'var(--font-subheading)',
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
                 fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '0.12em',
-                color: '#A94F0B',
+                fontWeight: 500,
+                letterSpacing: '0.08em',
+                color: '#fe6200',
                 textTransform: 'uppercase',
               }}
             >
@@ -222,14 +221,14 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         <ScrollReveal
           as="h2"
           style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(28px, 3.2vw, 44px)',
-            fontWeight: 700,
+            fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+            fontSize: 'clamp(28px, 3.2vw, 40px)',
+            fontWeight: 400,
             lineHeight: 1.2,
-            color: '#F2F0EC',
-            maxWidth: '750px',
+            color: '#000000',
+            maxWidth: '780px',
             margin: 0,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
             display: 'block',
           }}
           blurStrength={7}
@@ -251,8 +250,8 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
               minHeight: isMobile ? 'auto' : '100vh',
               height: isMobile ? 'auto' : '100vh',
               width: '100%',
-              backgroundColor: '#000000',
-              borderTop: idx > 0 ? '1px solid #292522' : 'none',
+              backgroundColor: '#f1efeb',
+              borderTop: idx > 0 ? '1px solid #e4e2e1' : 'none',
               zIndex: idx + 1,
               display: 'flex',
               alignItems: 'center',
@@ -271,7 +270,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                 alignItems: 'stretch',
               }}
             >
-              {/* Left Visual Column - Full Screen / Edge-to-Edge Image */}
+              {/* Left Visual Column */}
               <div
                 onClick={() => handleCardClick(card.slug)}
                 onMouseEnter={() => setHoveredCard(card.id)}
@@ -282,7 +281,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   width: '100%',
                   height: '100%',
                   minHeight: isMobile ? '320px' : '100%',
-                  backgroundColor: '#050505',
+                  backgroundColor: '#e4e2e1',
                   overflow: 'hidden',
                   cursor: 'pointer',
                   userSelect: 'none',
@@ -305,12 +304,12 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   }}
                 />
 
-                {/* Subtle dark gradient overlay for visual depth */}
+                {/* Subtle vignette overlay */}
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 35%)',
+                    background: 'linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 35%)',
                     pointerEvents: 'none',
                   }}
                 />
@@ -320,13 +319,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
               <div
                 className="services-stack-content"
                 style={{
-                  backgroundColor: '#000000',
+                  backgroundColor: '#ffffff',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   padding: isMobile ? '36px 20px 48px' : 'clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px)',
-                  borderLeft: isMobile ? 'none' : '1px solid #292522',
-                  borderTop: isMobile ? '1px solid #292522' : 'none',
+                  borderLeft: isMobile ? 'none' : '1px solid #e4e2e1',
+                  borderTop: isMobile ? '1px solid #e4e2e1' : 'none',
                 }}
               >
                 <div style={{ maxWidth: '620px' }}>
@@ -345,15 +344,14 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   >
                     <h2
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(24px, 2.8vw, 40px)',
-                        fontWeight: 800,
-                        letterSpacing: '-0.025em',
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        fontSize: 'clamp(28px, 3vw, 42px)',
+                        fontWeight: 400,
+                        letterSpacing: '-0.01em',
                         lineHeight: 1.15,
-                        color: isHovered ? '#A94F0B' : '#F2F0EC',
-                        textTransform: 'uppercase',
+                        color: isHovered ? '#fe6200' : '#000000',
                         margin: 0,
-                        transition: 'color 0.2s ease',
+                        transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                       }}
                     >
                       {card.title}
@@ -361,24 +359,24 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
 
                     <div
                       style={{
-                        width: '38px',
-                        height: '38px',
-                        borderRadius: '8px',
-                        backgroundColor: isHovered ? 'rgba(169, 79, 11, 0.15)' : 'transparent',
-                        border: '1px solid #292522',
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '0px',
+                        backgroundColor: isHovered ? 'rgba(254, 98, 0, 0.12)' : 'transparent',
+                        border: '1px solid #e4e2e1',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
-                        transition: 'all 0.2s ease',
+                        transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                         transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
                       }}
                     >
                       <ArrowUpRight
-                        size={22}
+                        size={20}
                         style={{
-                          color: isHovered ? '#A94F0B' : '#F2F0EC',
-                          transition: 'color 0.2s ease',
+                          color: isHovered ? '#fe6200' : '#000000',
+                          transition: 'color 0.38s ease',
                         }}
                       />
                     </div>
@@ -387,10 +385,10 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Tagline */}
                   <p
                     style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: isMobile ? '14px' : '15px',
-                      fontWeight: 600,
-                      color: '#F2F0EC',
+                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontSize: isMobile ? '15px' : '16px',
+                      fontWeight: 500,
+                      color: '#000000',
                       margin: '0 0 16px 0',
                       lineHeight: 1.5,
                     }}
@@ -401,10 +399,10 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Detailed Description with Embedded Keyword Links */}
                   <p
                     style={{
-                      fontFamily: 'var(--font-body)',
-                      fontSize: 'clamp(14px, 1.05vw, 15.5px)',
-                      lineHeight: 1.65,
-                      color: '#A3A3A3',
+                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontSize: 'clamp(14px, 1.1vw, 16px)',
+                      lineHeight: 1.6,
+                      color: '#868683',
                       margin: '0 0 24px 0',
                       fontWeight: 400,
                     }}
@@ -416,11 +414,11 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                     <div
                       style={{
-                        fontFamily: 'var(--font-subheading)',
+                        fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
                         fontSize: '11px',
-                        fontWeight: 600,
-                        letterSpacing: '0.12em',
-                        color: '#A3A3A3',
+                        fontWeight: 500,
+                        letterSpacing: '0.08em',
+                        color: '#868683',
                         textTransform: 'uppercase',
                         marginBottom: '10px',
                       }}
@@ -439,31 +437,31 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '6px',
-                            padding: isMobile ? '6px 12px' : '7px 14px',
-                            borderRadius: '8px',
-                            backgroundColor: 'transparent',
-                            border: '1px solid #292522',
-                            fontFamily: 'var(--font-body)',
+                            padding: isMobile ? '6px 12px' : '8px 14px',
+                            borderRadius: '10px',
+                            backgroundColor: '#f1efeb',
+                            border: '1px solid #e4e2e1',
+                            fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
                             fontSize: isMobile ? '12px' : '13px',
-                            fontWeight: 500,
-                            color: '#F2F0EC',
+                            fontWeight: 400,
+                            color: '#000000',
                             cursor: 'pointer',
                             boxShadow: 'none',
-                            transition: 'all 0.175s ease',
+                            transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.borderColor = '#A94F0B';
-                            e.currentTarget.style.color = '#FFFFFF';
-                            e.currentTarget.style.backgroundColor = 'rgba(169, 79, 11, 0.08)';
+                            e.currentTarget.style.borderColor = '#fe6200';
+                            e.currentTarget.style.color = '#fe6200';
+                            e.currentTarget.style.backgroundColor = '#ffffff';
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.borderColor = '#292522';
-                            e.currentTarget.style.color = '#F2F0EC';
-                            e.currentTarget.style.backgroundColor = 'transparent';
+                            e.currentTarget.style.borderColor = '#e4e2e1';
+                            e.currentTarget.style.color = '#000000';
+                            e.currentTarget.style.backgroundColor = '#f1efeb';
                           }}
                         >
                           <span>{pill.label}</span>
-                          <ArrowUpRight size={13} color="#A94F0B" />
+                          <ArrowUpRight size={13} color="#fe6200" />
                         </button>
                       ))}
                     </div>
@@ -523,20 +521,20 @@ function renderDescriptionWithLinks(
             e.stopPropagation();
             onNavigate(link.slug);
           }}
+          className="link-standard"
           style={{
-            color: '#C87535',
+            color: '#000000',
             textDecoration: 'underline',
-            textUnderlineOffset: '4px',
-            textDecorationThickness: '1px',
+            textUnderlineOffset: '3px',
             cursor: 'pointer',
             fontWeight: 500,
-            transition: 'color 0.15s ease',
+            transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#D8945A';
+            e.currentTarget.style.color = '#fe6200';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#C87535';
+            e.currentTarget.style.color = '#000000';
           }}
         >
           {link.label}

@@ -94,9 +94,9 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                     textAlign: 'left',
                     background: 'none',
                     border: 'none',
-                    borderLeft: `2px solid ${activeSection === item.id ? '#A94F0B' : '#292522'}`,
+                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#292522'}`,
                     padding: '8px 14px',
-                    color: activeSection === item.id ? '#A94F0B' : '#475569',
+                    color: activeSection === item.id ? '#fe6200' : '#475569',
                     fontWeight: activeSection === item.id ? 700 : 500,
                     fontSize: '13.5px',
                     cursor: 'pointer',
@@ -232,7 +232,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                   <button
                     type="button"
                     onClick={() => onNavigatePage('cookie-policy')}
-                    style={{ background: 'none', border: 'none', color: '#A94F0B', textDecoration: 'underline', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600 }}
+                    style={{ background: 'none', border: 'none', color: '#fe6200', textDecoration: 'underline', cursor: 'pointer', padding: 0, font: 'inherit', fontWeight: 600 }}
                   >
                     Cookie Policy
                   </button>.
@@ -249,7 +249,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 </p>
                 <p>
                   If you have questions, comments, or wish to exercise your data subject rights, please contact our Data Protection Officer at{' '}
-                  <a href="mailto:privacy@neominds.com" style={{ color: '#A94F0B', textDecoration: 'underline', fontWeight: 600 }}>
+                  <a href="mailto:privacy@neominds.com" style={{ color: '#fe6200', textDecoration: 'underline', fontWeight: 600 }}>
                     privacy@neominds.com
                   </a>.
                 </p>
@@ -302,7 +302,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 alignItems: 'center',
                 gap: '8px',
                 padding: '14px 28px',
-                backgroundColor: '#A94F0B',
+                backgroundColor: '#fe6200',
                 color: '#ffffff',
                 fontSize: '14px',
                 fontWeight: 600,

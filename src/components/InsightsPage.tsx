@@ -164,7 +164,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(169, 79, 11, 0.08)', borderRadius: '0px', color: '#A94F0B', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: '0px', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <BookOpen size={14} />
             <span>Neominds Research & Engineering Briefs</span>
           </div>
@@ -182,7 +182,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
             }}
             blurStrength={7}
           >
-            Insights, Architecture & <span style={{ color: '#A94F0B' }}>Tech Briefs</span>
+            Insights, Architecture & <span style={{ color: '#fe6200' }}>Tech Briefs</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
@@ -222,8 +222,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline'}`}
                   style={{
                     color: selectedCategory === cat ? '#ffffff' : '#475569',
-                    borderColor: selectedCategory === cat ? '#A94F0B' : '#cbd5e1',
-                    backgroundColor: selectedCategory === cat ? '#A94F0B' : '#f8fafc',
+                    borderColor: selectedCategory === cat ? '#fe6200' : '#cbd5e1',
+                    backgroundColor: selectedCategory === cat ? '#fe6200' : '#f8fafc',
                   }}
                 >
                   {cat}
@@ -263,7 +263,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   minHeight: '280px',
                 }}
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #A94F0B', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #fe6200', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   <span>Featured Engineering Teardown</span>
                 </div>
 
@@ -277,7 +277,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               {/* Content Body */}
               <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#A94F0B', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     {featuredPost.category}
                   </span>
 
@@ -338,9 +338,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   }}
                 onClick={() => onSuccessToast(`Opening brief: "${post.title}"`)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#A94F0B';
+                  e.currentTarget.style.borderColor = '#fe6200';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(169, 79, 11, 0.06)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.06)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#292522';
@@ -354,7 +354,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#A94F0B', backgroundColor: 'rgba(169, 79, 11, 0.08)', padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.08)', padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' }}>
                         {post.category}
                       </span>
                       <span style={{ fontSize: '12px', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -397,7 +397,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       <RevealElement variant="card" start="top 92%" end="top 68%">
         <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: '12px', fontWeight: 700, color: '#A94F0B', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead
             </div>
             <ScrollReveal

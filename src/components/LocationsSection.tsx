@@ -87,10 +87,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
         paddingTop: 'clamp(60px, 7vw, 90px)',
         paddingBottom: 'clamp(48px, 6vw, 60px)',
-        color: '#ffffff',
+        borderTop: '1px solid var(--colors-border-dark)',
+        color: 'var(--colors-text-inverse)',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
@@ -111,12 +112,13 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               as="h2"
               className="section-title"
               style={{
-                color: '#ffffff',
+                color: 'var(--colors-text-inverse)',
                 marginBottom: '16px',
                 display: 'block',
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(30px, 3.5vw, 44px)',
-                fontWeight: 700,
+                fontFamily: 'var(--typography-display-family)',
+                fontSize: 'clamp(32px, 3.6vw, 44px)',
+                fontWeight: 400,
+                letterSpacing: '-0.02em',
               }}
               blurStrength={6}
             >
@@ -126,10 +128,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               <p
                 className="body-lead"
                 style={{
-                  color: '#A3A3A3',
+                  color: 'var(--colors-text-muted)',
                   marginBottom: '24px',
                   maxWidth: '420px',
-                  fontSize: '15px',
+                  fontFamily: 'var(--typography-body-family)',
+                  fontSize: '16px',
                   lineHeight: 1.6,
                 }}
               >
@@ -142,32 +145,32 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '10px',
-                color: '#A94F0B',
+                gap: '12px',
+                color: 'var(--colors-primary)',
                 fontSize: '16px',
-                fontWeight: 600,
-                fontFamily: 'var(--font-heading)',
-                transition: 'color 0.2s',
+                fontWeight: 500,
+                fontFamily: 'var(--typography-body-family)',
+                transition: 'color 0.38s ease',
                 minHeight: '44px',
                 marginBottom: '32px',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#BF641A')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#A94F0B')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colors-primary)')}
             >
               <div
                 style={{
-                  width: '28px',
-                  height: '28px',
-                  backgroundColor: '#A94F0B',
-                  color: '#ffffff',
+                  width: '32px',
+                  height: '32px',
+                  backgroundColor: 'var(--colors-primary)',
+                  color: 'var(--colors-text-inverse)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: '8px',
+                  borderRadius: 'var(--radius-sm)',
                 }}
               >
-                <Mail size={15} />
+                <Mail size={16} />
               </div>
               <span>contact@neomindstechhub.com</span>
             </a>
@@ -178,12 +181,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 style={{
                   display: 'block',
                   fontSize: '12px',
-                  fontWeight: 700,
+                  fontWeight: 500,
                   letterSpacing: '0.12em',
-                  color: '#A3A3A3',
+                  color: 'var(--colors-text-muted)',
                   textTransform: 'uppercase',
                   marginBottom: '14px',
-                  fontFamily: 'var(--font-heading)',
+                  fontFamily: 'var(--typography-mono-family)',
                 }}
               >
                 Connect with us
@@ -196,26 +199,26 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '8px',
-                    backgroundColor: '#000000',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--colors-surface-dark-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ffffff',
-                    transition: 'all 0.25s ease',
+                    color: 'var(--colors-text-inverse)',
+                    transition: 'all 0.38s ease',
                     textDecoration: 'none',
-                    border: '1px solid #292522',
+                    border: '1px solid var(--colors-border-dark)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#A94F0B';
-                    e.currentTarget.style.borderColor = '#A94F0B';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
+                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#000000';
-                    e.currentTarget.style.borderColor = '#292522';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -229,26 +232,26 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   rel="noopener noreferrer"
                   aria-label="X (Twitter)"
                   style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '8px',
-                    backgroundColor: '#000000',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--colors-surface-dark-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ffffff',
-                    transition: 'all 0.25s ease',
+                    color: 'var(--colors-text-inverse)',
+                    transition: 'all 0.38s ease',
                     textDecoration: 'none',
-                    border: '1px solid #292522',
+                    border: '1px solid var(--colors-border-dark)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#A94F0B';
-                    e.currentTarget.style.borderColor = '#A94F0B';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
+                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#000000';
-                    e.currentTarget.style.borderColor = '#292522';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -264,26 +267,26 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   rel="noopener noreferrer"
                   aria-label="Facebook"
                   style={{
-                    width: '40px',
-                    height: '40px',
-                    borderRadius: '8px',
-                    backgroundColor: '#000000',
+                    width: '42px',
+                    height: '42px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--colors-surface-dark-subtle)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#ffffff',
-                    transition: 'all 0.25s ease',
+                    color: 'var(--colors-text-inverse)',
+                    transition: 'all 0.38s ease',
                     textDecoration: 'none',
-                    border: '1px solid #292522',
+                    border: '1px solid var(--colors-border-dark)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#A94F0B';
-                    e.currentTarget.style.borderColor = '#A94F0B';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
+                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#000000';
-                    e.currentTarget.style.borderColor = '#292522';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -296,12 +299,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
           {/* Right Column: Architectural Engineering Headquarters Facility Ledger */}
           <RevealElement variant="card">
             <div
+              className="card-dark"
               style={{
-                backgroundColor: '#000000',
-                border: '1px solid #292522',
-                borderRadius: '8px',
+                backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
+                border: '1px solid var(--colors-border-dark)',
+                borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
                 padding: 'clamp(24px, 3.5vw, 36px)',
                 position: 'relative',
+                boxShadow: 'var(--shadow-card)',
               }}
             >
               {/* Header Status Bar */}
@@ -313,31 +318,32 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   flexWrap: 'wrap',
                   gap: '12px',
                   paddingBottom: '18px',
-                  borderBottom: '1px solid #292522',
+                  borderBottom: '1px solid var(--colors-border-dark)',
                   marginBottom: '20px',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span
                     style={{
-                      fontFamily: 'monospace',
+                      fontFamily: 'var(--typography-mono-family)',
                       fontSize: '11px',
-                      fontWeight: 700,
+                      fontWeight: 500,
                       letterSpacing: '0.12em',
-                      color: '#A94F0B',
+                      color: 'var(--colors-primary)',
                       textTransform: 'uppercase',
                     }}
                   >
                     FACILITY // HYD-HQ-01
                   </span>
-                  <span style={{ color: '#475569', fontSize: '12px' }}>•</span>
+                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '12px' }}>•</span>
                   <span
                     style={{
                       fontSize: '11px',
-                      fontWeight: 600,
-                      color: '#A3A3A3',
+                      fontWeight: 500,
+                      color: 'var(--colors-text-muted)',
                       letterSpacing: '0.04em',
                       textTransform: 'uppercase',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     REGISTERED LAB
@@ -351,12 +357,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'center',
                     gap: '8px',
                     padding: '4px 10px',
-                    backgroundColor: '#000000',
-                    border: '1px solid #292522',
-                    borderRadius: '8px',
+                    backgroundColor: 'var(--colors-background-dark)',
+                    border: '1px solid var(--colors-border-dark)',
+                    borderRadius: 'var(--radius-sm)',
                     fontSize: '11px',
-                    fontFamily: 'monospace',
-                    color: '#A3A3A3',
+                    fontFamily: 'var(--typography-mono-family)',
+                    color: 'var(--colors-text-muted)',
                   }}
                 >
                   <span
@@ -364,8 +370,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       width: '7px',
                       height: '7px',
                       borderRadius: '50%',
-                      backgroundColor: '#A94F0B',
-                      boxShadow: '0 0 8px #A94F0B',
+                      backgroundColor: 'var(--colors-primary)',
+                      boxShadow: '0 0 8px var(--colors-primary)',
                       display: 'inline-block',
                     }}
                   />
@@ -377,10 +383,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               <div style={{ marginBottom: '20px' }}>
                 <h3
                   style={{
-                    fontSize: 'clamp(20px, 2.2vw, 24px)',
-                    fontWeight: 800,
-                    color: '#ffffff',
-                    fontFamily: 'var(--font-heading)',
+                    fontSize: 'clamp(22px, 2.4vw, 26px)',
+                    fontWeight: 400,
+                    color: 'var(--colors-text-inverse)',
+                    fontFamily: 'var(--typography-heading1-family)',
                     letterSpacing: '-0.02em',
                     margin: '0 0 4px 0',
                   }}
@@ -389,10 +395,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 </h3>
                 <p
                   style={{
-                    color: '#A3A3A3',
-                    fontSize: '13px',
+                    color: 'var(--colors-text-muted)',
+                    fontSize: '14px',
                     margin: 0,
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: 'var(--typography-body-family)',
                   }}
                 >
                   Global Engineering Headquarters & Core Technology Center
@@ -405,99 +411,105 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '1px',
-                  backgroundColor: '#292522',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-border-dark)',
+                  border: '1px solid var(--colors-border-dark)',
                   marginBottom: '20px',
+                  borderRadius: 'var(--radius-sm)',
+                  overflow: 'hidden',
                 }}
               >
                 {/* Suite & Level */}
-                <div style={{ backgroundColor: '#000000', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 700,
+                      fontWeight: 500,
                       letterSpacing: '0.08em',
-                      color: '#777777',
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     SUITE & LEVEL
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#ffffff', lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.suite}
                   </span>
-                  <span style={{ display: 'block', fontSize: '12px', color: '#A3A3A3', marginTop: '2px' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.building}
                   </span>
                 </div>
 
                 {/* Locality & Street */}
-                <div style={{ backgroundColor: '#000000', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 700,
+                      fontWeight: 500,
                       letterSpacing: '0.08em',
-                      color: '#777777',
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     STREET & LOCALITY
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#ffffff', lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.locality}
                   </span>
-                  <span style={{ display: 'block', fontSize: '12px', color: '#A3A3A3', marginTop: '2px' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     Basheerbagh Commercial Core
                   </span>
                 </div>
 
                 {/* City & Jurisdiction */}
-                <div style={{ backgroundColor: '#000000', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 700,
+                      fontWeight: 500,
                       letterSpacing: '0.08em',
-                      color: '#777777',
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     CITY & JURISDICTION
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#ffffff', lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
                     Hyderabad 500001
                   </span>
-                  <span style={{ display: 'block', fontSize: '12px', color: '#A3A3A3', marginTop: '2px' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     Telangana State, India
                   </span>
                 </div>
 
                 {/* Geo Coordinates */}
-                <div style={{ backgroundColor: '#000000', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 700,
+                      fontWeight: 500,
                       letterSpacing: '0.08em',
-                      color: '#777777',
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     GEO-COORDINATES
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#A94F0B', fontFamily: 'monospace', lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 500, color: 'var(--colors-primary)', fontFamily: 'var(--typography-mono-family)', lineHeight: 1.4 }}>
                     {officeLocation.coordinates}
                   </span>
-                  <span style={{ display: 'block', fontSize: '12px', color: '#A3A3A3', marginTop: '2px' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     Zone: Asia/Kolkata (IST)
                   </span>
                 </div>
@@ -519,24 +531,25 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '8px',
-                    padding: '8px 14px',
-                    backgroundColor: '#000000',
-                    border: '1px solid #292522',
-                    borderRadius: '8px',
-                    color: copied ? '#A94F0B' : '#ffffff',
-                    fontSize: '12.5px',
-                    fontWeight: 600,
+                    padding: '8px 16px',
+                    backgroundColor: 'var(--colors-background-dark)',
+                    border: '1px solid var(--colors-border-dark)',
+                    borderRadius: '0px', // strict 0px
+                    color: copied ? 'var(--colors-primary)' : 'var(--colors-text-inverse)',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    fontFamily: 'var(--typography-body-family)',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 0.38s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#A94F0B';
+                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#292522';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                   }}
                 >
-                  {copied ? <Check size={14} color="#A94F0B" /> : <Copy size={14} />}
+                  {copied ? <Check size={14} color="var(--colors-primary)" /> : <Copy size={14} />}
                   <span>{copied ? 'Address Copied' : 'Copy Full Address'}</span>
                 </button>
 
@@ -548,27 +561,28 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
-                    padding: '8px 14px',
-                    backgroundColor: '#000000',
-                    border: '1px solid #292522',
-                    borderRadius: '8px',
-                    color: '#A3A3A3',
-                    fontSize: '12.5px',
-                    fontWeight: 600,
+                    padding: '8px 16px',
+                    backgroundColor: 'var(--colors-background-dark)',
+                    border: '1px solid var(--colors-border-dark)',
+                    borderRadius: '0px',
+                    color: 'var(--colors-text-muted)',
+                    fontSize: '13px',
+                    fontWeight: 500,
+                    fontFamily: 'var(--typography-body-family)',
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 0.38s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#A94F0B';
-                    e.currentTarget.style.color = '#ffffff';
+                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                    e.currentTarget.style.color = 'var(--colors-text-inverse)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#292522';
-                    e.currentTarget.style.color = '#A3A3A3';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
+                    e.currentTarget.style.color = 'var(--colors-text-muted)';
                   }}
                 >
                   <span>Open in Maps</span>
-                  <ArrowUpRight size={14} color="#A94F0B" />
+                  <ArrowUpRight size={14} color="var(--colors-primary)" />
                 </a>
               </div>
 
@@ -576,7 +590,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               <div
                 style={{
                   paddingTop: '16px',
-                  borderTop: '1px solid #292522',
+                  borderTop: '1px solid var(--colors-border-dark)',
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                   gap: '12px',
@@ -587,11 +601,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 700,
-                      color: '#777777',
+                      fontWeight: 500,
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     DIRECT DISPATCH
@@ -599,10 +614,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   <a
                     href={`mailto:${officeLocation.email}`}
                     style={{
-                      color: '#A94F0B',
+                      color: 'var(--colors-primary)',
                       textDecoration: 'none',
-                      fontSize: '13px',
-                      fontWeight: 600,
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      fontFamily: 'var(--typography-body-family)',
                     }}
                   >
                     {officeLocation.email}
@@ -614,16 +630,17 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 700,
-                      color: '#777777',
+                      fontWeight: 500,
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     OPERATING HOURS
                   </span>
-                  <span style={{ color: '#A3A3A3', fontSize: '13px' }}>
+                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '13.5px', fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.hours}
                   </span>
                 </div>
@@ -633,17 +650,18 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 700,
-                      color: '#777777',
+                      fontWeight: 500,
+                      color: 'var(--colors-text-muted)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     SECURITY STANDARD
                   </span>
-                  <span style={{ color: '#A3A3A3', fontSize: '12px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <ShieldCheck size={13} color="#A94F0B" />
+                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--typography-body-family)' }}>
+                    <ShieldCheck size={14} color="var(--colors-primary)" />
                     SOC 2 & ISO 27001 Aligned
                   </span>
                 </div>
@@ -655,14 +673,16 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         {/* Technical Dispatch Intake Strip */}
         <RevealElement variant="card">
           <div
+            className="card-dark"
             style={{
               padding: 'clamp(24px, 3.5vw, 40px)',
-              backgroundColor: '#000000',
-              border: '1px solid #292522',
-              borderRadius: '8px',
+              backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
+              border: '1px solid var(--colors-border-dark)',
+              borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',
+              boxShadow: 'var(--shadow-card)',
             }}
           >
             <div
@@ -679,29 +699,29 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     display: 'inline-block',
                     fontSize: '11px',
-                    fontWeight: 700,
+                    fontWeight: 500,
                     letterSpacing: '0.12em',
-                    color: '#A94F0B',
+                    color: 'var(--colors-primary)',
                     textTransform: 'uppercase',
                     marginBottom: '8px',
-                    fontFamily: 'monospace',
+                    fontFamily: 'var(--typography-mono-family)',
                   }}
                 >
                   // TECHNICAL DISPATCH
                 </span>
                 <h3
                   style={{
-                    fontSize: 'clamp(20px, 2.4vw, 26px)',
-                    fontWeight: 800,
-                    color: '#ffffff',
+                    fontSize: 'clamp(22px, 2.5vw, 28px)',
+                    fontWeight: 400,
+                    color: 'var(--colors-text-inverse)',
                     margin: '0 0 8px 0',
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: 'var(--typography-heading1-family)',
                     letterSpacing: '-0.02em',
                   }}
                 >
                   Neominds Technical Briefings
                 </h3>
-                <p style={{ color: '#A3A3A3', fontSize: '14.5px', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ color: 'var(--colors-text-muted)', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--typography-body-family)' }}>
                   Direct engineering dispatches on distributed systems, applied LLM infrastructure, runtime optimizations, and production resilience. Published monthly. Zero promotional fluff.
                 </p>
               </div>
@@ -724,14 +744,15 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   <span
                     key={topic}
                     style={{
-                      padding: '4px 10px',
-                      backgroundColor: '#000000',
-                      border: '1px solid #292522',
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      color: '#A3A3A3',
-                      borderRadius: '8px',
+                      padding: '6px 12px',
+                      backgroundColor: 'var(--colors-background-dark)',
+                      border: '1px solid var(--colors-border-dark)',
+                      fontSize: '12px',
+                      fontWeight: 500,
+                      color: 'var(--colors-text-muted)',
+                      borderRadius: 'var(--radius-sm)',
                       letterSpacing: '0.02em',
+                      fontFamily: 'var(--typography-mono-family)',
                     }}
                   >
                     {topic}
@@ -756,19 +777,19 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     position: 'relative',
                     display: 'flex',
                     alignItems: 'center',
-                    backgroundColor: '#050505',
-                    border: '1px solid #27272a',
-                    borderRadius: '8px',
-                    transition: 'border-color 0.2s ease',
+                    backgroundColor: 'var(--colors-background-dark)',
+                    border: '1px solid var(--colors-border-dark)',
+                    borderRadius: 'var(--radius-sm)', // 1px
+                    transition: 'border-color 0.38s ease',
                   }}
                 >
                   <span
                     style={{
                       paddingLeft: '14px',
-                      color: '#A94F0B',
-                      fontFamily: 'monospace',
-                      fontSize: '12px',
-                      fontWeight: 700,
+                      color: 'var(--colors-primary)',
+                      fontFamily: 'var(--typography-mono-family)',
+                      fontSize: '13px',
+                      fontWeight: 500,
                       userSelect: 'none',
                     }}
                   >
@@ -787,15 +808,17 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       backgroundColor: 'transparent',
                       border: 'none',
                       outline: 'none',
-                      color: '#ffffff',
-                      fontSize: '14px',
-                      fontFamily: 'var(--font-body)',
+                      color: 'var(--colors-text-inverse)',
+                      fontSize: '15px',
+                      fontFamily: 'var(--typography-body-family)',
                     }}
                     onFocus={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = '#A94F0B';
+                      (e.target.parentElement as HTMLElement).style.borderColor = 'var(--colors-primary)';
+                      (e.target.parentElement as HTMLElement).style.boxShadow = '0 0 0 2px var(--colors-primary)';
                     }}
                     onBlur={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = '#27272a';
+                      (e.target.parentElement as HTMLElement).style.borderColor = 'var(--colors-border-dark)';
+                      (e.target.parentElement as HTMLElement).style.boxShadow = 'none';
                     }}
                   />
                 </div>
@@ -804,26 +827,25 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   type="submit"
                   style={{
                     height: '46px',
-                    paddingInline: '22px',
-                    fontWeight: 700,
-                    fontSize: '13.5px',
-                    borderRadius: '8px',
-                    backgroundColor: '#A94F0B',
-                    color: '#ffffff',
+                    paddingInline: '24px',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    borderRadius: '0px', // 0px button
+                    backgroundColor: 'var(--colors-primary)',
+                    color: 'var(--colors-text-inverse)',
                     border: 'none',
                     cursor: 'pointer',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '8px',
-                    transition: 'background-color 0.2s ease, transform 0.15s ease',
+                    fontFamily: 'var(--typography-body-family)',
+                    transition: 'background-color 0.38s cubic-bezier(0.187, 0.938, 0.355, 1)',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#BF641A';
-                    e.currentTarget.style.transform = 'translateY(-1px)';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-primary-hover)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#A94F0B';
-                    e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
                   }}
                 >
                   <span>Subscribe to Dispatch</span>
@@ -837,11 +859,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'flex',
                     alignItems: 'flex-start',
                     gap: '8px',
-                    fontSize: '12px',
-                    color: '#A3A3A3',
+                    fontSize: '12.5px',
+                    color: 'var(--colors-text-muted)',
                     cursor: 'pointer',
                     userSelect: 'none',
                     lineHeight: 1.5,
+                    fontFamily: 'var(--typography-body-family)',
                   }}
                 >
                   <input
@@ -849,14 +872,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     checked={newsletterConsent}
                     onChange={(e) => setNewsletterConsent(e.target.checked)}
                     required
-                    style={{ marginTop: '2px', accentColor: '#A94F0B' }}
+                    style={{ marginTop: '2px', accentColor: 'var(--colors-primary)' }}
                   />
                   <span>
                     I agree to receive monthly engineering briefings and technical dispatches. Unsubscribe anytime.
                   </span>
                 </label>
 
-                <span style={{ fontSize: '11px', color: '#777777', paddingLeft: '20px' }}>
+                <span style={{ fontSize: '11px', color: 'var(--colors-text-muted)', paddingLeft: '20px', fontFamily: 'var(--typography-mono-family)' }}>
                   Zero spam protocol • Direct engineering communications only • No third-party data sharing
                 </span>
               </div>

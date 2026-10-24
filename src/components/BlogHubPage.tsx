@@ -136,7 +136,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
           <div className="b-hero__media">
             <div className="b-hero__media-card">
               <div className="b-hero__media-graphic">
-                <Layers size={36} style={{ color: '#A94F0B', marginBottom: '16px' }} />
+                <Layers size={36} style={{ color: '#fe6200', marginBottom: '16px' }} />
                 <h3 style={{ fontSize: '20px', fontWeight: 700, margin: '0 0 8px 0', textAlign: 'center' }}>
                   Enterprise Engineering Intelligence
                 </h3>
@@ -180,7 +180,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                   style={{
                     background: 'none',
                     border: 'none',
-                    color: '#A94F0B',
+                    color: '#fe6200',
                     fontSize: '13px',
                     cursor: 'pointer',
                     textDecoration: 'underline',
@@ -305,15 +305,15 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
-                <CheckCircle2 size={18} style={{ color: '#A94F0B' }} />
+                <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>NDA signed upfront to guarantee IP security</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
-                <CheckCircle2 size={18} style={{ color: '#A94F0B' }} />
+                <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>Principal architects on every discovery call</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
-                <CheckCircle2 size={18} style={{ color: '#A94F0B' }} />
+                <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>Deterministic timeline and scoping estimates</span>
               </div>
             </div>
@@ -355,7 +355,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#A94F0B',
+                color: '#fe6200',
                 fontWeight: 600,
                 textDecoration: 'none',
               }}

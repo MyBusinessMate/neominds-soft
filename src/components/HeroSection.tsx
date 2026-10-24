@@ -81,7 +81,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
         position: 'relative',
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#000000',
+        backgroundColor: '#200b00',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -90,7 +90,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
         paddingBottom: '0px',
       }}
     >
-      {/* Background Video with Dark Vignette */}
+      {/* Background Video with Dark Brown Vignette */}
       <div
         ref={ribbonRef}
         style={{
@@ -114,8 +114,8 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            opacity: 0.75,
-            filter: 'contrast(1.05) brightness(0.9)',
+            opacity: 0.65,
+            filter: 'contrast(1.05) brightness(0.85)',
           }}
           poster="/images/hero-ribbon.jpg"
         >
@@ -123,7 +123,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
         </video>
       </div>
 
-      {/* Radial Vignette Mask */}
+      {/* Radial Vignette Mask with Freehand Dark Brown Atmosphere */}
       <div
         style={{
           position: 'absolute',
@@ -131,7 +131,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 85%)',
+          background: 'radial-gradient(ellipse at center, rgba(32,11,0,0.4) 0%, rgba(32,11,0,0.92) 85%)',
           zIndex: 2,
           pointerEvents: 'none',
         }}
@@ -166,7 +166,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             style={{
               width: '8px',
               height: '8px',
-              backgroundColor: '#A94F0B',
+              backgroundColor: '#fe6200',
               borderRadius: '0px',
               display: 'inline-block',
             }}
@@ -174,11 +174,11 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           <span
             className="eyebrow-tag"
             style={{
-              fontFamily: 'var(--font-subheading)',
+              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
               fontSize: '14px',
-              fontWeight: 600,
+              fontWeight: 500,
               letterSpacing: '0.12em',
-              color: '#A94F0B',
+              color: '#fe6200',
               textTransform: 'uppercase',
             }}
           >
@@ -186,44 +186,46 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           </span>
         </div>
 
-        {/* Main Headline */}
+        {/* Main Headline - Freehand BL Pylon Serif Display 64px */}
         <h1
           ref={headlineRef}
-          className="display-title"
           style={{
-            color: '#F2F0EC',
+            color: '#ffffff',
             maxWidth: '1150px',
             marginBottom: '24px',
-            letterSpacing: '-0.025em',
-            fontFamily: 'var(--font-heading)',
-            textTransform: 'uppercase',
+            letterSpacing: '-0.02em',
+            fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+            fontSize: 'clamp(40px, 5.5vw, 68px)',
+            fontWeight: 400,
+            lineHeight: 1.15,
+            textTransform: 'none',
           }}
         >
-          BUILDING AI-POWERED PRODUCTS
+          Building AI-Powered Products
         </h1>
 
-        {/* Sub-line */}
+        {/* Sub-line - Fustat 18px */}
         <p
-          className="body-lead"
           style={{
-            color: '#A3A3A3',
-            fontSize: 'clamp(16px, 1.3vw, 20px)',
+            color: 'rgba(255, 255, 255, 0.85)',
+            fontSize: 'clamp(16px, 1.3vw, 18px)',
             maxWidth: '780px',
-            lineHeight: 1.6,
+            lineHeight: 1.5,
             fontWeight: 400,
             marginBottom: '36px',
+            fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
           }}
         >
           Neominds TechHub builds web, mobile, cloud and AI software for businesses across the US, UK, Europe, Australia and the Middle East.
         </p>
 
-        {/* CTA Group: Large Primary CTA & Secondary Action */}
+        {/* CTA Group: Freehand Button System */}
         <div
           ref={ctaGroupRef}
           className="btn-group-cta"
         >
           <Button
-            variant="large-cta"
+            variant="primary"
             onClick={onTalkClick}
             icon={<ArrowRight size={18} />}
             iconPosition="right"
@@ -235,21 +237,25 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             variant="secondary"
             asLink
             href="#services"
+            style={{
+              borderColor: 'rgba(255, 255, 255, 0.4)',
+              color: '#ffffff',
+            }}
           >
             Explore Services Stack
           </Button>
         </div>
       </div>
 
-      {/* Architectural Ledger Bar (No Boxed Cards) */}
+      {/* Architectural Ledger Bar */}
       <div
         ref={ledgerRef}
         style={{
           position: 'relative',
           zIndex: 3,
           width: '100%',
-          borderTop: '1px solid #292522',
-          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          borderTop: '1px solid #351505',
+          backgroundColor: 'rgba(32, 11, 0, 0.95)',
           backdropFilter: 'blur(8px)',
         }}
       >
@@ -260,30 +266,30 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
             gap: '24px',
-            paddingTop: '18px',
-            paddingBottom: '18px',
+            paddingTop: '20px',
+            paddingBottom: '20px',
           }}
         >
           <div>
             <span
               style={{
                 display: 'block',
-                fontFamily: 'var(--font-subheading)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                color: '#A94F0B',
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '12px',
+                fontWeight: 500,
+                letterSpacing: '0.08em',
+                color: '#fe6200',
                 textTransform: 'uppercase',
-                marginBottom: '2px',
+                marginBottom: '4px',
               }}
             >
               GLOBAL REACH
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-metrics)',
-                fontSize: '12.5px',
-                color: '#F2F0EC',
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                fontSize: '13px',
+                color: '#ffffff',
                 letterSpacing: '0.02em',
               }}
             >
@@ -295,22 +301,22 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             <span
               style={{
                 display: 'block',
-                fontFamily: 'var(--font-subheading)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                color: '#A94F0B',
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '12px',
+                fontWeight: 500,
+                letterSpacing: '0.08em',
+                color: '#fe6200',
                 textTransform: 'uppercase',
-                marginBottom: '2px',
+                marginBottom: '4px',
               }}
             >
               CORE CAPABILITIES
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-metrics)',
-                fontSize: '12.5px',
-                color: '#F2F0EC',
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                fontSize: '13px',
+                color: '#ffffff',
                 letterSpacing: '0.02em',
               }}
             >
@@ -322,22 +328,22 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             <span
               style={{
                 display: 'block',
-                fontFamily: 'var(--font-subheading)',
-                fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                color: '#A94F0B',
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '12px',
+                fontWeight: 500,
+                letterSpacing: '0.08em',
+                color: '#fe6200',
                 textTransform: 'uppercase',
-                marginBottom: '2px',
+                marginBottom: '4px',
               }}
             >
               ENGAGEMENT MODEL
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-metrics)',
-                fontSize: '12.5px',
-                color: '#F2F0EC',
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                fontSize: '13px',
+                color: '#ffffff',
                 letterSpacing: '0.02em',
               }}
             >

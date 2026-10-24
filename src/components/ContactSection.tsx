@@ -69,8 +69,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
-        borderTop: '1px solid #292522',
+        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
+        borderTop: '1px solid var(--colors-border-dark)',
         overflow: 'hidden',
       }}
     >
@@ -96,11 +96,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
             <div style={{ marginBottom: '20px' }}>
               <span
                 style={{
-                  fontFamily: 'var(--font-editorial)',
+                  fontFamily: 'var(--typography-mono-family)',
                   fontSize: '12px',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   letterSpacing: '0.14em',
-                  color: '#A94F0B',
+                  color: 'var(--colors-primary)',
                   textTransform: 'uppercase',
                   display: 'inline-block',
                   marginBottom: '14px',
@@ -111,13 +111,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               <ScrollReveal
                 as="h2"
                 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(32px, 4vw, 52px)',
-                  fontWeight: 700,
+                  fontFamily: 'var(--typography-display-family)',
+                  fontSize: 'clamp(36px, 4.2vw, 56px)',
+                  fontWeight: 400,
                   marginBottom: '16px',
                   letterSpacing: '-0.025em',
-                  lineHeight: 1.1,
-                  color: '#F2F0EC',
+                  lineHeight: 1.15,
+                  color: 'var(--colors-text-inverse)',
                   display: 'block',
                 }}
                 blurStrength={7}
@@ -127,9 +127,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               <RevealElement variant="text" delay={0.06}>
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
-                    color: '#A3A3A3',
-                    fontSize: '15.5px',
+                    fontFamily: 'var(--typography-body-family)',
+                    color: 'var(--colors-text-muted)',
+                    fontSize: '16px',
                     lineHeight: 1.6,
                     marginBottom: 'clamp(36px, 4vw, 56px)',
                     maxWidth: '460px',
@@ -143,23 +143,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
             <RevealElement variant="text" delay={0.1}>
               <h3
                 style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '18px',
-                  fontWeight: 700,
+                  fontFamily: 'var(--typography-heading1-family)',
+                  fontSize: '20px',
+                  fontWeight: 400,
                   letterSpacing: '-0.01em',
                   marginBottom: '20px',
-                  color: '#F2F0EC',
+                  color: 'var(--colors-text-inverse)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '10px',
+                  gap: '12px',
                 }}
               >
-                <span style={{ width: '16px', height: '1px', backgroundColor: '#A94F0B' }} />
+                <span style={{ width: '20px', height: '1px', backgroundColor: 'var(--colors-primary)' }} />
                 What happens next?
               </h3>
             </RevealElement>
 
-            {/* Stepper Checkpoints - Minimal Architectural Ledger */}
+            {/* Stepper Checkpoints - Freehand Minimal Ledger */}
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               {[
                 {
@@ -188,15 +188,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     gap: '16px',
                     alignItems: 'baseline',
                     padding: '18px 0',
-                    borderBottom: '1px solid #292522',
+                    borderBottom: '1px solid var(--colors-border-dark)',
                   }}
                 >
                   <span
                     style={{
-                      fontFamily: 'var(--font-metrics)',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      color: '#A94F0B',
+                      fontFamily: 'var(--typography-mono-family)',
+                      fontSize: '13px',
+                      fontWeight: 500,
+                      color: 'var(--colors-primary)',
                       letterSpacing: '0.04em',
                     }}
                   >
@@ -205,9 +205,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <p
                       style={{
-                        fontFamily: 'var(--font-body)',
-                        fontSize: '14.5px',
-                        color: item.isKickoff ? '#F2F0EC' : '#A3A3A3',
+                        fontFamily: 'var(--typography-body-family)',
+                        fontSize: '15px',
+                        color: item.isKickoff ? 'var(--colors-text-inverse)' : 'var(--colors-text-muted)',
                         fontWeight: item.isKickoff ? 500 : 400,
                         lineHeight: 1.5,
                         margin: 0,
@@ -215,22 +215,24 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     >
                       {item.text}
                     </p>
-                    {item.isKickoff && <Smile size={15} color="#A94F0B" style={{ flexShrink: 0 }} />}
+                    {item.isKickoff && <Smile size={15} color="var(--colors-primary)" style={{ flexShrink: 0 }} />}
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Column: Architectural Intake Form */}
+          {/* Right Column: Freehand Card (10px radius, #351505 bg) */}
           <RevealElement variant="card" start="top 88%" end="top 55%">
             <div
+              className="card-dark"
               style={{
-                backgroundColor: '#000000',
-                border: '1px solid #292522',
-                borderRadius: '8px',
+                backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
+                border: '1px solid var(--colors-border-dark)',
+                borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
                 padding: 'clamp(28px, 4vw, 48px)',
-                color: '#F2F0EC',
+                color: 'var(--colors-text-inverse)',
+                boxShadow: 'var(--shadow-card)',
               }}
             >
               {submitted ? (
@@ -239,8 +241,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     style={{
                       width: '56px',
                       height: '56px',
-                      borderRadius: '8px',
-                      backgroundColor: '#A94F0B',
+                      borderRadius: 'var(--radius-sm)',
+                      backgroundColor: 'var(--colors-primary)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -251,20 +253,20 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   </div>
                   <h3
                     style={{
-                      fontSize: '26px',
-                      fontWeight: 700,
-                      fontFamily: 'var(--font-heading)',
+                      fontSize: '28px',
+                      fontWeight: 400,
+                      fontFamily: 'var(--typography-heading1-family)',
                       marginBottom: '10px',
-                      color: '#F2F0EC',
+                      color: 'var(--colors-text-inverse)',
                     }}
                   >
                     Thank you for reaching out!
                   </h3>
                   <p
                     style={{
-                      fontFamily: 'var(--font-body)',
-                      color: '#A3A3A3',
-                      fontSize: '15px',
+                      fontFamily: 'var(--typography-body-family)',
+                      color: 'var(--colors-text-muted)',
+                      fontSize: '16px',
                       maxWidth: '440px',
                       margin: '0 auto 24px',
                       lineHeight: 1.6,
@@ -297,22 +299,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   <div>
                     <h2
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(24px, 2.8vw, 34px)',
-                        fontWeight: 700,
+                        fontFamily: 'var(--typography-heading1-family)',
+                        fontSize: 'clamp(26px, 3vw, 34px)',
+                        fontWeight: 400,
                         marginBottom: '8px',
                         letterSpacing: '-0.02em',
                         lineHeight: 1.2,
-                        color: '#F2F0EC',
+                        color: 'var(--colors-text-inverse)',
                       }}
                     >
                       Tell us what you want to build
                     </h2>
                     <p
                       style={{
-                        fontFamily: 'var(--font-body)',
-                        color: '#A3A3A3',
-                        fontSize: '14px',
+                        fontFamily: 'var(--typography-body-family)',
+                        color: 'var(--colors-text-muted)',
+                        fontSize: '15px',
                         lineHeight: 1.55,
                         margin: 0,
                       }}
@@ -323,14 +325,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
 
                   {/* Challenge / Goal Input */}
                   <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
                       <label
                         htmlFor="challenge"
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: 500,
-                          color: '#F2F0EC',
-                          fontFamily: 'var(--font-body)',
+                          color: 'var(--colors-text-inverse)',
+                          fontFamily: 'var(--typography-body-family)',
                         }}
                       >
                         Your project and goals*
@@ -339,7 +341,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         title="Describe your project, goals, timeline, and tech stack if known"
                         style={{ display: 'inline-flex', cursor: 'pointer', opacity: 0.7 }}
                       >
-                        <HelpCircle size={14} color="#A3A3A3" />
+                        <HelpCircle size={14} color="var(--colors-text-muted)" />
                       </span>
                     </div>
                     <input
@@ -351,22 +353,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
                       style={{
                         width: '100%',
-                        padding: '12px 14px',
-                        backgroundColor: '#000000',
-                        border: '1px solid #292522',
-                        borderRadius: '6px',
-                        fontSize: '14px',
-                        fontFamily: 'var(--font-body)',
-                        color: '#F2F0EC',
+                        padding: '12px 16px',
+                        backgroundColor: 'var(--colors-background-dark)', // #200b00
+                        border: '1px solid var(--colors-border-dark)',
+                        borderRadius: 'var(--radius-sm)', // 1px exact Freehand spec
+                        fontSize: '15px',
+                        fontFamily: 'var(--typography-body-family)',
+                        color: 'var(--colors-text-inverse)',
                         outline: 'none',
-                        transition: 'border-color 0.2s, box-shadow 0.2s',
+                        transition: 'border-color 0.38s ease, box-shadow 0.38s ease',
                       }}
                       onFocus={(e) => {
-                        e.currentTarget.style.borderColor = '#D8945A';
-                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                        e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px var(--colors-primary)';
                       }}
                       onBlur={(e) => {
-                        e.currentTarget.style.borderColor = '#292522';
+                        e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                         e.currentTarget.style.boxShadow = 'none';
                       }}
                     />
@@ -378,12 +380,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       <label
                         htmlFor="name"
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: 500,
-                          color: '#F2F0EC',
+                          color: 'var(--colors-text-inverse)',
                           display: 'block',
-                          marginBottom: '6px',
-                          fontFamily: 'var(--font-body)',
+                          marginBottom: '8px',
+                          fontFamily: 'var(--typography-body-family)',
                         }}
                       >
                         Name*
@@ -397,22 +399,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         style={{
                           width: '100%',
-                          padding: '12px 14px',
-                          backgroundColor: '#000000',
-                          border: '1px solid #292522',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontFamily: 'var(--font-body)',
-                          color: '#F2F0EC',
+                          padding: '12px 16px',
+                          backgroundColor: 'var(--colors-background-dark)',
+                          border: '1px solid var(--colors-border-dark)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '15px',
+                          fontFamily: 'var(--typography-body-family)',
+                          color: 'var(--colors-text-inverse)',
                           outline: 'none',
-                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                          transition: 'border-color 0.38s ease, box-shadow 0.38s ease',
                         }}
                         onFocus={(e) => {
-                          e.currentTarget.style.borderColor = '#D8945A';
-                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                          e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px var(--colors-primary)';
                         }}
                         onBlur={(e) => {
-                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       />
@@ -422,12 +424,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       <label
                         htmlFor="email"
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: 500,
-                          color: '#F2F0EC',
+                          color: 'var(--colors-text-inverse)',
                           display: 'block',
-                          marginBottom: '6px',
-                          fontFamily: 'var(--font-body)',
+                          marginBottom: '8px',
+                          fontFamily: 'var(--typography-body-family)',
                         }}
                       >
                         Corporate email*
@@ -441,22 +443,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         style={{
                           width: '100%',
-                          padding: '12px 14px',
-                          backgroundColor: '#000000',
-                          border: '1px solid #292522',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontFamily: 'var(--font-body)',
-                          color: '#F2F0EC',
+                          padding: '12px 16px',
+                          backgroundColor: 'var(--colors-background-dark)',
+                          border: '1px solid var(--colors-border-dark)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '15px',
+                          fontFamily: 'var(--typography-body-family)',
+                          color: 'var(--colors-text-inverse)',
                           outline: 'none',
-                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                          transition: 'border-color 0.38s ease, box-shadow 0.38s ease',
                         }}
                         onFocus={(e) => {
-                          e.currentTarget.style.borderColor = '#D8945A';
-                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                          e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px var(--colors-primary)';
                         }}
                         onBlur={(e) => {
-                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       />
@@ -469,12 +471,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       <label
                         htmlFor="phone"
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: 500,
-                          color: '#F2F0EC',
+                          color: 'var(--colors-text-inverse)',
                           display: 'block',
-                          marginBottom: '6px',
-                          fontFamily: 'var(--font-body)',
+                          marginBottom: '8px',
+                          fontFamily: 'var(--typography-body-family)',
                         }}
                       >
                         Phone number
@@ -487,22 +489,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         style={{
                           width: '100%',
-                          padding: '12px 14px',
-                          backgroundColor: '#000000',
-                          border: '1px solid #292522',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontFamily: 'var(--font-body)',
-                          color: '#F2F0EC',
+                          padding: '12px 16px',
+                          backgroundColor: 'var(--colors-background-dark)',
+                          border: '1px solid var(--colors-border-dark)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '15px',
+                          fontFamily: 'var(--typography-body-family)',
+                          color: 'var(--colors-text-inverse)',
                           outline: 'none',
-                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                          transition: 'border-color 0.38s ease, box-shadow 0.38s ease',
                         }}
                         onFocus={(e) => {
-                          e.currentTarget.style.borderColor = '#D8945A';
-                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                          e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px var(--colors-primary)';
                         }}
                         onBlur={(e) => {
-                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       />
@@ -512,12 +514,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       <label
                         htmlFor="company"
                         style={{
-                          fontSize: '13px',
+                          fontSize: '14px',
                           fontWeight: 500,
-                          color: '#F2F0EC',
+                          color: 'var(--colors-text-inverse)',
                           display: 'block',
-                          marginBottom: '6px',
-                          fontFamily: 'var(--font-body)',
+                          marginBottom: '8px',
+                          fontFamily: 'var(--typography-body-family)',
                         }}
                       >
                         Company
@@ -530,22 +532,22 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         style={{
                           width: '100%',
-                          padding: '12px 14px',
-                          backgroundColor: '#000000',
-                          border: '1px solid #292522',
-                          borderRadius: '6px',
-                          fontSize: '14px',
-                          fontFamily: 'var(--font-body)',
-                          color: '#F2F0EC',
+                          padding: '12px 16px',
+                          backgroundColor: 'var(--colors-background-dark)',
+                          border: '1px solid var(--colors-border-dark)',
+                          borderRadius: 'var(--radius-sm)',
+                          fontSize: '15px',
+                          fontFamily: 'var(--typography-body-family)',
+                          color: 'var(--colors-text-inverse)',
                           outline: 'none',
-                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                          transition: 'border-color 0.38s ease, box-shadow 0.38s ease',
                         }}
                         onFocus={(e) => {
-                          e.currentTarget.style.borderColor = '#D8945A';
-                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                          e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px var(--colors-primary)';
                         }}
                         onBlur={(e) => {
-                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
                           e.currentTarget.style.boxShadow = 'none';
                         }}
                       />
@@ -579,8 +581,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         gap: '10px',
                         cursor: 'pointer',
                         fontSize: '13.5px',
-                        color: '#A3A3A3',
-                        fontFamily: 'var(--font-body)',
+                        color: 'var(--colors-text-muted)',
+                        fontFamily: 'var(--typography-body-family)',
                         minHeight: '40px',
                       }}
                     >
@@ -588,7 +590,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         type="checkbox"
                         checked={formData.ndaFirst}
                         onChange={(e) => setFormData({ ...formData, ndaFirst: e.target.checked })}
-                        style={{ width: '16px', height: '16px', accentColor: '#A94F0B' }}
+                        style={{ width: '16px', height: '16px', accentColor: 'var(--colors-primary)' }}
                       />
                       <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
                     </label>
@@ -601,19 +603,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '6px',
-                          color: '#C87535',
+                          color: 'var(--colors-primary)',
                           fontSize: '13.5px',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--typography-body-family)',
                           fontWeight: 500,
                           minHeight: '44px',
                           padding: '4px 6px',
                           background: 'none',
                           border: 'none',
                           cursor: 'pointer',
-                          transition: 'color 0.2s',
+                          transition: 'color 0.38s ease',
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D8945A')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = '#C87535')}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colors-primary)')}
                       >
                         <Paperclip size={15} /> Attach a file (brief, spec or design)
                       </button>
@@ -625,19 +627,19 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '6px',
-                          color: isRecording ? '#8F2929' : '#C87535',
+                          color: isRecording ? '#dc2626' : 'var(--colors-primary)',
                           fontSize: '13.5px',
-                          fontFamily: 'var(--font-body)',
+                          fontFamily: 'var(--typography-body-family)',
                           fontWeight: 500,
                           minHeight: '44px',
                           padding: '4px 6px',
                           background: 'none',
                           border: 'none',
                           cursor: 'pointer',
-                          transition: 'color 0.2s',
+                          transition: 'color 0.38s ease',
                         }}
-                        onMouseEnter={(e) => !isRecording && (e.currentTarget.style.color = '#D8945A')}
-                        onMouseLeave={(e) => !isRecording && (e.currentTarget.style.color = '#C87535')}
+                        onMouseEnter={(e) => !isRecording && (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
+                        onMouseLeave={(e) => !isRecording && (e.currentTarget.style.color = 'var(--colors-primary)')}
                       >
                         <Mic size={15} /> {isRecording ? 'Recording (Listening...)' : 'Record a voice message about your project'}
                       </button>
@@ -654,17 +656,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '6px',
-                            backgroundColor: 'rgba(169, 79, 11, 0.12)',
-                            border: '1px solid #A94F0B',
-                            color: '#F2F0EC',
+                            backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                            border: '1px solid var(--colors-primary)',
+                            color: 'var(--colors-text-inverse)',
                             fontSize: '12px',
                             padding: '6px 12px',
-                            borderRadius: '4px',
+                            borderRadius: 'var(--radius-sm)',
                             fontWeight: 500,
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--typography-body-family)',
                           }}
                         >
-                          <Paperclip size={12} color="#A94F0B" /> {file}
+                          <Paperclip size={12} color="var(--colors-primary)" /> {file}
                           <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => removeFile(idx)} aria-label="Remove attached file" />
                         </span>
                       ))}
@@ -674,17 +676,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '6px',
-                            backgroundColor: 'rgba(169, 79, 11, 0.12)',
-                            border: '1px solid #A94F0B',
-                            color: '#F2F0EC',
+                            backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                            border: '1px solid var(--colors-primary)',
+                            color: 'var(--colors-text-inverse)',
                             fontSize: '12px',
                             padding: '6px 12px',
-                            borderRadius: '4px',
+                            borderRadius: 'var(--radius-sm)',
                             fontWeight: 500,
-                            fontFamily: 'var(--font-body)',
+                            fontFamily: 'var(--typography-body-family)',
                           }}
                         >
-                          <Volume2 size={14} color="#A94F0B" /> Voice Memo (0:14)
+                          <Volume2 size={14} color="var(--colors-primary)" /> Voice Memo (0:14)
                           <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
                         </span>
                       )}
@@ -700,8 +702,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       cursor: 'pointer',
                       fontSize: '13px',
                       lineHeight: 1.5,
-                      color: '#A3A3A3',
-                      fontFamily: 'var(--font-body)',
+                      color: 'var(--colors-text-muted)',
+                      fontFamily: 'var(--typography-body-family)',
                     }}
                   >
                     <input
@@ -709,7 +711,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       required
                       checked={formData.consent}
                       onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                      style={{ marginTop: '2px', accentColor: '#A94F0B' }}
+                      style={{ marginTop: '2px', accentColor: 'var(--colors-primary)' }}
                     />
                     <span>
                       I agree to the processing of my personal data as described in the{' '}
@@ -720,7 +722,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                           if (onOpenPrivacy) onOpenPrivacy();
                         }}
                         style={{
-                          color: '#C87535',
+                          color: 'var(--colors-primary)',
                           textDecoration: 'underline',
                           cursor: 'pointer',
                           fontSize: '13px',
@@ -740,7 +742,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                           if (onOpenPrivacy) onOpenPrivacy();
                         }}
                         style={{
-                          color: '#C87535',
+                          color: 'var(--colors-primary)',
                           textDecoration: 'underline',
                           cursor: 'pointer',
                           fontSize: '13px',
@@ -756,7 +758,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     </span>
                   </label>
 
-                  {/* Submit Button */}
+                  {/* Submit Button (Strict 0px radius, #fe6200 bg) */}
                   <div style={{ paddingTop: '6px' }}>
                     <Button
                       type="submit"
@@ -767,7 +769,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       Send message
                     </Button>
                     {formError && (
-                      <p style={{ color: '#8F2929', fontSize: '13px', marginTop: '10px', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
+                      <p style={{ color: '#ef4444', fontSize: '13px', marginTop: '10px', fontWeight: 500, fontFamily: 'var(--typography-body-family)' }}>
                         {formError}
                       </p>
                     )}

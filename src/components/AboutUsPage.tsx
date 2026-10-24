@@ -126,14 +126,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 width: '84px',
                 height: '84px',
                 borderRadius: '50%',
-                backgroundColor: 'rgba(169, 79, 11, 0.2)',
-                border: '2px solid #A94F0B',
+                backgroundColor: 'rgba(254, 98, 0, 0.2)',
+                border: '2px solid #fe6200',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '24px',
                 fontWeight: 700,
-                color: '#A94F0B',
+                color: '#fe6200',
                 marginBottom: '12px',
               }}
             >
@@ -199,7 +199,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 pointerEvents: 'none',
               }}
             >
-              <Play size={16} style={{ color: '#A94F0B', fill: '#A94F0B' }} />
+              <Play size={16} style={{ color: '#fe6200', fill: '#fe6200' }} />
               <span>Neominds Global Culture &amp; Engineering</span>
             </div>
           </div>
@@ -416,7 +416,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   width: idx === currentTestimonialIndex ? '28px' : '8px',
                   height: '8px',
                   borderRadius: '4px',
-                  backgroundColor: idx === currentTestimonialIndex ? '#A94F0B' : '#334155',
+                  backgroundColor: idx === currentTestimonialIndex ? '#fe6200' : '#334155',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -520,7 +520,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   transition: 'border-color 0.2s ease',
                 }}
               >
-                <Upload size={20} style={{ color: '#A94F0B' }} />
+                <Upload size={20} style={{ color: '#fe6200' }} />
                 <span style={{ fontSize: '14px', color: '#e2e8f0', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
@@ -547,7 +547,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   onChange={(e) => setFormState({ ...formState, ndaFirst: e.target.checked })}
                 />
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  <ShieldCheck size={16} style={{ color: '#A94F0B' }} />
+                  <ShieldCheck size={16} style={{ color: '#fe6200' }} />
                   Need an NDA first? We'll sign one before you share any details.
                 </span>
               </label>
@@ -592,7 +592,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#A94F0B',
+                color: '#fe6200',
                 fontWeight: 600,
                 textDecoration: 'none',
               }}

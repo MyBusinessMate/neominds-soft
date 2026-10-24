@@ -77,10 +77,10 @@ const IndustryRecognitionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background)', // #ffffff Freehand light background
         paddingTop: 'clamp(80px, 9vw, 120px)',
         paddingBottom: 'clamp(80px, 9vw, 120px)',
-        borderTop: '1px solid #292522',
+        borderTop: '1px solid var(--colors-border-light)',
         overflow: 'hidden',
       }}
     >
@@ -101,11 +101,11 @@ const IndustryRecognitionComponent: React.FC = () => {
                 className="eyebrow-tag"
                 style={{
                   display: 'inline-block',
-                  fontFamily: 'var(--font-subheading)',
+                  fontFamily: 'var(--typography-mono-family)',
                   fontSize: '13px',
-                  fontWeight: 600,
+                  fontWeight: 500,
                   letterSpacing: '0.12em',
-                  color: '#A94F0B',
+                  color: 'var(--colors-primary)',
                   textTransform: 'uppercase',
                   marginBottom: '16px',
                 }}
@@ -118,12 +118,12 @@ const IndustryRecognitionComponent: React.FC = () => {
               as="h2"
               className="section-title"
               style={{
-                color: '#F2F0EC',
+                color: 'var(--colors-text-primary)', // #000000
                 marginBottom: '24px',
                 display: 'block',
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(30px, 3.5vw, 44px)',
-                fontWeight: 700,
+                fontFamily: 'var(--typography-heading1-family)',
+                fontSize: 'clamp(32px, 3.6vw, 44px)',
+                fontWeight: 400,
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em',
               }}
@@ -136,10 +136,11 @@ const IndustryRecognitionComponent: React.FC = () => {
               <p
                 className="body-lead"
                 style={{
-                  color: '#A3A3A3',
-                  fontSize: 'clamp(15px, 1.2vw, 17px)',
-                  marginBottom: '20px',
-                  lineHeight: 1.65,
+                  color: 'var(--colors-text-muted)', // #868683
+                  fontFamily: 'var(--typography-body-family)',
+                  fontSize: 'clamp(16px, 1.2vw, 18px)',
+                  marginBottom: '24px',
+                  lineHeight: 1.6,
                 }}
               >
                 Every Neominds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
@@ -150,14 +151,14 @@ const IndustryRecognitionComponent: React.FC = () => {
               <div
                 style={{
                   paddingTop: '20px',
-                  borderTop: '1px solid #292522',
+                  borderTop: '1px solid var(--colors-border-light)',
                 }}
               >
                 <p
                   style={{
-                    fontFamily: 'var(--font-body)',
+                    fontFamily: 'var(--typography-body-family)',
                     fontSize: '14px',
-                    color: '#777777',
+                    color: 'var(--colors-text-muted)',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -168,19 +169,21 @@ const IndustryRecognitionComponent: React.FC = () => {
             </RevealElement>
           </div>
 
-          {/* Right Column Recognition Showcase (No Boxed Card Slop) */}
+          {/* Right Column Recognition Showcase (card-standard spec with 10px radius) */}
           <RevealElement variant="card">
             <div
+              className="card-standard"
               style={{
-                border: '1px solid #292522',
-                borderRadius: '8px',
-                backgroundColor: '#000000',
+                borderRadius: 'var(--radius-md)', // 10px
+                border: '1px solid var(--colors-border-light)',
+                backgroundColor: 'var(--colors-surface-light)', // #f1efeb
                 padding: 'clamp(28px, 4vw, 40px)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 minHeight: '440px',
+                transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
               }}
             >
               {/* Slide Counter Header */}
@@ -192,16 +195,16 @@ const IndustryRecognitionComponent: React.FC = () => {
                   justifyContent: 'space-between',
                   marginBottom: '20px',
                   paddingBottom: '14px',
-                  borderBottom: '1px solid #292522',
+                  borderBottom: '1px solid var(--colors-border-light)',
                 }}
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-subheading)',
+                    fontFamily: 'var(--typography-mono-family)',
                     fontSize: '11px',
-                    fontWeight: 600,
+                    fontWeight: 500,
                     letterSpacing: '0.1em',
-                    color: '#A94F0B',
+                    color: 'var(--colors-primary)',
                     textTransform: 'uppercase',
                   }}
                 >
@@ -209,9 +212,9 @@ const IndustryRecognitionComponent: React.FC = () => {
                 </span>
                 <span
                   style={{
-                    fontFamily: 'var(--font-metrics)',
-                    fontSize: '11.5px',
-                    color: '#777777',
+                    fontFamily: 'var(--typography-mono-family)',
+                    fontSize: '12px',
+                    color: 'var(--colors-text-muted)',
                   }}
                 >
                   0{currentIndex + 1} / 0{slides.length}
@@ -237,16 +240,17 @@ const IndustryRecognitionComponent: React.FC = () => {
                     maxHeight: '260px',
                     maxWidth: '100%',
                     objectFit: 'contain',
+                    borderRadius: 'var(--radius-sm)',
                   }}
                   loading="lazy"
                 />
                 <span
                   style={{
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: 'var(--typography-heading1-family)',
                     marginTop: '20px',
-                    color: '#F2F0EC',
-                    fontSize: '15px',
-                    fontWeight: 600,
+                    color: 'var(--colors-text-primary)',
+                    fontSize: '17px',
+                    fontWeight: 400,
                     textAlign: 'center',
                     lineHeight: 1.4,
                   }}
@@ -255,9 +259,9 @@ const IndustryRecognitionComponent: React.FC = () => {
                 </span>
                 <span
                   style={{
-                    fontFamily: 'var(--font-body)',
-                    fontSize: '13px',
-                    color: '#A3A3A3',
+                    fontFamily: 'var(--typography-body-family)',
+                    fontSize: '14px',
+                    color: 'var(--colors-text-muted)',
                     marginTop: '4px',
                     textAlign: 'center',
                   }}
@@ -275,14 +279,19 @@ const IndustryRecognitionComponent: React.FC = () => {
                   justifyContent: 'space-between',
                   paddingTop: '20px',
                   marginTop: '16px',
-                  borderTop: '1px solid #292522',
+                  borderTop: '1px solid var(--colors-border-light)',
                 }}
               >
                 <Button
                   variant="icon-only"
                   onClick={() => setIsPlaying(!isPlaying)}
                   aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
-                  style={{ width: '36px', height: '36px' }}
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    color: 'var(--colors-text-primary)',
+                    borderColor: 'var(--colors-border-light)',
+                  }}
                 >
                   {isPlaying ? <Pause size={14} /> : <Play size={14} />}
                 </Button>
@@ -295,9 +304,9 @@ const IndustryRecognitionComponent: React.FC = () => {
                       style={{
                         width: idx === currentIndex ? '28px' : '14px',
                         height: '3px',
-                        backgroundColor: idx === currentIndex ? '#A94F0B' : '#292522',
+                        backgroundColor: idx === currentIndex ? 'var(--colors-primary)' : 'var(--colors-border-light)',
                         cursor: 'pointer',
-                        transition: 'all 0.25s ease',
+                        transition: 'all 0.38s ease',
                         border: 'none',
                         padding: 0,
                       }}
@@ -311,7 +320,12 @@ const IndustryRecognitionComponent: React.FC = () => {
                     variant="icon-only"
                     onClick={prevSlide}
                     aria-label="Previous slide"
-                    style={{ width: '36px', height: '36px' }}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      color: 'var(--colors-text-primary)',
+                      borderColor: 'var(--colors-border-light)',
+                    }}
                   >
                     <ChevronLeft size={16} />
                   </Button>
@@ -319,7 +333,12 @@ const IndustryRecognitionComponent: React.FC = () => {
                     variant="icon-only"
                     onClick={nextSlide}
                     aria-label="Next slide"
-                    style={{ width: '36px', height: '36px' }}
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      color: 'var(--colors-text-primary)',
+                      borderColor: 'var(--colors-border-light)',
+                    }}
                   >
                     <ChevronRight size={16} />
                   </Button>

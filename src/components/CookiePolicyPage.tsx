@@ -106,9 +106,9 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     textAlign: 'left',
                     background: 'none',
                     border: 'none',
-                    borderLeft: `2px solid ${activeSection === item.id ? '#A94F0B' : '#292522'}`,
+                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#292522'}`,
                     padding: '8px 14px',
-                    color: activeSection === item.id ? '#A94F0B' : '#475569',
+                    color: activeSection === item.id ? '#fe6200' : '#475569',
                     fontWeight: activeSection === item.id ? 700 : 500,
                     fontSize: '13.5px',
                     cursor: 'pointer',
@@ -153,7 +153,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               <div id="strictly-necessary" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '4px', padding: '24px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span>Strictly necessary cookies</span>
-                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', padding: '2px 8px', backgroundColor: '#A94F0B', color: '#ffffff', borderRadius: '2px' }}>Required</span>
+                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', padding: '2px 8px', backgroundColor: '#fe6200', color: '#ffffff', borderRadius: '2px' }}>Required</span>
                 </h4>
                 <p style={{ margin: 0, fontSize: '14.5px', color: '#94a3b8' }}>
                   These cookies are essential for the Websites to function and cannot be disabled through our systems. They are usually set in response to actions made by you, such as setting privacy preferences, establishing secure HTTPS connections, or submitting discovery forms. You may configure your browser to block or alert you about these cookies, but certain core features of the Websites will become unavailable. These cookies do not store personally identifiable records.
@@ -193,7 +193,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               {/* Manage Preferences Card */}
               <div id="manage-preferences" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: '#0a0a0a', border: '1px solid #cbd5e1', borderRadius: '6px', padding: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-                  <Sliders size={20} color="#A94F0B" />
+                  <Sliders size={20} color="#fe6200" />
                   <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: 0 }}>
                     Manage Your Cookie Preferences
                   </h3>
@@ -205,7 +205,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                       <div style={{ fontWeight: 700, color: '#ffffff' }}>Strictly Necessary Cookies</div>
                       <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '2px' }}>Always active for security and core navigation.</div>
                     </div>
-                    <input type="checkbox" checked={true} disabled style={{ width: '18px', height: '18px', accentColor: '#A94F0B' }} />
+                    <input type="checkbox" checked={true} disabled style={{ width: '18px', height: '18px', accentColor: '#fe6200' }} />
                   </div>
 
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #292522', paddingBottom: '16px' }}>
@@ -217,7 +217,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                       type="checkbox"
                       checked={preferences.performance}
                       onChange={(e) => setPreferences({ ...preferences, performance: e.target.checked })}
-                      style={{ width: '18px', height: '18px', accentColor: '#A94F0B', cursor: 'pointer' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#fe6200', cursor: 'pointer' }}
                     />
                   </div>
 
@@ -230,7 +230,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                       type="checkbox"
                       checked={preferences.functional}
                       onChange={(e) => setPreferences({ ...preferences, functional: e.target.checked })}
-                      style={{ width: '18px', height: '18px', accentColor: '#A94F0B', cursor: 'pointer' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#fe6200', cursor: 'pointer' }}
                     />
                   </div>
 
@@ -243,7 +243,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                       type="checkbox"
                       checked={preferences.targeting}
                       onChange={(e) => setPreferences({ ...preferences, targeting: e.target.checked })}
-                      style={{ width: '18px', height: '18px', accentColor: '#A94F0B', cursor: 'pointer' }}
+                      style={{ width: '18px', height: '18px', accentColor: '#fe6200', cursor: 'pointer' }}
                     />
                   </div>
                 </div>
@@ -254,7 +254,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     onClick={handleSavePreferences}
                     style={{
                       padding: '12px 28px',
-                      backgroundColor: '#A94F0B',
+                      backgroundColor: '#fe6200',
                       color: '#ffffff',
                       border: 'none',
                       borderRadius: '2px',
@@ -335,7 +335,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                 alignItems: 'center',
                 gap: '8px',
                 padding: '14px 28px',
-                backgroundColor: '#A94F0B',
+                backgroundColor: '#fe6200',
                 color: '#ffffff',
                 fontSize: '14px',
                 fontWeight: 600,
