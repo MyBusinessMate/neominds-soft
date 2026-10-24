@@ -243,7 +243,7 @@ export const App: React.FC = () => {
       }
       if (isServiceSlug(cleanTarget) || [
         'insights', 'blog', 'company-updates', 'portfolio', 'about-us', 'contacts',
-        'privacy-policy', 'cookie-policy', 'security-policy'
+        'privacy-policy', 'cookie-policy', 'security-policy', 'leaders', 'careers', 'certification', 'services', 'industries'
       ].includes(cleanTarget)) {
         handleSelectPage(cleanTarget as PageType);
         return;
