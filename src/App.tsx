@@ -205,7 +205,7 @@ export const App: React.FC = () => {
       const route = resolveRoute();
       setCurrentPage(route.page);
       setSelectedArticleId(route.articleId);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollTo(0, { immediate: true });
     };
 
     window.addEventListener('popstate', handleUrlChange);

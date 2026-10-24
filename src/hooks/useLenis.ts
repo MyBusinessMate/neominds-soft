@@ -43,13 +43,14 @@ export function useLenis() {
       window.dispatchEvent(new CustomEvent('lenis-scroll', { detail: e }));
     });
 
-    // 3. Add Lenis to GSAP ticker for synchronized 60fps/120fps animation loop
-    const updateTicker = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    // 3. Direct high-precision requestAnimationFrame loop driving Lenis and ScrollTrigger
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      ScrollTrigger.update();
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
 
     // Refresh ScrollTrigger positions after DOM layout stabilizes and assets load
     const refreshTimers = [
@@ -105,7 +106,7 @@ export function useLenis() {
       window.removeEventListener('load', handleWindowLoad);
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('click', handleAnchorClick, { capture: true });
-      gsap.ticker.remove(updateTicker);
+      cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
       globalLenis = null;
