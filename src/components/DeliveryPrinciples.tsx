@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Plus, Minus, Check } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface Principle {
   id: string;
+  num: string;
   title: string;
   tagline: string;
   desc: string;
@@ -13,6 +14,7 @@ interface Principle {
 const principles: Principle[] = [
   {
     id: 'outcomes',
+    num: '01',
     title: 'BUILT FOR OUTCOMES',
     tagline: 'We begin with the result you want and plan every sprint around it.',
     desc: 'We begin with the result you want, such as more sales, lower costs or faster operations, and plan every sprint around it. You see working progress in a demo every week.',
@@ -24,6 +26,7 @@ const principles: Principle[] = [
   },
   {
     id: 'ai-value',
+    num: '02',
     title: 'AI WHERE IT EARNS ITS PLACE',
     tagline: 'Applied only where it saves time or improves results.',
     desc: 'We use AI to speed up our own work and to add smart features to your product, but only where it saves time or improves results.',
@@ -35,6 +38,7 @@ const principles: Principle[] = [
   },
   {
     id: 'sector-focused',
+    num: '03',
     title: 'MADE FOR YOUR SECTOR',
     tagline: 'Tailored to the rules and workflows of your specific industry.',
     desc: 'Each industry has its own rules and workflows. We learn yours first, including data-privacy needs such as GDPR, so the software fits how you actually operate.',
@@ -54,13 +58,11 @@ const statsData = [
 ];
 
 const DeliveryPrinciplesComponent: React.FC = () => {
-  const [activePrinciple, setActivePrinciple] = useState<string>(''); // Collapsed by default until clicked
-  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
+  const [activePrinciple, setActivePrinciple] = useState<string>('outcomes');
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
   const hasAnimatedRef = useRef(false);
   const statsRef = useRef<HTMLDivElement>(null);
 
-  // Smooth IntersectionObserver-driven counter animation
   useEffect(() => {
     const el = statsRef.current;
     if (!el) return;
@@ -71,14 +73,13 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         if (entry.isIntersecting && !hasAnimatedRef.current) {
           hasAnimatedRef.current = true;
 
-          const duration = 2200; // 2.2 seconds smooth counter
+          const duration = 2200;
           const startTime = performance.now();
           const targets = statsData.map((s) => s.target);
 
           const animate = (now: number) => {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Cubic ease-out curve for natural deceleration
             const easeOutProgress = 1 - Math.pow(1 - progress, 3);
 
             const nextCounts = targets.map((target) => Math.round(target * easeOutProgress));
@@ -87,7 +88,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             if (progress < 1) {
               requestAnimationFrame(animate);
             } else {
-              setCounts(targets); // Guaranteed exact termination values
+              setCounts(targets);
             }
           };
 
@@ -108,51 +109,53 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         position: 'relative',
         width: '100%',
         backgroundColor: '#000000',
-        paddingTop: 'clamp(70px, 8vw, 100px)',
-        paddingBottom: '0px',
-        color: '#ffffff',
+        paddingTop: 'clamp(80px, 9vw, 120px)',
+        paddingBottom: 'clamp(60px, 7vw, 100px)',
+        color: '#F2F0EC',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Top Header & Principle Rows */}
+        {/* Asymmetrical Editorial Header & Principle Rows */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(32px, 5vw, 64px)',
-            marginBottom: 'clamp(48px, 6vw, 80px)',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
+            gap: 'clamp(40px, 6vw, 80px)',
+            marginBottom: 'clamp(64px, 8vw, 100px)',
+            alignItems: 'start',
           }}
+          className="principles-grid"
         >
-          {/* Left Column: Label */}
+          {/* Left Column: Index & Core Statement */}
           <div>
             <RevealElement variant="text">
               <span
+                className="eyebrow-tag"
                 style={{
-                  fontFamily: 'var(--font-heading)',
+                  display: 'inline-block',
+                  fontFamily: 'var(--font-subheading)',
                   fontSize: '13px',
-                  fontWeight: 700,
-                  letterSpacing: '0.15em',
-                  color: '#FF5500',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  color: '#A94F0B',
                   textTransform: 'uppercase',
+                  marginBottom: '16px',
                 }}
               >
-                HOW WE WORK
+                02 // HOW WE WORK
               </span>
             </RevealElement>
-          </div>
 
-          {/* Right Column: Statement & Interactive FAQ Principles */}
-          <div>
             <ScrollReveal
-              as="h3"
+              as="h2"
               style={{
                 fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(20px, 2.2vw, 32px)',
-                fontWeight: 600,
-                lineHeight: 1.3,
-                color: '#ffffff',
-                marginBottom: 'clamp(28px, 4vw, 40px)',
-                maxWidth: '650px',
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                fontWeight: 700,
+                lineHeight: 1.22,
+                color: '#F2F0EC',
+                marginBottom: '20px',
+                letterSpacing: '-0.02em',
                 display: 'block',
               }}
               blurStrength={6}
@@ -160,247 +163,237 @@ const DeliveryPrinciplesComponent: React.FC = () => {
               We take your project from first idea to launch and long-term support, with one team responsible throughout.
             </ScrollReveal>
 
-            {/* Principle Accordion Items - Pure click-to-expand */}
-            <div
+            <p
               style={{
-                display: 'flex',
-                flexDirection: 'column',
-                width: '100%',
-                borderRadius: '0px',
-                overflow: 'hidden',
-                border: 'none',
+                fontFamily: 'var(--font-body)',
+                fontSize: '15px',
+                lineHeight: 1.65,
+                color: '#A3A3A3',
+                maxWidth: '440px',
               }}
             >
-              {principles.map((p) => {
-                const isActive = activePrinciple === p.id;
-                return (
-                  <div
-                    key={p.id}
+              Direct senior engineering accountability with zero handoff friction between discovery, sprint velocity, and production rollout.
+            </p>
+          </div>
+
+          {/* Right Column: Architectural Ledger Rows (No Boxed Cards) */}
+          <div
+            style={{
+              borderTop: '1px solid #292522',
+            }}
+          >
+            {principles.map((p) => {
+              const isActive = activePrinciple === p.id;
+              return (
+                <div
+                  key={p.id}
+                  style={{
+                    borderBottom: '1px solid #292522',
+                    transition: 'border-color 0.2s ease',
+                  }}
+                >
+                  <button
+                    type="button"
                     onClick={() => setActivePrinciple(isActive ? '' : p.id)}
                     style={{
-                      borderBottom: 'none',
-                      backgroundColor: isActive ? '#FF5500' : '#0a0a0a',
-                      color: '#ffffff',
+                      width: '100%',
+                      padding: '24px 0',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      textAlign: 'left',
+                      background: 'none',
+                      border: 'none',
                       cursor: 'pointer',
-                      transition: 'background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease',
-                      boxShadow: isActive ? '0 10px 30px rgba(255, 85, 0, 0.25)' : 'none',
-                      borderRadius: '0px',
-                      marginBottom: '8px',
-                      border: '1px solid #1e293b',
-                    }}
-                    role="button"
-                    tabIndex={0}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        setActivePrinciple(isActive ? '' : p.id);
-                      }
+                      gap: '16px',
                     }}
                     aria-expanded={isActive}
-                    aria-label={`Principle: ${p.title}`}
                   >
-                    {/* Header Row: Title & Arrow Indicator */}
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: 'clamp(18px, 2.5vw, 24px) clamp(20px, 2.8vw, 32px)',
-                        userSelect: 'none',
-                      }}
-                    >
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                        <span
-                          style={{
-                            fontFamily: 'var(--font-heading)',
-                            fontSize: 'clamp(17px, 1.7vw, 24px)',
-                            fontWeight: 700,
-                            letterSpacing: '0.01em',
-                            lineHeight: 1.2,
-                            color: '#ffffff',
-                          }}
-                        >
-                          {p.title}
-                        </span>
-                        {!isActive && (
-                          <span
-                            style={{
-                              fontSize: '13px',
-                              color: '#94a3b8',
-                              fontWeight: 400,
-                              marginTop: '2px',
-                            }}
-                          >
-                            {p.tagline}
-                          </span>
-                        )}
-                      </div>
-
-                      <div
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+                      <span
                         style={{
-                          width: '38px',
-                          height: '38px',
-                          borderRadius: '0px',
-                          backgroundColor: isActive ? 'rgba(255, 255, 255, 0.18)' : 'transparent',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          flexShrink: 0,
-                          transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease',
-                          transform: isActive ? 'rotate(90deg)' : 'rotate(0deg)',
+                          fontFamily: 'var(--font-metrics)',
+                          fontSize: '13px',
+                          color: isActive ? '#A94F0B' : '#777777',
+                          transition: 'color 0.2s ease',
                         }}
                       >
-                        <ArrowRight
-                          size={22}
-                          color="#ffffff"
-                          style={{
-                            flexShrink: 0,
-                            transition: 'color 0.2s ease',
-                          }}
-                        />
-                      </div>
+                        {p.num}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'var(--font-heading)',
+                          fontSize: 'clamp(18px, 1.8vw, 22px)',
+                          fontWeight: 700,
+                          color: isActive ? '#F2F0EC' : '#A3A3A3',
+                          letterSpacing: '-0.01em',
+                          transition: 'color 0.2s ease',
+                        }}
+                      >
+                        {p.title}
+                      </span>
                     </div>
 
-                    {/* Expandable FAQ Details Panel */}
                     <div
                       style={{
-                        maxHeight: isActive ? '360px' : '0px',
-                        opacity: isActive ? 1 : 0,
-                        overflow: 'hidden',
-                        transition: 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease',
+                        width: '32px',
+                        height: '32px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: isActive ? '#A94F0B' : '#777777',
+                        transition: 'color 0.2s ease, transform 0.25s ease',
+                        flexShrink: 0,
                       }}
                     >
-                      <div
+                      {isActive ? <Minus size={18} /> : <Plus size={18} />}
+                    </div>
+                  </button>
+
+                  {/* Expandable Details */}
+                  <div
+                    style={{
+                      maxHeight: isActive ? '320px' : '0px',
+                      opacity: isActive ? 1 : 0,
+                      overflow: 'hidden',
+                      transition: 'max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease',
+                    }}
+                  >
+                    <div style={{ paddingBottom: '24px', paddingLeft: '32px' }}>
+                      <p
                         style={{
-                          padding: '0 clamp(20px, 2.8vw, 32px) clamp(22px, 3vw, 28px)',
-                          paddingTop: '8px',
+                          fontFamily: 'var(--font-body)',
+                          fontSize: '15px',
+                          lineHeight: 1.65,
+                          color: '#A3A3A3',
+                          margin: '0 0 16px 0',
                         }}
                       >
-                        <p
-                          style={{
-                            fontSize: 'clamp(14px, 1.1vw, 16px)',
-                            lineHeight: 1.65,
-                            color: 'rgba(255, 255, 255, 0.95)',
-                            margin: '0 0 16px 0',
-                            fontWeight: 400,
-                          }}
-                        >
-                          {p.desc}
-                        </p>
+                        {p.desc}
+                      </p>
 
-                        {/* Bullet Highlights */}
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                          {p.points.map((point, i) => (
-                            <div
-                              key={i}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {p.points.map((point, i) => (
+                          <div
+                            key={i}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: '10px',
+                              fontSize: '13.5px',
+                              fontFamily: 'var(--font-body)',
+                              color: '#F2F0EC',
+                              lineHeight: 1.5,
+                            }}
+                          >
+                            <span
                               style={{
-                                display: 'flex',
-                                alignItems: 'flex-start',
-                                gap: '10px',
-                                fontSize: 'clamp(13px, 1vw, 14px)',
-                                color: 'rgba(255, 255, 255, 0.9)',
-                                lineHeight: 1.5,
+                                width: '16px',
+                                height: '16px',
+                                borderRadius: '50%',
+                                backgroundColor: 'rgba(169, 79, 11, 0.15)',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexShrink: 0,
+                                marginTop: '2px',
                               }}
                             >
-                              <CheckCircle2
-                                size={16}
-                                color="#ffffff"
-                                style={{ flexShrink: 0, marginTop: '3px' }}
-                              />
-                              <span>{point}</span>
-                            </div>
-                          ))}
-                        </div>
+                              <Check size={11} color="#A94F0B" />
+                            </span>
+                            <span>{point}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        {/* 4-Column Statistics Grid */}
-        <RevealElement variant="card" start="top 92%" end="top 65%">
-          <div
-            ref={statsRef}
-            className="stats-grid"
-            onMouseLeave={() => setHoveredCardIndex(null)}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              backgroundColor: '#000000',
-              border: 'none',
-              gap: '0px',
-              borderRadius: '0px',
-              overflow: 'hidden',
-            }}
-          >
-            {statsData.map((stat, index) => {
-              const isHovered = hoveredCardIndex === index;
-              return (
-                <div
-                  key={stat.label}
-                  className="stat-box"
-                  onMouseEnter={() => setHoveredCardIndex(index)}
-                  style={{
-                    padding: 'clamp(28px, 3.5vw, 42px) clamp(20px, 2.5vw, 32px)',
-                    border: '1px solid #1e293b',
-                    borderRadius: '0px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    minHeight: '190px',
-                    backgroundColor: isHovered ? '#FF5500' : '#0a0a0a',
-                    cursor: 'pointer',
-                    transition: 'background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease',
-                    position: 'relative',
-                    zIndex: isHovered ? 2 : 1,
-                    boxShadow: 'none',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      color: isHovered ? '#ffffff' : '#94a3b8',
-                      textTransform: 'uppercase',
-                      marginBottom: '24px',
-                      lineHeight: 1.4,
-                      transition: 'color 0.22s ease',
-                    }}
-                  >
-                    {stat.label}
-                  </span>
-
-                  <h4
-                    style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: 'clamp(38px, 4.4vw, 60px)',
-                      fontWeight: 700,
-                      color: isHovered ? '#ffffff' : '#FF5500',
-                      lineHeight: 1,
-                      fontVariantNumeric: 'tabular-nums',
-                      margin: 0,
-                      transition: 'color 0.22s ease',
-                    }}
-                  >
-                    {counts[index]}
-                    {stat.suffix}
-                  </h4>
                 </div>
               );
             })}
+          </div>
+        </div>
+
+        {/* Architectural Statistics Ledger (No Boxed Cards) */}
+        <RevealElement variant="card">
+          <div
+            ref={statsRef}
+            style={{
+              borderTop: '1px solid #292522',
+              borderBottom: '1px solid #292522',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              gap: '1px',
+              backgroundColor: '#292522',
+            }}
+            className="stats-ledger"
+          >
+            {statsData.map((stat, index) => (
+              <div
+                key={stat.label}
+                style={{
+                  backgroundColor: '#000000',
+                  padding: 'clamp(28px, 4vw, 40px) clamp(20px, 2.5vw, 32px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  minHeight: '170px',
+                  transition: 'background-color 0.2s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(169, 79, 11, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#000000';
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-subheading)',
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    letterSpacing: '0.1em',
+                    color: '#A3A3A3',
+                    textTransform: 'uppercase',
+                    lineHeight: 1.4,
+                    marginBottom: '20px',
+                  }}
+                >
+                  {stat.label}
+                </span>
+
+                <div
+                  className="stat-metric"
+                  style={{
+                    fontFamily: 'var(--font-metrics)',
+                    fontSize: 'clamp(40px, 4.5vw, 64px)',
+                    fontWeight: 700,
+                    color: '#A94F0B',
+                    lineHeight: 1,
+                    letterSpacing: '-0.03em',
+                  }}
+                >
+                  {counts[index]}
+                  {stat.suffix}
+                </div>
+              </div>
+            ))}
           </div>
         </RevealElement>
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
-          .stats-grid {
+        @media (max-width: 768px) {
+          .principles-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .stats-ledger {
             grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .stats-ledger {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

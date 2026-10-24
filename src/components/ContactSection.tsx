@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Check, HelpCircle, Paperclip, Mic, Smile, X, Volume2 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { Button } from './ui/Button';
 
 interface ContactSectionProps {
   onSuccessToast?: (msg: string) => void;
@@ -62,7 +63,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
     if (onSuccessToast) onSuccessToast('Your message and project requirements have been submitted.');
   };
 
-
   return (
     <section
       id="contact"
@@ -70,503 +70,714 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
         position: 'relative',
         width: '100%',
         backgroundColor: '#000000',
+        borderTop: '1px solid #292522',
         overflow: 'hidden',
       }}
     >
       <div
+        className="container"
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.35fr)',
-          minHeight: '640px',
+          maxWidth: '1360px',
+          margin: '0 auto',
+          padding: 'clamp(56px, 7vw, 100px) clamp(20px, 4vw, 48px)',
         }}
-        className="contact-grid"
       >
-        {/* Left Orange Panel */}
         <div
           style={{
-            backgroundColor: '#FF5500',
-            padding: 'clamp(36px, 5vw, 80px) clamp(20px, 4vw, 64px)',
-            color: '#ffffff',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
+            display: 'grid',
+            gridTemplateColumns: 'minmax(300px, 1fr) minmax(320px, 1.35fr)',
+            gap: 'clamp(40px, 6vw, 80px)',
+            alignItems: 'start',
           }}
+          className="contact-grid"
         >
+          {/* Left Column: Editorial Architectural Next Steps */}
           <div>
-            <ScrollReveal
-              as="h2"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(30px, 3.8vw, 48px)',
-                fontWeight: 700,
-                marginBottom: '16px',
-                letterSpacing: '-0.02em',
-                lineHeight: 1.15,
-                color: '#ffffff',
-                display: 'block',
-              }}
-              blurStrength={7}
-            >
-              Let’s build something useful
-            </ScrollReveal>
-            <RevealElement variant="text" delay={0.06}>
-              <p
-                className="body-lead"
+            <div style={{ marginBottom: '20px' }}>
+              <span
                 style={{
-                  color: 'rgba(255, 255, 255, 0.95)',
-                  marginBottom: 'clamp(32px, 4vw, 56px)',
+                  fontFamily: 'var(--font-editorial)',
+                  fontSize: '12px',
+                  fontWeight: 600,
+                  letterSpacing: '0.14em',
+                  color: '#A94F0B',
+                  textTransform: 'uppercase',
+                  display: 'inline-block',
+                  marginBottom: '14px',
                 }}
               >
-                Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
-              </p>
-            </RevealElement>
+                [ 07 // DIRECT DISPATCH ]
+              </span>
+              <ScrollReveal
+                as="h2"
+                style={{
+                  fontFamily: 'var(--font-heading)',
+                  fontSize: 'clamp(32px, 4vw, 52px)',
+                  fontWeight: 700,
+                  marginBottom: '16px',
+                  letterSpacing: '-0.025em',
+                  lineHeight: 1.1,
+                  color: '#F2F0EC',
+                  display: 'block',
+                }}
+                blurStrength={7}
+              >
+                Let’s build something useful
+              </ScrollReveal>
+              <RevealElement variant="text" delay={0.06}>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    color: '#A3A3A3',
+                    fontSize: '15.5px',
+                    lineHeight: 1.6,
+                    marginBottom: 'clamp(36px, 4vw, 56px)',
+                    maxWidth: '460px',
+                  }}
+                >
+                  Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
+                </p>
+              </RevealElement>
+            </div>
 
             <RevealElement variant="text" delay={0.1}>
               <h3
                 style={{
                   fontFamily: 'var(--font-heading)',
-                  fontSize: 'clamp(17px, 1.8vw, 20px)',
-                  fontWeight: 600,
-                  marginBottom: '24px',
-                  color: '#ffffff',
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  letterSpacing: '-0.01em',
+                  marginBottom: '20px',
+                  color: '#F2F0EC',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
                 }}
               >
+                <span style={{ width: '16px', height: '1px', backgroundColor: '#A94F0B' }} />
                 What happens next?
               </h3>
             </RevealElement>
 
-            {/* Stepper Checkpoints */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+            {/* Stepper Checkpoints - Minimal Architectural Ledger */}
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              {[
+                {
+                  step: '01',
+                  text: 'Our expert reviews your request and replies with any questions.',
+                },
+                {
+                  step: '02',
+                  text: 'We sign an NDA if you need one.',
+                },
+                {
+                  step: '03',
+                  text: 'We send you a proposal with scope, timeline and cost.',
+                },
+                {
+                  step: '04',
+                  text: 'We kick off your project.',
+                  isKickoff: true,
+                },
+              ].map((item, idx) => (
                 <div
+                  key={idx}
                   style={{
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    marginTop: '2px',
+                    display: 'grid',
+                    gridTemplateColumns: '44px 1fr',
+                    gap: '16px',
+                    alignItems: 'baseline',
+                    padding: '18px 0',
+                    borderBottom: '1px solid #292522',
                   }}
                 >
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>1</span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-metrics)',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      color: '#A94F0B',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
+                    {item.step}
+                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        fontSize: '14.5px',
+                        color: item.isKickoff ? '#F2F0EC' : '#A3A3A3',
+                        fontWeight: item.isKickoff ? 500 : 400,
+                        lineHeight: 1.5,
+                        margin: 0,
+                      }}
+                    >
+                      {item.text}
+                    </p>
+                    {item.isKickoff && <Smile size={15} color="#A94F0B" style={{ flexShrink: 0 }} />}
+                  </div>
                 </div>
-                <p className="body-text" style={{ color: '#ffffff' }}>
-                  Our expert reviews your request and replies with any questions.
-                </p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                <div
-                  style={{
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    marginTop: '2px',
-                  }}
-                >
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>2</span>
-                </div>
-                <p className="body-text" style={{ color: '#ffffff' }}>
-                  We sign an NDA if you need one.
-                </p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                <div
-                  style={{
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    marginTop: '2px',
-                  }}
-                >
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff' }}>3</span>
-                </div>
-                <p className="body-text" style={{ color: '#ffffff' }}>
-                  We send you a proposal with scope, timeline and cost.
-                </p>
-              </div>
-
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                <div
-                  style={{
-                    width: '24px',
-                    height: '24px',
-                    borderRadius: '50%',
-                    backgroundColor: 'rgba(255, 255, 255, 0.25)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                    marginTop: '2px',
-                  }}
-                >
-                  <Smile size={14} color="#ffffff" />
-                </div>
-                <p className="body-text" style={{ color: '#ffffff' }}>
-                  We kick off your project.
-                </p>
-              </div>
+              ))}
             </div>
           </div>
-        </div>
 
-        {/* Right Black Form Panel */}
-        <RevealElement variant="card" start="top 88%" end="top 55%">
-          <div
-            style={{
-              backgroundColor: '#0a0a0a',
-              padding: 'clamp(36px, 5vw, 80px) clamp(20px, 4vw, 64px)',
-              color: '#ffffff',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              borderTop: '1px solid #1e293b',
-            }}
-          >
-          {submitted ? (
-            <div style={{ textAlign: 'center', padding: '48px 0' }}>
-              <div
-                style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: '50%',
-                  backgroundColor: '#FF5500',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  margin: '0 auto 24px',
-                }}
-              >
-                <Check size={32} color="#ffffff" />
-              </div>
-              <h3 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading)', marginBottom: '12px', color: '#ffffff' }}>
-                Thank you for reaching out!
-              </h3>
-              <p style={{ color: '#94a3b8', fontSize: '16px', maxWidth: '440px', margin: '0 auto 24px' }}>
-                Our engineering team will review your requirements and respond within 24 hours.
-              </p>
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  setFormData({
-                    challenge: '',
-                    name: '',
-                    email: '',
-                    phone: '',
-                    company: '',
-                    ndaFirst: false,
-                    consent: false,
-                  });
-                  setAttachedFiles([]);
-                  setRecordedAudio(false);
-                }}
-                className="btn btn-primary btn-md"
-                style={{ padding: '12px 32px' }}
-              >
-                Send another message
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div>
-                <h2
-                  style={{
-                    fontFamily: 'var(--font-heading)',
-                    fontSize: 'clamp(30px, 3.8vw, 48px)',
-                    fontWeight: 700,
-                    marginBottom: '8px',
-                    letterSpacing: '-0.02em',
-                    lineHeight: 1.15,
-                    color: '#ffffff',
-                  }}
-                >
-                  Tell us what you want to build
-                </h2>
-                <p className="body-lead" style={{ color: '#94a3b8' }}>
-                  Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
-                </p>
-              </div>
-
-              {/* Challenge / Goal Input */}
-              <div style={{ position: 'relative' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <label htmlFor="challenge" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', fontFamily: 'var(--font-heading)' }}>
-                    Your project and goals*
-                  </label>
-                  <span title="Describe your project, goals, timeline, and tech stack if known" style={{ display: 'inline-flex', cursor: 'pointer' }}>
-                    <HelpCircle size={14} color="#94a3b8" />
-                  </span>
-                </div>
-                <input
-                  id="challenge"
-                  type="text"
-                  required
-                  placeholder="Describe your project, timeline, tech stack and goals..."
-                  value={formData.challenge}
-                  onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
-                  style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
-                />
-              </div>
-
-              {/* Name & Corporate Email Row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-                <div>
-                  <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
-                    Name*
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    required
-                    placeholder="Jane Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
-                    Corporate email*
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    required
-                    placeholder="jane@company.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
-                  />
-                </div>
-              </div>
-
-              {/* Phone & Company Row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
-                <div>
-                  <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
-                    Phone number
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    placeholder="+1 (555) 000-0000"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
-                    Company
-                  </label>
-                  <input
-                    id="company"
-                    type="text"
-                    placeholder="Acme Corp"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
-                  />
-                </div>
-              </div>
-
-              {/* Hidden File Input */}
-              <input
-                type="file"
-                ref={fileInputRef}
-                style={{ display: 'none' }}
-                onChange={handleFileUpload}
-                accept=".pdf,.doc,.docx,.png,.jpg,.zip"
-              />
-
-              {/* NDA Checkbox & Action Controls Row */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: '16px',
-                  paddingTop: '6px',
-                }}
-              >
-                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontSize: '14px', color: '#cbd5e1', minHeight: '40px' }}>
-                  <input
-                    type="checkbox"
-                    checked={formData.ndaFirst}
-                    onChange={(e) => setFormData({ ...formData, ndaFirst: e.target.checked })}
-                    style={{ width: '16px', height: '16px', accentColor: '#FF5500' }}
-                  />
-                  <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
-                </label>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
+          {/* Right Column: Architectural Intake Form */}
+          <RevealElement variant="card" start="top 88%" end="top 55%">
+            <div
+              style={{
+                backgroundColor: '#000000',
+                border: '1px solid #292522',
+                borderRadius: '8px',
+                padding: 'clamp(28px, 4vw, 48px)',
+                color: '#F2F0EC',
+              }}
+            >
+              {submitted ? (
+                <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                  <div
                     style={{
+                      width: '56px',
+                      height: '56px',
+                      borderRadius: '8px',
+                      backgroundColor: '#A94F0B',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '6px',
-                      color: '#FF5500',
-                      fontSize: '14px',
-                      fontFamily: 'var(--font-heading)',
-                      fontWeight: 600,
-                      minHeight: '44px',
-                      padding: '4px 8px',
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
+                      justifyContent: 'center',
+                      margin: '0 auto 20px',
                     }}
                   >
-                    <Paperclip size={16} /> Attach a file (brief, spec or design)
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={toggleRecording}
+                    <Check size={28} color="#ffffff" />
+                  </div>
+                  <h3
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      color: isRecording ? '#ef4444' : '#FF5500',
-                      fontSize: '14px',
+                      fontSize: '26px',
+                      fontWeight: 700,
                       fontFamily: 'var(--font-heading)',
-                      fontWeight: 600,
-                      minHeight: '44px',
-                      padding: '4px 8px',
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
+                      marginBottom: '10px',
+                      color: '#F2F0EC',
                     }}
                   >
-                    <Mic size={16} /> {isRecording ? 'Recording (Listening...)' : 'Record a voice message about your project'}
-                  </button>
-                </div>
-              </div>
-
-              {/* Display Attached Files & Audio Notes */}
-              {(attachedFiles.length > 0 || recordedAudio) && (
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', padding: '4px 0' }}>
-                  {attachedFiles.map((file, idx) => (
-                    <span
-                      key={idx}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        backgroundColor: 'rgba(255, 85, 0, 0.12)',
-                        border: '1px solid #FF5500',
-                        color: '#FF5500',
-                        fontSize: '12px',
-                        padding: '6px 12px',
-                        borderRadius: '0px',
-                        fontWeight: 600,
-                      }}
-                    >
-                      <Paperclip size={12} /> {file}
-                      <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => removeFile(idx)} aria-label="Remove attached file" />
-                    </span>
-                  ))}
-                  {recordedAudio && (
-                    <span
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                        border: '1px solid #10b981',
-                        color: '#059669',
-                        fontSize: '12px',
-                        padding: '6px 12px',
-                        borderRadius: '0px',
-                        fontWeight: 600,
-                      }}
-                    >
-                      <Volume2 size={14} color="#10b981" /> Voice Memo (0:14)
-                      <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
-                    </span>
-                  )}
-                </div>
-              )}
-
-              {/* Consent Checkbox */}
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', fontSize: '13px', lineHeight: 1.5, color: '#94a3b8' }}>
-                <input
-                  type="checkbox"
-                  required
-                  checked={formData.consent}
-                  onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                  style={{ marginTop: '2px', accentColor: '#FF5500' }}
-                />
-                <span>
-                  I agree to the processing of my personal data as described in the{' '}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onOpenPrivacy) onOpenPrivacy();
+                    Thank you for reaching out!
+                  </h3>
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-body)',
+                      color: '#A3A3A3',
+                      fontSize: '15px',
+                      maxWidth: '440px',
+                      margin: '0 auto 24px',
+                      lineHeight: 1.6,
                     }}
-                    style={{ color: '#FF5500', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
                   >
-                    Privacy Policy
-                  </button>{' '}
-                  and{' '}
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (onOpenPrivacy) onOpenPrivacy();
-                    }}
-                    style={{ color: '#FF5500', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
-                  >
-                    Cookie Policy
-                  </button>
-                  , and understand it may be processed outside my country.
-                </span>
-              </label>
-
-              {/* Submit Button */}
-              <div style={{ paddingTop: '8px' }}>
-                <button
-                  type="submit"
-                  className="btn btn-primary btn-lg"
-                  style={{
-                    width: 'auto',
-                    minWidth: '220px',
-                  }}
-                >
-                  Send message
-                </button>
-                {formError && (
-                  <p style={{ color: '#f87171', fontSize: '13px', marginTop: '10px', fontWeight: 500 }}>
-                    {formError}
+                    Our engineering team will review your requirements and respond within 24 hours.
                   </p>
-                )}
-              </div>
+                  <Button
+                    variant="primary"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        challenge: '',
+                        name: '',
+                        email: '',
+                        phone: '',
+                        company: '',
+                        ndaFirst: false,
+                        consent: false,
+                      });
+                      setAttachedFiles([]);
+                      setRecordedAudio(false);
+                    }}
+                  >
+                    Send another message
+                  </Button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
+                  <div>
+                    <h2
+                      style={{
+                        fontFamily: 'var(--font-heading)',
+                        fontSize: 'clamp(24px, 2.8vw, 34px)',
+                        fontWeight: 700,
+                        marginBottom: '8px',
+                        letterSpacing: '-0.02em',
+                        lineHeight: 1.2,
+                        color: '#F2F0EC',
+                      }}
+                    >
+                      Tell us what you want to build
+                    </h2>
+                    <p
+                      style={{
+                        fontFamily: 'var(--font-body)',
+                        color: '#A3A3A3',
+                        fontSize: '14px',
+                        lineHeight: 1.55,
+                        margin: 0,
+                      }}
+                    >
+                      Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
+                    </p>
+                  </div>
 
-            </form>
-          )}
+                  {/* Challenge / Goal Input */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
+                      <label
+                        htmlFor="challenge"
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: '#F2F0EC',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        Your project and goals*
+                      </label>
+                      <span
+                        title="Describe your project, goals, timeline, and tech stack if known"
+                        style={{ display: 'inline-flex', cursor: 'pointer', opacity: 0.7 }}
+                      >
+                        <HelpCircle size={14} color="#A3A3A3" />
+                      </span>
+                    </div>
+                    <input
+                      id="challenge"
+                      type="text"
+                      required
+                      placeholder="Describe your project, timeline, tech stack and goals..."
+                      value={formData.challenge}
+                      onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
+                      style={{
+                        width: '100%',
+                        padding: '12px 14px',
+                        backgroundColor: '#000000',
+                        border: '1px solid #292522',
+                        borderRadius: '6px',
+                        fontSize: '14px',
+                        fontFamily: 'var(--font-body)',
+                        color: '#F2F0EC',
+                        outline: 'none',
+                        transition: 'border-color 0.2s, box-shadow 0.2s',
+                      }}
+                      onFocus={(e) => {
+                        e.currentTarget.style.borderColor = '#D8945A';
+                        e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                      }}
+                      onBlur={(e) => {
+                        e.currentTarget.style.borderColor = '#292522';
+                        e.currentTarget.style.boxShadow = 'none';
+                      }}
+                    />
+                  </div>
+
+                  {/* Name & Corporate Email Row */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '18px' }}>
+                    <div>
+                      <label
+                        htmlFor="name"
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: '#F2F0EC',
+                          display: 'block',
+                          marginBottom: '6px',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        Name*
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        required
+                        placeholder="Jane Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        style={{
+                          width: '100%',
+                          padding: '12px 14px',
+                          backgroundColor: '#000000',
+                          border: '1px solid #292522',
+                          borderRadius: '6px',
+                          fontSize: '14px',
+                          fontFamily: 'var(--font-body)',
+                          color: '#F2F0EC',
+                          outline: 'none',
+                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#D8945A';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: '#F2F0EC',
+                          display: 'block',
+                          marginBottom: '6px',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        Corporate email*
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        required
+                        placeholder="jane@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        style={{
+                          width: '100%',
+                          padding: '12px 14px',
+                          backgroundColor: '#000000',
+                          border: '1px solid #292522',
+                          borderRadius: '6px',
+                          fontSize: '14px',
+                          fontFamily: 'var(--font-body)',
+                          color: '#F2F0EC',
+                          outline: 'none',
+                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#D8945A';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Phone & Company Row */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '18px' }}>
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: '#F2F0EC',
+                          display: 'block',
+                          marginBottom: '6px',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        Phone number
+                      </label>
+                      <input
+                        id="phone"
+                        type="tel"
+                        placeholder="+1 (555) 000-0000"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        style={{
+                          width: '100%',
+                          padding: '12px 14px',
+                          backgroundColor: '#000000',
+                          border: '1px solid #292522',
+                          borderRadius: '6px',
+                          fontSize: '14px',
+                          fontFamily: 'var(--font-body)',
+                          color: '#F2F0EC',
+                          outline: 'none',
+                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#D8945A';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="company"
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          color: '#F2F0EC',
+                          display: 'block',
+                          marginBottom: '6px',
+                          fontFamily: 'var(--font-body)',
+                        }}
+                      >
+                        Company
+                      </label>
+                      <input
+                        id="company"
+                        type="text"
+                        placeholder="Acme Corp"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        style={{
+                          width: '100%',
+                          padding: '12px 14px',
+                          backgroundColor: '#000000',
+                          border: '1px solid #292522',
+                          borderRadius: '6px',
+                          fontSize: '14px',
+                          fontFamily: 'var(--font-body)',
+                          color: '#F2F0EC',
+                          outline: 'none',
+                          transition: 'border-color 0.2s, box-shadow 0.2s',
+                        }}
+                        onFocus={(e) => {
+                          e.currentTarget.style.borderColor = '#D8945A';
+                          e.currentTarget.style.boxShadow = '0 0 0 2px rgba(216, 148, 90, 0.25)';
+                        }}
+                        onBlur={(e) => {
+                          e.currentTarget.style.borderColor = '#292522';
+                          e.currentTarget.style.boxShadow = 'none';
+                        }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Hidden File Input */}
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    style={{ display: 'none' }}
+                    onChange={handleFileUpload}
+                    accept=".pdf,.doc,.docx,.png,.jpg,.zip"
+                  />
+
+                  {/* NDA Checkbox & Action Controls Row */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '14px',
+                      paddingTop: '4px',
+                    }}
+                  >
+                    <label
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        cursor: 'pointer',
+                        fontSize: '13.5px',
+                        color: '#A3A3A3',
+                        fontFamily: 'var(--font-body)',
+                        minHeight: '40px',
+                      }}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.ndaFirst}
+                        onChange={(e) => setFormData({ ...formData, ndaFirst: e.target.checked })}
+                        style={{ width: '16px', height: '16px', accentColor: '#A94F0B' }}
+                      />
+                      <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
+                    </label>
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        onClick={() => fileInputRef.current?.click()}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          color: '#C87535',
+                          fontSize: '13.5px',
+                          fontFamily: 'var(--font-body)',
+                          fontWeight: 500,
+                          minHeight: '44px',
+                          padding: '4px 6px',
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          transition: 'color 0.2s',
+                        }}
+                        onMouseEnter={(e) => (e.currentTarget.style.color = '#D8945A')}
+                        onMouseLeave={(e) => (e.currentTarget.style.color = '#C87535')}
+                      >
+                        <Paperclip size={15} /> Attach a file (brief, spec or design)
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={toggleRecording}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          color: isRecording ? '#8F2929' : '#C87535',
+                          fontSize: '13.5px',
+                          fontFamily: 'var(--font-body)',
+                          fontWeight: 500,
+                          minHeight: '44px',
+                          padding: '4px 6px',
+                          background: 'none',
+                          border: 'none',
+                          cursor: 'pointer',
+                          transition: 'color 0.2s',
+                        }}
+                        onMouseEnter={(e) => !isRecording && (e.currentTarget.style.color = '#D8945A')}
+                        onMouseLeave={(e) => !isRecording && (e.currentTarget.style.color = '#C87535')}
+                      >
+                        <Mic size={15} /> {isRecording ? 'Recording (Listening...)' : 'Record a voice message about your project'}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Display Attached Files & Audio Notes */}
+                  {(attachedFiles.length > 0 || recordedAudio) && (
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', padding: '2px 0' }}>
+                      {attachedFiles.map((file, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            backgroundColor: 'rgba(169, 79, 11, 0.12)',
+                            border: '1px solid #A94F0B',
+                            color: '#F2F0EC',
+                            fontSize: '12px',
+                            padding: '6px 12px',
+                            borderRadius: '4px',
+                            fontWeight: 500,
+                            fontFamily: 'var(--font-body)',
+                          }}
+                        >
+                          <Paperclip size={12} color="#A94F0B" /> {file}
+                          <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => removeFile(idx)} aria-label="Remove attached file" />
+                        </span>
+                      ))}
+                      {recordedAudio && (
+                        <span
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px',
+                            backgroundColor: 'rgba(169, 79, 11, 0.12)',
+                            border: '1px solid #A94F0B',
+                            color: '#F2F0EC',
+                            fontSize: '12px',
+                            padding: '6px 12px',
+                            borderRadius: '4px',
+                            fontWeight: 500,
+                            fontFamily: 'var(--font-body)',
+                          }}
+                        >
+                          <Volume2 size={14} color="#A94F0B" /> Voice Memo (0:14)
+                          <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Consent Checkbox */}
+                  <label
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '10px',
+                      cursor: 'pointer',
+                      fontSize: '13px',
+                      lineHeight: 1.5,
+                      color: '#A3A3A3',
+                      fontFamily: 'var(--font-body)',
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      required
+                      checked={formData.consent}
+                      onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                      style={{ marginTop: '2px', accentColor: '#A94F0B' }}
+                    />
+                    <span>
+                      I agree to the processing of my personal data as described in the{' '}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (onOpenPrivacy) onOpenPrivacy();
+                        }}
+                        style={{
+                          color: '#C87535',
+                          textDecoration: 'underline',
+                          cursor: 'pointer',
+                          fontSize: '13px',
+                          background: 'none',
+                          border: 'none',
+                          padding: 0,
+                          fontWeight: 500,
+                        }}
+                      >
+                        Privacy Policy
+                      </button>{' '}
+                      and{' '}
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (onOpenPrivacy) onOpenPrivacy();
+                        }}
+                        style={{
+                          color: '#C87535',
+                          textDecoration: 'underline',
+                          cursor: 'pointer',
+                          fontSize: '13px',
+                          background: 'none',
+                          border: 'none',
+                          padding: 0,
+                          fontWeight: 500,
+                        }}
+                      >
+                        Cookie Policy
+                      </button>
+                      , and understand it may be processed outside my country.
+                    </span>
+                  </label>
+
+                  {/* Submit Button */}
+                  <div style={{ paddingTop: '6px' }}>
+                    <Button
+                      type="submit"
+                      variant="primary"
+                      fullWidthMobile
+                      style={{ minWidth: '220px' }}
+                    >
+                      Send message
+                    </Button>
+                    {formError && (
+                      <p style={{ color: '#8F2929', fontSize: '13px', marginTop: '10px', fontWeight: 500, fontFamily: 'var(--font-body)' }}>
+                        {formError}
+                      </p>
+                    )}
+                  </div>
+                </form>
+              )}
+            </div>
+          </RevealElement>
         </div>
-      </RevealElement>
-    </div>
+      </div>
 
       <style>{`
         @media (max-width: 860px) {

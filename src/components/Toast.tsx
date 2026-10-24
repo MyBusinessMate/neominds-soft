@@ -38,7 +38,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
             backgroundColor: '#12141a',
             border: '1px solid rgba(255, 255, 255, 0.15)',
             borderLeft: `4px solid ${
-              t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#FF5500'
+              t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#A94F0B'
             }`,
             padding: '16px',
             boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6)',

@@ -29,7 +29,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '01',
       title: 'Enterprise',
       slug: 'enterprise',
-      icon: <Briefcase size={24} color="#FF5500" />,
+      icon: <Briefcase size={24} color="#A94F0B" />,
       tag: 'Enterprise Workflow Systems',
       desc: 'Internal tools, workflow automation, ERP integrations, and distributed data pipelines that connect corporate teams and operational data.',
       features: [
@@ -43,7 +43,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '02',
       title: 'Financial Tech',
       slug: 'fintech',
-      icon: <Landmark size={24} color="#FF5500" />,
+      icon: <Landmark size={24} color="#A94F0B" />,
       tag: 'FinTech & Core Banking',
       desc: 'High-availability financial applications, automated clearing, double-entry ledgers, and regulatory compliance engines.',
       features: [
@@ -57,7 +57,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '03',
       title: 'Retail',
       slug: 'retail',
-      icon: <Store size={24} color="#FF5500" />,
+      icon: <Store size={24} color="#A94F0B" />,
       tag: 'Omnichannel Commerce & POS',
       desc: 'Point-of-sale integrations, dynamic inventory synchronization, and omnichannel billing systems bridging brick-and-mortar with digital operations.',
       features: [
@@ -71,7 +71,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '04',
       title: 'Education',
       slug: 'education',
-      icon: <GraduationCap size={24} color="#FF5500" />,
+      icon: <GraduationCap size={24} color="#A94F0B" />,
       tag: 'EdTech & Institutional Tools',
       desc: 'Custom software for schools, universities, and coaching academies, including administrative portals, facial attendance, and fee management.',
       features: [
@@ -85,7 +85,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '05',
       title: 'Healthcare',
       slug: 'healthcare',
-      icon: <HeartPulse size={24} color="#FF5500" />,
+      icon: <HeartPulse size={24} color="#A94F0B" />,
       tag: 'Digital Health Solutions',
       desc: 'Patient-facing apps, hospital management systems (HMS), clinic appointment workflows, and HIPAA-compliant data pipelines.',
       features: [
@@ -99,7 +99,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '06',
       title: 'E-commerce',
       slug: 'ecommerce',
-      icon: <ShoppingCart size={24} color="#FF5500" />,
+      icon: <ShoppingCart size={24} color="#A94F0B" />,
       tag: 'B2B & B2C Commerce',
       desc: 'Online stores, catalog management, high-volume checkout flows, and automated inventory sync built to scale with order spikes.',
       features: [
@@ -113,7 +113,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '07',
       title: 'Real Estate',
       slug: 'real-estate',
-      icon: <Building2 size={24} color="#FF5500" />,
+      icon: <Building2 size={24} color="#A94F0B" />,
       tag: 'PropTech & Asset Portals',
       desc: 'Cloud-based property management systems, tenant portals, leasing automation, and deal tracking for agencies and asset owners.',
       features: [
@@ -127,7 +127,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       num: '08',
       title: 'E-learning',
       slug: 'elearning',
-      icon: <BookOpen size={24} color="#FF5500" />,
+      icon: <BookOpen size={24} color="#A94F0B" />,
       tag: 'Learning Management Systems (LMS)',
       desc: 'Dedicated LMS platforms, interactive course builders, video streaming, and modular skill assessments for digital academies.',
       features: [
@@ -175,7 +175,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 fontWeight: 600,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: '#FF5500',
+                color: '#A94F0B',
                 marginBottom: '16px',
               }}
             >
@@ -211,7 +211,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               <button
                 onClick={handleEstimateClick}
                 style={{
-                  backgroundColor: '#FF5500',
+                  backgroundColor: '#A94F0B',
                   color: '#ffffff',
                   border: 'none',
                   padding: '14px 28px',
@@ -222,11 +222,11 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  boxShadow: '0 8px 24px rgba(255, 85, 0, 0.35)',
+                  boxShadow: '0 8px 24px rgba(169, 79, 11, 0.35)',
                   transition: 'background-color 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#BF641A')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#A94F0B')}
               >
                 <span>Get a project estimate</span>
                 <ArrowRight size={16} />
@@ -264,7 +264,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: '#0a0a0a' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#A94F0B', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Specialized Solutions
             </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
@@ -283,7 +283,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 delay={idx * 0.05}
                 style={{
                   backgroundColor: '#000000',
-                  border: '1px solid #1e293b',
+                  border: '1px solid #292522',
                   borderRadius: '12px',
                   padding: '32px',
                   boxShadow: '0 4px 12px rgba(15, 23, 42, 0.04)',
@@ -302,7 +302,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     </span>
                   </div>
 
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#A94F0B', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '4px' }}>
                     {ind.tag}
                   </span>
 
@@ -317,7 +317,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {ind.features.map((feat, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#cbd5e1' }}>
-                        <CheckCircle size={14} color="#FF5500" style={{ flexShrink: 0 }} />
+                        <CheckCircle size={14} color="#A94F0B" style={{ flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
                     ))}
@@ -343,9 +343,9 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#FF5500';
+                    e.currentTarget.style.backgroundColor = '#A94F0B';
                     e.currentTarget.style.color = '#ffffff';
-                    e.currentTarget.style.borderColor = '#FF5500';
+                    e.currentTarget.style.borderColor = '#A94F0B';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#f8fafc';
@@ -365,10 +365,10 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       {/* ========================================================
           4. TECHNOLOGIES WE USE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000', borderTop: '1px solid #1e293b' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#000000', borderTop: '1px solid #292522' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#A94F0B', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Technologies We Use
             </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
@@ -385,7 +385,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 key={idx}
                 style={{
                   backgroundColor: '#0a0a0a',
-                  border: '1px solid #1e293b',
+                  border: '1px solid #292522',
                   borderRadius: '8px',
                   padding: '20px',
                 }}

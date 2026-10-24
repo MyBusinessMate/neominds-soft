@@ -199,7 +199,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
           }}
         >
-          <Search size={20} color="#FF5500" />
+          <Search size={20} color="#A94F0B" />
           <input
             type="text"
             autoFocus
@@ -253,7 +253,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   minHeight: '48px',
                   transition: 'background-color 0.15s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 85, 0, 0.15)')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(169, 79, 11, 0.15)')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
               >
                 <div>
@@ -265,7 +265,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         color: '#93c5fd',
-                        backgroundColor: 'rgba(255, 85, 0, 0.25)',
+                        backgroundColor: 'rgba(169, 79, 11, 0.25)',
                         padding: '2px 6px',
                       }}
                     >
@@ -277,7 +277,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   </div>
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: '#8893a7' }}>{item.subtitle}</p>
                 </div>
-                <ArrowRight size={16} color="#FF5500" />
+                <ArrowRight size={16} color="#A94F0B" />
               </div>
             ))
           )}

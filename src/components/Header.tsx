@@ -243,17 +243,17 @@ export const Header: React.FC<HeaderProps> = ({
             }}
           >
             {isScrolled ? (
-              /* Shrunk Scrolled State: Blue Square Badge (#FF5500) with 5 white horizontal lines matching EffectiveSoft */
+              /* Shrunk Scrolled State: Blue Square Badge (#A94F0B) with 5 white horizontal lines matching EffectiveSoft */
               <div
                 style={{
                   width: '32px',
                   height: '32px',
-                  backgroundColor: '#FF5500',
-                  borderRadius: '4px',
+                  backgroundColor: '#A94F0B',
+                  borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 2px 6px rgba(255, 85, 0, 0.4)',
+                  boxShadow: '0 2px 6px rgba(169, 79, 11, 0.4)',
                   transition: 'all 0.3s ease',
                 }}
               >
@@ -302,7 +302,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={(e) => handleMenuToggle(e, 'what-we-do')}
                 style={{
-                  color: activeMenu === 'what-we-do' ? '#FF5500' : '#ffffff',
+                  color: activeMenu === 'what-we-do' ? '#A94F0B' : '#ffffff',
                   fontSize: '15px',
                   fontWeight: 500,
                   display: 'flex',
@@ -322,7 +322,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: activeMenu === 'what-we-do' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: activeMenu === 'what-we-do' ? '#FF5500' : 'rgba(255, 255, 255, 0.7)',
+                    color: activeMenu === 'what-we-do' ? '#A94F0B' : 'rgba(255, 255, 255, 0.7)',
                   }}
                 />
               </button>
@@ -336,7 +336,7 @@ export const Header: React.FC<HeaderProps> = ({
               <button
                 onClick={(e) => handleMenuToggle(e, 'who-we-are')}
                 style={{
-                  color: activeMenu === 'who-we-are' ? '#FF5500' : '#ffffff',
+                  color: activeMenu === 'who-we-are' ? '#A94F0B' : '#ffffff',
                   fontSize: '15px',
                   fontWeight: 500,
                   display: 'flex',
@@ -356,7 +356,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: activeMenu === 'who-we-are' ? 'rotate(180deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: activeMenu === 'who-we-are' ? '#FF5500' : 'rgba(255, 255, 255, 0.7)',
+                    color: activeMenu === 'who-we-are' ? '#A94F0B' : 'rgba(255, 255, 255, 0.7)',
                   }}
                 />
               </button>
@@ -372,7 +372,7 @@ export const Header: React.FC<HeaderProps> = ({
                 style={{
                   color:
                     activeMenu === 'insights' || currentPage === 'insights' || currentPage === 'blog' || currentPage === 'company-updates'
-                      ? '#FF5500'
+                      ? '#A94F0B'
                       : '#ffffff',
                   fontSize: '15px',
                   fontWeight: 500,
@@ -393,7 +393,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: activeMenu === 'insights' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: activeMenu === 'insights' ? '#FF5500' : 'rgba(255, 255, 255, 0.7)',
+                    color: activeMenu === 'insights' ? '#A94F0B' : 'rgba(255, 255, 255, 0.7)',
                   }}
                 />
               </button>
@@ -403,7 +403,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button
               onClick={() => navigateToPage('portfolio')}
               style={{
-                color: currentPage === 'portfolio' ? '#FF5500' : '#ffffff',
+                color: currentPage === 'portfolio' ? '#A94F0B' : '#ffffff',
                 fontSize: '15px',
                 fontWeight: 500,
                 padding: '6px 0',
@@ -413,8 +413,8 @@ export const Header: React.FC<HeaderProps> = ({
                 cursor: 'pointer',
                 letterSpacing: '-0.01em',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = currentPage === 'portfolio' ? '#FF5500' : '#ffffff')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#A94F0B')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = currentPage === 'portfolio' ? '#A94F0B' : '#ffffff')}
             >
               Case studies
             </button>
@@ -431,11 +431,11 @@ export const Header: React.FC<HeaderProps> = ({
                 style={{
                   width: '32px',
                   height: '32px',
-                  borderRadius: '4px',
-                  backgroundColor: '#FF5500',
+                  borderRadius: '8px',
+                  backgroundColor: '#A94F0B',
                   color: '#ffffff',
                   border: 'none',
-                  boxShadow: '0 2px 6px rgba(255, 85, 0, 0.4)',
+                  boxShadow: '0 2px 6px rgba(169, 79, 11, 0.4)',
                   transition: 'background-color 0.2s ease, transform 0.2s ease',
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -444,8 +444,8 @@ export const Header: React.FC<HeaderProps> = ({
                   padding: 0,
                   flexShrink: 0,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#BF641A')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#A94F0B')}
               >
                 <Mail size={16} color="#ffffff" />
               </button>
@@ -461,8 +461,8 @@ export const Header: React.FC<HeaderProps> = ({
                   fontWeight: 600,
                   letterSpacing: '-0.01em',
                   lineHeight: 1,
-                  borderRadius: '4px',
-                  backgroundColor: '#FF5500',
+                  borderRadius: '8px',
+                  backgroundColor: '#A94F0B',
                   color: '#ffffff',
                   border: 'none',
                   boxShadow: 'none',
@@ -474,8 +474,8 @@ export const Header: React.FC<HeaderProps> = ({
                   cursor: 'pointer',
                   flexShrink: 0,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#BF641A')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#A94F0B')}
               >
                 Send request
               </button>
@@ -494,7 +494,7 @@ export const Header: React.FC<HeaderProps> = ({
                 color: '#ffffff',
                 background: 'rgba(255, 255, 255, 0.04)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 flexShrink: 0,
@@ -518,7 +518,7 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#15171b',
+              backgroundColor: '#000000',
               backdropFilter: 'blur(16px)',
               boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
               zIndex: 1001,
@@ -560,7 +560,7 @@ export const Header: React.FC<HeaderProps> = ({
                         transition: 'color 0.2s, transform 0.2s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = '#FF5500';
+                        e.currentTarget.style.color = '#A94F0B';
                         e.currentTarget.style.transform = 'translateX(2px)';
                       }}
                       onMouseLeave={(e) => {
@@ -599,7 +599,7 @@ export const Header: React.FC<HeaderProps> = ({
                         transition: 'color 0.2s, transform 0.2s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = '#FF5500';
+                        e.currentTarget.style.color = '#A94F0B';
                         e.currentTarget.style.transform = 'translateX(2px)';
                       }}
                       onMouseLeave={(e) => {
@@ -637,7 +637,7 @@ export const Header: React.FC<HeaderProps> = ({
                         transition: 'color 0.2s, transform 0.2s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = '#FF5500';
+                        e.currentTarget.style.color = '#A94F0B';
                         e.currentTarget.style.transform = 'translateX(2px)';
                       }}
                       onMouseLeave={(e) => {
@@ -672,7 +672,7 @@ export const Header: React.FC<HeaderProps> = ({
                         transition: 'color 0.2s, transform 0.2s',
                       }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.color = '#FF5500';
+                        e.currentTarget.style.color = '#A94F0B';
                         e.currentTarget.style.transform = 'translateX(2px)';
                       }}
                       onMouseLeave={(e) => {
@@ -701,7 +701,7 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#15171b',
+              backgroundColor: '#000000',
               backdropFilter: 'blur(16px)',
               boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
               zIndex: 1001,
@@ -733,7 +733,7 @@ export const Header: React.FC<HeaderProps> = ({
                     cursor: 'pointer',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#A94F0B')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)')}
                 >
                   Blog
@@ -748,7 +748,7 @@ export const Header: React.FC<HeaderProps> = ({
                     cursor: 'pointer',
                     transition: 'color 0.2s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#A94F0B')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)')}
                 >
                   Company updates
@@ -757,7 +757,7 @@ export const Header: React.FC<HeaderProps> = ({
                 <div
                   onClick={() => navigateToPage('insights')}
                   style={{
-                    color: '#FF5500',
+                    color: '#A94F0B',
                     fontSize: '12px',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -804,11 +804,11 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   {/* Schematic Icon Graphics matching reference image */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(255, 85, 0, 0.25)', border: '1px solid rgba(255, 85, 0, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#FF5500' }} aria-hidden="true">
+                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(169, 79, 11, 0.25)', border: '1px solid rgba(169, 79, 11, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#A94F0B' }} aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
                     </div>
                     <span style={{ color: 'rgba(255, 255, 255, 0.5)', fontSize: '14px', fontWeight: 400 }}>≠</span>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(255, 85, 0, 0.3)', border: '1px solid rgba(255, 85, 0, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#93c5fd' }} aria-hidden="true">
+                    <div style={{ width: '32px', height: '32px', borderRadius: '0px', backgroundColor: 'rgba(169, 79, 11, 0.3)', border: '1px solid rgba(169, 79, 11, 0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#93c5fd' }} aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
                     </div>
                   </div>
@@ -882,7 +882,7 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#15171b',
+              backgroundColor: '#000000',
               backdropFilter: 'blur(16px)',
               boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
               zIndex: 1001,
@@ -901,7 +901,7 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-                backgroundColor: '#15171b',
+                backgroundColor: '#000000',
                 borderRight: '1px solid rgba(255, 255, 255, 0.08)',
               }}
             >
@@ -926,7 +926,7 @@ export const Header: React.FC<HeaderProps> = ({
                     alignItems: 'center',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#FF5500';
+                    e.currentTarget.style.color = '#A94F0B';
                     e.currentTarget.style.transform = 'translateX(3px)';
                   }}
                   onMouseLeave={(e) => {
@@ -1046,7 +1046,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Header Top */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
             <span style={{ fontSize: '20px', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)' }}>
-              Neominds<span style={{ color: '#FF5500' }}>.</span>
+              Neominds<span style={{ color: '#A94F0B' }}>.</span>
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -1084,7 +1084,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: mobileExpandedSection === 'what-we-do' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: mobileExpandedSection === 'what-we-do' ? '#FF5500' : 'inherit',
+                    color: mobileExpandedSection === 'what-we-do' ? '#A94F0B' : 'inherit',
                   }}
                 />
               </button>
@@ -1101,7 +1101,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <div
                           key={srv.page}
                           onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
+                          style={{ color: currentPage === srv.page ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
                         >
                           {srv.title}
                         </div>
@@ -1119,7 +1119,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <div
                           key={srv.page}
                           onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
+                          style={{ color: currentPage === srv.page ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
                         >
                           {srv.title}
                         </div>
@@ -1137,7 +1137,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <div
                           key={srv.page}
                           onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
+                          style={{ color: currentPage === srv.page ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
                         >
                           {srv.title}
                         </div>
@@ -1155,7 +1155,7 @@ export const Header: React.FC<HeaderProps> = ({
                         <div
                           key={srv.page}
                           onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
+                          style={{ color: currentPage === srv.page ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '14px', cursor: 'pointer' }}
                         >
                           {srv.title}
                         </div>
@@ -1191,7 +1191,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: mobileExpandedSection === 'who-we-are' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: mobileExpandedSection === 'who-we-are' ? '#FF5500' : 'inherit',
+                    color: mobileExpandedSection === 'who-we-are' ? '#A94F0B' : 'inherit',
                   }}
                 />
               </button>
@@ -1200,31 +1200,31 @@ export const Header: React.FC<HeaderProps> = ({
                 <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div
                     onClick={() => navigateToPage('about-us')}
-                    style={{ color: currentPage === 'about-us' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'about-us' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     About Us
                   </div>
                   <div
                     onClick={() => navigateToPage('leaders')}
-                    style={{ color: currentPage === 'leaders' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'leaders' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Leadership
                   </div>
                   <div
                     onClick={() => navigateToPage('careers')}
-                    style={{ color: currentPage === 'careers' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'careers' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Careers
                   </div>
                   <div
                     onClick={() => navigateToPage('certification')}
-                    style={{ color: currentPage === 'certification' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'certification' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Certification
                   </div>
                   <div
                     onClick={() => navigateToPage('contacts')}
-                    style={{ color: currentPage === 'contacts' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'contacts' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Contact
                   </div>
@@ -1257,7 +1257,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     transform: mobileExpandedSection === 'insights' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.2s',
-                    color: mobileExpandedSection === 'insights' ? '#FF5500' : 'inherit',
+                    color: mobileExpandedSection === 'insights' ? '#A94F0B' : 'inherit',
                   }}
                 />
               </button>
@@ -1266,19 +1266,19 @@ export const Header: React.FC<HeaderProps> = ({
                 <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                   <div
                     onClick={() => navigateToPage('blog')}
-                    style={{ color: currentPage === 'blog' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'blog' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Blog
                   </div>
                   <div
                     onClick={() => navigateToPage('company-updates')}
-                    style={{ color: currentPage === 'company-updates' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'company-updates' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     Company Updates
                   </div>
                   <div
                     onClick={() => navigateToPage('insights')}
-                    style={{ color: currentPage === 'insights' ? '#FF5500' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
+                    style={{ color: currentPage === 'insights' ? '#A94F0B' : 'rgba(255,255,255,0.8)', fontSize: '15px', cursor: 'pointer' }}
                   >
                     All Insights Hub
                   </div>
@@ -1295,7 +1295,7 @@ export const Header: React.FC<HeaderProps> = ({
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 padding: '14px 0',
-                color: currentPage === 'portfolio' ? '#FF5500' : '#ffffff',
+                color: currentPage === 'portfolio' ? '#A94F0B' : '#ffffff',
                 fontSize: '17px',
                 fontWeight: 600,
                 borderBottom: '1px solid rgba(255, 255, 255, 0.08)',

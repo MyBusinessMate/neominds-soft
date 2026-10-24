@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { Button } from './ui/Button';
 
 interface RecognitionSlide {
   title: string;
@@ -27,7 +28,6 @@ const slides: RecognitionSlide[] = [
   },
 ];
 
-
 const IndustryRecognitionComponent: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -42,7 +42,6 @@ const IndustryRecognitionComponent: React.FC = () => {
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   }, []);
 
-  // 5-second automatic switching
   useEffect(() => {
     if (!isPlaying) return;
 
@@ -53,19 +52,18 @@ const IndustryRecognitionComponent: React.FC = () => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPlaying, currentIndex]);
+  }, [isPlaying, currentIndex, nextSlide]);
 
-  // Refined crossfade animation on slide change
   useEffect(() => {
     if (cardRef.current) {
       const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduceMotion) {
-        gsap.set(cardRef.current, { opacity: 1, scale: 1 });
+        gsap.set(cardRef.current, { opacity: 1 });
       } else {
         gsap.fromTo(
           cardRef.current,
-          { opacity: 0.4, scale: 0.98 },
-          { opacity: 1, scale: 1, duration: 0.6, ease: 'power2.out' }
+          { opacity: 0.4 },
+          { opacity: 1, duration: 0.5, ease: 'power2.out' }
         );
       }
     }
@@ -80,34 +78,54 @@ const IndustryRecognitionComponent: React.FC = () => {
         position: 'relative',
         width: '100%',
         backgroundColor: '#000000',
-        paddingTop: 'clamp(60px, 7vw, 100px)',
-        paddingBottom: 'clamp(60px, 7vw, 100px)',
+        paddingTop: 'clamp(80px, 9vw, 120px)',
+        paddingBottom: 'clamp(80px, 9vw, 120px)',
+        borderTop: '1px solid #292522',
         overflow: 'hidden',
-        borderTop: 'none',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: 'minmax(280px, 1.1fr) minmax(320px, 1fr)',
             alignItems: 'center',
-            gap: 'clamp(40px, 6vw, 64px)',
+            gap: 'clamp(40px, 6vw, 80px)',
           }}
+          className="recognition-grid"
         >
-          {/* Left Column Text matching EffectiveSoft */}
-          <div style={{ maxWidth: '560px' }}>
+          {/* Left Column Text */}
+          <div style={{ maxWidth: '580px' }}>
+            <RevealElement variant="text">
+              <span
+                className="eyebrow-tag"
+                style={{
+                  display: 'inline-block',
+                  fontFamily: 'var(--font-subheading)',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  letterSpacing: '0.12em',
+                  color: '#A94F0B',
+                  textTransform: 'uppercase',
+                  marginBottom: '16px',
+                }}
+              >
+                05 // COMMITMENTS & STANDARDS
+              </span>
+            </RevealElement>
+
             <ScrollReveal
               as="h2"
               className="section-title"
               style={{
-                color: '#ffffff',
-                marginBottom: 'clamp(20px, 3vw, 28px)',
+                color: '#F2F0EC',
+                marginBottom: '24px',
                 display: 'block',
                 fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(32px, 3.5vw, 48px)',
-                fontWeight: 600,
-                lineHeight: 1.22,
+                fontSize: 'clamp(30px, 3.5vw, 44px)',
+                fontWeight: 700,
+                lineHeight: 1.2,
+                letterSpacing: '-0.02em',
               }}
               blurStrength={4}
             >
@@ -118,10 +136,10 @@ const IndustryRecognitionComponent: React.FC = () => {
               <p
                 className="body-lead"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.92)',
-                  fontSize: 'clamp(16px, 1.3vw, 18px)',
+                  color: '#A3A3A3',
+                  fontSize: 'clamp(15px, 1.2vw, 17px)',
                   marginBottom: '20px',
-                  lineHeight: 1.6,
+                  lineHeight: 1.65,
                 }}
               >
                 Every Neominds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
@@ -129,93 +147,78 @@ const IndustryRecognitionComponent: React.FC = () => {
             </RevealElement>
 
             <RevealElement variant="text" delay={0.1}>
-              <p
-                className="body-text"
+              <div
                 style={{
-                  color: 'rgba(255, 255, 255, 0.68)',
+                  paddingTop: '20px',
+                  borderTop: '1px solid #292522',
                 }}
               >
-                Backed by ISO/IEC 27001:2022 aligned processes, AWS, Microsoft Azure, and Google Cloud engineering standards.
-              </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '14px',
+                    color: '#777777',
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  Backed by ISO/IEC 27001:2022 aligned processes, AWS, Microsoft Azure, and Google Cloud engineering standards.
+                </p>
+              </div>
             </RevealElement>
           </div>
 
-          {/* Right Column Recognition Carousel */}
+          {/* Right Column Recognition Showcase (No Boxed Card Slop) */}
           <RevealElement variant="card">
             <div
               style={{
-                position: 'relative',
+                border: '1px solid #292522',
+                borderRadius: '8px',
+                backgroundColor: '#000000',
+                padding: 'clamp(28px, 4vw, 40px)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '0px',
-                padding: 'clamp(24px, 4vw, 40px)',
+                justifyContent: 'space-between',
                 minHeight: '440px',
-                boxShadow: 'none',
               }}
             >
-              {/* Left Nav Arrow */}
-              <button
-                onClick={prevSlide}
+              {/* Slide Counter Header */}
+              <div
                 style={{
-                  position: 'absolute',
-                  left: '12px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  color: '#ffffff',
-                  opacity: 0.85,
-                  width: '40px',
-                  height: '40px',
+                  width: '100%',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'opacity 0.2s, background-color 0.2s',
-                  zIndex: 4,
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  borderRadius: '0px',
-                  border: 'none',
-                  cursor: 'pointer',
+                  justifyContent: 'space-between',
+                  marginBottom: '20px',
+                  paddingBottom: '14px',
+                  borderBottom: '1px solid #292522',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.12)')}
-                aria-label="Previous Slide"
               >
-                <ChevronLeft size={22} />
-              </button>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-subheading)',
+                    fontSize: '11px',
+                    fontWeight: 600,
+                    letterSpacing: '0.1em',
+                    color: '#A94F0B',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  INDUSTRY RECOGNITION
+                </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-metrics)',
+                    fontSize: '11.5px',
+                    color: '#777777',
+                  }}
+                >
+                  0{currentIndex + 1} / 0{slides.length}
+                </span>
+              </div>
 
-              {/* Right Nav Arrow */}
-              <button
-                onClick={nextSlide}
-                style={{
-                  position: 'absolute',
-                  right: '12px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  color: '#ffffff',
-                  opacity: 0.85,
-                  width: '40px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'opacity 0.2s, background-color 0.2s',
-                  zIndex: 4,
-                  background: 'rgba(255, 255, 255, 0.12)',
-                  borderRadius: '0px',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.12)')}
-                aria-label="Next Slide"
-              >
-                <ChevronRight size={22} />
-              </button>
-
-              {/* Slide Image Container */}
+              {/* Slide Image */}
               <div
                 ref={cardRef}
                 style={{
@@ -224,89 +227,116 @@ const IndustryRecognitionComponent: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   width: '100%',
-                  maxWidth: '380px',
-                  borderRadius: '0px',
-                  overflow: 'hidden',
+                  padding: '12px 0',
                 }}
               >
                 <img
                   src={currentSlide.imageUrl}
-                  alt={`${currentSlide.title} - ${currentSlide.caption} (Neominds Industry Recognition)`}
+                  alt={`${currentSlide.title} - ${currentSlide.caption}`}
                   style={{
-                    width: '100%',
-                    maxHeight: '380px',
+                    maxHeight: '260px',
+                    maxWidth: '100%',
                     objectFit: 'contain',
-                    borderRadius: '0px',
-                    boxShadow: 'none',
                   }}
                   loading="lazy"
                 />
                 <span
                   style={{
-                    marginTop: '16px',
-                    color: 'rgba(255, 255, 255, 0.75)',
-                    fontSize: '13px',
-                    fontWeight: 500,
+                    fontFamily: 'var(--font-heading)',
+                    marginTop: '20px',
+                    color: '#F2F0EC',
+                    fontSize: '15px',
+                    fontWeight: 600,
                     textAlign: 'center',
+                    lineHeight: 1.4,
                   }}
                 >
                   {currentSlide.title}
                 </span>
+                <span
+                  style={{
+                    fontFamily: 'var(--font-body)',
+                    fontSize: '13px',
+                    color: '#A3A3A3',
+                    marginTop: '4px',
+                    textAlign: 'center',
+                  }}
+                >
+                  {currentSlide.caption}
+                </span>
               </div>
 
-              {/* Bottom Controls */}
+              {/* Controls */}
               <div
                 style={{
+                  width: '100%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  width: '100%',
-                  maxWidth: '380px',
-                  marginTop: '24px',
+                  paddingTop: '20px',
+                  marginTop: '16px',
+                  borderTop: '1px solid #292522',
                 }}
               >
-                <button
+                <Button
+                  variant="icon-only"
                   onClick={() => setIsPlaying(!isPlaying)}
-                  style={{
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: '0px',
-                    border: '1px solid rgba(255, 255, 255, 0.2)',
-                    color: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    background: 'rgba(255, 255, 255, 0.1)',
-                    cursor: 'pointer',
-                  }}
                   aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+                  style={{ width: '36px', height: '36px' }}
                 >
-                  {isPlaying ? <Pause size={13} /> : <Play size={13} />}
-                </button>
+                  {isPlaying ? <Pause size={14} /> : <Play size={14} />}
+                </Button>
 
                 <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                   {slides.map((_, idx) => (
-                    <div
+                    <button
                       key={idx}
                       onClick={() => setCurrentIndex(idx)}
                       style={{
-                        width: idx === currentIndex ? '32px' : '16px',
-                        height: '4px',
-                        backgroundColor: idx === currentIndex ? '#FF5500' : 'rgba(255, 255, 255, 0.25)',
+                        width: idx === currentIndex ? '28px' : '14px',
+                        height: '3px',
+                        backgroundColor: idx === currentIndex ? '#A94F0B' : '#292522',
                         cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        borderRadius: '0px',
+                        transition: 'all 0.25s ease',
+                        border: 'none',
+                        padding: 0,
                       }}
-                      role="button"
                       aria-label={`Go to slide ${idx + 1}`}
                     />
                   ))}
+                </div>
+
+                <div style={{ display: 'flex', gap: '6px' }}>
+                  <Button
+                    variant="icon-only"
+                    onClick={prevSlide}
+                    aria-label="Previous slide"
+                    style={{ width: '36px', height: '36px' }}
+                  >
+                    <ChevronLeft size={16} />
+                  </Button>
+                  <Button
+                    variant="icon-only"
+                    onClick={nextSlide}
+                    aria-label="Next slide"
+                    style={{ width: '36px', height: '36px' }}
+                  >
+                    <ChevronRight size={16} />
+                  </Button>
                 </div>
               </div>
             </div>
           </RevealElement>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 840px) {
+          .recognition-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

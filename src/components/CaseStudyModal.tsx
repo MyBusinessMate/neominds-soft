@@ -49,11 +49,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           maxWidth: '860px',
           maxHeight: '90vh',
           backgroundColor: '#0A0A0A',
-          border: '1px solid #FF5500',
+          border: '1px solid #A94F0B',
           color: '#FFFFFF',
           borderRadius: '8px',
           overflowY: 'auto',
-          boxShadow: '0 25px 50px -12px rgba(255, 85, 0, 0.25)',
+          boxShadow: '0 25px 50px -12px rgba(169, 79, 11, 0.25)',
           position: 'relative',
           padding: 'clamp(24px, 4vw, 44px)',
         }}
@@ -75,7 +75,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               fontFamily: "'SF Mono', 'Geist Mono', monospace",
               fontSize: '11px',
               fontWeight: 700,
-              color: '#FF5500',
+              color: '#A94F0B',
               letterSpacing: '0.06em',
               textTransform: 'uppercase',
             }}
@@ -92,8 +92,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 }}
                 style={{
                   backgroundColor: '#121212',
-                  border: '1px solid #FF5500',
-                  color: '#FF5500',
+                  border: '1px solid #A94F0B',
+                  color: '#A94F0B',
                   fontSize: '12px',
                   fontWeight: 600,
                   padding: '6px 12px',
@@ -105,12 +105,12 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   transition: 'all 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#FF5500';
+                  e.currentTarget.style.backgroundColor = '#A94F0B';
                   e.currentTarget.style.color = '#000000';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#121212';
-                  e.currentTarget.style.color = '#FF5500';
+                  e.currentTarget.style.color = '#A94F0B';
                 }}
               >
                 <span>Full Project Page</span>
@@ -134,7 +134,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#FF5500';
+                e.currentTarget.style.backgroundColor = '#A94F0B';
                 e.currentTarget.style.color = '#000000';
               }}
               onMouseLeave={(e) => {
@@ -179,7 +179,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               fontSize: '11px',
               fontWeight: 700,
               textTransform: 'uppercase',
-              color: '#FF5500',
+              color: '#A94F0B',
               marginBottom: '12px',
             }}
           >
@@ -211,7 +211,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
               <span style={{ color: '#9CA3AF', display: 'block', fontSize: '11px', fontWeight: 600 }}>Services Delivered</span>
-              <span style={{ color: '#FF5500', fontWeight: 600 }}>{project.overview.services}</span>
+              <span style={{ color: '#A94F0B', fontWeight: 600 }}>{project.overview.services}</span>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
               <span style={{ color: '#9CA3AF', display: 'block', fontSize: '11px', fontWeight: 600 }}>Technology Stack</span>
@@ -224,7 +224,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>1.</span> Client Context
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>1.</span> Client Context
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.clientContext}
@@ -233,7 +233,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>2.</span> The Challenge
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>2.</span> The Challenge
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.challenge}
@@ -242,7 +242,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>3.</span> Project Constraints
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>3.</span> Project Constraints
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.constraints}
@@ -251,7 +251,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>4.</span> Our Approach
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>4.</span> Our Approach
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.approach}
@@ -260,7 +260,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>5.</span> The Solution
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>5.</span> The Solution
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
               {project.solution}
@@ -274,7 +274,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {project.keyFeatures.map((f, idx) => (
                   <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#D1D5DB' }}>
-                    <Check size={14} color="#FF5500" strokeWidth={2.5} />
+                    <Check size={14} color="#A94F0B" strokeWidth={2.5} />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -284,27 +284,27 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             {/* Tech Implementation */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
               <div style={{ border: '1px solid #27272A', backgroundColor: '#121212', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
-                <div style={{ color: '#FF5500', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Code2 size={13} color="#FF5500" /> FRONTEND
+                <div style={{ color: '#A94F0B', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Code2 size={13} color="#A94F0B" /> FRONTEND
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.frontend}</div>
               </div>
               <div style={{ border: '1px solid #27272A', backgroundColor: '#121212', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
-                <div style={{ color: '#FF5500', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Layers size={13} color="#FF5500" /> BACKEND
+                <div style={{ color: '#A94F0B', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Layers size={13} color="#A94F0B" /> BACKEND
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.backend}</div>
               </div>
               <div style={{ border: '1px solid #27272A', backgroundColor: '#121212', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
-                <div style={{ color: '#FF5500', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Database size={13} color="#FF5500" /> DATABASE
+                <div style={{ color: '#A94F0B', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Database size={13} color="#A94F0B" /> DATABASE
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.database}</div>
               </div>
               {project.technologyImplementation.aiAutomation && (
                 <div style={{ border: '1px solid #27272A', backgroundColor: '#121212', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
-                  <div style={{ color: '#FF5500', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Cpu size={13} color="#FF5500" /> AI / AUTOMATION
+                  <div style={{ color: '#A94F0B', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <Cpu size={13} color="#A94F0B" /> AI / AUTOMATION
                   </div>
                   <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.aiAutomation}</div>
                 </div>
@@ -314,7 +314,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#FFFFFF', marginBottom: '8px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>6.</span> Results and Business Impact
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>6.</span> Results and Business Impact
             </h3>
             <p style={{ color: '#D1D5DB', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
               {project.resultsAndImpact.summary}
@@ -339,11 +339,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
           </div>
 
-          <div style={{ backgroundColor: '#121212', borderLeft: '3px solid #FF5500', padding: '16px', borderRadius: '4px' }}>
+          <div style={{ backgroundColor: '#121212', borderLeft: '3px solid #A94F0B', padding: '16px', borderRadius: '4px' }}>
             <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#FFFFFF', marginBottom: '6px' }}>
-              <span style={{ color: '#FF5500', marginRight: '6px' }}>7.</span> Key Takeaway
+              <span style={{ color: '#A94F0B', marginRight: '6px' }}>7.</span> Key Takeaway
             </h3>
-            <p style={{ color: '#FF5500', fontStyle: 'italic', margin: 0, fontSize: '14.5px', lineHeight: 1.55 }}>
+            <p style={{ color: '#A94F0B', fontStyle: 'italic', margin: 0, fontSize: '14.5px', lineHeight: 1.55 }}>
               "{project.keyTakeaway}"
             </p>
           </div>
@@ -367,7 +367,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               onRequestQuote();
             }}
             style={{
-              backgroundColor: '#FF5500',
+              backgroundColor: '#A94F0B',
               color: '#000000',
               border: 'none',
               padding: '10px 20px',

@@ -48,11 +48,11 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
           background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          borderBottom: '1px solid #1e293b',
+          borderBottom: '1px solid #292522',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(255, 85, 0, 0.08)', borderRadius: '0px', color: '#FF5500', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(169, 79, 11, 0.08)', borderRadius: '0px', color: '#A94F0B', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <Newspaper size={14} />
             <span>Neominds Corporate Announcements & News</span>
           </div>
@@ -70,7 +70,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
             }}
             blurStrength={7}
           >
-            Company Updates & <span style={{ color: '#FF5500' }}>Milestones</span>
+            Company Updates & <span style={{ color: '#A94F0B' }}>Milestones</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
@@ -88,8 +88,8 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 className={`btn btn-sm ${activeType === type ? 'btn-primary' : 'btn-outline'}`}
                 style={{
                   color: activeType === type ? '#ffffff' : '#475569',
-                  borderColor: activeType === type ? '#FF5500' : '#cbd5e1',
-                  backgroundColor: activeType === type ? '#FF5500' : '#f8fafc',
+                  borderColor: activeType === type ? '#A94F0B' : '#cbd5e1',
+                  backgroundColor: activeType === type ? '#A94F0B' : '#f8fafc',
                   cursor: 'pointer',
                 }}
               >
@@ -110,7 +110,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
               <div
                 style={{
                   backgroundColor: '#000000',
-                  border: '1px solid #1e293b',
+                  border: '1px solid #292522',
                   borderRadius: '8px',
                   overflow: 'hidden',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
@@ -139,7 +139,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       padding: '24px',
                     }}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', border: '1px solid #FF5500', color: '#FF5500', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', border: '1px solid #A94F0B', color: '#A94F0B', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
                       {update.type}
                     </span>
 
@@ -165,7 +165,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       {update.title}
                     </h2>
 
-                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#FF5500', marginBottom: '16px' }}>
+                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#A94F0B', marginBottom: '16px' }}>
                       {update.subtitle}
                     </p>
 
@@ -174,14 +174,14 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     </p>
 
                     {/* Key Highlights */}
-                    <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #1e293b', borderRadius: '4px', padding: '16px', marginBottom: '20px' }}>
+                    <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '4px', padding: '16px', marginBottom: '20px' }}>
                       <div style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
                         Key Announcement Highlights
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                         {update.highlights.map((h, i) => (
                           <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13.5px', color: '#cbd5e1' }}>
-                            <CheckCircle2 size={14} color="#FF5500" style={{ flexShrink: 0, marginTop: '3px' }} />
+                            <CheckCircle2 size={14} color="#A94F0B" style={{ flexShrink: 0, marginTop: '3px' }} />
                             <span>{h}</span>
                           </div>
                         ))}
@@ -190,7 +190,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
 
                     {/* Executive Quote if present */}
                     {update.content.quote && (
-                      <blockquote style={{ borderLeft: '3px solid #FF5500', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#94a3b8' }}>
+                      <blockquote style={{ borderLeft: '3px solid #A94F0B', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#94a3b8' }}>
                         "{update.content.quote.text}"
                         <div style={{ fontStyle: 'normal', fontWeight: 700, color: '#ffffff', marginTop: '4px', fontSize: '12px' }}>
                           // {update.content.quote.author}, {update.content.quote.role}
@@ -199,7 +199,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     )}
                   </div>
 
-                  <div style={{ borderTop: '1px solid #1e293b', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid #292522', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontSize: '13px', color: '#94a3b8' }}>
                       {update.content.nextSteps}
                     </span>
@@ -225,7 +225,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
           ======================================================== */}
       <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
+          <div style={{ fontSize: '12px', fontWeight: 700, color: '#A94F0B', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
             Media & Investor Relations
           </div>
           <ScrollReveal

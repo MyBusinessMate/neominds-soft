@@ -108,19 +108,36 @@ const ExperienceSectionComponent: React.FC = () => {
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
+        {/* Editorial Eyebrow Tag */}
+        <div style={{ marginBottom: '24px' }}>
+          <span
+            className="eyebrow-tag"
+            style={{
+              fontFamily: 'var(--font-subheading)',
+              fontSize: '13px',
+              fontWeight: 600,
+              letterSpacing: '0.12em',
+              color: '#A94F0B',
+              textTransform: 'uppercase',
+            }}
+          >
+            03 // PROVEN INDUSTRY SCALE
+          </span>
+        </div>
+
         {/* Large Editorial Headline with Pure Word-by-Word Smooth Fill */}
         <div
           ref={textContainerRef}
           style={{
             maxWidth: '1120px',
-            marginBottom: 'clamp(36px, 5vw, 56px)',
+            marginBottom: 'clamp(48px, 6vw, 72px)',
           }}
         >
           <h2
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(28px, 4.2vw, 64px)',
-              fontWeight: 600,
+              fontSize: 'clamp(28px, 4.2vw, 56px)',
+              fontWeight: 700,
               lineHeight: 1.25,
               letterSpacing: '-0.025em',
               margin: 0,
@@ -137,7 +154,7 @@ const ExperienceSectionComponent: React.FC = () => {
                   display: 'inline-block',
                   marginRight: '0.28em',
                   opacity: 0.18,
-                  color: 'rgba(255, 255, 255, 0.25)',
+                  color: 'rgba(242, 240, 236, 0.25)',
                   willChange: 'opacity, color, transform',
                 }}
               >
@@ -147,12 +164,7 @@ const ExperienceSectionComponent: React.FC = () => {
           </h2>
         </div>
 
-        {/* Decorative Blue Dot Motif */}
-        <div style={{ margin: 'clamp(24px, 4vw, 36px) 0 clamp(36px, 5vw, 60px) 0', paddingLeft: '4px' }}>
-          <span className="blue-dot" style={{ width: '8px', height: '8px' }} />
-        </div>
-
-        {/* 4 Logos at a Time with 3D Vertical Rolling Cylinder Effect */}
+        {/* 4 Logos at a Time with Rolling Effect Separated by Hairline Dividers */}
         <div
           style={{
             width: '100%',
@@ -161,8 +173,10 @@ const ExperienceSectionComponent: React.FC = () => {
             alignItems: 'center',
             justifyItems: 'center',
             gap: 'clamp(20px, 3vw, 40px)',
-            paddingTop: '20px',
-            borderTop: 'none',
+            paddingTop: '28px',
+            paddingBottom: '28px',
+            borderTop: '1px solid #292522',
+            borderBottom: '1px solid #292522',
           }}
         >
           {slotSets.map((set, slotIdx) => {

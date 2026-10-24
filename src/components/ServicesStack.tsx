@@ -137,7 +137,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
             min-height: auto !important;
             height: auto !important;
             box-shadow: none !important;
-            border-top: 1px solid #1e293b !important;
+            border-top: 1px solid #292522 !important;
           }
           .services-stack-grid {
             display: flex !important;
@@ -195,20 +195,22 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         className="container"
         style={{
           maxWidth: '1280px',
-          paddingTop: '20px',
-          paddingBottom: 'clamp(24px, 3vw, 40px)',
+          paddingTop: '40px',
+          paddingBottom: 'clamp(32px, 4vw, 56px)',
+          borderBottom: '1px solid #292522',
         }}
       >
         <RevealElement variant="text">
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#FF5500' }} />
+            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#A94F0B' }} />
             <span
+              className="eyebrow-tag"
               style={{
-                fontFamily: 'var(--font-heading)',
+                fontFamily: 'var(--font-subheading)',
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '0.15em',
-                color: '#FF5500',
+                fontWeight: 600,
+                letterSpacing: '0.12em',
+                color: '#A94F0B',
                 textTransform: 'uppercase',
               }}
             >
@@ -224,7 +226,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
             fontSize: 'clamp(28px, 3.2vw, 44px)',
             fontWeight: 700,
             lineHeight: 1.2,
-            color: '#ffffff',
+            color: '#F2F0EC',
             maxWidth: '750px',
             margin: 0,
             letterSpacing: '-0.02em',
@@ -250,7 +252,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
               height: isMobile ? 'auto' : '100vh',
               width: '100%',
               backgroundColor: '#000000',
-              borderTop: idx > 0 ? '1px solid #1e293b' : 'none',
+              borderTop: idx > 0 ? '1px solid #292522' : 'none',
               zIndex: idx + 1,
               display: 'flex',
               alignItems: 'center',
@@ -318,11 +320,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
               <div
                 className="services-stack-content"
                 style={{
-                  backgroundColor: '#0a0a0a',
+                  backgroundColor: '#000000',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  padding: isMobile ? '36px 22px 50px' : 'clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px)',
+                  padding: isMobile ? '36px 20px 48px' : 'clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px)',
+                  borderLeft: isMobile ? 'none' : '1px solid #292522',
+                  borderTop: isMobile ? '1px solid #292522' : 'none',
                 }}
               >
                 <div style={{ maxWidth: '620px' }}>
@@ -342,11 +346,11 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                     <h2
                       style={{
                         fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(22px, 2.6vw, 36px)',
+                        fontSize: 'clamp(24px, 2.8vw, 40px)',
                         fontWeight: 800,
-                        letterSpacing: '-0.02em',
-                        lineHeight: 1.18,
-                        color: isHovered ? '#FF5500' : '#ffffff',
+                        letterSpacing: '-0.025em',
+                        lineHeight: 1.15,
+                        color: isHovered ? '#A94F0B' : '#F2F0EC',
                         textTransform: 'uppercase',
                         margin: 0,
                         transition: 'color 0.2s ease',
@@ -359,20 +363,21 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                       style={{
                         width: '38px',
                         height: '38px',
-                        borderRadius: '0px',
-                        backgroundColor: isHovered ? 'rgba(255, 85, 0, 0.15)' : 'transparent',
+                        borderRadius: '8px',
+                        backgroundColor: isHovered ? 'rgba(169, 79, 11, 0.15)' : 'transparent',
+                        border: '1px solid #292522',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
-                        transition: 'background-color 0.2s ease, transform 0.2s ease',
+                        transition: 'all 0.2s ease',
                         transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
                       }}
                     >
                       <ArrowUpRight
-                        size={26}
+                        size={22}
                         style={{
-                          color: isHovered ? '#FF5500' : '#ffffff',
+                          color: isHovered ? '#A94F0B' : '#F2F0EC',
                           transition: 'color 0.2s ease',
                         }}
                       />
@@ -382,9 +387,10 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Tagline */}
                   <p
                     style={{
-                      fontSize: isMobile ? '13px' : '14px',
+                      fontFamily: 'var(--font-heading)',
+                      fontSize: isMobile ? '14px' : '15px',
                       fontWeight: 600,
-                      color: '#cbd5e1',
+                      color: '#F2F0EC',
                       margin: '0 0 16px 0',
                       lineHeight: 1.5,
                     }}
@@ -395,10 +401,11 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Detailed Description with Embedded Keyword Links */}
                   <p
                     style={{
+                      fontFamily: 'var(--font-body)',
                       fontSize: 'clamp(14px, 1.05vw, 15.5px)',
                       lineHeight: 1.65,
-                      color: '#94a3b8',
-                      margin: '0 0 22px 0',
+                      color: '#A3A3A3',
+                      margin: '0 0 24px 0',
                       fontWeight: 400,
                     }}
                   >
@@ -406,18 +413,19 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   </p>
 
                   {/* Connected Neominds Services Pills */}
-                  <div style={{ marginBottom: isMobile ? '20px' : '26px' }}>
+                  <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                     <div
                       style={{
+                        fontFamily: 'var(--font-subheading)',
                         fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.1em',
-                        color: '#94a3b8',
+                        fontWeight: 600,
+                        letterSpacing: '0.12em',
+                        color: '#A3A3A3',
                         textTransform: 'uppercase',
                         marginBottom: '10px',
                       }}
                     >
-                      Services in this Practice:
+                      SERVICES IN THIS PRACTICE:
                     </div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {card.servicePills.map((pill) => (
@@ -430,33 +438,32 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '5px',
-                            padding: isMobile ? '5px 12px' : '6px 14px',
-                            borderRadius: '0px',
-                            backgroundColor: '#111827',
-                            border: '1px solid #1e293b',
-                            fontSize: isMobile ? '11px' : '12px',
-                            fontWeight: 600,
-                            color: '#cbd5e1',
+                            gap: '6px',
+                            padding: isMobile ? '6px 12px' : '7px 14px',
+                            borderRadius: '8px',
+                            backgroundColor: 'transparent',
+                            border: '1px solid #292522',
+                            fontFamily: 'var(--font-body)',
+                            fontSize: isMobile ? '12px' : '13px',
+                            fontWeight: 500,
+                            color: '#F2F0EC',
                             cursor: 'pointer',
                             boxShadow: 'none',
-                            transition: 'all 0.2s ease',
+                            transition: 'all 0.175s ease',
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = '#FF5500';
-                            e.currentTarget.style.color = '#ffffff';
-                            e.currentTarget.style.borderColor = '#FF5500';
-                            e.currentTarget.style.transform = 'translateY(-1px)';
+                            e.currentTarget.style.borderColor = '#A94F0B';
+                            e.currentTarget.style.color = '#FFFFFF';
+                            e.currentTarget.style.backgroundColor = 'rgba(169, 79, 11, 0.08)';
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = '#111827';
-                            e.currentTarget.style.color = '#cbd5e1';
-                            e.currentTarget.style.borderColor = '#1e293b';
-                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.borderColor = '#292522';
+                            e.currentTarget.style.color = '#F2F0EC';
+                            e.currentTarget.style.backgroundColor = 'transparent';
                           }}
                         >
                           <span>{pill.label}</span>
-                          <ArrowUpRight size={12} />
+                          <ArrowUpRight size={13} color="#A94F0B" />
                         </button>
                       ))}
                     </div>
@@ -467,14 +474,6 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                     <button
                       onClick={() => handleCardClick(card.slug)}
                       className="btn btn-primary"
-                      style={{
-                        padding: isMobile ? '10px 18px' : '11px 22px',
-                        fontSize: '13px',
-                        fontWeight: 700,
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                      }}
                     >
                       <span>Explore Service Details</span>
                       <ArrowUpRight size={16} />
@@ -525,19 +524,19 @@ function renderDescriptionWithLinks(
             onNavigate(link.slug);
           }}
           style={{
-            color: '#FF5500',
+            color: '#C87535',
             textDecoration: 'underline',
             textUnderlineOffset: '4px',
-            textDecorationThickness: '1.5px',
+            textDecorationThickness: '1px',
             cursor: 'pointer',
             fontWeight: 500,
             transition: 'color 0.15s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#e04a00';
+            e.currentTarget.style.color = '#D8945A';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#FF5500';
+            e.currentTarget.style.color = '#C87535';
           }}
         >
           {link.label}

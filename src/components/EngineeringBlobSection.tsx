@@ -28,7 +28,7 @@ export const EngineeringBlobSection: React.FC = () => {
       }
       if (headlineRef.current) gsap.set(headlineRef.current, { color: '#ffffff' });
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
-      if (dots.length > 0) gsap.set(dots, { color: '#FF5500' });
+      if (dots.length > 0) gsap.set(dots, { color: '#A94F0B' });
       if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#94a3b8' });
       return;
     }
@@ -84,13 +84,13 @@ export const EngineeringBlobSection: React.FC = () => {
         );
       }
 
-      // Dots color: Starts White (#ffffff) -> Turns vivid Orange (#FF5500)
+      // Dots color: Starts White (#ffffff) -> Turns vivid Orange (#A94F0B)
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
       if (dots.length > 0) {
         tl.fromTo(
           dots,
           { color: '#ffffff' },
-          { color: '#FF5500', ease: 'power1.out', duration: 0.8 },
+          { color: '#A94F0B', ease: 'power1.out', duration: 0.8 },
           0.15
         );
       }
@@ -143,7 +143,7 @@ export const EngineeringBlobSection: React.FC = () => {
           width: '100%',
           height: '100%',
           borderRadius: '0%',
-          background: 'radial-gradient(ellipse at 50% 95%, #ff3b00 0%, #ff5500 45%, #e04a00 75%, #b33900 100%)',
+          background: 'radial-gradient(ellipse at 50% 95%, #ff3b00 0%, #A94F0B 45%, #BF641A 75%, #b33900 100%)',
           zIndex: 1,
           pointerEvents: 'none',
           willChange: 'width, height, bottom, border-radius, filter',

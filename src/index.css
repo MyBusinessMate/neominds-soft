@@ -27,38 +27,53 @@ html.lenis body {
    ========================================================================== */
 
 :root {
-  /* 1. Core Colors - Orange & Black Signature Theme */
-  --color-primary: #ff5500;
-  --color-primary-hover: #e04a00;
-  --color-primary-light: rgba(255, 85, 0, 0.15);
+  /* 1. Core Brand Colors - Design System Source of Truth */
+  --color-bg-primary: #000000;
+  --color-brand: #A94F0B;
+  --color-brand-hover: #BF641A;
+  --color-brand-active: #873F09;
+  --color-brand-focus: #D8945A;
+  --color-text-primary: #F2F0EC;
+  --color-text-secondary: #A3A3A3;
+  --color-border: #292522;
+  --color-border-secondary: #49413A;
+  --color-disabled-bg: #292522;
+  --color-disabled-text: #777777;
+  --color-destructive: #8F2929;
+  --color-text-link: #C87535;
+  --color-btn-filled-text: #FFFFFF;
+
+  /* Legacy mappings to ensure site-wide system compliance */
+  --color-primary: var(--color-brand);
+  --color-primary-hover: var(--color-brand-hover);
+  --color-primary-light: rgba(169, 79, 11, 0.15);
   --color-background: #000000;
-  --color-background-tint: #0a0a0a;
+  --color-background-tint: #050505;
   --color-background-dark: #000000;
-  --color-background-dark-alt: #0d1117;
+  --color-background-dark-alt: #0a0a0a;
   --color-background-black: #000000;
   
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
-  --color-text-dark-on-light: #cbd5e1;
+  --color-text-muted: #777777;
+  --color-text-dark-on-light: #A3A3A3;
   --color-text-inverse: #000000;
-  --color-text-inverse-muted: #1e293b;
+  --color-text-inverse-muted: #292522;
   
-  --color-border: #1e293b;
-  --color-border-subtle: rgba(255, 255, 255, 0.1);
-  --color-border-active: #ff5500;
-  --color-border-input: #262b36;
-  --color-link-hover: #ff5500;
+  --color-border-subtle: #292522;
+  --color-border-active: var(--color-brand);
+  --color-border-input: #292522;
+  --color-link-hover: var(--color-text-link);
   
-  --dark-surface: #0a0a0a;
-  --dark-text: #ffffff;
-  --dark-text-muted: #94a3b8;
-  --dark-border: #1e293b;
+  --dark-surface: #000000;
+  --dark-text: #F2F0EC;
+  --dark-text-muted: #A3A3A3;
+  --dark-border: #292522;
 
-  /* 2. Typography Design Tokens (Apple HIG & Minimalist Editorial Typography) */
-  --font-heading: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Mona Sans', 'Inter', 'Helvetica Neue', sans-serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Mona Sans', 'Inter', 'Helvetica Neue', sans-serif;
-  --font-mono: 'SF Mono', 'Geist Mono', 'JetBrains Mono', Menlo, Monaco, Consolas, monospace;
+  /* 2. Typography Design Tokens (DM Sans, Barlow Condensed, IBM Plex Sans, Space Mono) */
+  --font-heading: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-subheading: 'Barlow Condensed', sans-serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-metrics: 'Space Mono', monospace;
+  --font-mono: 'Space Mono', monospace;
   --font-family: var(--font-body);
 
 
@@ -296,7 +311,7 @@ a {
 }
 
 button {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   cursor: pointer;
   border: none;
   background: none;
@@ -304,6 +319,9 @@ button {
 
 input, textarea, select {
   font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border);
 }
 
 img, svg {
@@ -311,19 +329,40 @@ img, svg {
   max-width: 100%;
 }
 
-/* Headings Typography Rules (Apple HIG Display Scale) */
+/* Headings Typography Rules (DM Sans, weights 700-800) */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: -0.028em;
-  color: inherit;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--color-text-primary);
   text-wrap: balance;
 }
 
 h1 {
-  letter-spacing: -0.035em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
+/* Subheadings & Short Editorial Labels (Barlow Condensed, weights 500-600) */
+.editorial-tag,
+.subheading-label,
+.eyebrow-tag {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-brand);
+}
+
+/* Numbers, Metrics, Prices, Timestamps & Coordinates (Space Mono, weights 400-700) */
+.stat-metric,
+.timestamp,
+.counter,
+.coord-metric,
+.mono-metric {
+  font-family: var(--font-metrics);
+  font-variant-numeric: tabular-nums;
+}
 
 /* Containers */
 .container {
@@ -368,9 +407,10 @@ h1 {
 .display-title {
   font-family: var(--font-heading);
   font-size: clamp(34px, 5.5vw, 84px);
-  font-weight: 700;
-  line-height: 1.06;
+  font-weight: 800;
+  line-height: 1.04;
   letter-spacing: -0.03em;
+  color: var(--color-text-primary);
   text-transform: uppercase;
 }
 
@@ -380,20 +420,24 @@ h1 {
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.02em;
+  color: var(--color-text-primary);
 }
 
 .section-subtitle {
-  font-family: var(--font-heading);
-  font-size: clamp(16px, 1.3vw, 20px);
-  line-height: 1.55;
-  font-weight: 500;
-  color: var(--color-text-secondary);
+  font-family: var(--font-subheading);
+  font-size: clamp(14px, 1.2vw, 18px);
+  line-height: 1.5;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand);
 }
 
 .body-lead {
   font-family: var(--font-body);
   font-size: clamp(16px, 1.25vw, 19px);
-  line-height: 1.65;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
   font-weight: 400;
   max-width: var(--container-reading);
 }
@@ -410,175 +454,341 @@ h1 {
    BUTTON SPACING & SIZING SYSTEM (Standardized)
    ========================================================================== */
 
+/* ==========================================================================
+   BUTTON DESIGN SYSTEM (Source of Truth: Sizing, Hierarchy, States)
+   ========================================================================== */
+
 .btn,
 button.btn,
 a.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--btn-gap);
-  font-family: var(--btn-font-family);
-  font-size: var(--btn-font-size-md);
-  font-weight: var(--btn-font-weight);
-  letter-spacing: var(--btn-letter-spacing);
-  line-height: var(--btn-line-height);
-  height: var(--btn-height-md);
-  padding-inline: var(--btn-padding-x-md);
-  border-radius: var(--btn-radius);
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 8px;
   border: 1px solid transparent;
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
   text-decoration: none;
-  transition: all var(--transition-fast);
+  transition: background-color 175ms ease, color 175ms ease, border-color 175ms ease, transform 150ms ease;
   outline: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.btn:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+/* Keyboard Focus Ring */
+.btn:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-brand-focus) !important;
+  outline-offset: 2px !important;
 }
 
-/* Button Sizing Classes */
-.btn-sm {
-  height: var(--btn-height-sm) !important;
-  padding-inline: var(--btn-padding-x-sm) !important;
-  font-size: var(--btn-font-size-sm) !important;
-  line-height: 1 !important;
+/* Disabled State */
+.btn:disabled,
+.btn[aria-disabled="true"],
+button:disabled {
+  background-color: var(--color-disabled-bg) !important;
+  color: var(--color-disabled-text) !important;
+  border-color: var(--color-disabled-bg) !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  transform: none !important;
 }
 
-.btn-md {
-  height: var(--btn-height-md) !important;
-  padding-inline: var(--btn-padding-x-md) !important;
-  font-size: var(--btn-font-size-md) !important;
-  line-height: 1 !important;
-}
-
-.btn-lg {
-  height: var(--btn-height-lg) !important;
-  padding-inline: var(--btn-padding-x-lg) !important;
-  font-size: var(--btn-font-size-lg) !important;
-  line-height: 1 !important;
-}
-
-/* Primary Button */
+/* A. Primary Button */
 .btn-primary {
-  background-color: var(--color-primary);
-  color: #ffffff;
-  border-color: var(--color-primary);
-  box-shadow: none !important;
+  height: 48px;
+  min-width: 120px;
+  padding-inline: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: var(--color-brand);
+  color: var(--color-btn-filled-text);
+  border: 1px solid var(--color-brand);
 }
 
 .btn-primary:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-  box-shadow: none !important;
+  background-color: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
 }
 
 .btn-primary:active {
+  background-color: var(--color-brand-active);
+  border-color: var(--color-brand-active);
   transform: translateY(1px);
 }
 
-/* Secondary / Outline Button */
-.btn-secondary,
-.btn-outline {
+/* B. Secondary Button */
+.btn-secondary {
+  height: 48px;
+  padding-inline: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
   background-color: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-secondary);
 }
 
-.btn-secondary:hover,
+.btn-secondary:hover {
+  border-color: var(--color-brand);
+  color: #FFFFFF;
+  background-color: rgba(169, 79, 11, 0.08);
+}
+
+.btn-secondary:active {
+  border-color: var(--color-brand-active);
+  transform: translateY(1px);
+}
+
+/* C. Large CTA Button */
+.btn-large-cta,
+.btn-cta {
+  height: 56px;
+  min-width: 160px;
+  padding-inline: 28px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: var(--color-brand);
+  color: var(--color-btn-filled-text);
+  border: 1px solid var(--color-brand);
+}
+
+.btn-large-cta:hover,
+.btn-cta:hover {
+  background-color: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+}
+
+.btn-large-cta:active,
+.btn-cta:active {
+  background-color: var(--color-brand-active);
+  border-color: var(--color-brand-active);
+  transform: translateY(1px);
+}
+
+/* D. Outline Button */
+.btn-outline {
+  height: 48px;
+  padding-inline: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-brand);
+}
+
 .btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: var(--color-primary);
-  color: #ffffff;
+  background-color: var(--color-brand);
+  color: var(--color-btn-filled-text);
 }
 
-.btn-secondary:active,
 .btn-outline:active {
+  background-color: var(--color-brand-active);
+  border-color: var(--color-brand-active);
   transform: translateY(1px);
 }
 
-/* Primary Action Button */
-.btn-white {
-  background-color: var(--color-primary);
-  color: #000000;
-  border-color: var(--color-primary);
-  font-weight: 700;
+/* E. Ghost Button */
+.btn-ghost {
+  height: 40px;
+  padding-inline: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: none;
 }
 
-.btn-white:hover {
-  background-color: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-  box-shadow: none !important;
+.btn-ghost:hover {
+  background-color: rgba(242, 240, 236, 0.06);
+  color: #FFFFFF;
 }
 
-.btn-white:active {
+.btn-ghost:active {
+  background-color: rgba(242, 240, 236, 0.1);
   transform: translateY(1px);
 }
 
-/* Inline Text Button */
-.btn-text {
+/* F. Small Button */
+.btn-small,
+.btn-sm {
+  height: 36px !important;
+  padding-inline: 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 6px !important;
+  background-color: var(--color-brand) !important;
+  color: var(--color-btn-filled-text) !important;
+  border: 1px solid var(--color-brand) !important;
+}
+
+.btn-small:hover,
+.btn-sm:hover {
+  background-color: var(--color-brand-hover) !important;
+  border-color: var(--color-brand-hover) !important;
+}
+
+.btn-small:active,
+.btn-sm:active {
+  background-color: var(--color-brand-active) !important;
+  transform: translateY(1px);
+}
+
+/* G. Icon-Only Button */
+.btn-icon-only,
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  background: transparent;
-  border: none;
-  color: var(--color-primary);
-  font-family: var(--font-body);
+  justify-content: center;
+}
+
+.btn-icon-only:hover,
+.btn-icon:hover {
+  border-color: var(--color-brand);
+  color: #FFFFFF;
+  background-color: rgba(169, 79, 11, 0.08);
+}
+
+/* H. Destructive Button */
+.btn-destructive {
+  height: 44px;
+  padding-inline: 20px;
   font-size: 14px;
   font-weight: 600;
+  border-radius: 8px;
+  background-color: var(--color-destructive);
+  color: var(--color-btn-filled-text);
+  border: 1px solid var(--color-destructive);
+}
+
+.btn-destructive:hover {
+  background-color: #a83232;
+  border-color: #a83232;
+}
+
+/* I. Text Link Button */
+.btn-text-link,
+.btn-link,
+.btn-text {
+  background-color: transparent;
+  color: var(--color-text-link);
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
   padding: 4px 0;
-  height: auto;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
   cursor: pointer;
-  transition: color var(--transition-fast);
 }
 
+.btn-text-link:hover,
+.btn-link:hover,
 .btn-text:hover {
-  color: #ffffff;
-}
-
-/* Button Sizing Variations */
-.btn-lg {
-  height: var(--btn-height-lg);
-  padding-inline: var(--btn-padding-x-lg);
-  font-size: var(--btn-font-size-lg);
-}
-
-.btn-md {
-  height: var(--btn-height-md);
-  padding-inline: var(--btn-padding-x-md);
-  font-size: var(--btn-font-size-md);
-}
-
-.btn-sm {
-  height: var(--btn-height-sm);
-  padding-inline: var(--btn-padding-x-sm);
-  font-size: var(--btn-font-size-sm);
+  text-decoration: underline;
+  color: var(--color-brand-focus);
 }
 
 /* Button Layout Groups */
 .btn-group {
   display: flex;
   align-items: center;
-  gap: var(--btn-group-gap-standard);
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-.btn-group-tight {
+.btn-group-cta {
   display: flex;
   align-items: center;
-  gap: var(--btn-group-gap-tight);
+  gap: 16px;
   flex-wrap: wrap;
 }
 
-.btn-group-comfortable {
-  display: flex;
-  align-items: center;
-  gap: var(--btn-group-gap-comfortable);
-  flex-wrap: wrap;
+/* Responsive Mobile Buttons (< 768px) */
+@media (max-width: 768px) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    padding-inline: 20px;
+    height: 48px;
+    min-height: 44px;
+  }
+
+  .btn-large-cta,
+  .btn-cta {
+    height: 52px;
+    padding-inline: 20px;
+    font-size: 16px;
+  }
+
+  .btn-ghost {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .btn-small,
+  .btn-sm {
+    min-height: 44px !important;
+    font-size: 14px !important;
+  }
+
+  .btn-icon-only,
+  .btn-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .btn-destructive {
+    height: 48px;
+    font-size: 15px;
+  }
+
+  .btn-text-link,
+  .btn-link {
+    min-height: 44px;
+  }
+
+  .btn-full-mobile {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .btn-group {
+    gap: 10px;
+  }
+
+  .btn-group-cta {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+}
+
+@keyframes btnSpin {
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 640px) {

@@ -59,7 +59,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             padding: '4px 0',
             transition: 'color 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#A94F0B')}
           onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
         >
           <ArrowLeft size={16} />
@@ -77,8 +77,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               display: 'inline-block',
               fontSize: '12px',
               fontWeight: 700,
-              color: '#FF5500',
-              backgroundColor: 'rgba(255, 85, 0, 0.08)',
+              color: '#A94F0B',
+              backgroundColor: 'rgba(169, 79, 11, 0.08)',
               padding: '4px 10px',
               borderRadius: '2px',
               textTransform: 'uppercase',
@@ -112,8 +112,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               flexWrap: 'wrap',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderTop: '1px solid #1e293b',
-              borderBottom: '1px solid #1e293b',
+              borderTop: '1px solid #292522',
+              borderBottom: '1px solid #292522',
               padding: '16px 0',
               gap: '16px',
             }}
@@ -124,7 +124,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  backgroundColor: '#FF5500',
+                  backgroundColor: '#A94F0B',
                   color: '#ffffff',
                   display: 'flex',
                   alignItems: 'center',
@@ -158,7 +158,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                   gap: '4px',
                   background: 'none',
                   border: 'none',
-                  color: '#FF5500',
+                  color: '#A94F0B',
                   cursor: 'pointer',
                   fontWeight: 600,
                 }}
@@ -189,7 +189,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           style={{
             backgroundColor: '#0a0a0a',
             border: '1px solid #cbd5e1',
-            borderLeft: '4px solid #FF5500',
+            borderLeft: '4px solid #A94F0B',
             borderRadius: '4px',
             padding: '24px 28px',
             marginBottom: '40px',
@@ -201,7 +201,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {article.content.keyTakeaways.map((takeaway, idx) => (
               <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: '#cbd5e1' }}>
-                <CheckCircle2 size={16} color="#FF5500" style={{ flexShrink: 0, marginTop: '3px' }} />
+                <CheckCircle2 size={16} color="#A94F0B" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <span>{takeaway}</span>
               </div>
             ))}
@@ -210,7 +210,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
 
         {/* Main Content Sections */}
         <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#cbd5e1' }}>
-          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#1e293b', marginBottom: '32px', fontWeight: 500 }}>
+          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#292522', marginBottom: '32px', fontWeight: 500 }}>
             {article.content.intro}
           </p>
 
@@ -261,7 +261,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           ))}
 
           {/* Conclusion */}
-          <div style={{ borderTop: '1px solid #1e293b', paddingTop: '28px', marginTop: '40px' }}>
+          <div style={{ borderTop: '1px solid #292522', paddingTop: '28px', marginTop: '40px' }}>
             <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>
               Final Architecture Considerations
             </h3>
@@ -270,14 +270,14 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         </div>
 
         {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #1e293b' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #292522' }}>
           {article.tags.map((t) => (
             <span
               key={t}
               style={{
                 fontSize: '12px',
                 backgroundColor: '#111827',
-                border: '1px solid #1e293b',
+                border: '1px solid #292522',
                 padding: '4px 10px',
                 borderRadius: '3px',
                 color: '#94a3b8',
@@ -290,7 +290,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
 
         {/* Related Articles Strip */}
         {relatedArticles.length > 0 && (
-          <div style={{ marginTop: '64px', borderTop: '2px solid #1e293b', paddingTop: '36px' }}>
+          <div style={{ marginTop: '64px', borderTop: '2px solid #292522', paddingTop: '36px' }}>
             <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-heading)', marginBottom: '20px' }}>
               Related Architecture Essays
             </h3>
@@ -303,22 +303,22 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   style={{
-                    border: '1px solid #1e293b',
+                    border: '1px solid #292522',
                     borderRadius: '6px',
                     padding: '20px',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#FF5500';
+                    e.currentTarget.style.borderColor = '#A94F0B';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#1e293b';
+                    e.currentTarget.style.borderColor = '#292522';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#A94F0B', textTransform: 'uppercase' }}>
                     {rel.category}
                   </span>
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', margin: '8px 0', lineHeight: 1.35 }}>

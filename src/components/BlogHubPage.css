@@ -42,10 +42,10 @@
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background-color: rgba(255, 85, 0, 0.08);
-  border: 1px solid rgba(255, 85, 0, 0.2);
+  background-color: rgba(169, 79, 11, 0.08);
+  border: 1px solid rgba(169, 79, 11, 0.2);
   border-radius: 2px;
-  color: #FF5500;
+  color: #A94F0B;
   font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
@@ -64,7 +64,7 @@
 }
 
 .b-hero__title span {
-  color: #FF5500;
+  color: #A94F0B;
 }
 
 .b-hero__description {
@@ -86,7 +86,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: #FF5500;
+  background-color: #A94F0B;
   color: #ffffff;
   padding: 14px 28px;
   font-weight: 600;
@@ -124,7 +124,7 @@
 .b-hero__media-graphic {
   width: 100%;
   height: 220px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #292522 100%);
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -181,8 +181,8 @@
 }
 
 .p-blog__search-wrap:focus-within {
-  border-color: #FF5500;
-  box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.12);
+  border-color: #A94F0B;
+  box-shadow: 0 0 0 3px rgba(169, 79, 11, 0.12);
   background-color: #ffffff;
 }
 
@@ -274,7 +274,7 @@
 }
 
 .el-tile__title:hover {
-  color: #FF5500;
+  color: #A94F0B;
 }
 
 .el-tile__description {
@@ -317,9 +317,9 @@
 }
 
 .btn-tag.is-active {
-  background-color: #FF5500;
+  background-color: #A94F0B;
   color: #ffffff;
-  border-color: #FF5500;
+  border-color: #A94F0B;
 }
 
 /* Load More Button */
@@ -388,7 +388,7 @@
   background-color: #0a0f1d;
   color: #ffffff;
   padding: clamp(64px, 8vw, 100px) 24px;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #292522;
   position: relative;
 }
 
@@ -418,7 +418,7 @@
 }
 
 .b-request__title span {
-  color: #FF5500;
+  color: #A94F0B;
 }
 
 .b-request__subtext {
@@ -430,7 +430,7 @@
 
 .b-request__card {
   background: #0f172a;
-  border: 1px solid #1e293b;
+  border: 1px solid #292522;
   border-radius: 4px;
   padding: 32px;
 }
@@ -486,8 +486,8 @@
 }
 
 .b-locations__tab-btn.is-active {
-  background-color: #FF5500;
-  border-color: #FF5500;
+  background-color: #A94F0B;
+  border-color: #A94F0B;
   color: #ffffff;
 }
 
@@ -528,7 +528,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #FF5500;
+  color: #A94F0B;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -589,11 +589,11 @@
 }
 
 .b-newsletter__input:focus {
-  border-color: #FF5500;
+  border-color: #A94F0B;
 }
 
 .b-newsletter__submit {
-  background-color: #FF5500;
+  background-color: #A94F0B;
   color: #ffffff;
   border: none;
   border-radius: 2px;
