@@ -15,7 +15,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -135,11 +135,11 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
         {/* Phase Focus Console (Not a box card) */}
         <div
           style={{
-            backgroundColor: '#0a0a0a',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
             border: '1px solid #1e293b',
             borderRadius: '10px',
             padding: 'clamp(28px, 4vw, 48px)',
-            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
+            boxShadow: '0 8px 30px rgba(32, 11, 0,  0.04)',
           }}
         >
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', alignItems: 'start' }}>
@@ -169,7 +169,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                       alignItems: 'center',
                       gap: '12px',
                       padding: '12px 16px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       borderRadius: '6px',
                       border: '1px solid #edf2f7',
                     }}

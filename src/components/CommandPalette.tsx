@@ -162,7 +162,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        backgroundColor: 'rgba(32, 11, 0,  0.85)',
         backdropFilter: 'blur(8px)',
         zIndex: 1100,
         display: 'flex',
@@ -184,7 +184,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           backgroundColor: '#0c1018',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           borderRadius: '0px',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.95)',
+          boxShadow: '0 25px 60px rgba(32, 11, 0,  0.95)',
           overflow: 'hidden',
         }}
         onClick={(e) => e.stopPropagation()}

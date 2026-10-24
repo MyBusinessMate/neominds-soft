@@ -57,7 +57,7 @@ const PageLoader: React.FC = () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000000',
+      backgroundColor: 'var(--colors-background-dark, #200b00)',
     }}
   >
     <div

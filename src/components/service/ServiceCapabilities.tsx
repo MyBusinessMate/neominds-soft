@@ -74,7 +74,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               justifyContent: 'space-between',
               boxShadow: isFeatured
                 ? '0 16px 36px rgba(15, 23, 42, 0.25)'
-                : '0 4px 12px rgba(0, 0, 0, 0.03)',
+                : '0 4px 12px rgba(32, 11, 0,  0.03)',
               position: 'relative',
               overflow: 'hidden',
               transition: 'transform 0.25s ease, box-shadow 0.25s ease',
@@ -176,11 +176,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '32px',
-          backgroundColor: '#0a0a0a',
+          backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
           border: '1px solid #1e293b',
           borderRadius: '10px',
           padding: 'clamp(20px, 3vw, 36px)',
-          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
+          boxShadow: '0 8px 30px rgba(32, 11, 0,  0.04)',
         }}
       >
         {/* Left Column: Vertical Clickable Selectors */}
@@ -243,7 +243,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         {/* Right Column: Deep Inspection Inspector Card */}
         <div
           style={{
-            backgroundColor: '#0a0a0a',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
             color: '#ffffff',
             borderRadius: '8px',
             padding: 'clamp(28px, 4vw, 44px)',
@@ -442,11 +442,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           <div
             key={idx}
             style={{
-              backgroundColor: '#0a0a0a',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #1e293b',
               borderRadius: '6px',
               padding: '24px 28px',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
+              boxShadow: '0 2px 8px rgba(32, 11, 0,  0.02)',
               borderLeft: '4px solid #FF5500',
             }}
           >
@@ -469,7 +469,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   style={{
                     fontSize: '11px',
                     fontWeight: 600,
-                    backgroundColor: '#000000',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
                     border: '1px solid #1e293b',
                     color: '#334155',
                     padding: '3px 8px',
@@ -496,7 +496,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         border: '1px solid #1a2333',
         borderRadius: '10px',
         padding: 'clamp(24px, 4vw, 44px)',
-        boxShadow: '0 20px 48px rgba(0, 0, 0, 0.4)',
+        boxShadow: '0 20px 48px rgba(32, 11, 0,  0.4)',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #1e293b', paddingBottom: '18px', marginBottom: '28px' }}>
@@ -612,11 +612,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               <div
                 style={{
                   width: 'calc(50% - 24px)',
-                  backgroundColor: '#0a0a0a',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                   border: '1px solid #1e293b',
                   borderRadius: '8px',
                   padding: '24px 28px',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
+                  boxShadow: '0 4px 14px rgba(32, 11, 0,  0.03)',
                   position: 'relative',
                 }}
               >
@@ -674,11 +674,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         <div
           key={idx}
           style={{
-            backgroundColor: '#0a0a0a',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
             border: '1px solid #edf2f7',
             borderRadius: '8px',
             padding: '24px',
-            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+            boxShadow: '0 2px 6px rgba(32, 11, 0,  0.02)',
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
@@ -689,7 +689,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           onMouseLeave={(e) => {
             e.currentTarget.style.borderColor = '#edf2f7';
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.02)';
+            e.currentTarget.style.boxShadow = '0 2px 6px rgba(32, 11, 0,  0.02)';
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
@@ -724,7 +724,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 style={{
                   fontSize: '11px',
                   fontWeight: 500,
-                  backgroundColor: '#000000',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
                   border: '1px solid #1e293b',
                   color: '#94a3b8',
                   padding: '3px 8px',

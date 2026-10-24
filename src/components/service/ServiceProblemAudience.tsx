@@ -20,7 +20,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
     <section
       style={{
         padding: 'clamp(56px, 7vw, 92px) 24px',
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
         borderBottom: '1px solid #1e293b',
       }}
     >
@@ -82,7 +82,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1px solid #1e293b',
                       borderRadius: '8px',
                       padding: '28px 24px',
@@ -99,7 +99,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                           alignItems: 'center',
                           gap: '6px',
                           padding: '4px 10px',
-                          backgroundColor: '#0a0a0a',
+                          backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                           border: '1px solid #334155',
                           borderRadius: '4px',
                           fontSize: '12px',

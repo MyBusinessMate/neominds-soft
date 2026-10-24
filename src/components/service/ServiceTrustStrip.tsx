@@ -20,7 +20,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
   return (
     <section
       style={{
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         borderBottom: '1px solid #1e293b',
         padding: '36px 24px',
       }}

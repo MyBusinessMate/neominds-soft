@@ -194,7 +194,7 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
     <section
       className={`leadership-carousel-section ${className}`}
       style={{
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         padding: '96px 0 112px',
         position: 'relative',
         overflow: 'hidden',
@@ -248,14 +248,14 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
               width: '46px',
               height: '46px',
               borderRadius: '50%',
-              backgroundColor: '#0A0A0A',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #fe6200',
               color: canScrollLeft ? '#fe6200' : '#52525B',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: canScrollLeft ? 'pointer' : 'default',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+              boxShadow: '0 4px 16px rgba(32, 11, 0,  0.4)',
               transition: 'all 0.25s ease',
               opacity: canScrollLeft ? 1 : 0.35,
               transform: 'translateY(-50%)',
@@ -263,12 +263,12 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
             onMouseEnter={(e) => {
               if (canScrollLeft) {
                 e.currentTarget.style.backgroundColor = '#fe6200';
-                e.currentTarget.style.color = '#000000';
+                e.currentTarget.style.color = '#ffffff';
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#0A0A0A';
+              e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
               e.currentTarget.style.color = canScrollLeft ? '#fe6200' : '#52525B';
               e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
             }}
@@ -290,14 +290,14 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
               width: '46px',
               height: '46px',
               borderRadius: '50%',
-              backgroundColor: '#0A0A0A',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #fe6200',
               color: canScrollRight ? '#fe6200' : '#52525B',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: canScrollRight ? 'pointer' : 'default',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+              boxShadow: '0 4px 16px rgba(32, 11, 0,  0.4)',
               transition: 'all 0.25s ease',
               opacity: canScrollRight ? 1 : 0.35,
               transform: 'translateY(-50%)',
@@ -305,12 +305,12 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
             onMouseEnter={(e) => {
               if (canScrollRight) {
                 e.currentTarget.style.backgroundColor = '#fe6200';
-                e.currentTarget.style.color = '#000000';
+                e.currentTarget.style.color = '#ffffff';
                 e.currentTarget.style.transform = 'translateY(-50%) scale(1.08)';
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#0A0A0A';
+              e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
               e.currentTarget.style.color = canScrollRight ? '#fe6200' : '#52525B';
               e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
             }}
@@ -357,9 +357,9 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                     height: '380px',
                     borderRadius: '24px',
                     overflow: 'hidden',
-                    background: '#0A0A0A',
+                    background: 'var(--colors-surface-dark-subtle, #351505)',
                     border: '1px solid #1F1F23',
-                    boxShadow: '0 12px 28px rgba(0, 0, 0, 0.6)',
+                    boxShadow: '0 12px 28px rgba(32, 11, 0,  0.6)',
                     cursor: 'pointer',
                     transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease',
                   }}
@@ -370,8 +370,8 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.6)';
-                    e.currentTarget.style.borderColor = '#1F1F23';
+                    e.currentTarget.style.boxShadow = '0 12px 28px rgba(32, 11, 0,  0.6)';
+                    e.currentTarget.style.borderColor = 'var(--colors-border-dark, #351505)';
                   }}
                 >
                   {/* Portrait Person Crop */}
@@ -395,7 +395,7 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                     }}
                   />
 
-                  {/* LinkedIn Icon Badge matching strict 3-color system: black background, orange border, orange icon */}
+                  {/* LinkedIn Icon Badge matching strict 3-color system */}
                   <a
                     href={leader.linkedin}
                     target="_blank"
@@ -408,13 +408,13 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                       right: '18px',
                       width: '38px',
                       height: '38px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1.5px solid #fe6200',
                       borderRadius: '8px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+                      boxShadow: '0 4px 12px rgba(32, 11, 0, 0.4)',
                       transition: 'transform 0.2s ease, background-color 0.2s ease',
                       textDecoration: 'none',
                       zIndex: 5,
@@ -423,10 +423,10 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                       e.currentTarget.style.backgroundColor = '#fe6200';
                       e.currentTarget.style.transform = 'scale(1.1)';
                       const svg = e.currentTarget.querySelector('svg');
-                      if (svg) svg.style.fill = '#000000';
+                      if (svg) svg.style.fill = '#ffffff';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#000000';
+                      e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
                       e.currentTarget.style.transform = 'scale(1)';
                       const svg = e.currentTarget.querySelector('svg');
                       if (svg) svg.style.fill = '#fe6200';

@@ -152,7 +152,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. HERO HEADER
           ======================================================== */}
@@ -160,7 +160,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
           background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          borderBottom: '1px solid #292522',
+          borderBottom: '1px solid #351505',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -203,13 +203,13 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 style={{
                   width: '100%',
                   padding: '12px 16px 12px 46px',
-                  backgroundColor: '#000000',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
                   border: '1px solid #cbd5e1',
                   borderRadius: '4px',
                   fontSize: '14px',
                   color: '#ffffff',
                   outline: 'none',
-                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
+                  boxShadow: '0 2px 6px rgba(32, 11, 0,  0.03)',
                 }}
               />
             </div>
@@ -242,14 +242,14 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: '#0a0a0a',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                 border: '1px solid #1F1F23',
                 color: '#ffffff',
                 borderRadius: '8px',
                 overflow: 'hidden',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                boxShadow: '0 16px 36px rgba(0, 0, 0, 0.4)',
+                boxShadow: '0 16px 36px rgba(32, 11, 0,  0.4)',
               }}
             >
               {/* Visual Header */}
@@ -325,8 +325,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               <RevealElement key={post.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <article
                   style={{
-                    backgroundColor: '#000000',
-                    border: '1px solid #292522',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
+                    border: '1px solid #351505',
                     borderRadius: '6px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -343,7 +343,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.06)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#292522';
+                  e.currentTarget.style.borderColor = '#351505';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
@@ -372,7 +372,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                     </p>
                   </div>
 
-                  <div style={{ borderTop: '1px solid #292522', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid #351505', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <div style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>{post.author}</div>
                       <div style={{ fontSize: '11px', color: '#94a3b8' }}>{post.date}</div>
@@ -395,7 +395,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           4. NEWSLETTER SUBSCRIPTION STRIP
           ======================================================== */}
       <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
+        <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead

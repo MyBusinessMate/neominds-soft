@@ -55,7 +55,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
       id="service-contact"
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         borderTop: '1px solid #1e293b',
       }}
     >
@@ -63,11 +63,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
         <RevealElement variant="card">
           <div
             style={{
-              backgroundColor: '#0a0a0a',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #1e293b',
               borderRadius: '8px',
               padding: 'clamp(28px, 4vw, 48px)',
-              boxShadow: '0 12px 32px rgba(0, 0, 0, 0.05)',
+              boxShadow: '0 12px 32px rgba(32, 11, 0,  0.05)',
             }}
           >
             <div style={{ textAlign: 'center', marginBottom: '32px' }}>
@@ -107,7 +107,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -131,7 +131,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -156,7 +156,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -177,7 +177,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'var(--colors-background-dark, #200b00)',
                       border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
@@ -206,7 +206,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                   style={{
                     width: '100%',
                     padding: '12px 14px',
-                    backgroundColor: '#000000',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
                     border: '1px solid #334155',
                     borderRadius: '4px',
                     fontSize: '14px',

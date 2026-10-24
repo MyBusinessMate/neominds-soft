@@ -1,12 +1,12 @@
 /* ==========================================================================
    AI SERVICES PAGE (Bespoke Ultra-Sharp Dark Aesthetic)
-   Strict Sharp Edges (0px border-radius) & Full Black Surface Blending
+   Strict Sharp Edges (0px border-radius) & Full Dark Brown Surface Blending
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 .ai-page-wrapper {
-  background-color: #000000;
+  background-color: var(--colors-background-dark, #200b00);
   color: #fafafa;
   font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
@@ -35,7 +35,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 18px 48px;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(32, 11, 0,  0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgb(38, 38, 38);
@@ -147,7 +147,7 @@
   text-align: center;
   padding: 130px 24px 80px 24px;
   overflow: hidden;
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
 }
 
 .ai-hero-video-bg {
@@ -165,8 +165,8 @@
 .ai-hero-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.8) 65%, #000000 100%),
-              linear-gradient(to bottom, transparent 65%, #000000 100%);
+  background: radial-gradient(circle at 50% 35%, rgba(32, 11, 0, 0.15) 0%, rgba(32, 11, 0, 0.8) 65%, var(--colors-background-dark, #200b00) 100%),
+              linear-gradient(to bottom, transparent 65%, var(--colors-background-dark, #200b00) 100%);
   z-index: 2;
   pointer-events: none;
 }
@@ -246,7 +246,7 @@
 }
 
 .ai-btn-primary:hover {
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   color: #ffffff;
 }
 
@@ -283,7 +283,7 @@
    -------------------------------------------------------------------------- */
 .ai-marquee-section {
   padding: 50px 0 60px 0;
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgb(25, 25, 25);
@@ -294,8 +294,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, white 12%, white 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, white 12%, white 88%, transparent);
 }
 
 .ai-marquee-track {
@@ -347,7 +347,7 @@
   justify-content: flex-start;
   padding: 96px 0;
   width: 100%;
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   position: relative;
   overflow: hidden;
 }
@@ -436,7 +436,7 @@
   display: grid;
   grid-template-columns: 360px 1fr;
   border: 1px solid rgb(45, 45, 45);
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   border-radius: 0 !important;
   overflow: hidden;
 }
@@ -446,7 +446,7 @@
   display: flex;
   flex-direction: column;
   border-right: 1px solid rgb(45, 45, 45);
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
 }
 
 .ai-pillar-tab-btn {
@@ -454,7 +454,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 32px 28px;
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   border: none;
   border-bottom: 1px solid rgb(45, 45, 45);
   color: rgba(255, 255, 255, 0.55);
@@ -501,7 +501,7 @@
 
 /* Right Content: Directly integrated inside the frame (NO nested card) */
 .ai-pillars-content-col {
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -621,7 +621,7 @@
   max-height: 420px;
   object-fit: contain;
   border: 1px solid rgb(40, 40, 40);
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   border-radius: 0 !important;
 }
 
@@ -930,7 +930,7 @@
    8. Dark Sharp Footer
    -------------------------------------------------------------------------- */
 .ai-footer {
-  background: #000000;
+  background: var(--colors-background-dark, #200b00);
   border-top: 1px solid rgb(35, 35, 35);
   padding: 80px 48px 40px 48px;
   margin-top: 80px;

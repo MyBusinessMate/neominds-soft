@@ -309,7 +309,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to right, rgba(0, 0, 0, 0.25) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, transparent 35%)',
+                    background: 'linear-gradient(to right, rgba(32, 11, 0,  0.25) 0%, transparent 45%), linear-gradient(to top, rgba(32, 11, 0,  0.4) 0%, transparent 35%)',
                     pointerEvents: 'none',
                   }}
                 />

@@ -54,7 +54,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
           <RevealElement variant="card">
             <div
               style={{
-                backgroundColor: '#000000',
+                backgroundColor: 'var(--colors-background-dark, #200b00)',
                 borderLeft: '4px solid #FF5500',
                 borderTop: '1px solid #1e293b',
                 borderRight: '1px solid #1e293b',

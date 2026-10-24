@@ -181,7 +181,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 boxSizing: 'border-box',
-                boxShadow: '0 12px 32px rgba(0, 0, 0, 0.4)',
+                boxShadow: '0 12px 32px rgba(32, 11, 0,  0.4)',
                 position: 'relative',
               }}
             >

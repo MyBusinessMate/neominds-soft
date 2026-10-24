@@ -66,7 +66,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
 
   return (
-    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           HERO SECTION
           ======================================================== */}
@@ -141,8 +141,8 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 color: '#ffffff',
                 fontSize: '15px',
                 fontWeight: 600,
-                backgroundColor: '#0a0a0a',
-                border: '1px solid #292522',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                border: '1px solid #351505',
                 padding: '12px 24px',
                 borderRadius: '0px',
                 textDecoration: 'none',
@@ -162,8 +162,8 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 color: '#ffffff',
                 fontSize: '15px',
                 fontWeight: 600,
-                backgroundColor: '#0a0a0a',
-                border: '1px solid #292522',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                border: '1px solid #351505',
                 padding: '12px 24px',
                 borderRadius: '0px',
                 textDecoration: 'none',
@@ -180,7 +180,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
       {/* ========================================================
           SPLIT RFP FORM & PROCESS ASIDE
           ======================================================== */}
-      <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto', borderTop: '1px solid #292522' }}>
+      <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto', borderTop: '1px solid #351505' }}>
         <div
           style={{
             display: 'grid',
@@ -190,7 +190,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
         >
           {/* Main Form */}
           <RevealElement variant="card" start="top 90%" end="top 65%">
-            <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '0px', padding: 'clamp(24px, 4vw, 40px)', height: '100%' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: 'clamp(24px, 4vw, 40px)', height: '100%' }}>
               <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Contact us</h2>
               <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '28px' }}>Our team would love to hear from you.</p>
 
@@ -203,7 +203,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your project, deadline, tech stack and team size if known..."
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', resize: 'vertical', outline: 'none' }}
+                    style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', resize: 'vertical', outline: 'none' }}
                   />
                 </div>
 
@@ -216,7 +216,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                   <div>
@@ -227,7 +227,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                 </div>
@@ -240,7 +240,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                   <div>
@@ -250,7 +250,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                       placeholder="Acme Corp"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                 </div>
@@ -261,7 +261,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     >
                       <option value="New product development">New product development</option>
                       <option value="AI integration or automation">AI integration or automation</option>
@@ -276,7 +276,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #292522', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     >
                       <option value="">Select range...</option>
                       <option value="Under $5,000">Under $5,000</option>
@@ -403,7 +403,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
       {/* ========================================================
           OUR OFFICE / HEADQUARTERS
           ======================================================== */}
-      <section style={{ padding: '60px 24px 80px', backgroundColor: '#050505', borderTop: '1px solid #292522', borderBottom: '1px solid #292522' }}>
+      <section style={{ padding: '60px 24px 80px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #351505', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '32px' }}>
             <ScrollReveal
@@ -424,8 +424,8 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             <RevealElement variant="card" start="top 92%" end="top 65%">
               <div
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderLeft: '4px solid #fe6200',
                   borderRadius: '0px',
                   padding: '32px',
@@ -462,7 +462,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
                 <div
                   style={{
-                    borderTop: '1px solid #292522',
+                    borderTop: '1px solid #351505',
                     paddingTop: '16px',
                     display: 'flex',
                     flexDirection: 'column',

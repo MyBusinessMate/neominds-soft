@@ -41,7 +41,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
               t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#fe6200'
             }`,
             padding: '16px',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6)',
+            boxShadow: '0 10px 30px rgba(32, 11, 0,  0.6)',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'flex-start',

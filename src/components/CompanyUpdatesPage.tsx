@@ -40,7 +40,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. HEADER SECTION
           ======================================================== */}
@@ -48,7 +48,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
           background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          borderBottom: '1px solid #292522',
+          borderBottom: '1px solid #351505',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -109,11 +109,11 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
             <RevealElement key={update.id} variant="card" delay={idx * 0.1} start="top 90%" end="top 65%">
               <div
                 style={{
-                  backgroundColor: '#000000',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
+                  border: '1px solid #351505',
                   borderRadius: '8px',
                   overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                  boxShadow: '0 4px 20px rgba(32, 11, 0,  0.05)',
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                 }}
@@ -132,14 +132,14 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
+                      background: 'linear-gradient(180deg, rgba(32, 11, 0, 0.1) 0%, rgba(32, 11, 0, 0.7) 100%)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       padding: '24px',
                     }}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', border: '1px solid #fe6200', color: '#fe6200', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #fe6200', color: '#fe6200', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
                       {update.type}
                     </span>
 
@@ -174,7 +174,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     </p>
 
                     {/* Key Highlights */}
-                    <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #292522', borderRadius: '4px', padding: '16px', marginBottom: '20px' }}>
+                    <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '4px', padding: '16px', marginBottom: '20px' }}>
                       <div style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
                         Key Announcement Highlights
                       </div>
@@ -199,7 +199,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     )}
                   </div>
 
-                  <div style={{ borderTop: '1px solid #292522', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid #351505', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontSize: '13px', color: '#94a3b8' }}>
                       {update.content.nextSteps}
                     </span>
@@ -223,7 +223,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
       {/* ========================================================
           3. PRESS & MEDIA CONTACT STRIP
           ======================================================== */}
-      <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
           <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
             Media & Investor Relations

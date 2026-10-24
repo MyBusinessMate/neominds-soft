@@ -73,10 +73,10 @@ export const CinematicScroll: React.FC<CinematicScrollProps> = ({
                   Math.sin(((blurLayers - (i + 1)) / blurLayers) * Math.PI / 2) *
                   blurMax
                 }px) contrast(1.1) brightness(1.05)`,
-                maskImage: `linear-gradient(to bottom, black, transparent ${
+                maskImage: `linear-gradient(to bottom, white, transparent ${
                   ((i + 1) / blurLayers) * 100
                 }%)`,
-                WebkitMaskImage: `linear-gradient(to bottom, black, transparent ${
+                WebkitMaskImage: `linear-gradient(to bottom, white, transparent ${
                   ((i + 1) / blurLayers) * 100
                 }%)`,
               }}
@@ -103,10 +103,10 @@ export const CinematicScroll: React.FC<CinematicScrollProps> = ({
                   Math.sin(((blurLayers - (i + 1)) / blurLayers) * Math.PI / 2) *
                   blurMax
                 }px) contrast(1.1) brightness(1.05)`,
-                maskImage: `linear-gradient(to bottom, black, transparent ${
+                maskImage: `linear-gradient(to bottom, white, transparent ${
                   ((i + 1) / blurLayers) * 100
                 }%)`,
-                WebkitMaskImage: `linear-gradient(to bottom, black, transparent ${
+                WebkitMaskImage: `linear-gradient(to bottom, white, transparent ${
                   ((i + 1) / blurLayers) * 100
                 }%)`,
               }}
@@ -174,10 +174,10 @@ export const CinematicScroll: React.FC<CinematicScrollProps> = ({
                 Math.sin(((blurLayers - (i + 1)) / blurLayers) * Math.PI / 2) *
                 blurMax
               }px) contrast(1.2) brightness(1.1)`,
-              maskImage: `linear-gradient(to bottom, black, transparent ${
+              maskImage: `linear-gradient(to bottom, white, transparent ${
                 ((i + 1) / blurLayers) * 100
               }%)`,
-              WebkitMaskImage: `linear-gradient(to bottom, black, transparent ${
+              WebkitMaskImage: `linear-gradient(to bottom, white, transparent ${
                 ((i + 1) / blurLayers) * 100
               }%)`,
             }}
@@ -204,10 +204,10 @@ export const CinematicScroll: React.FC<CinematicScrollProps> = ({
                 Math.sin(((blurLayers - (i + 1)) / blurLayers) * Math.PI / 2) *
                 blurMax
               }px) contrast(1.2) brightness(1.1)`,
-              maskImage: `linear-gradient(to bottom, black, transparent ${
+              maskImage: `linear-gradient(to bottom, white, transparent ${
                 ((i + 1) / blurLayers) * 100
               }%)`,
-              WebkitMaskImage: `linear-gradient(to bottom, black, transparent ${
+              WebkitMaskImage: `linear-gradient(to bottom, white, transparent ${
                 ((i + 1) / blurLayers) * 100
               }%)`,
             }}

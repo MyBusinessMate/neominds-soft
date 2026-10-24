@@ -214,7 +214,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
         position: 'relative',
         width: '100%',
         height: shouldStack ? 'auto' : '100vh',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         overflow: shouldStack ? 'visible' : 'hidden',
         display: 'flex',
         flexDirection: shouldStack ? 'column' : 'row',
@@ -425,7 +425,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      filter: 'drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5))',
+                      filter: 'drop-shadow(0 24px 48px rgba(32, 11, 0,  0.5))',
                     }}
                   >
                     <svg width="240" height="200" viewBox="0 0 200 170" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -456,7 +456,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
                       color: '#ffffff',
                       letterSpacing: '0.04em',
                       fontFamily: 'var(--font-heading)',
-                      textShadow: '0 6px 24px rgba(0, 0, 0, 0.45)',
+                      textShadow: '0 6px 24px rgba(32, 11, 0,  0.45)',
                     }}
                   >
                     DATASTREAM

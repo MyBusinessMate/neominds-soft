@@ -264,11 +264,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
@@ -383,11 +383,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 variant="card"
                 delay={idx * 0.05}
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderRadius: '12px',
                   padding: '24px',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
+                  boxShadow: '0 4px 12px rgba(32, 11, 0,  0.4)',
                 }}
               >
                 <div style={{ width: '44px', height: '44px', borderRadius: '10px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
@@ -408,7 +408,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           3. WHAT WE BUILD (4 CARDS)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '44px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -424,10 +424,10 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #292522',
+                  border: '1px solid #351505',
                   borderRadius: '12px',
                   padding: '30px',
-                  backgroundColor: '#0a0a0a',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -435,7 +435,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#111827', border: '1px solid #292522', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {item.icon}
                     </div>
                     <span style={{ fontSize: '11px', fontWeight: 600, color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.12)', padding: '3px 8px', borderRadius: '4px' }}>
@@ -458,7 +458,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           5. SERVICES WE OFFER (NUMBERED LIST)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -478,8 +478,8 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 key={idx}
                 onClick={() => handleServiceClick(service.slug)}
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderRadius: '12px',
                   padding: '24px',
                   cursor: 'pointer',
@@ -487,7 +487,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   gap: '18px',
                   alignItems: 'flex-start',
                   transition: 'all 0.25s ease',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+                  boxShadow: '0 2px 8px rgba(32, 11, 0,  0.4)',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#fe6200';
@@ -495,9 +495,9 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#292522';
+                  e.currentTarget.style.borderColor = '#351505';
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.4)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(32, 11, 0,  0.4)';
                 }}
               >
                 <div style={{ fontSize: '16px', fontWeight: 800, color: '#fe6200', fontFamily: 'monospace' }}>
@@ -523,7 +523,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           6. INDUSTRIES WE BUILD FOR
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
             <div>
@@ -562,10 +562,10 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #292522',
+                  border: '1px solid #351505',
                   borderRadius: '10px',
                   padding: '24px',
-                  backgroundColor: '#0a0a0a',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                 }}
               >
                 <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
@@ -583,7 +583,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           8. TECHNOLOGIES WE USE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000', borderTop: '1px solid #292522' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -602,8 +602,8 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderRadius: '8px',
                   padding: '20px',
                 }}

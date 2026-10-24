@@ -12,7 +12,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#0a0a0a',
+        backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
         borderTop: '1px solid #1e293b',
         borderBottom: '1px solid #1e293b',
       }}

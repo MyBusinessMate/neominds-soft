@@ -160,7 +160,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
@@ -261,7 +261,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       {/* ========================================================
           3. INDUSTRIES WE BUILD FOR (6 INDUSTRIES)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#0a0a0a' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -282,8 +282,8 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 variant="card"
                 delay={idx * 0.05}
                 style={{
-                  backgroundColor: '#000000',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
+                  border: '1px solid #351505',
                   borderRadius: '12px',
                   padding: '32px',
                   boxShadow: '0 4px 12px rgba(15, 23, 42, 0.04)',
@@ -328,7 +328,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   onClick={handleEstimateClick}
                   style={{
                     width: '100%',
-                    backgroundColor: '#0a0a0a',
+                    backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                     border: '1px solid #cbd5e1',
                     borderRadius: '6px',
                     padding: '10px',
@@ -365,7 +365,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       {/* ========================================================
           4. TECHNOLOGIES WE USE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#000000', borderTop: '1px solid #292522' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -384,8 +384,8 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderRadius: '8px',
                   padding: '20px',
                 }}

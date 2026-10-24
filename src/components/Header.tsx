@@ -207,9 +207,9 @@ export const Header: React.FC<HeaderProps> = ({
             height: isScrolled ? '46px' : '64px',
             borderRadius: isScrolled ? '4px' : '0px',
             backgroundColor: isScrolled
-              ? 'rgba(21, 23, 27, 0.88)'
+              ? 'rgba(32, 11, 0, 0.88)'
               : activeMenu
-              ? 'rgba(21, 23, 27, 0.98)'
+              ? 'rgba(32, 11, 0, 0.98)'
               : 'transparent',
             backdropFilter: isScrolled || activeMenu ? 'blur(25px)' : 'none',
             borderTop: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
@@ -217,7 +217,7 @@ export const Header: React.FC<HeaderProps> = ({
             borderRight: isScrolled ? '1px solid rgba(255, 255, 255, 0.1)' : 'none',
             borderBottom: isScrolled || activeMenu ? '1px solid rgba(255, 255, 255, 0.12)' : 'none',
             boxShadow: isScrolled
-              ? '0 16px 36px rgba(0, 0, 0, 0.65)'
+              ? '0 16px 36px rgba(32, 11, 0, 0.65)'
               : 'none',
             display: 'flex',
             alignItems: 'center',
@@ -518,9 +518,9 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#000000',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
+              boxShadow: '0 24px 48px rgba(32, 11, 0, 0.7)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
@@ -701,9 +701,9 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#000000',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
+              boxShadow: '0 24px 48px rgba(32, 11, 0, 0.7)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
@@ -882,9 +882,9 @@ export const Header: React.FC<HeaderProps> = ({
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: isScrolled ? '6px' : '0px',
               border: '1px solid rgba(255, 255, 255, 0.15)',
-              backgroundColor: '#000000',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '0 24px 48px rgba(0, 0, 0, 0.7)',
+              boxShadow: '0 24px 48px rgba(32, 11, 0, 0.7)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
@@ -901,7 +901,7 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-                backgroundColor: '#000000',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                 borderRight: '1px solid rgba(255, 255, 255, 0.08)',
               }}
             >
@@ -946,7 +946,7 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: '#0c0f17',
+                background: 'var(--colors-background-dark, #200b00)',
                 borderLeft: '1px solid rgba(255, 255, 255, 0.08)',
               }}
 
@@ -1034,7 +1034,7 @@ export const Header: React.FC<HeaderProps> = ({
             bottom: 0,
             width: '100vw',
             height: '100dvh',
-            backgroundColor: '#0c0e12',
+            backgroundColor: 'var(--colors-background-dark, #200b00)',
             zIndex: 99999,
             display: 'flex',
             flexDirection: 'column',

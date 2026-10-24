@@ -69,7 +69,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   return (
     <article
       style={{
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         color: '#ffffff',
         minHeight: '100vh',
         paddingTop: '80px',
@@ -83,8 +83,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       <nav
         aria-label="Breadcrumbs"
         style={{
-          borderBottom: '1px solid #292522',
-          backgroundColor: 'rgba(0, 0, 0, 0.95)',
+          borderBottom: '1px solid #351505',
+          backgroundColor: 'rgba(32, 11, 0,  0.95)',
           backdropFilter: 'blur(12px)',
           position: 'sticky',
           top: '64px',
@@ -158,7 +158,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             aria-label="Share this project case study"
             style={{
               background: '#f8fafc',
-              border: '1px solid #292522',
+              border: '1px solid #351505',
               color: '#cbd5e1',
               borderRadius: '6px',
               padding: '6px 12px',
@@ -242,7 +242,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               fontWeight: 600,
               color: copied ? '#15803d' : '#0f172a',
               backgroundColor: copied ? '#f0fdf4' : '#f8fafc',
-              border: copied ? '1px solid #86efac' : '1px solid #292522',
+              border: copied ? '1px solid #86efac' : '1px solid #351505',
               borderRadius: '4px',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
@@ -269,7 +269,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         <div
           style={{
             backgroundColor: '#fafafa',
-            border: '1px solid #292522',
+            border: '1px solid #351505',
             borderRadius: '8px',
             padding: 'clamp(20px, 3vw, 32px)',
           }}
@@ -285,7 +285,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               color: '#ffffff',
               marginBottom: '20px',
               paddingBottom: '12px',
-              borderBottom: '1px solid #292522',
+              borderBottom: '1px solid #351505',
             }}
           >
             Project Overview
@@ -568,7 +568,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           <div
             style={{
               backgroundColor: '#fafafa',
-              border: '1px solid #292522',
+              border: '1px solid #351505',
               borderRadius: '8px',
               padding: '28px',
               marginBottom: '32px',
@@ -651,10 +651,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             >
               <div
                 style={{
-                  border: '1px solid #292522',
+                  border: '1px solid #351505',
                   borderRadius: '6px',
                   padding: '16px',
-                  backgroundColor: '#000000',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
@@ -670,10 +670,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
               <div
                 style={{
-                  border: '1px solid #292522',
+                  border: '1px solid #351505',
                   borderRadius: '6px',
                   padding: '16px',
-                  backgroundColor: '#000000',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
@@ -689,10 +689,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
               <div
                 style={{
-                  border: '1px solid #292522',
+                  border: '1px solid #351505',
                   borderRadius: '6px',
                   padding: '16px',
-                  backgroundColor: '#000000',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
@@ -709,10 +709,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.aiAutomation && (
                 <div
                   style={{
-                    border: '1px solid #292522',
+                    border: '1px solid #351505',
                     borderRadius: '6px',
                     padding: '16px',
-                    backgroundColor: '#000000',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
@@ -730,10 +730,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.integrations && (
                 <div
                   style={{
-                    border: '1px solid #292522',
+                    border: '1px solid #351505',
                     borderRadius: '6px',
                     padding: '16px',
-                    backgroundColor: '#000000',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
                     gridColumn: '1 / -1',
                   }}
                 >
@@ -798,7 +798,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               marginBottom: '20px',
             }}
           >
-            <div style={{ border: '1px solid #292522', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid #351505', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Efficiency
               </div>
@@ -807,7 +807,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #292522', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid #351505', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Time Saved
               </div>
@@ -816,7 +816,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #292522', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid #351505', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Cost Reduction
               </div>
@@ -825,7 +825,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #292522', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid #351505', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Performance
               </div>
@@ -834,7 +834,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #292522', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa', gridColumn: '1 / -1' }}>
+            <div style={{ border: '1px solid #351505', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa', gridColumn: '1 / -1' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#94a3b8', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Business Impact
               </div>
@@ -888,8 +888,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
           <div
             style={{
-              backgroundColor: '#0a0a0a',
-              border: '1px solid #292522',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+              border: '1px solid #351505',
               borderLeft: '4px solid #fe6200',
               borderRadius: '6px',
               padding: '24px',
@@ -899,7 +899,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontSize: '16.5px',
                 lineHeight: 1.65,
-                color: '#292522',
+                color: '#351505',
                 fontStyle: 'italic',
                 margin: 0,
               }}
@@ -914,14 +914,14 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             ---------------------------------------------------- */}
         <section
           style={{
-            borderTop: '1px solid #292522',
+            borderTop: '1px solid #351505',
             paddingTop: '48px',
             marginBottom: '64px',
           }}
         >
           <div
             style={{
-              backgroundColor: '#0a0a0a',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #1F1F23',
               color: '#ffffff',
               borderRadius: '8px',
@@ -988,7 +988,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   transition: 'background-color 0.15s, transform 0.15s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#292522';
+                  e.currentTarget.style.backgroundColor = '#351505';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#ffffff';
@@ -1025,8 +1025,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 key={idx}
                 onClick={() => onNavigatePage(service.slug)}
                 style={{
-                  backgroundColor: '#000000',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
+                  border: '1px solid #351505',
                   color: '#ffffff',
                   fontSize: '13.5px',
                   fontWeight: 600,
@@ -1044,7 +1044,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   e.currentTarget.style.backgroundColor = '#f8fafc';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#292522';
+                  e.currentTarget.style.borderColor = '#351505';
                   e.currentTarget.style.backgroundColor = '#ffffff';
                 }}
               >
@@ -1086,8 +1086,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   key={p.id}
                   onClick={() => onNavigatePage('project', p.id)}
                   style={{
-                    backgroundColor: '#000000',
-                    border: '1px solid #292522',
+                    backgroundColor: 'var(--colors-background-dark, #200b00)',
+                    border: '1px solid #351505',
                     borderRadius: '6px',
                     padding: '20px',
                     cursor: 'pointer',
@@ -1102,7 +1102,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#292522';
+                    e.currentTarget.style.borderColor = '#351505';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -1160,9 +1160,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.95)',
+          backgroundColor: 'rgba(32, 11, 0,  0.95)',
           backdropFilter: 'blur(10px)',
-          borderTop: '1px solid #292522',
+          borderTop: '1px solid #351505',
           padding: '12px 20px calc(12px + env(safe-area-inset-bottom, 0px))',
           display: 'flex',
           alignItems: 'center',

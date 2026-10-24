@@ -153,7 +153,7 @@ const ExperienceSectionComponent: React.FC = () => {
                   display: 'inline-block',
                   marginRight: '0.28em',
                   opacity: 0.2,
-                  color: 'rgba(0, 0, 0, 0.25)',
+                  color: 'rgba(32, 11, 0,  0.25)',
                   willChange: 'opacity, color, transform',
                 }}
               >

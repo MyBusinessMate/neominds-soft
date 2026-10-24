@@ -50,7 +50,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
   );
 
   return (
-    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           HERO SECTION
           ======================================================== */}
@@ -146,15 +146,15 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
         <RevealElement variant="card" start="top 90%" end="top 60%">
           <div
             style={{
-              backgroundColor: '#0a0a0a',
-              border: '1px solid #292522',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+              border: '1px solid #351505',
               borderRadius: '8px',
               padding: '28px',
-              boxShadow: '0 20px 48px rgba(0, 0, 0, 0.4)',
+              boxShadow: '0 20px 48px rgba(32, 11, 0,  0.4)',
               position: 'relative',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid #292522', paddingBottom: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid #351505', paddingBottom: '12px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span style={{ width: '8px', height: '8px', backgroundColor: '#16a34a' }} />
                 <span style={{ fontSize: '11px', color: '#16a34a', fontFamily: 'monospace', fontWeight: 700, letterSpacing: '0.04em' }}>
@@ -167,17 +167,17 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '20px' }}>
-              <div style={{ backgroundColor: '#111827', border: '1px solid #292522', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #fe6200' }}>
+              <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #fe6200' }}>
                 <div style={{ fontSize: '32px', fontWeight: 800, color: '#fe6200', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>1,000+</div>
                 <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '4px', fontWeight: 500 }}>Successful Products Delivered</div>
               </div>
-              <div style={{ backgroundColor: '#111827', border: '1px solid #292522', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #16a34a' }}>
+              <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #16a34a' }}>
                 <div style={{ fontSize: '32px', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>52%</div>
                 <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '4px', fontWeight: 500 }}>Clients Partnering &gt; 4 Years</div>
               </div>
             </div>
 
-            <div style={{ backgroundColor: '#111827', border: '1px solid #292522', padding: '16px 20px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '16px 20px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
                 <div style={{ fontSize: '12px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>Top Vertical Specializations</div>
                 <div style={{ fontSize: '15px', fontWeight: 700, color: '#ffffff', marginTop: '4px' }}>Fintech, HealthTech, AI & Automotive</div>
@@ -196,9 +196,9 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
       <section
         id="portfolio-grid"
         style={{
-          borderTop: '1px solid #292522',
-          borderBottom: '1px solid #292522',
-          backgroundColor: '#050505',
+          borderTop: '1px solid #351505',
+          borderBottom: '1px solid #351505',
+          backgroundColor: 'var(--colors-background-dark, #200b00)',
           padding: '16px 24px',
           position: 'sticky',
           top: '68px',
@@ -231,7 +231,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                   fontWeight: 600,
                   padding: '8px 18px',
                   borderRadius: '4px',
-                  border: activeFilter === filter ? '1px solid #fe6200' : '1px solid #292522',
+                  border: activeFilter === filter ? '1px solid #fe6200' : '1px solid #351505',
                   cursor: 'pointer',
                   transition: 'all 0.18s',
                 }}
@@ -264,8 +264,8 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
               <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <div
                   style={{
-                    backgroundColor: '#0a0a0a',
-                    border: isExpanded ? '2px solid #fe6200' : '1px solid #292522',
+                    backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                    border: isExpanded ? '2px solid #fe6200' : '1px solid #351505',
                     borderRadius: '8px',
                     padding: '28px',
                     display: 'flex',
@@ -274,7 +274,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                     transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
                     position: 'relative',
                     overflow: 'hidden',
-                    boxShadow: isExpanded ? '0 16px 36px rgba(254, 98, 0, 0.12)' : '0 4px 16px rgba(0, 0, 0, 0.2)',
+                    boxShadow: isExpanded ? '0 16px 36px rgba(254, 98, 0, 0.12)' : '0 4px 16px rgba(32, 11, 0,  0.2)',
                   }}
                   onMouseEnter={(e) => {
                     if (!isExpanded) {
@@ -286,8 +286,8 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                   onMouseLeave={(e) => {
                     if (!isExpanded) {
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = '#292522';
-                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+                      e.currentTarget.style.borderColor = '#351505';
+                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(32, 11, 0,  0.2)';
                     }
                   }}
                 >
@@ -364,8 +364,8 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           style={{
                             fontSize: '11.5px',
                             color: '#cbd5e1',
-                            backgroundColor: '#111827',
-                            border: '1px solid #292522',
+                            backgroundColor: 'var(--colors-background-dark, #200b00)',
+                            border: '1px solid #351505',
                             padding: '3px 8px',
                             borderRadius: '4px',
                             fontWeight: 500,
@@ -380,8 +380,8 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                     {isExpanded && (
                       <div
                         style={{
-                          backgroundColor: '#111827',
-                          border: '1px solid #292522',
+                          backgroundColor: 'var(--colors-background-dark, #200b00)',
+                          border: '1px solid #351505',
                           borderRadius: '6px',
                           padding: '18px',
                           marginBottom: '18px',
@@ -409,7 +409,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           <strong style={{ color: '#16a34a', display: 'block', marginBottom: '2px' }}>Verified Results</strong>
                           {cs.details.results}
                         </div>
-                        <div style={{ backgroundColor: '#0a0a0a', padding: '10px 12px', borderRadius: '4px', borderLeft: '3px solid #fe6200' }}>
+                        <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: '10px 12px', borderRadius: '4px', borderLeft: '3px solid #fe6200' }}>
                           <strong style={{ color: '#ffffff', display: 'block', marginBottom: '2px' }}>Key Takeaway</strong>
                           <span style={{ fontStyle: 'italic', color: '#94a3b8' }}>"{cs.details.takeaway}"</span>
                         </div>
@@ -419,7 +419,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                     {/* Bottom Action */}
                     <div
                       style={{
-                        borderTop: '1px solid #292522',
+                        borderTop: '1px solid #351505',
                         paddingTop: '14px',
                         display: 'flex',
                         alignItems: 'center',
@@ -528,7 +528,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 style={{
                   padding: '12px 18px',
                   fontSize: '14px',
-                  backgroundColor: '#0A0A0A',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                   border: '1px solid #27272A',
                   borderRadius: '4px',
                   color: '#FFFFFF',
@@ -539,7 +539,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
               <button
                 type="submit"
                 className="btn btn-md"
-                style={{ backgroundColor: '#fe6200', color: '#000000', border: 'none', fontWeight: 700, cursor: 'pointer' }}
+                style={{ backgroundColor: '#fe6200', color: '#ffffff', border: 'none', fontWeight: 700, cursor: 'pointer' }}
               >
                 Get Custom Deck
               </button>

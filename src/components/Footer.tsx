@@ -86,11 +86,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         color: '#ffffff',
         fontFamily: 'var(--font-heading)',
         overflow: 'hidden',
-        borderTop: '1px solid #292522',
+        borderTop: '1px solid var(--colors-border-dark, #351505)',
       }}
     >
       {/* =========================================================================
@@ -146,7 +146,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               >
                 NEXT-GEN INTELLIGENCE
               </span>
-              <div style={{ width: '110px', height: '1px', backgroundColor: '#292522' }} />
+              <div style={{ width: '110px', height: '1px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
             </div>
 
             {/* Main Headline */}
@@ -301,7 +301,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   style={{
                     width: '1px',
                     height: '110px',
-                    backgroundColor: '#292522',
+                    backgroundColor: 'var(--colors-border-dark, #351505)',
                   }}
                 />
               </div>
@@ -359,7 +359,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </svg>
             </div>
 
-            <div style={{ width: '1px', height: '18px', backgroundColor: '#292522' }} />
+            <div style={{ width: '1px', height: '18px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
 
             <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#A3A3A3' }}>
               © 2026 NeoMinds TechHub. All rights reserved.
@@ -620,7 +620,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-bottom-center-line {
           flex: 1;
           height: 1px;
-          background-color: #292522;
+          background-color: var(--colors-border-dark, #351505);
           min-width: 30px;
         }
 

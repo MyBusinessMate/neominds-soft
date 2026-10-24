@@ -20,7 +20,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#000000',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         borderTop: '1px solid #1e293b',
         borderBottom: '1px solid #1e293b',
       }}
@@ -83,7 +83,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#0a0a0a',
+                      backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                       border: '1px solid #1e293b',
                       borderRadius: '8px',
                       padding: '24px 20px',
@@ -212,12 +212,12 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#0a0a0a',
+                      backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                       border: '1px solid #1e293b',
                       borderTop: '3px solid #FF5500',
                       borderRadius: '6px',
                       padding: '26px 22px',
-                      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.03)',
+                      boxShadow: '0 4px 6px -1px rgba(32, 11, 0,  0.03)',
                     }}
                   >
                     <div

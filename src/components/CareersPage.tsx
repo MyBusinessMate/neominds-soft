@@ -174,9 +174,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
   );
 
   return (
-    <div className="p-careers-page" style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '68px', color: '#ffffff', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-careers-page" style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '68px', color: '#ffffff', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. s-hero g-section theme-light g-section--pb-0 s-hero--centered */}
-      <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: '#0a0a0a', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #292522' }}>
+      <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: '2px', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
             <Briefcase size={14} />
@@ -215,7 +215,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 2. g-section s-vacancies theme-light js-explore-vacancies */}
-      <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#000000' }}>
+      <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px auto' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
@@ -236,7 +236,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 style={{
                   padding: '10px 20px',
                   borderRadius: '2px',
-                  border: `1px solid ${selectedDept === dept ? '#fe6200' : '#292522'}`,
+                  border: `1px solid ${selectedDept === dept ? '#fe6200' : '#351505'}`,
                   backgroundColor: selectedDept === dept ? '#fe6200' : '#ffffff',
                   color: selectedDept === dept ? '#ffffff' : '#475569',
                   fontSize: '14px',
@@ -256,8 +256,8 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#0a0a0a',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid #351505',
                   borderRadius: '4px',
                   padding: '28px 32px',
                   display: 'flex',
@@ -322,7 +322,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 3. s-faq g-section theme-light */}
-      <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: '#0a0a0a', borderTop: '1px solid #292522', borderBottom: '1px solid #292522' }}>
+      <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderTop: '1px solid #351505', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -338,8 +338,8 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#000000',
-                  border: '1px solid #292522',
+                  backgroundColor: 'var(--colors-background-dark, #200b00)',
+                  border: '1px solid #351505',
                   borderRadius: '4px',
                   overflow: 'hidden',
                 }}
@@ -394,7 +394,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 4. theme-dark g-section s-request (CV Application Form) */}
-      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#000000', color: '#ffffff' }}>
+      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -430,7 +430,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="Your full name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
@@ -446,7 +446,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -463,7 +463,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="e.g. Senior Full-Stack Engineer"
                     value={formData.position}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
@@ -478,7 +478,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
@@ -494,7 +494,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   placeholder="Tell us about yourself, your GitHub or portfolio links..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0A0A0A', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '14px 16px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #27272A', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
                 />
               </div>
 
@@ -577,7 +577,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 5. s-newsletter g-section js-newsletter theme-light */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#000000', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
@@ -599,7 +599,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: '#0a0a0a',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                 border: '1px solid #cbd5e1',
                 borderRadius: '2px',
                 color: '#ffffff',

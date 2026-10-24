@@ -140,7 +140,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            backgroundColor: 'rgba(32, 11, 0,  0.85)',
             zIndex: 1001,
             display: 'flex',
             alignItems: 'center',

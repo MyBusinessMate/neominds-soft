@@ -60,11 +60,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
   }, [newsletterEmail]);
 
   return (
-    <div style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. BREADCRUMB & HERO SECTION (Exact EffectiveSoft s-hero)
           ======================================================== */}
-      <section className="s-hero g-section theme-dark g-section--pt-0 s-hero--img-right" style={{ padding: '40px 24px 60px', backgroundColor: '#000000' }}>
+      <section className="s-hero g-section theme-dark g-section--pt-0 s-hero--img-right" style={{ padding: '40px 24px 60px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#9ca3af', marginBottom: '32px' }}>
@@ -125,7 +125,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                   position: 'relative',
                   borderRadius: '16px',
                   overflow: 'hidden',
-                  background: '#0a0a0a',
+                  background: 'var(--colors-surface-dark-subtle, #351505)',
                   padding: '36px',
                   border: '1px solid #27272a',
                 }}
@@ -145,12 +145,12 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>15+</div>
                     <div style={{ fontSize: '12px', color: '#9ca3af' }}>Avg Yrs Experience</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: '#27272a' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>100%</div>
                     <div style={{ fontSize: '12px', color: '#9ca3af' }}>Hands-on Technical</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: '#27272a' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>24/7</div>
                     <div style={{ fontSize: '12px', color: '#9ca3af' }}>Global Coverage</div>
@@ -192,7 +192,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               maxWidth: '820px',
               maxHeight: '90vh',
               overflowY: 'auto',
-              backgroundColor: '#0A0A0A',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               border: '1px solid #fe6200',
               borderRadius: '16px',
               padding: '36px',
@@ -221,10 +221,10 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#fe6200';
-                e.currentTarget.style.color = '#000000';
+                e.currentTarget.style.color = '#ffffff';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#18181B';
+                e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
                 e.currentTarget.style.color = '#FFFFFF';
               }}
               aria-label="Close modal"
@@ -276,7 +276,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       gap: '8px',
                       padding: '12px 18px',
                       borderRadius: '8px',
-                      backgroundColor: '#0A0A0A',
+                      backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                       color: '#fe6200',
                       border: '1px solid #fe6200',
                       fontSize: '13.5px',
@@ -286,10 +286,10 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#fe6200';
-                      e.currentTarget.style.color = '#000000';
+                      e.currentTarget.style.color = '#ffffff';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#0A0A0A';
+                      e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
                       e.currentTarget.style.color = '#fe6200';
                     }}
                   >
@@ -364,7 +364,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
       {/* ========================================================
           6. NEWSLETTER SUBSCRIPTION (s-newsletter)
           ======================================================== */}
-      <section style={{ backgroundColor: '#000000', padding: '54px 24px', borderTop: '1px solid #1F1F23', borderBottom: '1px solid #1F1F23' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', padding: '54px 24px', borderTop: '1px solid #1F1F23', borderBottom: '1px solid #1F1F23' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
           <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 10px', letterSpacing: '-0.02em' }}>
             Join our engineering newsletter
@@ -385,7 +385,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 height: '46px',
                 padding: '0 16px',
                 borderRadius: '6px',
-                backgroundColor: '#0A0A0A',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
                 border: '1px solid #27272A',
                 fontSize: '14px',
                 color: '#FFFFFF',

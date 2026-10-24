@@ -37,7 +37,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
       style={{
         position: 'relative',
         padding: 'clamp(48px, 6vw, 84px) 24px clamp(40px, 5vw, 68px)',
-        background: '#000000',
+        background: 'var(--colors-background-dark, #200b00)',
         borderBottom: '1px solid #1e293b',
       }}
     >
@@ -168,9 +168,9 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 height: 'clamp(280px, 32vw, 380px)',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                boxShadow: '0 20px 48px rgba(0, 0, 0, 0.4)',
+                boxShadow: '0 20px 48px rgba(32, 11, 0,  0.4)',
                 border: '1px solid #1e293b',
-                backgroundColor: '#0a0a0a',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               }}
             >
               <img
