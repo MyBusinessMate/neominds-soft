@@ -349,6 +349,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
       {/* =========================================================================
           GIANT DISPLAY WORDMARK: Neo (Dark Navy #06102B) + Minds (Royal Blue #0052FF)
+          Spans edge-to-edge across the entire screen without any gaps
           ========================================================================= */}
       <div className="nm-giant-wordmark-container">
         <div
@@ -356,8 +357,27 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           className="nm-giant-wordmark"
           title="NeoMinds"
         >
-          <span className="nm-wordmark-neo">Neo</span>
-          <span className="nm-wordmark-minds">Minds</span>
+          <svg
+            viewBox="0 0 1000 162"
+            width="100%"
+            height="auto"
+            preserveAspectRatio="none"
+            className="nm-giant-wordmark-svg"
+          >
+            <text
+              x="0"
+              y="140"
+              fontFamily="var(--font-heading), 'Mona Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
+              fontWeight="900"
+              fontSize="165"
+              letterSpacing="-0.035em"
+              textLength="1000"
+              lengthAdjust="spacingAndGlyphs"
+            >
+              <tspan fill="#06102B">Neo</tspan>
+              <tspan fill="#0052FF">Minds</tspan>
+            </text>
+          </svg>
         </div>
       </div>
 
@@ -466,22 +486,22 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           ========================================================================= */}
       <style>{`
         .nm-footer-container {
-          max-width: 1440px;
+          max-width: 1560px;
           margin: 0 auto;
-          padding: clamp(48px, 5.5vw, 76px) clamp(24px, 4.5vw, 68px) 16px clamp(24px, 4.5vw, 68px);
+          padding: clamp(48px, 5.5vw, 76px) clamp(24px, 4vw, 56px) 16px clamp(24px, 4vw, 56px);
         }
 
         .nm-footer-grid {
           display: flex;
           justifyContent: space-between;
           align-items: flex-start;
-          gap: clamp(32px, 5vw, 64px);
+          gap: clamp(32px, 4vw, 64px);
         }
 
         /* Left Hero Section */
         .nm-footer-hero {
-          flex: 0 0 35%;
-          max-width: 480px;
+          flex: 0 0 clamp(280px, 24vw, 360px);
+          max-width: 380px;
         }
 
         .nm-footer-heading {
@@ -497,11 +517,10 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-footer-subtext {
           font-family: var(--font-body);
           font-size: clamp(14px, 1.15vw, 16px);
-          color: '#5E697D';
           color: #5E697D;
           line-height: 1.5;
           margin: 0 0 32px 0;
-          max-width: 420px;
+          max-width: 380px;
         }
 
         .nm-btn-primary:hover {
@@ -515,18 +534,20 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           border-bottom-color: #0052FF !important;
         }
 
-        /* Right Columns Wrapper */
+        /* Right Columns Wrapper - clean single-line columns with natural flex spacing */
         .nm-footer-columns-wrap {
           flex: 1;
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
-          gap: clamp(20px, 2.5vw, 36px);
-          padding-left: clamp(12px, 2vw, 32px);
+          display: flex;
+          justifyContent: space-between;
+          align-items: flex-start;
+          gap: clamp(20px, 2.5vw, 44px);
+          padding-left: clamp(16px, 2vw, 36px);
         }
 
         .nm-col {
           display: flex;
           flex-direction: column;
+          flex: 0 0 auto;
         }
 
         .nm-col-header {
@@ -555,6 +576,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           font-weight: 700;
           color: #06102B;
           margin: 0 0 16px 0;
+          white-space: nowrap;
         }
 
         .nm-col-links {
@@ -566,12 +588,14 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           gap: 9px;
         }
 
+        /* Strict single-line footer link with no awkward wrapping */
         .nm-footer-link {
           font-family: var(--font-body);
-          font-size: 13px;
+          font-size: 13.5px;
           color: #5E697D;
-          line-height: 1.45;
+          line-height: 1.5;
           text-decoration: none;
+          white-space: nowrap;
           transition: color 0.2s ease, transform 0.2s ease;
           display: inline-block;
         }
@@ -586,50 +610,37 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           flex-direction: column;
           align-items: flex-end;
           padding-left: 12px;
+          flex: 0 0 auto;
         }
 
-        /* GIANT NeoMinds DISPLAY WORDMARK */
+        /* GIANT NeoMinds DISPLAY WORDMARK - Full Edge-to-Edge with Zero Gaps */
         .nm-giant-wordmark-container {
           width: 100%;
           overflow: hidden;
-          padding: 8px 0 0 0;
+          padding: 0;
+          margin: 12px 0 -4px 0;
           user-select: none;
+          line-height: 0;
         }
 
         .nm-giant-wordmark {
-          display: flex;
-          align-items: baseline;
-          justifyContent: flex-start;
+          display: block;
           width: 100%;
-          font-family: var(--font-heading);
-          font-size: clamp(80px, 15.5vw, 226px);
-          font-weight: 900;
-          line-height: 0.85;
-          letter-spacing: -0.05em;
           cursor: pointer;
-          white-space: nowrap;
-          padding-left: clamp(16px, 3.5vw, 56px);
-          margin-bottom: -10px;
+          line-height: 0;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
         }
 
-        .nm-wordmark-neo {
-          color: #06102B;
-          display: inline-block;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .nm-wordmark-minds {
-          color: #0052FF;
-          display: inline-block;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .nm-giant-wordmark:hover .nm-wordmark-neo {
+        .nm-giant-wordmark:hover {
           transform: translateY(-3px);
+          opacity: 0.96;
         }
 
-        .nm-giant-wordmark:hover .nm-wordmark-minds {
-          transform: translateY(-3px);
+        .nm-giant-wordmark-svg {
+          display: block;
+          width: 100%;
+          height: auto;
+          overflow: visible;
         }
 
         /* BOTTOM BAR */
@@ -670,7 +681,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         }
 
         /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1180px) {
+        @media (max-width: 1280px) {
           .nm-footer-grid {
             flex-direction: column;
             gap: 48px;
@@ -684,7 +695,10 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           .nm-footer-columns-wrap {
             width: 100%;
             padding-left: 0;
-            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+            grid-template-columns: repeat(4, auto);
+            gap: 32px;
+            justify-content: space-between;
           }
 
           .nm-far-right-decorator {
@@ -692,10 +706,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           }
         }
 
-        @media (max-width: 820px) {
+        @media (max-width: 860px) {
           .nm-footer-columns-wrap {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 36px 24px;
+            grid-template-columns: repeat(2, auto);
+            gap: 36px 32px;
+            justify-content: flex-start;
           }
 
           .nm-bottom-inner {
@@ -717,10 +732,6 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
           .nm-footer-heading {
             font-size: 36px;
-          }
-
-          .nm-giant-wordmark {
-            font-size: clamp(54px, 16vw, 90px);
           }
         }
       `}</style>
