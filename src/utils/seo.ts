@@ -23,10 +23,10 @@ export interface PageMeta {
 
 const PRODUCTION_DOMAIN = 'https://neominds.io';
 const DEFAULT_OG_IMAGE = 'https://neominds.io/images/hero-ribbon.jpg';
-const DEFAULT_GEO_REGION = 'US-CA';
-const DEFAULT_GEO_PLACENAME = 'San Francisco, CA; London, UK; Warsaw, Poland; Dubai, UAE; Hyderabad, India';
-const DEFAULT_GEO_POSITION = '37.7749;-122.4194';
-const DEFAULT_ICBM = '37.7749, -122.4194';
+const DEFAULT_GEO_REGION = 'IN-TG';
+const DEFAULT_GEO_PLACENAME = 'Hyderabad, Telangana State, India';
+const DEFAULT_GEO_POSITION = '17.4018;78.4772';
+const DEFAULT_ICBM = '17.4018, 78.4772';
 
 export const getPageMetadata = (page: PageType | '404', articleId?: string | null): PageMeta => {
   // ─────────────────────────────────────────────────────────────

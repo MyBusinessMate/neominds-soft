@@ -7,63 +7,22 @@ interface LocationsSectionProps {
   onOpenPrivacy?: () => void;
 }
 
-interface LocationItem {
-  city: string;
-  address: string;
-  phone: string;
-  postalCode?: string;
-}
 
 export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToast }) => {
-  const [activeTab, setActiveTab] = useState<'americas' | 'europe'>('americas');
   const [email, setEmail] = useState('');
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [subError, setSubError] = useState('');
 
-
-  const americasLocations: LocationItem[] = [
-    {
-      city: 'San Diego, California',
-      address: '4445 Eastgate Mall, Suite 200',
-      postalCode: '92121',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'San Francisco, California',
-      address: '50 California St #1500',
-      postalCode: '94111',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Pittsburgh, Pennsylvania',
-      address: 'One Oxford Centre, 500 Grant St Suite 2900',
-      postalCode: '15219',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Durham, North Carolina',
-      address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300',
-      postalCode: '27713',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'San Jose, Costa Rica',
-      address: 'C. 118B, Trejos Montealegre',
-      postalCode: '10203',
-      phone: '1-800-288-9659',
-    },
-  ];
-
-  const europeLocations: LocationItem[] = [
-    {
-      city: 'Warsaw, Poland',
-      address: '126/134 Marszalkowska Street',
-      postalCode: '00-008',
-      phone: '1-800-288-9659',
-    },
-  ];
-
-  const currentLocations = activeTab === 'americas' ? americasLocations : europeLocations;
+  const officeLocation = {
+    title: 'Headquarters',
+    addressLine1: 'Office Space No. 704, 7th Floor, 5-9-59 & 60',
+    addressLine2: 'Moguls Court Building, Basheerbagh',
+    cityStateZip: 'Hyderabad-500001, Telangana State',
+    country: 'India',
+    fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State',
+    email: 'contact@neomindstechhub.com',
+    hours: 'Mon – Fri: 9:00 AM – 6:00 PM IST',
+  };
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -94,9 +53,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.6fr)',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
             gap: 'clamp(36px, 5vw, 64px)',
             marginBottom: 'clamp(48px, 6vw, 80px)',
+            alignItems: 'start',
           }}
           className="location-grid"
         >
@@ -115,7 +75,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               }}
               blurStrength={6}
             >
-              Our locations
+              Our office
             </ScrollReveal>
             <RevealElement variant="text" delay={0.06}>
               <p
@@ -123,12 +83,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 style={{
                   color: '#475067',
                   marginBottom: '24px',
-                  maxWidth: '380px',
+                  maxWidth: '420px',
                   fontSize: '15px',
                   lineHeight: 1.6,
                 }}
               >
-                Say hello to our friendly team at one of these locations.
+                Our global engineering headquarters is centrally located in Hyderabad. Get in touch with our team directly.
               </p>
             </RevealElement>
 
@@ -285,99 +245,85 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
             </div>
           </div>
 
-          {/* Right Column: Americas & Europe Tabbed Locations */}
+          {/* Right Column: Single Official Headquarters Card */}
           <RevealElement variant="card">
-            <div>
-              {/* Region Tabs matching EffectiveSoft */}
-              <div style={{ display: 'flex', gap: '8px', marginBottom: '24px' }}>
-                <button
-                  onClick={() => setActiveTab('americas')}
-                  style={{
-                    padding: '8px 20px',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    border: '1px solid ' + (activeTab === 'americas' ? '#2258e7' : '#d0d3dd'),
-                    borderRadius: '0px',
-                    backgroundColor: activeTab === 'americas' ? '#2258e7' : '#f5f7fc',
-                    color: activeTab === 'americas' ? '#ffffff' : '#475067',
-                    transition: 'all 0.25s ease',
-                  }}
-                >
-                  Americas
-                </button>
-                <button
-                  onClick={() => setActiveTab('europe')}
-                  style={{
-                    padding: '8px 20px',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    border: '1px solid ' + (activeTab === 'europe' ? '#2258e7' : '#d0d3dd'),
-                    borderRadius: '0px',
-                    backgroundColor: activeTab === 'europe' ? '#2258e7' : '#f5f7fc',
-                    color: activeTab === 'europe' ? '#ffffff' : '#475067',
-                    transition: 'all 0.25s ease',
-                  }}
-                >
-                  Europe
-                </button>
-              </div>
-
-              {/* Location Cards Grid */}
+            <div
+              style={{
+                backgroundColor: '#f8fafc',
+                border: '1px solid #e2e8f0',
+                borderLeft: '4px solid #2258e7',
+                borderRadius: '4px',
+                padding: 'clamp(28px, 4vw, 36px)',
+                boxShadow: '0 4px 16px rgba(15, 23, 42, 0.04)',
+              }}
+            >
               <div
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
-                  gap: '16px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  backgroundColor: 'rgba(34, 88, 231, 0.08)',
+                  border: '1px solid rgba(34, 88, 231, 0.2)',
+                  padding: '4px 10px',
+                  borderRadius: '3px',
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.06em',
+                  color: '#2258e7',
+                  textTransform: 'uppercase',
+                  marginBottom: '16px',
                 }}
               >
-                {currentLocations.map((loc, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      backgroundColor: '#f5f7fc',
-                      border: '1px solid #e4e4e7',
-                      borderRadius: '0px',
-                      padding: '20px',
-                      transition: 'border-color 0.2s, transform 0.2s',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = '#2258e7';
-                      e.currentTarget.style.transform = 'translateY(-2px)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '#e4e4e7';
-                      e.currentTarget.style.transform = 'none';
-                    }}
-                  >
-                    <h4
-                      style={{
-                        fontSize: '16px',
-                        fontWeight: 700,
-                        color: '#121212',
-                        marginBottom: '8px',
-                        fontFamily: 'var(--font-heading)',
-                      }}
-                    >
-                      {loc.city}
-                    </h4>
-                    <p style={{ color: '#666e85', fontSize: '13.5px', lineHeight: 1.5, margin: '0 0 10px 0' }}>
-                      {loc.address} {loc.postalCode ? `, ${loc.postalCode}` : ''}
-                    </p>
-                    <a
-                      href={`tel:${loc.phone}`}
-                      style={{
-                        color: '#2258e7',
-                        fontSize: '13.5px',
-                        fontWeight: 600,
-                        textDecoration: 'none',
-                      }}
-                    >
-                      {loc.phone}
-                    </a>
-                  </div>
-                ))}
+                <span>{officeLocation.title}</span>
+              </div>
+
+              <h3
+                style={{
+                  fontSize: '22px',
+                  fontWeight: 800,
+                  color: '#0f172a',
+                  marginBottom: '14px',
+                  fontFamily: 'var(--font-heading)',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                Neominds TechHub
+              </h3>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '20px' }}>
+                <p style={{ color: '#1e293b', fontSize: '15px', fontWeight: 600, lineHeight: 1.5, margin: 0 }}>
+                  {officeLocation.addressLine1}
+                </p>
+                <p style={{ color: '#334155', fontSize: '15px', lineHeight: 1.5, margin: 0 }}>
+                  {officeLocation.addressLine2}
+                </p>
+                <p style={{ color: '#334155', fontSize: '15px', fontWeight: 600, lineHeight: 1.5, margin: 0 }}>
+                  {officeLocation.cityStateZip}
+                </p>
+                <p style={{ color: '#64748b', fontSize: '13px', lineHeight: 1.5, margin: 0 }}>
+                  {officeLocation.country}
+                </p>
+              </div>
+
+              <div
+                style={{
+                  borderTop: '1px solid #e2e8f0',
+                  paddingTop: '16px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                }}
+              >
+                <div style={{ fontSize: '13px', color: '#475569' }}>
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>Email: </span>
+                  <a href={`mailto:${officeLocation.email}`} style={{ color: '#2258e7', textDecoration: 'none', fontWeight: 600 }}>
+                    {officeLocation.email}
+                  </a>
+                </div>
+                <div style={{ fontSize: '13px', color: '#475569' }}>
+                  <span style={{ fontWeight: 600, color: '#0f172a' }}>Hours: </span>
+                  <span>{officeLocation.hours}</span>
+                </div>
               </div>
             </div>
           </RevealElement>

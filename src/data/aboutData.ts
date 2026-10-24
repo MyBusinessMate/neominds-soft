@@ -344,57 +344,25 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   },
 ];
 
+export const ABOUT_LOCATION = {
+  city: 'Hyderabad, Telangana State',
+  name: 'Official Headquarters',
+  address: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh',
+  postalCode: 'Hyderabad-500001, Telangana State',
+  fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State',
+  email: 'contact@neomindstechhub.com',
+};
+
+// Maintained for backward compatibility if referenced
 export const ABOUT_LOCATIONS = {
   americas: [
     {
-      city: 'San Diego, California',
-      address: '4445 Eastgate Mall, Suite 200',
-      postalCode: '92121',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'San Francisco, California',
-      address: '50 California St #1500',
-      postalCode: '94111',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Pittsburgh, Pennsylvania',
-      address: 'One Oxford Centre, 500 Grant St Suite 2900',
-      postalCode: '15219',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Durham, North Carolina',
-      address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300',
-      postalCode: '27713',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'San Jose, Costa Rica',
-      address: 'C. 118B, Trejos Montealegre',
-      postalCode: '10203',
-      phone: '1-800-288-9659',
+      city: 'Hyderabad, Telangana State',
+      address: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh',
+      postalCode: 'Hyderabad-500001, Telangana State',
+      email: 'contact@neomindstechhub.com',
     },
   ],
-  europe: [
-    {
-      city: 'Warsaw, Poland',
-      address: '126/134 Marszalkowska Street',
-      postalCode: '00-008',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Wroclaw, Poland',
-      address: '13 Pilsudskiego Street, 2nd floor',
-      postalCode: '50-996',
-      phone: '1-800-288-9659',
-    },
-    {
-      city: 'Gdańsk, Poland',
-      address: 'Opera Office, 13A Zwycięstwa Street',
-      postalCode: '80-219',
-      phone: '1-800-288-9659',
-    },
-  ],
+  europe: [],
 };
+

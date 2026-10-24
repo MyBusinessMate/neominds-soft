@@ -6,7 +6,6 @@ import {
   BookOpen,
   Calendar,
   Mail,
-  Phone,
   CheckCircle2,
   Layers,
 } from 'lucide-react';
@@ -32,7 +31,6 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [activeLocationTab, setActiveLocationTab] = useState<'americas' | 'europe'>('americas');
   const [visibleCount, setVisibleCount] = useState<number>(5);
 
   const allTags = [
@@ -368,126 +366,21 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
 
           </div>
 
-          {/* Region Tabs */}
-          <div className="b-locations__tabs">
-            <button
-              type="button"
-              className={`b-locations__tab-btn ${activeLocationTab === 'americas' ? 'is-active' : ''}`}
-              onClick={() => setActiveLocationTab('americas')}
-            >
-              Americas
-            </button>
-            <button
-              type="button"
-              className={`b-locations__tab-btn ${activeLocationTab === 'europe' ? 'is-active' : ''}`}
-              onClick={() => setActiveLocationTab('europe')}
-            >
-              Europe
-            </button>
+          {/* Locations Grid - Single Official Headquarters */}
+          <div className="b-locations__grid" style={{ maxWidth: '640px' }}>
+            <div className="b-locations__card">
+              <h4 className="b-locations__city">Hyderabad, Telangana State</h4>
+              <p className="b-locations__address" style={{ marginBottom: '16px' }}>
+                Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh
+                <br />
+                Hyderabad-500001, Telangana State
+              </p>
+              <a href="mailto:contact@neomindstechhub.com" className="b-locations__phone">
+                <Mail size={13} />
+                <span>contact@neomindstechhub.com</span>
+              </a>
+            </div>
           </div>
-
-          {/* Locations Grid */}
-          {activeLocationTab === 'americas' ? (
-            <div className="b-locations__grid">
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">San Diego, California</h4>
-                <p className="b-locations__address">
-                  4445 Eastgate Mall, Suite 200<br />
-                  92121
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">San Francisco, California</h4>
-                <p className="b-locations__address">
-                  50 California St #1500<br />
-                  94111
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">Pittsburgh, Pennsylvania</h4>
-                <p className="b-locations__address">
-                  One Oxford Centre, 500 Grant St Suite 2900<br />
-                  15219
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">Durham, North Carolina</h4>
-                <p className="b-locations__address">
-                  RTP Meridian, 2530 Meridian Pkwy Suite 300<br />
-                  27713
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">San Jose, Costa Rica</h4>
-                <p className="b-locations__address">
-                  C. 118B, Trejos Montealegre<br />
-                  10203
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-            </div>
-          ) : (
-            <div className="b-locations__grid">
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">Warsaw, Poland</h4>
-                <p className="b-locations__address">
-                  126/134 Marszalkowska Street<br />
-                  00-008
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">Wroclaw, Poland</h4>
-                <p className="b-locations__address">
-                  13 Pilsudskiego Street, 2nd floor<br />
-                  50-996
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-
-              <div className="b-locations__card">
-                <h4 className="b-locations__city">Gdańsk, Poland</h4>
-                <p className="b-locations__address">
-                  Opera Office, 13A Zwycięstwa Street<br />
-                  80-219
-                </p>
-                <a href="tel:1-800-288-9659" className="b-locations__phone">
-                  <Phone size={13} />
-                  <span>1-800-288-9659</span>
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

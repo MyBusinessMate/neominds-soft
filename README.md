@@ -50,7 +50,7 @@ neominds-soft/
 │   │   ├── HeroSection.tsx           # Hero with 3D ribbon visual
 │   │   ├── IndustryRecognition.tsx   # 5s crossfade carousel
 │   │   ├── LegalModal.tsx            # Privacy & Cookie legal modal
-│   │   ├── LocationsSection.tsx      # Single SF location & newsletter
+│   │   ├── LocationsSection.tsx      # Headquarters office & newsletter
 │   │   ├── ServiceModal.tsx          # Service architecture deep-dive
 │   │   ├── ServicesStack.tsx         # 7-card pinned scroll stack
 │   │   ├── Testimonials.tsx          # 3-column client feedback grid

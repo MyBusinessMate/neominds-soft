@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   Mail,
   Phone,
@@ -14,34 +14,22 @@ interface ContactsPageProps {
   onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
 }
 
-const REGIONS = ['Headquarters', 'Americas', 'Europe'] as const;
-type RegionType = typeof REGIONS[number];
-
-const HQ_LOCATIONS = [
-  { title: 'Hyderabad, India (Global HQ)', address: 'Moguls Court 7th Floor, Basheer Bagh, Hyderabad, Telangana, India', phone: '+91 40 4000 0000' },
-];
-
-const AMERICAS_LOCATIONS = [
-  { title: 'San Diego, California', address: '4445 Eastgate Mall, Suite 200, 92121', phone: '1-800-288-9659' },
-  { title: 'San Francisco, California', address: '50 California St #1500, 94111', phone: '1-800-288-9659' },
-  { title: 'Pittsburgh, Pennsylvania', address: 'One Oxford Centre, 500 Grant St Suite 2900, 15219', phone: '1-800-288-9659' },
-  { title: 'Durham, North Carolina', address: 'RTP Meridian, 2530 Meridian Pkwy Suite 300, 27713', phone: '1-800-288-9659' },
-  { title: 'San Jose, Costa Rica', address: 'C. 118B, Trejos Montealegre, 10203', phone: '1-800-288-9659' },
-];
-
-const EUROPE_LOCATIONS = [
-  { title: 'Warsaw, Poland', address: '126/134 Marszalkowska Street, 00-008', phone: '1-800-288-9659' },
-  { title: 'Wroclaw, Poland', address: '13 Pilsudskiego Street, 2nd floor, 50-996', phone: '1-800-288-9659' },
-  { title: 'Gdańsk, Poland', address: 'Opera Office, 13A Zwycięstwa Street, 80-219', phone: '1-800-288-9659' },
-  { title: 'Dubai, UAE', address: 'Dubai Silicon Oasis, DDP, Building A1', phone: '1-800-288-9659' },
-];
+const OFFICE_LOCATION = {
+  title: 'Global Headquarters',
+  addressLine1: 'Office Space No. 704, 7th Floor, 5-9-59 & 60',
+  addressLine2: 'Moguls Court Building, Basheerbagh',
+  cityStateZip: 'Hyderabad-500001, Telangana State',
+  country: 'India',
+  fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State',
+  email: 'contact@neomindstechhub.com',
+  workingHours: 'Mon – Fri: 9:00 AM – 6:00 PM IST',
+};
 
 const ContactsPageComponent: React.FC<ContactsPageProps> = ({
   onNavigatePage,
   onSuccessToast,
   onOpenLegal,
 }) => {
-  const [activeRegion, setActiveRegion] = useState<RegionType>('Headquarters');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,11 +64,6 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
     }, 600);
   }, [formData.name, formData.email, onSuccessToast]);
 
-  const displayedLocations = useMemo(() => {
-    if (activeRegion === 'Headquarters') return HQ_LOCATIONS;
-    if (activeRegion === 'Americas') return AMERICAS_LOCATIONS;
-    return EUROPE_LOCATIONS;
-  }, [activeRegion]);
 
   return (
     <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
@@ -419,59 +402,89 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
       </section>
 
       {/* ========================================================
-          REGIONAL LOCATIONS TABS
+          OUR OFFICE / HEADQUARTERS
           ======================================================== */}
       <section style={{ padding: '60px 24px 80px', backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
-            <div>
-              <ScrollReveal
-                as="h2"
-                style={{ fontSize: '28px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)', display: 'block' }}
-                blurStrength={6}
-              >
-                Our Locations
-              </ScrollReveal>
-              <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '15px', color: '#64748b', margin: 0 }}>Say hello to our friendly team at one of these regional centers.</p>
-              </RevealElement>
-            </div>
-
-            <div className="btn-group">
-              {REGIONS.map((region) => (
-                <button
-                  key={region}
-                  onClick={() => setActiveRegion(region)}
-                  className={`btn btn-sm ${activeRegion === region ? 'btn-primary' : 'btn-outline'}`}
-                  style={{ color: activeRegion === region ? '#ffffff' : '#0f172a', borderColor: '#cbd5e1' }}
-                >
-                  {region}
-                </button>
-              ))}
-            </div>
+          <div style={{ marginBottom: '32px' }}>
+            <ScrollReveal
+              as="h2"
+              style={{ fontSize: '28px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)', display: 'block' }}
+              blurStrength={6}
+            >
+              Our Office
+            </ScrollReveal>
+            <RevealElement variant="text" delay={0.06}>
+              <p style={{ fontSize: '15px', color: '#64748b', margin: 0 }}>
+                Our global engineering headquarters is centrally located in Hyderabad, India.
+              </p>
+            </RevealElement>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
-            {displayedLocations.map((loc, idx) => (
-              <RevealElement key={loc.title} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
+          <div style={{ maxWidth: '640px' }}>
+            <RevealElement variant="card" start="top 92%" end="top 65%">
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e2e8f0',
+                  borderLeft: '4px solid #2258e7',
+                  borderRadius: '6px',
+                  padding: '32px',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+                }}
+              >
                 <div
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '6px',
-                    padding: '24px',
-                    height: '100%',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.03)',
+                    display: 'inline-block',
+                    backgroundColor: 'rgba(34, 88, 231, 0.08)',
+                    border: '1px solid rgba(34, 88, 231, 0.2)',
+                    padding: '4px 10px',
+                    borderRadius: '3px',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.06em',
+                    color: '#2258e7',
+                    textTransform: 'uppercase',
+                    marginBottom: '14px',
                   }}
                 >
-                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>{loc.title}</h4>
-                  <p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.5, marginBottom: '12px' }}>{loc.address}</p>
-                  <a href={`tel:${loc.phone}`} style={{ fontSize: '13px', color: '#2258e7', fontWeight: 600, textDecoration: 'none' }}>
-                    {loc.phone}
-                  </a>
+                  {OFFICE_LOCATION.title}
                 </div>
-              </RevealElement>
-            ))}
+
+                <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#0f172a', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
+                  Neominds TechHub
+                </h3>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
+                  <p style={{ fontSize: '15px', color: '#1e293b', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
+                  <p style={{ fontSize: '15px', color: '#334155', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
+                  <p style={{ fontSize: '15px', color: '#334155', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
+                  <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>{OFFICE_LOCATION.country}</p>
+                </div>
+
+                <div
+                  style={{
+                    borderTop: '1px solid #e2e8f0',
+                    paddingTop: '16px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '8px',
+                    fontSize: '13.5px',
+                  }}
+                >
+                  <div>
+                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Email: </span>
+                    <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#2258e7', textDecoration: 'none', fontWeight: 600 }}>
+                      {OFFICE_LOCATION.email}
+                    </a>
+                  </div>
+                  <div>
+                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Hours: </span>
+                    <span style={{ color: '#475569' }}>{OFFICE_LOCATION.workingHours}</span>
+                  </div>
+                </div>
+              </div>
+            </RevealElement>
           </div>
         </div>
       </section>

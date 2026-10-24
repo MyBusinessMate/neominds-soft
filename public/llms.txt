@@ -11,12 +11,12 @@ Neominds operates as a high-velocity engineering partner delivering production s
 - Production-grade engineering: zero mock code, deterministic tests, sub-second latency targets, and robust observability.
 
 ## Global Footprint & Geographic Presence (GEO)
-- Headquarters & Engineering Hub: Moguls Court, Basheer Bagh, Hyderabad, Telangana, India.
-- Client Delivery Hubs: San Francisco (California, US), London (UK), Warsaw (Poland, EU), Dubai (UAE).
+- Official Headquarters: Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State, India.
+- Single Central Headquarters: Neominds TechHub operates exclusively from its centralized headquarters in Hyderabad with no branch offices or subsidiary branches.
 - Geographic Target Markets: United States, United Kingdom, European Union, Australia, United Arab Emirates, Global Enterprise.
 
 ## Global Contact
-- RFQ / Project Inquiries: rfq@neominds.io / contact@neomindstechhub.com
+- RFQ / Project Inquiries: contact@neomindstechhub.com
 - Main Website: https://neominds.io
 
 ## Neominds Services (16 Canonical Services)

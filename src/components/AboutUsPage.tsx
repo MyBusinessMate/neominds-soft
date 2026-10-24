@@ -5,14 +5,13 @@ import {
   ChevronRight,
   ShieldCheck,
   Mail,
-  Phone,
   Upload,
   Play,
 } from 'lucide-react';
 import {
   ABOUT_TEAM_MEMBERS,
   ABOUT_TESTIMONIALS,
-  ABOUT_LOCATIONS,
+  ABOUT_LOCATION,
 } from '../data/aboutData';
 import { Footer } from './Footer';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
@@ -32,9 +31,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 }) => {
   // Testimonial Carousel state
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-
-  // Locations Tab state
-  const [locationTab, setLocationTab] = useState<'americas' | 'europe'>('americas');
 
   // Contact Form state
   const [formState, setFormState] = useState({
@@ -586,9 +582,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-about-locations" id="our-locations">
         <div className="s-about-locations__container">
           <div className="s-about-locations__header">
-            <h2 className="s-about-locations__title">Our locations</h2>
+            <h2 className="s-about-locations__title">Our headquarters</h2>
             <p className="s-about-locations__desc">
-              Say hello to our team.
+              Visit or reach out to our engineering leadership team.
             </p>
             <a
               href="mailto:contact@neomindstechhub.com"
@@ -606,38 +602,22 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             </a>
           </div>
 
-          <div className="s-about-locations__tabs">
-            <button
-              type="button"
-              className={`s-about-locations__tab-btn ${locationTab === 'americas' ? 'is-active' : ''}`}
-              onClick={() => setLocationTab('americas')}
-            >
-              Americas
-            </button>
-            <button
-              type="button"
-              className={`s-about-locations__tab-btn ${locationTab === 'europe' ? 'is-active' : ''}`}
-              onClick={() => setLocationTab('europe')}
-            >
-              Europe
-            </button>
-          </div>
-
-          <div className="s-about-locations__grid">
-            {ABOUT_LOCATIONS[locationTab].map((loc) => (
-              <div key={loc.city} className="s-about-locations__card">
-                <h4 className="s-about-locations__city">{loc.city}</h4>
-                <p className="s-about-locations__address">
-                  {loc.address}
-                  <br />
-                  {loc.postalCode}
-                </p>
-                <a href={`tel:${loc.phone}`} className="s-about-locations__phone">
-                  <Phone size={13} />
-                  <span>{loc.phone}</span>
-                </a>
-              </div>
-            ))}
+          <div className="s-about-locations__grid" style={{ maxWidth: '640px' }}>
+            <div className="s-about-locations__card">
+              <h4 className="s-about-locations__city">{ABOUT_LOCATION.city}</h4>
+              <p className="s-about-locations__address" style={{ marginBottom: '16px' }}>
+                {ABOUT_LOCATION.address}
+                <br />
+                {ABOUT_LOCATION.postalCode}
+              </p>
+              <a
+                href="mailto:contact@neomindstechhub.com"
+                className="s-about-locations__phone"
+              >
+                <Mail size={13} />
+                <span>{ABOUT_LOCATION.email}</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

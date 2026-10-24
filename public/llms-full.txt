@@ -3,11 +3,11 @@
 > Comprehensive reference document compiling all 28 enterprise services, delivery frameworks, architecture blueprints, and engineering standards for Neominds.
 
 ## Corporate Overview
-Neominds is an enterprise software engineering and AI solutions partner backed by 23 years of execution. Headquartered in Basheer Bagh, Hyderabad, with North American operations in San Francisco, CA, Neominds designs, builds, and scales mission-critical digital platforms, autonomous AI workflows, and regulated cloud architectures.
+Neominds is an enterprise software engineering and AI solutions partner backed by 23 years of execution. Headquartered in Hyderabad, Telangana State, India, Neominds designs, builds, and scales mission-critical digital platforms, autonomous AI workflows, and regulated cloud architectures for enterprise clients worldwide.
 
-Global Headquarters: Moguls Court 7th Floor, Basheer Bagh, Hyderabad, Telangana, India
-North America Hub: 50 California St #1500, San Francisco, CA 94111, United States
-Contact: rfq@neominds.io | +1 (800) 288-9659
+Official Headquarters: Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State, India
+Contact: contact@neomindstechhub.com
+Website: https://neominds.io
 
 ---
 
