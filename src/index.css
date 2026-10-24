@@ -27,33 +27,33 @@ html.lenis body {
    ========================================================================== */
 
 :root {
-  /* 1. Core Colors */
-  --color-primary: #2258e7;
-  --color-primary-hover: #183c9e;
-  --color-primary-light: #e9eefd;
-  --color-background: #ffffff;
-  --color-background-tint: #f5f7fc;
+  /* 1. Core Colors - Orange & Black Signature Theme */
+  --color-primary: #ff5500;
+  --color-primary-hover: #e04a00;
+  --color-primary-light: rgba(255, 85, 0, 0.15);
+  --color-background: #000000;
+  --color-background-tint: #0a0a0a;
   --color-background-dark: #000000;
-  --color-background-dark-alt: #0a0d14;
+  --color-background-dark-alt: #0d1117;
   --color-background-black: #000000;
   
-  --color-text-primary: #121212;
-  --color-text-secondary: #666e85;
-  --color-text-muted: #475067;
-  --color-text-dark-on-light: #3d4c65;
-  --color-text-inverse: #ffffff;
-  --color-text-inverse-muted: #e4e4e7;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-text-dark-on-light: #cbd5e1;
+  --color-text-inverse: #000000;
+  --color-text-inverse-muted: #1e293b;
   
-  --color-border: #d0d3dd;
-  --color-border-subtle: rgba(255, 255, 255, 0.12);
-  --color-border-active: #2258e7;
-  --color-border-input: #e4e4e7;
-  --color-link-hover: #2258e7;
+  --color-border: #1e293b;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-border-active: #ff5500;
+  --color-border-input: #262b36;
+  --color-link-hover: #ff5500;
   
-  --dark-surface: #11141b;
+  --dark-surface: #0a0a0a;
   --dark-text: #ffffff;
-  --dark-text-muted: #d0d3dd;
-  --dark-border: #1e2430;
+  --dark-text-muted: #94a3b8;
+  --dark-border: #1e293b;
 
   /* 2. Typography Design Tokens (Apple HIG & Minimalist Editorial Typography) */
   --font-heading: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Mona Sans', 'Inter', 'Helvetica Neue', sans-serif;

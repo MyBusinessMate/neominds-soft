@@ -66,7 +66,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           HERO SECTION
           ======================================================== */}
@@ -84,10 +84,10 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             alignItems: 'center',
             gap: '8px',
             padding: '6px 14px',
-            backgroundColor: 'rgba(34, 88, 231, 0.08)',
-            border: '1px solid rgba(34, 88, 231, 0.25)',
+            backgroundColor: 'rgba(255, 85, 0, 0.12)',
+            border: '1px solid rgba(255, 85, 0, 0.3)',
             borderRadius: '0px',
-            color: '#2258e7',
+            color: '#FF5500',
             fontSize: '13px',
             fontWeight: 600,
             letterSpacing: '0.04em',
@@ -106,14 +106,14 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             fontWeight: 800,
             lineHeight: 1.12,
             letterSpacing: '-0.02em',
-            color: '#0f172a',
+            color: '#ffffff',
             marginBottom: '20px',
             fontFamily: 'var(--font-heading)',
             display: 'block',
           }}
           blurStrength={8}
         >
-          Get in touch with <span style={{ color: '#2258e7' }}>Neominds TechHub</span>
+          Get in touch with <span style={{ color: '#FF5500' }}>Neominds TechHub</span>
         </ScrollReveal>
 
         <RevealElement variant="text" delay={0.06}>
@@ -121,7 +121,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             style={{
               fontSize: 'clamp(16px, 1.2vw, 18px)',
               lineHeight: 1.6,
-              color: '#475569',
+              color: '#94a3b8',
               maxWidth: '680px',
               margin: '0 auto 40px',
             }}
@@ -138,18 +138,18 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                color: '#0f172a',
+                color: '#ffffff',
                 fontSize: '15px',
                 fontWeight: 600,
-                backgroundColor: '#f8fafc',
-                border: '1px solid #e2e8f0',
+                backgroundColor: '#0a0a0a',
+                border: '1px solid #1e293b',
                 padding: '12px 24px',
                 borderRadius: '0px',
                 textDecoration: 'none',
                 boxShadow: 'none',
               }}
             >
-              <Mail size={18} style={{ color: '#2258e7' }} />
+              <Mail size={18} style={{ color: '#FF5500' }} />
               <span>contact@neomindstechhub.com</span>
             </a>
 
@@ -159,18 +159,18 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                color: '#0f172a',
+                color: '#ffffff',
                 fontSize: '15px',
                 fontWeight: 600,
-                backgroundColor: '#f8fafc',
-                border: '1px solid #e2e8f0',
+                backgroundColor: '#0a0a0a',
+                border: '1px solid #1e293b',
                 padding: '12px 24px',
                 borderRadius: '0px',
                 textDecoration: 'none',
                 boxShadow: 'none',
               }}
             >
-              <Phone size={18} style={{ color: '#16a34a' }} />
+              <Phone size={18} style={{ color: '#FF5500' }} />
               <span>+91 40 4000 0000</span>
             </a>
           </div>
@@ -180,7 +180,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
       {/* ========================================================
           SPLIT RFP FORM & PROCESS ASIDE
           ======================================================== */}
-      <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto', borderTop: '1px solid #e2e8f0' }}>
+      <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto', borderTop: '1px solid #1e293b' }}>
         <div
           style={{
             display: 'grid',
@@ -190,78 +190,78 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
         >
           {/* Main Form */}
           <RevealElement variant="card" start="top 90%" end="top 65%">
-            <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '8px', padding: 'clamp(24px, 4vw, 40px)', boxShadow: '0 4px 16px rgba(0,0,0,0.03)', height: '100%' }}>
-              <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Contact us</h2>
-              <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '28px' }}>Our team would love to hear from you.</p>
+            <div style={{ backgroundColor: '#0a0a0a', border: '1px solid #1e293b', borderRadius: '0px', padding: 'clamp(24px, 4vw, 40px)', height: '100%' }}>
+              <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Contact us</h2>
+              <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '28px' }}>Our team would love to hear from you.</p>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Your project and goals*</label>
+                  <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Your project and goals*</label>
                   <textarea
                     rows={4}
                     required
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your project, deadline, tech stack and team size if known..."
-                    style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', resize: 'vertical', outline: 'none' }}
+                    style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', resize: 'vertical', outline: 'none' }}
                   />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Name*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Name*</label>
                     <input
                       type="text"
                       required
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Work Email*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Work Email*</label>
                     <input
                       type="email"
                       required
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Phone number (with country code)</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Phone number (with country code)</label>
                     <input
                       type="tel"
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Company</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Company</label>
                     <input
                       type="text"
                       placeholder="Acme Corp"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     />
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Subject*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Subject*</label>
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     >
                       <option value="New product development">New product development</option>
                       <option value="AI integration or automation">AI integration or automation</option>
@@ -272,11 +272,11 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     </select>
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#334155', fontWeight: 600, marginBottom: '6px' }}>Project budget (USD)</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Project budget (USD)</label>
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                      style={{ width: '100%', padding: '12px', backgroundColor: '#ffffff', border: '1px solid #cbd5e1', color: '#0f172a', borderRadius: '4px', outline: 'none' }}
+                      style={{ width: '100%', padding: '12px', backgroundColor: '#111827', border: '1px solid #1e293b', color: '#ffffff', borderRadius: '0px', outline: 'none' }}
                     >
                       <option value="">Select range...</option>
                       <option value="Under $5,000">Under $5,000</option>
@@ -289,23 +289,23 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '6px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#475569', cursor: 'pointer' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#cbd5e1', cursor: 'pointer' }}>
                     <input
                       type="checkbox"
                       checked={formData.ndaRequired}
                       onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
-                      style={{ accentColor: '#2258e7' }}
+                      style={{ accentColor: '#FF5500' }}
                     />
                     <span>Need an NDA first? We'll sign one before you share any details.</span>
                   </label>
 
-                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '12px', color: '#64748b', cursor: 'pointer', lineHeight: 1.4 }}>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '12px', color: '#94a3b8', cursor: 'pointer', lineHeight: 1.4 }}>
                     <input
                       type="checkbox"
                       required
                       checked={formData.consent}
                       onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                      style={{ accentColor: '#2258e7', marginTop: '2px' }}
+                      style={{ accentColor: '#FF5500', marginTop: '2px' }}
                     />
                     <span>I agree to the processing of my personal data as described in the Privacy Policy and Cookie Policy, and understand it may be processed outside my country.</span>
                   </label>
@@ -332,22 +332,21 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: '#2258e7',
-                borderRadius: '8px',
+                backgroundColor: '#FF5500',
+                borderRadius: '0px',
                 padding: '40px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 color: '#ffffff',
                 height: '100%',
-                boxShadow: '0 8px 24px rgba(34, 88, 231, 0.2)',
               }}
             >
               <div>
                 <h3 style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', marginBottom: '12px', fontFamily: 'var(--font-heading)' }}>
                   Let's connect
                 </h3>
-                <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.9)', marginBottom: '32px' }}>
+                <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.95)', marginBottom: '32px' }}>
                   Fill out the form and we will take it from there.
                 </p>
 
@@ -392,7 +391,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
               </div>
 
               <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.25)', paddingTop: '24px', marginTop: '36px' }}>
-                <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.9)' }}>
+                <div style={{ fontSize: '13px', color: 'rgba(255, 255, 255, 0.95)' }}>
                   Average initial response time: <strong>Within 1 business day</strong>
                 </div>
               </div>
@@ -404,18 +403,18 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
       {/* ========================================================
           OUR OFFICE / HEADQUARTERS
           ======================================================== */}
-      <section style={{ padding: '60px 24px 80px', backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+      <section style={{ padding: '60px 24px 80px', backgroundColor: '#050505', borderTop: '1px solid #1e293b', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '32px' }}>
             <ScrollReveal
               as="h2"
-              style={{ fontSize: '28px', fontWeight: 800, color: '#0f172a', marginBottom: '8px', fontFamily: 'var(--font-heading)', display: 'block' }}
+              style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', marginBottom: '8px', fontFamily: 'var(--font-heading)', display: 'block' }}
               blurStrength={6}
             >
               Our Office
             </ScrollReveal>
             <RevealElement variant="text" delay={0.06}>
-              <p style={{ fontSize: '15px', color: '#64748b', margin: 0 }}>
+              <p style={{ fontSize: '15px', color: '#94a3b8', margin: 0 }}>
                 Our global engineering headquarters is centrally located in Hyderabad, India.
               </p>
             </RevealElement>
@@ -425,25 +424,24 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             <RevealElement variant="card" start="top 92%" end="top 65%">
               <div
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderLeft: '4px solid #2258e7',
-                  borderRadius: '6px',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
+                  borderLeft: '4px solid #FF5500',
+                  borderRadius: '0px',
                   padding: '32px',
-                  boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
                 }}
               >
                 <div
                   style={{
                     display: 'inline-block',
-                    backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                    border: '1px solid rgba(34, 88, 231, 0.2)',
+                    backgroundColor: 'rgba(255, 85, 0, 0.12)',
+                    border: '1px solid rgba(255, 85, 0, 0.3)',
                     padding: '4px 10px',
-                    borderRadius: '3px',
+                    borderRadius: '0px',
                     fontSize: '11px',
                     fontWeight: 700,
                     letterSpacing: '0.06em',
-                    color: '#2258e7',
+                    color: '#FF5500',
                     textTransform: 'uppercase',
                     marginBottom: '14px',
                   }}
@@ -451,20 +449,20 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   {OFFICE_LOCATION.title}
                 </div>
 
-                <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#0f172a', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
+                <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#ffffff', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
                   Neominds TechHub
                 </h3>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
-                  <p style={{ fontSize: '15px', color: '#1e293b', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
-                  <p style={{ fontSize: '15px', color: '#334155', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
-                  <p style={{ fontSize: '15px', color: '#334155', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
-                  <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>{OFFICE_LOCATION.country}</p>
+                  <p style={{ fontSize: '15px', color: '#ffffff', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
+                  <p style={{ fontSize: '15px', color: '#cbd5e1', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
+                  <p style={{ fontSize: '15px', color: '#cbd5e1', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
+                  <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>{OFFICE_LOCATION.country}</p>
                 </div>
 
                 <div
                   style={{
-                    borderTop: '1px solid #e2e8f0',
+                    borderTop: '1px solid #1e293b',
                     paddingTop: '16px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -473,14 +471,14 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   }}
                 >
                   <div>
-                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Email: </span>
-                    <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#2258e7', textDecoration: 'none', fontWeight: 600 }}>
+                    <span style={{ fontWeight: 600, color: '#ffffff' }}>Email: </span>
+                    <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#FF5500', textDecoration: 'none', fontWeight: 600 }}>
                       {OFFICE_LOCATION.email}
                     </a>
                   </div>
                   <div>
-                    <span style={{ fontWeight: 600, color: '#0f172a' }}>Hours: </span>
-                    <span style={{ color: '#475569' }}>{OFFICE_LOCATION.workingHours}</span>
+                    <span style={{ fontWeight: 600, color: '#ffffff' }}>Hours: </span>
+                    <span style={{ color: '#94a3b8' }}>{OFFICE_LOCATION.workingHours}</span>
                   </div>
                 </div>
               </div>

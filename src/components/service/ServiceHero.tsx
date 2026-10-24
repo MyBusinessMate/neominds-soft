@@ -37,8 +37,8 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
       style={{
         position: 'relative',
         padding: 'clamp(48px, 6vw, 84px) 24px clamp(40px, 5vw, 68px)',
-        background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-        borderBottom: '1px solid #e2e8f0',
+        background: '#000000',
+        borderBottom: '1px solid #1e293b',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -67,10 +67,10 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 alignItems: 'center',
                 gap: '8px',
                 padding: '6px 14px',
-                backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                border: '1px solid rgba(34, 88, 231, 0.25)',
+                backgroundColor: 'rgba(255, 85, 0, 0.08)',
+                border: '1px solid rgba(255, 85, 0, 0.25)',
                 borderRadius: '3px',
-                color: '#2258e7',
+                color: '#FF5500',
                 fontSize: '12.5px',
                 fontWeight: 700,
                 letterSpacing: '0.04em',
@@ -91,13 +91,13 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.12,
                 letterSpacing: '-0.03em',
-                color: '#0f172a',
+                color: '#ffffff',
                 marginBottom: '20px',
                 display: 'block',
               }}
               blurStrength={8}
             >
-              {headline} <span style={{ color: '#2258e7' }}>{headlineHighlight}</span>
+              {headline} <span style={{ color: '#FF5500' }}>{headlineHighlight}</span>
             </ScrollReveal>
 
             {/* Supporting Description */}
@@ -106,7 +106,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 style={{
                   fontSize: 'clamp(16px, 1.2vw, 18px)',
                   lineHeight: 1.65,
-                  color: '#475569',
+                  color: '#94a3b8',
                   marginBottom: '32px',
                   maxWidth: '580px',
                 }}
@@ -122,7 +122,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                   href="#service-contact"
                   className="btn btn-primary btn-lg"
                   style={{
-                    backgroundColor: '#2258e7',
+                    backgroundColor: '#FF5500',
                     color: '#ffffff',
                     display: 'inline-flex',
                     alignItems: 'center',
@@ -131,7 +131,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                     fontWeight: 600,
                     borderRadius: '4px',
                     padding: '12px 24px',
-                    boxShadow: '0 4px 14px rgba(34, 88, 231, 0.3)',
+                    boxShadow: '0 4px 14px rgba(255, 85, 0, 0.3)',
                     transition: 'transform 0.2s, box-shadow 0.2s',
                   }}
                 >
@@ -143,12 +143,12 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                   onClick={onViewCaseStudies}
                   className="btn btn-outline btn-lg"
                   style={{
-                    color: '#0f172a',
-                    borderColor: '#cbd5e1',
+                    color: '#ffffff',
+                    borderColor: '#1e293b',
                     borderRadius: '4px',
                     padding: '12px 22px',
                     fontWeight: 600,
-                    background: '#ffffff',
+                    background: '#111827',
                     cursor: 'pointer',
                     transition: 'border-color 0.2s, background-color 0.2s',
                   }}
@@ -168,9 +168,9 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 height: 'clamp(280px, 32vw, 380px)',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                boxShadow: '0 20px 48px rgba(15, 23, 42, 0.12)',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#0f172a',
+                boxShadow: '0 20px 48px rgba(0, 0, 0, 0.4)',
+                border: '1px solid #1e293b',
+                backgroundColor: '#0a0a0a',
               }}
             >
               <img
@@ -231,7 +231,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                     {heroImageCaption || `${headline} Production Topology`}
                   </span>
                 </div>
-                <span style={{ fontSize: '11px', color: '#60a5fa', fontWeight: 600 }}>Enterprise SLA</span>
+                <span style={{ fontSize: '11px', color: '#FF5500', fontWeight: 600 }}>Enterprise SLA</span>
               </div>
             </div>
           </RevealElement>

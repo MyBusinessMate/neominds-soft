@@ -75,7 +75,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               fontFamily: "'SF Mono', 'Geist Mono', monospace",
               fontSize: '11px',
               fontWeight: 700,
-              color: '#2258e7',
+              color: '#FF5500',
               letterSpacing: '0.06em',
               textTransform: 'uppercase',
             }}
@@ -193,7 +193,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
               <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Services Delivered</span>
-              <span style={{ color: '#2258e7', fontWeight: 600 }}>{project.overview.services}</span>
+              <span style={{ color: '#FF5500', fontWeight: 600 }}>{project.overview.services}</span>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
               <span style={{ color: '#64748b', display: 'block', fontSize: '11px', fontWeight: 600 }}>Technology Stack</span>
@@ -206,7 +206,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '32px' }}>
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>1.</span> Client Context
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>1.</span> Client Context
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.clientContext}
@@ -215,7 +215,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>2.</span> The Challenge
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>2.</span> The Challenge
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.challenge}
@@ -224,7 +224,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>3.</span> Project Constraints
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>3.</span> Project Constraints
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.constraints}
@@ -233,7 +233,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>4.</span> Our Approach
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>4.</span> Our Approach
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', margin: 0 }}>
               {project.approach}
@@ -242,7 +242,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>5.</span> The Solution
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>5.</span> The Solution
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
               {project.solution}
@@ -256,7 +256,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
                 {project.keyFeatures.map((f, idx) => (
                   <li key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#334155' }}>
-                    <Check size={14} color="#2258e7" strokeWidth={2.5} />
+                    <Check size={14} color="#FF5500" strokeWidth={2.5} />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -267,26 +267,26 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
               <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Code2 size={13} color="#2258e7" /> FRONTEND
+                  <Code2 size={13} color="#FF5500" /> FRONTEND
                 </div>
                 <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.frontend}</div>
               </div>
               <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Layers size={13} color="#2258e7" /> BACKEND
+                  <Layers size={13} color="#FF5500" /> BACKEND
                 </div>
                 <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.backend}</div>
               </div>
               <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <Database size={13} color="#2258e7" /> DATABASE
+                  <Database size={13} color="#FF5500" /> DATABASE
                 </div>
                 <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.database}</div>
               </div>
               {project.technologyImplementation.aiAutomation && (
                 <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                   <div style={{ color: '#64748b', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                    <Cpu size={13} color="#2258e7" /> AI / AUTOMATION
+                    <Cpu size={13} color="#FF5500" /> AI / AUTOMATION
                   </div>
                   <div style={{ color: '#0f172a', fontWeight: 600 }}>{project.technologyImplementation.aiAutomation}</div>
                 </div>
@@ -296,7 +296,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
           <div>
             <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>6.</span> Results and Business Impact
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>6.</span> Results and Business Impact
             </h3>
             <p style={{ color: '#334155', lineHeight: 1.6, fontSize: '14.5px', marginBottom: '14px' }}>
               {project.resultsAndImpact.summary}
@@ -321,9 +321,9 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </div>
           </div>
 
-          <div style={{ backgroundColor: '#f8fafc', borderLeft: '3px solid #2258e7', padding: '16px', borderRadius: '4px' }}>
+          <div style={{ backgroundColor: '#f8fafc', borderLeft: '3px solid #FF5500', padding: '16px', borderRadius: '4px' }}>
             <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>
-              <span style={{ color: '#2258e7', marginRight: '6px' }}>7.</span> Key Takeaway
+              <span style={{ color: '#FF5500', marginRight: '6px' }}>7.</span> Key Takeaway
             </h3>
             <p style={{ color: '#334155', fontStyle: 'italic', margin: 0, fontSize: '14.5px', lineHeight: 1.55 }}>
               "{project.keyTakeaway}"

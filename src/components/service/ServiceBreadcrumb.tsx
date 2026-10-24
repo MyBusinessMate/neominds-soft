@@ -36,7 +36,7 @@ export const ServiceBreadcrumb: React.FC<ServiceBreadcrumbProps> = ({
           fontWeight: 500,
           transition: 'color 0.2s',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = '#2258e7')}
+        onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
         onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
       >
         Home
@@ -46,7 +46,7 @@ export const ServiceBreadcrumb: React.FC<ServiceBreadcrumbProps> = ({
       <ChevronRight size={14} color="#94a3b8" />
       <span style={{ color: '#64748b', fontWeight: 500 }}>{category}</span>
       <ChevronRight size={14} color="#94a3b8" />
-      <span style={{ color: '#0f172a', fontWeight: 700 }}>{title}</span>
+      <span style={{ color: '#ffffff', fontWeight: 700 }}>{title}</span>
     </nav>
   );
 };

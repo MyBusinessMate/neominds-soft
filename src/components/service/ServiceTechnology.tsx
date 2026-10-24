@@ -34,7 +34,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               gap: '6px',
               fontSize: '12px',
               fontWeight: 700,
-              color: '#38bdf8',
+              color: '#FF5500',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
               marginBottom: '10px',
@@ -77,7 +77,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
           {/* Left Column: Interactive Terminal Spec Sheet for Tech Stack */}
           <div
             style={{
-              backgroundColor: '#0f172a',
+              backgroundColor: '#ffffff',
               border: '1px solid #1e293b',
               borderRadius: '10px',
               padding: 'clamp(24px, 3.5vw, 36px)',
@@ -89,8 +89,8 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
             <div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #1e293b', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Terminal size={16} color="#38bdf8" />
-                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#38bdf8' }}>
+                  <Terminal size={16} color="#FF5500" />
+                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#FF5500' }}>
                     TECH_STACK_REGISTRY
                   </span>
                 </div>
@@ -108,7 +108,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     key={idx}
                     onClick={() => setActiveCategoryIdx(idx)}
                     style={{
-                      backgroundColor: activeCategoryIdx === idx ? '#2258e7' : '#1e293b',
+                      backgroundColor: activeCategoryIdx === idx ? '#FF5500' : '#1e293b',
                       color: activeCategoryIdx === idx ? '#ffffff' : '#94a3b8',
                       border: 'none',
                       padding: '7px 14px',
@@ -143,7 +143,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                         gap: '8px',
                       }}
                     >
-                      <Zap size={14} color="#38bdf8" />
+                      <Zap size={14} color="#FF5500" />
                       <span style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>
                         {tech}
                       </span>
@@ -153,7 +153,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               </div>
             </div>
 
-            <div style={{ padding: '14px 18px', backgroundColor: '#131e2e', borderRadius: '6px', borderLeft: '3px solid #38bdf8' }}>
+            <div style={{ padding: '14px 18px', backgroundColor: '#131e2e', borderRadius: '6px', borderLeft: '3px solid #FF5500' }}>
               <span style={{ fontSize: '12px', color: '#94a3b8', lineHeight: 1.5, display: 'block' }}>
                 All dependencies audited against OWASP Top 10, automated CVE scanners, and cloud-native Kubernetes blueprints.
               </span>
@@ -163,7 +163,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
           {/* Right Column: Editorial Deliverable Spec Table (Not box cards!) */}
           <div
             style={{
-              backgroundColor: '#0f172a',
+              backgroundColor: '#ffffff',
               border: '1px solid #1e293b',
               borderRadius: '10px',
               padding: 'clamp(24px, 3.5vw, 36px)',
@@ -180,7 +180,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     CLIENT_HANDOVER_BLUEPRINT
                   </span>
                 </div>
-                <span style={{ fontSize: '11px', color: '#cbd5e1', fontWeight: 600 }}>100% IP Transfer</span>
+                <span style={{ fontSize: '11px', color: '#334155', fontWeight: 600 }}>100% IP Transfer</span>
               </div>
 
               {/* Linear Editorial Rows (Replaces rectangular boxes) */}

@@ -152,7 +152,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: '#000000', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. HERO HEADER
           ======================================================== */}
@@ -160,11 +160,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
           background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          borderBottom: '1px solid #e2e8f0',
+          borderBottom: '1px solid #1e293b',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '0px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(255, 85, 0, 0.08)', borderRadius: '0px', color: '#FF5500', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <BookOpen size={14} />
             <span>Neominds Research & Engineering Briefs</span>
           </div>
@@ -176,17 +176,17 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
               letterSpacing: '-0.03em',
-              color: '#0f172a',
+              color: '#ffffff',
               marginBottom: '16px',
               display: 'block',
             }}
             blurStrength={7}
           >
-            Insights, Architecture & <span style={{ color: '#2258e7' }}>Tech Briefs</span>
+            Insights, Architecture & <span style={{ color: '#FF5500' }}>Tech Briefs</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '18px', color: '#64748b', maxWidth: '680px', lineHeight: 1.6, marginBottom: '32px' }}>
+            <p style={{ fontSize: '18px', color: '#94a3b8', maxWidth: '680px', lineHeight: 1.6, marginBottom: '32px' }}>
               Deep architectural teardowns, production AI agent blueprints, and cloud engineering best practices authored by our senior engineering leadership.
             </p>
           </RevealElement>
@@ -203,11 +203,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 style={{
                   width: '100%',
                   padding: '12px 16px 12px 46px',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#000000',
                   border: '1px solid #cbd5e1',
                   borderRadius: '4px',
                   fontSize: '14px',
-                  color: '#0f172a',
+                  color: '#ffffff',
                   outline: 'none',
                   boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
                 }}
@@ -222,8 +222,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline'}`}
                   style={{
                     color: selectedCategory === cat ? '#ffffff' : '#475569',
-                    borderColor: selectedCategory === cat ? '#2258e7' : '#cbd5e1',
-                    backgroundColor: selectedCategory === cat ? '#2258e7' : '#f8fafc',
+                    borderColor: selectedCategory === cat ? '#FF5500' : '#cbd5e1',
+                    backgroundColor: selectedCategory === cat ? '#FF5500' : '#f8fafc',
                   }}
                 >
                   {cat}
@@ -242,7 +242,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: '#0f172a',
+                backgroundColor: '#ffffff',
                 color: '#ffffff',
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -262,7 +262,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   minHeight: '280px',
                 }}
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #60a5fa', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #FF5500', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                   <span>Featured Engineering Teardown</span>
                 </div>
 
@@ -276,7 +276,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               {/* Content Body */}
               <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     {featuredPost.category}
                   </span>
 
@@ -314,8 +314,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           ======================================================== */}
       <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto' }}>
         {filteredPosts.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '60px 20px', color: '#64748b' }}>
-            <h3 style={{ fontSize: '20px', color: '#0f172a', marginBottom: '8px' }}>No articles found</h3>
+          <div style={{ textAlign: 'center', padding: '60px 20px', color: '#94a3b8' }}>
+            <h3 style={{ fontSize: '20px', color: '#ffffff', marginBottom: '8px' }}>No articles found</h3>
             <p>Try searching for a different keyword or select another category filter.</p>
           </div>
         ) : (
@@ -324,8 +324,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               <RevealElement key={post.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <article
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e2e8f0',
+                    backgroundColor: '#000000',
+                    border: '1px solid #1e293b',
                     borderRadius: '6px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -337,12 +337,12 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   }}
                 onClick={() => onSuccessToast(`Opening brief: "${post.title}"`)}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#2258e7';
+                  e.currentTarget.style.borderColor = '#FF5500';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(34, 88, 231, 0.06)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(255, 85, 0, 0.06)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0';
+                  e.currentTarget.style.borderColor = '#1e293b';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
@@ -353,7 +353,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#2258e7', backgroundColor: 'rgba(34, 88, 231, 0.08)', padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' }}>
+                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#FF5500', backgroundColor: 'rgba(255, 85, 0, 0.08)', padding: '3px 8px', borderRadius: '2px', textTransform: 'uppercase' }}>
                         {post.category}
                       </span>
                       <span style={{ fontSize: '12px', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -362,18 +362,18 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', lineHeight: 1.35, marginBottom: '12px' }}>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-heading)', lineHeight: 1.35, marginBottom: '12px' }}>
                       {post.title}
                     </h3>
 
-                    <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#64748b', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#94a3b8', marginBottom: '20px' }}>
                       {post.excerpt}
                     </p>
                   </div>
 
-                  <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid #1e293b', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#0f172a' }}>{post.author}</div>
+                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>{post.author}</div>
                       <div style={{ fontSize: '11px', color: '#94a3b8' }}>{post.date}</div>
                     </div>
 
@@ -394,9 +394,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           4. NEWSLETTER SUBSCRIPTION STRIP
           ======================================================== */}
       <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1e293b' }}>
+        <section style={{ backgroundColor: '#ffffff', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1e293b' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-            <div style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead
             </div>
             <ScrollReveal

@@ -26,18 +26,18 @@ export const EngineeringBlobSection: React.FC = () => {
           filter: 'blur(20px)',
         });
       }
-      if (headlineRef.current) gsap.set(headlineRef.current, { color: '#0f172a' });
+      if (headlineRef.current) gsap.set(headlineRef.current, { color: '#ffffff' });
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
-      if (dots.length > 0) gsap.set(dots, { color: '#2258e7' });
-      if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#334155' });
+      if (dots.length > 0) gsap.set(dots, { color: '#FF5500' });
+      if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#94a3b8' });
       return;
     }
 
     const ctx = gsap.context(() => {
       // Pinned scroll-driven transition:
-      // Starts with 100% full screen blue background & white text (Screenshot 1)
-      // As you scroll, the blue field smoothly shrinks downward into a bottom-center blob (Screenshot 2)
-      // and text smoothly turns black/dark with blue punctuation dots!
+      // Starts with 100% full screen orange background & white text
+      // As you scroll, the orange field smoothly shrinks downward into a bottom-center orange glow
+      // and text smoothly turns white with vibrant orange punctuation dots!
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
@@ -49,7 +49,7 @@ export const EngineeringBlobSection: React.FC = () => {
         },
       });
 
-      // 1. Blue background overlay smoothly pulls downward / scales down towards bottom center
+      // 1. Orange background overlay smoothly pulls downward / scales down towards bottom center
       tl.fromTo(
         blobRef.current,
         {
@@ -64,7 +64,7 @@ export const EngineeringBlobSection: React.FC = () => {
         {
           width: 'clamp(220px, 24vw, 340px)',
           height: 'clamp(100px, 12vw, 160px)',
-          bottom: '-70px', // Lower and smaller: stays well below the paragraph text
+          bottom: '-70px',
           borderRadius: '50% 50% 0 0',
           opacity: 0.95,
           filter: 'blur(20px)',
@@ -75,33 +75,32 @@ export const EngineeringBlobSection: React.FC = () => {
       );
 
       // 2. Dynamic Text Color Change:
-      // Starts crisp White (#ffffff) -> Turns Dark (#0f172a) as the blue shrinks down
       if (headlineRef.current) {
         tl.fromTo(
           headlineRef.current,
           { color: '#ffffff' },
-          { color: '#0f172a', ease: 'power1.out', duration: 0.8 },
+          { color: '#ffffff', ease: 'power1.out', duration: 0.8 },
           0.15
         );
       }
 
-      // Dots color: Starts White (#ffffff) -> Turns vivid electric blue (#2258e7) exactly like screenshot 2
+      // Dots color: Starts White (#ffffff) -> Turns vivid Orange (#FF5500)
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
       if (dots.length > 0) {
         tl.fromTo(
           dots,
           { color: '#ffffff' },
-          { color: '#2258e7', ease: 'power1.out', duration: 0.8 },
+          { color: '#FF5500', ease: 'power1.out', duration: 0.8 },
           0.15
         );
       }
 
-      // Paragraph subtext: Starts White (rgba(255, 255, 255, 0.95)) -> Turns readable Charcoal (#334155)
+      // Paragraph subtext: Starts White -> Turns readable Light Slate (#cbd5e1)
       if (paragraphRef.current) {
         tl.fromTo(
           paragraphRef.current,
           { color: 'rgba(255, 255, 255, 0.95)' },
-          { color: '#334155', ease: 'power1.out', duration: 0.8 },
+          { color: '#cbd5e1', ease: 'power1.out', duration: 0.8 },
           0.2
         );
       }
@@ -125,7 +124,7 @@ export const EngineeringBlobSection: React.FC = () => {
         position: 'relative',
         width: '100%',
         height: '100vh',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#000000',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -133,7 +132,7 @@ export const EngineeringBlobSection: React.FC = () => {
         zIndex: 5,
       }}
     >
-      {/* The Single Blue Surface that smoothly morphs/shrinks into the bottom-center blob */}
+      {/* The Single Orange Surface that smoothly morphs/shrinks into the bottom-center blob */}
       <div
         ref={blobRef}
         style={{
@@ -144,7 +143,7 @@ export const EngineeringBlobSection: React.FC = () => {
           width: '100%',
           height: '100%',
           borderRadius: '0%',
-          background: 'radial-gradient(ellipse at 50% 95%, #1040c0 0%, #1850e0 45%, #2258e7 75%, #1850e0 100%)',
+          background: 'radial-gradient(ellipse at 50% 95%, #ff3b00 0%, #ff5500 45%, #e04a00 75%, #b33900 100%)',
           zIndex: 1,
           pointerEvents: 'none',
           willChange: 'width, height, bottom, border-radius, filter',

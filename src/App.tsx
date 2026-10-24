@@ -57,15 +57,15 @@ const PageLoader: React.FC = () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#070b14',
+      backgroundColor: '#000000',
     }}
   >
     <div
       style={{
         width: '32px',
         height: '32px',
-        border: '3px solid rgba(34, 88, 231, 0.2)',
-        borderTopColor: '#2258e7',
+        border: '3px solid rgba(255, 85, 0, 0.2)',
+        borderTopColor: '#FF5500',
         borderRadius: '50%',
         animation: 'spinLoader 0.7s linear infinite',
       }}
@@ -324,7 +324,7 @@ export const App: React.FC = () => {
               position: 'absolute',
               top: '-100px',
               left: '20px',
-              backgroundColor: '#2258E7',
+              backgroundColor: '#FF5500',
               color: '#ffffff',
               padding: '10px 18px',
               zIndex: 99999,

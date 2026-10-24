@@ -190,7 +190,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           className="btn btn-primary btn-lg"
           style={{
             boxShadow: 'none',
-            backgroundColor: '#2258e7',
+            backgroundColor: '#FF5500',
             color: '#ffffff',
             padding: '16px 36px',
             fontSize: '1rem',
@@ -203,8 +203,8 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             justifyContent: 'center',
             transition: 'background-color 0.25s ease',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
-          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
         >
           See our AI services
         </button>

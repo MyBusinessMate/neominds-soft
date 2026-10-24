@@ -99,7 +99,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
               style={{
                 fontSize: '12px',
                 fontWeight: 700,
-                color: '#60a5fa',
+                color: '#FF5500',
                 textTransform: 'uppercase',
                 letterSpacing: '0.06em',
                 marginBottom: '8px',
@@ -140,8 +140,8 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
               transition: 'all 0.2s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#2258e7';
-              e.currentTarget.style.backgroundColor = 'rgba(34, 88, 231, 0.15)';
+              e.currentTarget.style.borderColor = '#FF5500';
+              e.currentTarget.style.backgroundColor = 'rgba(255, 85, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
@@ -198,10 +198,10 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                     style={{
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: '#60a5fa',
+                      color: '#FF5500',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
-                      backgroundColor: 'rgba(34, 88, 231, 0.2)',
+                      backgroundColor: 'rgba(255, 85, 0, 0.2)',
                       padding: '4px 10px',
                       borderRadius: '3px',
                     }}
@@ -253,7 +253,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                       {cs.metricLabel}
                     </div>
                   </div>
-                  <div style={{ fontSize: '12px', color: '#e2e8f0', fontWeight: 600 }}>
+                  <div style={{ fontSize: '12px', color: '#1e293b', fontWeight: 600 }}>
                     {cs.stats}
                   </div>
                 </div>
@@ -273,7 +273,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                         fontSize: '11px',
                         fontWeight: 600,
                         backgroundColor: '#1e293b',
-                        color: '#cbd5e1',
+                        color: '#334155',
                         padding: '4px 8px',
                         borderRadius: '2px',
                       }}
@@ -288,10 +288,10 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                   style={{
                     width: '100%',
                     padding: '12px',
-                    backgroundColor: 'rgba(34, 88, 231, 0.15)',
-                    border: '1px solid #2258e7',
+                    backgroundColor: 'rgba(255, 85, 0, 0.15)',
+                    border: '1px solid #FF5500',
                     borderRadius: '4px',
-                    color: '#60a5fa',
+                    color: '#FF5500',
                     fontWeight: 600,
                     fontSize: '13px',
                     display: 'flex',
@@ -302,12 +302,12 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                     transition: 'all 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#2258e7';
+                    e.currentTarget.style.backgroundColor = '#FF5500';
                     e.currentTarget.style.color = '#ffffff';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(34, 88, 231, 0.15)';
-                    e.currentTarget.style.color = '#60a5fa';
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 85, 0, 0.15)';
+                    e.currentTarget.style.color = '#FF5500';
                   }}
                 >
                   <span>Request Solution Architecture Brief</span>

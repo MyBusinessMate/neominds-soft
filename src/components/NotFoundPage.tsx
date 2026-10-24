@@ -109,7 +109,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: '#2258e7',
+              backgroundColor: '#FF5500',
               color: '#ffffff',
               border: 'none',
               borderRadius: '2px',
@@ -118,8 +118,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               cursor: 'pointer',
               transition: 'background-color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
           >
             <ArrowLeft size={16} />
             <span>Return to Homepage</span>
@@ -172,7 +172,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               letterSpacing: '0.04em',
             }}
           >
-            <Compass size={18} style={{ color: '#2258e7' }} />
+            <Compass size={18} style={{ color: '#FF5500' }} />
             <span>Quick Navigation</span>
           </div>
 
@@ -203,8 +203,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
                   transition: 'border-color 0.2s, color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#2258e7';
-                  e.currentTarget.style.color = '#2258e7';
+                  e.currentTarget.style.borderColor = '#FF5500';
+                  e.currentTarget.style.color = '#FF5500';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#e2e8f0';

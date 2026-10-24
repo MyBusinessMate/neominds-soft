@@ -55,16 +55,16 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
       id="service-contact"
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#f8fafc',
-        borderTop: '1px solid #e2e8f0',
+        backgroundColor: '#000000',
+        borderTop: '1px solid #1e293b',
       }}
     >
       <div style={{ maxWidth: '840px', margin: '0 auto' }}>
         <RevealElement variant="card">
           <div
             style={{
-              backgroundColor: '#ffffff',
-              border: '1px solid #e2e8f0',
+              backgroundColor: '#0a0a0a',
+              border: '1px solid #1e293b',
               borderRadius: '8px',
               padding: 'clamp(28px, 4vw, 48px)',
               boxShadow: '0 12px 32px rgba(0, 0, 0, 0.05)',
@@ -76,7 +76,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 style={{
                   fontSize: 'clamp(26px, 3.2vw, 36px)',
                   fontWeight: 800,
-                  color: '#0f172a',
+                  color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   marginBottom: '10px',
                   display: 'block',
@@ -107,11 +107,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#f8fafc',
-                      border: '1px solid #cbd5e1',
+                      backgroundColor: '#000000',
+                      border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
-                      color: '#0f172a',
+                      color: '#ffffff',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -131,11 +131,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#f8fafc',
-                      border: '1px solid #cbd5e1',
+                      backgroundColor: '#000000',
+                      border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
-                      color: '#0f172a',
+                      color: '#ffffff',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -156,11 +156,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#f8fafc',
-                      border: '1px solid #cbd5e1',
+                      backgroundColor: '#000000',
+                      border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
-                      color: '#0f172a',
+                      color: '#ffffff',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -177,11 +177,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: '#f8fafc',
-                      border: '1px solid #cbd5e1',
+                      backgroundColor: '#000000',
+                      border: '1px solid #334155',
                       borderRadius: '4px',
                       fontSize: '14px',
-                      color: '#0f172a',
+                      color: '#ffffff',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -206,11 +206,11 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                   style={{
                     width: '100%',
                     padding: '12px 14px',
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid #cbd5e1',
+                    backgroundColor: '#000000',
+                    border: '1px solid #334155',
                     borderRadius: '4px',
                     fontSize: '14px',
-                    color: '#0f172a',
+                    color: '#ffffff',
                     outline: 'none',
                     resize: 'vertical',
                     boxSizing: 'border-box',
@@ -218,12 +218,12 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 />
               </div>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#475569', cursor: 'pointer' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#94a3b8', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
                   checked={formData.ndaRequired}
                   onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
-                  style={{ width: '16px', height: '16px', accentColor: '#2258e7' }}
+                  style={{ width: '16px', height: '16px', accentColor: '#FF5500' }}
                 />
                 <span>Require signed Mutual Non-Disclosure Agreement (MNDA) before consultation</span>
               </label>
@@ -233,7 +233,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 disabled={isSubmitting}
                 style={{
                   padding: '14px 28px',
-                  backgroundColor: '#2258e7',
+                  backgroundColor: '#FF5500',
                   color: '#ffffff',
                   border: 'none',
                   borderRadius: '4px',
@@ -247,10 +247,10 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                   transition: 'background-color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#183c9e';
+                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#e04a00';
                 }}
                 onMouseLeave={(e) => {
-                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#2258e7';
+                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#FF5500';
                 }}
               >
                 {isSubmitting ? (

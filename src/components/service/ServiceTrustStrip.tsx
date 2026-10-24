@@ -20,8 +20,8 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
   return (
     <section
       style={{
-        backgroundColor: '#ffffff',
-        borderBottom: '1px solid #e2e8f0',
+        backgroundColor: '#000000',
+        borderBottom: '1px solid #1e293b',
         padding: '36px 24px',
       }}
     >
@@ -34,7 +34,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
               gap: '24px',
               paddingBottom: '28px',
-              borderBottom: '1px solid #f1f5f9',
+              borderBottom: '1px solid #1e293b',
             }}
           >
             {metrics.map((m, idx) => (
@@ -43,7 +43,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                   style={{
                     fontSize: 'clamp(26px, 2.5vw, 34px)',
                     fontWeight: 800,
-                    color: '#2258e7',
+                    color: '#FF5500',
                     fontFamily: 'var(--font-heading)',
                     lineHeight: 1,
                   }}
@@ -54,7 +54,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                   style={{
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#64748b',
+                    color: '#94a3b8',
                     marginTop: '6px',
                   }}
                 >
@@ -88,10 +88,10 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 fontWeight: 600,
               }}
             >
-              {pIdx === 0 && <Award size={15} color="#2258e7" />}
-              {pIdx === 1 && <Shield size={15} color="#2258e7" />}
-              {pIdx === 2 && <Zap size={15} color="#2258e7" />}
-              {pIdx === 3 && <CheckCircle2 size={15} color="#2258e7" />}
+              {pIdx === 0 && <Award size={15} color="#FF5500" />}
+              {pIdx === 1 && <Shield size={15} color="#FF5500" />}
+              {pIdx === 2 && <Zap size={15} color="#FF5500" />}
+              {pIdx === 3 && <CheckCircle2 size={15} color="#FF5500" />}
               <span>{point}</span>
             </div>
           ))}

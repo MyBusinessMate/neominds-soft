@@ -20,8 +20,8 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
     <section
       style={{
         padding: 'clamp(56px, 7vw, 92px) 24px',
-        backgroundColor: '#ffffff',
-        borderBottom: '1px solid #e2e8f0',
+        backgroundColor: '#0a0a0a',
+        borderBottom: '1px solid #1e293b',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -38,7 +38,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   gap: '8px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#2258e7',
+                  color: '#FF5500',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -52,7 +52,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 style={{
                   fontSize: 'clamp(26px, 3.2vw, 38px)',
                   fontWeight: 800,
-                  color: '#0f172a',
+                  color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.18,
                   marginBottom: '14px',
@@ -82,8 +82,8 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#f8fafc',
-                      border: '1px solid #e2e8f0',
+                      backgroundColor: '#000000',
+                      border: '1px solid #1e293b',
                       borderRadius: '8px',
                       padding: '28px 24px',
                       display: 'flex',
@@ -99,16 +99,16 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                           alignItems: 'center',
                           gap: '6px',
                           padding: '4px 10px',
-                          backgroundColor: '#ffffff',
-                          border: '1px solid #cbd5e1',
+                          backgroundColor: '#0a0a0a',
+                          border: '1px solid #334155',
                           borderRadius: '4px',
                           fontSize: '12px',
                           fontWeight: 700,
-                          color: '#0f172a',
+                          color: '#ffffff',
                           marginBottom: '16px',
                         }}
                       >
-                        <Users size={13} color="#2258e7" />
+                        <Users size={13} color="#FF5500" />
                         <span>{profile.role}</span>
                       </div>
                       <p
@@ -127,13 +127,13 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       style={{
                         marginTop: '20px',
                         paddingTop: '16px',
-                        borderTop: '1px dashed #cbd5e1',
+                        borderTop: '1px dashed #334155',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '6px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: '#2258e7',
+                        color: '#FF5500',
                       }}
                     >
                       <CheckCircle2 size={15} />
@@ -167,7 +167,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   gap: '8px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#38bdf8',
+                  color: '#FF5500',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -228,7 +228,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '15px',
-                    color: '#e2e8f0',
+                    color: '#1e293b',
                     lineHeight: 1.7,
                     margin: 0,
                   }}
@@ -240,7 +240,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
               {/* Solution & Impact Card */}
               <div
                 style={{
-                  backgroundColor: 'rgba(34, 88, 231, 0.08)',
+                  backgroundColor: 'rgba(255, 85, 0, 0.08)',
                   border: '1px solid rgba(56, 189, 248, 0.3)',
                   borderRadius: '8px',
                   padding: '24px 28px',
@@ -258,7 +258,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       gap: '8px',
                       fontSize: '13px',
                       fontWeight: 700,
-                      color: '#38bdf8',
+                      color: '#FF5500',
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
                       marginBottom: '12px',
@@ -270,7 +270,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   <p
                     style={{
                       fontSize: '15px',
-                      color: '#f1f5f9',
+                      color: '#1e293b',
                       lineHeight: 1.7,
                       margin: 0,
                     }}

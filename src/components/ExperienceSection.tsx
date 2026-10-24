@@ -100,7 +100,7 @@ const ExperienceSectionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#001334',
+        backgroundColor: '#000000',
         paddingTop: 'clamp(80px, 9vw, 120px)',
         paddingBottom: 'clamp(60px, 7vw, 100px)',
         overflow: 'hidden',

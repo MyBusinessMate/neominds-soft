@@ -27,7 +27,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
             gap: '6px',
             fontSize: '12px',
             fontWeight: 700,
-            color: '#2258e7',
+            color: '#FF5500',
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
             marginBottom: '10px',
@@ -41,7 +41,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
           style={{
             fontSize: 'clamp(28px, 3.2vw, 38px)',
             fontWeight: 800,
-            color: '#0f172a',
+            color: '#ffffff',
             fontFamily: 'var(--font-heading)',
             lineHeight: 1.18,
             display: 'block',
@@ -61,7 +61,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
               <div
                 key={idx}
                 style={{
-                  borderBottom: '1px solid #e2e8f0',
+                  borderBottom: '1px solid #1e293b',
                   transition: 'background-color 0.2s',
                 }}
               >
@@ -81,10 +81,10 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingRight: '16px' }}>
-                    <span style={{ fontSize: '13px', fontWeight: 800, color: isExpanded ? '#2258e7' : '#94a3b8', fontFamily: 'monospace' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 800, color: isExpanded ? '#FF5500' : '#94a3b8', fontFamily: 'monospace' }}>
                       Q0{idx + 1}
                     </span>
-                    <span style={{ fontSize: '16.5px', fontWeight: 700, color: isExpanded ? '#2258e7' : '#0f172a', transition: 'color 0.2s' }}>
+                    <span style={{ fontSize: '16.5px', fontWeight: 700, color: isExpanded ? '#FF5500' : '#0f172a', transition: 'color 0.2s' }}>
                       {faq.question}
                     </span>
                   </div>
@@ -94,11 +94,11 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                       width: '28px',
                       height: '28px',
                       borderRadius: '50%',
-                      border: isExpanded ? '1px solid #2258e7' : '1px solid #cbd5e1',
+                      border: isExpanded ? '1px solid #FF5500' : '1px solid #334155',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: isExpanded ? '#2258e7' : '#64748b',
+                      color: isExpanded ? '#FF5500' : '#64748b',
                       flexShrink: 0,
                     }}
                   >
@@ -112,7 +112,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                       padding: '0 8px 24px 44px',
                       fontSize: '15px',
                       lineHeight: 1.7,
-                      color: '#475569',
+                      color: '#94a3b8',
                     }}
                   >
                     {faq.answer}

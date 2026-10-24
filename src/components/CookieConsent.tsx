@@ -67,7 +67,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
         aria-label="Cookie consent banner"
       >
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-          <Shield size={22} color="#2258e7" style={{ flexShrink: 0, marginTop: '2px' }} />
+          <Shield size={22} color="#FF5500" style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
             <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
               We value your privacy and cookie transparency

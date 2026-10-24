@@ -79,7 +79,7 @@ const IndustryRecognitionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#001334',
+        backgroundColor: '#000000',
         paddingTop: 'clamp(60px, 7vw, 100px)',
         paddingBottom: 'clamp(60px, 7vw, 100px)',
         overflow: 'hidden',
@@ -292,7 +292,7 @@ const IndustryRecognitionComponent: React.FC = () => {
                       style={{
                         width: idx === currentIndex ? '32px' : '16px',
                         height: '4px',
-                        backgroundColor: idx === currentIndex ? '#2258e7' : 'rgba(255, 255, 255, 0.25)',
+                        backgroundColor: idx === currentIndex ? '#FF5500' : 'rgba(255, 255, 255, 0.25)',
                         cursor: 'pointer',
                         transition: 'all 0.3s ease',
                         borderRadius: '0px',

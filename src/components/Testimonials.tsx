@@ -132,17 +132,17 @@ export const Testimonials: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#000000',
         paddingTop: 'clamp(70px, 8vw, 110px)',
         paddingBottom: 'clamp(70px, 8vw, 110px)',
-        borderTop: '1px solid #e4e4e7',
+        borderTop: '1px solid #1e293b',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
         {/* Section Header */}
         <div style={{ marginBottom: 'clamp(28px, 4vw, 44px)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#475067', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '13px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               TESTIMONIALS
             </span>
             <h2
@@ -150,7 +150,7 @@ export const Testimonials: React.FC = () => {
                 fontFamily: 'var(--font-heading)',
                 fontSize: 'clamp(28px, 3.5vw, 44px)',
                 fontWeight: 700,
-                color: '#121212',
+                color: '#ffffff',
                 letterSpacing: '-0.025em',
                 margin: '8px 0 0 0',
               }}
@@ -160,7 +160,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           {/* Quick Page Info */}
-          <div style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>
+          <div style={{ fontSize: '13px', color: '#94a3b8', fontWeight: 500 }}>
             Showing {currentPage * itemsPerPage + 1}–{Math.min((currentPage + 1) * itemsPerPage, testimonials.length)} of {testimonials.length} reviews
           </div>
         </div>
@@ -178,8 +178,8 @@ export const Testimonials: React.FC = () => {
             <RevealElement key={item.id} variant="card">
               <div
                 style={{
-                  backgroundColor: '#f5f7fc',
-                  border: '1px solid #d0d3dd',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '0px',
                   boxShadow: 'none',
                   padding: 'clamp(24px, 3vw, 36px)',
@@ -193,11 +193,11 @@ export const Testimonials: React.FC = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.borderColor = '#2258e7';
+                  e.currentTarget.style.borderColor = '#FF5500';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = '#d0d3dd';
+                  e.currentTarget.style.borderColor = '#1e293b';
                 }}
               >
                 <div>
@@ -216,13 +216,13 @@ export const Testimonials: React.FC = () => {
                         src={item.logoUrl}
                         alt={`${item.clientName} enterprise client logo`}
                         loading="lazy"
-                        style={{ maxHeight: '36px', maxWidth: '140px', objectFit: 'contain' }}
+                        style={{ maxHeight: '36px', maxWidth: '140px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }}
                         onError={(e) => {
                           (e.currentTarget as HTMLElement).style.display = 'none';
                         }}
                       />
                     ) : (
-                      <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212' }}>
+                      <span style={{ fontSize: '15px', fontWeight: 800, color: '#ffffff' }}>
                         {item.clientName}
                       </span>
                     )}
@@ -237,7 +237,7 @@ export const Testimonials: React.FC = () => {
                     style={{
                       fontSize: 'clamp(14px, 1.1vw, 15px)',
                       lineHeight: 1.65,
-                      color: '#475067',
+                      color: '#cbd5e1',
                       margin: 0,
                     }}
                   >
@@ -253,7 +253,7 @@ export const Testimonials: React.FC = () => {
                     gap: '12px',
                     paddingTop: '20px',
                     marginTop: '20px',
-                    borderTop: '1px solid #e4e4e7',
+                    borderTop: '1px solid #1e293b',
                   }}
                 >
                   {item.photoUrl ? (
@@ -266,7 +266,7 @@ export const Testimonials: React.FC = () => {
                         height: '42px',
                         borderRadius: '0px',
                         objectFit: 'cover',
-                        border: '1px solid #d0d3dd',
+                        border: '1px solid #1e293b',
                         boxShadow: 'none',
                       }}
                       onError={(e) => {
@@ -279,8 +279,8 @@ export const Testimonials: React.FC = () => {
                         width: '42px',
                         height: '42px',
                         borderRadius: '0px',
-                        backgroundColor: '#e9eefd',
-                        color: '#2258e7',
+                        backgroundColor: 'rgba(255, 85, 0, 0.15)',
+                        color: '#FF5500',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -294,10 +294,10 @@ export const Testimonials: React.FC = () => {
                   )}
 
                   <div>
-                    <div style={{ fontWeight: 600, fontSize: '14px', color: '#121212' }}>
+                    <div style={{ fontWeight: 600, fontSize: '14px', color: '#ffffff' }}>
                       {item.author}
                     </div>
-                    <div style={{ fontSize: '12px', color: '#666e85', marginTop: '2px' }}>
+                    <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '2px' }}>
                       {item.title}
                     </div>
                   </div>
@@ -307,26 +307,26 @@ export const Testimonials: React.FC = () => {
           ))}
         </div>
 
-        {/* Carousel Navigation Bar matching EffectiveSoft progress */}
+        {/* Carousel Navigation Bar */}
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '16px',
-            borderTop: '1px solid #e4e4e7',
+            borderTop: '1px solid #1e293b',
           }}
         >
           {/* Progress bar */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, maxWidth: '280px' }}>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#121212' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>
               0{currentPage + 1}
             </span>
             <div
               style={{
                 flex: 1,
                 height: '3px',
-                backgroundColor: '#e4e4e7',
+                backgroundColor: '#1e293b',
                 borderRadius: '0px',
                 overflow: 'hidden',
               }}
@@ -335,12 +335,12 @@ export const Testimonials: React.FC = () => {
                 style={{
                   height: '100%',
                   width: `${((currentPage + 1) / totalPages) * 100}%`,
-                  backgroundColor: '#2258e7',
+                  backgroundColor: '#FF5500',
                   transition: 'width 0.4s ease',
                 }}
               />
             </div>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#989fb3' }}>
+            <span style={{ fontSize: '13px', fontWeight: 600, color: '#64748b' }}>
               0{totalPages}
             </span>
           </div>
@@ -353,9 +353,9 @@ export const Testimonials: React.FC = () => {
                 width: '40px',
                 height: '40px',
                 borderRadius: '0px',
-                border: '1px solid #d0d3dd',
-                backgroundColor: '#ffffff',
-                color: '#121212',
+                border: '1px solid #1e293b',
+                backgroundColor: '#111827',
+                color: '#ffffff',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -364,12 +364,12 @@ export const Testimonials: React.FC = () => {
                 transition: 'border-color 0.2s, background-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#2258e7';
-                e.currentTarget.style.backgroundColor = '#f5f7fc';
+                e.currentTarget.style.borderColor = '#FF5500';
+                e.currentTarget.style.backgroundColor = '#FF5500';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#d0d3dd';
-                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.borderColor = '#1e293b';
+                e.currentTarget.style.backgroundColor = '#111827';
               }}
               aria-label="Previous testimonials"
             >
@@ -382,9 +382,9 @@ export const Testimonials: React.FC = () => {
                 width: '40px',
                 height: '40px',
                 borderRadius: '0px',
-                border: '1px solid #d0d3dd',
-                backgroundColor: '#ffffff',
-                color: '#121212',
+                border: '1px solid #1e293b',
+                backgroundColor: '#111827',
+                color: '#ffffff',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -393,12 +393,12 @@ export const Testimonials: React.FC = () => {
                 transition: 'border-color 0.2s, background-color 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#2258e7';
-                e.currentTarget.style.backgroundColor = '#f5f7fc';
+                e.currentTarget.style.borderColor = '#FF5500';
+                e.currentTarget.style.backgroundColor = '#FF5500';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#d0d3dd';
-                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.borderColor = '#1e293b';
+                e.currentTarget.style.backgroundColor = '#111827';
               }}
               aria-label="Next testimonials"
             >

@@ -20,9 +20,9 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#f8fafc',
-        borderTop: '1px solid #e2e8f0',
-        borderBottom: '1px solid #e2e8f0',
+        backgroundColor: '#000000',
+        borderTop: '1px solid #1e293b',
+        borderBottom: '1px solid #1e293b',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -39,7 +39,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   gap: '6px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#2258e7',
+                  color: '#FF5500',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -53,7 +53,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 style={{
                   fontSize: 'clamp(28px, 3.4vw, 42px)',
                   fontWeight: 800,
-                  color: '#0f172a',
+                  color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.15,
                   marginBottom: '16px',
@@ -83,8 +83,8 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #e2e8f0',
+                      backgroundColor: '#0a0a0a',
+                      border: '1px solid #1e293b',
                       borderRadius: '8px',
                       padding: '24px 20px',
                       display: 'flex',
@@ -106,8 +106,8 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                           style={{
                             fontSize: '11px',
                             fontWeight: 800,
-                            color: '#2258e7',
-                            backgroundColor: 'rgba(34, 88, 231, 0.08)',
+                            color: '#FF5500',
+                            backgroundColor: 'rgba(255, 85, 0, 0.08)',
                             padding: '3px 8px',
                             borderRadius: '3px',
                             textTransform: 'uppercase',
@@ -123,7 +123,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             gap: '4px',
                             fontSize: '12px',
                             fontWeight: 700,
-                            color: '#0f172a',
+                            color: '#ffffff',
                           }}
                         >
                           <Calendar size={13} color="#64748b" />
@@ -135,7 +135,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                         style={{
                           fontSize: '16px',
                           fontWeight: 700,
-                          color: '#0f172a',
+                          color: '#ffffff',
                           marginBottom: '10px',
                           lineHeight: 1.4,
                         }}
@@ -174,7 +174,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   gap: '6px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#2258e7',
+                  color: '#FF5500',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -188,7 +188,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 style={{
                   fontSize: 'clamp(28px, 3.4vw, 42px)',
                   fontWeight: 800,
-                  color: '#0f172a',
+                  color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.15,
                   margin: 0,
@@ -212,9 +212,9 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #e2e8f0',
-                      borderTop: '3px solid #2258e7',
+                      backgroundColor: '#0a0a0a',
+                      border: '1px solid #1e293b',
+                      borderTop: '3px solid #FF5500',
                       borderRadius: '6px',
                       padding: '26px 22px',
                       boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.03)',
@@ -227,18 +227,18 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                         gap: '8px',
                         fontSize: '16px',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: '#ffffff',
                         marginBottom: '10px',
                         lineHeight: 1.4,
                       }}
                     >
-                      <CheckCircle2 size={18} color="#2258e7" style={{ flexShrink: 0 }} />
+                      <CheckCircle2 size={18} color="#FF5500" style={{ flexShrink: 0 }} />
                       <span>{reason.point}</span>
                     </div>
                     <p
                       style={{
                         fontSize: '14px',
-                        color: '#475569',
+                        color: '#94a3b8',
                         lineHeight: 1.65,
                         margin: 0,
                       }}

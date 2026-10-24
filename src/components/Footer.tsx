@@ -86,11 +86,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#F8F9FA',
-        color: '#06102B',
+        backgroundColor: '#000000',
+        color: '#ffffff',
         fontFamily: 'var(--font-heading)',
         overflow: 'hidden',
-        borderTop: '1px solid #E5E7EB',
+        borderTop: '1px solid #1e293b',
       }}
     >
       {/* =========================================================================
@@ -112,7 +112,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           {/* Geometric 'N' Logo Mark */}
           <div style={{ width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#06102B" />
+              <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#FF5500" />
             </svg>
           </div>
           <span
@@ -121,7 +121,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               fontSize: '20px',
               fontWeight: 800,
               letterSpacing: '-0.02em',
-              color: '#06102B',
+              color: '#ffffff',
             }}
           >
             NeoMinds
@@ -140,23 +140,23 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   fontSize: '11px',
                   fontWeight: 700,
                   letterSpacing: '0.14em',
-                  color: '#8896AB',
+                  color: '#94a3b8',
                   textTransform: 'uppercase',
                 }}
               >
                 NEXT-GEN INTELLIGENCE
               </span>
-              <div style={{ width: '110px', height: '1px', backgroundColor: '#D2D8E2' }} />
+              <div style={{ width: '110px', height: '1px', backgroundColor: '#1e293b' }} />
             </div>
 
             {/* Main Headline */}
-            <h2 className="nm-footer-heading">
+            <h2 className="nm-footer-heading" style={{ color: '#ffffff' }}>
               Let’s build <br />
-              what’s <span style={{ color: '#0052FF' }}>next.</span>
+              what’s <span style={{ color: '#FF5500' }}>next.</span>
             </h2>
 
             {/* Subtext */}
-            <p className="nm-footer-subtext">
+            <p className="nm-footer-subtext" style={{ color: '#94a3b8' }}>
               From powerful software to AI-driven systems, we help businesses turn ideas into real impact.
             </p>
 
@@ -170,7 +170,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '10px',
-                  backgroundColor: '#06102B',
+                  backgroundColor: '#FF5500',
                   color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   fontSize: '14px',
@@ -180,7 +180,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
-                  boxShadow: '0 4px 16px rgba(6, 16, 43, 0.12)',
+                  boxShadow: '0 4px 16px rgba(255, 85, 0, 0.25)',
                 }}
               >
                 Get in touch <ArrowRight size={15} />
@@ -197,13 +197,13 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   background: 'none',
                   border: 'none',
                   padding: '4px 0',
-                  color: '#06102B',
+                  color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
                   fontSize: '14px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   transition: 'color 0.2s',
-                  borderBottom: '1.5px solid #06102B',
+                  borderBottom: '1.5px solid #FF5500',
                 }}
               >
                 Book a call <ArrowRight size={15} />
@@ -310,14 +310,14 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                     width: '7px',
                     height: '7px',
                     borderRadius: '50%',
-                    backgroundColor: '#06102B',
+                    backgroundColor: '#FF5500',
                   }}
                 />
                 <div
                   style={{
                     width: '1px',
                     height: '110px',
-                    backgroundColor: '#D2D8E2',
+                    backgroundColor: '#1e293b',
                   }}
                 />
               </div>
@@ -330,7 +330,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   fontWeight: 700,
                   letterSpacing: '0.18em',
                   lineHeight: 1.85,
-                  color: '#7E8B9F',
+                  color: '#94a3b8',
                   textTransform: 'uppercase',
                   marginBottom: '14px',
                 }}
@@ -341,14 +341,14 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                 REAL IMPACT
               </div>
 
-              <div style={{ width: '28px', height: '1.5px', backgroundColor: '#B0BAC9' }} />
+              <div style={{ width: '28px', height: '1.5px', backgroundColor: '#FF5500' }} />
             </div>
           </div>
         </div>
       </div>
 
       {/* =========================================================================
-          GIANT DISPLAY WORDMARK: Neo (Dark Navy #06102B) + Minds (Royal Blue #0052FF)
+          GIANT DISPLAY WORDMARK: Neo (#ffffff) + Minds (Vibrant Orange #FF5500)
           Natural typography, perfectly centered with symmetric gaps on both edges
           ========================================================================= */}
       <div className="nm-giant-wordmark-container">
@@ -371,13 +371,13 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexShrink: 0 }}>
             <div style={{ width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#06102B" />
+                <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#FF5500" />
               </svg>
             </div>
 
-            <div style={{ width: '1px', height: '18px', backgroundColor: '#D2D8E2' }} />
+            <div style={{ width: '1px', height: '18px', backgroundColor: '#1e293b' }} />
 
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#667085' }}>
+            <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#94a3b8' }}>
               © 2026 NeoMinds TechHub. All rights reserved.
             </span>
           </div>
@@ -385,7 +385,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           {/* Center: Subtle horizontal divider line */}
           <div className="nm-bottom-center-line" />
 
-          {/* Right: Social icons + vertical bar + blue dot + slogan */}
+          {/* Right: Social icons + vertical bar + orange dot + slogan */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexShrink: 0 }}>
             {/* Social Icons */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
@@ -430,16 +430,16 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </a>
             </div>
 
-            <div style={{ width: '1px', height: '18px', backgroundColor: '#D2D8E2' }} />
+            <div style={{ width: '1px', height: '18px', backgroundColor: '#1e293b' }} />
 
-            {/* Blue dot + BUILT FOR A SMARTER TOMORROW */}
+            {/* Orange dot + BUILT FOR A SMARTER TOMORROW */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <span
                 style={{
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  backgroundColor: '#0052FF',
+                  backgroundColor: '#FF5500',
                   display: 'inline-block',
                 }}
               />
@@ -450,7 +450,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   fontWeight: 700,
                   letterSpacing: '0.14em',
                   lineHeight: 1.25,
-                  color: '#667085',
+                  color: '#94a3b8',
                   textTransform: 'uppercase',
                 }}
               >
@@ -474,7 +474,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
         .nm-footer-grid {
           display: flex;
-          justifyContent: space-between;
+          justify-content: space-between;
           align-items: flex-start;
           gap: clamp(32px, 4vw, 64px);
         }
@@ -491,35 +491,35 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           font-weight: 800;
           line-height: 1.04;
           letter-spacing: -0.035em;
-          color: #06102B;
+          color: #ffffff;
           margin: 0 0 18px 0;
         }
 
         .nm-footer-subtext {
           font-family: var(--font-body);
           font-size: clamp(14px, 1.15vw, 16px);
-          color: #5E697D;
+          color: #94a3b8;
           line-height: 1.5;
           margin: 0 0 32px 0;
           max-width: 380px;
         }
 
         .nm-btn-primary:hover {
-          background-color: #0052FF !important;
+          background-color: #e04a00 !important;
           transform: translateY(-1px);
-          box-shadow: 0 6px 20px rgba(0, 82, 255, 0.25) !important;
+          box-shadow: 0 6px 20px rgba(255, 85, 0, 0.35) !important;
         }
 
         .nm-btn-secondary:hover {
-          color: #0052FF !important;
-          border-bottom-color: #0052FF !important;
+          color: #FF5500 !important;
+          border-bottom-color: #FF5500 !important;
         }
 
         /* Right Columns Wrapper - clean single-line columns with natural flex spacing */
         .nm-footer-columns-wrap {
           flex: 1;
           display: flex;
-          justifyContent: space-between;
+          justify-content: space-between;
           align-items: flex-start;
           gap: clamp(20px, 2.5vw, 44px);
           padding-left: clamp(16px, 2vw, 36px);
@@ -542,20 +542,20 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           font-family: var(--font-heading);
           font-size: 11px;
           font-weight: 700;
-          color: #0052FF;
+          color: #FF5500;
         }
 
         .nm-col-line {
           width: 22px;
           height: 1.5px;
-          background-color: #0052FF;
+          background-color: #FF5500;
         }
 
         .nm-col-title {
           font-family: var(--font-heading);
           font-size: 16px;
           font-weight: 700;
-          color: #06102B;
+          color: #ffffff;
           margin: 0 0 16px 0;
           white-space: nowrap;
         }
@@ -573,7 +573,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-footer-link {
           font-family: var(--font-body);
           font-size: 13.5px;
-          color: #5E697D;
+          color: #94a3b8;
           line-height: 1.5;
           text-decoration: none;
           white-space: nowrap;
@@ -582,7 +582,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         }
 
         .nm-footer-link:hover {
-          color: #0052FF;
+          color: #FF5500;
           transform: translateX(2px);
         }
 
@@ -601,7 +601,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           padding: clamp(16px, 2.5vw, 32px) clamp(24px, 4.5vw, 68px) clamp(8px, 1.5vw, 16px) clamp(24px, 4.5vw, 68px);
           user-select: none;
           display: flex;
-          justifyContent: center;
+          justify-content: center;
           align-items: center;
         }
 
@@ -626,13 +626,13 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         }
 
         .nm-wordmark-neo {
-          color: #06102B;
+          color: #ffffff;
           display: inline-block;
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nm-wordmark-minds {
-          color: #0052FF;
+          color: #FF5500;
           display: inline-block;
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -648,8 +648,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         /* BOTTOM BAR */
         .nm-footer-bottom {
           width: 100%;
-          border-top: 1px solid #E2E6EC;
-          background-color: #F8F9FA;
+          border-top: 1px solid #1e293b;
+          background-color: #050505;
           padding: 20px clamp(24px, 4.5vw, 68px);
         }
 
@@ -665,12 +665,12 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-bottom-center-line {
           flex: 1;
           height: 1px;
-          background-color: #D2D8E2;
+          background-color: #1e293b;
           min-width: 30px;
         }
 
         .nm-social-icon {
-          color: #06102B;
+          color: #94a3b8;
           display: inline-flex;
           align-items: center;
           justifyContent: center;
@@ -678,7 +678,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         }
 
         .nm-social-icon:hover {
-          color: #0052FF;
+          color: #FF5500;
           transform: translateY(-1px);
         }
 

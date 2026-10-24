@@ -20,7 +20,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
         margin: '0 auto',
       }}
     >
-      <div style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+      <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
         Strategic Overview
       </div>
 
@@ -40,7 +40,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
               fontSize: 'clamp(28px, 3.2vw, 42px)',
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
-              color: '#0f172a',
+              color: '#ffffff',
               lineHeight: 1.2,
               marginBottom: '24px',
               display: 'block',
@@ -54,17 +54,17 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
           <RevealElement variant="card">
             <div
               style={{
-                backgroundColor: '#f8fafc',
-                borderLeft: '4px solid #2258e7',
-                borderTop: '1px solid #e2e8f0',
-                borderRight: '1px solid #e2e8f0',
-                borderBottom: '1px solid #e2e8f0',
+                backgroundColor: '#000000',
+                borderLeft: '4px solid #FF5500',
+                borderTop: '1px solid #1e293b',
+                borderRight: '1px solid #1e293b',
+                borderBottom: '1px solid #1e293b',
                 borderRadius: '4px',
                 padding: '18px 20px',
                 marginTop: '16px',
               }}
             >
-              <div style={{ fontSize: '11px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
                 Primary Value Vector
               </div>
               <div style={{ fontSize: '14px', fontWeight: 600, color: '#1e293b', lineHeight: 1.5 }}>
@@ -83,7 +83,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
                 style={{
                   fontSize: '16px',
                   lineHeight: 1.7,
-                  color: '#475569',
+                  color: '#94a3b8',
                   margin: 0,
                 }}
               >

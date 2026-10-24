@@ -25,7 +25,7 @@ const COMPANY_CERTIFICATIONS = [
     description:
       'Certified processes covering enterprise data confidentiality, risk treatment, asset management and secure software development lifecycle (SDLC).',
     badge: 'Certified',
-    icon: <Lock size={22} color="#2258e7" />,
+    icon: <Lock size={22} color="#FF5500" />,
   },
   {
     title: 'ISO 9001:2015',
@@ -33,7 +33,7 @@ const COMPANY_CERTIFICATIONS = [
     description:
       'Demonstrates our systematic approach to quality assurance, client satisfaction, and continuous process improvements across all software delivery phases.',
     badge: 'Certified',
-    icon: <Award size={22} color="#2258e7" />,
+    icon: <Award size={22} color="#FF5500" />,
   },
   {
     title: 'AWS Partner Network',
@@ -41,7 +41,7 @@ const COMPANY_CERTIFICATIONS = [
     description:
       'Recognized cloud delivery capabilities spanning serverless architectures, microservices, containerization with ECS/EKS and database migrations.',
     badge: 'Partner',
-    icon: <Server size={22} color="#2258e7" />,
+    icon: <Server size={22} color="#FF5500" />,
   },
   {
     title: 'Microsoft Azure Solutions Partner',
@@ -49,7 +49,7 @@ const COMPANY_CERTIFICATIONS = [
     description:
       'Demonstrated proficiency with Azure App Services, enterprise authentication with Microsoft Entra ID and scalable SQL/Cosmos DB infrastructures.',
     badge: 'Partner',
-    icon: <Database size={22} color="#2258e7" />,
+    icon: <Database size={22} color="#FF5500" />,
   },
 ];
 
@@ -125,9 +125,9 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
   }, [newsletterEmail]);
 
   return (
-    <div className="p-certification-page" style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '68px', color: '#0f172a', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-certification-page" style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '68px', color: '#ffffff', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. s-hero g-section theme-light s-hero--img-right */}
-      <section className="s-hero g-section theme-light s-hero--img-right" style={{ backgroundColor: '#f8fafc', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="s-hero g-section theme-light s-hero--img-right" style={{ backgroundColor: '#0a0a0a', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr', gap: '32px', alignItems: 'center' }}>
           <style>{`
             @media (min-width: 900px) {
@@ -140,24 +140,24 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
           `}</style>
           <div className="s-hero-cert-grid" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             <div>
-              <p style={{ fontSize: '13px', fontWeight: 600, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+              <p style={{ fontSize: '13px', fontWeight: 600, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 Trust &amp; Verified Standards
               </p>
               <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
                 Our proven expertise
               </h1>
-              <p style={{ fontSize: '17px', color: '#475569', lineHeight: 1.65, maxWidth: '720px', margin: 0 }}>
+              <p style={{ fontSize: '17px', color: '#94a3b8', lineHeight: 1.65, maxWidth: '720px', margin: 0 }}>
                 Here you can find the recognized accomplishments and certifications obtained by Neominds TechHub, affirming our expertise, adherence to industry standards, and commitment to quality.
               </p>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: '100%', maxWidth: '280px', padding: '32px', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '4px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}>
-                <div style={{ width: '56px', height: '56px', margin: '0 auto 16px auto', borderRadius: '50%', backgroundColor: 'rgba(34, 88, 231, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <ShieldCheck size={28} color="#2258e7" />
+              <div style={{ width: '100%', maxWidth: '280px', padding: '32px', backgroundColor: '#000000', border: '1px solid #1e293b', borderRadius: '4px', textAlign: 'center', boxShadow: '0 10px 30px rgba(0,0,0,0.04)' }}>
+                <div style={{ width: '56px', height: '56px', margin: '0 auto 16px auto', borderRadius: '50%', backgroundColor: 'rgba(255, 85, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <ShieldCheck size={28} color="#FF5500" />
                 </div>
                 <div style={{ fontSize: '24px', fontWeight: 800, color: '#070b14' }}>100%</div>
-                <div style={{ fontSize: '13px', color: '#64748b', marginTop: '4px' }}>Compliance &amp; Quality Audit Pass Rate</div>
+                <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '4px' }}>Compliance &amp; Quality Audit Pass Rate</div>
               </div>
             </div>
           </div>
@@ -165,13 +165,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 2. s-certification__group: Company level */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#ffffff', borderBottom: '1px solid #f1f5f9' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#000000', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Company level
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#94a3b8', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
               We hold a range of certifications that highlight our commitment to excellence and industry standards. These certifications validate our ability to deliver high-quality products and services and showcase our dedication to continuous improvement.
             </p>
           </div>
@@ -181,28 +181,28 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '4px',
                   padding: '28px',
                   transition: 'all 0.2s ease',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '4px', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '4px', backgroundColor: '#000000', border: '1px solid #1e293b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {item.icon}
                   </div>
-                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#2258e7', backgroundColor: 'rgba(34, 88, 231, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#FF5500', backgroundColor: 'rgba(255, 85, 0, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
                     {item.badge}
                   </span>
                 </div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                   {item.category}
                 </div>
                 <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px' }}>
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
                   {item.description}
                 </p>
               </div>
@@ -212,13 +212,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 3. s-certification__group: Certificates of compliance */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#0a0a0a', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Certificates of compliance
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#94a3b8', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
               Our company adheres to industry standards and regulatory requirements, demonstrating our commitment to maintaining a secure and compliant environment for our clients and stakeholders.
             </p>
           </div>
@@ -228,22 +228,22 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid #1e293b',
                   borderRadius: '4px',
                   padding: '28px',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#000000',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <ShieldCheck size={20} color="#2258e7" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <ShieldCheck size={20} color="#FF5500" />
+                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     {practice.regulation}
                   </span>
                 </div>
                 <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#070b14', marginBottom: '10px', lineHeight: 1.4 }}>
                   {practice.heading}
                 </h3>
-                <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.65, margin: 0 }}>
+                <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.65, margin: 0 }}>
                   {practice.description}
                 </p>
               </div>
@@ -253,13 +253,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 4. s-certification__group: Personal employee certificates */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#ffffff', borderBottom: '1px solid #f1f5f9' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#000000', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Personal employee certificates
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#94a3b8', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
               Our employees hold a range of personal certificates that reflect their individual expertise and qualifications. These certifications demonstrate their commitment to professional development and their ability to deliver exceptional services in their respective fields.
             </p>
           </div>
@@ -269,8 +269,8 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '4px',
                   padding: '18px 20px',
                   display: 'flex',
@@ -278,12 +278,12 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                   gap: '12px',
                 }}
               >
-                <CheckCircle size={18} color="#2258e7" style={{ marginTop: '2px', flexShrink: 0 }} />
+                <CheckCircle size={18} color="#FF5500" style={{ marginTop: '2px', flexShrink: 0 }} />
                 <div>
                   <div style={{ fontSize: '14px', fontWeight: 600, color: '#070b14', lineHeight: 1.4 }}>
                     {item.name}
                   </div>
-                  <div style={{ fontSize: '12px', color: '#64748b', marginTop: '4px' }}>
+                  <div style={{ fontSize: '12px', color: '#94a3b8', marginTop: '4px' }}>
                     {item.category}
                   </div>
                 </div>
@@ -294,19 +294,19 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 5. s-certification__group: Industry recognition */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#0a0a0a', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Industry recognition
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#94a3b8', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
               Our company has received several industry recognition certifications that validate our expertise, quality, and commitment to excellence in software development. These certifications reinforce our position as a leading player in the software development landscape and inspire confidence in our clients and stakeholders.
             </p>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-            <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '28px', backgroundColor: '#ffffff' }}>
+            <div style={{ border: '1px solid #1e293b', borderRadius: '4px', padding: '28px', backgroundColor: '#000000' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px' }}>
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
@@ -315,20 +315,20 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>
                 4.9 / 5.0 Rating
               </h3>
-              <p style={{ fontSize: '14px', color: '#64748b', margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontSize: '14px', color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>
                 Top-rated Custom Software Development &amp; AI Engineering Company across independent client reviews.
               </p>
             </div>
 
-            <div style={{ border: '1px solid #e2e8f0', borderRadius: '4px', padding: '28px', backgroundColor: '#ffffff' }}>
+            <div style={{ border: '1px solid #1e293b', borderRadius: '4px', padding: '28px', backgroundColor: '#000000' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                <Award size={20} color="#2258e7" />
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase' }}>Clutch Global Leader</span>
+                <Award size={20} color="#FF5500" />
+                <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase' }}>Clutch Global Leader</span>
               </div>
               <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>
                 Top B2B Service Provider
               </h3>
-              <p style={{ fontSize: '14px', color: '#64748b', margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontSize: '14px', color: '#94a3b8', margin: 0, lineHeight: 1.6 }}>
                 Recognized for architectural capability, agile velocity, and reliable project delivery for North American &amp; European clients.
               </p>
             </div>
@@ -337,13 +337,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 6. g-section s-testimonials js-slider-testimonials theme-gray */}
-      <section className="g-section s-testimonials js-slider-testimonials theme-gray" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="g-section s-testimonials js-slider-testimonials theme-gray" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: '#000000', borderBottom: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               They say it best
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', maxWidth: '680px', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontSize: '15.5px', color: '#94a3b8', maxWidth: '680px', margin: 0, lineHeight: 1.6 }}>
               Neominds TechHub began with an idea focused on quality. We take action and keep your business’ best interests at heart. We believe in true partnerships with our clients and that’s why they believe us.
             </p>
           </div>
@@ -353,19 +353,19 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '4px',
                   padding: '32px',
                 }}
               >
-                <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#334155', fontStyle: 'italic', marginBottom: '24px' }}>
+                <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#cbd5e1', fontStyle: 'italic', marginBottom: '24px' }}>
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
                   <div style={{ fontWeight: 700, color: '#070b14', fontSize: '15px' }}>{t.author}</div>
-                  <div style={{ fontSize: '13px', color: '#64748b' }}>{t.role}</div>
-                  <div style={{ fontSize: '12px', color: '#2258e7', fontWeight: 600, marginTop: '2px' }}>{t.company}</div>
+                  <div style={{ fontSize: '13px', color: '#94a3b8' }}>{t.role}</div>
+                  <div style={{ fontSize: '12px', color: '#FF5500', fontWeight: 600, marginTop: '2px' }}>{t.company}</div>
                 </div>
               </div>
             ))}
@@ -380,13 +380,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <LocationsSection />
 
       {/* 9. Newsletter Section (s-newsletter g-section js-newsletter theme-light) */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#000000', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
-            <p style={{ fontSize: '15px', color: '#64748b', margin: '8px 0 0 0', maxWidth: '580px' }}>
+            <p style={{ fontSize: '15px', color: '#94a3b8', margin: '8px 0 0 0', maxWidth: '580px' }}>
               Stay up to date with the latest engineering insights, tech announcements, and articles.
             </p>
           </div>
@@ -402,10 +402,10 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: '#f8fafc',
+                backgroundColor: '#0a0a0a',
                 border: '1px solid #cbd5e1',
                 borderRadius: '2px',
-                color: '#0f172a',
+                color: '#ffffff',
                 outline: 'none',
               }}
             />
@@ -416,7 +416,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 alignItems: 'center',
                 gap: '8px',
                 padding: '14px 28px',
-                backgroundColor: '#2258e7',
+                backgroundColor: '#FF5500',
                 color: '#ffffff',
                 fontSize: '14px',
                 fontWeight: 600,

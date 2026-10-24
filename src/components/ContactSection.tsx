@@ -69,7 +69,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#001334',
+        backgroundColor: '#000000',
         overflow: 'hidden',
       }}
     >
@@ -81,10 +81,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
         }}
         className="contact-grid"
       >
-        {/* Left Blue Panel matching contact.png */}
+        {/* Left Orange Panel */}
         <div
           style={{
-            backgroundColor: '#2258E7',
+            backgroundColor: '#FF5500',
             padding: 'clamp(36px, 5vw, 80px) clamp(20px, 4vw, 64px)',
             color: '#ffffff',
             display: 'flex',
@@ -113,7 +113,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               <p
                 className="body-lead"
                 style={{
-                  color: 'rgba(255, 255, 255, 0.92)',
+                  color: 'rgba(255, 255, 255, 0.95)',
                   marginBottom: 'clamp(32px, 4vw, 56px)',
                 }}
               >
@@ -224,17 +224,17 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
           </div>
         </div>
 
-        {/* Right White Form Panel matching full-site white theme */}
+        {/* Right Black Form Panel */}
         <RevealElement variant="card" start="top 88%" end="top 55%">
           <div
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: '#0a0a0a',
               padding: 'clamp(36px, 5vw, 80px) clamp(20px, 4vw, 64px)',
-              color: '#0f172a',
+              color: '#ffffff',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
-              borderTop: '1px solid #e2e8f0',
+              borderTop: '1px solid #1e293b',
             }}
           >
           {submitted ? (
@@ -244,7 +244,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   width: '64px',
                   height: '64px',
                   borderRadius: '50%',
-                  backgroundColor: '#2258E7',
+                  backgroundColor: '#FF5500',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -253,10 +253,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               >
                 <Check size={32} color="#ffffff" />
               </div>
-              <h3 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading)', marginBottom: '12px', color: '#0f172a' }}>
+              <h3 style={{ fontSize: '28px', fontWeight: 700, fontFamily: 'var(--font-heading)', marginBottom: '12px', color: '#ffffff' }}>
                 Thank you for reaching out!
               </h3>
-              <p style={{ color: '#64748b', fontSize: '16px', maxWidth: '440px', margin: '0 auto 24px' }}>
+              <p style={{ color: '#94a3b8', fontSize: '16px', maxWidth: '440px', margin: '0 auto 24px' }}>
                 Our engineering team will review your requirements and respond within 24 hours.
               </p>
               <button
@@ -291,12 +291,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     marginBottom: '8px',
                     letterSpacing: '-0.02em',
                     lineHeight: 1.15,
-                    color: '#0f172a',
+                    color: '#ffffff',
                   }}
                 >
                   Tell us what you want to build
                 </h2>
-                <p className="body-lead" style={{ color: '#475569' }}>
+                <p className="body-lead" style={{ color: '#94a3b8' }}>
                   Share your idea, goals and timeline. We reply within one business day and set up a call at a time that suits your time zone.
                 </p>
               </div>
@@ -304,11 +304,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               {/* Challenge / Goal Input */}
               <div style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <label htmlFor="challenge" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', fontFamily: 'var(--font-heading)' }}>
+                  <label htmlFor="challenge" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', fontFamily: 'var(--font-heading)' }}>
                     Your project and goals*
                   </label>
                   <span title="Describe your project, goals, timeline, and tech stack if known" style={{ display: 'inline-flex', cursor: 'pointer' }}>
-                    <HelpCircle size={14} color="#64748b" />
+                    <HelpCircle size={14} color="#94a3b8" />
                   </span>
                 </div>
                 <input
@@ -318,14 +318,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   placeholder="Describe your project, timeline, tech stack and goals..."
                   value={formData.challenge}
                   onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
-                  style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
+                  style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
                 />
               </div>
 
               {/* Name & Corporate Email Row */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', display: 'block', fontFamily: 'var(--font-heading)' }}>
+                  <label htmlFor="name" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
                     Name*
                   </label>
                   <input
@@ -335,12 +335,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     placeholder="Jane Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
+                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', display: 'block', fontFamily: 'var(--font-heading)' }}>
+                  <label htmlFor="email" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
                     Corporate email*
                   </label>
                   <input
@@ -350,7 +350,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     placeholder="jane@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
+                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
                   />
                 </div>
               </div>
@@ -358,7 +358,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               {/* Phone & Company Row */}
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', display: 'block', fontFamily: 'var(--font-heading)' }}>
+                  <label htmlFor="phone" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
                     Phone number
                   </label>
                   <input
@@ -367,12 +367,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
+                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 600, color: '#334155', display: 'block', fontFamily: 'var(--font-heading)' }}>
+                  <label htmlFor="company" style={{ fontSize: '14px', fontWeight: 600, color: '#cbd5e1', display: 'block', fontFamily: 'var(--font-heading)' }}>
                     Company
                   </label>
                   <input
@@ -381,7 +381,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     placeholder="Acme Corp"
                     value={formData.company}
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#f8fafc', border: '1px solid #cbd5e1', borderRadius: 'var(--input-radius)', fontSize: '14px', color: '#0f172a', outline: 'none', marginTop: '6px' }}
+                    style={{ width: '100%', padding: '12px 16px', backgroundColor: '#111827', border: '1px solid #1e293b', borderRadius: '0px', fontSize: '14px', color: '#ffffff', outline: 'none', marginTop: '6px' }}
                   />
                 </div>
               </div>
@@ -406,12 +406,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   paddingTop: '6px',
                 }}
               >
-                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontSize: '14px', color: '#334155', minHeight: '40px' }}>
+                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontSize: '14px', color: '#cbd5e1', minHeight: '40px' }}>
                   <input
                     type="checkbox"
                     checked={formData.ndaFirst}
                     onChange={(e) => setFormData({ ...formData, ndaFirst: e.target.checked })}
-                    style={{ width: '16px', height: '16px', accentColor: '#2258e7' }}
+                    style={{ width: '16px', height: '16px', accentColor: '#FF5500' }}
                   />
                   <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
                 </label>
@@ -424,7 +424,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       display: 'flex',
                       alignItems: 'center',
                       gap: '6px',
-                      color: '#2258e7',
+                      color: '#FF5500',
                       fontSize: '14px',
                       fontFamily: 'var(--font-heading)',
                       fontWeight: 600,
@@ -445,7 +445,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       display: 'flex',
                       alignItems: 'center',
                       gap: '6px',
-                      color: isRecording ? '#ef4444' : '#2258e7',
+                      color: isRecording ? '#ef4444' : '#FF5500',
                       fontSize: '14px',
                       fontFamily: 'var(--font-heading)',
                       fontWeight: 600,
@@ -472,12 +472,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '6px',
-                        backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                        border: '1px solid #2258e7',
-                        color: '#2258e7',
+                        backgroundColor: 'rgba(255, 85, 0, 0.12)',
+                        border: '1px solid #FF5500',
+                        color: '#FF5500',
                         fontSize: '12px',
                         padding: '6px 12px',
-                        borderRadius: '4px',
+                        borderRadius: '0px',
                         fontWeight: 600,
                       }}
                     >
@@ -496,7 +496,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         color: '#059669',
                         fontSize: '12px',
                         padding: '6px 12px',
-                        borderRadius: '4px',
+                        borderRadius: '0px',
                         fontWeight: 600,
                       }}
                     >
@@ -508,13 +508,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
               )}
 
               {/* Consent Checkbox */}
-              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', fontSize: '13px', lineHeight: 1.5, color: '#64748b' }}>
+              <label style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', cursor: 'pointer', fontSize: '13px', lineHeight: 1.5, color: '#94a3b8' }}>
                 <input
                   type="checkbox"
                   required
                   checked={formData.consent}
                   onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                  style={{ marginTop: '2px', accentColor: '#2258e7' }}
+                  style={{ marginTop: '2px', accentColor: '#FF5500' }}
                 />
                 <span>
                   I agree to the processing of my personal data as described in the{' '}
@@ -524,7 +524,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       e.preventDefault();
                       if (onOpenPrivacy) onOpenPrivacy();
                     }}
-                    style={{ color: '#2258e7', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
+                    style={{ color: '#FF5500', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
                   >
                     Privacy Policy
                   </button>{' '}
@@ -535,7 +535,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       e.preventDefault();
                       if (onOpenPrivacy) onOpenPrivacy();
                     }}
-                    style={{ color: '#2258e7', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
+                    style={{ color: '#FF5500', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0, fontWeight: 600 }}
                   >
                     Cookie Policy
                   </button>

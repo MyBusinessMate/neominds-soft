@@ -25,8 +25,8 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#ffffff',
-        borderTop: '1px solid #e2e8f0',
+        backgroundColor: '#0a0a0a',
+        borderTop: '1px solid #1e293b',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -35,7 +35,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
             style={{
               fontSize: '12px',
               fontWeight: 700,
-              color: '#2258e7',
+              color: '#FF5500',
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
               marginBottom: '10px',
@@ -48,7 +48,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
             style={{
               fontSize: 'clamp(28px, 3.4vw, 40px)',
               fontWeight: 800,
-              color: '#0f172a',
+              color: '#ffffff',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -79,7 +79,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
               onClick={() => onNavigatePage(item.slug)}
               style={{
                 padding: '24px 0',
-                borderBottom: '1px solid #e2e8f0',
+                borderBottom: '1px solid #1e293b',
                 display: 'grid',
                 gridTemplateColumns: 'minmax(140px, 200px) 1fr auto',
                 gap: '24px',
@@ -99,7 +99,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                   style={{
                     fontSize: '11px',
                     fontWeight: 700,
-                    color: '#2258e7',
+                    color: '#FF5500',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                   }}
@@ -116,7 +116,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                   style={{
                     fontSize: '18px',
                     fontWeight: 700,
-                    color: '#0f172a',
+                    color: '#ffffff',
                     fontFamily: 'var(--font-heading)',
                     margin: '0 0 4px 0',
                   }}
@@ -133,11 +133,11 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  border: '1px solid #cbd5e1',
+                  border: '1px solid #334155',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#0f172a',
+                  color: '#ffffff',
                   transition: 'all 0.2s',
                 }}
               >

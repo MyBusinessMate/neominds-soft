@@ -34,27 +34,27 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
     {
       title: 'Artificial intelligence',
       desc: 'AI now supports work from customer service to forecasting. We help you use it where it saves time or improves decisions.',
-      icon: <Cpu size={22} color="#2258e7" />,
+      icon: <Cpu size={22} color="#FF5500" />,
     },
     {
       title: 'Machine learning',
       desc: 'Models that learn from your own data to predict demand, flag risk or personalize what customers see.',
-      icon: <Layers size={22} color="#2258e7" />,
+      icon: <Layers size={22} color="#FF5500" />,
     },
     {
       title: 'Cloud computing',
       desc: 'Cloud platforms give you speed, reliability and room to grow without running your own servers.',
-      icon: <Cloud size={22} color="#2258e7" />,
+      icon: <Cloud size={22} color="#FF5500" />,
     },
     {
       title: 'Data analytics',
       desc: 'Dashboards and reports that turn scattered data into clear decisions.',
-      icon: <BarChart3 size={22} color="#2258e7" />,
+      icon: <BarChart3 size={22} color="#FF5500" />,
     },
     {
       title: 'Automation',
       desc: 'Workflows that run on their own, so your team spends time on work that needs people.',
-      icon: <Zap size={22} color="#2258e7" />,
+      icon: <Zap size={22} color="#FF5500" />,
     },
   ];
 
@@ -62,25 +62,25 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
     {
       title: 'Web applications',
       desc: 'Fast, secure and responsive web apps, portals and sites that grow with your traffic.',
-      icon: <Globe size={24} color="#2258e7" />,
+      icon: <Globe size={24} color="#FF5500" />,
       tag: 'Scale & Performance',
     },
     {
       title: 'Mobile applications',
       desc: 'iOS and Android apps designed for smooth use, with updates that are easy to ship.',
-      icon: <Smartphone size={24} color="#2258e7" />,
+      icon: <Smartphone size={24} color="#FF5500" />,
       tag: 'iOS & Android',
     },
     {
       title: 'Cloud and SaaS applications',
       desc: 'Cloud-native products with accounts, billing and analytics ready to scale.',
-      icon: <Cloud size={24} color="#2258e7" />,
+      icon: <Cloud size={24} color="#FF5500" />,
       tag: 'Multi-Tenant SaaS',
     },
     {
       title: 'AI-powered applications',
       desc: 'Software that uses AI to automate work, answer questions or make predictions.',
-      icon: <Bot size={24} color="#2258e7" />,
+      icon: <Bot size={24} color="#FF5500" />,
       tag: 'Generative AI & LLMs',
     },
   ];
@@ -91,112 +91,112 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       title: 'Web Development',
       slug: 'web-development',
       desc: 'Fast, secure, responsive websites, portals and web apps that scale with your traffic.',
-      icon: <Code size={20} color="#2258e7" />,
+      icon: <Code size={20} color="#FF5500" />,
     },
     {
       num: '02',
       title: 'App Development',
       slug: 'app-development',
       desc: 'Native iOS and Android apps built for smooth performance, security, and easy maintenance.',
-      icon: <Smartphone size={20} color="#2258e7" />,
+      icon: <Smartphone size={20} color="#FF5500" />,
     },
     {
       num: '03',
       title: 'Cross-Platform Mobile App Development',
       slug: 'cross-platform-app-development',
       desc: 'A unified codebase running cleanly across iOS, Android, and web with zero performance compromise.',
-      icon: <Layers size={20} color="#2258e7" />,
+      icon: <Layers size={20} color="#FF5500" />,
     },
     {
       num: '04',
       title: 'Custom Software Development',
       slug: 'custom-software-development',
       desc: 'Engineered around your operational workflow when off-the-shelf software falls short.',
-      icon: <Cpu size={20} color="#2258e7" />,
+      icon: <Cpu size={20} color="#FF5500" />,
     },
     {
       num: '05',
       title: 'AI Automations',
       slug: 'ai-automations',
       desc: 'Eliminate repetitive manual tasks across approvals, invoice parsing, QA, and data sync.',
-      icon: <Zap size={20} color="#2258e7" />,
+      icon: <Zap size={20} color="#FF5500" />,
     },
     {
       num: '06',
       title: 'AI Integrations',
       slug: 'ai-integrations',
       desc: 'Embed semantic search, LLM reasoning, and intelligent document processing into existing stacks.',
-      icon: <Layers size={20} color="#2258e7" />,
+      icon: <Layers size={20} color="#FF5500" />,
     },
     {
       num: '07',
       title: 'AI Systems',
       slug: 'ai-systems',
       desc: 'Autonomous agentic systems, specialized reasoning models, and production RAG pipelines.',
-      icon: <Bot size={20} color="#2258e7" />,
+      icon: <Bot size={20} color="#FF5500" />,
     },
     {
       num: '08',
       title: 'E-commerce Platform',
       slug: 'ecommerce-platform',
       desc: 'High-volume storefronts, checkout engines, inventory sync, and localized payment gateways.',
-      icon: <ShoppingCart size={20} color="#2258e7" />,
+      icon: <ShoppingCart size={20} color="#FF5500" />,
     },
     {
       num: '09',
       title: 'AI Native Softwares',
       slug: 'ai-native-software',
       desc: 'Software built with generative AI and LLMs as the foundational architecture layer.',
-      icon: <Bot size={20} color="#2258e7" />,
+      icon: <Bot size={20} color="#FF5500" />,
     },
     {
       num: '10',
       title: 'Cloud Based Softwares',
       slug: 'cloud-based-software',
       desc: 'Resilient cloud infrastructure, distributed microservices, and auto-scaling compute pods.',
-      icon: <Cloud size={20} color="#2258e7" />,
+      icon: <Cloud size={20} color="#FF5500" />,
     },
     {
       num: '11',
       title: 'SaaS Development',
       slug: 'saas-development',
       desc: 'Multi-tenant subscription platforms with tenant isolation, billing, and role management.',
-      icon: <Globe size={20} color="#2258e7" />,
+      icon: <Globe size={20} color="#FF5500" />,
     },
     {
       num: '12',
       title: 'Analytic Dashboard',
       slug: 'analytics-dashboard',
       desc: 'Real-time telemetry, executive reporting metrics, and interactive analytics dashboards.',
-      icon: <BarChart3 size={20} color="#2258e7" />,
+      icon: <BarChart3 size={20} color="#FF5500" />,
     },
     {
       num: '13',
       title: 'Custom Health Softwares',
       slug: 'custom-health-software',
       desc: 'HIPAA-compliant hospital systems, telemedicine platforms, and patient engagement tools.',
-      icon: <Cpu size={20} color="#2258e7" />,
+      icon: <Cpu size={20} color="#FF5500" />,
     },
     {
       num: '14',
       title: 'Legacy System Modernisation',
       slug: 'legacy-modernisation',
       desc: 'Decompose monolithic mainframes and outdated codebases into cloud microservices with zero downtime.',
-      icon: <RefreshCw size={20} color="#2258e7" />,
+      icon: <RefreshCw size={20} color="#FF5500" />,
     },
     {
       num: '15',
       title: 'Training as a Service',
       slug: 'training-as-service',
       desc: 'Technical enablement, AI upskilling, and architectural onboarding for client engineering teams.',
-      icon: <Globe size={20} color="#2258e7" />,
+      icon: <Globe size={20} color="#FF5500" />,
     },
     {
       num: '16',
       title: 'Product Engineering',
       slug: 'product-engineering',
       desc: 'End-to-end product delivery from technical discovery and sprint execution to production scaling.',
-      icon: <Layers size={20} color="#2258e7" />,
+      icon: <Layers size={20} color="#FF5500" />,
     },
   ];
 
@@ -264,11 +264,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '80px', color: '#0f172a' }}>
+    <div style={{ backgroundColor: '#000000', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: '#070b14', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: '#000000', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
@@ -279,7 +279,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 fontWeight: 600,
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: '#2258e7',
+                color: '#FF5500',
                 marginBottom: '16px',
               }}
             >
@@ -315,7 +315,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <button
                 onClick={handleEstimateClick}
                 style={{
-                  backgroundColor: '#2258e7',
+                  backgroundColor: '#FF5500',
                   color: '#ffffff',
                   border: 'none',
                   padding: '14px 28px',
@@ -326,11 +326,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  boxShadow: '0 8px 24px rgba(34, 88, 231, 0.35)',
+                  boxShadow: '0 8px 24px rgba(255, 85, 0, 0.35)',
                   transition: 'background-color 0.2s',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#1d4ed8')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
               >
                 <span>Get a project estimate</span>
                 <ArrowRight size={16} />
@@ -368,7 +368,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: '#f8fafc' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Market Dynamics
             </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
@@ -383,20 +383,20 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 variant="card"
                 delay={idx * 0.05}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '12px',
                   padding: '24px',
-                  boxShadow: '0 4px 12px rgba(15, 23, 42, 0.03)',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.4)',
                 }}
               >
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', backgroundColor: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '10px', backgroundColor: 'rgba(255, 85, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   {t.icon}
                 </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
                   {t.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
                   {t.desc}
                 </p>
               </RevealElement>
@@ -408,13 +408,13 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           3. WHAT WE BUILD (4 CARDS)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '44px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Core Capabilities
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               What we build
             </h2>
           </div>
@@ -424,10 +424,10 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid #1e293b',
                   borderRadius: '12px',
                   padding: '30px',
-                  backgroundColor: '#f8fafc',
+                  backgroundColor: '#0a0a0a',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -435,17 +435,17 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#ffffff', border: '1px solid #e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#111827', border: '1px solid #1e293b', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {item.icon}
                     </div>
-                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#2258e7', backgroundColor: '#eff6ff', padding: '3px 8px', borderRadius: '4px' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#FF5500', backgroundColor: 'rgba(255, 85, 0, 0.12)', padding: '3px 8px', borderRadius: '4px' }}>
                       {item.tag}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0f172a', marginBottom: '10px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -458,16 +458,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           5. SERVICES WE OFFER (NUMBERED LIST)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#f8fafc' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Full Service Catalog
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Services we offer
             </h2>
-            <p style={{ fontSize: '16px', color: '#64748b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
               From initial architecture to continuous production delivery, our teams cover every stage of the software lifecycle.
             </p>
           </div>
@@ -478,8 +478,8 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 key={idx}
                 onClick={() => handleServiceClick(service.slug)}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '12px',
                   padding: '24px',
                   cursor: 'pointer',
@@ -487,30 +487,30 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   gap: '18px',
                   alignItems: 'flex-start',
                   transition: 'all 0.25s ease',
-                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.03)',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#2258e7';
+                  e.currentTarget.style.borderColor = '#FF5500';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(34, 88, 231, 0.08)';
+                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(255, 85, 0, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0';
+                  e.currentTarget.style.borderColor = '#1e293b';
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(15, 23, 42, 0.03)';
+                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.4)';
                 }}
               >
-                <div style={{ fontSize: '16px', fontWeight: 800, color: '#94a3b8', fontFamily: 'monospace' }}>
+                <div style={{ fontSize: '16px', fontWeight: 800, color: '#FF5500', fontFamily: 'monospace' }}>
                   {service.num}
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', margin: 0 }}>
+                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
                       {service.title}
                     </h3>
-                    <ArrowRight size={14} color="#2258e7" />
+                    <ArrowRight size={14} color="#FF5500" />
                   </div>
-                  <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.55, margin: 0 }}>
                     {service.desc}
                   </p>
                 </div>
@@ -523,14 +523,14 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           6. INDUSTRIES WE BUILD FOR
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#000000' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
             <div>
-              <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 Domain Expertise
               </span>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
                 Industries we build for
               </h2>
             </div>
@@ -542,7 +542,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               }}
               style={{
                 backgroundColor: 'transparent',
-                color: '#2258e7',
+                color: '#FF5500',
                 border: 'none',
                 fontSize: '14px',
                 fontWeight: 600,
@@ -562,16 +562,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid #1e293b',
                   borderRadius: '10px',
                   padding: '24px',
-                  backgroundColor: '#f8fafc',
+                  backgroundColor: '#0a0a0a',
                 }}
               >
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
                   {ind.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
                   {ind.desc}
                 </p>
               </div>
@@ -583,16 +583,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           8. TECHNOLOGIES WE USE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#000000', borderTop: '1px solid #1e293b' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Modern Tech Stack
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Technologies we use
             </h2>
-            <p style={{ fontSize: '16px', color: '#64748b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
               The tools behind our work, chosen for your goals.
             </p>
           </div>
@@ -602,16 +602,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: '#0a0a0a',
+                  border: '1px solid #1e293b',
                   borderRadius: '8px',
                   padding: '20px',
                 }}
               >
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', marginBottom: '6px' }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
                   {t.area}
                 </div>
-                <div style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5 }}>
                   {t.tech}
                 </div>
               </div>

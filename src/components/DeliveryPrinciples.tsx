@@ -107,10 +107,10 @@ const DeliveryPrinciplesComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#000000',
         paddingTop: 'clamp(70px, 8vw, 100px)',
         paddingBottom: '0px',
-        color: '#121212',
+        color: '#ffffff',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
@@ -132,7 +132,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                   fontSize: '13px',
                   fontWeight: 700,
                   letterSpacing: '0.15em',
-                  color: '#475067',
+                  color: '#FF5500',
                   textTransform: 'uppercase',
                 }}
               >
@@ -150,7 +150,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 fontSize: 'clamp(20px, 2.2vw, 32px)',
                 fontWeight: 600,
                 lineHeight: 1.3,
-                color: '#121212',
+                color: '#ffffff',
                 marginBottom: 'clamp(28px, 4vw, 40px)',
                 maxWidth: '650px',
                 display: 'block',
@@ -166,7 +166,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 width: '100%',
-                borderRadius: '8px',
+                borderRadius: '0px',
                 overflow: 'hidden',
                 border: 'none',
               }}
@@ -179,13 +179,14 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                     onClick={() => setActivePrinciple(isActive ? '' : p.id)}
                     style={{
                       borderBottom: 'none',
-                      backgroundColor: isActive ? '#2258E7' : '#ffffff',
-                      color: isActive ? '#ffffff' : '#121212',
+                      backgroundColor: isActive ? '#FF5500' : '#0a0a0a',
+                      color: '#ffffff',
                       cursor: 'pointer',
                       transition: 'background-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease',
-                      boxShadow: isActive ? '0 10px 30px rgba(34, 88, 231, 0.2)' : 'none',
-                      borderRadius: '8px',
+                      boxShadow: isActive ? '0 10px 30px rgba(255, 85, 0, 0.25)' : 'none',
+                      borderRadius: '0px',
                       marginBottom: '8px',
+                      border: '1px solid #1e293b',
                     }}
                     role="button"
                     tabIndex={0}
@@ -216,6 +217,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                             fontWeight: 700,
                             letterSpacing: '0.01em',
                             lineHeight: 1.2,
+                            color: '#ffffff',
                           }}
                         >
                           {p.title}
@@ -224,7 +226,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                           <span
                             style={{
                               fontSize: '13px',
-                              color: '#64748b',
+                              color: '#94a3b8',
                               fontWeight: 400,
                               marginTop: '2px',
                             }}
@@ -250,7 +252,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                       >
                         <ArrowRight
                           size={22}
-                          color={isActive ? '#ffffff' : '#121212'}
+                          color="#ffffff"
                           style={{
                             flexShrink: 0,
                             transition: 'color 0.2s ease',
@@ -318,7 +320,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           </div>
         </div>
 
-        {/* 4-Column Statistics Grid: Connected with proper sharp styling (0px border-radius) & responsive hover effect */}
+        {/* 4-Column Statistics Grid */}
         <RevealElement variant="card" start="top 92%" end="top 65%">
           <div
             ref={statsRef}
@@ -327,7 +329,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              backgroundColor: '#ffffff',
+              backgroundColor: '#000000',
               border: 'none',
               gap: '0px',
               borderRadius: '0px',
@@ -343,13 +345,13 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                   onMouseEnter={() => setHoveredCardIndex(index)}
                   style={{
                     padding: 'clamp(28px, 3.5vw, 42px) clamp(20px, 2.5vw, 32px)',
-                    border: '1px solid #e4e4e7',
+                    border: '1px solid #1e293b',
                     borderRadius: '0px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     minHeight: '190px',
-                    backgroundColor: isHovered ? '#2258e7' : '#ffffff',
+                    backgroundColor: isHovered ? '#FF5500' : '#0a0a0a',
                     cursor: 'pointer',
                     transition: 'background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease',
                     position: 'relative',
@@ -363,7 +365,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                       fontSize: '12px',
                       fontWeight: 700,
                       letterSpacing: '0.12em',
-                      color: isHovered ? '#ffffff' : '#121212',
+                      color: isHovered ? '#ffffff' : '#94a3b8',
                       textTransform: 'uppercase',
                       marginBottom: '24px',
                       lineHeight: 1.4,
@@ -378,7 +380,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                       fontFamily: 'var(--font-heading)',
                       fontSize: 'clamp(38px, 4.4vw, 60px)',
                       fontWeight: 700,
-                      color: isHovered ? '#ffffff' : '#2258e7',
+                      color: isHovered ? '#ffffff' : '#FF5500',
                       lineHeight: 1,
                       fontVariantNumeric: 'tabular-nums',
                       margin: 0,

@@ -28,7 +28,7 @@ const caseStudies: CaseStudy[] = [
           style={{
             width: '28px',
             height: '28px',
-            backgroundColor: '#38bdf8',
+            backgroundColor: '#FF5500',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -214,7 +214,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
         position: 'relative',
         width: '100%',
         height: shouldStack ? 'auto' : '100vh',
-        backgroundColor: '#0a0d14',
+        backgroundColor: '#000000',
         overflow: shouldStack ? 'visible' : 'hidden',
         display: 'flex',
         flexDirection: shouldStack ? 'column' : 'row',
@@ -225,7 +225,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
       {/* Mobile / Stack Header Title */}
       {shouldStack && (
         <div style={{ padding: '36px 20px 20px 20px', textAlign: 'left', width: '100%' }}>
-          <span style={{ fontSize: '12px', fontWeight: 700, color: '#38bdf8', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+          <span style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
             FEATURED WORK
           </span>
           <h2 style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 0 0', letterSpacing: '-0.02em' }}>
