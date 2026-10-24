@@ -44,15 +44,9 @@
   transform: translateZ(0);
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Disabled */
 .cinematic-scrollbar-track {
-  position: fixed;
-  top: 20px;
-  right: 8px;
-  bottom: 20px;
-  width: 6px;
-  z-index: 90;
-  pointer-events: none;
+  display: none !important;
 }
 
 .cinematic-scrollbar-rail {

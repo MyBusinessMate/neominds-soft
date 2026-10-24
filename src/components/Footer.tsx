@@ -349,7 +349,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
       {/* =========================================================================
           GIANT DISPLAY WORDMARK: Neo (Dark Navy #06102B) + Minds (Royal Blue #0052FF)
-          Spans edge-to-edge across the entire screen without any gaps
+          Natural typography, perfectly centered with symmetric gaps on both edges
           ========================================================================= */}
       <div className="nm-giant-wordmark-container">
         <div
@@ -357,27 +357,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           className="nm-giant-wordmark"
           title="NeoMinds"
         >
-          <svg
-            viewBox="0 0 1000 162"
-            width="100%"
-            height="auto"
-            preserveAspectRatio="none"
-            className="nm-giant-wordmark-svg"
-          >
-            <text
-              x="0"
-              y="140"
-              fontFamily="var(--font-heading), 'Mona Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
-              fontWeight="900"
-              fontSize="165"
-              letterSpacing="-0.035em"
-              textLength="1000"
-              lengthAdjust="spacingAndGlyphs"
-            >
-              <tspan fill="#06102B">Neo</tspan>
-              <tspan fill="#0052FF">Minds</tspan>
-            </text>
-          </svg>
+          <span className="nm-wordmark-neo">Neo</span>
+          <span className="nm-wordmark-minds">Minds</span>
         </div>
       </div>
 
@@ -613,34 +594,55 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           flex: 0 0 auto;
         }
 
-        /* GIANT NeoMinds DISPLAY WORDMARK - Full Edge-to-Edge with Zero Gaps */
+        /* GIANT NeoMinds DISPLAY WORDMARK - Natural, Balanced & Centered */
         .nm-giant-wordmark-container {
           width: 100%;
           overflow: hidden;
-          padding: 0;
-          margin: 12px 0 -4px 0;
+          padding: clamp(16px, 2.5vw, 32px) clamp(24px, 4.5vw, 68px) clamp(8px, 1.5vw, 16px) clamp(24px, 4.5vw, 68px);
           user-select: none;
-          line-height: 0;
+          display: flex;
+          justifyContent: center;
+          align-items: center;
         }
 
         .nm-giant-wordmark {
-          display: block;
-          width: 100%;
+          display: inline-flex;
+          align-items: baseline;
+          justifyContent: center;
+          font-family: var(--font-heading);
+          font-size: clamp(64px, 15vw, 215px);
+          font-weight: 900;
+          line-height: 0.9;
+          letter-spacing: -0.04em;
           cursor: pointer;
-          line-height: 0;
+          white-space: nowrap;
+          margin: 0 auto;
           transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
         }
 
         .nm-giant-wordmark:hover {
-          transform: translateY(-3px);
+          transform: translateY(-4px);
           opacity: 0.96;
         }
 
-        .nm-giant-wordmark-svg {
-          display: block;
-          width: 100%;
-          height: auto;
-          overflow: visible;
+        .nm-wordmark-neo {
+          color: #06102B;
+          display: inline-block;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nm-wordmark-minds {
+          color: #0052FF;
+          display: inline-block;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nm-giant-wordmark:hover .nm-wordmark-neo {
+          transform: translateY(-2px);
+        }
+
+        .nm-giant-wordmark:hover .nm-wordmark-minds {
+          transform: translateY(-2px);
         }
 
         /* BOTTOM BAR */

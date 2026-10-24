@@ -314,7 +314,7 @@ export const App: React.FC = () => {
 
   return (
     <ErrorBoundary>
-      <CinematicScroll isGlobal accentColor="#2258e7" blurSize={60} blurMax={12} blurLayers={2}>
+      <CinematicScroll isGlobal showScrollbar={false} blurSize={60} blurMax={12} blurLayers={2}>
         <div className="neominds-app">
           {/* Skip to Main Content Link for Accessibility */}
           <a

@@ -244,10 +244,10 @@ html.lenis, html.lenis body {
   pointer-events: none;
 }
 
-/* Sleek Custom Scrollbar */
+/* Sleek Clean Scrollbar */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #2258e7 rgba(0, 19, 52, 0.4);
+  scrollbar-color: #94a3b8 transparent;
 }
 
 ::-webkit-scrollbar {
@@ -255,16 +255,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 19, 52, 0.6);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2258e7;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #94a3b8;
 }
 
 html {
