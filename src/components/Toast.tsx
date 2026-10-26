@@ -60,7 +60,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
               {t.title}
             </h4>
             {t.description && (
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#8893a7', lineHeight: 1.4 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#a3a09b', lineHeight: 1.4 }}>
                 {t.description}
               </p>
             )}
@@ -69,7 +69,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
           <button
             onClick={() => onDismiss(t.id)}
             style={{
-              color: '#8893a7',
+              color: '#a3a09b',
               minWidth: '36px',
               minHeight: '36px',
               display: 'flex',

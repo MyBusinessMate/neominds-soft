@@ -72,7 +72,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
               We value your privacy and cookie transparency
             </h4>
-            <p className="body-text" style={{ fontSize: '13px', lineHeight: 1.5, color: '#8893a7' }}>
+            <p className="body-text" style={{ fontSize: '13px', lineHeight: 1.5, color: '#a3a09b' }}>
               Neominds uses necessary cookies to ensure system stability, analyze web traffic, and personalize your experience. Learn more in our{' '}
               <button
                 onClick={onOpenPrivacy}
@@ -165,7 +165,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <button
                 onClick={() => setShowSettings(false)}
                 style={{
-                  color: '#8893a7',
+                  color: '#a3a09b',
                   minWidth: '44px',
                   minHeight: '44px',
                   display: 'flex',
@@ -182,7 +182,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '12px' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Strictly Necessary Cookies</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Essential for core site navigation and security.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Essential for core site navigation and security.</p>
                 </div>
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '12px', color: '#10b981', fontWeight: 700 }}>Always Active</span>
               </div>
@@ -190,7 +190,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '12px' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Performance & Analytics</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Helps us measure site traffic and responsiveness.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Helps us measure site traffic and responsiveness.</p>
                 </div>
                 <input
                   type="checkbox"
@@ -203,7 +203,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Marketing & Attribution</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Used to evaluate campaign performance.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Used to evaluate campaign performance.</p>
                 </div>
                 <input
                   type="checkbox"
@@ -217,7 +217,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
               <button
                 onClick={() => setShowSettings(false)}
-                style={{ padding: '8px 16px', color: '#8893a7', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px' }}
+                style={{ padding: '8px 16px', color: '#a3a09b', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px' }}
               >
                 Cancel
               </button>

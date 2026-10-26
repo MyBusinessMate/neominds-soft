@@ -29,7 +29,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(15, 23, 42, 0.75)',
+        backgroundColor: 'rgba(21, 7, 0, 0.85)',
         backdropFilter: 'blur(8px)',
         zIndex: 1000,
         display: 'flex',

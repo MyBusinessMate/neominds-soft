@@ -193,7 +193,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
 
             <div className="p-blog__list">
               {visiblePosts.length === 0 ? (
-                <div style={{ padding: '64px 24px', textAlign: 'center', color: '#a3a09b', background: '#f8fafc', borderRadius: '4px' }}>
+                <div style={{ padding: '64px 24px', textAlign: 'center', color: '#a3a09b', background: '#faf8f5', borderRadius: '4px' }}>
                   <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>No publications found</p>
                   <p style={{ fontSize: '14px', margin: 0 }}>Try clearing your search query or selecting a different category tag.</p>
                 </div>

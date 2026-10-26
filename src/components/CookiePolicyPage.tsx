@@ -108,7 +108,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     border: 'none',
                     borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#351505'}`,
                     padding: '8px 14px',
-                    color: activeSection === item.id ? '#fe6200' : '#475569',
+                    color: activeSection === item.id ? '#fe6200' : '#868683',
                     fontWeight: activeSection === item.id ? 700 : 500,
                     fontSize: '13.5px',
                     cursor: 'pointer',

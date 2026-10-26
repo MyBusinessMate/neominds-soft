@@ -47,7 +47,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
       <section
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
-          background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
+          background: 'linear-gradient(180deg, #faf8f5 0%, #ffffff 100%)',
           borderBottom: '1px solid #351505',
         }}
       >
@@ -87,9 +87,9 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 onClick={() => setActiveType(type)}
                 className={`btn btn-sm ${activeType === type ? 'btn-primary' : 'btn-outline'}`}
                 style={{
-                  color: activeType === type ? '#ffffff' : '#475569',
+                  color: activeType === type ? '#ffffff' : '#868683',
                   borderColor: activeType === type ? '#fe6200' : '#a3a09b',
-                  backgroundColor: activeType === type ? '#fe6200' : '#f8fafc',
+                  backgroundColor: activeType === type ? '#fe6200' : '#faf8f5',
                   cursor: 'pointer',
                 }}
               >

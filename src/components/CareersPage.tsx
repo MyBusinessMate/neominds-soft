@@ -238,7 +238,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   borderRadius: '2px',
                   border: `1px solid ${selectedDept === dept ? '#fe6200' : '#351505'}`,
                   backgroundColor: selectedDept === dept ? '#fe6200' : '#ffffff',
-                  color: selectedDept === dept ? '#ffffff' : '#475569',
+                  color: selectedDept === dept ? '#ffffff' : '#868683',
                   fontSize: '14px',
                   fontWeight: selectedDept === dept ? 600 : 500,
                   cursor: 'pointer',
@@ -506,7 +506,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 <div
                   onClick={() => document.getElementById('resume-upload-input')?.click()}
                   style={{
-                    border: '1px dashed #334155',
+                    border: '1px dashed #66615c',
                     borderRadius: '2px',
                     padding: '24px',
                     textAlign: 'center',

@@ -743,7 +743,7 @@ export const Header: React.FC<HeaderProps> = ({
                     height: '130px',
                     width: '100%',
                     borderRadius: '4px',
-                    background: 'linear-gradient(135deg, #182838 0%, #1e3a52 100%)',
+                    background: 'linear-gradient(135deg, #351505 0%, #200b00 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

@@ -59,7 +59,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <h1 style={{ fontSize: '32px', fontWeight: 700, marginBottom: '12px' }}>
             Something went wrong
           </h1>
-          <p style={{ color: '#8893a7', maxWidth: '480px', marginBottom: '16px' }}>
+          <p style={{ color: '#a3a09b', maxWidth: '480px', marginBottom: '16px' }}>
             An unexpected error occurred while rendering this page.
           </p>
           {this.state.error && (

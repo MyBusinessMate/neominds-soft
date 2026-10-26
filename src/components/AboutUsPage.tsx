@@ -416,7 +416,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   width: idx === currentTestimonialIndex ? '28px' : '8px',
                   height: '8px',
                   borderRadius: '4px',
-                  backgroundColor: idx === currentTestimonialIndex ? '#fe6200' : '#334155',
+                  backgroundColor: idx === currentTestimonialIndex ? '#fe6200' : '#66615c',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -508,7 +508,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <label
                 htmlFor="c-file-upload"
                 style={{
-                  border: '1px dashed #334155',
+                  border: '1px dashed #66615c',
                   borderRadius: '4px',
                   padding: '24px',
                   display: 'flex',
@@ -521,7 +521,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 }}
               >
                 <Upload size={20} style={{ color: '#fe6200' }} />
-                <span style={{ fontSize: '14px', color: '#e2e8f0', fontWeight: 500 }}>
+                <span style={{ fontSize: '14px', color: '#e4e2e1', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
                 <span style={{ fontSize: '12px', color: '#868683' }}>

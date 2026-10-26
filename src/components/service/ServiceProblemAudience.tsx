@@ -152,11 +152,11 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
         {mainProblemSolved && (
           <div
             style={{
-              backgroundColor: '#0a0d14',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
               borderRadius: '12px',
               padding: 'clamp(32px, 5vw, 56px)',
               color: '#ffffff',
-              border: '1px solid #351505',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
             }}
           >
             <div style={{ marginBottom: '32px' }}>
@@ -241,7 +241,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
               <div
                 style={{
                   backgroundColor: 'rgba(255, 85, 0, 0.08)',
-                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  border: '1px solid rgba(254, 98, 0, 0.3)',
                   borderRadius: '8px',
                   padding: '24px 28px',
                   display: 'flex',

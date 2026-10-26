@@ -221,7 +221,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           <button
             onClick={onClose}
             style={{
-              color: '#8893a7',
+              color: '#a3a09b',
               minWidth: '44px',
               minHeight: '44px',
               display: 'flex',
@@ -237,7 +237,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         {/* Results List */}
         <div data-lenis-prevent style={{ maxHeight: '380px', overflowY: 'auto', padding: '8px 0' }}>
           {filtered.length === 0 ? (
-            <div style={{ padding: '32px 20px', textAlign: 'center', color: '#8893a7', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
+            <div style={{ padding: '32px 20px', textAlign: 'center', color: '#a3a09b', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
               No results found for &ldquo;{query}&rdquo;
             </div>
           ) : (

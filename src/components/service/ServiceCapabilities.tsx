@@ -200,8 +200,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   justifyContent: 'space-between',
                   padding: '16px 18px',
                   borderRadius: '6px',
-                  border: isSelected ? '1.5px solid #fe6200' : '1px solid #edf2f7',
-                  backgroundColor: isSelected ? 'rgba(255, 85, 0, 0.05)' : '#f8fafc',
+                  border: isSelected ? '1.5px solid #fe6200' : '1px solid #e4e2e1',
+                  backgroundColor: isSelected ? 'rgba(254, 98, 0, 0.06)' : '#faf8f5',
                   cursor: 'pointer',
                   textAlign: 'left',
                   transition: 'all 0.2s ease',
@@ -294,7 +294,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     borderRadius: '4px',
                     backgroundColor: '#351505',
                     color: '#fe6200',
-                    border: '1px solid rgba(56, 189, 248, 0.2)',
+                    border: '1px solid rgba(254, 98, 0, 0.25)',
                   }}
                 >
                   {tag}
@@ -491,8 +491,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
   const renderDarkCyber = () => (
     <div
       style={{
-        backgroundColor: '#080c14',
-        border: '1px solid #1a2333',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        border: '1px solid #351505',
         borderRadius: '10px',
         padding: 'clamp(24px, 4vw, 44px)',
         boxShadow: '0 20px 48px rgba(32, 11, 0,  0.4)',
@@ -521,8 +521,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           <div
             key={idx}
             style={{
-              backgroundColor: '#0f1726',
-              border: '1px solid #1e2d42',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
               borderRadius: '6px',
               padding: '24px',
               display: 'flex',
@@ -532,10 +532,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = '#fe6200';
-              e.currentTarget.style.boxShadow = '0 0 16px rgba(56, 189, 248, 0.15)';
+              e.currentTarget.style.boxShadow = '0 0 16px rgba(254, 98, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#1e2d42';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
@@ -561,8 +561,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   style={{
                     fontFamily: 'monospace',
                     fontSize: '10.5px',
-                    backgroundColor: '#162234',
-                    color: '#351505',
+                    backgroundColor: 'rgba(32, 11, 0, 0.7)',
+                    color: '#e4e2e1',
                     padding: '3px 8px',
                     borderRadius: '2px',
                   }}
@@ -674,7 +674,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           key={idx}
           style={{
             backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid #edf2f7',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
             borderRadius: '8px',
             padding: '24px',
             boxShadow: '0 2px 6px rgba(32, 11, 0,  0.02)',
@@ -683,10 +683,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           onMouseEnter={(e) => {
             e.currentTarget.style.borderColor = '#fe6200';
             e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 10px 24px rgba(255, 85, 0, 0.06)';
+            e.currentTarget.style.boxShadow = '0 10px 24px rgba(254, 98, 0, 0.08)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#edf2f7';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
             e.currentTarget.style.transform = 'translateY(0)';
             e.currentTarget.style.boxShadow = '0 2px 6px rgba(32, 11, 0,  0.02)';
           }}
@@ -743,7 +743,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: styleVariant === 'dark-cyber' ? '#05070c' : '#f8fafc',
+        backgroundColor: styleVariant === 'dark-cyber' ? '#200b00' : '#f1efeb',
         borderTop: '1px solid #351505',
         borderBottom: '1px solid #351505',
         transition: 'background-color 0.3s',

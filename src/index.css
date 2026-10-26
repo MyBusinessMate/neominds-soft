@@ -174,7 +174,7 @@ html.lenis, html.lenis body {
 /* Sleek Clean Scrollbar */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #94a3b8 transparent;
+  scrollbar-color: #868683 transparent;
 }
 
 ::-webkit-scrollbar {
@@ -191,7 +191,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #868683;
 }
 
 html {

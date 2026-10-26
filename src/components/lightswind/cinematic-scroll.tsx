@@ -126,7 +126,7 @@ export const CinematicScroll: React.FC<CinematicScrollProps> = ({
                 style={{
                   scaleY,
                   height: "100%",
-                  background: `linear-gradient(to bottom, ${accentColor}, #6091fa)`,
+                  background: `linear-gradient(to bottom, ${accentColor}, ${accentColor}dd)`,
                   boxShadow: `0 0 14px ${accentColor}`,
                 }}
               />

@@ -11,7 +11,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#0b0f19',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         color: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
@@ -76,15 +76,15 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             <RevealElement key={idx} variant="card" delay={idx * 0.05}>
               <div
                 style={{
-                  backgroundColor: '#131c2e',
-                  border: '1px solid #351505',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
                   borderRadius: '6px',
                   padding: '24px',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  borderTop: `3px solid ${step.color || '#fe6200'}`,
+                  borderTop: '3px solid #fe6200',
                   transition: 'transform 0.2s, border-color 0.2s',
                 }}
                 onMouseEnter={(e) => {
@@ -93,7 +93,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = '#351505';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
                 }}
               >
                 <div>
@@ -109,11 +109,11 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                       style={{
                         fontSize: '12px',
                         fontWeight: 800,
-                        color: step.color || '#fe6200',
+                        color: '#fe6200',
                         fontFamily: 'var(--font-heading)',
                       }}
                     >
-                      STAGE {step.number}
+                       STAGE {step.number}
                     </span>
                     {step.badge && (
                       <span
@@ -121,7 +121,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                           fontSize: '11px',
                           fontWeight: 600,
                           backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                          color: '#351505',
+                          color: '#ffffff',
                           padding: '3px 8px',
                           borderRadius: '3px',
                         }}
@@ -192,8 +192,8 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             <div
               style={{
                 marginTop: '32px',
-                backgroundColor: '#101726',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '6px',
                 padding: '24px 32px',
                 display: 'flex',
@@ -207,7 +207,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                 <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '4px' }}>
                   {data.highlightCard.title}
                 </div>
-                <div style={{ fontSize: '15px', color: '#868683' }}>
+                <div style={{ fontSize: '15px', color: '#e4e2e1' }}>
                   {data.highlightCard.detail}
                 </div>
               </div>

@@ -365,7 +365,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       {/* ========================================================
           2. TRENDS BLOCK (5 ITEMS)
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#f8fafc' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#faf8f5' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>

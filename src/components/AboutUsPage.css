@@ -4,7 +4,7 @@
 
 .p-about-page {
   background-color: #070b14;
-  color: #f1f5f9;
+  color: #f1efeb;
   min-height: 100vh;
   padding-top: 68px;
   font-family: var(--font-body, system-ui, sans-serif);
@@ -330,7 +330,7 @@
 
 .s-values__card:hover {
   transform: translateY(-3px);
-  border-color: #334155;
+  border-color: #66615c;
   box-shadow: 0 16px 32px -8px rgba(32, 11, 0,  0.3);
 }
 
@@ -605,7 +605,7 @@
 
 .s-testimonials__quote {
   font-size: clamp(17px, 2.2vw, 22px);
-  color: #e2e8f0;
+  color: #e4e2e1;
   line-height: 1.6;
   margin: 0;
   font-style: italic;
@@ -632,7 +632,7 @@
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #334155;
+  border: 1px solid #66615c;
 }
 
 .s-testimonials__author-name {
@@ -845,7 +845,7 @@
 
 .s-about-locations__card:hover {
   transform: translateY(-2px);
-  border-color: #334155;
+  border-color: #66615c;
 }
 
 .s-about-locations__city {

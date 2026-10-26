@@ -82,7 +82,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'privacy' ? '#ffffff' : '#8893a7',
+              color: activeTab === 'privacy' ? '#ffffff' : '#a3a09b',
               backgroundColor: activeTab === 'privacy' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
@@ -99,7 +99,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'cookie' ? '#ffffff' : '#8893a7',
+              color: activeTab === 'cookie' ? '#ffffff' : '#a3a09b',
               backgroundColor: activeTab === 'cookie' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
@@ -116,7 +116,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'security' ? '#ffffff' : '#8893a7',
+              color: activeTab === 'security' ? '#ffffff' : '#a3a09b',
               backgroundColor: activeTab === 'security' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
@@ -132,7 +132,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 id="modal-legal-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Neominds Privacy Policy
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Last Updated: August 2026 • ISO/IEC 27001:2022 Certified
             </p>
 
@@ -161,7 +161,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Cookie Policy
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Transparency in Cookie & Browser Storage Usage
             </p>
 
@@ -182,7 +182,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Information Security Policy (ISO 27001)
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Enterprise-Grade Security Architecture
             </p>
 

@@ -32,7 +32,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         title: 'Full-Stack Model Training & Inference Pipeline',
         description: 'From enterprise dataset preparation and fine-tuning to low-latency edge deployment and automated drift monitoring.',
         steps: [
-          { number: '01', title: 'Data Cleaning & Vectorization', desc: 'Automated extraction of enterprise documents into dense semantic embeddings stored in pgvector.', badge: 'Data Prep', color: '#8b5cf6', details: ['Hybrid chunking', 'Embedding generation'] },
+          { number: '01', title: 'Data Cleaning & Vectorization', desc: 'Automated extraction of enterprise documents into dense semantic embeddings stored in pgvector.', badge: 'Data Prep', color: '#fe6200', details: ['Hybrid chunking', 'Embedding generation'] },
           { number: '02', title: 'Model Adaptation & Quantization', desc: 'PEFT / LoRA fine-tuning and 4-bit/8-bit quantization for high-speed local GPU hosting.', badge: 'Model Ops', color: '#ec4899', details: ['vLLM acceleration', 'Custom prompt tuning'] },
           { number: '03', title: 'Safety Guardrails & Context', desc: 'Strict NeMo guardrails enforcing PII sanitization and zero unauthorized prompt injection.', badge: 'Security Boundary', color: '#22c55e', details: ['Factuality scoring', 'PII masking'] },
           { number: '04', title: 'Telemetry & Evaluation Ops', desc: 'Continuous automated evaluation with Ragas benchmarks to monitor response accuracy over time.', badge: 'Observability', color: '#fe6200', details: ['Real-time token latency', 'Drift alerts'] },
@@ -51,7 +51,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Interactive UX & Human Design', desc: 'High-fidelity Figma prototypes verified through tactile micro-interactions and accessibility testing.', badge: 'Design', color: '#fe6200', details: ['WCAG 2.1 AA compliance', 'Design tokens'] },
           { number: '02', title: 'Offline-First Local Database', desc: 'Encrypted SQLite / WatermelonDB synchronizing in background with conflict-free CRDT resolution.', badge: 'Data Sync', color: '#10b981', details: ['Zero data loss', 'Instant optimistic UI'] },
           { number: '03', title: 'Native Platform Engineering', desc: 'Deep iOS & Android platform bridges for biometric sensors, push notification queues, and BLE.', badge: 'Platform Core', color: '#f59e0b', details: ['FaceID / TouchID', 'Background tasks'] },
-          { number: '04', title: 'Automated CI/CD & Fastlane', desc: 'Automated test suites compiling beta builds to TestFlight and Google Play Console on every commit.', badge: 'Release Ops', color: '#6366f1', details: ['Automated screenshots', 'Zero-touch release'] },
+          { number: '04', title: 'Automated CI/CD & Fastlane', desc: 'Automated test suites compiling beta builds to TestFlight and Google Play Console on every commit.', badge: 'Release Ops', color: '#fe6200', details: ['Automated screenshots', 'Zero-touch release'] },
         ],
         highlightCard: { title: 'User Performance', value: '60 FPS', label: 'Silky Rendering', detail: 'Memory optimized rendering with sub-100ms cold app launch.' },
       };
@@ -83,7 +83,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Instant Storefront Discovery', desc: 'Sub-second catalog faceted search with Redis caching and Algolia / Meilisearch indexing.', badge: 'Storefront', color: '#fe6200', details: ['Instant type-ahead', 'Dynamic merchandising'] },
           { number: '02', title: '1-Click Checkout Engine', desc: 'Tokenized payments supporting Stripe, Apple Pay, PayPal, and regional alternate payment methods.', badge: 'Checkout', color: '#10b981', details: ['PCI-DSS Level 1', 'Sub-3-second checkout'] },
           { number: '03', title: 'Real-Time Inventory Locks', desc: 'Distributed Redis lock allocations preventing overselling during extreme flash-sale traffic spikes.', badge: 'Inventory Core', color: '#f59e0b', details: ['High concurrency locks', 'Auto timeout rollback'] },
-          { number: '04', title: 'Automated ERP / WMS Sync', desc: 'Bi-directional webhooks pushing orders directly to fulfillment centers, 3PLs, and NetSuite.', badge: 'Logistics Sync', color: '#8b5cf6', details: ['Instant label generation', 'Tracking webhooks'] },
+          { number: '04', title: 'Automated ERP / WMS Sync', desc: 'Bi-directional webhooks pushing orders directly to fulfillment centers, 3PLs, and NetSuite.', badge: 'Logistics Sync', color: '#fe6200', details: ['Instant label generation', 'Tracking webhooks'] },
         ],
         highlightCard: { title: 'Cart Optimization', value: '+28%', label: 'Checkout Conversion', detail: 'Frictionless multi-currency checkout designed for highest mobile completion.' },
       };
@@ -97,7 +97,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Infrastructure as Code (IaC) orchestrating automated vulnerability checks, ephemeral previews, and multi-cloud Kubernetes clusters.',
         steps: [
           { number: '01', title: 'Code Commit & SAST Scan', desc: 'GitHub Actions running linters, automated test suites, and Snyk / Trivy vulnerability scanners.', badge: 'Pre-Merge Gate', color: '#fe6200', details: ['Dependency audits', 'Secret leak prevention'] },
-          { number: '02', title: 'Deterministic Container Build', desc: 'Multi-stage Docker builds creating minimal, rootless container images published to private registries.', badge: 'Image Registry', color: '#6366f1', details: ['Distroless base images', 'Cosign image signing'] },
+          { number: '02', title: 'Deterministic Container Build', desc: 'Multi-stage Docker builds creating minimal, rootless container images published to private registries.', badge: 'Image Registry', color: '#fe6200', details: ['Distroless base images', 'Cosign image signing'] },
           { number: '03', title: 'GitOps ArgoCD Synchronization', desc: 'Declarative Kubernetes cluster sync with automated blue/green traffic shifts and instant rollbacks.', badge: 'Cluster Deploy', color: '#10b981', details: ['Zero-downtime cutover', 'Canary validation'] },
           { number: '04', title: 'Prometheus & Grafana Observability', desc: 'Full-stack OpenTelemetry instrumentation alerting on latency anomalies and CPU/memory saturation.', badge: 'Observability', color: '#f59e0b', details: ['SLO tracking', 'Sub-1-min incident alerts'] },
         ],
@@ -112,7 +112,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         title: 'Autonomous Tool-Calling & Reasoning Engine',
         description: 'Multi-step goal execution with recursive planning, sandboxed code execution, and persistent memory stores.',
         steps: [
-          { number: '01', title: 'User Objective & Intent Decomp', desc: 'Decomposing high-level user instructions into directed acyclic execution graphs (DAGs).', badge: 'Planner Agent', color: '#a855f7', details: ['Goal breakdown', 'Constraint validation'] },
+          { number: '01', title: 'User Objective & Intent Decomp', desc: 'Decomposing high-level user instructions into directed acyclic execution graphs (DAGs).', badge: 'Planner Agent', color: '#fe6200', details: ['Goal breakdown', 'Constraint validation'] },
           { number: '02', title: 'Dynamic Tool Discovery & Execution', desc: 'Invoking internal APIs, SQL databases, search engines, and web scrapers with strict parameter typing.', badge: 'Tool Execution', color: '#fe6200', details: ['Sandboxed runtimes', 'Schema validation'] },
           { number: '03', title: 'Episodic & Semantic Memory', desc: 'Storing session history and user preferences in vector memory for long-horizon context retention.', badge: 'Memory Layer', color: '#10b981', details: ['Working context window', 'Long-term retrieval'] },
           { number: '04', title: 'Reflective Self-Correction', desc: 'Evaluating tool output against goal criteria and re-planning automatically if an exception occurs.', badge: 'Evaluation Loop', color: '#f59e0b', details: ['Auto-retry with new params', 'Human-in-the-loop escalation'] },
@@ -129,7 +129,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Replacing manual copy-paste spreadsheet data entry with deterministic event-driven AI pipelines.',
         steps: [
           { number: '01', title: 'Multi-Channel Event Triggers', desc: 'Listening to inbound emails, webhooks, ERP events, and cloud bucket uploads in real time.', badge: 'Ingestion Trigger', color: '#fe6200', details: ['Kafka streams', 'Email parser webhooks'] },
-          { number: '02', title: 'Multimodal Document Extraction', desc: 'Extracting line items, invoice values, and contract clauses with OCR and LLM schema structuring.', badge: 'AI Extraction', color: '#8b5cf6', details: ['Zero-shot OCR', 'JSON schema output'] },
+          { number: '02', title: 'Multimodal Document Extraction', desc: 'Extracting line items, invoice values, and contract clauses with OCR and LLM schema structuring.', badge: 'AI Extraction', color: '#fe6200', details: ['Zero-shot OCR', 'JSON schema output'] },
           { number: '03', title: 'Deterministic Business Rules', desc: 'Validating amounts against purchase order databases and flagging anomalies exceeding tolerance limits.', badge: 'Rule Engine', color: '#f59e0b', details: ['Tolerance validation', 'Sanity checks'] },
           { number: '04', title: 'Autonomous System Updating', desc: 'Posting validated entries directly into Salesforce, SAP, or QuickBooks with audit timestamps.', badge: 'ERP Writeback', color: '#10b981', details: ['Immutable audit logs', 'Manager notification'] },
         ],
@@ -145,7 +145,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Instant conversational experiences across text chat and real-time photorealistic interactive video streaming.',
         steps: [
           { number: '01', title: 'Speech / Text Ingestion', desc: 'Sub-200ms Whisper voice transcription and omnichannel text chat message processing.', badge: 'Audio / Text Ingest', color: '#fe6200', details: ['Noise cancellation', 'Language detection'] },
-          { number: '02', title: 'Intent Classification & Memory', desc: 'Routing inquiries between customer support FAQs, live order lookups, and escalation squads.', badge: 'Context Brain', color: '#6366f1', details: ['Tone analysis', 'Session state tracking'] },
+          { number: '02', title: 'Intent Classification & Memory', desc: 'Routing inquiries between customer support FAQs, live order lookups, and escalation squads.', badge: 'Context Brain', color: '#fe6200', details: ['Tone analysis', 'Session state tracking'] },
           { number: '03', title: 'Sub-Second Response Synthesis', desc: 'Grounding answers in verified enterprise knowledge bases with source citation verification.', badge: 'Response Engine', color: '#10b981', details: ['Streaming tokens', 'Zero hallucination filter'] },
           { number: '04', title: 'WebRTC Photorealistic Avatar Stream', desc: 'Streaming lip-synced video avatars with sub-500ms latency directly to mobile and browser viewports.', badge: 'Video Avatar', color: '#ec4899', details: ['H.264 / WebRTC', 'Hyper-realistic facial sync'] },
         ],
@@ -179,7 +179,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Continuous Synthetic Monitoring', desc: 'Automated global health checks probing API endpoints, database connections, and SSL certificates every 30s.', badge: 'Telemetry', color: '#10b981', details: ['Global edge probes', 'Heartbeat sensors'] },
           { number: '02', title: 'Sub-15m P1 Incident Triage', desc: 'Immediate paging of Tier-3 site reliability engineers into dedicated war rooms with live status pages.', badge: 'Incident Triage', color: '#ef4444', details: ['Sub-15m guaranteed SLA', 'Executive escalation'] },
           { number: '03', title: 'Root Cause Hotfix & Deployment', desc: 'Executing verified operational runbooks, rolling back faulty changes, or deploying rapid container patches.', badge: 'Resolution', color: '#fe6200', details: ['Isolated canary hotfix', 'Immediate smoke testing'] },
-          { number: '04', title: 'Post-Mortem & Preventative Hardening', desc: 'Delivering blameless post-mortem documentation with preventative architectural improvements to eliminate recurrence.', badge: 'Hardening', color: '#6366f1', details: ['Full incident timeline', 'Infrastructure hardening'] },
+          { number: '04', title: 'Post-Mortem & Preventative Hardening', desc: 'Delivering blameless post-mortem documentation with preventative architectural improvements to eliminate recurrence.', badge: 'Hardening', color: '#fe6200', details: ['Full incident timeline', 'Infrastructure hardening'] },
         ],
         highlightCard: { title: 'Guaranteed SLA', value: '< 15m', label: 'P1 Incident Response', detail: '24/7 dedicated senior engineering roster actively monitoring your platform.' },
       };
@@ -211,7 +211,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Client Tokenization & Card Entry', desc: 'Zero-touch client-side encryption tokenizing sensitive cardholder data before it touches internal servers.', badge: 'Card Ingestion', color: '#fe6200', details: ['PCI-DSS Level 1 scope reduction', 'Apple / Google Pay'] },
           { number: '02', title: 'Intelligent Acquirer Routing', desc: 'Dynamic routing engine selecting the acquiring bank with highest approval rate and lowest processing interchange fee.', badge: 'Smart Router', color: '#10b981', details: ['Multi-acquirer failover', 'Interchange optimization'] },
           { number: '03', title: 'Real-Time 3D Secure 2.0 Check', desc: 'Frictionless risk-based authentication evaluating behavioral telemetry to minimize cardholder checkout interruptions.', badge: '3DS 2.0 Gate', color: '#f59e0b', details: ['Liability shift protection', 'Zero checkout abandonment'] },
-          { number: '04', title: 'Automated Settlement & Ledger', desc: 'Multi-currency settlement calculations with automated fee deductions and instant merchant payout scheduling.', badge: 'Settlement Engine', color: '#6366f1', details: ['Daily payout batches', 'Chargeback webhook alerts'] },
+          { number: '04', title: 'Automated Settlement & Ledger', desc: 'Multi-currency settlement calculations with automated fee deductions and instant merchant payout scheduling.', badge: 'Settlement Engine', color: '#fe6200', details: ['Daily payout batches', 'Chargeback webhook alerts'] },
         ],
         highlightCard: { title: 'Authorization Rate', value: '+4.8%', label: 'Approval Uplift', detail: 'Smart multi-acquirer cascading recovers otherwise declined transactions automatically.' },
       };
@@ -225,7 +225,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Automated borrower onboarding, credit bureau data aggregation, algorithmic risk scoring, and loan disbursement.',
         steps: [
           { number: '01', title: 'Instant Application & KYC', desc: 'Sub-60s identity verification using document OCR, biometric liveness validation, and Plaid income verification.', badge: 'Borrower Onboarding', color: '#fe6200', details: ['Instant bank verification', 'Automated KYC / AML'] },
-          { number: '02', title: 'Multi-Bureau Credit Ingestion', desc: 'Real-time API pulling of credit reports (Experian, TransUnion, Equifax) combined with cash-flow analytics.', badge: 'Data Aggregation', color: '#6366f1', details: ['Alternative credit data', 'Debt-to-income models'] },
+          { number: '02', title: 'Multi-Bureau Credit Ingestion', desc: 'Real-time API pulling of credit reports (Experian, TransUnion, Equifax) combined with cash-flow analytics.', badge: 'Data Aggregation', color: '#fe6200', details: ['Alternative credit data', 'Debt-to-income models'] },
           { number: '03', title: 'Algorithmic Risk Decisioning', desc: 'Configurable credit decision matrix evaluating risk tiers and calculating tailored interest rates in < 5 seconds.', badge: 'Underwriting Core', color: '#10b981', details: ['Automated approval rules', 'Fair lending compliance'] },
           { number: '04', title: 'Disbursement & Auto-Servicing', desc: 'Automated electronic promissory note signing and instant funds disbursement via ACH or debit rails.', badge: 'Loan Servicing', color: '#f59e0b', details: ['DocuSign e-sign', 'Automated recurring debits'] },
         ],
@@ -243,7 +243,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Investor Profiling & Goals', desc: 'Interactive risk-tolerance assessment mapping investor horizon to diversified multi-asset model portfolios.', badge: 'Profiling', color: '#fe6200', details: ['Risk questionnaire', 'ESG preference filters'] },
           { number: '02', title: 'Automated Order Generation', desc: 'Fractional-share calculation algorithms generating rebalance orders according to target portfolio weights.', badge: 'Order Router', color: '#10b981', details: ['Fractional-share execution', 'Tax-loss harvesting'] },
           { number: '03', title: 'Brokerage & Custodian Execution', desc: 'Direct FIX protocol integrations with clearing custodians (Apex, Interactive Brokers, DriveWealth).', badge: 'Custodian Gateway', color: '#f59e0b', details: ['FIX 4.4 connections', 'Sub-second order fills'] },
-          { number: '04', title: 'Real-Time Performance Reporting', desc: 'Time-weighted (TWR) and money-weighted (MWR) return calculations updated with live market price feeds.', badge: 'Client Portal', color: '#8b5cf6', details: ['Automated tax statements', 'Mobile portfolio tracking'] },
+          { number: '04', title: 'Real-Time Performance Reporting', desc: 'Time-weighted (TWR) and money-weighted (MWR) return calculations updated with live market price feeds.', badge: 'Client Portal', color: '#fe6200', details: ['Automated tax statements', 'Mobile portfolio tracking'] },
         ],
         highlightCard: { title: 'Assets Under Management', value: '$500M+', label: 'Supported Capital', detail: 'Institutional platform reliability tested under heavy market volatility.' },
       };
@@ -259,7 +259,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Multi-Bank Ledger Ingestion', desc: 'Aggregating live transaction statements across 20+ banking institutions via Open Banking pipelines.', badge: 'Statement Ingestion', color: '#fe6200', details: ['Automated categorizer', 'Multi-currency conversion'] },
           { number: '02', title: 'Intelligent Account Reconciliation', desc: 'Machine learning models matching 98% of bank transactions against open customer invoices automatically.', badge: 'Reconciliation Core', color: '#10b981', details: ['Zero manual bookkeeping', 'Audit trail creation'] },
           { number: '03', title: 'Predictive Runway & Cash Forecast', desc: 'Monte Carlo simulations projecting cash balances under varied hiring, revenue, and collection scenarios.', badge: 'Forecast Engine', color: '#f59e0b', details: ['Scenario modeling', 'Working capital alerts'] },
-          { number: '04', title: 'Executive KPI Reporting', desc: 'Real-time dashboard visualizations displaying Net Burn, CAC Payback, Gross Margin, and EBITDA.', badge: 'CFO Cockpit', color: '#6366f1', details: ['Automated PDF board decks', 'Slack threshold alerts'] },
+          { number: '04', title: 'Executive KPI Reporting', desc: 'Real-time dashboard visualizations displaying Net Burn, CAC Payback, Gross Margin, and EBITDA.', badge: 'CFO Cockpit', color: '#fe6200', details: ['Automated PDF board decks', 'Slack threshold alerts'] },
         ],
         highlightCard: { title: 'Forecast Accuracy', value: '96%', label: 'Cash Flow Projection', detail: 'Accurate 90-day cash projections eliminating surprise liquidity shortages.' },
       };
@@ -290,7 +290,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         steps: [
           { number: '01', title: 'Patient Registration & Identity', desc: 'Standardized Master Patient Index (MPI) deduplication preventing duplicate medical records across facilities.', badge: 'Master Patient Index', color: '#fe6200', details: ['Biometric check-in', 'Insurance eligibility check'] },
           { number: '02', title: 'HL7 & FHIR Interoperability', desc: 'Bi-directional bridges translating clinical events between Epic, Cerner, and specialized department software.', badge: 'Interoperability', color: '#10b981', details: ['FHIR v4 Resources', 'HL7 v2 MLLP pipelines'] },
-          { number: '03', title: 'Clinical Charting & E-Prescribe', desc: 'Physician order entry (CPOE) with automated allergy alerts and drug-to-drug interaction safeguards.', badge: 'Clinical Core', color: '#8b5cf6', details: ['Surescripts integration', 'Structured clinical notes'] },
+          { number: '03', title: 'Clinical Charting & E-Prescribe', desc: 'Physician order entry (CPOE) with automated allergy alerts and drug-to-drug interaction safeguards.', badge: 'Clinical Core', color: '#fe6200', details: ['Surescripts integration', 'Structured clinical notes'] },
           { number: '04', title: 'Automated Revenue Cycle & Claims', desc: 'Generating clean 837P/837I insurance claims with automated ICD-10/CPT coding checks before submission.', badge: 'Revenue Cycle', color: '#f59e0b', details: ['Claims scrubbing', 'HIPAA 5010 transactions'] },
         ],
         highlightCard: { title: 'Clinical Compliance', value: '100%', label: 'HIPAA & HITECH', detail: 'End-to-end encrypted medical data stores with strict BAA-backed architecture.' },
@@ -305,7 +305,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'End-to-end encrypted video care with virtual waiting rooms, screen sharing, live vitals, and electronic prescriptions.',
         steps: [
           { number: '01', title: 'Smart Scheduling & Triage', desc: 'Intelligent appointment booking matching patient symptoms with available state-licensed clinical specialists.', badge: 'Patient Booking', color: '#fe6200', details: ['Multi-timezone calendar', 'Symptom intake questionnaire'] },
-          { number: '02', title: 'Virtual Waiting Room & Consent', desc: 'Automated device audio/video check and electronic telehealth consent signature before physician connects.', badge: 'Pre-Visit Check', color: '#6366f1', details: ['WebRTC pre-flight check', 'Digital consent signature'] },
+          { number: '02', title: 'Virtual Waiting Room & Consent', desc: 'Automated device audio/video check and electronic telehealth consent signature before physician connects.', badge: 'Pre-Visit Check', color: '#fe6200', details: ['WebRTC pre-flight check', 'Digital consent signature'] },
           { number: '03', title: 'P2P Encrypted Video Consultation', desc: 'HD video consultation with AES-256 peer-to-peer encryption, dual-camera inspection, and in-call chat.', badge: 'Encrypted Video', color: '#10b981', details: ['Zero call recording leakage', 'Adaptive bitrate for low bandwidth'] },
           { number: '04', title: 'Clinical Summary & E-Prescribing', desc: 'Automated visit summary generated into patient EHR with electronic prescription sent directly to pharmacy.', badge: 'Post-Visit Care', color: '#f59e0b', details: ['Surescripts dispatch', 'Automated follow-up reminders'] },
         ],
@@ -323,7 +323,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Personalized Care Onboarding', desc: 'Intuitive mobile-first portal onboarding customized to patient chronic condition protocols and language.', badge: 'Portal Onboarding', color: '#fe6200', details: ['Multi-language support', 'Accessibility for seniors'] },
           { number: '02', title: 'Automated Care Protocol Reminders', desc: 'Automated SMS, push, and voice reminders for medication schedules, physical therapy, and lab tests.', badge: 'Adherence Engine', color: '#10b981', details: ['Medication trackers', 'Custom interval reminders'] },
           { number: '03', title: 'Connected Health Device Sync', desc: 'Bluetooth & Apple HealthKit / Google Health Connect sync capturing daily blood pressure and glucose readings.', badge: 'Remote Vitals', color: '#f59e0b', details: ['Continuous vitals tracking', 'Clinical anomaly alerts'] },
-          { number: '04', title: 'Secure Physician Messaging', desc: 'Asynchronous HIPAA-compliant messaging allowing patients to clarify treatment plans without office visits.', badge: 'Care Team Chat', color: '#8b5cf6', details: ['End-to-end encrypted', 'Clinical triage queue'] },
+          { number: '04', title: 'Secure Physician Messaging', desc: 'Asynchronous HIPAA-compliant messaging allowing patients to clarify treatment plans without office visits.', badge: 'Care Team Chat', color: '#fe6200', details: ['End-to-end encrypted', 'Clinical triage queue'] },
         ],
         highlightCard: { title: 'Patient Adherence', value: '+45%', label: 'Protocol Compliance', detail: 'Significant uplift in chronic disease management and post-op protocol adherence.' },
       };
@@ -337,7 +337,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Assisting radiologists and physicians through automated lesion detection, radiology report extraction, and chart review.',
         steps: [
           { number: '01', title: 'DICOM Image & Chart Ingestion', desc: 'Secure anonymization and ingestion of high-resolution DICOM imaging series and unstructured physician clinical notes.', badge: 'Data Ingestion', color: '#cf5000', details: ['HIPAA de-identification', 'DICOM metadata parsing'] },
-          { number: '02', title: 'Deep Learning Visual Inference', desc: 'Convolutional neural networks screening MRI/CT scans for pulmonary nodules, fractures, and anomalies.', badge: 'Diagnostic AI', color: '#8b5cf6', details: ['Heatmap anomaly overlay', 'Sub-second image processing'] },
+          { number: '02', title: 'Deep Learning Visual Inference', desc: 'Convolutional neural networks screening MRI/CT scans for pulmonary nodules, fractures, and anomalies.', badge: 'Diagnostic AI', color: '#fe6200', details: ['Heatmap anomaly overlay', 'Sub-second image processing'] },
           { number: '03', title: 'Physician Review & Verification', desc: 'Presenting AI findings as transparent decision-support overlays requiring certified physician sign-off.', badge: 'Clinical Oversight', color: '#10b981', details: ['Explainable AI heatmaps', 'Physician override logging'] },
           { number: '04', title: 'Structured Report Generation', desc: 'Generating standardized RadLex / ICD-10 diagnostic reports synchronized directly with hospital PACS / RIS.', badge: 'Report Sync', color: '#f59e0b', details: ['Automated draft generation', 'Zero-click PACS writeback'] },
         ],
@@ -355,7 +355,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Heterogeneous Clinical Data Lake', desc: 'Aggregating structured and unstructured data across disparate EHR systems into unified OMOP Common Data Models.', badge: 'Data Lakehouse', color: '#fe6200', details: ['OMOP CDM standardization', 'De-identification pipelines'] },
           { number: '02', title: 'Risk Stratification Algorithms', desc: 'Machine learning models scoring patients based on 30-day readmission risk and chronic complication probabilities.', badge: 'Predictive Modeling', color: '#f59e0b', details: ['LACE+ readmission scores', 'Comorbidity indicators'] },
           { number: '03', title: 'Clinical Operations Cockpit', desc: 'Interactive dashboards tracking bed occupancy, surgery room utilization, physician burnout, and clinical KPIs.', badge: 'Operations Console', color: '#10b981', details: ['Real-time capacity tracking', 'Staffing optimization'] },
-          { number: '04', title: 'Quality Measures & HEDIS Reporting', desc: 'Automated calculation of CMS Quality Stars, HEDIS, and MIPS compliance metrics for maximum payer reimbursements.', badge: 'Regulatory Reporting', color: '#6366f1', details: ['Automated CMS submissions', 'Value-based care metrics'] },
+          { number: '04', title: 'Quality Measures & HEDIS Reporting', desc: 'Automated calculation of CMS Quality Stars, HEDIS, and MIPS compliance metrics for maximum payer reimbursements.', badge: 'Regulatory Reporting', color: '#fe6200', details: ['Automated CMS submissions', 'Value-based care metrics'] },
         ],
         highlightCard: { title: 'Readmission Reduction', value: '-32%', label: '30-Day Readmissions', detail: 'Early clinical intervention triggers for high-risk chronic patient populations.' },
       };
@@ -369,7 +369,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Eliminating the manual administrative burden of insurance prior authorizations, referral routing, and medical chart collation.',
         steps: [
           { number: '01', title: 'Prior Authorization Request Trigger', desc: 'Listening to physician prescription and procedure orders that require commercial insurance pre-approval.', badge: 'Order Detection', color: '#fe6200', details: ['EHR order webhook', 'Automated payer rule lookup'] },
-          { number: '02', title: 'Automated Clinical Chart Collation', desc: 'AI parsing patient historical chart notes to extract relevant clinical evidence and diagnostic codes required by payer.', badge: 'Chart Synthesis', color: '#8b5cf6', details: ['Clinical NLP extraction', 'Attachment bundling'] },
+          { number: '02', title: 'Automated Clinical Chart Collation', desc: 'AI parsing patient historical chart notes to extract relevant clinical evidence and diagnostic codes required by payer.', badge: 'Chart Synthesis', color: '#fe6200', details: ['Clinical NLP extraction', 'Attachment bundling'] },
           { number: '03', title: 'Electronic PA Portal Submission', desc: 'Submitting standardized X12 278 transactions directly into health plan approval portals via automated APIs.', badge: 'Payer Submission', color: '#f59e0b', details: ['X12 278 electronic protocol', 'Zero manual phone calls'] },
           { number: '04', title: 'Real-Time Status & EHR Callback', desc: 'Receiving instant approval confirmations and updating scheduling coordinators and patient charts automatically.', badge: 'Approval Callback', color: '#10b981', details: ['Instant patient notification', 'Zero treatment delay'] },
         ],
@@ -401,7 +401,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Pragmatic AI implementation focused on high-ROI business bottlenecks, verifiable metrics, and safe production integration.',
         steps: [
           { number: '01', title: 'High-Impact Opportunity Audit', desc: 'Evaluating corporate workflows to identify repetitive friction points with highest financial ROI potential.', badge: 'Opportunity Audit', color: '#fe6200', details: ['Feasibility matrix', 'ROI financial projection'] },
-          { number: '02', title: 'Rapid 14-Day Proof-of-Concept', desc: 'Building an interactive sandbox prototype using real corporate data samples to validate accuracy and speed.', badge: '14-Day Sandbox', color: '#8b5cf6', details: ['Working functional prototype', 'Accuracy benchmark report'] },
+          { number: '02', title: 'Rapid 14-Day Proof-of-Concept', desc: 'Building an interactive sandbox prototype using real corporate data samples to validate accuracy and speed.', badge: '14-Day Sandbox', color: '#fe6200', details: ['Working functional prototype', 'Accuracy benchmark report'] },
           { number: '03', title: 'Production Hardening & Testing', desc: 'Connecting POC pipelines into production ERPs, securing credentials, and implementing error fallback paths.', badge: 'Hardened Integration', color: '#10b981', details: ['Fail-safe mechanisms', 'Zero disruption to BAU'] },
           { number: '04', title: 'Executive KPI Measurement', desc: 'Tracking business value delivered (hours saved, accuracy improvements, revenue acceleration) with live dashboards.', badge: 'Value Realization', color: '#f59e0b', details: ['Real-time ROI dashboard', 'Continuous fine-tuning'] },
         ],
@@ -416,7 +416,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         title: 'Hierarchical Multi-Agent Swarm Coordination',
         description: 'Orchestrating specialized AI agents that collaborate, debate, verify work, and execute cross-departmental operations.',
         steps: [
-          { number: '01', title: 'Chief Orchestrator Agent', desc: 'Receives corporate objectives, breaks work into parallel tasks, and delegates to specialized domain sub-agents.', badge: 'Orchestrator', color: '#a855f7', details: ['Task decomposition', 'Context routing'] },
+          { number: '01', title: 'Chief Orchestrator Agent', desc: 'Receives corporate objectives, breaks work into parallel tasks, and delegates to specialized domain sub-agents.', badge: 'Orchestrator', color: '#fe6200', details: ['Task decomposition', 'Context routing'] },
           { number: '02', title: 'Specialized Worker Agents', desc: 'Domain agents (Code Engineer, Data Analyst, Content Reviewer) executing tools within their strict expertise.', badge: 'Worker Squad', color: '#fe6200', details: ['Custom system prompts', 'Dedicated toolsets'] },
           { number: '03', title: 'Adversarial Verification Agent', desc: 'Dedicated auditor agent inspecting worker agent outputs against quality criteria, catching errors before completion.', badge: 'Critic Gate', color: '#ef4444', details: ['Syntax & fact checking', 'Strict acceptance criteria'] },
           { number: '04', title: 'Synchronized State Consensus', desc: 'Aggregating multi-agent deliverables into a unified final corporate artifact with clear provenance logs.', badge: 'Consensus Store', color: '#10b981', details: ['Audit trace logs', 'Final state writeback'] },
@@ -435,7 +435,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
           { number: '01', title: 'Continuous Task Ingestion', desc: 'Aggregating requests from customer forms, ERP records, and email queues into centralized prioritization pools.', badge: 'Task Queue', color: '#fe6200', details: ['Dynamic priority queue', 'SLA timers'] },
           { number: '02', title: 'Autonomous AI Processing', desc: 'AI models executing 90% of routine categorization, calculations, and draft generation in < 5 seconds.', badge: 'Autonomous Tier', color: '#10b981', details: ['Confidence scoring', 'Instant draft creation'] },
           { number: '03', title: 'Confidence-Based Human Gate', desc: 'Decisions with confidence scores below 95% or high financial stakes routed to human manager review consoles.', badge: 'Human Review', color: '#f59e0b', details: ['1-click approval UI', 'Differential highlight view'] },
-          { number: '04', title: 'Continuous Feedback Learning', desc: 'Human corrections automatically fed into retraining datasets to make the autonomous models smarter over time.', badge: 'Continuous Tuning', color: '#8b5cf6', details: ['Zero loss of human expertise', 'Automated accuracy tracking'] },
+          { number: '04', title: 'Continuous Feedback Learning', desc: 'Human corrections automatically fed into retraining datasets to make the autonomous models smarter over time.', badge: 'Continuous Tuning', color: '#fe6200', details: ['Zero loss of human expertise', 'Automated accuracy tracking'] },
         ],
         highlightCard: { title: 'Human Throughput', value: '5x', label: 'Operator Velocity', detail: 'Operators focus solely on edge cases while AI handles 90% of routine workflows.' },
       };
@@ -449,7 +449,7 @@ export const getSignatureForService = (slug: string, title: string): ServiceSign
         description: 'Secure, zero-leakage internal knowledge retrieval with private foundation models, vector databases, and evaluation telemetry.',
         steps: [
           { number: '01', title: 'Internal Knowledge Repository Ingest', desc: 'Continuous ingestion and parsing of PDF archives, Confluence spaces, code repos, and SharePoint directories.', badge: 'Knowledge Ingest', color: '#fe6200', details: ['Automated incremental sync', 'Rich document parsing'] },
-          { number: '02', title: 'Dense Vector & Keyword Hybrid Index', desc: 'Indexing embeddings with BM25 keyword search in pgvector and Qdrant for highest retrieval precision.', badge: 'Hybrid Index', color: '#6366f1', details: ['Cross-encoder re-ranking', 'Semantic chunking'] },
+          { number: '02', title: 'Dense Vector & Keyword Hybrid Index', desc: 'Indexing embeddings with BM25 keyword search in pgvector and Qdrant for highest retrieval precision.', badge: 'Hybrid Index', color: '#fe6200', details: ['Cross-encoder re-ranking', 'Semantic chunking'] },
           { number: '03', title: 'Private Inference & Guardrails', desc: 'Running fine-tuned Llama 3.3 / Claude on dedicated private GPU clusters with strict NeMo safety fences.', badge: 'Private LLM Cluster', color: '#10b981', details: ['Zero third-party sharing', 'PII & prompt injection shields'] },
           { number: '04', title: 'Auditable Answers with Citations', desc: 'Streaming answers with direct hyperlinked page references back into internal source documentation.', badge: 'Citation Engine', color: '#f59e0b', details: ['Exact paragraph citations', 'Confidence verification'] },
         ],

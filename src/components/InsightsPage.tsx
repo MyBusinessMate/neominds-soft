@@ -33,7 +33,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Chief Technology Officer',
     date: 'February 24, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #161b26 0%, #0d121c 100%)',
+    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
     featured: true,
   },
   {
@@ -46,7 +46,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Head of Cloud & DevOps',
     date: 'February 18, 2026',
     readTime: '6 min read',
-    imageBg: 'linear-gradient(180deg, #141a24 0%, #0b0f17 100%)',
+    imageBg: 'linear-gradient(180deg, #2e1103 0%, #1a0800 100%)',
   },
   {
     id: 'fintech-submillisecond-trading',
@@ -58,7 +58,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'VP of Engineering',
     date: 'February 10, 2026',
     readTime: '10 min read',
-    imageBg: 'linear-gradient(180deg, #181e2b 0%, #0e131d 100%)',
+    imageBg: 'linear-gradient(180deg, #351505 0%, #150700 100%)',
   },
   {
     id: 'zero-downtime-strangler-migration',
@@ -70,7 +70,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Principal Solution Architect',
     date: 'January 28, 2026',
     readTime: '7 min read',
-    imageBg: 'linear-gradient(180deg, #131722 0%, #0a0d14 100%)',
+    imageBg: 'linear-gradient(180deg, #2a1205 0%, #200b00 100%)',
   },
   {
     id: 'rag-hallucination-elimination',
@@ -82,7 +82,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Lead AI Research Engineer',
     date: 'January 20, 2026',
     readTime: '9 min read',
-    imageBg: 'linear-gradient(180deg, #171d29 0%, #0d121a 100%)',
+    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
   },
   {
     id: 'nextjs-15-edge-performance',
@@ -94,7 +94,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Lead Frontend Architect',
     date: 'January 14, 2026',
     readTime: '5 min read',
-    imageBg: 'linear-gradient(180deg, #151b27 0%, #0c1018 100%)',
+    imageBg: 'linear-gradient(180deg, #2e1103 0%, #150700 100%)',
   },
   {
     id: 'soc2-hipaa-cloud-hardening',
@@ -106,7 +106,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Head of Cloud & DevOps',
     date: 'January 05, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #191f2c 0%, #0e131e 100%)',
+    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
   },
 
 ];
@@ -159,7 +159,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       <section
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
-          background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
+          background: 'linear-gradient(180deg, #faf8f5 0%, #ffffff 100%)',
           borderBottom: '1px solid #351505',
         }}
       >
@@ -221,9 +221,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   onClick={() => setSelectedCategory(cat)}
                   className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline'}`}
                   style={{
-                    color: selectedCategory === cat ? '#ffffff' : '#475569',
+                    color: selectedCategory === cat ? '#ffffff' : '#868683',
                     borderColor: selectedCategory === cat ? '#fe6200' : '#a3a09b',
-                    backgroundColor: selectedCategory === cat ? '#fe6200' : '#f8fafc',
+                    backgroundColor: selectedCategory === cat ? '#fe6200' : '#faf8f5',
                   }}
                 >
                   {cat}

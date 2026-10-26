@@ -219,7 +219,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               fontSize: '13px',
               fontWeight: 600,
               color: copied ? '#15803d' : '#ffffff',
-              backgroundColor: copied ? '#f0fdf4' : '#f8fafc',
+              backgroundColor: copied ? '#f0fdf4' : '#faf8f5',
               border: copied ? '1px solid #86efac' : '1px solid #351505',
               borderRadius: '4px',
               cursor: 'pointer',
@@ -590,7 +590,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                       width: '20px',
                       height: '20px',
                       borderRadius: '50%',
-                      backgroundColor: '#e0e7ff',
+                      backgroundColor: 'rgba(254, 98, 0, 0.15)',
                       color: '#fe6200',
                       display: 'flex',
                       alignItems: 'center',
@@ -1019,7 +1019,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#fe6200';
-                  e.currentTarget.style.backgroundColor = '#f8fafc';
+                  e.currentTarget.style.backgroundColor = '#faf8f5';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = '#351505';

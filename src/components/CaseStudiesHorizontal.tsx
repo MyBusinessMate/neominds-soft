@@ -32,7 +32,7 @@ const caseStudies: CaseStudy[] = [
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#001334',
+            color: '#ffffff',
             fontWeight: 900,
             fontSize: '13px',
           }}
@@ -48,7 +48,7 @@ const caseStudies: CaseStudy[] = [
     title: 'Mindspace.ai: Healthcare Telehealth & Clinical Wellness Mobile App',
     description:
       'Engineered a HIPAA-compliant iOS and Android telehealth platform with offline biometrics, encrypted WebRTC video, and sub-100ms session sync.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1e3a5f 0%, #132742 50%, #0a1424 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #351505 0%, #200b00 55%, #150700 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80',
   },
   {
@@ -64,7 +64,7 @@ const caseStudies: CaseStudy[] = [
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#001334',
+            color: '#200b00',
             fontWeight: 900,
             fontSize: '13px',
           }}
@@ -80,7 +80,7 @@ const caseStudies: CaseStudy[] = [
     title: 'Natural Language AI SQL Financial Query Engine',
     description:
       'Built an intelligent enterprise SQL copilot converting natural-language finance inquiries into audited, schema-safe read operations in milliseconds.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #103247 0%, #0d233a 50%, #081624 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #3d1a08 0%, #240d02 55%, #170700 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&auto=format&fit=crop&q=80',
   },
   {
@@ -92,7 +92,7 @@ const caseStudies: CaseStudy[] = [
           style={{
             width: '28px',
             height: '28px',
-            backgroundColor: '#6366f1',
+            backgroundColor: '#fe6200',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -112,7 +112,7 @@ const caseStudies: CaseStudy[] = [
     title: 'Autonomous Multi-Project AI Assistant & Velocity Engine',
     description:
       'Integrated Claude and multi-agent AI routines to track sprint scope drift, automate client status summaries, and cut delivery overhead by 68%.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #2a5298 0%, #1a3668 50%, #0c1c38 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #451f0b 0%, #280f03 55%, #170700 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&auto=format&fit=crop&q=80',
   },
   {
@@ -128,7 +128,7 @@ const caseStudies: CaseStudy[] = [
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#001334',
+            color: '#200b00',
             fontWeight: 900,
             fontSize: '13px',
           }}
@@ -144,7 +144,7 @@ const caseStudies: CaseStudy[] = [
     title: 'High-Volume E-Commerce Inventory & Analytics Dashboard',
     description:
       'Constructed an executive real-time dashboard unifying multi-warehouse inventory telemetry, SKU velocity, and live retail order attribution.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #1c3d5a 0%, #0f2438 50%, #091522 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #381706 0%, #200b00 55%, #150700 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80',
   },
 ];

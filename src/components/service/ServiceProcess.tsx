@@ -91,9 +91,9 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   style={{
                     width: '32px',
                     height: '32px',
-                    borderRadius: '50%',
+                    borderRadius: '3px',
                     backgroundColor: isCurrent ? '#fe6200' : '#351505',
-                    color: isCurrent ? '#ffffff' : '#868683',
+                    color: isCurrent ? '#ffffff' : '#a3a09b',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -105,10 +105,10 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   {step.step}
                 </div>
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#fe6200' : '#a3a09b', textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#fe6200' : '#868683', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     STAGE {step.step}
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#fe6200' : '#868683' }}>
+                  <div style={{ fontSize: '14px', fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#ffffff' : '#a3a09b' }}>
                     {step.title}
                   </div>
                 </div>
@@ -136,8 +136,8 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
         <div
           style={{
             backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid #351505',
-            borderRadius: '10px',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+            borderRadius: '8px',
             padding: 'clamp(28px, 4vw, 48px)',
             boxShadow: '0 8px 30px rgba(32, 11, 0,  0.04)',
           }}
@@ -150,7 +150,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
               <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0' }}>
                 {steps[activeStep].title}
               </h3>
-              <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#a3a09b', margin: 0 }}>
+              <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#e4e2e1', margin: 0 }}>
                 {steps[activeStep].description}
               </p>
             </div>
@@ -168,19 +168,20 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                       alignItems: 'center',
                       gap: '12px',
                       padding: '12px 16px',
-                      backgroundColor: 'var(--colors-background-dark, #200b00)',
-                      borderRadius: '6px',
-                      border: '1px solid #edf2f7',
+                      backgroundColor: 'rgba(32, 11, 0, 0.75)',
+                      borderRadius: '4px',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
                     }}
                   >
                     <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#351505' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#ffffff' }}>
                       {del}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>

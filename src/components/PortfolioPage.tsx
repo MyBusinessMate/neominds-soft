@@ -318,7 +318,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                       <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
                         Client: {cs.client}
                       </span>
-                      <span style={{ color: '#475569' }}>•</span>
+                      <span style={{ color: '#868683' }}>•</span>
                       <span style={{ fontSize: '12px', color: '#fe6200', fontWeight: 600 }}>
                         {cs.service}
                       </span>

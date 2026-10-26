@@ -18,10 +18,10 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#0a0d14',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         color: '#ffffff',
-        borderTop: '1px solid #1a2233',
-        borderBottom: '1px solid #1a2233',
+        borderTop: '1px solid #351505',
+        borderBottom: '1px solid #351505',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -134,8 +134,8 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     <div
                       key={tech}
                       style={{
-                        backgroundColor: '#162234',
-                        border: '1px solid #1e2d42',
+                        backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                        border: '1px solid rgba(255, 255, 255, 0.08)',
                         borderRadius: '6px',
                         padding: '12px',
                         display: 'flex',

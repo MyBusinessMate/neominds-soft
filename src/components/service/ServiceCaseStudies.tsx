@@ -64,7 +64,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
       ref={sectionRef}
       style={{
         position: 'relative',
-        backgroundColor: '#0a0d14',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
         color: '#ffffff',
         overflow: 'hidden',
       }}
@@ -173,8 +173,8 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
               style={{
                 width: isMobile ? '100%' : '520px',
                 minWidth: isMobile ? '100%' : '520px',
-                backgroundColor: '#121824',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '8px',
                 padding: '32px',
                 display: 'flex',
@@ -201,7 +201,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                       color: '#fe6200',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
-                      backgroundColor: 'rgba(255, 85, 0, 0.2)',
+                      backgroundColor: 'rgba(254, 98, 0, 0.15)',
                       padding: '4px 10px',
                       borderRadius: '3px',
                     }}
@@ -235,7 +235,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
               <div>
                 <div
                   style={{
-                    backgroundColor: '#1a2333',
+                    backgroundColor: 'rgba(32, 11, 0, 0.75)',
                     borderRadius: '6px',
                     padding: '16px 20px',
                     display: 'flex',

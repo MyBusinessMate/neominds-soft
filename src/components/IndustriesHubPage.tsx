@@ -286,7 +286,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   border: '1px solid #351505',
                   borderRadius: '12px',
                   padding: '32px',
-                  boxShadow: '0 4px 12px rgba(15, 23, 42, 0.04)',
+                  boxShadow: '0 4px 12px rgba(32, 11, 0, 0.25)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -348,7 +348,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     e.currentTarget.style.borderColor = '#fe6200';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f8fafc';
+                    e.currentTarget.style.backgroundColor = '#faf8f5';
                     e.currentTarget.style.color = '#000000';
                     e.currentTarget.style.borderColor = '#a3a09b';
                   }}
