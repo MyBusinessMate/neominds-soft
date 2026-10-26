@@ -152,40 +152,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           paddingBottom: 'clamp(40px, 6vh, 60px)',
         }}
       >
-        {/* Editorial Subheading Eyebrow */}
-        <div
-          ref={tagRef}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '10px',
-            marginBottom: '20px',
-          }}
-        >
-          <span
-            style={{
-              width: '8px',
-              height: '8px',
-              backgroundColor: '#fe6200',
-              borderRadius: '0px',
-              display: 'inline-block',
-            }}
-          />
-          <span
-            className="eyebrow-tag"
-            style={{
-              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-              fontSize: '14px',
-              fontWeight: 500,
-              letterSpacing: '0.12em',
-              color: '#fe6200',
-              textTransform: 'uppercase',
-            }}
-          >
-            ENTERPRISE SOFTWARE & AI SYSTEMS //
-          </span>
-        </div>
-
         {/* Main Headline - Freehand BL Pylon Serif Display 64px */}
         <h1
           ref={headlineRef}

@@ -256,9 +256,8 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         >
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
-              <span style={{ width: '12px', height: '2px', backgroundColor: '#FF5500' }} />
               <span style={{ fontFamily: 'monospace', fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Specification Inspector // Module 0{activeTabIdx + 1}
+                Capability Specification · Module 0{activeTabIdx + 1}
               </span>
             </div>
 
@@ -503,7 +502,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <Terminal size={16} color="#FF5500" />
           <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#FF5500', fontWeight: 600 }}>
-            NEOMINDS_SYSTEM_DAEMON // {title.toUpperCase().replace(/\s+/g, '_')}
+            Architecture Specifications · {title}
           </span>
         </div>
         <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', padding: '3px 8px', borderRadius: '3px' }}>

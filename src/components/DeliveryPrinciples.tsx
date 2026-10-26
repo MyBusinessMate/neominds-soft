@@ -128,23 +128,6 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         >
           {/* Left Column: Index & Core Statement */}
           <div>
-            <RevealElement variant="text">
-              <span
-                style={{
-                  display: 'inline-block',
-                  fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  letterSpacing: '0.08em',
-                  color: '#fe6200',
-                  textTransform: 'uppercase',
-                  marginBottom: '16px',
-                }}
-              >
-                02 // HOW WE WORK
-              </span>
-            </RevealElement>
-
             <ScrollReveal
               as="h2"
               style={{

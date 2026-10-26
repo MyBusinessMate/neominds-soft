@@ -28,7 +28,6 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
               marginBottom: '16px',
             }}
           >
-            <span style={{ width: '16px', height: '2px', backgroundColor: '#FF5500' }} />
             <span
               style={{
                 fontFamily: 'monospace',

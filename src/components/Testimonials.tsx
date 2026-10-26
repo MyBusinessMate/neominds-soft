@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { RevealElement } from './scroll-reveal';
+
 import { Button } from './ui/Button';
 
 interface TestimonialItem {
@@ -111,24 +111,6 @@ export const Testimonials: React.FC = () => {
         >
           {/* Left Column: Index, Title & Client Directory */}
           <div>
-            <RevealElement variant="text">
-              <span
-                className="eyebrow-tag"
-                style={{
-                  display: 'inline-block',
-                  fontFamily: 'var(--typography-mono-family)',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  color: 'var(--colors-primary)',
-                  textTransform: 'uppercase',
-                  marginBottom: '16px',
-                }}
-              >
-                04 // CLIENT REPUTATION
-              </span>
-            </RevealElement>
-
             <h2
               style={{
                 fontFamily: 'var(--typography-heading1-family)',

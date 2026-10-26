@@ -96,24 +96,6 @@ const IndustryRecognitionComponent: React.FC = () => {
         >
           {/* Left Column Text */}
           <div style={{ maxWidth: '580px' }}>
-            <RevealElement variant="text">
-              <span
-                className="eyebrow-tag"
-                style={{
-                  display: 'inline-block',
-                  fontFamily: 'var(--typography-mono-family)',
-                  fontSize: '13px',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  color: 'var(--colors-primary)',
-                  textTransform: 'uppercase',
-                  marginBottom: '16px',
-                }}
-              >
-                05 // COMMITMENTS & STANDARDS
-              </span>
-            </RevealElement>
-
             <ScrollReveal
               as="h2"
               className="section-title"

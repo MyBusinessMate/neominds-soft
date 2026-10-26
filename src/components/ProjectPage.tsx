@@ -200,7 +200,6 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             gap: '8px',
           }}
         >
-          <span style={{ width: '16px', height: '2px', backgroundColor: '#fe6200' }} />
           <span>PRODUCTION VERIFIED PROJECT</span>
         </div>
 

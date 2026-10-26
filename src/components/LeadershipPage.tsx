@@ -100,7 +100,6 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             {/* Left Headline */}
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fe6200', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
-                <span style={{ width: '16px', height: '2px', backgroundColor: '#fe6200' }} />
                 <span>Executive Leadership</span>
               </div>
 

@@ -94,20 +94,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
           {/* Left Column: Editorial Architectural Next Steps */}
           <div>
             <div style={{ marginBottom: '20px' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--typography-mono-family)',
-                  fontSize: '12px',
-                  fontWeight: 500,
-                  letterSpacing: '0.14em',
-                  color: 'var(--colors-primary)',
-                  textTransform: 'uppercase',
-                  display: 'inline-block',
-                  marginBottom: '14px',
-                }}
-              >
-                [ 07 // DIRECT DISPATCH ]
-              </span>
               <ScrollReveal
                 as="h2"
                 style={{
@@ -151,10 +137,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                   color: 'var(--colors-text-inverse)',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '12px',
                 }}
               >
-                <span style={{ width: '20px', height: '1px', backgroundColor: 'var(--colors-primary)' }} />
                 What happens next?
               </h3>
             </RevealElement>

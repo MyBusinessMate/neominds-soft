@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { ScrollReveal } from './scroll-reveal';
 
 interface ServicePill {
   label: string;
@@ -25,7 +25,7 @@ const stackCards: ServiceStackCard[] = [
   {
     id: 1,
     slug: 'software-development',
-    category: 'PILLAR 01 // FOUNDATION',
+    category: 'Core Engineering',
     title: 'BUILD',
     tagline: 'Web, mobile, cross-platform, e-commerce, custom and SaaS software',
     description:
@@ -49,7 +49,7 @@ const stackCards: ServiceStackCard[] = [
   {
     id: 2,
     slug: 'ai-integrations',
-    category: 'PILLAR 02 // INTELLIGENCE',
+    category: 'Applied AI Systems',
     title: 'AI',
     tagline: 'Integration, intelligent automation, and AI-native products',
     description:
@@ -72,7 +72,7 @@ const stackCards: ServiceStackCard[] = [
   {
     id: 3,
     slug: 'cloud-based-software',
-    category: 'PILLAR 03 // EVOLUTION',
+    category: 'Cloud Modernization',
     title: 'MODERNIZE',
     tagline: 'Moving legacy applications to modern code and cloud platforms in stages',
     description:
@@ -200,24 +200,6 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
           borderBottom: '1px solid #e4e2e1',
         }}
       >
-        <RevealElement variant="text">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#fe6200' }} />
-            <span
-              style={{
-                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                fontSize: '13px',
-                fontWeight: 500,
-                letterSpacing: '0.08em',
-                color: '#fe6200',
-                textTransform: 'uppercase',
-              }}
-            >
-              OUR THREE PILLARS // BUILD · AI · MODERNIZE
-            </span>
-          </div>
-        </RevealElement>
-
         <ScrollReveal
           as="h2"
           style={{

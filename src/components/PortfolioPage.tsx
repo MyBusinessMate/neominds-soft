@@ -74,7 +74,6 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
               marginBottom: '24px',
             }}
           >
-            <span style={{ width: '20px', height: '2px', backgroundColor: '#fe6200' }} />
             <span
               style={{
                 fontFamily: 'monospace',
@@ -85,7 +84,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 textTransform: 'uppercase',
               }}
             >
-              Verified Case Studies // Production Results
+              Verified Case Studies · Production Results
             </span>
           </div>
 
@@ -162,7 +161,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 </span>
               </div>
               <span style={{ fontSize: '12px', color: '#94a3b8', fontFamily: 'monospace', fontWeight: 600 }}>
-                DELIVERY METRICS // 2003–2026
+                Delivery Metrics (2003–2026)
               </span>
             </div>
 

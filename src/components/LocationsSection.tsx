@@ -16,7 +16,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
 
   const officeLocation = {
     title: 'Headquarters',
-    facilityCode: 'FACILITY // HYD-HQ-01',
+    facilityCode: 'Hyderabad Engineering HQ',
     name: 'Neominds TechHub',
     suite: 'Suite No. 704, 7th Floor',
     building: 'Moguls Court Building',
@@ -333,7 +333,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       textTransform: 'uppercase',
                     }}
                   >
-                    FACILITY // HYD-HQ-01
+                    Hyderabad Engineering HQ
                   </span>
                   <span style={{ color: 'var(--colors-text-muted)', fontSize: '12px' }}>•</span>
                   <span
@@ -375,7 +375,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       display: 'inline-block',
                     }}
                   />
-                  <span>ACTIVE {istTime ? `// ${istTime}` : '// UTC+5:30'}</span>
+                  <span>Active · {istTime || 'IST UTC+5:30'}</span>
                 </div>
               </div>
 
@@ -787,13 +787,13 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       paddingLeft: '14px',
                       color: 'var(--colors-primary)',
-                      fontFamily: 'var(--typography-mono-family)',
+                      fontFamily: 'var(--typography-body-family)',
                       fontSize: '13px',
                       fontWeight: 500,
                       userSelect: 'none',
                     }}
                   >
-                    eng://
+                    Email
                   </span>
                   <input
                     type="email"

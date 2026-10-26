@@ -38,7 +38,7 @@ const ExperienceSectionComponent: React.FC = () => {
     if (reduceMotion) {
       const words = textContainerRef.current?.querySelectorAll('.scroll-word');
       if (words) {
-        gsap.set(words, { opacity: 1, color: '#ffffff', y: 0 });
+        gsap.set(words, { opacity: 1, color: '#000000', y: 0 });
       }
       return;
     }
@@ -51,13 +51,13 @@ const ExperienceSectionComponent: React.FC = () => {
       gsap.fromTo(
         words,
         {
-          opacity: 0.18,
-          color: 'rgba(255, 255, 255, 0.25)',
+          opacity: 0.22,
+          color: 'rgba(0, 0, 0, 0.22)',
           y: 4,
         },
         {
           opacity: 1,
-          color: '#ffffff',
+          color: '#000000',
           y: 0,
           stagger: 0.08,
           ease: 'power1.out',
@@ -108,22 +108,6 @@ const ExperienceSectionComponent: React.FC = () => {
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Editorial Eyebrow Tag */}
-        <div style={{ marginBottom: '24px' }}>
-          <span
-            style={{
-              fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-              fontSize: '13px',
-              fontWeight: 500,
-              letterSpacing: '0.08em',
-              color: '#fe6200',
-              textTransform: 'uppercase',
-            }}
-          >
-            03 // PROVEN INDUSTRY SCALE
-          </span>
-        </div>
-
         {/* Large Editorial Headline with Pure Word-by-Word Smooth Fill */}
         <div
           ref={textContainerRef}
@@ -152,8 +136,8 @@ const ExperienceSectionComponent: React.FC = () => {
                 style={{
                   display: 'inline-block',
                   marginRight: '0.28em',
-                  opacity: 0.2,
-                  color: 'rgba(32, 11, 0,  0.25)',
+                  opacity: 0.22,
+                  color: 'rgba(0, 0, 0, 0.22)',
                   willChange: 'opacity, color, transform',
                 }}
               >

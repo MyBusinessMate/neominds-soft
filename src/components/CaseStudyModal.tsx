@@ -80,7 +80,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               textTransform: 'uppercase',
             }}
           >
-            PROJECT // CASE STUDY
+            Case Study Overview
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
