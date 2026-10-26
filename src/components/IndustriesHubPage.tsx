@@ -259,18 +259,18 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          3. INDUSTRIES WE BUILD FOR (6 INDUSTRIES)
+          3. INDUSTRIES WE BUILD FOR (6 INDUSTRIES) - CREAM BEIGE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Specialized Solutions
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Custom software for these industries
             </h2>
-            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
               We build specialized platforms with sector compliance, enterprise security, and verified high-throughput workflows baked into every release.
             </p>
           </div>
@@ -282,11 +282,12 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 variant="card"
                 delay={idx * 0.05}
                 style={{
-                  backgroundColor: 'var(--colors-background-dark, #200b00)',
-                  border: '1px solid #351505',
-                  borderRadius: '12px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e4e2e1',
+                  borderTop: '3px solid #fe6200',
+                  borderRadius: '8px',
                   padding: '32px',
-                  boxShadow: '0 4px 12px rgba(32, 11, 0, 0.25)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -294,10 +295,10 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: 'rgba(254, 98, 0, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {ind.icon}
                     </div>
-                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#a3a09b', fontFamily: 'monospace' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#868683', fontFamily: 'monospace' }}>
                       {ind.num}
                     </span>
                   </div>
@@ -306,17 +307,17 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     {ind.tag}
                   </span>
 
-                  <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>
+                  <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#000000', marginBottom: '12px' }}>
                     {ind.title}
                   </h3>
 
-                  <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.65, marginBottom: '20px' }}>
+                  <p style={{ fontSize: '14px', color: '#333333', lineHeight: 1.65, marginBottom: '20px' }}>
                     {ind.desc}
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {ind.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)' }}>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#200b00' }}>
                         <CheckCircle size={14} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
@@ -328,13 +329,13 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   onClick={handleEstimateClick}
                   style={{
                     width: '100%',
-                    backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                    border: '1px solid #351505',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid #e4e2e1',
                     borderRadius: '6px',
                     padding: '10px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#ffffff',
+                    color: '#200b00',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
@@ -348,9 +349,9 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     e.currentTarget.style.borderColor = '#fe6200';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#faf8f5';
-                    e.currentTarget.style.color = '#000000';
-                    e.currentTarget.style.borderColor = '#a3a09b';
+                    e.currentTarget.style.backgroundColor = '#f1efeb';
+                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
                   }}
                 >
                   <span>Discuss {ind.title} project</span>
@@ -363,18 +364,18 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          4. TECHNOLOGIES WE USE
+          4. TECHNOLOGIES WE USE - CLEAN WHITE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #351505' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Technologies We Use
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Stack & infrastructure
             </h2>
-            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
               We select battle-tested, production-proven tools matching your industry requirements and scale targets.
             </p>
           </div>
@@ -384,16 +385,16 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
-                  borderRadius: '8px',
+                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+                  border: '1px solid #e4e2e1',
+                  borderRadius: '6px',
                   padding: '20px',
                 }}
               >
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
                   {t.area}
                 </div>
-                <div style={{ fontSize: '13px', color: '#a3a09b', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '13px', color: '#333333', lineHeight: 1.5 }}>
                   {t.tech}
                 </div>
               </div>

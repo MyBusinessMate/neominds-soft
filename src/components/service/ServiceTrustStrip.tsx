@@ -20,8 +20,8 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
   return (
     <section
       style={{
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
-        borderBottom: '1px solid #351505',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
         padding: '36px 24px',
       }}
     >
@@ -34,7 +34,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
               gap: '24px',
               paddingBottom: '28px',
-              borderBottom: '1px solid #351505',
+              borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
             }}
           >
             {metrics.map((m, idx) => (
@@ -53,8 +53,8 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 <div
                   style={{
                     fontSize: '13px',
-                    fontWeight: 500,
-                    color: '#a3a09b',
+                    fontWeight: 600,
+                    color: '#66615c',
                     marginTop: '6px',
                   }}
                 >
@@ -83,9 +83,9 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#868683',
-                fontSize: '13px',
-                fontWeight: 500,
+                color: '#200b00',
+                fontSize: '13.5px',
+                fontWeight: 600,
               }}
             >
               {pIdx === 0 && <Award size={15} color="#fe6200" />}

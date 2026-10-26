@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-import { Button } from './ui/Button';
-
 interface TestimonialItem {
   id: string;
   logoUrl?: string;
@@ -91,11 +89,11 @@ export const Testimonials: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
         paddingTop: 'clamp(80px, 9vw, 120px)',
         paddingBottom: 'clamp(80px, 9vw, 120px)',
-        borderTop: '1px solid var(--colors-border-dark)',
-        color: 'var(--colors-text-inverse)',
+        borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+        color: '#000000',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
@@ -111,13 +109,27 @@ export const Testimonials: React.FC = () => {
         >
           {/* Left Column: Index, Title & Client Directory */}
           <div>
+            <span
+              style={{
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                fontSize: '12px',
+                fontWeight: 600,
+                color: '#fe6200',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                display: 'block',
+                marginBottom: '10px',
+              }}
+            >
+              Client Verification
+            </span>
             <h2
               style={{
                 fontFamily: 'var(--typography-heading1-family)',
                 fontSize: 'clamp(32px, 3.6vw, 44px)',
-                fontWeight: 400,
+                fontWeight: 700,
                 lineHeight: 1.2,
-                color: 'var(--colors-text-inverse)',
+                color: '#000000',
                 marginBottom: '28px',
                 letterSpacing: '-0.02em',
               }}
@@ -128,7 +140,7 @@ export const Testimonials: React.FC = () => {
             {/* Client Interactive Roster */}
             <div
               style={{
-                borderTop: '1px solid var(--colors-border-dark)',
+                borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
                 display: 'flex',
                 flexDirection: 'column',
               }}
@@ -146,10 +158,10 @@ export const Testimonials: React.FC = () => {
                       padding: '16px 0',
                       background: 'none',
                       border: 'none',
-                      borderBottom: '1px solid var(--colors-border-dark)',
+                      borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
                       cursor: 'pointer',
                       textAlign: 'left',
-                      transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                      transition: 'all 0.25s ease',
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
@@ -157,7 +169,8 @@ export const Testimonials: React.FC = () => {
                         style={{
                           fontFamily: 'var(--typography-mono-family)',
                           fontSize: '12px',
-                          color: isActive ? 'var(--colors-primary)' : 'var(--colors-text-muted)',
+                          fontWeight: 700,
+                          color: isActive ? '#fe6200' : '#66615c',
                         }}
                       >
                         0{idx + 1}
@@ -166,9 +179,9 @@ export const Testimonials: React.FC = () => {
                         style={{
                           fontFamily: 'var(--typography-body-family)',
                           fontSize: '15px',
-                          fontWeight: isActive ? 600 : 400,
-                          color: isActive ? 'var(--colors-text-inverse)' : 'var(--colors-text-muted)',
-                          transition: 'color 0.38s ease',
+                          fontWeight: isActive ? 700 : 500,
+                          color: isActive ? '#000000' : '#66615c',
+                          transition: 'color 0.25s ease',
                         }}
                       >
                         {item.clientName}
@@ -181,7 +194,7 @@ export const Testimonials: React.FC = () => {
                           width: '6px',
                           height: '6px',
                           borderRadius: '50%',
-                          backgroundColor: 'var(--colors-primary)',
+                          backgroundColor: '#fe6200',
                         }}
                       />
                     )}
@@ -191,19 +204,20 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Freehand Card Presentation */}
+          {/* Right Column: Cardless Editorial Presentation Blended into Cream Background */}
           <div
             className="quote-column"
             style={{
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '460px',
-              backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
-              borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
-              border: '1px solid var(--colors-border-dark)',
-              padding: 'clamp(28px, 4vw, 44px)',
-              boxShadow: 'var(--shadow-card)',
+              minHeight: '420px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              borderLeft: '3px solid #fe6200',
+              borderRadius: 0,
+              padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(24px, 4vw, 44px)',
+              boxShadow: 'none',
             }}
           >
             <div>
@@ -213,9 +227,9 @@ export const Testimonials: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  marginBottom: '32px',
-                  borderBottom: '1px solid var(--colors-border-dark)',
-                  paddingBottom: '20px',
+                  marginBottom: '28px',
+                  borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
+                  paddingBottom: '16px',
                 }}
               >
                 {current.logoUrl ? (
@@ -227,7 +241,6 @@ export const Testimonials: React.FC = () => {
                       maxHeight: '32px',
                       maxWidth: '140px',
                       objectFit: 'contain',
-                      filter: 'brightness(0) invert(1)',
                       opacity: 0.9,
                     }}
                     onError={(e) => {
@@ -239,8 +252,8 @@ export const Testimonials: React.FC = () => {
                     style={{
                       fontFamily: 'var(--typography-heading1-family)',
                       fontSize: '20px',
-                      fontWeight: 400,
-                      color: 'var(--colors-text-inverse)',
+                      fontWeight: 700,
+                      color: '#000000',
                     }}
                   >
                     {current.clientName}
@@ -251,7 +264,8 @@ export const Testimonials: React.FC = () => {
                   style={{
                     fontFamily: 'var(--typography-mono-family)',
                     fontSize: '13px',
-                    color: 'var(--colors-text-muted)',
+                    fontWeight: 600,
+                    color: '#66615c',
                   }}
                 >
                   0{currentIndex + 1} / 0{testimonials.length}
@@ -262,10 +276,10 @@ export const Testimonials: React.FC = () => {
               <blockquote
                 style={{
                   fontFamily: 'var(--typography-display-family)',
-                  fontSize: 'clamp(22px, 2.3vw, 30px)',
+                  fontSize: 'clamp(22px, 2.3vw, 29px)',
                   fontWeight: 400,
-                  lineHeight: 1.4,
-                  color: 'var(--colors-text-inverse)',
+                  lineHeight: 1.45,
+                  color: '#200b00',
                   margin: '0 0 36px 0',
                   letterSpacing: '-0.01em',
                 }}
@@ -277,7 +291,7 @@ export const Testimonials: React.FC = () => {
             {/* Author Credentials & Pagination Controls */}
             <div
               style={{
-                borderTop: '1px solid var(--colors-border-dark)',
+                borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
                 paddingTop: '24px',
                 display: 'flex',
                 alignItems: 'center',
@@ -297,7 +311,7 @@ export const Testimonials: React.FC = () => {
                       height: '46px',
                       borderRadius: 'var(--radius-sm)',
                       objectFit: 'cover',
-                      border: '1px solid var(--colors-border-dark)',
+                      border: '1px solid var(--colors-border-light, #e4e2e1)',
                     }}
                     onError={(e) => {
                       (e.currentTarget as HTMLElement).style.display = 'none';
@@ -309,12 +323,12 @@ export const Testimonials: React.FC = () => {
                       width: '46px',
                       height: '46px',
                       borderRadius: 'var(--radius-sm)',
-                      backgroundColor: 'rgba(254, 98, 0, 0.15)',
-                      color: 'var(--colors-primary)',
+                      backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                      color: '#fe6200',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontFamily: 'var(--typography-body-family)',
                       fontSize: '16px',
                     }}
@@ -327,9 +341,9 @@ export const Testimonials: React.FC = () => {
                   <div
                     style={{
                       fontFamily: 'var(--typography-body-family)',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       fontSize: '15px',
-                      color: 'var(--colors-text-inverse)',
+                      color: '#000000',
                     }}
                   >
                     {current.author}
@@ -338,7 +352,7 @@ export const Testimonials: React.FC = () => {
                     style={{
                       fontFamily: 'var(--typography-body-family)',
                       fontSize: '14px',
-                      color: 'var(--colors-text-muted)',
+                      color: '#66615c',
                       marginTop: '2px',
                     }}
                   >
@@ -347,22 +361,62 @@ export const Testimonials: React.FC = () => {
                 </div>
               </div>
 
-              {/* Prev / Next Controls with 0px radius spec */}
+              {/* Prev / Next Controls on light surface */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Button
-                  variant="icon-only"
+                <button
                   onClick={handlePrev}
                   aria-label="Previous testimonial"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '4px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    color: '#200b00',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#fe6200';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#200b00';
+                  }}
                 >
                   <ArrowLeft size={16} />
-                </Button>
-                <Button
-                  variant="icon-only"
+                </button>
+                <button
                   onClick={handleNext}
                   aria-label="Next testimonial"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '4px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    color: '#200b00',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#fe6200';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#200b00';
+                  }}
                 >
                   <ArrowRight size={16} />
-                </Button>
+                </button>
               </div>
             </div>
           </div>

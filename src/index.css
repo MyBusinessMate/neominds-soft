@@ -37,7 +37,7 @@ html.lenis body {
   --colors-background-dark: #200b00;
   --colors-surface-dark-subtle: #351505;
   --colors-text-primary: #000000;
-  --colors-text-muted: #868683;
+  --colors-text-muted: #66615c;
   --colors-text-inverse: #ffffff;
   --colors-border-light: #e4e2e1;
   --colors-border-dark: #351505;
@@ -50,7 +50,7 @@ html.lenis body {
   --color-brand-focus: #fe6200;
   --color-bg-primary: #200b00;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #868683;
+  --color-text-secondary: #66615c;
   --color-border: #351505;
   --color-border-secondary: #351505;
   --color-disabled-bg: #e4e2e1;
@@ -66,7 +66,7 @@ html.lenis body {
   --color-background-dark: #200b00;
   --dark-surface: #200b00;
   --dark-text: #ffffff;
-  --dark-text-muted: #868683;
+  --dark-text-muted: #c2bfb9;
   --dark-border: #351505;
 
   /* Typography Design Tokens */

@@ -87,11 +87,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
         paddingTop: 'clamp(60px, 7vw, 90px)',
         paddingBottom: 'clamp(48px, 6vw, 60px)',
-        borderTop: '1px solid var(--colors-border-dark)',
-        color: 'var(--colors-text-inverse)',
+        borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+        color: '#000000',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
@@ -108,16 +108,30 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         >
           {/* Left Column: Heading, Contact Info & Social Media Links */}
           <div>
+            <span
+              style={{
+                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                fontSize: '12px',
+                fontWeight: 600,
+                color: '#fe6200',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                display: 'block',
+                marginBottom: '10px',
+              }}
+            >
+              Physical Presence
+            </span>
             <ScrollReveal
               as="h2"
               className="section-title"
               style={{
-                color: 'var(--colors-text-inverse)',
+                color: '#000000',
                 marginBottom: '16px',
                 display: 'block',
                 fontFamily: 'var(--typography-display-family)',
                 fontSize: 'clamp(32px, 3.6vw, 44px)',
-                fontWeight: 400,
+                fontWeight: 700,
                 letterSpacing: '-0.02em',
               }}
               blurStrength={6}
@@ -128,7 +142,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               <p
                 className="body-lead"
                 style={{
-                  color: 'var(--colors-text-muted)',
+                  color: '#66615c',
                   marginBottom: '24px',
                   maxWidth: '420px',
                   fontFamily: 'var(--typography-body-family)',
@@ -146,28 +160,28 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '12px',
-                color: 'var(--colors-primary)',
+                color: '#fe6200',
                 fontSize: '16px',
-                fontWeight: 500,
+                fontWeight: 600,
                 fontFamily: 'var(--typography-body-family)',
-                transition: 'color 0.38s ease',
+                transition: 'color 0.25s ease',
                 minHeight: '44px',
                 marginBottom: '32px',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colors-primary)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#cf5000')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#fe6200')}
             >
               <div
                 style={{
                   width: '32px',
                   height: '32px',
-                  backgroundColor: 'var(--colors-primary)',
-                  color: 'var(--colors-text-inverse)',
+                  backgroundColor: '#fe6200',
+                  color: '#ffffff',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: '4px',
                 }}
               >
                 <Mail size={16} />
@@ -181,9 +195,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 style={{
                   display: 'block',
                   fontSize: '12px',
-                  fontWeight: 500,
-                  letterSpacing: '0.12em',
-                  color: 'var(--colors-text-muted)',
+                  fontWeight: 600,
+                  letterSpacing: '0.08em',
+                  color: '#66615c',
                   textTransform: 'uppercase',
                   marginBottom: '14px',
                   fontFamily: 'var(--typography-mono-family)',
@@ -201,24 +215,26 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: 'var(--colors-surface-dark-subtle)',
+                    borderRadius: '4px',
+                    backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--colors-text-inverse)',
-                    transition: 'all 0.38s ease',
+                    color: '#200b00',
+                    transition: 'all 0.2s ease',
                     textDecoration: 'none',
-                    border: '1px solid var(--colors-border-dark)',
+                    border: '1px solid #e4e2e1',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
-                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                    e.currentTarget.style.backgroundColor = '#fe6200';
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
+                    e.currentTarget.style.backgroundColor = '#ffffff';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#200b00';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -234,59 +250,63 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: 'var(--colors-surface-dark-subtle)',
+                    borderRadius: '4px',
+                    backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--colors-text-inverse)',
-                    transition: 'all 0.38s ease',
+                    color: '#200b00',
+                    transition: 'all 0.2s ease',
                     textDecoration: 'none',
-                    border: '1px solid var(--colors-border-dark)',
+                    border: '1px solid #e4e2e1',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
-                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                    e.currentTarget.style.backgroundColor = '#fe6200';
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
+                    e.currentTarget.style.backgroundColor = '#ffffff';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#200b00';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </a>
 
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/neominds"
+                  href="https://facebook.com/neominds"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: 'var(--colors-surface-dark-subtle)',
+                    borderRadius: '4px',
+                    backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: 'var(--colors-text-inverse)',
-                    transition: 'all 0.38s ease',
+                    color: '#200b00',
+                    transition: 'all 0.2s ease',
                     textDecoration: 'none',
-                    border: '1px solid var(--colors-border-dark)',
+                    border: '1px solid #e4e2e1',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
-                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                    e.currentTarget.style.backgroundColor = '#fe6200';
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#ffffff';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle)';
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
+                    e.currentTarget.style.backgroundColor = '#ffffff';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#200b00';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -296,17 +316,18 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
             </div>
           </div>
 
+
           {/* Right Column: Architectural Engineering Headquarters Facility Ledger */}
           <RevealElement variant="card">
             <div
-              className="card-dark"
               style={{
-                backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
-                border: '1px solid var(--colors-border-dark)',
-                borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
+                backgroundColor: '#ffffff',
+                border: '1px solid #e4e2e1',
+                borderTop: '3px solid #fe6200',
+                borderRadius: '8px',
                 padding: 'clamp(24px, 3.5vw, 36px)',
                 position: 'relative',
-                boxShadow: 'var(--shadow-card)',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
               }}
             >
               {/* Header Status Bar */}
@@ -318,7 +339,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   flexWrap: 'wrap',
                   gap: '12px',
                   paddingBottom: '18px',
-                  borderBottom: '1px solid var(--colors-border-dark)',
+                  borderBottom: '1px solid #e4e2e1',
                   marginBottom: '20px',
                 }}
               >
@@ -327,20 +348,20 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       fontFamily: 'var(--typography-mono-family)',
                       fontSize: '11px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.12em',
-                      color: 'var(--colors-primary)',
+                      color: '#fe6200',
                       textTransform: 'uppercase',
                     }}
                   >
                     Hyderabad Engineering HQ
                   </span>
-                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '12px' }}>•</span>
+                  <span style={{ color: '#868683', fontSize: '12px' }}>•</span>
                   <span
                     style={{
                       fontSize: '11px',
-                      fontWeight: 500,
-                      color: 'var(--colors-text-muted)',
+                      fontWeight: 600,
+                      color: '#868683',
                       letterSpacing: '0.04em',
                       textTransform: 'uppercase',
                       fontFamily: 'var(--typography-mono-family)',
@@ -357,12 +378,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'center',
                     gap: '8px',
                     padding: '4px 10px',
-                    backgroundColor: 'var(--colors-background-dark)',
-                    border: '1px solid var(--colors-border-dark)',
-                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '4px',
                     fontSize: '11px',
                     fontFamily: 'var(--typography-mono-family)',
-                    color: 'var(--colors-text-muted)',
+                    color: '#200b00',
                   }}
                 >
                   <span
@@ -370,8 +391,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       width: '7px',
                       height: '7px',
                       borderRadius: '50%',
-                      backgroundColor: 'var(--colors-primary)',
-                      boxShadow: '0 0 8px var(--colors-primary)',
+                      backgroundColor: '#16a34a',
                       display: 'inline-block',
                     }}
                   />
@@ -384,8 +404,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 <h3
                   style={{
                     fontSize: 'clamp(22px, 2.4vw, 26px)',
-                    fontWeight: 400,
-                    color: 'var(--colors-text-inverse)',
+                    fontWeight: 700,
+                    color: '#000000',
                     fontFamily: 'var(--typography-heading1-family)',
                     letterSpacing: '-0.02em',
                     margin: '0 0 4px 0',
@@ -395,7 +415,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 </h3>
                 <p
                   style={{
-                    color: 'var(--colors-text-muted)',
+                    color: '#66615c',
                     fontSize: '14px',
                     margin: 0,
                     fontFamily: 'var(--typography-body-family)',
@@ -411,22 +431,22 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
                   gap: '1px',
-                  backgroundColor: 'var(--colors-border-dark)',
-                  border: '1px solid var(--colors-border-dark)',
+                  backgroundColor: '#e4e2e1',
+                  border: '1px solid #e4e2e1',
                   marginBottom: '20px',
-                  borderRadius: 'var(--radius-sm)',
+                  borderRadius: '6px',
                   overflow: 'hidden',
                 }}
               >
                 {/* Suite & Level */}
-                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: 'var(--colors-text-muted)',
+                      color: '#868683',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
                       fontFamily: 'var(--typography-mono-family)',
@@ -434,23 +454,23 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     SUITE & LEVEL
                   </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.suite}
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.building}
                   </span>
                 </div>
 
                 {/* Locality & Street */}
-                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: 'var(--colors-text-muted)',
+                      color: '#868683',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
                       fontFamily: 'var(--typography-mono-family)',
@@ -458,23 +478,23 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     STREET & LOCALITY
                   </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.locality}
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     Basheerbagh Commercial Core
                   </span>
                 </div>
 
                 {/* City & Jurisdiction */}
-                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: 'var(--colors-text-muted)',
+                      color: '#868683',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
                       fontFamily: 'var(--typography-mono-family)',
@@ -482,23 +502,23 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     CITY & JURISDICTION
                   </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 500, color: 'var(--colors-text-inverse)', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
-                    Hyderabad 500001
+                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
+                    {officeLocation.cityStateZip}
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
-                    Telangana State, India
+                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
+                    {officeLocation.country}
                   </span>
                 </div>
 
                 {/* Geo Coordinates */}
-                <div style={{ backgroundColor: 'var(--colors-background-dark)', padding: '14px 16px' }}>
+                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
                   <span
                     style={{
                       display: 'block',
                       fontSize: '10px',
-                      fontWeight: 500,
+                      fontWeight: 700,
                       letterSpacing: '0.08em',
-                      color: 'var(--colors-text-muted)',
+                      color: '#868683',
                       textTransform: 'uppercase',
                       marginBottom: '4px',
                       fontFamily: 'var(--typography-mono-family)',
@@ -506,10 +526,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     GEO-COORDINATES
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 500, color: 'var(--colors-primary)', fontFamily: 'var(--typography-mono-family)', lineHeight: 1.4 }}>
+                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#fe6200', fontFamily: 'var(--typography-mono-family)', lineHeight: 1.4 }}>
                     {officeLocation.coordinates}
                   </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: 'var(--colors-text-muted)', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
                     Zone: Asia/Kolkata (IST)
                   </span>
                 </div>
@@ -532,24 +552,24 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'center',
                     gap: '8px',
                     padding: '8px 16px',
-                    backgroundColor: 'var(--colors-background-dark)',
-                    border: '1px solid var(--colors-border-dark)',
-                    borderRadius: '0px', // strict 0px
-                    color: copied ? 'var(--colors-primary)' : 'var(--colors-text-inverse)',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '4px',
+                    color: copied ? '#fe6200' : '#200b00',
                     fontSize: '13px',
-                    fontWeight: 500,
+                    fontWeight: 600,
                     fontFamily: 'var(--typography-body-family)',
                     cursor: 'pointer',
-                    transition: 'all 0.38s ease',
+                    transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
+                    e.currentTarget.style.borderColor = '#fe6200';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
                   }}
                 >
-                  {copied ? <Check size={14} color="var(--colors-primary)" /> : <Copy size={14} />}
+                  {copied ? <Check size={14} color="#fe6200" /> : <Copy size={14} />}
                   <span>{copied ? 'Address Copied' : 'Copy Full Address'}</span>
                 </button>
 
@@ -562,27 +582,27 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'center',
                     gap: '6px',
                     padding: '8px 16px',
-                    backgroundColor: 'var(--colors-background-dark)',
-                    border: '1px solid var(--colors-border-dark)',
-                    borderRadius: '0px',
-                    color: 'var(--colors-text-muted)',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '4px',
+                    color: '#66615c',
                     fontSize: '13px',
-                    fontWeight: 500,
+                    fontWeight: 600,
                     fontFamily: 'var(--typography-body-family)',
                     textDecoration: 'none',
-                    transition: 'all 0.38s ease',
+                    transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--colors-primary)';
-                    e.currentTarget.style.color = 'var(--colors-text-inverse)';
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#000000';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark)';
-                    e.currentTarget.style.color = 'var(--colors-text-muted)';
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#66615c';
                   }}
                 >
                   <span>Open in Maps</span>
-                  <ArrowUpRight size={14} color="var(--colors-primary)" />
+                  <ArrowUpRight size={14} color="#fe6200" />
                 </a>
               </div>
 
@@ -590,7 +610,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               <div
                 style={{
                   paddingTop: '16px',
-                  borderTop: '1px solid var(--colors-border-dark)',
+                  borderTop: '1px solid #e4e2e1',
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                   gap: '12px',
@@ -601,8 +621,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 500,
-                      color: 'var(--colors-text-muted)',
+                      fontWeight: 700,
+                      color: '#868683',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
@@ -614,10 +634,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   <a
                     href={`mailto:${officeLocation.email}`}
                     style={{
-                      color: 'var(--colors-primary)',
+                      color: '#fe6200',
                       textDecoration: 'none',
                       fontSize: '14px',
-                      fontWeight: 500,
+                      fontWeight: 600,
                       fontFamily: 'var(--typography-body-family)',
                     }}
                   >
@@ -630,8 +650,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 500,
-                      color: 'var(--colors-text-muted)',
+                      fontWeight: 700,
+                      color: '#868683',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
@@ -640,7 +660,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     OPERATING HOURS
                   </span>
-                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '13.5px', fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ color: '#200b00', fontSize: '13.5px', fontWeight: 500, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.hours}
                   </span>
                 </div>
@@ -650,8 +670,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'block',
                       fontSize: '10.5px',
-                      fontWeight: 500,
-                      color: 'var(--colors-text-muted)',
+                      fontWeight: 700,
+                      color: '#868683',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '2px',
@@ -660,8 +680,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     SECURITY STANDARD
                   </span>
-                  <span style={{ color: 'var(--colors-text-muted)', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--typography-body-family)' }}>
-                    <ShieldCheck size={14} color="var(--colors-primary)" />
+                  <span style={{ color: '#059669', fontSize: '13px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--typography-body-family)' }}>
+                    <ShieldCheck size={14} color="#059669" />
                     SOC 2 & ISO 27001 Aligned
                   </span>
                 </div>
@@ -673,16 +693,16 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         {/* Technical Dispatch Intake Strip */}
         <RevealElement variant="card">
           <div
-            className="card-dark"
             style={{
               padding: 'clamp(24px, 3.5vw, 40px)',
-              backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
-              border: '1px solid var(--colors-border-dark)',
-              borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
+              backgroundColor: '#ffffff',
+              border: '1px solid #e4e2e1',
+              borderTop: '3px solid #fe6200',
+              borderRadius: '8px',
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',
-              boxShadow: 'var(--shadow-card)',
+              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
             }}
           >
             <div
@@ -699,9 +719,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     display: 'inline-block',
                     fontSize: '11px',
-                    fontWeight: 500,
+                    fontWeight: 700,
                     letterSpacing: '0.12em',
-                    color: 'var(--colors-primary)',
+                    color: '#fe6200',
                     textTransform: 'uppercase',
                     marginBottom: '8px',
                     fontFamily: 'var(--typography-mono-family)',
@@ -712,8 +732,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 <h3
                   style={{
                     fontSize: 'clamp(22px, 2.5vw, 28px)',
-                    fontWeight: 400,
-                    color: 'var(--colors-text-inverse)',
+                    fontWeight: 700,
+                    color: '#000000',
                     margin: '0 0 8px 0',
                     fontFamily: 'var(--typography-heading1-family)',
                     letterSpacing: '-0.02em',
@@ -721,7 +741,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 >
                   Neominds Technical Briefings
                 </h3>
-                <p style={{ color: 'var(--colors-text-muted)', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--typography-body-family)' }}>
+                <p style={{ color: '#333333', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--typography-body-family)' }}>
                   Direct engineering dispatches on distributed systems, applied LLM infrastructure, runtime optimizations, and production resilience. Published monthly. Zero promotional fluff.
                 </p>
               </div>
@@ -745,12 +765,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     key={topic}
                     style={{
                       padding: '6px 12px',
-                      backgroundColor: 'var(--colors-background-dark)',
-                      border: '1px solid var(--colors-border-dark)',
+                      backgroundColor: '#f1efeb',
+                      border: '1px solid #e4e2e1',
                       fontSize: '12px',
-                      fontWeight: 500,
-                      color: 'var(--colors-text-muted)',
-                      borderRadius: 'var(--radius-sm)',
+                      fontWeight: 600,
+                      color: '#200b00',
+                      borderRadius: '4px',
                       letterSpacing: '0.02em',
                       fontFamily: 'var(--typography-mono-family)',
                     }}
@@ -777,19 +797,19 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     position: 'relative',
                     display: 'flex',
                     alignItems: 'center',
-                    backgroundColor: 'var(--colors-background-dark)',
-                    border: '1px solid var(--colors-border-dark)',
-                    borderRadius: 'var(--radius-sm)', // 1px
-                    transition: 'border-color 0.38s ease',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '4px',
+                    transition: 'border-color 0.2s ease',
                   }}
                 >
                   <span
                     style={{
                       paddingLeft: '14px',
-                      color: 'var(--colors-primary)',
+                      color: '#fe6200',
                       fontFamily: 'var(--typography-body-family)',
                       fontSize: '13px',
-                      fontWeight: 500,
+                      fontWeight: 600,
                       userSelect: 'none',
                     }}
                   >
@@ -808,16 +828,16 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       backgroundColor: 'transparent',
                       border: 'none',
                       outline: 'none',
-                      color: 'var(--colors-text-inverse)',
+                      color: '#000000',
                       fontSize: '15px',
                       fontFamily: 'var(--typography-body-family)',
                     }}
                     onFocus={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = 'var(--colors-primary)';
-                      (e.target.parentElement as HTMLElement).style.boxShadow = '0 0 0 2px var(--colors-primary)';
+                      (e.target.parentElement as HTMLElement).style.borderColor = '#fe6200';
+                      (e.target.parentElement as HTMLElement).style.boxShadow = '0 0 0 2px rgba(254, 98, 0, 0.2)';
                     }}
                     onBlur={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = 'var(--colors-border-dark)';
+                      (e.target.parentElement as HTMLElement).style.borderColor = '#e4e2e1';
                       (e.target.parentElement as HTMLElement).style.boxShadow = 'none';
                     }}
                   />
@@ -828,24 +848,24 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     height: '46px',
                     paddingInline: '24px',
-                    fontWeight: 500,
+                    fontWeight: 600,
                     fontSize: '14px',
-                    borderRadius: '0px', // 0px button
-                    backgroundColor: 'var(--colors-primary)',
-                    color: 'var(--colors-text-inverse)',
+                    borderRadius: '4px',
+                    backgroundColor: '#fe6200',
+                    color: '#ffffff',
                     border: 'none',
                     cursor: 'pointer',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '8px',
                     fontFamily: 'var(--typography-body-family)',
-                    transition: 'background-color 0.38s cubic-bezier(0.187, 0.938, 0.355, 1)',
+                    transition: 'background-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-primary-hover)';
+                    e.currentTarget.style.backgroundColor = '#cf5000';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--colors-primary)';
+                    e.currentTarget.style.backgroundColor = '#fe6200';
                   }}
                 >
                   <span>Subscribe to Dispatch</span>
@@ -860,7 +880,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'flex-start',
                     gap: '8px',
                     fontSize: '12.5px',
-                    color: 'var(--colors-text-muted)',
+                    color: '#66615c',
                     cursor: 'pointer',
                     userSelect: 'none',
                     lineHeight: 1.5,
@@ -872,14 +892,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     checked={newsletterConsent}
                     onChange={(e) => setNewsletterConsent(e.target.checked)}
                     required
-                    style={{ marginTop: '2px', accentColor: 'var(--colors-primary)' }}
+                    style={{ marginTop: '2px', accentColor: '#fe6200' }}
                   />
                   <span>
                     I agree to receive monthly engineering briefings and technical dispatches. Unsubscribe anytime.
                   </span>
                 </label>
 
-                <span style={{ fontSize: '11px', color: 'var(--colors-text-muted)', paddingLeft: '20px', fontFamily: 'var(--typography-mono-family)' }}>
+                <span style={{ fontSize: '11px', color: '#868683', paddingLeft: '20px', fontFamily: 'var(--typography-mono-family)' }}>
                   Zero spam protocol • Direct engineering communications only • No third-party data sharing
                 </span>
               </div>

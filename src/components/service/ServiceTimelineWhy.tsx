@@ -20,14 +20,14 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
-        borderTop: '1px solid #351505',
-        borderBottom: '1px solid #351505',
+        backgroundColor: '#ffffff',
+        borderTop: '1px solid #e4e2e1',
+        borderBottom: '1px solid #e4e2e1',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* =========================================================================
-            10. TIMELINE / DURATION
+            10. TIMELINE / DURATION (Cardless Editorial Columns)
             ========================================================================= */}
         {timeline && (
           <div style={{ marginBottom: whyChooseThisService ? 'clamp(64px, 8vw, 92px)' : 0 }}>
@@ -53,7 +53,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 style={{
                   fontSize: 'clamp(28px, 3.4vw, 42px)',
                   fontWeight: 800,
-                  color: '#ffffff',
+                  color: '#000000',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.15,
                   marginBottom: '16px',
@@ -64,33 +64,30 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 Realistic Project Timeline: {timeline.totalDuration}
               </ScrollReveal>
               {timeline.sprintCadence && (
-                <p style={{ fontSize: '16px', color: '#868683', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0 }}>
                   {timeline.sprintCadence}
                 </p>
               )}
             </div>
 
-            {/* Timeline Phase Rail */}
+            {/* Timeline Phase Columns (Directly on background, clean top rules) */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '20px',
+                gap: 'clamp(24px, 3.5vw, 40px)',
               }}
             >
               {timeline.phases.map((phase, idx) => (
-                <RevealElement key={idx} variant="card" delay={idx * 0.08}>
+                <RevealElement key={idx} variant="text" delay={idx * 0.08}>
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                      border: '1px solid #351505',
-                      borderRadius: '8px',
-                      padding: '24px 20px',
+                      borderTop: '2px solid #fe6200',
+                      paddingTop: '20px',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      boxShadow: '0 2px 4px rgba(32, 11, 0, 0.03)',
                     }}
                   >
                     <div>
@@ -107,7 +104,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             fontSize: '11px',
                             fontWeight: 800,
                             color: '#fe6200',
-                            backgroundColor: 'rgba(255, 85, 0, 0.08)',
+                            backgroundColor: 'rgba(254, 98, 0, 0.1)',
                             padding: '3px 8px',
                             borderRadius: '3px',
                             textTransform: 'uppercase',
@@ -121,21 +118,21 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '4px',
-                            fontSize: '12px',
+                            fontSize: '12.5px',
                             fontWeight: 700,
-                            color: '#ffffff',
+                            color: '#200b00',
                           }}
                         >
-                          <Calendar size={13} color="#868683" />
+                          <Calendar size={13} color="#fe6200" />
                           {phase.duration}
                         </span>
                       </div>
 
                       <h3
                         style={{
-                          fontSize: '16px',
+                          fontSize: '17px',
                           fontWeight: 700,
-                          color: '#ffffff',
+                          color: '#000000',
                           marginBottom: '10px',
                           lineHeight: 1.4,
                         }}
@@ -145,9 +142,9 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
 
                       <p
                         style={{
-                          fontSize: '14px',
-                          color: '#868683',
-                          lineHeight: 1.6,
+                          fontSize: '14.5px',
+                          color: '#66615c',
+                          lineHeight: 1.65,
                           margin: 0,
                         }}
                       >
@@ -162,10 +159,15 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
         )}
 
         {/* =========================================================================
-            11. WHY CHOOSE THIS SERVICE
+            11. WHY CHOOSE THIS SERVICE (Seamless Editorial Breakdown)
             ========================================================================= */}
         {whyChooseThisService && (
-          <div>
+          <div
+            style={{
+              paddingTop: timeline ? 'clamp(56px, 7vw, 84px)' : 0,
+              borderTop: timeline ? '1px solid #e4e2e1' : 'none',
+            }}
+          >
             <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
               <div
                 style={{
@@ -188,7 +190,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 style={{
                   fontSize: 'clamp(28px, 3.4vw, 42px)',
                   fontWeight: 800,
-                  color: '#ffffff',
+                  color: '#000000',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.15,
                   margin: 0,
@@ -204,20 +206,16 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '24px',
+                gap: 'clamp(28px, 4vw, 44px)',
               }}
             >
               {whyChooseThisService.reasons.map((reason, idx) => (
-                <RevealElement key={idx} variant="card" delay={idx * 0.08}>
+                <RevealElement key={idx} variant="text" delay={idx * 0.08}>
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                      border: '1px solid #351505',
-                      borderTop: '3px solid #fe6200',
-                      borderRadius: '6px',
-                      padding: '26px 22px',
-                      boxShadow: '0 4px 6px -1px rgba(32, 11, 0,  0.03)',
+                      borderTop: '2px solid #fe6200',
+                      paddingTop: '20px',
                     }}
                   >
                     <div
@@ -225,9 +223,9 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px',
-                        fontSize: '16px',
+                        fontSize: '16.5px',
                         fontWeight: 700,
-                        color: '#ffffff',
+                        color: '#000000',
                         marginBottom: '10px',
                         lineHeight: 1.4,
                       }}
@@ -237,8 +235,8 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                     </div>
                     <p
                       style={{
-                        fontSize: '14px',
-                        color: '#a3a09b',
+                        fontSize: '14.5px',
+                        color: '#66615c',
                         lineHeight: 1.65,
                         margin: 0,
                       }}

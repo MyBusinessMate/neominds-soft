@@ -20,8 +20,8 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
     <section
       style={{
         padding: 'clamp(56px, 7vw, 92px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: '#ffffff',
+        borderBottom: '1px solid #e4e2e1',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -52,7 +52,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 style={{
                   fontSize: 'clamp(26px, 3.2vw, 38px)',
                   fontWeight: 800,
-                  color: '#ffffff',
+                  color: '#000000',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.18,
                   marginBottom: '14px',
@@ -63,7 +63,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 {targetAudience.heading || `Who We Built ${title} For`}
               </ScrollReveal>
               {targetAudience.description && (
-                <p style={{ fontSize: '16px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0 }}>
                   {targetAudience.description}
                 </p>
               )}
@@ -82,7 +82,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   <div
                     style={{
                       height: '100%',
-                      borderTop: '2px solid rgba(254, 98, 0, 0.6)',
+                      borderTop: '2px solid #fe6200',
                       paddingTop: '24px',
                       display: 'flex',
                       flexDirection: 'column',
@@ -109,7 +109,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       <p
                         style={{
                           fontSize: '15.5px',
-                          color: '#e4e2e1',
+                          color: '#2b2b2b',
                           lineHeight: 1.65,
                           margin: 0,
                           fontWeight: 400,
@@ -123,13 +123,13 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       style={{
                         marginTop: '20px',
                         paddingTop: '14px',
-                        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                        borderTop: '1px solid #e4e2e1',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: '#a3a09b',
+                        color: '#66615c',
                       }}
                     >
                       <CheckCircle2 size={15} color="#fe6200" />
@@ -149,7 +149,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
           <div
             style={{
               paddingTop: targetAudience ? 'clamp(48px, 6vw, 72px)' : 0,
-              borderTop: targetAudience ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
+              borderTop: targetAudience ? '1px solid #e4e2e1' : 'none',
             }}
           >
             <div style={{ marginBottom: '36px', maxWidth: '820px' }}>
@@ -174,7 +174,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 style={{
                   fontSize: 'clamp(26px, 3.2vw, 40px)',
                   fontWeight: 800,
-                  color: '#ffffff',
+                  color: '#000000',
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.18,
                   margin: 0,
@@ -209,7 +209,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     gap: '8px',
                     fontSize: '12px',
                     fontWeight: 700,
-                    color: '#f87171',
+                    color: '#dc2626',
                     textTransform: 'uppercase',
                     letterSpacing: '0.06em',
                     marginBottom: '16px',
@@ -221,7 +221,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#ffffff',
+                    color: '#200b00',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: 0,
@@ -257,7 +257,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#ffffff',
+                    color: '#200b00',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: '0 0 24px 0',
@@ -269,7 +269,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 {/* Tangible Result Accent */}
                 <div
                   style={{
-                    borderLeft: '2px solid #34d399',
+                    borderLeft: '2px solid #059669',
                     paddingLeft: '16px',
                   }}
                 >
@@ -277,7 +277,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     style={{
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: '#a3a09b',
+                      color: '#66615c',
                       textTransform: 'uppercase',
                       letterSpacing: '0.06em',
                       marginBottom: '6px',
@@ -289,7 +289,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     style={{
                       fontSize: '15px',
                       fontWeight: 600,
-                      color: '#34d399',
+                      color: '#059669',
                       lineHeight: 1.5,
                     }}
                   >

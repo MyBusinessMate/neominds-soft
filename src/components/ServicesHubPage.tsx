@@ -363,9 +363,9 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          2. TRENDS BLOCK (5 ITEMS)
+          2. TRENDS BLOCK (5 ITEMS) - CREAM BEIGE BACKGROUND
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#faf8f5' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
@@ -383,20 +383,21 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 variant="card"
                 delay={idx * 0.05}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
-                  borderRadius: '12px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e4e2e1',
+                  borderTop: '2px solid #fe6200',
+                  borderRadius: '6px',
                   padding: '24px',
-                  boxShadow: '0 4px 12px rgba(32, 11, 0,  0.4)',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
                 }}
               >
-                <div style={{ width: '44px', height: '44px', borderRadius: '10px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                <div style={{ width: '44px', height: '44px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                   {t.icon}
                 </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', marginBottom: '8px' }}>
                   {t.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
                   {t.desc}
                 </p>
               </RevealElement>
@@ -406,15 +407,15 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          3. WHAT WE BUILD (4 CARDS)
+          3. WHAT WE BUILD (4 CARDS) - CLEAN WHITE BACKGROUND
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1', borderBottom: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '44px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Core Capabilities
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               What we build
             </h2>
           </div>
@@ -424,10 +425,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #351505',
-                  borderRadius: '12px',
+                  border: '1px solid #e4e2e1',
+                  borderTop: '2px solid #fe6200',
+                  borderRadius: '6px',
                   padding: '30px',
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -435,17 +437,17 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#ffffff', border: '1px solid #e4e2e1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {item.icon}
                     </div>
-                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.12)', padding: '3px 8px', borderRadius: '4px' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: '#ffffff', border: '1px solid rgba(254, 98, 0, 0.25)', padding: '3px 8px', borderRadius: '4px' }}>
                       {item.tag}
                     </span>
                   </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#000000', marginBottom: '10px' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -456,18 +458,18 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          5. SERVICES WE OFFER (NUMBERED LIST)
+          5. SERVICES WE OFFER (NUMBERED LIST) - CREAM BEIGE BACKGROUND
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Full Service Catalog
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Services we offer
             </h2>
-            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
               From initial architecture to continuous production delivery, our teams cover every stage of the software lifecycle.
             </p>
           </div>
@@ -478,26 +480,26 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 key={idx}
                 onClick={() => handleServiceClick(service.slug)}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
-                  borderRadius: '12px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e4e2e1',
+                  borderRadius: '6px',
                   padding: '24px',
                   cursor: 'pointer',
                   display: 'flex',
                   gap: '18px',
                   alignItems: 'flex-start',
-                  transition: 'all 0.25s ease',
-                  boxShadow: '0 2px 8px rgba(32, 11, 0,  0.4)',
+                  transition: 'all 0.2s ease',
+                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = '#fe6200';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.08)';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(254, 98, 0, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#351505';
+                  e.currentTarget.style.borderColor = '#e4e2e1';
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(32, 11, 0,  0.4)';
+                  e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.03)';
                 }}
               >
                 <div style={{ fontSize: '16px', fontWeight: 800, color: '#fe6200', fontFamily: 'monospace' }}>
@@ -505,12 +507,12 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 </div>
                 <div style={{ flex: 1 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
+                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', margin: 0 }}>
                       {service.title}
                     </h3>
                     <ArrowRight size={14} color="#fe6200" />
                   </div>
-                  <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.55, margin: 0 }}>
                     {service.desc}
                   </p>
                 </div>
@@ -521,16 +523,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          6. INDUSTRIES WE BUILD FOR
+          6. INDUSTRIES WE BUILD FOR - CLEAN WHITE BACKGROUND
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
             <div>
               <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                 Domain Expertise
               </span>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
                 Industries we build for
               </h2>
             </div>
@@ -562,16 +564,17 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #351505',
-                  borderRadius: '10px',
+                  border: '1px solid #e4e2e1',
+                  borderTop: '2px solid #fe6200',
+                  borderRadius: '6px',
                   padding: '24px',
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
                 }}
               >
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', marginBottom: '8px' }}>
                   {ind.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
                   {ind.desc}
                 </p>
               </div>
@@ -581,18 +584,18 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          8. TECHNOLOGIES WE USE
+          8. TECHNOLOGIES WE USE - CREAM BEIGE BACKGROUND
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #351505' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Modern Tech Stack
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Technologies we use
             </h2>
-            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
               The tools behind our work, chosen for your goals.
             </p>
           </div>
@@ -602,16 +605,16 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
-                  borderRadius: '8px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e4e2e1',
+                  borderRadius: '6px',
                   padding: '20px',
                 }}
               >
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
+                <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
                   {t.area}
                 </div>
-                <div style={{ fontSize: '13px', color: '#a3a09b', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '13px', color: '#333333', lineHeight: 1.5 }}>
                   {t.tech}
                 </div>
               </div>
