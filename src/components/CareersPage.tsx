@@ -187,7 +187,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             Find your dream job at Neominds TechHub
           </h1>
 
-          <p style={{ fontSize: '18px', color: '#94a3b8', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
+          <p style={{ fontSize: '18px', color: '#a3a09b', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
             Work alongside experienced engineers, architects, and AI pioneers building impactful digital products for industry leaders across the globe.
           </p>
 
@@ -221,7 +221,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
               Start doing work that matters
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
               Our philosophy is direct: hire talented engineers, give them clear ownership, and build an environment where craft and technical excellence come first.
             </p>
           </div>
@@ -273,11 +273,11 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
                       {pos.department}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span style={{ fontSize: '13px', color: '#a3a09b', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <Clock size={13} />
                       {pos.type}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#94a3b8', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span style={{ fontSize: '13px', color: '#a3a09b', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <MapPin size={13} />
                       {pos.location}
                     </span>
@@ -286,7 +286,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: '0 0 8px 0' }}>
                     {pos.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
                     {pos.desc}
                   </p>
                 </div>
@@ -328,7 +328,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Frequently asked questions
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#94a3b8', margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#a3a09b', margin: 0 }}>
               Find quick answers to common questions about our hiring, engineering culture, and work environment.
             </p>
           </div>
@@ -365,7 +365,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   </span>
                   <ChevronDown
                     size={18}
-                    color="#64748b"
+                    color="#868683"
                     style={{
                       transform: activeFaq === idx ? 'rotate(180deg)' : 'none',
                       transition: 'transform 0.2s ease',
@@ -375,7 +375,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 </button>
 
                 {activeFaq === idx && (
-                  <div style={{ padding: '0 24px 20px 24px', color: '#94a3b8', fontSize: '14.5px', lineHeight: 1.65 }}>
+                  <div style={{ padding: '0 24px 20px 24px', color: '#a3a09b', fontSize: '14.5px', lineHeight: 1.65 }}>
                     {faq.a}
                   </div>
                 )}
@@ -400,7 +400,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               We look forward to reviewing your resume!
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', margin: 0 }}>
               Don’t see an exact match above? Submit an open application and let us know what makes you thrive.
             </p>
           </div>
@@ -411,7 +411,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
                 We're in!
               </h3>
-              <p style={{ fontSize: '15px', color: '#94a3b8', maxWidth: '520px', margin: '0 auto' }}>
+              <p style={{ fontSize: '15px', color: '#a3a09b', maxWidth: '520px', margin: '0 auto' }}>
                 Thanks for sharing your application with us. We're already gearing up to review it and will get back to you within 3–5 business days.
               </p>
             </div>
@@ -419,7 +419,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="cv-name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                     Full Name*
                   </label>
                   <input
@@ -435,7 +435,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 </div>
 
                 <div>
-                  <label htmlFor="cv-email" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-email" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                     Email Address*
                   </label>
                   <input
@@ -453,7 +453,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="cv-position" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-position" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                     Position of Interest
                   </label>
                   <input
@@ -468,7 +468,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 </div>
 
                 <div>
-                  <label htmlFor="cv-phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                     Phone Number
                   </label>
                   <input
@@ -484,7 +484,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               </div>
 
               <div>
-                <label htmlFor="cv-message" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                <label htmlFor="cv-message" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                   Cover Note / Portfolio Links
                 </label>
                 <textarea
@@ -500,7 +500,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
 
               {/* Resume File Upload */}
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#a3a09b', marginBottom: '8px' }}>
                   Upload Resume / CV (PDF, DOCX)
                 </label>
                 <div
@@ -516,7 +516,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   }}
                 >
                   <Upload size={22} color="#fe6200" style={{ margin: '0 auto 8px auto' }} />
-                  <div style={{ fontSize: '13.5px', color: '#cbd5e1' }}>
+                  <div style={{ fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.82)' }}>
                     {fileName ? fileName : 'Click to select or drag and drop your resume file'}
                   </div>
                   <input
@@ -540,7 +540,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   onChange={handleInputChange}
                   style={{ marginTop: '3px', cursor: 'pointer', accentColor: '#fe6200' }}
                 />
-                <label htmlFor="cv-consent" style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5, cursor: 'pointer' }}>
+                <label htmlFor="cv-consent" style={{ fontSize: '13px', color: '#a3a09b', lineHeight: 1.5, cursor: 'pointer' }}>
                   I agree to the processing of my personal data for recruitment purposes in accordance with the Privacy Policy.
                 </label>
               </div>
@@ -583,7 +583,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
-            <p style={{ fontSize: '15px', color: '#94a3b8', margin: '8px 0 0 0', maxWidth: '580px' }}>
+            <p style={{ fontSize: '15px', color: '#a3a09b', margin: '8px 0 0 0', maxWidth: '580px' }}>
               Stay up to date with the latest engineering insights, tech announcements, and articles.
             </p>
           </div>
@@ -600,7 +600,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 padding: '14px 18px',
                 fontSize: '14px',
                 backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid #cbd5e1',
+                border: '1px solid #351505',
                 borderRadius: '2px',
                 color: '#ffffff',
                 outline: 'none',

@@ -27,7 +27,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
             gap: '6px',
             fontSize: '12px',
             fontWeight: 700,
-            color: '#FF5500',
+            color: '#fe6200',
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
             marginBottom: '10px',
@@ -40,9 +40,9 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
           as="h2"
           style={{
             fontSize: 'clamp(28px, 3.2vw, 38px)',
-            fontWeight: 800,
+            fontWeight: 400,
             color: '#ffffff',
-            fontFamily: 'var(--font-heading)',
+            fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
             lineHeight: 1.18,
             display: 'block',
           }}
@@ -52,16 +52,16 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
         </ScrollReveal>
       </div>
 
-      {/* Editorial Minimal Rule Accordion (NOT boxed rounded cards!) */}
+      {/* Editorial Minimal Rule Accordion */}
       <RevealElement variant="card">
-        <div style={{ display: 'flex', flexDirection: 'column', borderTop: '2px solid #0f172a' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #351505' }}>
           {faqs.map((faq, idx) => {
             const isExpanded = expandedIndex === idx;
             return (
               <div
                 key={idx}
                 style={{
-                  borderBottom: '1px solid #1e293b',
+                  borderBottom: '1px solid #351505',
                   transition: 'background-color 0.2s',
                 }}
               >
@@ -81,10 +81,10 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingRight: '16px' }}>
-                    <span style={{ fontSize: '13px', fontWeight: 800, color: isExpanded ? '#FF5500' : '#94a3b8', fontFamily: 'monospace' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: isExpanded ? '#fe6200' : '#868683', fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace" }}>
                       Q0{idx + 1}
                     </span>
-                    <span style={{ fontSize: '16.5px', fontWeight: 700, color: isExpanded ? '#FF5500' : '#0f172a', transition: 'color 0.2s' }}>
+                    <span style={{ fontSize: '16.5px', fontWeight: 500, color: isExpanded ? '#fe6200' : '#ffffff', transition: 'color 0.2s' }}>
                       {faq.question}
                     </span>
                   </div>
@@ -93,12 +93,12 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                     style={{
                       width: '28px',
                       height: '28px',
-                      borderRadius: '50%',
-                      border: isExpanded ? '1px solid #FF5500' : '1px solid #334155',
+                      borderRadius: '0px',
+                      border: isExpanded ? '1px solid #fe6200' : '1px solid #351505',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      color: isExpanded ? '#FF5500' : '#64748b',
+                      color: isExpanded ? '#fe6200' : '#868683',
                       flexShrink: 0,
                     }}
                   >
@@ -112,7 +112,8 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                       padding: '0 8px 24px 44px',
                       fontSize: '15px',
                       lineHeight: 1.7,
-                      color: '#94a3b8',
+                      color: 'rgba(255, 255, 255, 0.75)',
+                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
                     }}
                   >
                     {faq.answer}

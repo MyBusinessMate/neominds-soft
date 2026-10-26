@@ -21,7 +21,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
       style={{
         padding: 'clamp(56px, 7vw, 92px) 24px',
         backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-        borderBottom: '1px solid #1e293b',
+        borderBottom: '1px solid #351505',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -38,7 +38,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   gap: '8px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#FF5500',
+                  color: '#fe6200',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -63,7 +63,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 {targetAudience.heading || `Who We Built ${title} For`}
               </ScrollReveal>
               {targetAudience.description && (
-                <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#868683', lineHeight: 1.6, margin: 0 }}>
                   {targetAudience.description}
                 </p>
               )}
@@ -83,7 +83,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     style={{
                       height: '100%',
                       backgroundColor: 'var(--colors-background-dark, #200b00)',
-                      border: '1px solid #1e293b',
+                      border: '1px solid #351505',
                       borderRadius: '8px',
                       padding: '28px 24px',
                       display: 'flex',
@@ -100,7 +100,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                           gap: '6px',
                           padding: '4px 10px',
                           backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                          border: '1px solid #334155',
+                          border: '1px solid #868683',
                           borderRadius: '4px',
                           fontSize: '12px',
                           fontWeight: 700,
@@ -108,13 +108,13 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                           marginBottom: '16px',
                         }}
                       >
-                        <Users size={13} color="#FF5500" />
+                        <Users size={13} color="#fe6200" />
                         <span>{profile.role}</span>
                       </div>
                       <p
                         style={{
                           fontSize: '15px',
-                          color: '#334155',
+                          color: '#868683',
                           lineHeight: 1.65,
                           margin: 0,
                         }}
@@ -127,13 +127,13 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       style={{
                         marginTop: '20px',
                         paddingTop: '16px',
-                        borderTop: '1px dashed #334155',
+                        borderTop: '1px dashed #868683',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '6px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: '#FF5500',
+                        color: '#fe6200',
                       }}
                     >
                       <CheckCircle2 size={15} />
@@ -156,7 +156,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
               borderRadius: '12px',
               padding: 'clamp(32px, 5vw, 56px)',
               color: '#ffffff',
-              border: '1px solid #1e293b',
+              border: '1px solid #351505',
             }}
           >
             <div style={{ marginBottom: '32px' }}>
@@ -167,7 +167,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   gap: '8px',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#FF5500',
+                  color: '#fe6200',
                   textTransform: 'uppercase',
                   letterSpacing: '0.06em',
                   marginBottom: '10px',
@@ -228,7 +228,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '15px',
-                    color: '#1e293b',
+                    color: '#351505',
                     lineHeight: 1.7,
                     margin: 0,
                   }}
@@ -258,7 +258,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       gap: '8px',
                       fontSize: '13px',
                       fontWeight: 700,
-                      color: '#FF5500',
+                      color: '#fe6200',
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
                       marginBottom: '12px',
@@ -270,7 +270,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                   <p
                     style={{
                       fontSize: '15px',
-                      color: '#1e293b',
+                      color: '#351505',
                       lineHeight: 1.7,
                       margin: 0,
                     }}
@@ -289,7 +289,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     style={{
                       fontSize: '11px',
                       fontWeight: 700,
-                      color: '#94a3b8',
+                      color: '#a3a09b',
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                       marginBottom: '4px',

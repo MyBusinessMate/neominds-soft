@@ -4,7 +4,6 @@ import {
   X,
   Mail,
   CheckCircle2,
-  ChevronRight,
 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
@@ -62,32 +61,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
   return (
     <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
-          1. BREADCRUMB & HERO SECTION (Exact EffectiveSoft s-hero)
+          1. HERO SECTION (Freehand Editorial Hero)
           ======================================================== */}
-      <section className="s-hero g-section theme-dark g-section--pt-0 s-hero--img-right" style={{ padding: '40px 24px 60px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+      <section className="s-hero g-section theme-dark g-section--pt-0 s-hero--img-right" style={{ padding: '60px 24px 60px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          {/* Breadcrumb */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#9ca3af', marginBottom: '32px' }}>
-            <span
-              style={{ cursor: 'pointer', color: '#9ca3af', transition: 'color 0.2s' }}
-              onClick={() => onNavigatePage && onNavigatePage('home')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-            >
-              Home
-            </span>
-            <ChevronRight size={12} opacity={0.6} />
-            <span
-              style={{ cursor: 'pointer', color: '#9ca3af', transition: 'color 0.2s' }}
-              onClick={() => onNavigatePage && onNavigatePage('about-us')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#9ca3af')}
-            >
-              Who we are
-            </span>
-            <ChevronRight size={12} opacity={0.6} />
-            <span style={{ color: '#ffffff', fontWeight: 600 }}>Leadership</span>
-          </div>
+
 
           <div
             style={{

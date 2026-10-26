@@ -20,7 +20,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
         margin: '0 auto',
       }}
     >
-      <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
         Strategic Overview
       </div>
 
@@ -55,19 +55,19 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
             <div
               style={{
                 backgroundColor: 'var(--colors-background-dark, #200b00)',
-                borderLeft: '4px solid #FF5500',
-                borderTop: '1px solid #1e293b',
-                borderRight: '1px solid #1e293b',
-                borderBottom: '1px solid #1e293b',
+                borderLeft: '4px solid #fe6200',
+                borderTop: '1px solid #351505',
+                borderRight: '1px solid #351505',
+                borderBottom: '1px solid #351505',
                 borderRadius: '4px',
                 padding: '18px 20px',
                 marginTop: '16px',
               }}
             >
-              <div style={{ fontSize: '11px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
                 Primary Value Vector
               </div>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: '#1e293b', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '14px', fontWeight: 600, color: '#351505', lineHeight: 1.5 }}>
                 {keyTakeaway}
               </div>
             </div>
@@ -83,7 +83,7 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
                 style={{
                   fontSize: '16px',
                   lineHeight: 1.7,
-                  color: '#94a3b8',
+                  color: '#a3a09b',
                   margin: 0,
                 }}
               >

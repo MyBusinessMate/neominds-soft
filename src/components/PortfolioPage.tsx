@@ -110,7 +110,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
               style={{
                 fontSize: 'clamp(16px, 1.2vw, 18px)',
                 lineHeight: 1.6,
-                color: '#94a3b8',
+                color: '#a3a09b',
                 marginBottom: '36px',
                 maxWidth: '560px',
               }}
@@ -134,7 +134,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             <button
               onClick={() => onNavigatePage('contacts')}
               className="btn btn-outline btn-lg"
-              style={{ color: '#0f172a', borderColor: '#cbd5e1' }}
+              style={{ color: '#000000', borderColor: '#e4e2e1' }}
             >
               <span>Request Custom Portfolio</span>
             </button>
@@ -160,7 +160,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                   AUDITED PRODUCTION LOG
                 </span>
               </div>
-              <span style={{ fontSize: '12px', color: '#94a3b8', fontFamily: 'monospace', fontWeight: 600 }}>
+              <span style={{ fontSize: '12px', color: '#a3a09b', fontFamily: 'monospace', fontWeight: 600 }}>
                 Delivery Metrics (2003–2026)
               </span>
             </div>
@@ -168,17 +168,17 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '20px' }}>
               <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #fe6200' }}>
                 <div style={{ fontSize: '32px', fontWeight: 800, color: '#fe6200', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>1,000+</div>
-                <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '4px', fontWeight: 500 }}>Successful Products Delivered</div>
+                <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '4px', fontWeight: 500 }}>Successful Products Delivered</div>
               </div>
               <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '18px', borderRadius: '6px', borderLeft: '3px solid #16a34a' }}>
                 <div style={{ fontSize: '32px', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>52%</div>
-                <div style={{ fontSize: '13px', color: '#94a3b8', marginTop: '4px', fontWeight: 500 }}>Clients Partnering &gt; 4 Years</div>
+                <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '4px', fontWeight: 500 }}>Clients Partnering &gt; 4 Years</div>
               </div>
             </div>
 
             <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', padding: '16px 20px', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div>
-                <div style={{ fontSize: '12px', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>Top Vertical Specializations</div>
+                <div style={{ fontSize: '12px', color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>Top Vertical Specializations</div>
                 <div style={{ fontSize: '15px', fontWeight: 700, color: '#ffffff', marginTop: '4px' }}>Fintech, HealthTech, AI & Automotive</div>
               </div>
               <div style={{ backgroundColor: 'rgba(254, 98, 0, 0.1)', color: '#fe6200', padding: '6px 12px', borderRadius: '4px', fontSize: '12px', fontWeight: 700 }}>
@@ -224,12 +224,12 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                   setExpandedCardId(null);
                 }}
                 style={{
-                  backgroundColor: activeFilter === filter ? '#fe6200' : '#111827',
-                  color: activeFilter === filter ? '#ffffff' : '#cbd5e1',
+                  backgroundColor: activeFilter === filter ? '#fe6200' : '#200b00',
+                  color: activeFilter === filter ? '#ffffff' : '#a3a09b',
                   fontSize: '14px',
                   fontWeight: 600,
                   padding: '8px 18px',
-                  borderRadius: '4px',
+                  borderRadius: '0px',
                   border: activeFilter === filter ? '1px solid #fe6200' : '1px solid #351505',
                   cursor: 'pointer',
                   transition: 'all 0.18s',
@@ -240,7 +240,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             ))}
           </div>
 
-          <div style={{ fontSize: '13px', color: '#64748b' }}>
+          <div style={{ fontSize: '13px', color: '#868683' }}>
             Showing <strong>{filteredCases.length}</strong> featured projects
           </div>
         </div>
@@ -309,7 +309,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                       </span>
                       <div style={{ textAlign: 'right' }}>
                         <div style={{ fontSize: '20px', fontWeight: 800, color: '#fe6200', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
-                        <div style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 500 }}>{cs.metricLabel}</div>
+                        <div style={{ fontSize: '11px', color: '#a3a09b', fontWeight: 500 }}>{cs.metricLabel}</div>
                       </div>
                     </div>
 
@@ -346,7 +346,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                       style={{
                         fontSize: '14.5px',
                         lineHeight: 1.55,
-                        color: '#94a3b8',
+                        color: '#a3a09b',
                         marginBottom: '18px',
                       }}
                     >
@@ -362,7 +362,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           key={tag}
                           style={{
                             fontSize: '11.5px',
-                            color: '#cbd5e1',
+                            color: 'rgba(255, 255, 255, 0.82)',
                             backgroundColor: 'var(--colors-background-dark, #200b00)',
                             border: '1px solid #351505',
                             padding: '3px 8px',
@@ -388,7 +388,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                           flexDirection: 'column',
                           gap: '14px',
                           fontSize: '13px',
-                          color: '#cbd5e1',
+                          color: 'rgba(255, 255, 255, 0.82)',
                           lineHeight: 1.5,
                         }}
                       >
@@ -410,7 +410,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                         </div>
                         <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: '10px 12px', borderRadius: '4px', borderLeft: '3px solid #fe6200' }}>
                           <strong style={{ color: '#ffffff', display: 'block', marginBottom: '2px' }}>Key Takeaway</strong>
-                          <span style={{ fontStyle: 'italic', color: '#94a3b8' }}>"{cs.details.takeaway}"</span>
+                          <span style={{ fontStyle: 'italic', color: '#a3a09b' }}>"{cs.details.takeaway}"</span>
                         </div>
                       </div>
                     )}
@@ -454,7 +454,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                         <button
                           onClick={() => onNavigatePage('project', cs.id)}
                           style={{
-                            backgroundColor: '#0f172a',
+                            backgroundColor: '#200b00',
                             color: '#ffffff',
                             border: 'none',
                             fontSize: '12px',

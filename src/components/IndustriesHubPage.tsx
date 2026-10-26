@@ -270,7 +270,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Custom software for these industries
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
               We build specialized platforms with sector compliance, enterprise security, and verified high-throughput workflows baked into every release.
             </p>
           </div>
@@ -294,10 +294,10 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#eff6ff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: 'rgba(254, 98, 0, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {ind.icon}
                     </div>
-                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#94a3b8', fontFamily: 'monospace' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#a3a09b', fontFamily: 'monospace' }}>
                       {ind.num}
                     </span>
                   </div>
@@ -310,13 +310,13 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     {ind.title}
                   </h3>
 
-                  <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.65, marginBottom: '20px' }}>
+                  <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.65, marginBottom: '20px' }}>
                     {ind.desc}
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {ind.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#cbd5e1' }}>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)' }}>
                         <CheckCircle size={14} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
@@ -329,7 +329,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   style={{
                     width: '100%',
                     backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                    border: '1px solid #cbd5e1',
+                    border: '1px solid #351505',
                     borderRadius: '6px',
                     padding: '10px',
                     fontSize: '13px',
@@ -349,8 +349,8 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#f8fafc';
-                    e.currentTarget.style.color = '#0f172a';
-                    e.currentTarget.style.borderColor = '#cbd5e1';
+                    e.currentTarget.style.color = '#000000';
+                    e.currentTarget.style.borderColor = '#a3a09b';
                   }}
                 >
                   <span>Discuss {ind.title} project</span>
@@ -374,7 +374,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Stack & infrastructure
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
               We select battle-tested, production-proven tools matching your industry requirements and scale targets.
             </p>
           </div>
@@ -393,7 +393,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 <div style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
                   {t.area}
                 </div>
-                <div style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '13px', color: '#a3a09b', lineHeight: 1.5 }}>
                   {t.tech}
                 </div>
               </div>

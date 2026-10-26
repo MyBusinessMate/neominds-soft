@@ -84,7 +84,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
           style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)',
             lineHeight: 1.6,
-            color: '#94a3b8',
+            color: '#a3a09b',
             maxWidth: '620px',
             margin: '0 auto 40px auto',
           }}

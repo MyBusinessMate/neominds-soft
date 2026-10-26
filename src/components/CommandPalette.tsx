@@ -181,10 +181,10 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         style={{
           width: '100%',
           maxWidth: '640px',
-          backgroundColor: '#0c1018',
-          border: '1px solid rgba(255, 255, 255, 0.15)',
+          backgroundColor: '#200b00',
+          border: '1px solid #351505',
           borderRadius: '0px',
-          boxShadow: '0 25px 60px rgba(32, 11, 0,  0.95)',
+          boxShadow: '0 25px 60px rgba(32, 11, 0, 0.95)',
           overflow: 'hidden',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -196,7 +196,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             alignItems: 'center',
             gap: '12px',
             padding: '16px 20px',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+            borderBottom: '1px solid #351505',
+            backgroundColor: '#2a1205',
           }}
         >
           <Search size={20} color="#fe6200" />
@@ -260,22 +261,22 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '2px' }}>
                     <span
                       style={{
-                        fontFamily: 'var(--font-heading)',
+                        fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
                         fontSize: '11px',
-                        fontWeight: 700,
+                        fontWeight: 600,
                         textTransform: 'uppercase',
-                        color: '#93c5fd',
-                        backgroundColor: 'rgba(254, 98, 0, 0.25)',
+                        color: '#fe6200',
+                        backgroundColor: 'rgba(254, 98, 0, 0.12)',
                         padding: '2px 6px',
                       }}
                     >
                       {item.category}
                     </span>
-                    <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700, color: '#ffffff' }}>
+                    <h5 style={{ fontFamily: "var(--typography-display-family, 'BL Pylon Serif'), serif", fontSize: '14px', fontWeight: 500, color: '#ffffff' }}>
                       {item.title}
                     </h5>
                   </div>
-                  <p style={{ fontFamily: 'var(--font-body)', fontSize: '12px', color: '#8893a7' }}>{item.subtitle}</p>
+                  <p style={{ fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif", fontSize: '12px', color: '#868683' }}>{item.subtitle}</p>
                 </div>
                 <ArrowRight size={16} color="#fe6200" />
               </div>

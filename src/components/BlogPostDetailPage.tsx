@@ -52,7 +52,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             gap: '8px',
             backgroundColor: 'transparent',
             border: 'none',
-            color: '#94a3b8',
+            color: '#a3a09b',
             fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
@@ -60,7 +60,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             transition: 'color 0.2s',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#868683')}
         >
           <ArrowLeft size={16} />
           <span>Back to Engineering Blog</span>
@@ -102,7 +102,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             {article.title}
           </h1>
 
-          <p style={{ fontSize: '18px', color: '#94a3b8', lineHeight: 1.5, marginBottom: '24px' }}>
+          <p style={{ fontSize: '18px', color: '#a3a09b', lineHeight: 1.5, marginBottom: '24px' }}>
             {article.subtitle}
           </p>
 
@@ -137,11 +137,11 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               </div>
               <div>
                 <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#ffffff' }}>{article.author.name}</div>
-                <div style={{ fontSize: '12px', color: '#94a3b8' }}>{article.author.role}</div>
+                <div style={{ fontSize: '12px', color: '#a3a09b' }}>{article.author.role}</div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '18px', fontSize: '13px', color: '#94a3b8' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '18px', fontSize: '13px', color: '#a3a09b' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Calendar size={14} />
                 {article.date}
@@ -188,7 +188,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         <div
           style={{
             backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid #cbd5e1',
+            border: '1px solid #351505',
             borderLeft: '4px solid #fe6200',
             borderRadius: '4px',
             padding: '24px 28px',
@@ -200,7 +200,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {article.content.keyTakeaways.map((takeaway, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: '#cbd5e1' }}>
+              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: 'rgba(255, 255, 255, 0.82)' }}>
                 <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <span>{takeaway}</span>
               </div>
@@ -209,7 +209,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         </div>
 
         {/* Main Content Sections */}
-        <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#cbd5e1' }}>
+        <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: 'rgba(255, 255, 255, 0.82)' }}>
           <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#351505', marginBottom: '32px', fontWeight: 500 }}>
             {article.content.intro}
           </p>
@@ -265,7 +265,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>
               Final Architecture Considerations
             </h3>
-            <p style={{ color: '#94a3b8' }}>{article.content.conclusion}</p>
+            <p style={{ color: '#a3a09b' }}>{article.content.conclusion}</p>
           </div>
         </div>
 
@@ -280,7 +280,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                 border: '1px solid #351505',
                 padding: '4px 10px',
                 borderRadius: '3px',
-                color: '#94a3b8',
+                color: '#a3a09b',
               }}
             >
               #{t}
@@ -324,7 +324,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                   <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', margin: '8px 0', lineHeight: 1.35 }}>
                     {rel.title}
                   </h4>
-                  <span style={{ fontSize: '12px', color: '#94a3b8' }}>{rel.readTime}</span>
+                  <span style={{ fontSize: '12px', color: '#a3a09b' }}>{rel.readTime}</span>
                 </div>
               ))}
             </div>

@@ -20,7 +20,7 @@ export const ServiceBreadcrumb: React.FC<ServiceBreadcrumbProps> = ({
         alignItems: 'center',
         gap: '8px',
         fontSize: '13px',
-        color: '#64748b',
+        color: '#868683',
         marginBottom: '20px',
       }}
     >
@@ -30,22 +30,22 @@ export const ServiceBreadcrumb: React.FC<ServiceBreadcrumbProps> = ({
           background: 'none',
           border: 'none',
           padding: 0,
-          color: '#64748b',
+          color: '#868683',
           cursor: 'pointer',
           fontSize: '13px',
           fontWeight: 500,
           transition: 'color 0.2s',
         }}
-        onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
-        onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
+        onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+        onMouseLeave={(e) => (e.currentTarget.style.color = '#868683')}
       >
         Home
       </button>
-      <ChevronRight size={14} color="#94a3b8" />
-      <span style={{ color: '#64748b', fontWeight: 500 }}>Services</span>
-      <ChevronRight size={14} color="#94a3b8" />
-      <span style={{ color: '#64748b', fontWeight: 500 }}>{category}</span>
-      <ChevronRight size={14} color="#94a3b8" />
+      <ChevronRight size={14} color="#a3a09b" />
+      <span style={{ color: '#868683', fontWeight: 500 }}>Services</span>
+      <ChevronRight size={14} color="#a3a09b" />
+      <span style={{ color: '#868683', fontWeight: 500 }}>{category}</span>
+      <ChevronRight size={14} color="#a3a09b" />
       <span style={{ color: '#ffffff', fontWeight: 700 }}>{title}</span>
     </nav>
   );

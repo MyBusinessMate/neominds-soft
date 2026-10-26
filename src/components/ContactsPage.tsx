@@ -121,7 +121,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             style={{
               fontSize: 'clamp(16px, 1.2vw, 18px)',
               lineHeight: 1.6,
-              color: '#94a3b8',
+              color: '#a3a09b',
               maxWidth: '680px',
               margin: '0 auto 40px',
             }}
@@ -192,11 +192,11 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: 'clamp(24px, 4vw, 40px)', height: '100%' }}>
               <h2 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', marginBottom: '8px', fontFamily: 'var(--font-heading)' }}>Contact us</h2>
-              <p style={{ fontSize: '14px', color: '#94a3b8', marginBottom: '28px' }}>Our team would love to hear from you.</p>
+              <p style={{ fontSize: '14px', color: '#a3a09b', marginBottom: '28px' }}>Our team would love to hear from you.</p>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Your project and goals*</label>
+                  <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Your project and goals*</label>
                   <textarea
                     rows={4}
                     required
@@ -209,7 +209,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Name*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Name*</label>
                     <input
                       type="text"
                       required
@@ -220,7 +220,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Work Email*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Work Email*</label>
                     <input
                       type="email"
                       required
@@ -234,7 +234,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Phone number (with country code)</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Phone number (with country code)</label>
                     <input
                       type="tel"
                       placeholder="+1 (555) 000-0000"
@@ -244,7 +244,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     />
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Company</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Company</label>
                     <input
                       type="text"
                       placeholder="Acme Corp"
@@ -257,7 +257,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Subject*</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Subject*</label>
                     <select
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
@@ -272,7 +272,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     </select>
                   </div>
                   <div>
-                    <label style={{ display: 'block', fontSize: '13px', color: '#cbd5e1', fontWeight: 600, marginBottom: '6px' }}>Project budget (USD)</label>
+                    <label style={{ display: 'block', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, marginBottom: '6px' }}>Project budget (USD)</label>
                     <select
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
@@ -289,7 +289,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '6px' }}>
-                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#cbd5e1', cursor: 'pointer' }}>
+                  <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: 'rgba(255, 255, 255, 0.82)', cursor: 'pointer' }}>
                     <input
                       type="checkbox"
                       checked={formData.ndaRequired}
@@ -299,7 +299,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     <span>Need an NDA first? We'll sign one before you share any details.</span>
                   </label>
 
-                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '12px', color: '#94a3b8', cursor: 'pointer', lineHeight: 1.4 }}>
+                  <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '12px', color: '#a3a09b', cursor: 'pointer', lineHeight: 1.4 }}>
                     <input
                       type="checkbox"
                       required
@@ -414,7 +414,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
               Our Office
             </ScrollReveal>
             <RevealElement variant="text" delay={0.06}>
-              <p style={{ fontSize: '15px', color: '#94a3b8', margin: 0 }}>
+              <p style={{ fontSize: '15px', color: '#a3a09b', margin: 0 }}>
                 Our global engineering headquarters is centrally located in Hyderabad, India.
               </p>
             </RevealElement>
@@ -455,9 +455,9 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
                   <p style={{ fontSize: '15px', color: '#ffffff', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
-                  <p style={{ fontSize: '15px', color: '#cbd5e1', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
-                  <p style={{ fontSize: '15px', color: '#cbd5e1', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
-                  <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>{OFFICE_LOCATION.country}</p>
+                  <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.82)', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
+                  <p style={{ fontSize: '15px', color: 'rgba(255, 255, 255, 0.82)', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
+                  <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>{OFFICE_LOCATION.country}</p>
                 </div>
 
                 <div
@@ -478,7 +478,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   </div>
                   <div>
                     <span style={{ fontWeight: 600, color: '#ffffff' }}>Hours: </span>
-                    <span style={{ color: '#94a3b8' }}>{OFFICE_LOCATION.workingHours}</span>
+                    <span style={{ color: '#a3a09b' }}>{OFFICE_LOCATION.workingHours}</span>
                   </div>
                 </div>
               </div>

@@ -371,7 +371,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Market Dynamics
             </span>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#0f172a', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               What is shaping software today
             </h2>
           </div>
@@ -396,7 +396,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
                   {t.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
                   {t.desc}
                 </p>
               </RevealElement>
@@ -445,7 +445,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                     {item.title}
                   </h3>
-                  <p style={{ fontSize: '14px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
                     {item.desc}
                   </p>
                 </div>
@@ -467,7 +467,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Services we offer
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
               From initial architecture to continuous production delivery, our teams cover every stage of the software lifecycle.
             </p>
           </div>
@@ -510,7 +510,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                     </h3>
                     <ArrowRight size={14} color="#fe6200" />
                   </div>
-                  <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.55, margin: 0 }}>
+                  <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.55, margin: 0 }}>
                     {service.desc}
                   </p>
                 </div>
@@ -571,7 +571,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>
                   {ind.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
                   {ind.desc}
                 </p>
               </div>
@@ -592,7 +592,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#ffffff', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Technologies we use
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '680px', marginTop: '8px' }}>
+            <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '680px', marginTop: '8px' }}>
               The tools behind our work, chosen for your goals.
             </p>
           </div>
@@ -611,7 +611,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 <div style={{ fontSize: '14px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
                   {t.area}
                 </div>
-                <div style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5 }}>
+                <div style={{ fontSize: '13px', color: '#a3a09b', lineHeight: 1.5 }}>
                   {t.tech}
                 </div>
               </div>

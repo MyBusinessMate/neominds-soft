@@ -74,7 +74,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '18px', color: '#94a3b8', maxWidth: '720px', lineHeight: 1.6, marginBottom: '32px' }}>
+            <p style={{ fontSize: '18px', color: '#a3a09b', maxWidth: '720px', lineHeight: 1.6, marginBottom: '32px' }}>
               The latest news, engineering breakthroughs, conference keynotes, executive perspectives, and global expansion announcements from Neominds.
             </p>
           </RevealElement>
@@ -88,7 +88,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 className={`btn btn-sm ${activeType === type ? 'btn-primary' : 'btn-outline'}`}
                 style={{
                   color: activeType === type ? '#ffffff' : '#475569',
-                  borderColor: activeType === type ? '#fe6200' : '#cbd5e1',
+                  borderColor: activeType === type ? '#fe6200' : '#a3a09b',
                   backgroundColor: activeType === type ? '#fe6200' : '#f8fafc',
                   cursor: 'pointer',
                 }}
@@ -169,7 +169,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       {update.subtitle}
                     </p>
 
-                    <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#94a3b8', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#a3a09b', marginBottom: '20px' }}>
                       {update.content.intro}
                     </p>
 
@@ -180,7 +180,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                         {update.highlights.map((h, i) => (
-                          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13.5px', color: '#cbd5e1' }}>
+                          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13.5px', color: 'rgba(255, 255, 255, 0.82)' }}>
                             <CheckCircle2 size={14} color="#fe6200" style={{ flexShrink: 0, marginTop: '3px' }} />
                             <span>{h}</span>
                           </div>
@@ -190,7 +190,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
 
                     {/* Executive Quote if present */}
                     {update.content.quote && (
-                      <blockquote style={{ borderLeft: '3px solid #fe6200', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#94a3b8' }}>
+                      <blockquote style={{ borderLeft: '3px solid #fe6200', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#a3a09b' }}>
                         "{update.content.quote.text}"
                         <div style={{ fontStyle: 'normal', fontWeight: 700, color: '#ffffff', marginTop: '4px', fontSize: '12px' }}>
                           // {update.content.quote.author}, {update.content.quote.role}
@@ -200,7 +200,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                   </div>
 
                   <div style={{ borderTop: '1px solid #351505', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '13px', color: '#94a3b8' }}>
+                    <span style={{ fontSize: '13px', color: '#a3a09b' }}>
                       {update.content.nextSteps}
                     </span>
 
@@ -235,7 +235,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
           >
             Request the Neominds 2026 Press Kit
           </ScrollReveal>
-          <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '16px', color: '#a3a09b', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
             For press inquiries, executive speaking engagements, or high-resolution media brand assets, contact our corporate communications office.
           </p>
 

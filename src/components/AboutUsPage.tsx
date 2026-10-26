@@ -516,7 +516,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   alignItems: 'center',
                   gap: '8px',
                   cursor: 'pointer',
-                  backgroundColor: '#0f172a',
+                  backgroundColor: '#200b00',
                   transition: 'border-color 0.2s ease',
                 }}
               >
@@ -524,7 +524,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 <span style={{ fontSize: '14px', color: '#e2e8f0', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>
+                <span style={{ fontSize: '12px', color: '#868683' }}>
                   SVG, PNG, JPG, PDF or DOC (max. 33 MB)
                 </span>
                 <input

@@ -4,7 +4,7 @@
 
 .p-blog-page {
   background-color: #ffffff;
-  color: #0f172a;
+  color: #200b00;
   min-height: 100vh;
   padding-top: 68px;
   font-family: var(--font-body, system-ui, sans-serif);
@@ -59,7 +59,7 @@
   font-family: var(--font-heading, inherit);
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #0f172a;
+  color: #200b00;
   margin-bottom: 20px;
 }
 
@@ -124,7 +124,7 @@
 .b-hero__media-graphic {
   width: 100%;
   height: 220px;
-  background: linear-gradient(135deg, #0f172a 0%, var(--colors-border-dark, #351505) 100%);
+  background: linear-gradient(135deg, #200b00 0%, var(--colors-border-dark, #351505) 100%);
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -192,7 +192,7 @@
   background: transparent;
   width: 100%;
   font-size: 15px;
-  color: #0f172a;
+  color: #200b00;
 }
 
 .p-blog__list {
@@ -245,7 +245,7 @@
   gap: 12px;
   font-size: 13px;
   font-weight: 500;
-  color: #64748b;
+  color: #868683;
   margin: 0;
 }
 
@@ -258,14 +258,14 @@
 .el-tile__meta-item:not(:last-child)::after {
   content: '•';
   margin-left: 12px;
-  color: #cbd5e1;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .el-tile__title {
   font-size: clamp(20px, 2.2vw, 26px);
   font-weight: 700;
   font-family: var(--font-heading, inherit);
-  color: #0f172a;
+  color: #200b00;
   line-height: 1.3;
   margin: 0;
   text-decoration: none;
@@ -313,7 +313,7 @@
 
 .btn-tag:hover {
   background-color: #e2e8f0;
-  color: #0f172a;
+  color: #200b00;
 }
 
 .btn-tag.is-active {
@@ -329,8 +329,8 @@
   justify-content: center;
   gap: 10px;
   background-color: #ffffff;
-  border: 1px solid #cbd5e1;
-  color: #0f172a;
+  border: 1px solid #351505;
+  color: #200b00;
   padding: 14px 28px;
   font-size: 15px;
   font-weight: 600;
@@ -342,7 +342,7 @@
 
 .p-blog__btn-more:hover {
   background-color: #f8fafc;
-  border-color: #0f172a;
+  border-color: #200b00;
 }
 
 /* Right Column: Tags Aside */
@@ -363,7 +363,7 @@
   font-size: 18px;
   font-weight: 700;
   font-family: var(--font-heading, inherit);
-  color: #0f172a;
+  color: #200b00;
   margin-top: 0;
   margin-bottom: 16px;
   padding-bottom: 12px;
@@ -423,13 +423,13 @@
 
 .b-request__subtext {
   font-size: 18px;
-  color: #94a3b8;
+  color: #a3a09b;
   line-height: 1.6;
   margin-bottom: 32px;
 }
 
 .b-request__card {
-  background: #0f172a;
+  background: #200b00;
   border: 1px solid var(--colors-border-dark, #351505);
   border-radius: 4px;
   padding: 32px;
@@ -457,13 +457,13 @@
   font-size: clamp(32px, 4vw, 44px);
   font-weight: 800;
   font-family: var(--font-heading, inherit);
-  color: #0f172a;
+  color: #200b00;
   margin-bottom: 12px;
 }
 
 .b-locations__desc {
   font-size: 17px;
-  color: #64748b;
+  color: #868683;
   margin-bottom: 16px;
 }
 
@@ -476,7 +476,7 @@
 .b-locations__tab-btn {
   padding: 8px 20px;
   background-color: #ffffff;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #351505;
   color: #475569;
   font-weight: 600;
   font-size: 14px;
@@ -513,13 +513,13 @@
 .b-locations__city {
   font-size: 18px;
   font-weight: 700;
-  color: #0f172a;
+  color: #200b00;
   margin-bottom: 8px;
 }
 
 .b-locations__address {
   font-size: 14px;
-  color: #64748b;
+  color: #868683;
   line-height: 1.6;
   margin-bottom: 12px;
 }
@@ -553,13 +553,13 @@
   font-size: clamp(28px, 3.5vw, 40px);
   font-weight: 800;
   font-family: var(--font-heading, inherit);
-  color: #0f172a;
+  color: #200b00;
   margin-bottom: 12px;
 }
 
 .b-newsletter__text {
   font-size: 16px;
-  color: #64748b;
+  color: #868683;
   margin-bottom: 28px;
   line-height: 1.6;
 }
@@ -581,7 +581,7 @@
 .b-newsletter__input {
   flex: 1;
   padding: 14px 18px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #351505;
   border-radius: 2px;
   font-size: 15px;
   outline: none;

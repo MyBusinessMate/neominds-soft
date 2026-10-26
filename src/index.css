@@ -186,7 +186,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
+  background: #a3a09b;
   border-radius: 9999px;
 }
 
@@ -829,16 +829,6 @@ select:focus {
 
 .form-input:focus {
   border-color: var(--color-primary);
-}
-
-/* Decorative blue dot */
-.blue-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 0px !important;
-  background-color: var(--color-primary);
-  box-shadow: none !important;
 }
 
 /* Responsive Overrides for Service Capabilities 7 Variants */

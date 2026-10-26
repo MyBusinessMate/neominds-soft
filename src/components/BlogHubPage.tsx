@@ -140,7 +140,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                 <h3 style={{ fontSize: '20px', fontWeight: 700, margin: '0 0 8px 0', textAlign: 'center' }}>
                   Enterprise Engineering Intelligence
                 </h3>
-                <p style={{ fontSize: '14px', color: '#94a3b8', margin: 0, textAlign: 'center', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '14px', color: '#a3a09b', margin: 0, textAlign: 'center', lineHeight: 1.5 }}>
                   Architectural playbooks, real-world benchmarks, and deterministic AI execution.
                 </p>
               </div>
@@ -158,7 +158,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
           <div className="p-blog__content">
             {/* Search Input */}
             <div className="p-blog__search-wrap">
-              <Search size={18} style={{ color: '#94a3b8' }} />
+              <Search size={18} style={{ color: '#a3a09b' }} />
               <input
                 type="text"
                 className="p-blog__search-input"
@@ -170,7 +170,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
 
             {selectedCategory !== 'All' && (
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <span style={{ fontSize: '14px', color: '#94a3b8' }}>Filtered by:</span>
+                <span style={{ fontSize: '14px', color: '#a3a09b' }}>Filtered by:</span>
                 <span className="btn-tag is-active" style={{ cursor: 'default' }}>
                   {selectedCategory}
                 </span>
@@ -193,7 +193,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
 
             <div className="p-blog__list">
               {visiblePosts.length === 0 ? (
-                <div style={{ padding: '64px 24px', textAlign: 'center', color: '#94a3b8', background: '#f8fafc', borderRadius: '4px' }}>
+                <div style={{ padding: '64px 24px', textAlign: 'center', color: '#a3a09b', background: '#f8fafc', borderRadius: '4px' }}>
                   <p style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px' }}>No publications found</p>
                   <p style={{ fontSize: '14px', margin: 0 }}>Try clearing your search query or selecting a different category tag.</p>
                 </div>
@@ -304,15 +304,15 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
               Talk directly with our solutions architects.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(255, 255, 255, 0.82)' }}>
                 <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>NDA signed upfront to guarantee IP security</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(255, 255, 255, 0.82)' }}>
                 <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>Principal architects on every discovery call</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#cbd5e1' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(255, 255, 255, 0.82)' }}>
                 <CheckCircle2 size={18} style={{ color: '#fe6200' }} />
                 <span>Deterministic timeline and scoping estimates</span>
               </div>
@@ -323,7 +323,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
             <h3 style={{ fontSize: '22px', fontWeight: 700, margin: '0 0 16px 0', color: '#ffffff' }}>
               Start your discovery sprint
             </h3>
-            <p style={{ fontSize: '15px', color: '#94a3b8', lineHeight: 1.5, marginBottom: '24px' }}>
+            <p style={{ fontSize: '15px', color: '#a3a09b', lineHeight: 1.5, marginBottom: '24px' }}>
               Our senior engineering leads respond within 1–2 business days with an actionable technical assessment.
             </p>
             <button

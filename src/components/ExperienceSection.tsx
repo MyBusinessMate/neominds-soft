@@ -26,13 +26,12 @@ const clientLogos: ClientLogo[] = [
   { id: 'adventr', name: 'Adventr', url: '/uploads/2010/04/Adventr.svg' },
 ];
 
-
 const ExperienceSectionComponent: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const [logoBatch, setLogoBatch] = useState(0);
 
-  // Word-by-word slow and buttery smooth scroll illumination
+  // Word-by-word buttery smooth scroll illumination in black #000000 on light cream
   useEffect(() => {
     const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
@@ -65,7 +64,7 @@ const ExperienceSectionComponent: React.FC = () => {
             trigger: textContainerRef.current,
             start: 'top 85%',
             end: 'bottom 45%',
-            scrub: 1.2, // Generous smooth scrub factor
+            scrub: 1.2,
           },
         }
       );
@@ -100,32 +99,202 @@ const ExperienceSectionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#f1efeb',
-        paddingTop: 'clamp(64px, 8vw, 80px)',
-        paddingBottom: 'clamp(64px, 8vw, 80px)',
+        backgroundColor: '#f1efeb', // Freehand warm light cream
+        paddingTop: 'clamp(72px, 9vw, 100px)',
+        paddingBottom: 'clamp(72px, 9vw, 100px)',
         overflow: 'hidden',
         border: 'none',
       }}
     >
-      <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Large Editorial Headline with Pure Word-by-Word Smooth Fill */}
+      <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+        {/* Top Trust & Rating Proof Bar (Matching Freehand Screenshot Section 2) */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '12px',
+            marginBottom: 'clamp(28px, 4vw, 44px)',
+            flexWrap: 'wrap',
+          }}
+        >
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+              fontSize: '12px',
+              fontWeight: 500,
+              letterSpacing: '0.08em',
+              color: '#868683',
+              textTransform: 'uppercase',
+            }}
+          >
+            <span style={{ color: '#fe6200', fontWeight: 700 }}>★ 4.9 RATING</span>
+            <span>·</span>
+            <span>G2 LEADER</span>
+            <span>·</span>
+            <span>CLUTCH TOP AI DEV</span>
+            <span>·</span>
+            <span>ISO 27001 ALIGNED</span>
+          </div>
+        </div>
+
+        {/* Big Bold Headline Statement with Freehand Orange Highlight */}
+        <div style={{ textAlign: 'center', maxWidth: '980px', margin: '0 auto clamp(48px, 6vw, 68px)' }}>
+          <h2
+            style={{
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(32px, 4.4vw, 54px)',
+              fontWeight: 400,
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em',
+              color: '#000000',
+              margin: '0 0 16px 0',
+            }}
+          >
+            We engineered <span style={{ color: '#fe6200' }}>100+</span> production software platforms with <span style={{ color: '#fe6200' }}>99.99%</span> reliability.
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+              fontSize: 'clamp(16px, 1.25vw, 19px)',
+              color: '#868683',
+              lineHeight: 1.55,
+              maxWidth: '680px',
+              margin: '0 auto',
+            }}
+          >
+            High-performance engineering teams that deliver faster time-to-market and measurable business outcomes.
+          </p>
+        </div>
+
+        {/* 3 Metric Columns with Thin Orange Vertical Dividers (Exact Freehand Layout) */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            alignItems: 'center',
+            gap: '0px',
+            backgroundColor: '#ffffff',
+            border: '1px solid #e4e2e1',
+            borderRadius: '0px',
+            marginBottom: 'clamp(64px, 8vw, 84px)',
+          }}
+        >
+          {/* Metric 1 */}
+          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#000000',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              100+
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Enterprise Systems Shipped
+            </div>
+          </div>
+
+          {/* Metric 2 with Left & Right Orange Dividers */}
+          <div
+            style={{
+              padding: 'clamp(28px, 4vw, 44px)',
+              textAlign: 'center',
+              borderLeft: '1px solid #fe6200',
+              borderRight: '1px solid #fe6200',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#fe6200',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              20+
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Years Engineering Depth
+            </div>
+          </div>
+
+          {/* Metric 3 */}
+          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#000000',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              99.99%
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Production Availability SLA
+            </div>
+          </div>
+        </div>
+
+        {/* Editorial Scroll Illumination Headline */}
         <div
           ref={textContainerRef}
           style={{
             maxWidth: '1120px',
-            marginBottom: 'clamp(48px, 6vw, 72px)',
+            margin: '0 auto clamp(48px, 6vw, 72px)',
+            textAlign: 'center',
           }}
         >
-          <h2
+          <h3
             style={{
               fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-              fontSize: 'clamp(30px, 3.8vw, 48px)',
+              fontSize: 'clamp(26px, 3.4vw, 42px)',
               fontWeight: 400,
-              lineHeight: 1.25,
+              lineHeight: 1.3,
               letterSpacing: '-0.015em',
               margin: 0,
               display: 'flex',
               flexWrap: 'wrap',
+              justifyContent: 'center',
               rowGap: '8px',
             }}
           >
@@ -144,7 +313,7 @@ const ExperienceSectionComponent: React.FC = () => {
                 {word}
               </span>
             ))}
-          </h2>
+          </h3>
         </div>
 
         {/* 4 Logos at a Time with Rolling Effect Separated by Hairline Dividers */}

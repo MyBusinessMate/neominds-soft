@@ -52,7 +52,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
       {/* 1. p-content-intro */}
       <section className="p-content-intro" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <p style={{ fontSize: '13px', fontWeight: 600, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+          <p style={{ fontSize: '13px', fontWeight: 600, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
             Last updated: October 13, 2025
           </p>
           <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', margin: 0, lineHeight: 1.1 }}>
@@ -82,7 +82,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
           <div className="p-legal-grid" style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
             {/* Sticky Table of Contents */}
             <aside className="c-sidenav-sticky" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#94a3b8', marginBottom: '8px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#a3a09b', marginBottom: '8px' }}>
                 Table of Contents
               </div>
               {NAV_ITEMS.map((item) => (
@@ -109,7 +109,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
             </aside>
 
             {/* Main Editorial Articles */}
-            <article style={{ lineHeight: 1.75, color: '#cbd5e1', fontSize: '15px' }}>
+            <article style={{ lineHeight: 1.75, color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px' }}>
               <p style={{ fontSize: '16.5px', color: '#351505', marginBottom: '24px', fontWeight: 400 }}>
                 Neominds TechHub (“Neominds”) has created this Privacy Policy in line with our commitment to your privacy. This Notice sets out how Neominds collects, uses, shares, and protects personal information.
               </p>
@@ -144,11 +144,11 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '16px' }}>
                   <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', padding: '20px', borderRadius: '4px' }}>
                     <div style={{ fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>Contractual Performance</div>
-                    <div style={{ fontSize: '14px', color: '#94a3b8' }}>Evaluating and fulfilling consulting agreements, NDAs, and software engineering services requested by you.</div>
+                    <div style={{ fontSize: '14px', color: '#a3a09b' }}>Evaluating and fulfilling consulting agreements, NDAs, and software engineering services requested by you.</div>
                   </div>
                   <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', padding: '20px', borderRadius: '4px' }}>
                     <div style={{ fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>Legitimate Interests</div>
-                    <div style={{ fontSize: '14px', color: '#94a3b8' }}>Ensuring platform security, preventing fraud, managing client relationships, and optimizing our technical web services.</div>
+                    <div style={{ fontSize: '14px', color: '#a3a09b' }}>Ensuring platform security, preventing fraud, managing client relationships, and optimizing our technical web services.</div>
                   </div>
                 </div>
               </div>
@@ -272,7 +272,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
-            <p style={{ fontSize: '15px', color: '#94a3b8', margin: '8px 0 0 0', maxWidth: '580px' }}>
+            <p style={{ fontSize: '15px', color: '#a3a09b', margin: '8px 0 0 0', maxWidth: '580px' }}>
               Stay up to date with the latest engineering insights, tech announcements, and articles.
             </p>
           </div>
@@ -289,7 +289,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 padding: '14px 18px',
                 fontSize: '14px',
                 backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid #cbd5e1',
+                border: '1px solid #351505',
                 borderRadius: '2px',
                 color: '#ffffff',
                 outline: 'none',

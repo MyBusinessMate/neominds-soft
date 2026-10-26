@@ -29,7 +29,7 @@ export const EngineeringBlobSection: React.FC = () => {
       if (headlineRef.current) gsap.set(headlineRef.current, { color: '#ffffff' });
       const dots = [dotLeftRef.current, dotRightRef.current].filter((el): el is HTMLSpanElement => Boolean(el));
       if (dots.length > 0) gsap.set(dots, { color: '#fe6200' });
-      if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#94a3b8' });
+      if (paragraphRef.current) gsap.set(paragraphRef.current, { color: '#a3a09b' });
       return;
     }
 
@@ -95,12 +95,12 @@ export const EngineeringBlobSection: React.FC = () => {
         );
       }
 
-      // Paragraph subtext: Starts White -> Turns readable Light Slate (#cbd5e1)
+      // Paragraph subtext: Starts White -> Turns readable Light Slate (#a3a09b)
       if (paragraphRef.current) {
         tl.fromTo(
           paragraphRef.current,
           { color: 'rgba(255, 255, 255, 0.95)' },
-          { color: '#cbd5e1', ease: 'power1.out', duration: 0.8 },
+          { color: 'rgba(255, 255, 255, 0.82)', ease: 'power1.out', duration: 0.8 },
           0.2
         );
       }

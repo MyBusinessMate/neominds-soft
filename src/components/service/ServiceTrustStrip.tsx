@@ -21,7 +21,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
     <section
       style={{
         backgroundColor: 'var(--colors-background-dark, #200b00)',
-        borderBottom: '1px solid #1e293b',
+        borderBottom: '1px solid #351505',
         padding: '36px 24px',
       }}
     >
@@ -34,7 +34,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
               gap: '24px',
               paddingBottom: '28px',
-              borderBottom: '1px solid #1e293b',
+              borderBottom: '1px solid #351505',
             }}
           >
             {metrics.map((m, idx) => (
@@ -43,7 +43,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                   style={{
                     fontSize: 'clamp(26px, 2.5vw, 34px)',
                     fontWeight: 800,
-                    color: '#FF5500',
+                    color: '#fe6200',
                     fontFamily: 'var(--font-heading)',
                     lineHeight: 1,
                   }}
@@ -53,8 +53,8 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 <div
                   style={{
                     fontSize: '13px',
-                    fontWeight: 600,
-                    color: '#94a3b8',
+                    fontWeight: 500,
+                    color: '#a3a09b',
                     marginTop: '6px',
                   }}
                 >
@@ -83,15 +83,15 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#334155',
+                color: '#868683',
                 fontSize: '13px',
-                fontWeight: 600,
+                fontWeight: 500,
               }}
             >
-              {pIdx === 0 && <Award size={15} color="#FF5500" />}
-              {pIdx === 1 && <Shield size={15} color="#FF5500" />}
-              {pIdx === 2 && <Zap size={15} color="#FF5500" />}
-              {pIdx === 3 && <CheckCircle2 size={15} color="#FF5500" />}
+              {pIdx === 0 && <Award size={15} color="#fe6200" />}
+              {pIdx === 1 && <Shield size={15} color="#fe6200" />}
+              {pIdx === 2 && <Zap size={15} color="#fe6200" />}
+              {pIdx === 3 && <CheckCircle2 size={15} color="#fe6200" />}
               <span>{point}</span>
             </div>
           ))}

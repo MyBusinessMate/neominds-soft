@@ -64,8 +64,8 @@ const PageLoader: React.FC = () => (
       style={{
         width: '32px',
         height: '32px',
-        border: '3px solid rgba(255, 85, 0, 0.2)',
-        borderTopColor: '#FF5500',
+        border: '3px solid rgba(254, 98, 0, 0.2)',
+        borderTopColor: '#fe6200',
         borderRadius: '50%',
         animation: 'spinLoader 0.7s linear infinite',
       }}
@@ -324,7 +324,7 @@ export const App: React.FC = () => {
               position: 'absolute',
               top: '-100px',
               left: '20px',
-              backgroundColor: '#FF5500',
+              backgroundColor: '#fe6200',
               color: '#ffffff',
               padding: '10px 18px',
               zIndex: 99999,

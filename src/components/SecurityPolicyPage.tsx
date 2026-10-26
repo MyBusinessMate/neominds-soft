@@ -27,7 +27,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
           <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: 'var(--space-3)' }}>
             Security & Compliance Standards
           </h1>
-          <p style={{ fontSize: '15px', color: '#94a3b8', margin: 0 }}>
+          <p style={{ fontSize: '15px', color: '#a3a09b', margin: 0 }}>
             ISO/IEC 27001:2022 Certified • SOC 2 Type II Audited • HIPAA & GDPR Compliant
           </p>
         </div>
@@ -35,7 +35,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
 
       {/* Main Content */}
       <section style={{ paddingBlock: 'var(--section-padding-y)', paddingInline: 'var(--page-padding)' }}>
-        <div className="container-reading" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)', lineHeight: 1.7, color: '#cbd5e1', fontSize: '15px' }}>
+        <div className="container-reading" style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)', lineHeight: 1.7, color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px' }}>
           <div>
             <h2 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-heading)', marginBottom: 'var(--space-3)' }}>
               1. Security-First Engineering Culture
@@ -50,7 +50,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
               <ShieldCheck size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>ISO/IEC 27001 Certified</h3>
-              <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
                 Rigorous Information Security Management System (ISMS) governing access, personnel security, and physical workstation hardening.
               </p>
             </div>
@@ -58,7 +58,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
               <Key size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Cryptographic Encryption</h3>
-              <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
                 AES-256 encryption for all data at rest and mandatory TLS 1.3 encryption with Perfect Forward Secrecy (PFS) for all data in transit.
               </p>
             </div>
@@ -66,7 +66,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
               <Server size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Air-Gapped AI Isolation</h3>
-              <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
                 Private enterprise LLM inference runtimes running inside client VPCs with zero data retention and strict network boundary controls.
               </p>
             </div>
@@ -74,7 +74,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
             <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
               <FileCheck2 size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Automated DevSecOps</h3>
-              <p style={{ fontSize: '13px', color: '#94a3b8', margin: 0 }}>
+              <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
                 Automated static code analysis (SonarQube), container CVE scans (Trivy), and quarterly external third-party penetration testing.
               </p>
             </div>
