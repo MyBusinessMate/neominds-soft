@@ -146,6 +146,30 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'Analytic Dashboard', page: 'analytics-dashboard' as const, hasExternalArrow: false },
     { title: 'Custom Health Softwares', page: 'custom-health-software' as const, hasExternalArrow: false },
     { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false },
+    { title: 'All Services', page: 'services' as const, hasExternalArrow: true },
+  ];
+
+  // Column 3: Technologies (7 from CSV)
+  const fintechList = [
+    { title: 'Web Development', page: 'web-development' as const },
+    { title: 'Artificial Intelligence', page: 'ai-systems' as const },
+    { title: 'Machine Learning', page: 'ai-native-software' as const },
+    { title: 'Data Management', page: 'cloud-based-software' as const },
+    { title: 'Data Analytics', page: 'analytics-dashboard' as const },
+    { title: 'Automations', page: 'ai-automations' as const },
+    { title: 'Product Engineering', page: 'custom-software-development' as const },
+  ];
+
+  // Column 4: Industries (8 from CSV)
+  const healthcareList = [
+    { title: 'Enterprise', page: 'industries' as const },
+    { title: 'Financial Tech', page: 'industries' as const },
+    { title: 'Retail', page: 'industries' as const },
+    { title: 'Education', page: 'industries' as const },
+    { title: 'Healthcare', page: 'industries' as const },
+    { title: 'E-commerce', page: 'industries' as const },
+    { title: 'Real Estate', page: 'industries' as const },
+    { title: 'E-learning', page: 'industries' as const },
   ];
 
   return (
@@ -442,13 +466,13 @@ export const Header: React.FC<HeaderProps> = ({
         {activeMenu === 'what-we-do' && (
           <div
             style={{
-              width: 'min(94%, 960px)',
-              maxWidth: '960px',
+              width: 'min(94%, 1040px)',
+              maxWidth: '1040px',
               marginTop: isScrolled ? '8px' : '0px',
               borderRadius: '8px',
               border: '1px solid #e4e2e1',
               backgroundColor: '#ffffff',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.14)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.12)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
@@ -459,252 +483,159 @@ export const Header: React.FC<HeaderProps> = ({
             <div
               style={{
                 width: '100%',
-                padding: '28px 32px',
+                padding: '28px 32px 30px',
                 display: 'grid',
-                gridTemplateColumns: '1.25fr 1fr',
-                gap: '32px',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '24px',
                 boxSizing: 'border-box',
-                alignItems: 'stretch',
               }}
             >
-              {/* Left Column: Solutions with Orange Icons & Two-Line Descriptions (Freehand Style) */}
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', gap: '22px' }}>
-                <div
-                  onClick={() => navigateToPage('custom-software-development')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '16px',
-                    cursor: 'pointer',
-                    padding: '8px',
-                    borderRadius: '6px',
-                    transition: 'background-color 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.04)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                >
-                  <div
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '6px',
-                      backgroundColor: 'rgba(254, 98, 0, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#fe6200',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                      <polyline points="14 2 14 8 20 8"></polyline>
-                      <line x1="16" y1="13" x2="8" y2="13"></line>
-                      <line x1="16" y1="17" x2="8" y2="17"></line>
-                      <polyline points="10 9 9 9 8 9"></polyline>
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '4px' }}>
-                      Neominds for Enterprise Software
-                    </div>
-                    <div style={{ fontSize: '13px', color: '#66615c', lineHeight: 1.45 }}>
-                      Architect every core system against demanding performance, high availability, and mission-critical uptime.
-                    </div>
-                  </div>
+              {/* Column 1: Services */}
+              <div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                  Services
                 </div>
-
-                <div
-                  onClick={() => navigateToPage('ai-systems')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '16px',
-                    cursor: 'pointer',
-                    padding: '8px',
-                    borderRadius: '6px',
-                    transition: 'background-color 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.04)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                >
-                  <div
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '6px',
-                      backgroundColor: 'rgba(254, 98, 0, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#fe6200',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                      <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                      <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                      <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '4px' }}>
-                      Neominds for Applied AI & Automations
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {ourServicesList.map((item) => (
+                    <div
+                      key={item.page}
+                      onClick={() => navigateToPage(item.page)}
+                      style={{
+                        cursor: 'pointer',
+                        color: '#2b2b2b',
+                        fontSize: '13.5px',
+                        fontWeight: 400,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '3px 0',
+                        transition: 'color 0.2s, transform 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#fe6200';
+                        e.currentTarget.style.transform = 'translateX(2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#2b2b2b';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      <span>{item.title}</span>
+                      {item.hasExternalArrow && (
+                        <span style={{ fontSize: '11px', opacity: 0.8, color: 'inherit' }}>↗</span>
+                      )}
                     </div>
-                    <div style={{ fontSize: '13px', color: '#66615c', lineHeight: 1.45 }}>
-                      Deploy autonomous agents, enterprise LLM pipelines, and automated intelligence across business operations.
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => navigateToPage('cloud-based-software')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '16px',
-                    cursor: 'pointer',
-                    padding: '8px',
-                    borderRadius: '6px',
-                    transition: 'background-color 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.04)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-                >
-                  <div
-                    style={{
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '6px',
-                      backgroundColor: 'rgba(254, 98, 0, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#fe6200',
-                      flexShrink: 0,
-                    }}
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <line x1="2" y1="12" x2="22" y2="12"></line>
-                      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000', marginBottom: '4px' }}>
-                      Neominds for Cloud & Modernization
-                    </div>
-                    <div style={{ fontSize: '13px', color: '#66615c', lineHeight: 1.45 }}>
-                      Refactor legacy monoliths, enforce resilient microservices, and scale cloud workloads with zero downtime.
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom link to view all 16 capabilities */}
-                <div
-                  onClick={() => {
-                    navigateToPage('home');
-                    onNavigate('#services');
-                  }}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: '#fe6200',
-                    cursor: 'pointer',
-                    paddingLeft: '8px',
-                    marginTop: '4px',
-                  }}
-                >
-                  <span>Explore all 16 engineering capabilities</span>
-                  <ArrowUpRight size={13} />
+                  ))}
                 </div>
               </div>
 
-              {/* Right Column: "Neominds Studio" Feature Card matching Freehand screenshot */}
-              <div
-                style={{
-                  borderRadius: '6px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(180deg, #162432 0%, #1e3a50 48%, #ea580c 86%, #c2410c 100%)',
-                  padding: '24px 22px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  minHeight: '280px',
-                  boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-                }}
-              >
-                {/* Title */}
-                <div
-                  style={{
-                    fontSize: '20px',
-                    fontWeight: 500,
-                    color: '#ffffff',
-                    fontFamily: 'var(--font-heading)',
-                    letterSpacing: '-0.01em',
-                  }}
-                >
-                  Neominds Studio
+              {/* Column 2: AI & Specialist */}
+              <div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                  AI & Specialist
                 </div>
-
-                {/* Center 3D Asterisk Symbol (Glowing Glass Freehand Style) */}
-                <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div
-                    style={{
-                      position: 'absolute',
-                      width: '90px',
-                      height: '90px',
-                      borderRadius: '50%',
-                      background: 'radial-gradient(circle, rgba(254, 98, 0, 0.45) 0%, transparent 70%)',
-                      filter: 'blur(16px)',
-                    }}
-                  />
-                  <svg width="72" height="72" viewBox="0 0 24 24" fill="none" style={{ position: 'relative', zIndex: 1, filter: 'drop-shadow(0 4px 14px rgba(254, 98, 0, 0.6))' }}>
-                    <path
-                      d="M12 1.5L14 8.5L21 6.5L16.5 12L21.5 15.5L14.5 15.5L12 22.5L9.5 15.5L2.5 15.5L7.5 12L3 6.5L10 8.5L12 1.5Z"
-                      fill="#ff771a"
-                    />
-                  </svg>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {artificialIntelligenceList.map((item) => (
+                    <div
+                      key={item.page}
+                      onClick={() => navigateToPage(item.page)}
+                      style={{
+                        cursor: 'pointer',
+                        color: '#2b2b2b',
+                        fontSize: '13.5px',
+                        fontWeight: 400,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        padding: '3px 0',
+                        transition: 'color 0.2s, transform 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#fe6200';
+                        e.currentTarget.style.transform = 'translateX(2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#2b2b2b';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      <span>{item.title}</span>
+                      {item.hasExternalArrow && (
+                        <span style={{ fontSize: '11px', opacity: 0.8, color: 'inherit' }}>↗</span>
+                      )}
+                    </div>
+                  ))}
                 </div>
+              </div>
 
-                {/* Bottom CTA Button "DISCOVER ->" */}
-                <button
-                  onClick={() => navigateToPage('portfolio')}
-                  style={{
-                    backgroundColor: 'rgba(254, 98, 0, 0.85)',
-                    border: '1px solid rgba(255, 255, 255, 0.45)',
-                    color: '#ffffff',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                    padding: '8px 20px',
-                    borderRadius: '2px',
-                    cursor: 'pointer',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    transition: 'all 0.2s ease',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#fe6200';
-                    e.currentTarget.style.transform = 'translateY(-1px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.85)';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                  }}
-                >
-                  <span>Discover</span>
-                  <span>→</span>
-                </button>
+              {/* Column 3: Technologies */}
+              <div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                  Technologies
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {fintechList.map((item) => (
+                    <div
+                      key={item.title}
+                      onClick={() => navigateToPage(item.page)}
+                      style={{
+                        cursor: 'pointer',
+                        color: '#2b2b2b',
+                        fontSize: '13.5px',
+                        fontWeight: 400,
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '3px 0',
+                        transition: 'color 0.2s, transform 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#fe6200';
+                        e.currentTarget.style.transform = 'translateX(2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#2b2b2b';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      <span>{item.title}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Column 4: Industries */}
+              <div>
+                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                  Industries
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {healthcareList.map((item) => (
+                    <div
+                      key={item.title}
+                      onClick={() => navigateToPage(item.page)}
+                      style={{
+                        cursor: 'pointer',
+                        color: '#2b2b2b',
+                        fontSize: '13.5px',
+                        fontWeight: 400,
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '3px 0',
+                        transition: 'color 0.2s, transform 0.2s',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = '#fe6200';
+                        e.currentTarget.style.transform = 'translateX(2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = '#2b2b2b';
+                        e.currentTarget.style.transform = 'translateX(0)';
+                      }}
+                    >
+                      <span>{item.title}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -1096,9 +1027,10 @@ export const Header: React.FC<HeaderProps> = ({
 
               {mobileExpandedSection === 'what-we-do' && (
                 <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                  {/* Sub-block 1: Services */}
                   <div>
                     <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      Core Engineering
+                      Services
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {ourServicesList.map((srv) => (
@@ -1113,14 +1045,51 @@ export const Header: React.FC<HeaderProps> = ({
                     </div>
                   </div>
 
+                  {/* Sub-block 2: AI & Specialist */}
                   <div>
                     <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      AI & Automation
+                      AI & Specialist
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       {artificialIntelligenceList.map((srv) => (
                         <div
                           key={srv.page}
+                          onClick={() => navigateToPage(srv.page)}
+                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                        >
+                          {srv.title}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Sub-block 3: Technologies */}
+                  <div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                      Technologies
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {fintechList.map((srv) => (
+                        <div
+                          key={srv.title}
+                          onClick={() => navigateToPage(srv.page)}
+                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                        >
+                          {srv.title}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Sub-block 4: Industries */}
+                  <div>
+                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                      Industries
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {healthcareList.map((srv) => (
+                        <div
+                          key={srv.title}
                           onClick={() => navigateToPage(srv.page)}
                           style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
                         >
