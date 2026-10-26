@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .p-about-page {
-  background-color: #070b14;
+  background-color: #200b00;
   color: #f1efeb;
   min-height: 100vh;
   padding-top: 68px;
@@ -85,7 +85,7 @@
    -------------------------------------------------------------------------- */
 .s-blockquote {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #0b1120;
+  background-color: #351505;
   border-top: 1px solid var(--colors-border-dark, #351505);
   border-bottom: 1px solid var(--colors-border-dark, #351505);
   position: relative;
@@ -185,7 +185,7 @@
    -------------------------------------------------------------------------- */
 .s-video-section {
   padding: clamp(60px, 7vw, 90px) 24px;
-  background-color: #070b14;
+  background-color: #200b00;
   text-align: center;
 }
 
@@ -224,7 +224,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   max-height: 540px;
-  background: #0b1120;
+  background: #351505;
   border: 1px solid var(--colors-border-dark, #351505);
   border-radius: 4px;
   overflow: hidden;
@@ -245,7 +245,7 @@
    -------------------------------------------------------------------------- */
 .s-values {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #0b1120;
+  background-color: #351505;
   border-top: 1px solid var(--colors-border-dark, #351505);
   position: relative;
 }
@@ -365,7 +365,7 @@
    -------------------------------------------------------------------------- */
 .s-cta-section {
   padding: clamp(64px, 8vw, 100px) 24px;
-  background: linear-gradient(180deg, #0b1120 0%, #070b14 100%);
+  background: linear-gradient(180deg, #351505 0%, #200b00 100%);
   text-align: center;
   border-bottom: 1px solid var(--colors-border-dark, #351505);
 }
@@ -409,7 +409,7 @@
    -------------------------------------------------------------------------- */
 .s-team-section {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #070b14;
+  background-color: #200b00;
 }
 
 .s-team-section__container {
@@ -536,7 +536,7 @@
    -------------------------------------------------------------------------- */
 .s-testimonials {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #0b1120;
+  background-color: #351505;
   border-top: 1px solid var(--colors-border-dark, #351505);
 }
 
@@ -661,14 +661,14 @@
    -------------------------------------------------------------------------- */
 .s-contact-form-section {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #070b14;
+  background-color: #200b00;
   border-top: 1px solid var(--colors-border-dark, #351505);
 }
 
 .s-contact-form-section__container {
   max-width: 900px;
   margin: 0 auto;
-  background: #0b1120;
+  background: #351505;
   border: 1px solid var(--colors-border-dark, #351505);
   border-radius: 4px;
   padding: clamp(32px, 6vw, 64px);
@@ -778,7 +778,7 @@
    -------------------------------------------------------------------------- */
 .s-about-locations {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #0b1120;
+  background-color: #351505;
   border-top: 1px solid var(--colors-border-dark, #351505);
 }
 

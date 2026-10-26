@@ -226,7 +226,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                   {cs.title}
                 </h3>
 
-                <p style={{ fontSize: '14.5px', lineHeight: 1.6, color: '#a3a09b', marginBottom: '24px' }}>
+                <p style={{ fontSize: '15px', lineHeight: 1.65, color: '#e4e2e1', marginBottom: '24px' }}>
                   {cs.description}
                 </p>
               </div>
@@ -253,7 +253,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                       {cs.metricLabel}
                     </div>
                   </div>
-                  <div style={{ fontSize: '12px', color: '#351505', fontWeight: 600 }}>
+                  <div style={{ fontSize: '12.5px', color: '#e4e2e1', fontWeight: 600 }}>
                     {cs.stats}
                   </div>
                 </div>

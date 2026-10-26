@@ -866,18 +866,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
           <div
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-              border: '1px solid #351505',
-              borderLeft: '4px solid #fe6200',
-              borderRadius: '6px',
-              padding: '24px',
+              backgroundColor: 'transparent',
+              borderLeft: '3px solid #fe6200',
+              padding: '12px 0 12px 20px',
             }}
           >
             <p
               style={{
-                fontSize: '16.5px',
-                lineHeight: 1.65,
-                color: '#351505',
+                fontSize: '17px',
+                lineHeight: 1.7,
+                color: '#ffffff',
                 fontStyle: 'italic',
                 margin: 0,
               }}

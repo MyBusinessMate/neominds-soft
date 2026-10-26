@@ -143,7 +143,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <p style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
                 Trust &amp; Verified Standards
               </p>
-              <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
+              <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 64px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
                 Our proven expertise
               </h1>
               <p style={{ fontSize: '17px', color: '#a3a09b', lineHeight: 1.65, maxWidth: '720px', margin: 0 }}>
@@ -156,7 +156,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 <div style={{ width: '56px', height: '56px', margin: '0 auto 16px auto', borderRadius: '50%', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <ShieldCheck size={28} color="#fe6200" />
                 </div>
-                <div style={{ fontSize: '24px', fontWeight: 800, color: '#070b14' }}>100%</div>
+                <div style={{ fontSize: '24px', fontWeight: 800, color: '#ffffff' }}>100%</div>
                 <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '4px' }}>Compliance &amp; Quality Audit Pass Rate</div>
               </div>
             </div>
@@ -168,7 +168,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Company level
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
@@ -199,7 +199,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 <div style={{ fontSize: '12px', fontWeight: 600, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                   {item.category}
                 </div>
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px' }}>
+                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   {item.title}
                 </h3>
                 <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
@@ -215,7 +215,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Certificates of compliance
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
@@ -240,7 +240,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                     {practice.regulation}
                   </span>
                 </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#070b14', marginBottom: '10px', lineHeight: 1.4 }}>
+                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '10px', lineHeight: 1.4 }}>
                   {practice.heading}
                 </h3>
                 <p style={{ fontSize: '14px', color: '#a3a09b', lineHeight: 1.65, margin: 0 }}>
@@ -256,7 +256,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Personal employee certificates
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
@@ -280,7 +280,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               >
                 <CheckCircle size={18} color="#fe6200" style={{ marginTop: '2px', flexShrink: 0 }} />
                 <div>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#070b14', lineHeight: 1.4 }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#ffffff', lineHeight: 1.4 }}>
                     {item.name}
                   </div>
                   <div style={{ fontSize: '12px', color: '#a3a09b', marginTop: '4px' }}>
@@ -297,7 +297,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Industry recognition
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', maxWidth: '760px', lineHeight: 1.6, margin: 0 }}>
@@ -312,7 +312,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                   <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
                 ))}
               </div>
-              <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
                 4.9 / 5.0 Rating
               </h3>
               <p style={{ fontSize: '14px', color: '#a3a09b', margin: 0, lineHeight: 1.6 }}>
@@ -325,7 +325,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 <Award size={20} color="#fe6200" />
                 <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase' }}>Clutch Global Leader</span>
               </div>
-              <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#070b14', marginBottom: '6px' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
                 Top B2B Service Provider
               </h3>
               <p style={{ fontSize: '14px', color: '#a3a09b', margin: 0, lineHeight: 1.6 }}>
@@ -340,7 +340,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="g-section s-testimonials js-slider-testimonials theme-gray" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               They say it best
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', maxWidth: '680px', margin: 0, lineHeight: 1.6 }}>
@@ -363,7 +363,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <div>
-                  <div style={{ fontWeight: 700, color: '#070b14', fontSize: '15px' }}>{t.author}</div>
+                  <div style={{ fontWeight: 700, color: '#ffffff', fontSize: '15px' }}>{t.author}</div>
                   <div style={{ fontSize: '13px', color: '#a3a09b' }}>{t.role}</div>
                   <div style={{ fontSize: '12px', color: '#fe6200', fontWeight: 600, marginTop: '2px' }}>{t.company}</div>
                 </div>
@@ -383,7 +383,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
             <p style={{ fontSize: '15px', color: '#a3a09b', margin: '8px 0 0 0', maxWidth: '580px' }}>

@@ -183,7 +183,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <span>Join Our Global Team</span>
           </div>
 
-          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
+          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
             Find your dream job at Neominds TechHub
           </h1>
 
@@ -218,7 +218,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px auto' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
               Start doing work that matters
             </h2>
             <p style={{ fontSize: '16px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
@@ -283,7 +283,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: '0 0 8px 0' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', margin: '0 0 8px 0' }}>
                     {pos.title}
                   </h3>
                   <p style={{ fontSize: '14.5px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
@@ -296,7 +296,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   onClick={() => scrollToCvForm(pos.title)}
                   style={{
                     padding: '12px 24px',
-                    backgroundColor: '#070b14',
+                    backgroundColor: '#fe6200',
                     color: '#ffffff',
                     border: 'none',
                     borderRadius: '2px',
@@ -310,7 +310,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     transition: 'background 0.2s ease',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#070b14')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
                 >
                   <span>Apply now</span>
                   <ArrowRight size={15} />
@@ -325,7 +325,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderTop: '1px solid #351505', borderBottom: '1px solid #351505' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Frequently asked questions
             </h2>
             <p style={{ fontSize: '15.5px', color: '#a3a09b', margin: 0 }}>
@@ -360,7 +360,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     cursor: 'pointer',
                   }}
                 >
-                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#070b14' }}>
+                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff' }}>
                     {faq.q}
                   </span>
                   <ChevronDown
@@ -580,7 +580,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
             <p style={{ fontSize: '15px', color: '#a3a09b', margin: '8px 0 0 0', maxWidth: '580px' }}>

@@ -20,13 +20,13 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
     <section
       style={{
         padding: 'clamp(56px, 7vw, 92px) 24px',
-        backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-        borderBottom: '1px solid #351505',
+        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* =========================================================================
-            04. TARGET AUDIENCE
+            04. TARGET AUDIENCE (Clean Editorial Columns - No Cards)
             ========================================================================= */}
         {targetAudience && (
           <div style={{ marginBottom: mainProblemSolved ? 'clamp(56px, 7vw, 84px)' : 0 }}>
@@ -63,33 +63,30 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 {targetAudience.heading || `Who We Built ${title} For`}
               </ScrollReveal>
               {targetAudience.description && (
-                <p style={{ fontSize: '16px', color: '#868683', lineHeight: 1.6, margin: 0 }}>
+                <p style={{ fontSize: '16px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
                   {targetAudience.description}
                 </p>
               )}
             </div>
 
-            {/* Profile Cards */}
+            {/* Profile Columns (Directly on background, clean hairline rules) */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '24px',
+                gap: 'clamp(28px, 4vw, 44px)',
               }}
             >
               {targetAudience.profiles.map((profile, idx) => (
-                <RevealElement key={idx} variant="card" delay={idx * 0.08}>
+                <RevealElement key={idx} variant="text" delay={idx * 0.06}>
                   <div
                     style={{
                       height: '100%',
-                      backgroundColor: 'var(--colors-background-dark, #200b00)',
-                      border: '1px solid #351505',
-                      borderRadius: '8px',
-                      padding: '28px 24px',
+                      borderTop: '2px solid rgba(254, 98, 0, 0.6)',
+                      paddingTop: '24px',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
-                      transition: 'border-color 0.2s, box-shadow 0.2s',
                     }}
                   >
                     <div>
@@ -98,25 +95,24 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                           display: 'inline-flex',
                           alignItems: 'center',
                           gap: '6px',
-                          padding: '4px 10px',
-                          backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                          border: '1px solid #868683',
-                          borderRadius: '4px',
                           fontSize: '12px',
                           fontWeight: 700,
-                          color: '#ffffff',
-                          marginBottom: '16px',
+                          color: '#fe6200',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                          marginBottom: '14px',
                         }}
                       >
-                        <Users size={13} color="#fe6200" />
+                        <Users size={14} />
                         <span>{profile.role}</span>
                       </div>
                       <p
                         style={{
-                          fontSize: '15px',
-                          color: '#868683',
+                          fontSize: '15.5px',
+                          color: '#e4e2e1',
                           lineHeight: 1.65,
                           margin: 0,
+                          fontWeight: 400,
                         }}
                       >
                         {profile.situation}
@@ -126,17 +122,17 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     <div
                       style={{
                         marginTop: '20px',
-                        paddingTop: '16px',
-                        borderTop: '1px dashed #868683',
+                        paddingTop: '14px',
+                        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                         display: 'flex',
                         alignItems: 'center',
-                        gap: '6px',
+                        gap: '8px',
                         fontSize: '13px',
                         fontWeight: 600,
-                        color: '#fe6200',
+                        color: '#a3a09b',
                       }}
                     >
-                      <CheckCircle2 size={15} />
+                      <CheckCircle2 size={15} color="#fe6200" />
                       <span>Direct fit for your operational scope</span>
                     </div>
                   </div>
@@ -147,19 +143,16 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
         )}
 
         {/* =========================================================================
-            05. MAIN PROBLEM SOLVED
+            05. MAIN PROBLEM SOLVED (Cardless Editorial Layout - Seamless Blend)
             ========================================================================= */}
         {mainProblemSolved && (
           <div
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-              borderRadius: '12px',
-              padding: 'clamp(32px, 5vw, 56px)',
-              color: '#ffffff',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              paddingTop: targetAudience ? 'clamp(48px, 6vw, 72px)' : 0,
+              borderTop: targetAudience ? '1px solid rgba(255, 255, 255, 0.08)' : 'none',
             }}
           >
-            <div style={{ marginBottom: '32px' }}>
+            <div style={{ marginBottom: '36px', maxWidth: '820px' }}>
               <div
                 style={{
                   display: 'inline-flex',
@@ -179,11 +172,11 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
               <ScrollReveal
                 as="h2"
                 style={{
-                  fontSize: 'clamp(24px, 3vw, 36px)',
+                  fontSize: 'clamp(26px, 3.2vw, 40px)',
                   fontWeight: 800,
                   color: '#ffffff',
                   fontFamily: 'var(--font-heading)',
-                  lineHeight: 1.2,
+                  lineHeight: 1.18,
                   margin: 0,
                   display: 'block',
                 }}
@@ -193,20 +186,20 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
               </ScrollReveal>
             </div>
 
+            {/* 2-Column Side-by-Side Comparison (No cards, pure editorial blend) */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '28px',
+                gap: 'clamp(36px, 5vw, 64px)',
+                alignItems: 'start',
               }}
             >
-              {/* Problem Statement Card */}
+              {/* Column 1: The Pain Point */}
               <div
                 style={{
-                  backgroundColor: 'rgba(239, 68, 68, 0.06)',
-                  border: '1px solid rgba(239, 68, 68, 0.25)',
-                  borderRadius: '8px',
-                  padding: '24px 28px',
+                  borderTop: '2px solid #ef4444',
+                  paddingTop: '24px',
                 }}
               >
                 <div
@@ -214,12 +207,12 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    fontSize: '13px',
+                    fontSize: '12px',
                     fontWeight: 700,
                     color: '#f87171',
                     textTransform: 'uppercase',
-                    letterSpacing: '0.04em',
-                    marginBottom: '12px',
+                    letterSpacing: '0.06em',
+                    marginBottom: '16px',
                   }}
                 >
                   <AlertCircle size={16} />
@@ -227,9 +220,10 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 </div>
                 <p
                   style={{
-                    fontSize: '15px',
-                    color: '#351505',
+                    fontSize: '17px',
+                    color: '#ffffff',
                     lineHeight: 1.7,
+                    fontWeight: 400,
                     margin: 0,
                   }}
                 >
@@ -237,52 +231,46 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 </p>
               </div>
 
-              {/* Solution & Impact Card */}
+              {/* Column 2: How We Solve It & Tangible Result */}
               <div
                 style={{
-                  backgroundColor: 'rgba(255, 85, 0, 0.08)',
-                  border: '1px solid rgba(254, 98, 0, 0.3)',
-                  borderRadius: '8px',
-                  padding: '24px 28px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  gap: '18px',
+                  borderTop: '2px solid #fe6200',
+                  paddingTop: '24px',
                 }}
               >
-                <div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      color: '#fe6200',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    <CheckCircle2 size={16} />
-                    <span>How We Solve It</span>
-                  </div>
-                  <p
-                    style={{
-                      fontSize: '15px',
-                      color: '#351505',
-                      lineHeight: 1.7,
-                      margin: 0,
-                    }}
-                  >
-                    {mainProblemSolved.solution}
-                  </p>
-                </div>
-
                 <div
                   style={{
-                    paddingTop: '16px',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#fe6200',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    marginBottom: '16px',
+                  }}
+                >
+                  <CheckCircle2 size={16} />
+                  <span>How We Solve It</span>
+                </div>
+                <p
+                  style={{
+                    fontSize: '17px',
+                    color: '#ffffff',
+                    lineHeight: 1.7,
+                    fontWeight: 400,
+                    margin: '0 0 24px 0',
+                  }}
+                >
+                  {mainProblemSolved.solution}
+                </p>
+
+                {/* Tangible Result Accent */}
+                <div
+                  style={{
+                    borderLeft: '2px solid #34d399',
+                    paddingLeft: '16px',
                   }}
                 >
                   <div
@@ -291,15 +279,15 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                       fontWeight: 700,
                       color: '#a3a09b',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      marginBottom: '4px',
+                      letterSpacing: '0.06em',
+                      marginBottom: '6px',
                     }}
                   >
                     Tangible Result
                   </div>
                   <div
                     style={{
-                      fontSize: '14px',
+                      fontSize: '15px',
                       fontWeight: 600,
                       color: '#34d399',
                       lineHeight: 1.5,

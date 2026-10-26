@@ -67,7 +67,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
           <p style={{ fontSize: '13px', fontWeight: 600, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
             Last updated: August 20, 2025
           </p>
-          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', margin: 0, lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.03em', margin: 0, lineHeight: 1.1 }}>
             Cookie Policy
           </h1>
         </div>
@@ -122,7 +122,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
             {/* Editorial Content */}
             <article style={{ lineHeight: 1.75, color: 'rgba(255, 255, 255, 0.82)', fontSize: '15px' }}>
-              <p style={{ fontSize: '16.5px', color: '#351505', marginBottom: '24px', fontWeight: 400 }}>
+              <p style={{ fontSize: '16.5px', color: '#e4e2e1', marginBottom: '24px', fontWeight: 400 }}>
                 Neominds TechHub (“Neominds”) provides this Cookie Policy, which applies to all websites operated by or on behalf of Neominds (“Websites”). This Cookie Policy applies to all visitors, users, and others who access the Neominds Websites (“Users”). It explains how Neominds uses cookies, tags, pixels, and similar tracking technologies (collectively, “cookies”), as well as the options available to you to control them.
               </p>
               <p style={{ marginBottom: '32px' }}>
@@ -131,7 +131,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* What are cookies */}
               <div id="what-are-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   What are cookies?
                 </h3>
                 <p>
@@ -141,7 +141,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* What cookies do we use */}
               <div id="what-cookies-we-use" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   What cookies do we use?
                 </h3>
                 <p style={{ marginBottom: '20px' }}>
@@ -151,7 +151,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* Strictly necessary */}
               <div id="strictly-necessary" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span>Strictly necessary cookies</span>
                   <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', padding: '2px 8px', backgroundColor: '#fe6200', color: '#ffffff', borderRadius: '2px' }}>Required</span>
                 </h4>
@@ -162,7 +162,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* Performance cookies */}
               <div id="performance-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Performance cookies
                 </h4>
                 <p style={{ margin: 0, fontSize: '14.5px', color: '#a3a09b' }}>
@@ -172,7 +172,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* Functional cookies */}
               <div id="functional-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Functional cookies
                 </h4>
                 <p style={{ margin: 0, fontSize: '14.5px', color: '#a3a09b' }}>
@@ -182,7 +182,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* Targeting cookies */}
               <div id="targeting-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#070b14', marginBottom: '10px' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Targeting &amp; marketing cookies
                 </h4>
                 <p style={{ margin: 0, fontSize: '14.5px', color: '#a3a09b' }}>
@@ -194,7 +194,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               <div id="manage-preferences" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '6px', padding: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
                   <Sliders size={20} color="#fe6200" />
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: 0 }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
                     Manage Your Cookie Preferences
                   </h3>
                 </div>
@@ -277,7 +277,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
               {/* How to manage cookies */}
               <div id="how-to-manage-cookies" style={{ scrollMarginTop: '100px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#070b14', letterSpacing: '-0.02em', marginBottom: '14px' }}>
+                <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   How to manage cookies in your browser?
                 </h3>
                 <p style={{ marginBottom: '16px' }}>
@@ -302,7 +302,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
       <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
             <p style={{ fontSize: '15px', color: '#a3a09b', margin: '8px 0 0 0', maxWidth: '580px' }}>

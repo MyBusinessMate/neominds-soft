@@ -74,13 +74,12 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
             alignItems: 'stretch',
           }}
         >
-          {/* Left Column: Interactive Terminal Spec Sheet for Tech Stack */}
+          {/* Left Column: Technology Stack Matrix (Seamless Editorial Blend) */}
           <div
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-              border: '1px solid #1F1F23',
-              borderRadius: '10px',
-              padding: 'clamp(24px, 3.5vw, 36px)',
+              backgroundColor: 'transparent',
+              borderTop: '2px solid #fe6200',
+              paddingTop: '24px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
@@ -160,13 +159,12 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
             </div>
           </div>
 
-          {/* Right Column: Editorial Deliverable Spec Table (Not box cards!) */}
+          {/* Right Column: Editorial Deliverable Spec Table (Seamless Blend) */}
           <div
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-              border: '1px solid #1F1F23',
-              borderRadius: '10px',
-              padding: 'clamp(24px, 3.5vw, 36px)',
+              backgroundColor: 'transparent',
+              borderTop: '2px solid #22c55e',
+              paddingTop: '24px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',

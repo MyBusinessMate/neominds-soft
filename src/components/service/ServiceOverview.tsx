@@ -50,24 +50,20 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
             {statement}
           </ScrollReveal>
 
-          {/* Key Takeaway Card */}
-          <RevealElement variant="card">
+          {/* Key Takeaway Editorial Accent (No Box Card) */}
+          <RevealElement variant="text">
             <div
               style={{
-                backgroundColor: 'var(--colors-background-dark, #200b00)',
-                borderLeft: '4px solid #fe6200',
-                borderTop: '1px solid #351505',
-                borderRight: '1px solid #351505',
-                borderBottom: '1px solid #351505',
-                borderRadius: '4px',
-                padding: '18px 20px',
-                marginTop: '16px',
+                backgroundColor: 'transparent',
+                borderLeft: '3px solid #fe6200',
+                padding: '12px 0 12px 18px',
+                marginTop: '24px',
               }}
             >
-              <div style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
                 Primary Value Vector
               </div>
-              <div style={{ fontSize: '14px', fontWeight: 600, color: '#351505', lineHeight: 1.5 }}>
+              <div style={{ fontSize: '15.5px', fontWeight: 600, color: '#ffffff', lineHeight: 1.55 }}>
                 {keyTakeaway}
               </div>
             </div>
@@ -76,15 +72,16 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
 
         {/* Right Column: Editorial Body Paragraphs */}
         <RevealElement variant="text" delay={0.06}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             {paragraphs.map((p, idx) => (
               <p
                 key={idx}
                 style={{
-                  fontSize: '16px',
-                  lineHeight: 1.7,
-                  color: '#a3a09b',
+                  fontSize: '16.5px',
+                  lineHeight: 1.75,
+                  color: '#e4e2e1',
                   margin: 0,
+                  fontWeight: 400,
                 }}
               >
                 {p}

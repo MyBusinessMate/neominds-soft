@@ -210,7 +210,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
 
         {/* Main Content Sections */}
         <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: 'rgba(255, 255, 255, 0.82)' }}>
-          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#351505', marginBottom: '32px', fontWeight: 500 }}>
+          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#ffffff', marginBottom: '32px', fontWeight: 500 }}>
             {article.content.intro}
           </p>
 

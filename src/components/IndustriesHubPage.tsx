@@ -164,7 +164,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: '#070b14', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>

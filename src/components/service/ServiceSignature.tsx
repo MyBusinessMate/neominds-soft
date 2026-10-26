@@ -76,24 +76,13 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             <RevealElement key={idx} variant="card" delay={idx * 0.05}>
               <div
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
-                  borderRadius: '6px',
-                  padding: '24px',
+                  backgroundColor: 'transparent',
+                  borderTop: '2px solid #fe6200',
+                  padding: '24px 0 0 0',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  borderTop: '3px solid #fe6200',
-                  transition: 'transform 0.2s, border-color 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.borderColor = '#fe6200';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
                 }}
               >
                 <div>
@@ -186,16 +175,16 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
           ))}
         </div>
 
-        {/* Highlight Card if Present */}
+        {/* Highlight Banner if Present (Seamless Blend) */}
         {data.highlightCard && (
           <RevealElement variant="card" delay={0.2}>
             <div
               style={{
-                marginTop: '32px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '6px',
-                padding: '24px 32px',
+                marginTop: '48px',
+                backgroundColor: 'transparent',
+                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '24px 0',
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',

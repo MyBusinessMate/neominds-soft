@@ -280,7 +280,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 700, color: '#351505', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
               Verified Architectural Primitives
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -420,15 +420,15 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           Every capability in {title} is engineered as an isolated, production-grade module with direct API boundaries, enterprise observability, and strict automated regression coverage.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#351505' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#ffffff' }}>
             <CheckCircle2 size={16} color="#fe6200" />
             <span>100% Microservices / Modular Decoupling</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#351505' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#ffffff' }}>
             <CheckCircle2 size={16} color="#fe6200" />
             <span>Zero-Downtime Deployment Blueprints</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#351505' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#ffffff' }}>
             <CheckCircle2 size={16} color="#fe6200" />
             <span>Full Continuous Integration Test Coverage</span>
           </div>

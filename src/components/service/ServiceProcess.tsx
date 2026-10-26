@@ -132,49 +132,43 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
           })}
         </div>
 
-        {/* Phase Focus Console (Not a box card) */}
+        {/* Phase Focus Console (Seamless Editorial Blend - No Card Boxes) */}
         <div
           style={{
-            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid rgba(255, 255, 255, 0.08)',
-            borderRadius: '8px',
-            padding: 'clamp(28px, 4vw, 48px)',
-            boxShadow: '0 8px 30px rgba(32, 11, 0,  0.04)',
+            paddingTop: '20px',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(36px, 5vw, 64px)', alignItems: 'start' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 700, color: '#fe6200', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 700, color: '#fe6200', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
                 <span>Active Phase · Stage 0{steps[activeStep].step}</span>
               </div>
-              <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0' }}>
+              <h3 style={{ fontSize: 'clamp(24px, 2.8vw, 32px)', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
                 {steps[activeStep].title}
               </h3>
-              <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#e4e2e1', margin: 0 }}>
+              <p style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#e4e2e1', margin: 0, fontWeight: 400 }}>
                 {steps[activeStep].description}
               </p>
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '16px' }}>
                 Milestone Sign-Off Requirements
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {steps[activeStep].deliverables.map((del, dIdx) => (
                   <div
                     key={dIdx}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '12px',
-                      padding: '12px 16px',
-                      backgroundColor: 'rgba(32, 11, 0, 0.75)',
-                      borderRadius: '4px',
-                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      gap: '14px',
+                      padding: '14px 0',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
                     }}
                   >
-                    <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#ffffff' }}>
+                    <CheckCircle2 size={18} color="#fe6200" style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#ffffff', letterSpacing: '-0.01em' }}>
                       {del}
                     </span>
                   </div>
