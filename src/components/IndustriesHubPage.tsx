@@ -160,28 +160,14 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
-            <span
-              style={{
-                display: 'inline-block',
-                fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#fe6200',
-                marginBottom: '16px',
-              }}
-            >
-              Industry Focus
-            </span>
-
             <ScrollReveal
               as="h1"
               style={{
@@ -317,7 +303,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {ind.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#200b00' }}>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#fbf9f5' }}>
                         <CheckCircle size={14} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
@@ -335,7 +321,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     padding: '10px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
@@ -350,7 +336,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#f1efeb';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                     e.currentTarget.style.borderColor = '#e4e2e1';
                   }}
                 >

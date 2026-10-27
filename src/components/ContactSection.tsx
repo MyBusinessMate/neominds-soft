@@ -69,7 +69,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
+        backgroundColor: 'var(--colors-background-dark)', // #fbf9f5 Freehand deep dark brown
         borderTop: '1px solid var(--colors-border-dark)',
         overflow: 'hidden',
       }}
@@ -206,12 +206,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
             </div>
           </div>
 
-          {/* Right Column: Freehand Card (10px radius, #351505 bg) */}
+          {/* Right Column: Freehand Card (10px radius, #f0ece2 bg) */}
           <RevealElement variant="card" start="top 88%" end="top 55%">
             <div
               className="card-dark"
               style={{
-                backgroundColor: 'var(--colors-surface-dark-subtle)', // #351505
+                backgroundColor: 'var(--colors-surface-dark-subtle)', // #f0ece2
                 border: '1px solid var(--colors-border-dark)',
                 borderRadius: 'var(--radius-md)', // 10px exact Freehand spec
                 padding: 'clamp(28px, 4vw, 48px)',
@@ -338,7 +338,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       style={{
                         width: '100%',
                         padding: '12px 16px',
-                        backgroundColor: 'var(--colors-background-dark)', // #200b00
+                        backgroundColor: 'var(--colors-background-dark)', // #fbf9f5
                         border: '1px solid var(--colors-border-dark)',
                         borderRadius: 'var(--radius-sm)', // 1px exact Freehand spec
                         fontSize: '15px',

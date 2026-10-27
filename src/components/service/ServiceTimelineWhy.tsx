@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, CheckCircle2, Calendar, Award } from 'lucide-react';
+import { CheckCircle2, Calendar } from 'lucide-react';
 import { ServiceTimeline, ServiceWhyChoose } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -32,22 +32,6 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
         {timeline && (
           <div style={{ marginBottom: whyChooseThisService ? 'clamp(64px, 8vw, 92px)' : 0 }}>
             <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: '#fe6200',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '10px',
-                }}
-              >
-                <Clock size={14} />
-                <span>Timeline & Duration</span>
-              </div>
               <ScrollReveal
                 as="h2"
                 style={{
@@ -120,7 +104,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             gap: '4px',
                             fontSize: '12.5px',
                             fontWeight: 700,
-                            color: '#200b00',
+                            color: '#fbf9f5',
                           }}
                         >
                           <Calendar size={13} color="#fe6200" />
@@ -169,22 +153,6 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
             }}
           >
             <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: '#fe6200',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '10px',
-                }}
-              >
-                <Award size={14} />
-                <span>Why Choose This Service</span>
-              </div>
               <ScrollReveal
                 as="h2"
                 style={{

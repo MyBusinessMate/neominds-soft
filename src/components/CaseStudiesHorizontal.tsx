@@ -48,7 +48,7 @@ const caseStudies: CaseStudy[] = [
     title: 'Mindspace.ai: Healthcare Telehealth & Clinical Wellness Mobile App',
     description:
       'Engineered a HIPAA-compliant iOS and Android telehealth platform with offline biometrics, encrypted WebRTC video, and sub-100ms session sync.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #351505 0%, #200b00 55%, #150700 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #f0ece2 0%, #fbf9f5 55%, #f5f1e8 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop&q=80',
   },
   {
@@ -64,7 +64,7 @@ const caseStudies: CaseStudy[] = [
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#200b00',
+            color: '#fbf9f5',
             fontWeight: 900,
             fontSize: '13px',
           }}
@@ -128,7 +128,7 @@ const caseStudies: CaseStudy[] = [
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: '#200b00',
+            color: '#fbf9f5',
             fontWeight: 900,
             fontSize: '13px',
           }}
@@ -144,7 +144,7 @@ const caseStudies: CaseStudy[] = [
     title: 'High-Volume E-Commerce Inventory & Analytics Dashboard',
     description:
       'Constructed an executive real-time dashboard unifying multi-warehouse inventory telemetry, SKU velocity, and live retail order attribution.',
-    bgGradient: 'radial-gradient(ellipse at 40% 30%, #381706 0%, #200b00 55%, #150700 100%)',
+    bgGradient: 'radial-gradient(ellipse at 40% 30%, #eae4d8 0%, #fbf9f5 55%, #f5f1e8 100%)',
     imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&auto=format&fit=crop&q=80',
   },
 ];
@@ -214,7 +214,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
         position: 'relative',
         width: '100%',
         height: shouldStack ? 'auto' : '100vh',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         overflow: shouldStack ? 'visible' : 'hidden',
         display: 'flex',
         flexDirection: shouldStack ? 'column' : 'row',
@@ -225,9 +225,6 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesProps> = ({ onContactCli
       {/* Mobile / Stack Header Title */}
       {shouldStack && (
         <div style={{ padding: '36px 20px 20px 20px', textAlign: 'left', width: '100%' }}>
-          <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-            FEATURED WORK
-          </span>
           <h2 style={{ fontSize: '28px', fontWeight: 800, color: '#ffffff', margin: '4px 0 0 0', letterSpacing: '-0.02em' }}>
             Case Studies & Impact
           </h2>

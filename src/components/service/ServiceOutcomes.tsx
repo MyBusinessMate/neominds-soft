@@ -1,4 +1,4 @@
-import { TrendingUp, Award } from 'lucide-react';
+import { Award } from 'lucide-react';
 import { ServiceOutcome } from '../../types/service';
 import { ScrollReveal } from '../scroll-reveal';
 
@@ -12,7 +12,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         borderTop: '1px solid rgba(255, 255, 255, 0.08)',
         borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
       }}
@@ -29,23 +29,6 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
         >
           {/* Left Column: Value Vector Context */}
           <div>
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#fe6200',
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                marginBottom: '12px',
-              }}
-            >
-              <TrendingUp size={14} />
-              <span>Measurable Business ROI</span>
-            </div>
-
             <ScrollReveal
               as="h2"
               style={{
@@ -66,7 +49,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
               We tie every architectural deliverable directly to bottom-line enterprise results. By engineering out latency, failure points, and operational friction, our partners experience sustained efficiency gains.
             </p>
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 14px', backgroundColor: '#351505', borderRadius: '4px', fontSize: '13px', fontWeight: 600, color: '#e4e2e1' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 14px', backgroundColor: '#f0ece2', borderRadius: '4px', fontSize: '13px', fontWeight: 600, color: '#e4e2e1' }}>
               <Award size={15} color="#fe6200" />
               <span>Verified against real-world client production benchmarks</span>
             </div>
@@ -77,7 +60,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
             style={{
               display: 'flex',
               flexDirection: 'column',
-              borderTop: '1px solid #351505',
+              borderTop: '1px solid #f0ece2',
             }}
           >
             {outcomes.map((item, idx) => (
@@ -85,7 +68,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
                 key={idx}
                 style={{
                   padding: '28px 0',
-                  borderBottom: '1px solid #351505',
+                  borderBottom: '1px solid #f0ece2',
                   display: 'flex',
                   alignItems: 'baseline',
                   justifyContent: 'space-between',

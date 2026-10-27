@@ -36,8 +36,8 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
       style={{
         position: 'relative',
         padding: 'clamp(56px, 7vw, 96px) 24px clamp(48px, 6vw, 76px)',
-        background: 'var(--colors-background-dark, #200b00)',
-        borderBottom: '1px solid #351505',
+        background: 'var(--colors-background-dark, #fbf9f5)',
+        borderBottom: '1px solid #f0ece2',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -128,8 +128,8 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                   onClick={onViewCaseStudies}
                   style={{
                     color: '#ffffff',
-                    borderColor: '#351505',
-                    border: '1px solid #351505',
+                    borderColor: '#f0ece2',
+                    border: '1px solid #f0ece2',
                     borderRadius: '0px',
                     padding: '13px 24px',
                     fontWeight: 500,
@@ -143,7 +143,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                     e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.06)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#351505';
+                    e.currentTarget.style.borderColor = '#f0ece2';
                     e.currentTarget.style.backgroundColor = 'transparent';
                   }}
                 >
@@ -162,8 +162,8 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 height: 'clamp(280px, 32vw, 400px)',
                 borderRadius: '0px',
                 overflow: 'hidden',
-                border: '1px solid #351505',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                border: '1px solid #f0ece2',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
               }}
             >
               <img

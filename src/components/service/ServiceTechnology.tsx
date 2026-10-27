@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, FileCode, Package, ShieldCheck, Zap, Server } from 'lucide-react';
+import { Terminal, FileCode, Package, ShieldCheck, Zap } from 'lucide-react';
 import { ServiceTechCategory, ServiceDeliverable } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -27,22 +27,6 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#fe6200',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            <Server size={14} />
-            <span>Architecture & Concrete Artifacts</span>
-          </div>
           <ScrollReveal
             as="h2"
             style={{
@@ -108,7 +92,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     onClick={() => setActiveCategoryIdx(idx)}
                     style={{
                       backgroundColor: activeCategoryIdx === idx ? '#fe6200' : '#ffffff',
-                      color: activeCategoryIdx === idx ? '#ffffff' : '#200b00',
+                      color: activeCategoryIdx === idx ? '#ffffff' : '#fbf9f5',
                       border: activeCategoryIdx === idx ? '1px solid #fe6200' : '1px solid #e4e2e1',
                       padding: '7px 14px',
                       borderRadius: '4px',
@@ -143,7 +127,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                       }}
                     >
                       <Zap size={14} color="#fe6200" />
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#200b00' }}>
+                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#fbf9f5' }}>
                         {tech}
                       </span>
                     </div>

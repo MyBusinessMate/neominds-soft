@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, AlertCircle, CheckCircle2, Target } from 'lucide-react';
+import { Users, CheckCircle2, AlertCircle } from 'lucide-react';
 import { ServiceTargetAudience, ServiceMainProblem } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -31,22 +31,6 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
         {targetAudience && (
           <div style={{ marginBottom: mainProblemSolved ? 'clamp(56px, 7vw, 84px)' : 0 }}>
             <div style={{ textAlign: 'left', maxWidth: '820px', marginBottom: '36px' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: '#fe6200',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '10px',
-                }}
-              >
-                <Target size={15} />
-                <span>Target Audience</span>
-              </div>
               <ScrollReveal
                 as="h2"
                 style={{
@@ -153,22 +137,6 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
             }}
           >
             <div style={{ marginBottom: '36px', maxWidth: '820px' }}>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  color: '#fe6200',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  marginBottom: '10px',
-                }}
-              >
-                <AlertCircle size={15} />
-                <span>Main Problem Solved</span>
-              </div>
               <ScrollReveal
                 as="h2"
                 style={{
@@ -221,7 +189,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: 0,
@@ -257,7 +225,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: '0 0 24px 0',

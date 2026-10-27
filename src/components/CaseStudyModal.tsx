@@ -48,7 +48,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
           width: '100%',
           maxWidth: '860px',
           maxHeight: '90vh',
-          backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+          backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
           border: '1px solid #fe6200',
           color: '#FFFFFF',
           borderRadius: '8px',
@@ -91,7 +91,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   onViewProjectPage(project.id);
                 }}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
                   border: '1px solid #fe6200',
                   color: '#fe6200',
                   fontSize: '12px',
@@ -109,7 +109,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                   e.currentTarget.style.color = '#ffffff';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
+                  e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
                   e.currentTarget.style.color = '#fe6200';
                 }}
               >
@@ -122,8 +122,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               onClick={onClose}
               style={{
                 color: '#FFFFFF',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid var(--colors-border-dark, #351505)',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                border: '1px solid var(--colors-border-dark, #f0ece2)',
                 width: '36px',
                 height: '36px',
                 display: 'flex',
@@ -138,7 +138,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 e.currentTarget.style.color = '#ffffff';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
+                e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
                 e.currentTarget.style.color = '#FFFFFF';
               }}
               aria-label="Close modal"
@@ -166,8 +166,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         {/* Project Overview Bento Box */}
         <div
           style={{
-            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid var(--colors-border-dark, #351505)',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+            border: '1px solid var(--colors-border-dark, #f0ece2)',
             borderRadius: '6px',
             padding: '20px',
             marginBottom: '28px',
@@ -267,7 +267,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
             </p>
 
             {/* Key Features */}
-            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid var(--colors-border-dark, #351505)', borderRadius: '4px', padding: '16px', marginBottom: '16px' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid var(--colors-border-dark, #f0ece2)', borderRadius: '4px', padding: '16px', marginBottom: '16px' }}>
               <div style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', marginBottom: '10px' }}>
                 Key Features and Capabilities
               </div>
@@ -283,26 +283,26 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 
             {/* Tech Implementation */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#fe6200', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <Code2 size={13} color="#fe6200" /> FRONTEND
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.frontend}</div>
               </div>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#fe6200', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <Layers size={13} color="#fe6200" /> BACKEND
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.backend}</div>
               </div>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                 <div style={{ color: '#fe6200', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <Database size={13} color="#fe6200" /> DATABASE
                 </div>
                 <div style={{ color: '#FFFFFF', fontWeight: 600 }}>{project.technologyImplementation.database}</div>
               </div>
               {project.technologyImplementation.aiAutomation && (
-                <div style={{ border: '1px solid var(--colors-border-dark, #351505)', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
+                <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderRadius: '4px', padding: '12px', fontSize: '12.5px' }}>
                   <div style={{ color: '#fe6200', fontWeight: 700, marginBottom: '2px', display: 'flex', alignItems: 'center', gap: '4px' }}>
                     <Cpu size={13} color="#fe6200" /> AI / AUTOMATION
                   </div>
@@ -320,26 +320,26 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               {project.resultsAndImpact.summary}
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)' }}>
                 <span style={{ fontSize: '11px', color: '#9CA3AF', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Efficiency</span>
                 <strong style={{ fontSize: '13.5px', color: '#FFFFFF' }}>{project.resultsAndImpact.efficiency}</strong>
               </div>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)' }}>
                 <span style={{ fontSize: '11px', color: '#9CA3AF', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Time Saved</span>
                 <strong style={{ fontSize: '13.5px', color: '#FFFFFF' }}>{project.resultsAndImpact.timeSaved}</strong>
               </div>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)' }}>
                 <span style={{ fontSize: '11px', color: '#9CA3AF', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Cost Reduction</span>
                 <strong style={{ fontSize: '13.5px', color: '#FFFFFF' }}>{project.resultsAndImpact.costReduction}</strong>
               </div>
-              <div style={{ border: '1px solid var(--colors-border-dark, #351505)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)' }}>
+              <div style={{ border: '1px solid var(--colors-border-dark, #f0ece2)', borderRadius: '4px', padding: '12px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)' }}>
                 <span style={{ fontSize: '11px', color: '#9CA3AF', fontWeight: 700, textTransform: 'uppercase', display: 'block' }}>Performance</span>
                 <strong style={{ fontSize: '13.5px', color: '#FFFFFF' }}>{project.resultsAndImpact.performance}</strong>
               </div>
             </div>
           </div>
 
-          <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderLeft: '3px solid #fe6200', padding: '16px', borderRadius: '4px' }}>
+          <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderLeft: '3px solid #fe6200', padding: '16px', borderRadius: '4px' }}>
             <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#FFFFFF', marginBottom: '6px' }}>
               <span style={{ color: '#fe6200', marginRight: '6px' }}>7.</span> Key Takeaway
             </h3>

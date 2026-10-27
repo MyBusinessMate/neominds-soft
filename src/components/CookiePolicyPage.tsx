@@ -60,9 +60,9 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
   }, [newsletterEmail]);
 
   return (
-    <div className="p-cookie-policy-page" style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-cookie-policy-page" style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. p-content-intro */}
-      <section className="p-content-intro" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #351505' }}>
+      <section className="p-content-intro" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <p style={{ fontSize: '13px', fontWeight: 600, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
             Last updated: August 20, 2025
@@ -106,7 +106,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     textAlign: 'left',
                     background: 'none',
                     border: 'none',
-                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#351505'}`,
+                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#f0ece2'}`,
                     padding: '8px 14px',
                     color: activeSection === item.id ? '#fe6200' : '#868683',
                     fontWeight: activeSection === item.id ? 700 : 500,
@@ -130,7 +130,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </p>
 
               {/* What are cookies */}
-              <div id="what-are-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="what-are-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   What are cookies?
                 </h3>
@@ -140,7 +140,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* What cookies do we use */}
-              <div id="what-cookies-we-use" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="what-cookies-we-use" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   What cookies do we use?
                 </h3>
@@ -150,7 +150,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* Strictly necessary */}
-              <div id="strictly-necessary" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
+              <div id="strictly-necessary" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '4px', padding: '24px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <span>Strictly necessary cookies</span>
                   <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', padding: '2px 8px', backgroundColor: '#fe6200', color: '#ffffff', borderRadius: '2px' }}>Required</span>
@@ -161,7 +161,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* Performance cookies */}
-              <div id="performance-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
+              <div id="performance-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', borderRadius: '4px', padding: '24px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Performance cookies
                 </h4>
@@ -171,7 +171,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* Functional cookies */}
-              <div id="functional-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
+              <div id="functional-cookies" style={{ scrollMarginTop: '100px', marginBottom: '36px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', borderRadius: '4px', padding: '24px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Functional cookies
                 </h4>
@@ -181,7 +181,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* Targeting cookies */}
-              <div id="targeting-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', padding: '24px' }}>
+              <div id="targeting-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', borderRadius: '4px', padding: '24px' }}>
                 <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
                   Targeting &amp; marketing cookies
                 </h4>
@@ -191,7 +191,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* Manage Preferences Card */}
-              <div id="manage-preferences" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '6px', padding: '32px' }}>
+              <div id="manage-preferences" style={{ scrollMarginTop: '100px', marginBottom: '40px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '6px', padding: '32px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
                   <Sliders size={20} color="#fe6200" />
                   <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', margin: 0 }}>
@@ -200,7 +200,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginBottom: '28px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #351505', paddingBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #f0ece2', paddingBottom: '16px' }}>
                     <div>
                       <div style={{ fontWeight: 700, color: '#ffffff' }}>Strictly Necessary Cookies</div>
                       <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '2px' }}>Always active for security and core navigation.</div>
@@ -208,7 +208,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     <input type="checkbox" checked={true} disabled style={{ width: '18px', height: '18px', accentColor: '#fe6200' }} />
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #351505', paddingBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #f0ece2', paddingBottom: '16px' }}>
                     <div>
                       <div style={{ fontWeight: 700, color: '#ffffff' }}>Performance &amp; Analytics</div>
                       <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '2px' }}>Anonymized Core Web Vitals and load monitoring.</div>
@@ -221,7 +221,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                     />
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #351505', paddingBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #f0ece2', paddingBottom: '16px' }}>
                     <div>
                       <div style={{ fontWeight: 700, color: '#ffffff' }}>Functional Personalization</div>
                       <div style={{ fontSize: '13px', color: '#a3a09b', marginTop: '2px' }}>Remembers timezone and regional delivery hub.</div>
@@ -276,7 +276,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
               </div>
 
               {/* How to manage cookies */}
-              <div id="how-to-manage-cookies" style={{ scrollMarginTop: '100px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="how-to-manage-cookies" style={{ scrollMarginTop: '100px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   How to manage cookies in your browser?
                 </h3>
@@ -299,7 +299,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
       <LocationsSection />
 
       {/* 5. Newsletter Section (s-newsletter g-section js-newsletter theme-light) */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
@@ -321,8 +321,8 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                border: '1px solid #f0ece2',
                 borderRadius: '2px',
                 color: '#ffffff',
                 outline: 'none',

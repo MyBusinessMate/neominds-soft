@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight, ArrowRight, ShieldCheck } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
@@ -12,7 +12,6 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
   const [newsletterConsent, setNewsletterConsent] = useState(false);
   const [subError, setSubError] = useState('');
   const [copied, setCopied] = useState(false);
-  const [istTime, setIstTime] = useState('');
 
   const officeLocation = {
     title: 'Headquarters',
@@ -29,26 +28,6 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
     hours: 'Mon – Fri: 09:00 – 18:00 IST',
     timezone: 'Asia/Kolkata (UTC+5:30)',
   };
-
-  useEffect(() => {
-    const updateTime = () => {
-      try {
-        const timeStr = new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'Asia/Kolkata',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        }).format(new Date());
-        setIstTime(`${timeStr} IST`);
-      } catch {
-        setIstTime('12:00:00 IST');
-      }
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   const handleCopyAddress = async () => {
     try {
@@ -108,20 +87,6 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
         >
           {/* Left Column: Heading, Contact Info & Social Media Links */}
           <div>
-            <span
-              style={{
-                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#fe6200',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '10px',
-              }}
-            >
-              Physical Presence
-            </span>
             <ScrollReveal
               as="h2"
               className="section-title"
@@ -220,7 +185,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -234,7 +199,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -255,7 +220,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -269,7 +234,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -292,7 +257,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -306,7 +271,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -323,81 +288,13 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               style={{
                 backgroundColor: '#ffffff',
                 border: '1px solid #e4e2e1',
-                borderTop: '3px solid #fe6200',
                 borderRadius: '8px',
                 padding: 'clamp(24px, 3.5vw, 36px)',
                 position: 'relative',
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
               }}
             >
-              {/* Header Status Bar */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  flexWrap: 'wrap',
-                  gap: '12px',
-                  paddingBottom: '18px',
-                  borderBottom: '1px solid #e4e2e1',
-                  marginBottom: '20px',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span
-                    style={{
-                      fontFamily: 'var(--typography-mono-family)',
-                      fontSize: '11px',
-                      fontWeight: 700,
-                      letterSpacing: '0.12em',
-                      color: '#fe6200',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    Hyderabad Engineering HQ
-                  </span>
-                  <span style={{ color: '#868683', fontSize: '12px' }}>•</span>
-                  <span
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      color: '#868683',
-                      letterSpacing: '0.04em',
-                      textTransform: 'uppercase',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    REGISTERED LAB
-                  </span>
-                </div>
 
-                {/* Live Status Indicator */}
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '4px 10px',
-                    backgroundColor: '#f1efeb',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '4px',
-                    fontSize: '11px',
-                    fontFamily: 'var(--typography-mono-family)',
-                    color: '#200b00',
-                  }}
-                >
-                  <span
-                    style={{
-                      width: '7px',
-                      height: '7px',
-                      borderRadius: '50%',
-                      backgroundColor: '#16a34a',
-                      display: 'inline-block',
-                    }}
-                  />
-                  <span>Active · {istTime || 'IST UTC+5:30'}</span>
-                </div>
-              </div>
 
               {/* Title & Role */}
               <div style={{ marginBottom: '20px' }}>
@@ -555,7 +452,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
                     borderRadius: '4px',
-                    color: copied ? '#fe6200' : '#200b00',
+                    color: copied ? '#fe6200' : '#fbf9f5',
                     fontSize: '13px',
                     fontWeight: 600,
                     fontFamily: 'var(--typography-body-family)',
@@ -660,7 +557,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   >
                     OPERATING HOURS
                   </span>
-                  <span style={{ color: '#200b00', fontSize: '13.5px', fontWeight: 500, fontFamily: 'var(--typography-body-family)' }}>
+                  <span style={{ color: '#fbf9f5', fontSize: '13.5px', fontWeight: 500, fontFamily: 'var(--typography-body-family)' }}>
                     {officeLocation.hours}
                   </span>
                 </div>
@@ -697,7 +594,6 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               padding: 'clamp(24px, 3.5vw, 40px)',
               backgroundColor: '#ffffff',
               border: '1px solid #e4e2e1',
-              borderTop: '3px solid #fe6200',
               borderRadius: '8px',
               display: 'flex',
               flexDirection: 'column',
@@ -715,34 +611,20 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
               }}
             >
               <div style={{ maxWidth: '640px' }}>
-                <span
-                  style={{
-                    display: 'inline-block',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    letterSpacing: '0.12em',
-                    color: '#fe6200',
-                    textTransform: 'uppercase',
-                    marginBottom: '8px',
-                    fontFamily: 'var(--typography-mono-family)',
-                  }}
-                >
-                  // TECHNICAL DISPATCH
-                </span>
                 <h3
                   style={{
                     fontSize: 'clamp(22px, 2.5vw, 28px)',
                     fontWeight: 700,
                     color: '#000000',
                     margin: '0 0 8px 0',
-                    fontFamily: 'var(--typography-heading1-family)',
+                    fontFamily: 'var(--font-heading)',
                     letterSpacing: '-0.02em',
                   }}
                 >
                   Neominds Technical Briefings
                 </h3>
-                <p style={{ color: '#333333', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--typography-body-family)' }}>
-                  Direct engineering dispatches on distributed systems, applied LLM infrastructure, runtime optimizations, and production resilience. Published monthly. Zero promotional fluff.
+                <p style={{ color: '#555555', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
+                  Monthly engineering dispatches on real systems — LLM latency benchmarks, distributed architecture decisions, and production resilience. No promotional fluff, no spam.
                 </p>
               </div>
 
@@ -769,7 +651,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       border: '1px solid #e4e2e1',
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: '#200b00',
+                      color: '#fbf9f5',
                       borderRadius: '4px',
                       letterSpacing: '0.02em',
                       fontFamily: 'var(--typography-mono-family)',

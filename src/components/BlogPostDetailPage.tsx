@@ -39,7 +39,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. BREADCRUMB & BACK HEADER
           ======================================================== */}
@@ -112,8 +112,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               flexWrap: 'wrap',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderTop: '1px solid #351505',
-              borderBottom: '1px solid #351505',
+              borderTop: '1px solid #f0ece2',
+              borderBottom: '1px solid #f0ece2',
               padding: '16px 0',
               gap: '16px',
             }}
@@ -187,8 +187,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         {/* Executive Summary / Key Takeaways Box */}
         <div
           style={{
-            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-            border: '1px solid #351505',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+            border: '1px solid #f0ece2',
             borderLeft: '4px solid #fe6200',
             borderRadius: '4px',
             padding: '24px 28px',
@@ -242,7 +242,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               {section.codeSnippet && (
                 <pre
                   style={{
-                    backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                    backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
                     color: '#FFFFFF',
                     padding: '20px',
                     borderRadius: '6px',
@@ -261,7 +261,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           ))}
 
           {/* Conclusion */}
-          <div style={{ borderTop: '1px solid #351505', paddingTop: '28px', marginTop: '40px' }}>
+          <div style={{ borderTop: '1px solid #f0ece2', paddingTop: '28px', marginTop: '40px' }}>
             <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#ffffff', marginBottom: '12px' }}>
               Final Architecture Considerations
             </h3>
@@ -270,14 +270,14 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         </div>
 
         {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #351505' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #f0ece2' }}>
           {article.tags.map((t) => (
             <span
               key={t}
               style={{
                 fontSize: '12px',
-                backgroundColor: 'var(--colors-background-dark, #200b00)',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                border: '1px solid #f0ece2',
                 padding: '4px 10px',
                 borderRadius: '3px',
                 color: '#a3a09b',
@@ -290,7 +290,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
 
         {/* Related Articles Strip */}
         {relatedArticles.length > 0 && (
-          <div style={{ marginTop: '64px', borderTop: '2px solid #351505', paddingTop: '36px' }}>
+          <div style={{ marginTop: '64px', borderTop: '2px solid #f0ece2', paddingTop: '36px' }}>
             <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#ffffff', fontFamily: 'var(--font-heading)', marginBottom: '20px' }}>
               Related Architecture Essays
             </h3>
@@ -303,7 +303,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   style={{
-                    border: '1px solid #351505',
+                    border: '1px solid #f0ece2',
                     borderRadius: '6px',
                     padding: '20px',
                     cursor: 'pointer',
@@ -314,7 +314,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#351505';
+                    e.currentTarget.style.borderColor = '#f0ece2';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >

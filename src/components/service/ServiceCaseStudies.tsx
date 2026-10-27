@@ -64,7 +64,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
       ref={sectionRef}
       style={{
         position: 'relative',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         color: '#ffffff',
         overflow: 'hidden',
       }}
@@ -95,18 +95,6 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
           }}
         >
           <div>
-            <div
-              style={{
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#fe6200',
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                marginBottom: '8px',
-              }}
-            >
-              Verified Track Record
-            </div>
             <ScrollReveal
               as="h2"
               style={{
@@ -173,7 +161,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
               style={{
                 width: isMobile ? '100%' : '520px',
                 minWidth: isMobile ? '100%' : '520px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
                 borderRadius: '8px',
                 padding: '32px',
@@ -272,7 +260,7 @@ export const ServiceCaseStudies: React.FC<ServiceCaseStudiesProps> = ({
                       style={{
                         fontSize: '11px',
                         fontWeight: 600,
-                        backgroundColor: '#351505',
+                        backgroundColor: '#f0ece2',
                         color: '#868683',
                         padding: '4px 8px',
                         borderRadius: '2px',

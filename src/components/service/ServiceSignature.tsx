@@ -11,7 +11,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         color: '#ffffff',
         position: 'relative',
         overflow: 'hidden',
@@ -20,28 +20,6 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
       <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ maxWidth: '780px', marginBottom: '56px' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              marginBottom: '16px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: 'monospace',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#fe6200',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {data.badge}
-            </span>
-          </div>
-
           <ScrollReveal
             as="h2"
             style={{

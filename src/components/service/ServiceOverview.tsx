@@ -21,10 +21,6 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
-          Strategic Overview
-        </div>
-
         <div
           style={{
             display: 'grid',
@@ -61,9 +57,6 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
                   marginTop: '24px',
                 }}
               >
-                <div style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '6px' }}>
-                  Primary Value Vector
-                </div>
                 <div style={{ fontSize: '15.5px', fontWeight: 600, color: '#000000', lineHeight: 1.55 }}>
                   {keyTakeaway}
                 </div>

@@ -81,7 +81,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
         position: 'relative',
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#200b00', // Freehand warm dark espresso background
+        backgroundColor: '#fbf9f5', // Freehand warm dark espresso background
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
@@ -138,23 +138,23 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               textTransform: 'none',
             }}
           >
-            Building AI-Powered Products & Systems
+            Building software that scales — and AI that delivers in production.
           </h1>
 
           <p
             style={{
-              color: 'rgba(255, 255, 255, 0.82)',
+              color: 'rgba(255, 255, 255, 0.85)',
               fontSize: 'clamp(16px, 1.25vw, 19px)',
               lineHeight: 1.6,
               fontWeight: 400,
               marginBottom: '36px',
-              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
             }}
           >
-            Neominds TechHub designs, builds, and modernizes enterprise web, mobile, cloud and applied AI systems for industry leaders worldwide.
+            From high-growth SaaS platforms and mobile apps to production multi-agent AI systems. We partner with product leaders to design, build, and scale reliable software with dedicated engineering teams.
           </p>
 
-          {/* CTA Group: Freehand Architectural Buttons */}
+          {/* CTA Group: Apple Capsule Action Controls */}
           <div
             ref={ctaGroupRef}
             style={{
@@ -172,12 +172,16 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               style={{
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
-                borderRadius: '0px',
+                borderRadius: '9999px',
                 padding: '14px 28px',
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: '15px',
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
+                boxShadow: '0 4px 16px rgba(254, 98, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45)',
+                transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease',
               }}
             >
               REQUEST A DEMO
@@ -188,13 +192,17 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               asLink
               href="#services"
               style={{
-                borderColor: '#351505',
+                borderColor: 'rgba(255, 255, 255, 0.16)',
                 color: '#ffffff',
-                borderRadius: '0px',
-                padding: '14px 24px',
+                borderRadius: '9999px',
+                padding: '14px 26px',
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 500,
                 fontSize: '15px',
-                backgroundColor: 'transparent',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+                transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease',
               }}
             >
               Explore Capabilities
@@ -341,7 +349,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           position: 'relative',
           zIndex: 3,
           width: '100%',
-          borderTop: '1px solid #351505',
+          borderTop: '1px solid #f0ece2',
           backgroundColor: 'rgba(26, 9, 2, 0.98)',
           paddingTop: '20px',
           paddingBottom: '20px',

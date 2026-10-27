@@ -1,5 +1,5 @@
 import React from 'react';
-import { Lock, ShieldCheck, Key, Server, FileCheck2 } from 'lucide-react';
+import { ShieldCheck, Key, Server, FileCheck2 } from 'lucide-react';
 import { ContactSection } from './ContactSection';
 import { LocationsSection } from './LocationsSection';
 import { Footer } from './Footer';
@@ -15,15 +15,10 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
   onOpenLegal,
 }) => {
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: 'var(--navbar-height)', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', minHeight: '100vh', paddingTop: 'var(--navbar-height)', fontFamily: 'var(--font-body)' }}>
       {/* Hero */}
-      <section style={{ paddingBlock: 'var(--section-small-y)', paddingInline: 'var(--page-padding)', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderBottom: '1px solid #351505' }}>
+      <section style={{ paddingBlock: 'var(--section-small-y)', paddingInline: 'var(--page-padding)', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderBottom: '1px solid #f0ece2' }}>
         <div className="container-reading">
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)', padding: 'var(--badge-pad-y) var(--badge-pad-x)', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: 'var(--badge-radius)', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 'var(--space-4)' }}>
-            <Lock size={14} />
-            <span>Information Security & Compliance</span>
-          </div>
-
           <h1 style={{ fontSize: 'clamp(32px, 4vw, 48px)', fontWeight: 800, fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: 'var(--space-3)' }}>
             Security & Compliance Standards
           </h1>
@@ -47,7 +42,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
 
           {/* 4 Pillars of Security */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '20px' }}>
-            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '0px', padding: '24px' }}>
               <ShieldCheck size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>ISO/IEC 27001 Certified</h3>
               <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
@@ -55,7 +50,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '0px', padding: '24px' }}>
               <Key size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Cryptographic Encryption</h3>
               <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
@@ -63,7 +58,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '0px', padding: '24px' }}>
               <Server size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Air-Gapped AI Isolation</h3>
               <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>
@@ -71,7 +66,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               </p>
             </div>
 
-            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', borderRadius: '0px', padding: '24px' }}>
+            <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '0px', padding: '24px' }}>
               <FileCheck2 size={28} color="#fe6200" style={{ marginBottom: '12px' }} />
               <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '8px' }}>Automated DevSecOps</h3>
               <p style={{ fontSize: '13px', color: '#a3a09b', margin: 0 }}>

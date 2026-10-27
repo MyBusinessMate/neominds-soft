@@ -139,7 +139,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
   return (
     <div
       style={{
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         color: '#ffffff',
         minHeight: '100vh',
         paddingTop: '64px',

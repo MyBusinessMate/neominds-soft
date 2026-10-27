@@ -33,7 +33,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Chief Technology Officer',
     date: 'February 24, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
+    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
     featured: true,
   },
   {
@@ -58,7 +58,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'VP of Engineering',
     date: 'February 10, 2026',
     readTime: '10 min read',
-    imageBg: 'linear-gradient(180deg, #351505 0%, #150700 100%)',
+    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #f5f1e8 100%)',
   },
   {
     id: 'zero-downtime-strangler-migration',
@@ -70,7 +70,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Principal Solution Architect',
     date: 'January 28, 2026',
     readTime: '7 min read',
-    imageBg: 'linear-gradient(180deg, #2a1205 0%, #200b00 100%)',
+    imageBg: 'linear-gradient(180deg, #2a1205 0%, #fbf9f5 100%)',
   },
   {
     id: 'rag-hallucination-elimination',
@@ -82,7 +82,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Lead AI Research Engineer',
     date: 'January 20, 2026',
     readTime: '9 min read',
-    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
+    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
   },
   {
     id: 'nextjs-15-edge-performance',
@@ -94,7 +94,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Lead Frontend Architect',
     date: 'January 14, 2026',
     readTime: '5 min read',
-    imageBg: 'linear-gradient(180deg, #2e1103 0%, #150700 100%)',
+    imageBg: 'linear-gradient(180deg, #2e1103 0%, #f5f1e8 100%)',
   },
   {
     id: 'soc2-hipaa-cloud-hardening',
@@ -106,7 +106,7 @@ const BLOG_POSTS: BlogPost[] = [
     authorRole: 'Head of Cloud & DevOps',
     date: 'January 05, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #351505 0%, #200b00 100%)',
+    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
   },
 
 ];
@@ -152,7 +152,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. HERO HEADER
           ======================================================== */}
@@ -160,7 +160,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
           background: 'linear-gradient(180deg, #faf8f5 0%, #ffffff 100%)',
-          borderBottom: '1px solid #351505',
+          borderBottom: '1px solid #f0ece2',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
@@ -203,8 +203,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 style={{
                   width: '100%',
                   padding: '12px 16px 12px 46px',
-                  backgroundColor: 'var(--colors-background-dark, #200b00)',
-                  border: '1px solid #351505',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid #f0ece2',
                   borderRadius: '4px',
                   fontSize: '14px',
                   color: '#ffffff',
@@ -242,7 +242,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
               style={{
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
                 border: '1px solid #1F1F23',
                 color: '#ffffff',
                 borderRadius: '8px',
@@ -325,8 +325,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               <RevealElement key={post.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <article
                   style={{
-                    backgroundColor: 'var(--colors-background-dark, #200b00)',
-                    border: '1px solid #351505',
+                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                    border: '1px solid #f0ece2',
                     borderRadius: '6px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -343,7 +343,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.06)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#351505';
+                  e.currentTarget.style.borderColor = '#f0ece2';
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = 'none';
                 }}
@@ -372,7 +372,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                     </p>
                   </div>
 
-                  <div style={{ borderTop: '1px solid #351505', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div style={{ borderTop: '1px solid #f0ece2', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div>
                       <div style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>{post.author}</div>
                       <div style={{ fontSize: '11px', color: '#a3a09b' }}>{post.date}</div>
@@ -395,7 +395,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           4. NEWSLETTER SUBSCRIPTION STRIP
           ======================================================== */}
       <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
+        <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead

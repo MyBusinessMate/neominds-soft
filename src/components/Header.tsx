@@ -196,41 +196,42 @@ export const Header: React.FC<HeaderProps> = ({
         }}
       >
         {/* ========================================================
-            EFFECTIVESOFT ARCHITECTURAL SHRINKING FLOATING NAVBAR PILL
-            Starts full-width edge-to-edge (100% width, 64px height).
-            When scrolled, smoothly shrinks to 46.5rem (~744px) matching EffectiveSoft!
+            APPLE VISIONOS FLOATING GLASS CAPSULE NAVBAR
+            Starts full-width edge-to-edge (100% width, 68px height).
+            When scrolled, smoothly shrinks into floating glass pill capsule (840px, 56px height, 9999px pill radius)
             ======================================================== */}
         <div
           style={{
-            width: isScrolled ? 'min(92%, 760px)' : '100%',
-            maxWidth: isScrolled ? '760px' : '1320px',
-            height: isScrolled ? '48px' : '64px',
-            borderRadius: isScrolled ? '4px' : '0px',
+            width: isScrolled ? 'min(94%, 860px)' : '100%',
+            maxWidth: isScrolled ? '860px' : '1360px',
+            height: isScrolled ? '56px' : '68px',
+            borderRadius: isScrolled ? '9999px' : '0px',
             backgroundColor: isScrolled
-              ? 'rgba(255, 255, 255, 0.98)'
+              ? 'rgba(255, 255, 255, 0.92)'
               : activeMenu
               ? '#ffffff'
-              : '#ffffff',
-            backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-            borderTop: isScrolled ? '1px solid #e4e2e1' : 'none',
-            borderLeft: isScrolled ? '1px solid #e4e2e1' : 'none',
-            borderRight: isScrolled ? '1px solid #e4e2e1' : 'none',
-            borderBottom: '1px solid #e4e2e1',
+              : 'rgba(255, 255, 255, 0.98)',
+            backdropFilter: 'blur(28px) saturate(190%)',
+            WebkitBackdropFilter: 'blur(28px) saturate(190%)',
+            borderTop: isScrolled ? '1px solid rgba(255, 255, 255, 0.75)' : 'none',
+            borderLeft: isScrolled ? '1px solid rgba(228, 226, 225, 0.85)' : 'none',
+            borderRight: isScrolled ? '1px solid rgba(228, 226, 225, 0.85)' : 'none',
+            borderBottom: isScrolled ? '1px solid rgba(228, 226, 225, 0.9)' : '1px solid #e4e2e1',
             boxShadow: isScrolled
-              ? '0 10px 30px rgba(0, 0, 0, 0.08)'
+              ? '0 16px 40px -10px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)'
               : '0 1px 3px rgba(0, 0, 0, 0.03)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            paddingInline: isScrolled ? '12px' : 'clamp(20px, 3.5vw, 44px)',
+            paddingInline: isScrolled ? '18px' : 'clamp(20px, 3.5vw, 44px)',
             boxSizing: 'border-box',
             pointerEvents: 'auto',
             willChange: 'width, max-width, height, transform',
             transform: 'translateZ(0)',
-            transition: 'width 0.45s cubic-bezier(0.19, 1, 0.22, 1), max-width 0.45s cubic-bezier(0.19, 1, 0.22, 1), height 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-radius 0.4s ease, padding 0.4s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+            transition: 'width 0.45s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
           }}
         >
-          {/* Left Brand Logo: Freehand style orange asterisk mark + black typography */}
+          {/* Left Brand Logo: Freehand style orange asterisk mark + black DM Sans typography */}
           <div
             onClick={handleLogoClick}
             style={{
@@ -252,7 +253,7 @@ export const Header: React.FC<HeaderProps> = ({
             </svg>
             <span
               style={{
-                fontFamily: 'var(--font-heading)',
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: isScrolled ? '18px' : '21px',
                 fontWeight: 800,
                 letterSpacing: '-0.025em',
@@ -260,22 +261,22 @@ export const Header: React.FC<HeaderProps> = ({
                 whiteSpace: 'nowrap',
               }}
             >
-              neominds
+              Neominds
             </span>
           </div>
 
-          {/* Center Navigation Links: Dark text #000000, Orange #fe6200 on active/hover */}
+          {/* Center Navigation Links: DM Sans font, Apple visionOS pill gaze highlight on hover */}
           <nav
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: isScrolled ? '20px' : 'clamp(24px, 2.5vw, 38px)',
+              gap: isScrolled ? '6px' : 'clamp(10px, 1.6vw, 24px)',
               height: '100%',
               transition: 'gap 0.4s ease',
             }}
             className="desktop-nav"
           >
-            {/* 1. What we do (Freehand "AI Teams" style) */}
+            {/* 1. What we do */}
             <div
               style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
               onMouseEnter={() => handleMouseEnter('what-we-do')}
@@ -284,32 +285,42 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={(e) => handleMenuToggle(e, 'what-we-do')}
                 style={{
                   color: activeMenu === 'what-we-do' ? '#fe6200' : '#000000',
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: '15px',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '5px',
-                  padding: '6px 0',
-                  transition: 'color 0.2s',
-                  background: 'none',
+                  gap: '6px',
+                  padding: '8px 14px',
+                  borderRadius: '6px',
+                  backgroundColor: activeMenu === 'what-we-do' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeMenu !== 'what-we-do') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  if (activeMenu !== 'what-we-do') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                <span>What we do</span>
+                <span style={{ whiteSpace: 'nowrap' }}>What we do</span>
                 <ChevronDown
                   size={14}
                   style={{
                     transform: activeMenu === 'what-we-do' ? 'rotate(180deg)' : 'none',
                     transition: 'transform 0.2s, color 0.2s',
                     color: activeMenu === 'what-we-do' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
             </div>
 
-            {/* 2. Who we are (Freehand "Company" style) */}
+            {/* 2. Who we are */}
             <div
               style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
               onMouseEnter={() => handleMouseEnter('who-we-are')}
@@ -318,32 +329,42 @@ export const Header: React.FC<HeaderProps> = ({
                 onClick={(e) => handleMenuToggle(e, 'who-we-are')}
                 style={{
                   color: activeMenu === 'who-we-are' ? '#fe6200' : '#000000',
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: '15px',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '5px',
-                  padding: '6px 0',
-                  transition: 'color 0.2s',
-                  background: 'none',
+                  gap: '6px',
+                  padding: '8px 14px',
+                  borderRadius: '6px',
+                  backgroundColor: activeMenu === 'who-we-are' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeMenu !== 'who-we-are') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  if (activeMenu !== 'who-we-are') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                <span>Who we are</span>
+                <span style={{ whiteSpace: 'nowrap' }}>Who we are</span>
                 <ChevronDown
                   size={14}
                   style={{
                     transform: activeMenu === 'who-we-are' ? 'rotate(180deg)' : 'none',
                     transition: 'transform 0.2s, color 0.2s',
                     color: activeMenu === 'who-we-are' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
             </div>
 
-            {/* 3. Insights (Freehand "Learn" style) */}
+            {/* 3. Insights */}
             <div
               style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
               onMouseEnter={() => handleMouseEnter('insights')}
@@ -355,26 +376,36 @@ export const Header: React.FC<HeaderProps> = ({
                     activeMenu === 'insights' || currentPage === 'insights' || currentPage === 'blog' || currentPage === 'company-updates'
                       ? '#fe6200'
                       : '#000000',
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: '15px',
-                  fontWeight: 500,
+                  fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '5px',
-                  padding: '6px 0',
-                  transition: 'color 0.2s',
-                  background: 'none',
+                  gap: '6px',
+                  padding: '8px 14px',
+                  borderRadius: '6px',
+                  backgroundColor: activeMenu === 'insights' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeMenu !== 'insights') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+                }}
+                onMouseLeave={(e) => {
+                  if (activeMenu !== 'insights') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
-                <span>Insights</span>
+                <span style={{ whiteSpace: 'nowrap' }}>Insights</span>
                 <ChevronDown
                   size={14}
                   style={{
                     transform: activeMenu === 'insights' ? 'rotate(180deg)' : 'none',
                     transition: 'transform 0.2s, color 0.2s',
                     color: activeMenu === 'insights' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
@@ -385,41 +416,51 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={() => navigateToPage('portfolio')}
               style={{
                 color: currentPage === 'portfolio' ? '#fe6200' : '#000000',
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: '15px',
-                fontWeight: 500,
-                padding: '6px 0',
-                transition: 'color 0.2s',
-                background: 'none',
+                fontWeight: 600,
+                padding: '8px 14px',
+                borderRadius: '6px',
+                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                 border: 'none',
+                background: currentPage === 'portfolio' ? 'rgba(254, 98, 0, 0.08)' : 'none',
                 cursor: 'pointer',
                 letterSpacing: '-0.01em',
+                whiteSpace: 'nowrap',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = currentPage === 'portfolio' ? '#fe6200' : '#000000')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.color = '#fe6200';
+                if (currentPage !== 'portfolio') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.color = currentPage === 'portfolio' ? '#fe6200' : '#000000';
+                if (currentPage !== 'portfolio') e.currentTarget.style.backgroundColor = 'transparent';
+              }}
             >
               Case studies
             </button>
           </nav>
 
-          {/* Right CTA Button: Freehand Rectangular Solid Orange #fe6200 "REQUEST A DEMO" */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: isScrolled ? '10px' : '14px' }}>
+          {/* Right CTA Button: REQUEST A DEMO (Sized proportionally within navbar bounds) */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: isScrolled ? '10px' : '14px', flexShrink: 0 }}>
             <button
               onClick={() => navigateToPage('contacts')}
               className="desktop-send-btn"
               style={{
-                height: isScrolled ? '34px' : '38px',
-                paddingInline: isScrolled ? '16px' : '22px',
+                height: isScrolled ? '36px' : '40px',
+                paddingInline: isScrolled ? '16px' : '20px',
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '0.06em',
+                fontWeight: 800,
+                letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 lineHeight: 1,
                 borderRadius: '3px',
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
                 border: 'none',
-                boxShadow: 'none',
-                transition: 'background-color 0.2s ease, transform 0.15s ease',
+                boxShadow: '0 2px 6px rgba(254, 98, 0, 0.22)',
+                transition: 'all 0.2s ease',
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -427,10 +468,20 @@ export const Header: React.FC<HeaderProps> = ({
                 cursor: 'pointer',
                 flexShrink: 0,
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#d94f00')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#e05500';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(254, 98, 0, 0.32)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#fe6200';
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 2px 6px rgba(254, 98, 0, 0.22)';
+              }}
+              onMouseDown={(e) => (e.currentTarget.style.transform = 'scale(0.98)')}
+              onMouseUp={(e) => (e.currentTarget.style.transform = 'translateY(-1px)')}
             >
-              Request a demo
+              REQUEST A DEMO
             </button>
 
             {/* Mobile Menu Hamburger */}
@@ -446,7 +497,7 @@ export const Header: React.FC<HeaderProps> = ({
                 color: '#000000',
                 background: 'rgba(0, 0, 0, 0.04)',
                 border: '1px solid #e4e2e1',
-                borderRadius: '4px',
+                borderRadius: '9999px',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 flexShrink: 0,
@@ -468,16 +519,19 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 1040px)',
               maxWidth: '1040px',
-              marginTop: isScrolled ? '8px' : '0px',
-              borderRadius: '8px',
-              border: '1px solid #e4e2e1',
-              backgroundColor: '#ffffff',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.12)',
+              marginTop: isScrolled ? '12px' : '4px',
+              borderRadius: '24px',
+              border: '1px solid rgba(228, 226, 225, 0.85)',
+              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backdropFilter: 'blur(32px) saturate(190%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(190%)',
+              boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
               overflow: 'hidden',
-              transition: 'margin-top 0.3s ease',
+              fontFamily: "'DM Sans', sans-serif",
+              transition: 'margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             <div
@@ -650,16 +704,19 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 880px)',
               maxWidth: '880px',
-              marginTop: isScrolled ? '8px' : '0px',
-              borderRadius: '8px',
-              border: '1px solid #e4e2e1',
-              backgroundColor: '#ffffff',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.14)',
+              marginTop: isScrolled ? '12px' : '4px',
+              borderRadius: '24px',
+              border: '1px solid rgba(228, 226, 225, 0.85)',
+              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backdropFilter: 'blur(32px) saturate(190%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(190%)',
+              boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
               overflow: 'hidden',
-              transition: 'margin-top 0.3s ease',
+              fontFamily: "'DM Sans', sans-serif",
+              transition: 'margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             <div
@@ -743,7 +800,7 @@ export const Header: React.FC<HeaderProps> = ({
                     height: '130px',
                     width: '100%',
                     borderRadius: '4px',
-                    background: 'linear-gradient(135deg, #351505 0%, #200b00 100%)',
+                    background: 'linear-gradient(135deg, #f0ece2 0%, #fbf9f5 100%)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -820,18 +877,21 @@ export const Header: React.FC<HeaderProps> = ({
             style={{
               width: 'min(94%, 680px)',
               maxWidth: '680px',
-              marginTop: isScrolled ? '8px' : '0px',
-              borderRadius: '8px',
-              border: '1px solid #e4e2e1',
-              backgroundColor: '#ffffff',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.14)',
+              marginTop: isScrolled ? '12px' : '4px',
+              borderRadius: '24px',
+              border: '1px solid rgba(228, 226, 225, 0.85)',
+              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backdropFilter: 'blur(32px) saturate(190%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(190%)',
+              boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
               animation: 'megaDropdownFadeIn 0.22s ease-out',
               pointerEvents: 'auto',
               overflow: 'hidden',
               display: 'grid',
               gridTemplateColumns: '220px 1fr',
-              transition: 'margin-top 0.3s ease',
+              fontFamily: "'DM Sans', sans-serif",
+              transition: 'margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
             {/* Left Column: 6 Vertical Links in crisp black #000000 */}
@@ -980,8 +1040,8 @@ export const Header: React.FC<HeaderProps> = ({
                   fill="#fe6200"
                 />
               </svg>
-              <span style={{ fontSize: '20px', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)' }}>
-                neominds
+              <span style={{ fontSize: '20px', fontWeight: 800, color: '#000000', fontFamily: "'DM Sans', sans-serif", letterSpacing: '-0.025em' }}>
+                Neominds
               </span>
             </div>
             <button

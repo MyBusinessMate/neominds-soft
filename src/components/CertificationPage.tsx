@@ -125,9 +125,9 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
   }, [newsletterEmail]);
 
   return (
-    <div className="p-certification-page" style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '68px', color: '#ffffff', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-certification-page" style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '68px', color: '#ffffff', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. s-hero g-section theme-light s-hero--img-right */}
-      <section className="s-hero g-section theme-light s-hero--img-right" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #351505' }}>
+      <section className="s-hero g-section theme-light s-hero--img-right" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr', gap: '32px', alignItems: 'center' }}>
           <style>{`
             @media (min-width: 900px) {
@@ -152,7 +152,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: '100%', maxWidth: '280px', padding: '32px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', borderRadius: '4px', textAlign: 'center', boxShadow: '0 10px 30px rgba(32, 11, 0, 0.04)' }}>
+              <div style={{ width: '100%', maxWidth: '280px', padding: '32px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', borderRadius: '4px', textAlign: 'center', boxShadow: '0 10px 30px rgba(32, 11, 0, 0.04)' }}>
                 <div style={{ width: '56px', height: '56px', margin: '0 auto 16px auto', borderRadius: '50%', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <ShieldCheck size={28} color="#fe6200" />
                 </div>
@@ -165,7 +165,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 2. s-certification__group: Company level */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -181,15 +181,15 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                  border: '1px solid #f0ece2',
                   borderRadius: '4px',
                   padding: '28px',
                   transition: 'all 0.2s ease',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
-                  <div style={{ width: '44px', height: '44px', borderRadius: '4px', backgroundColor: 'var(--colors-background-dark, #200b00)', border: '1px solid #351505', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ width: '44px', height: '44px', borderRadius: '4px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {item.icon}
                   </div>
                   <span style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
@@ -212,7 +212,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 3. s-certification__group: Certificates of compliance */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderBottom: '1px solid #351505' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -228,10 +228,10 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  border: '1px solid #351505',
+                  border: '1px solid #f0ece2',
                   borderRadius: '4px',
                   padding: '28px',
-                  backgroundColor: 'var(--colors-background-dark, #200b00)',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
@@ -253,7 +253,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 4. s-certification__group: Personal employee certificates */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -269,8 +269,8 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                  border: '1px solid #f0ece2',
                   borderRadius: '4px',
                   padding: '18px 20px',
                   display: 'flex',
@@ -294,7 +294,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 5. s-certification__group: Industry recognition */}
-      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', borderBottom: '1px solid #351505' }}>
+      <section className="s-certification__group" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -306,7 +306,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
-            <div style={{ border: '1px solid #351505', borderRadius: '4px', padding: '28px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '4px', padding: '28px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '12px' }}>
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} size={18} fill="#f59e0b" color="#f59e0b" />
@@ -320,7 +320,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               </p>
             </div>
 
-            <div style={{ border: '1px solid #351505', borderRadius: '4px', padding: '28px', backgroundColor: 'var(--colors-background-dark, #200b00)' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '4px', padding: '28px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                 <Award size={20} color="#fe6200" />
                 <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase' }}>Clutch Global Leader</span>
@@ -337,7 +337,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       </section>
 
       {/* 6. g-section s-testimonials js-slider-testimonials theme-gray */}
-      <section className="g-section s-testimonials js-slider-testimonials theme-gray" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderBottom: '1px solid #351505' }}>
+      <section className="g-section s-testimonials js-slider-testimonials theme-gray" style={{ padding: 'clamp(56px, 7vw, 84px) 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
@@ -353,8 +353,8 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                  border: '1px solid #351505',
+                  backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                  border: '1px solid #f0ece2',
                   borderRadius: '4px',
                   padding: '32px',
                 }}
@@ -380,7 +380,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
       <LocationsSection />
 
       {/* 9. Newsletter Section (s-newsletter g-section js-newsletter theme-light) */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
@@ -402,8 +402,8 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                border: '1px solid #f0ece2',
                 borderRadius: '2px',
                 color: '#ffffff',
                 outline: 'none',

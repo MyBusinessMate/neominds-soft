@@ -29,32 +29,33 @@ html.lenis body {
 :root {
   /* ==========================================================================
      FREEHAND DESIGN SYSTEM TOKENS (Source: DESIGN-freehand-ai.md)
+     Warm Cream / Beige Theme with Orange (#fe6200) as Secondary Accent
      ========================================================================== */
   --colors-primary: #fe6200;
-  --colors-primary-hover: #cf5000;
-  --colors-background: #ffffff;
-  --colors-surface-light: #f1efeb;
-  --colors-background-dark: #200b00;
-  --colors-surface-dark-subtle: #351505;
-  --colors-text-primary: #000000;
-  --colors-text-muted: #66615c;
+  --colors-primary-hover: #e05500;
+  --colors-background: #fbf9f5;
+  --colors-surface-light: #f3efe6;
+  --colors-background-dark: #fbf9f5;
+  --colors-surface-dark-subtle: #f0ece2;
+  --colors-text-primary: #181512;
+  --colors-text-muted: #6e675f;
   --colors-text-inverse: #ffffff;
-  --colors-border-light: #e4e2e1;
-  --colors-border-dark: #351505;
+  --colors-border-light: #e5dfd5;
+  --colors-border-dark: #e5dfd5;
   --colors-fail-contrast-orange: #fe6507;
 
   /* Aliases for site-wide component compatibility */
   --color-brand: #fe6200;
-  --color-brand-hover: #cf5000;
-  --color-brand-active: #cf5000;
+  --color-brand-hover: #e05500;
+  --color-brand-active: #e05500;
   --color-brand-focus: #fe6200;
-  --color-bg-primary: #200b00;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #66615c;
-  --color-border: #351505;
-  --color-border-secondary: #351505;
-  --color-disabled-bg: #e4e2e1;
-  --color-disabled-text: #868683;
+  --color-bg-primary: #fbf9f5;
+  --color-text-primary: #181512;
+  --color-text-secondary: #6e675f;
+  --color-border: #e5dfd5;
+  --color-border-secondary: #e5dfd5;
+  --color-disabled-bg: #ece7dc;
+  --color-disabled-text: #8e887f;
   --color-text-link: #fe6200;
   --color-btn-filled-text: #ffffff;
 
@@ -62,24 +63,41 @@ html.lenis body {
   --color-primary: var(--colors-primary);
   --color-primary-hover: var(--colors-primary-hover);
   --color-primary-light: rgba(254, 98, 0, 0.12);
-  --color-background: #ffffff;
-  --color-background-dark: #200b00;
-  --dark-surface: #200b00;
-  --dark-text: #ffffff;
-  --dark-text-muted: #c2bfb9;
-  --dark-border: #351505;
+  --color-background: #fbf9f5;
+  --color-background-dark: #fbf9f5;
+  --dark-surface: #f0ece2;
+  --dark-text: #181512;
+  --dark-text-muted: #6e675f;
+  --dark-border: #e5dfd5;
 
-  /* Typography Design Tokens */
+  /* Typography Design Tokens (DM Sans for Body & Subheadings) */
   --typography-display-family: 'BL Pylon Serif', 'Newsreader', 'Playfair Display', Georgia, serif;
-  --typography-body-family: 'Fustat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --typography-body-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --typography-subheading-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
   --typography-mono-family: 'Geist Mono', monospace;
 
   --font-heading: var(--typography-display-family);
-  --font-subheading: var(--typography-body-family);
+  --font-subheading: var(--typography-subheading-family);
   --font-body: var(--typography-body-family);
   --font-metrics: var(--typography-mono-family);
   --font-mono: var(--typography-mono-family);
   --font-family: var(--font-body);
+
+  /* Apple HIG, visionOS & SwiftUI Design Tokens (Harmonized with NeoMinds Brand) */
+  --apple-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --apple-fluid: cubic-bezier(0.25, 1, 0.5, 1);
+  --apple-snappy: cubic-bezier(0.19, 1, 0.22, 1);
+  --apple-ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  --apple-glass-bg-light: rgba(255, 255, 255, 0.85);
+  --apple-glass-bg-dark: rgba(32, 11, 0, 0.78);
+  --apple-glass-blur: blur(28px) saturate(190%);
+  --apple-glass-border-light: 1px solid rgba(255, 255, 255, 0.75);
+  --apple-glass-border-dark: 1px solid rgba(254, 98, 0, 0.22);
+  --apple-specular-light: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
+  --apple-specular-dark: inset 0 1px 1px 0 rgba(254, 98, 0, 0.25);
+  --apple-shadow-floating: 0 20px 48px -12px rgba(32, 11, 0, 0.12), 0 4px 12px rgba(32, 11, 0, 0.04);
+  --apple-shadow-ambient: 0 12px 32px rgba(0, 0, 0, 0.08);
 
   /* Spacing Scale [0, 8, 12, 16, 20, 24, 32, 48, 64, 80] */
   --space-0: 0px;
@@ -94,9 +112,11 @@ html.lenis body {
   --space-9: 64px;
   --space-10: 80px;
 
-  /* Radius Scale: sm: 1px, md: 10px, full: 9999px */
-  --radius-sm: 1px;
-  --radius-md: 10px;
+  /* Radius Scale: sm: 6px, md: 14px, lg: 20px, xl: 28px, full: 9999px (Apple Precision Radii) */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
   --radius-full: 9999px;
 
   /* Elevation Scale */
@@ -109,10 +129,10 @@ html.lenis body {
   --elevation-navbar-component: 999;
   --elevation-modal: 1000;
 
-  /* Motion */
-  --motion-duration-base: 0.38s;
-  --motion-easing-standard: cubic-bezier(0.215, 0.61, 0.355, 1);
-  --motion-easing-button: cubic-bezier(0.187, 0.938, 0.355, 1);
+  /* Motion - Apple Signature Springs */
+  --motion-duration-base: 0.35s;
+  --motion-easing-standard: var(--apple-spring);
+  --motion-easing-button: var(--apple-spring);
 
   /* Containers & Layout */
   --container-lg: 1280px;
@@ -197,7 +217,7 @@ html {
 html {
   font-family: var(--font-body);
   font-size: 16px;
-  background-color: var(--colors-background-dark, #200b00);
+  background-color: var(--colors-background-dark, #fbf9f5);
   color: var(--color-text-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -206,7 +226,7 @@ html {
 
 body {
   overflow-x: clip;
-  background-color: var(--colors-background-dark, #200b00);
+  background-color: var(--colors-background-dark, #fbf9f5);
   color: var(--color-text-primary);
   font-family: var(--font-body);
 }
@@ -241,8 +261,8 @@ img, svg {
   max-width: 100%;
 }
 
-/* Headings Typography Rules (DM Sans, weights 700-800) */
-h1, h2, h3, h4, h5, h6 {
+/* Headings Typography Rules */
+h1, h2 {
   font-family: var(--font-heading);
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -255,16 +275,139 @@ h1 {
   letter-spacing: -0.03em;
 }
 
-/* Subheadings & Short Editorial Labels (Barlow Condensed, weights 500-600) */
+/* Subheadings Typography Rules (DM Sans, weights 500-700) */
+h3, h4, h5, h6,
+.subheading,
+.section-subheading,
+.card-subheading,
 .editorial-tag,
 .subheading-label,
 .eyebrow-tag {
   font-family: var(--font-subheading);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-brand);
+  letter-spacing: -0.015em;
 }
+
+/* ==========================================================================
+   APPLE DESIGN LANGUAGE & VISIONOS / SWIFTUI UTILITIES (NEOMINDS THEME)
+   ========================================================================== */
+
+/* visionOS / macOS Floating Glass Surface */
+.apple-glass-card {
+  background: var(--apple-glass-bg-light);
+  backdrop-filter: var(--apple-glass-blur);
+  -webkit-backdrop-filter: var(--apple-glass-blur);
+  border: var(--apple-glass-border-light);
+  box-shadow: var(--apple-shadow-floating), var(--apple-specular-light);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s var(--apple-spring), box-shadow 0.3s var(--apple-spring), border-color 0.25s ease;
+  will-change: transform, box-shadow;
+}
+
+.apple-glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px -12px rgba(254, 98, 0, 0.16), 0 8px 24px rgba(32, 11, 0, 0.08), var(--apple-specular-light);
+}
+
+/* visionOS Dark Mode Floating Glass Surface */
+.apple-glass-card-dark {
+  background: var(--apple-glass-bg-dark);
+  backdrop-filter: var(--apple-glass-blur);
+  -webkit-backdrop-filter: var(--apple-glass-blur);
+  border: var(--apple-glass-border-dark);
+  box-shadow: 0 24px 64px -16px rgba(0, 0, 0, 0.6), var(--apple-specular-dark);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s var(--apple-spring), box-shadow 0.3s var(--apple-spring), border-color 0.25s ease;
+}
+
+.apple-glass-card-dark:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 32px 72px -16px rgba(254, 98, 0, 0.24), 0 8px 30px rgba(0, 0, 0, 0.7), var(--apple-specular-dark);
+  border-color: rgba(254, 98, 0, 0.4);
+}
+
+/* Floating visionOS Ornament Capsule */
+.apple-ornament-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-family: var(--font-subheading);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s var(--apple-ease-out), transform 0.2s var(--apple-spring), border-color 0.2s ease;
+}
+
+.apple-ornament-pill:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(254, 98, 0, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Apple Primary Action Button (Fluid Spring, Press Haptic Scale) */
+.apple-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--colors-primary);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(254, 98, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: transform 0.2s var(--apple-spring), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apple-btn-primary:hover {
+  background-color: var(--colors-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(254, 98, 0, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.apple-btn-primary:active {
+  transform: scale(0.975);
+}
+
+/* Apple Secondary / Ghost Button */
+.apple-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--colors-text-inverse);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  cursor: pointer;
+  transition: transform 0.2s var(--apple-spring), background 0.2s ease, border-color 0.2s ease;
+}
+
+.apple-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.apple-btn-secondary:active {
+  transform: scale(0.975);
+}
+
 
 /* Numbers, Metrics, Prices, Timestamps & Coordinates (Space Mono, weights 400-700) */
 .stat-metric,
@@ -512,7 +655,7 @@ button:disabled {
   border-radius: 0px;
   background-color: transparent;
   color: inherit;
-  border: 1px solid var(--colors-border-dark, #351505);
+  border: 1px solid var(--colors-border-dark, #f0ece2);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -546,10 +689,10 @@ button:disabled {
 
 /* G. Dark Card */
 .card-dark {
-  background-color: var(--colors-surface-dark-subtle, #351505);
+  background-color: var(--colors-surface-dark-subtle, #f0ece2);
   color: var(--colors-text-inverse, #ffffff);
   padding: 32px;
-  border: 1px solid var(--colors-border-dark, #351505);
+  border: 1px solid var(--colors-border-dark, #f0ece2);
   border-radius: var(--radius-md, 10px);
 }
 

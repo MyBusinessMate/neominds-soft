@@ -22,18 +22,6 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-          <div
-            style={{
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#fe6200',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            Phase-Gate Engineering Delivery
-          </div>
           <ScrollReveal
             as="h2"
             style={{
@@ -94,7 +82,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                     height: '32px',
                     borderRadius: '3px',
                     backgroundColor: isCurrent ? '#fe6200' : '#f1efeb',
-                    color: isCurrent ? '#ffffff' : '#200b00',
+                    color: isCurrent ? '#ffffff' : '#fbf9f5',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -141,9 +129,6 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
         >
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(36px, 5vw, 64px)', alignItems: 'start' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 700, color: '#fe6200', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '10px' }}>
-                <span>Active Phase · Stage 0{steps[activeStep].step}</span>
-              </div>
               <h3 style={{ fontSize: 'clamp(24px, 2.8vw, 32px)', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
                 {steps[activeStep].title}
               </h3>
@@ -169,7 +154,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                     }}
                   >
                     <CheckCircle2 size={18} color="#fe6200" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#200b00', letterSpacing: '-0.01em' }}>
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#fbf9f5', letterSpacing: '-0.01em' }}>
                       {del}
                     </span>
                   </div>

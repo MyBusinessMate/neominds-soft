@@ -174,24 +174,12 @@ const IndustryRecognitionComponent: React.FC = () => {
                   width: '100%',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'space-between',
+                  justifyContent: 'flex-end',
                   marginBottom: '20px',
                   paddingBottom: '14px',
                   borderBottom: '1px solid var(--colors-border-light)',
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: 'var(--typography-mono-family)',
-                    fontSize: '11px',
-                    fontWeight: 500,
-                    letterSpacing: '0.1em',
-                    color: 'var(--colors-primary)',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  INDUSTRY RECOGNITION
-                </span>
                 <span
                   style={{
                     fontFamily: 'var(--typography-mono-family)',

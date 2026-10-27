@@ -380,25 +380,12 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
         <div className="ai-hero-overlay" />
 
         <div className="ai-hero-content">
-          <div className="ai-pill-badge">
-            <svg
-              className="ai-sparkle-icon"
-              viewBox="0 0 12 12"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M 5.988 1.69 L 6.158 2.487 C 6.516 4.161 7.824 5.47 9.499 5.828 L 10.296 5.998 C 10.941 6.136 10.941 7.056 10.296 7.194 L 9.499 7.365 C 7.824 7.723 6.516 9.031 6.158 10.706 L 5.988 11.502 C 5.85 12.147 4.93 12.147 4.792 11.502 L 4.621 10.705 C 4.263 9.03 2.955 7.722 1.28 7.364 L 0.484 7.194 C -0.161 7.056 -0.161 6.136 0.484 5.998 L 1.28 5.827 C 2.955 5.469 4.263 4.161 4.621 2.486 L 4.792 1.69 C 4.929 1.045 5.85 1.045 5.988 1.69 Z M 10.53 0.259 L 10.643 0.666 C 10.734 0.994 10.991 1.251 11.319 1.342 L 11.727 1.455 C 12.072 1.551 12.072 2.041 11.727 2.137 L 11.319 2.25 C 10.991 2.341 10.734 2.597 10.643 2.926 L 10.53 3.333 C 10.434 3.678 9.945 3.678 9.849 3.333 L 9.736 2.926 C 9.644 2.597 9.388 2.341 9.06 2.25 L 8.652 2.137 C 8.307 2.041 8.307 1.551 8.652 1.455 L 9.06 1.342 C 9.388 1.251 9.644 0.995 9.736 0.666 L 9.849 0.259 C 9.945 -0.086 10.434 -0.086 10.53 0.259 Z" />
-            </svg>
-            <span>SESSIONS WITH AI EXPERTS</span>
-          </div>
-
           <h1 className="ai-hero-title">
-            AI-enabled product engineering from idea to production
+            AI product engineering built for real production traffic
           </h1>
 
           <p className="ai-hero-subtitle">
-            Neominds helps forward-thinking teams build AI-native products,
-            modernize legacy systems, and optimize critical enterprise
-            workflows with battle-tested engineering discipline.
+            We build AI-native applications, modernize mission-critical systems, and automate enterprise workflows. No demo prototypes that break under load — only production-grade code that ships on time.
           </p>
 
           <div className="ai-hero-actions">
@@ -483,7 +470,6 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           -------------------------------------------------------------------- */}
       <section className="ai-pillars-section" id="what-we-build">
         <div className="ai-section-header">
-          <div className="ai-section-eyebrow">WHAT WE BUILD</div>
           <h2 className="ai-section-title">What we actually do</h2>
           <p className="ai-section-desc">
             Most AI engineering work comes down to one of three things: building
@@ -599,7 +585,6 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           -------------------------------------------------------------------- */}
       <section className="ai-partner-section" id="how-we-partner">
         <div className="ai-section-header">
-          <div className="ai-section-eyebrow">HOW WE PARTNER</div>
           <h2 className="ai-section-title">
             Strong outcomes start with a strong foundation
           </h2>
@@ -658,7 +643,6 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           -------------------------------------------------------------------- */}
       <section className="ai-cases-section" id="case-studies">
         <div className="ai-section-header">
-          <div className="ai-section-eyebrow">CASE STUDIES</div>
           <h2 className="ai-section-title">Proven AI engineering</h2>
           <p className="ai-section-desc">
             AI needs to fit the realities of products, systems, and operations.

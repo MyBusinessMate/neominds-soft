@@ -107,39 +107,6 @@ const ExperienceSectionComponent: React.FC = () => {
       }}
     >
       <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-        {/* Top Trust & Rating Proof Bar (Matching Freehand Screenshot Section 2) */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '12px',
-            marginBottom: 'clamp(28px, 4vw, 44px)',
-            flexWrap: 'wrap',
-          }}
-        >
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-              fontSize: '12px',
-              fontWeight: 500,
-              letterSpacing: '0.08em',
-              color: '#868683',
-              textTransform: 'uppercase',
-            }}
-          >
-            <span style={{ color: '#fe6200', fontWeight: 700 }}>★ 4.9 RATING</span>
-            <span>·</span>
-            <span>G2 LEADER</span>
-            <span>·</span>
-            <span>CLUTCH TOP AI DEV</span>
-            <span>·</span>
-            <span>ISO 27001 ALIGNED</span>
-          </div>
-        </div>
 
         {/* Big Bold Headline Statement with Freehand Orange Highlight */}
         <div style={{ textAlign: 'center', maxWidth: '980px', margin: '0 auto clamp(48px, 6vw, 68px)' }}>
@@ -158,15 +125,15 @@ const ExperienceSectionComponent: React.FC = () => {
           </h2>
           <p
             style={{
-              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               fontSize: 'clamp(16px, 1.25vw, 19px)',
-              color: '#868683',
-              lineHeight: 1.55,
+              color: '#66615c',
+              lineHeight: 1.6,
               maxWidth: '680px',
               margin: '0 auto',
             }}
           >
-            High-performance engineering teams that deliver faster time-to-market and measurable business outcomes.
+            Senior engineers embedded directly into your sprints. We ship working features weekly, eliminate technical debt, and keep your production systems resilient.
           </p>
         </div>
 

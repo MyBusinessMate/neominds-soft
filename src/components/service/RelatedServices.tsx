@@ -25,24 +25,12 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-        borderTop: '1px solid #351505',
+        backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+        borderTop: '1px solid #f0ece2',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px' }}>
-          <div
-            style={{
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#fe6200',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            Interconnected Capabilities
-          </div>
           <ScrollReveal
             as="h2"
             style={{
@@ -70,7 +58,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
           style={{
             display: 'flex',
             flexDirection: 'column',
-            borderTop: '1px solid #351505',
+            borderTop: '1px solid #f0ece2',
           }}
         >
           {relatedItems.map((item, idx) => (
@@ -79,7 +67,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
               onClick={() => onNavigatePage(item.slug)}
               style={{
                 padding: '24px 0',
-                borderBottom: '1px solid #351505',
+                borderBottom: '1px solid #f0ece2',
                 display: 'grid',
                 gridTemplateColumns: 'minmax(140px, 200px) 1fr auto',
                 gap: '24px',

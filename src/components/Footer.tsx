@@ -1,64 +1,50 @@
 import React from 'react';
-import { ArrowRight, Linkedin, Youtube, Instagram } from 'lucide-react';
+import { Linkedin, Youtube, Instagram } from 'lucide-react';
 
-interface FooterLink {
+export interface FooterLink {
   label: string;
   target: string;
   isLegal?: 'privacy' | 'cookie' | 'security';
   isSettings?: boolean;
 }
 
-const servicesLinks: FooterLink[] = [
+const engineeringServices: FooterLink[] = [
   { label: 'Web Development', target: '#web-development' },
   { label: 'App Development', target: '#app-development' },
   { label: 'Cross-Platform Mobile App', target: '#cross-platform-app-development' },
   { label: 'Custom Software Development', target: '#custom-software-development' },
-  { label: 'AI Automations', target: '#ai-automations' },
-  { label: 'AI Integrations', target: '#ai-integrations' },
-  { label: 'AI Systems', target: '#ai-systems' },
-  { label: 'E-commerce Platform', target: '#ecommerce-platform' },
-  { label: 'AI Native Softwares', target: '#ai-native-software' },
-  { label: 'Cloud Based Softwares', target: '#cloud-based-software' },
   { label: 'SaaS Development', target: '#saas-development' },
-  { label: 'Analytic Dashboard', target: '#analytics-dashboard' },
-  { label: 'Custom Health Softwares', target: '#custom-health-software' },
   { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
-  { label: 'Training as a Service', target: '#training-as-service' },
-  { label: 'Product Engineering', target: '#product-engineering' },
-];
-
-const technologiesLinks: FooterLink[] = [
-  { label: 'Web Development', target: '#web-development' },
-  { label: 'Artificial Intelligence', target: '#ai-systems' },
-  { label: 'Machine Learning', target: '#ai-native-software' },
-  { label: 'Data Management', target: '#cloud-based-software' },
-  { label: 'Data Analytics', target: '#analytics-dashboard' },
-  { label: 'Automations', target: '#ai-automations' },
   { label: 'Product Engineering', target: '#custom-software-development' },
 ];
 
-const industriesLinks: FooterLink[] = [
-  { label: 'Enterprise', target: '#industries' },
+const aiAndCloudServices: FooterLink[] = [
+  { label: 'AI Automations', target: '#ai-automations' },
+  { label: 'AI Integrations', target: '#ai-integrations' },
+  { label: 'AI Systems', target: '#ai-systems' },
+  { label: 'AI Native Softwares', target: '#ai-native-software' },
+  { label: 'Cloud Based Softwares', target: '#cloud-based-software' },
+  { label: 'Analytic Dashboard', target: '#analytics-dashboard' },
+  { label: 'Custom Health Softwares', target: '#custom-health-software' },
+];
+
+const industriesAndWork: FooterLink[] = [
+  { label: 'Case Studies & Portfolio', target: '#portfolio' },
+  { label: 'Enterprise Systems', target: '#industries' },
   { label: 'Financial Tech', target: '#industries' },
-  { label: 'Retail', target: '#industries' },
-  { label: 'Education', target: '#industries' },
-  { label: 'Healthcare', target: '#industries' },
-  { label: 'E-commerce', target: '#industries' },
-  { label: 'Real Estate', target: '#industries' },
-  { label: 'E-learning', target: '#industries' },
+  { label: 'Healthcare & Life Sciences', target: '#industries' },
+  { label: 'E-commerce & Retail', target: '#ecommerce-platform' },
+  { label: 'Training as a Service', target: '#training-as-service' },
 ];
 
 const companyLinks: FooterLink[] = [
   { label: 'About Us', target: '#about-us' },
   { label: 'Leadership', target: '#leaders' },
   { label: 'Careers', target: '#careers' },
-  { label: 'Certification', target: '#certification' },
-  { label: 'Case Studies', target: '#portfolio' },
-  { label: 'Blog', target: '#blog' },
-  { label: 'News & Updates', target: '#company-updates' },
-  { label: 'Contacts', target: '#contacts' },
-  { label: 'Privacy Policy', target: '#privacy-policy', isLegal: 'privacy' },
-  { label: 'Cookie Policy', target: '#cookie-policy', isLegal: 'cookie' },
+  { label: 'Certifications', target: '#certification' },
+  { label: 'Insights & Blog', target: '#blog' },
+  { label: 'Company Updates', target: '#company-updates' },
+  { label: 'Contact Us', target: '#contacts' },
 ];
 
 interface FooterProps {
@@ -68,6 +54,8 @@ interface FooterProps {
 }
 
 const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenCookies }) => {
+  const currentYear = new Date().getFullYear();
+
   const handleLinkClick = (e: React.MouseEvent, link: FooterLink) => {
     e.preventDefault();
     if (link.isSettings && onOpenCookies) {
@@ -80,615 +68,589 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
   };
 
   return (
-    <footer
-      id="footer"
-      className="nm-exact-footer"
-      style={{
-        position: 'relative',
-        width: '100%',
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
-        color: '#ffffff',
-        fontFamily: 'var(--font-heading)',
-        overflow: 'hidden',
-        borderTop: '1px solid var(--colors-border-dark, #351505)',
-      }}
-    >
+    <footer id="footer" className="nm-footer-wrapper" role="contentinfo">
       {/* =========================================================================
-          TOP SECTION: BRAND LOGO + HERO CTA + 4 NUMBERED COLUMNS + PIN DECORATOR
+          TOP SECTION: DARK CTA BANNER (Exact Reference Inspiration)
           ========================================================================= */}
-      <div className="nm-footer-container">
-        {/* Top Header Row: Brand Logo */}
-        <div
-          onClick={() => onNavigate('#hero')}
-          className="nm-footer-logo-row"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '12px',
-            marginBottom: '36px',
-            cursor: 'pointer',
-          }}
-        >
-          {/* Geometric 'N' Logo Mark */}
-          <div style={{ width: '28px', height: '28px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#fe6200" />
-            </svg>
+      <section className="nm-footer-dark-banner" aria-label="Call to Action">
+        <div className="nm-dark-banner-glow" aria-hidden="true" />
+        
+        <div className="nm-dark-banner-content">
+          <h2 className="nm-dark-banner-heading">
+            Turn your ideas into clarity
+          </h2>
+          <p className="nm-dark-banner-subheading">
+            NeoMinds makes it effortless to build intelligent software, autonomous AI systems, and scalable cloud platforms for your team.
+          </p>
+          <div className="nm-dark-banner-actions">
+            <button
+              onClick={() => onNavigate('#contacts')}
+              className="nm-dark-banner-btn"
+              aria-label="Get Started with NeoMinds"
+            >
+              <span>Get Started</span>
+            </button>
           </div>
-          <span
-            style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: '20px',
-              fontWeight: 800,
-              letterSpacing: '-0.02em',
-              color: '#ffffff',
-            }}
-          >
-            NeoMinds
-          </span>
         </div>
+      </section>
 
-        {/* Main Grid: Left Hero Content (Let's build what's next) & Right 4 Columns */}
-        <div className="nm-footer-grid">
-          {/* LEFT COLUMN: Hero Call to Action */}
-          <div className="nm-footer-hero">
-            {/* Kicker with horizontal line */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '18px' }}>
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.14em',
-                  color: '#A3A3A3',
-                  textTransform: 'uppercase',
-                }}
-              >
-                NEXT-GEN INTELLIGENCE
+      {/* =========================================================================
+          BOTTOM SECTION: LIGHT CANVAS WITH FLOATING WHITE CARD & MASSIVE WATERMARK
+          ========================================================================= */}
+      <section className="nm-footer-light-canvas" aria-label="Site Navigation and Details">
+        <div className="nm-footer-canvas-inner">
+          {/* FLOATING INNER CARD */}
+          <div className="nm-floating-card">
+            {/* Main Links & Brand Grid */}
+            <div className="nm-card-grid">
+              {/* Brand Column */}
+              <div className="nm-card-brand-col">
+                <div
+                  onClick={() => onNavigate('#hero')}
+                  className="nm-brand-badge"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && onNavigate('#hero')}
+                  aria-label="NeoMinds Home"
+                >
+                  <div className="nm-brand-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#fe6200" />
+                    </svg>
+                  </div>
+                  <span className="nm-brand-name">NeoMinds</span>
+                </div>
+
+                <p className="nm-brand-description">
+                  NeoMinds helps teams transform complex challenges into intelligent, high-performance software — everything you need in one place.
+                </p>
+
+                {/* Social Channels */}
+                <div className="nm-brand-socials">
+                  <a
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nm-social-link"
+                    aria-label="NeoMinds on LinkedIn"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://youtube.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nm-social-link"
+                    aria-label="NeoMinds on YouTube"
+                  >
+                    <Youtube size={16} />
+                  </a>
+                  <a
+                    href="https://instagram.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nm-social-link"
+                    aria-label="NeoMinds on Instagram"
+                  >
+                    <Instagram size={16} />
+                  </a>
+                </div>
+              </div>
+
+              {/* Navigation Columns */}
+              <div className="nm-card-nav-cols">
+                {/* Column 1: Core Services */}
+                <div className="nm-nav-col">
+                  <h4 className="nm-col-header">Services</h4>
+                  <ul className="nm-col-list">
+                    {engineeringServices.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.target}
+                          onClick={(e) => handleLinkClick(e, link)}
+                          className="nm-nav-link"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 2: AI & Cloud */}
+                <div className="nm-nav-col">
+                  <h4 className="nm-col-header">AI &amp; Cloud</h4>
+                  <ul className="nm-col-list">
+                    {aiAndCloudServices.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.target}
+                          onClick={(e) => handleLinkClick(e, link)}
+                          className="nm-nav-link"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 3: Industries & Work */}
+                <div className="nm-nav-col">
+                  <h4 className="nm-col-header">Solutions</h4>
+                  <ul className="nm-col-list">
+                    {industriesAndWork.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.target}
+                          onClick={(e) => handleLinkClick(e, link)}
+                          className="nm-nav-link"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Column 4: Company */}
+                <div className="nm-nav-col">
+                  <h4 className="nm-col-header">Company</h4>
+                  <ul className="nm-col-list">
+                    {companyLinks.map((link) => (
+                      <li key={link.label}>
+                        <a
+                          href={link.target}
+                          onClick={(e) => handleLinkClick(e, link)}
+                          className="nm-nav-link"
+                        >
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row inside Card */}
+            <div className="nm-card-bottom-row">
+              <span className="nm-card-copyright">
+                &copy; {currentYear} NeoMinds. All rights reserved.
               </span>
-              <div style={{ width: '110px', height: '1px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
-            </div>
 
-            {/* Main Headline */}
-            <h2 className="nm-footer-heading" style={{ color: '#ffffff' }}>
-              Let’s build <br />
-              what’s <span style={{ color: '#fe6200' }}>next.</span>
-            </h2>
-
-            {/* Subtext */}
-            <p className="nm-footer-subtext" style={{ color: '#A3A3A3' }}>
-              From powerful software to AI-driven systems, we help businesses turn ideas into real impact.
-            </p>
-
-            {/* Action Buttons */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '22px', flexWrap: 'wrap' }}>
-              {/* Primary Button: Get in touch */}
-              <button
-                onClick={() => onNavigate('#contacts')}
-                className="nm-btn-primary"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  backgroundColor: '#fe6200',
-                  color: '#ffffff',
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  padding: '13px 26px',
-                  borderRadius: '8px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.25s ease',
-                  boxShadow: '0 4px 16px rgba(254, 98, 0, 0.25)',
-                }}
-              >
-                Get in touch <ArrowRight size={15} />
-              </button>
-
-              {/* Secondary Link: Book a call */}
-              <button
-                onClick={() => onNavigate('#contacts')}
-                className="nm-btn-secondary"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: 'none',
-                  border: 'none',
-                  padding: '4px 0',
-                  color: '#ffffff',
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  borderBottom: '1.5px solid #fe6200',
-                }}
-              >
-                Book a call <ArrowRight size={15} />
-              </button>
-            </div>
-          </div>
-
-          {/* RIGHT COLUMNS: 4 Columns + Far-Right Vertical Decorator */}
-          <div className="nm-footer-columns-wrap">
-            {/* Services */}
-            <div className="nm-col">
-              <h4 className="nm-col-title">Services</h4>
-              <ul className="nm-col-links">
-                {servicesLinks.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={link.target}
-                      onClick={(e) => handleLinkClick(e, link)}
-                      className="nm-footer-link"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Technologies */}
-            <div className="nm-col">
-              <h4 className="nm-col-title">Technologies</h4>
-              <ul className="nm-col-links">
-                {technologiesLinks.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={link.target}
-                      onClick={(e) => handleLinkClick(e, link)}
-                      className="nm-footer-link"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Industries */}
-            <div className="nm-col">
-              <h4 className="nm-col-title">Industries</h4>
-              <ul className="nm-col-links">
-                {industriesLinks.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={link.target}
-                      onClick={(e) => handleLinkClick(e, link)}
-                      className="nm-footer-link"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div className="nm-col">
-              <h4 className="nm-col-title">Company</h4>
-              <ul className="nm-col-links">
-                {companyLinks.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={link.target}
-                      onClick={(e) => handleLinkClick(e, link)}
-                      className="nm-footer-link"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Far Right Decorative Pin & Word List */}
-            <div className="nm-far-right-decorator">
-              {/* Vertical Pin Marker */}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '24px' }}>
-                <div
-                  style={{
-                    width: '7px',
-                    height: '7px',
-                    borderRadius: '50%',
-                    backgroundColor: '#fe6200',
-                  }}
-                />
-                <div
-                  style={{
-                    width: '1px',
-                    height: '110px',
-                    backgroundColor: 'var(--colors-border-dark, #351505)',
-                  }}
-                />
+              <div className="nm-card-legal-links">
+                <button
+                  onClick={() => onOpenLegal ? onOpenLegal('privacy') : onNavigate('#privacy-policy')}
+                  className="nm-legal-btn"
+                >
+                  Privacy Policy
+                </button>
+                <button
+                  onClick={() => onOpenLegal ? onOpenLegal('cookie') : onNavigate('#cookie-policy')}
+                  className="nm-legal-btn"
+                >
+                  Cookie Policy
+                </button>
+                <button
+                  onClick={() => onOpenLegal ? onOpenLegal('security') : onNavigate('#security-policy')}
+                  className="nm-legal-btn"
+                >
+                  Terms &amp; Security
+                </button>
               </div>
-
-              {/* Vertical Stacked Words */}
-              <div
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '9.5px',
-                  fontWeight: 700,
-                  letterSpacing: '0.18em',
-                  lineHeight: 1.85,
-                  color: '#A3A3A3',
-                  textTransform: 'uppercase',
-                  marginBottom: '14px',
-                }}
-              >
-                IDEAS <br />
-                TECHNOLOGY <br />
-                AUTOMATION <br />
-                REAL IMPACT
-              </div>
-
-              <div style={{ width: '28px', height: '1.5px', backgroundColor: '#fe6200' }} />
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* =========================================================================
-          GIANT DISPLAY WORDMARK: Neo (#ffffff) + Minds (Vibrant Orange #fe6200)
-          Natural typography, perfectly centered with symmetric gaps on both edges
-          ========================================================================= */}
-      <div className="nm-giant-wordmark-container">
-        <div
-          onClick={() => onNavigate('#hero')}
-          className="nm-giant-wordmark"
-          title="NeoMinds"
-        >
-          <span className="nm-wordmark-neo">Neo</span>
-          <span className="nm-wordmark-minds">Minds</span>
-        </div>
-      </div>
-
-      {/* =========================================================================
-          BOTTOM BAR: LOGO + COPYRIGHT + DIVIDER + SOCIALS + SLOGAN BADGE
-          ========================================================================= */}
-      <div className="nm-footer-bottom">
-        <div className="nm-bottom-inner">
-          {/* Left: Geometric 'N' icon + vertical bar + copyright */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexShrink: 0 }}>
-            <div style={{ width: '22px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#fe6200" />
-              </svg>
-            </div>
-
-            <div style={{ width: '1px', height: '18px', backgroundColor: 'var(--colors-border-dark, #351505)' }} />
-
-            <span style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#A3A3A3' }}>
-              © 2026 NeoMinds TechHub. All rights reserved.
-            </span>
-          </div>
-
-          {/* Center: Subtle horizontal divider line */}
-          <div className="nm-bottom-center-line" />
-
-          {/* Right: Social icons + vertical bar + orange dot + slogan */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexShrink: 0 }}>
-            {/* Social Icons */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nm-social-icon"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={16} />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nm-social-icon"
-                aria-label="X (Twitter)"
-              >
-                {/* Clean geometric X logo */}
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nm-social-icon"
-                aria-label="YouTube"
-              >
-                <Youtube size={17} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nm-social-icon"
-                aria-label="Instagram"
-              >
-                <Instagram size={16} />
-              </a>
-            </div>
+          {/* GIANT GHOST WATERMARK */}
+          <div className="nm-watermark-wrapper" aria-hidden="true">
+            <span className="nm-watermark-text">NeoMinds</span>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* =========================================================================
-          STYLES FOR PIXEL-PERFECT REPRODUCTION OF THE SCREENSHOT
+          EMBEDDED STYLES FOR THE PIXEL-PERFECT FOOTER
           ========================================================================= */}
       <style>{`
-        .nm-footer-container {
-          max-width: 1560px;
-          margin: 0 auto;
-          padding: clamp(48px, 5.5vw, 76px) clamp(24px, 4vw, 56px) 16px clamp(24px, 4vw, 56px);
-        }
-
-        .nm-footer-grid {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          gap: clamp(32px, 4vw, 64px);
-        }
-
-        /* Left Hero Section */
-        .nm-footer-hero {
-          flex: 0 0 clamp(280px, 24vw, 360px);
-          max-width: 380px;
-        }
-
-        .nm-footer-heading {
-          font-family: var(--font-heading);
-          font-size: clamp(38px, 4.6vw, 66px);
-          font-weight: 800;
-          line-height: 1.04;
-          letter-spacing: -0.035em;
+        .nm-footer-wrapper {
+          width: 100%;
+          position: relative;
+          background-color: var(--colors-background-dark, #fbf9f5);
           color: #ffffff;
-          margin: 0 0 18px 0;
+          overflow: hidden;
+          font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        .nm-footer-subtext {
-          font-family: var(--font-body);
-          font-size: clamp(14px, 1.15vw, 16px);
-          color: #A3A3A3;
-          line-height: 1.5;
-          margin: 0 0 32px 0;
-          max-width: 380px;
-        }
-
-        .nm-btn-primary:hover {
-          background-color: #cf5000 !important;
-          transform: translateY(-1px);
-          box-shadow: 0 6px 20px rgba(254, 98, 0, 0.35) !important;
-        }
-
-        .nm-btn-secondary:hover {
-          color: #fe6200 !important;
-          border-bottom-color: #fe6200 !important;
-        }
-
-        /* Right Columns Wrapper - clean single-line columns with natural flex spacing */
-        .nm-footer-columns-wrap {
-          flex: 1;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          gap: clamp(20px, 2.5vw, 44px);
-          padding-left: clamp(16px, 2vw, 36px);
-        }
-
-        .nm-col {
-          display: flex;
-          flex-direction: column;
-          flex: 0 0 auto;
-        }
-
-        .nm-col-header {
+        /* ----------------------------------------------------
+           1. TOP DARK CTA BANNER
+           ---------------------------------------------------- */
+        .nm-footer-dark-banner {
+          position: relative;
+          width: 100%;
+          padding: 100px 24px 120px 24px;
           display: flex;
           align-items: center;
-          gap: 8px;
-          margin-bottom: 12px;
+          justify-content: center;
+          text-align: center;
+          background-color: #120500;
+          overflow: hidden;
+          box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
         }
 
-        .nm-col-number {
-          font-family: var(--font-heading);
-          font-size: 11px;
-          font-weight: 700;
-          color: #fe6200;
+        .nm-dark-banner-glow {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 800px;
+          height: 380px;
+          background: radial-gradient(circle, rgba(254, 98, 0, 0.16) 0%, rgba(32, 11, 0, 0) 70%);
+          pointer-events: none;
         }
 
-        .nm-col-line {
-          width: 22px;
-          height: 1.5px;
-          background-color: #fe6200;
+        .nm-dark-banner-content {
+          position: relative;
+          z-index: 2;
+          max-width: 680px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
-        .nm-col-title {
-          font-family: var(--font-heading);
-          font-size: 16px;
-          font-weight: 700;
+        .nm-dark-banner-heading {
+          font-family: var(--font-heading, 'BL Pylon Serif', serif);
+          font-size: clamp(34px, 5.2vw, 54px);
+          font-weight: 500;
+          line-height: 1.15;
+          letter-spacing: -0.02em;
           color: #ffffff;
           margin: 0 0 16px 0;
-          white-space: nowrap;
         }
 
-        .nm-col-links {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-          display: flex;
-          flex-direction: column;
-          gap: 9px;
+        .nm-dark-banner-subheading {
+          font-family: 'DM Sans', sans-serif;
+          font-size: clamp(15px, 1.8vw, 17px);
+          line-height: 1.6;
+          color: #a3a3a3;
+          margin: 0 0 32px 0;
+          max-width: 540px;
+          font-weight: 400;
         }
 
-        /* Strict single-line footer link with no awkward wrapping */
-        .nm-footer-link {
-          font-family: var(--font-body);
-          font-size: 13.5px;
-          color: #A3A3A3;
-          line-height: 1.5;
-          text-decoration: none;
-          white-space: nowrap;
-          transition: color 0.2s ease, transform 0.2s ease;
-          display: inline-block;
-        }
-
-        .nm-footer-link:hover {
-          color: #fe6200;
-          transform: translateX(2px);
-        }
-
-        .nm-far-right-decorator {
-          display: flex;
-          flex-direction: column;
-          align-items: flex-end;
-          padding-left: 12px;
-          flex: 0 0 auto;
-        }
-
-        /* GIANT NeoMinds DISPLAY WORDMARK - Natural, Balanced & Centered */
-        .nm-giant-wordmark-container {
-          width: 100%;
-          overflow: hidden;
-          padding: clamp(16px, 2.5vw, 32px) clamp(24px, 4.5vw, 68px) clamp(8px, 1.5vw, 16px) clamp(24px, 4.5vw, 68px);
-          user-select: none;
+        .nm-dark-banner-actions {
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        .nm-giant-wordmark {
+        .nm-dark-banner-btn {
           display: inline-flex;
-          align-items: baseline;
-          justifyContent: center;
-          font-family: var(--font-heading);
-          font-size: clamp(64px, 15vw, 215px);
-          font-weight: 900;
-          line-height: 0.9;
-          letter-spacing: -0.04em;
+          align-items: center;
+          justify-content: center;
+          background-color: #ffffff;
+          color: #111111;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 12px 28px;
+          border-radius: 9999px;
+          border: 1px solid rgba(255, 255, 255, 0.9);
           cursor: pointer;
-          white-space: nowrap;
-          margin: 0 auto;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+          transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, background-color 0.2s ease, color 0.2s ease;
+          box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.8);
         }
 
-        .nm-giant-wordmark:hover {
-          transform: translateY(-4px);
-          opacity: 0.96;
-        }
-
-        .nm-wordmark-neo {
-          color: #ffffff;
-          display: inline-block;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .nm-wordmark-minds {
+        .nm-dark-banner-btn:hover {
+          background-color: #f7f7f7;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(254, 98, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.9);
           color: #fe6200;
-          display: inline-block;
-          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .nm-giant-wordmark:hover .nm-wordmark-neo {
-          transform: translateY(-2px);
+        .nm-dark-banner-btn:active {
+          transform: scale(0.975);
         }
 
-        .nm-giant-wordmark:hover .nm-wordmark-minds {
-          transform: translateY(-2px);
-        }
-
-        /* BOTTOM BAR */
-        .nm-footer-bottom {
+        /* ----------------------------------------------------
+           2. LIGHT CANVAS SECTION
+           ---------------------------------------------------- */
+        .nm-footer-light-canvas {
+          position: relative;
           width: 100%;
-          border-top: none;
-          background-color: transparent;
-          padding: 20px clamp(24px, 4.5vw, 68px);
+          background-color: #f5f4f0;
+          border-top-left-radius: 40px;
+          border-top-right-radius: 40px;
+          margin-top: -24px;
+          padding: 48px 24px 0 24px;
+          overflow: hidden;
+          box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.12);
         }
 
-        .nm-bottom-inner {
-          max-width: 1440px;
+        .nm-footer-canvas-inner {
+          max-width: 1280px;
           margin: 0 auto;
+          position: relative;
+        }
+
+        /* ----------------------------------------------------
+           3. FLOATING WHITE CARD (Apple visionOS Depth Elevation)
+           ---------------------------------------------------- */
+        .nm-floating-card {
+          position: relative;
+          z-index: 2;
+          background-color: #ffffff;
+          border-radius: 28px;
+          border: 1px solid rgba(0, 0, 0, 0.08);
+          box-shadow: 0 20px 48px -12px rgba(32, 11, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+          padding: clamp(32px, 4vw, 54px);
+        }
+
+        .nm-card-grid {
+          display: grid;
+          grid-template-columns: 1.1fr 2.4fr;
+          gap: clamp(32px, 5vw, 64px);
+          padding-bottom: 40px;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        /* Brand Column */
+        .nm-card-brand-col {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nm-brand-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          margin-bottom: 18px;
+          background: none;
+          border: none;
+          padding: 0;
+        }
+
+        .nm-brand-icon-box {
+          width: 32px;
+          height: 32px;
+          background-color: #111111;
+          border-radius: 8px;
           display: flex;
           align-items: center;
-          justifyContent: space-between;
+          justify-content: center;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .nm-brand-name {
+          font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+          font-size: 21px;
+          font-weight: 800;
+          color: #111111;
+          letter-spacing: -0.025em;
+        }
+
+        .nm-brand-description {
+          font-size: 13.5px;
+          line-height: 1.65;
+          color: #666666;
+          margin: 0 0 24px 0;
+          max-width: 340px;
+        }
+
+        .nm-brand-socials {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .nm-social-link {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          background-color: #f5f4f0;
+          color: #555555;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+          text-decoration: none;
+        }
+
+        .nm-social-link:hover {
+          background-color: #fe6200;
+          color: #ffffff;
+          transform: translateY(-2px);
+        }
+
+        /* Nav Columns */
+        .nm-card-nav-cols {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
           gap: 24px;
         }
 
-        .nm-bottom-center-line {
-          flex: 1;
-          height: 1px;
-          background-color: var(--colors-border-dark, #351505);
-          min-width: 30px;
+        .nm-nav-col {
+          display: flex;
+          flex-direction: column;
         }
 
-        .nm-social-icon {
-          color: #A3A3A3;
-          display: inline-flex;
-          align-items: center;
-          justifyContent: center;
-          transition: color 0.2s, transform 0.2s;
+        .nm-col-header {
+          font-size: 14px;
+          font-weight: 600;
+          color: #111111;
+          margin: 0 0 18px 0;
+          letter-spacing: -0.01em;
         }
 
-        .nm-social-icon:hover {
+        .nm-col-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .nm-nav-link {
+          font-size: 13px;
+          color: #666666;
+          text-decoration: none;
+          transition: color 0.15s ease, transform 0.15s ease;
+          display: inline-block;
+          line-height: 1.4;
+        }
+
+        .nm-nav-link:hover {
           color: #fe6200;
-          transform: translateY(-1px);
+          transform: translateX(2px);
         }
 
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 1280px) {
-          .nm-footer-grid {
-            flex-direction: column;
-            gap: 48px;
+        /* Card Bottom Row */
+        .nm-card-bottom-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding-top: 24px;
+          flex-wrap: wrap;
+          gap: 16px;
+        }
+
+        .nm-card-copyright {
+          font-size: 12.5px;
+          color: #888888;
+        }
+
+        .nm-card-legal-links {
+          display: flex;
+          align-items: center;
+          gap: 22px;
+        }
+
+        .nm-legal-btn {
+          background: none;
+          border: none;
+          padding: 0;
+          font-size: 12.5px;
+          color: #666666;
+          cursor: pointer;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-color: rgba(0, 0, 0, 0.15);
+          transition: color 0.15s ease, text-decoration-color 0.15s ease;
+        }
+
+        .nm-legal-btn:hover {
+          color: #fe6200;
+          text-decoration-color: #fe6200;
+        }
+
+        /* ----------------------------------------------------
+           4. GIANT GHOST WATERMARK (Exact Match)
+           ---------------------------------------------------- */
+        .nm-watermark-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          overflow: hidden;
+          margin-top: 10px;
+          padding-bottom: 0px;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        .nm-watermark-text {
+          font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+          font-size: clamp(80px, 16vw, 240px);
+          font-weight: 900;
+          line-height: 0.78;
+          letter-spacing: -0.04em;
+          color: #e5e3dc;
+          text-transform: capitalize;
+          white-space: nowrap;
+          display: block;
+          transform: translateY(12%);
+          opacity: 0.85;
+        }
+
+        /* ----------------------------------------------------
+           RESPONSIVE BREAKPOINTS
+           ---------------------------------------------------- */
+        @media (max-width: 1080px) {
+          .nm-card-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
           }
 
-          .nm-footer-hero {
-            flex: 0 0 100%;
-            max-width: 600px;
-          }
-
-          .nm-footer-columns-wrap {
-            width: 100%;
-            padding-left: 0;
-            display: grid;
-            grid-template-columns: repeat(4, auto);
-            gap: 32px;
-            justify-content: space-between;
-          }
-
-          .nm-far-right-decorator {
-            display: none;
+          .nm-brand-description {
+            max-width: 100%;
           }
         }
 
-        @media (max-width: 860px) {
-          .nm-footer-columns-wrap {
-            grid-template-columns: repeat(2, auto);
-            gap: 36px 32px;
-            justify-content: flex-start;
+        @media (max-width: 768px) {
+          .nm-footer-dark-banner {
+            padding: 70px 20px 90px 20px;
           }
 
-          .nm-bottom-inner {
+          .nm-footer-light-canvas {
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            padding: 32px 16px 0 16px;
+          }
+
+          .nm-floating-card {
+            border-radius: 20px;
+            padding: 24px;
+          }
+
+          .nm-card-nav-cols {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px 20px;
+          }
+
+          .nm-card-bottom-row {
             flex-direction: column;
             align-items: flex-start;
-            gap: 16px;
+            gap: 12px;
           }
 
-          .nm-bottom-center-line {
-            display: none;
+          .nm-card-legal-links {
+            flex-wrap: wrap;
+            gap: 16px;
           }
         }
 
-        @media (max-width: 520px) {
-          .nm-footer-columns-wrap {
+        @media (max-width: 480px) {
+          .nm-card-nav-cols {
             grid-template-columns: 1fr;
-            gap: 28px;
+            gap: 24px;
           }
 
-          .nm-footer-heading {
-            font-size: 36px;
+          .nm-watermark-text {
+            transform: translateY(8%);
           }
         }
       `}</style>
@@ -697,5 +659,3 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 };
 
 export const Footer = React.memo(FooterComponent);
-
-

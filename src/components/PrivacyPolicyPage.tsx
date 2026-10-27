@@ -48,9 +48,9 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
   }, [newsletterEmail]);
 
   return (
-    <div className="p-privacy-policy-page" style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-privacy-policy-page" style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. p-content-intro */}
-      <section className="p-content-intro" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #351505' }}>
+      <section className="p-content-intro" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(40px, 6vw, 64px)', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <p style={{ fontSize: '13px', fontWeight: 600, color: '#a3a09b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
             Last updated: October 13, 2025
@@ -94,7 +94,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                     textAlign: 'left',
                     background: 'none',
                     border: 'none',
-                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#351505'}`,
+                    borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#f0ece2'}`,
                     padding: '8px 14px',
                     color: activeSection === item.id ? '#fe6200' : '#868683',
                     fontWeight: activeSection === item.id ? 700 : 500,
@@ -118,7 +118,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </p>
 
               {/* Information We Collect */}
-              <div id="information-we-collect" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="information-we-collect" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Information We Collect
                 </h3>
@@ -134,7 +134,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* Purposes and Legal Bases */}
-              <div id="purposes-legal-bases" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="purposes-legal-bases" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Purposes and Legal Bases for Data Processing
                 </h3>
@@ -142,11 +142,11 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                   We only process personal information where we have a lawful legal basis under GDPR, CCPA/CPRA, and relevant data protection laws:
                 </p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '16px' }}>
-                  <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', padding: '20px', borderRadius: '4px' }}>
+                  <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', padding: '20px', borderRadius: '4px' }}>
                     <div style={{ fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>Contractual Performance</div>
                     <div style={{ fontSize: '14px', color: '#a3a09b' }}>Evaluating and fulfilling consulting agreements, NDAs, and software engineering services requested by you.</div>
                   </div>
-                  <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #351505)', border: '1px solid #351505', padding: '20px', borderRadius: '4px' }}>
+                  <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', padding: '20px', borderRadius: '4px' }}>
                     <div style={{ fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>Legitimate Interests</div>
                     <div style={{ fontSize: '14px', color: '#a3a09b' }}>Ensuring platform security, preventing fraud, managing client relationships, and optimizing our technical web services.</div>
                   </div>
@@ -154,7 +154,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* How We Share */}
-              <div id="how-we-share" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="how-we-share" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   How We Share Personal Information
                 </h3>
@@ -169,7 +169,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* International Transfers */}
-              <div id="international-transfers" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="international-transfers" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   International Transfers
                 </h3>
@@ -179,7 +179,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* Information Retention */}
-              <div id="information-retention" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="information-retention" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Information Retention
                 </h3>
@@ -189,7 +189,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* What Safeguards We Use */}
-              <div id="what-safeguards" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="what-safeguards" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   What Safeguards We Use
                 </h3>
@@ -204,7 +204,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* Your Rights */}
-              <div id="data-protection-rights" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="data-protection-rights" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Your Data Protection Rights
                 </h3>
@@ -220,7 +220,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* Links & Cookies */}
-              <div id="links-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="links-cookies" style={{ scrollMarginTop: '100px', marginBottom: '40px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Links &amp; Cookies
                 </h3>
@@ -240,7 +240,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
               </div>
 
               {/* Changes & Contact */}
-              <div id="changes-contact" style={{ scrollMarginTop: '100px', borderTop: '1px solid #351505', paddingTop: '32px' }}>
+              <div id="changes-contact" style={{ scrollMarginTop: '100px', borderTop: '1px solid #f0ece2', paddingTop: '32px' }}>
                 <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff', letterSpacing: '-0.02em', marginBottom: '14px' }}>
                   Changes to Privacy Policy &amp; Contact Us
                 </h3>
@@ -266,7 +266,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
       <LocationsSection />
 
       {/* 5. Newsletter Section (s-newsletter g-section js-newsletter theme-light) */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #200b00)', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#ffffff', margin: 0, letterSpacing: '-0.02em' }}>
@@ -288,8 +288,8 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
-                border: '1px solid #351505',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                border: '1px solid #f0ece2',
                 borderRadius: '2px',
                 color: '#ffffff',
                 outline: 'none',

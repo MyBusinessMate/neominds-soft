@@ -109,20 +109,6 @@ export const Testimonials: React.FC = () => {
         >
           {/* Left Column: Index, Title & Client Directory */}
           <div>
-            <span
-              style={{
-                fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#fe6200',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '10px',
-              }}
-            >
-              Client Verification
-            </span>
             <h2
               style={{
                 fontFamily: 'var(--typography-heading1-family)',
@@ -279,7 +265,7 @@ export const Testimonials: React.FC = () => {
                   fontSize: 'clamp(22px, 2.3vw, 29px)',
                   fontWeight: 400,
                   lineHeight: 1.45,
-                  color: '#200b00',
+                  color: '#fbf9f5',
                   margin: '0 0 36px 0',
                   letterSpacing: '-0.01em',
                 }}
@@ -372,7 +358,7 @@ export const Testimonials: React.FC = () => {
                     borderRadius: '4px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -385,7 +371,7 @@ export const Testimonials: React.FC = () => {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                   }}
                 >
                   <ArrowLeft size={16} />
@@ -399,7 +385,7 @@ export const Testimonials: React.FC = () => {
                     borderRadius: '4px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    color: '#200b00',
+                    color: '#fbf9f5',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -412,7 +398,7 @@ export const Testimonials: React.FC = () => {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#200b00';
+                    e.currentTarget.style.color = '#fbf9f5';
                   }}
                 >
                   <ArrowRight size={16} />

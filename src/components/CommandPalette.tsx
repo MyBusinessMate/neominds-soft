@@ -181,8 +181,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         style={{
           width: '100%',
           maxWidth: '640px',
-          backgroundColor: '#200b00',
-          border: '1px solid #351505',
+          backgroundColor: '#fbf9f5',
+          border: '1px solid #f0ece2',
           borderRadius: '0px',
           boxShadow: '0 25px 60px rgba(32, 11, 0, 0.95)',
           overflow: 'hidden',
@@ -196,7 +196,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             alignItems: 'center',
             gap: '12px',
             padding: '16px 20px',
-            borderBottom: '1px solid #351505',
+            borderBottom: '1px solid #f0ece2',
             backgroundColor: '#2a1205',
           }}
         >

@@ -367,12 +367,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Tagline */}
                   <p
                     style={{
-                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: isMobile ? '15px' : '16px',
-                      fontWeight: 500,
+                      fontWeight: 600,
                       color: '#000000',
                       margin: '0 0 16px 0',
                       lineHeight: 1.5,
+                      letterSpacing: '-0.01em',
                     }}
                   >
                     {card.tagline}
@@ -381,10 +382,10 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Detailed Description with Embedded Keyword Links */}
                   <p
                     style={{
-                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: 'clamp(14px, 1.1vw, 16px)',
                       lineHeight: 1.6,
-                      color: '#868683',
+                      color: '#66615c',
                       margin: '0 0 24px 0',
                       fontWeight: 400,
                     }}
@@ -392,13 +393,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                     {renderDescriptionWithLinks(card.description, card.links, handleCardClick)}
                   </p>
 
-                  {/* Connected Neominds Services Pills */}
+                  {/* Connected Neominds Services Pills (Apple Capsule Ornaments) */}
                   <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                     <div
                       style={{
-                        fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                        fontFamily: "'DM Sans', sans-serif",
                         fontSize: '11px',
-                        fontWeight: 500,
+                        fontWeight: 700,
                         letterSpacing: '0.08em',
                         color: '#868683',
                         textTransform: 'uppercase',
@@ -419,27 +420,37 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '6px',
-                            padding: isMobile ? '6px 12px' : '8px 14px',
-                            borderRadius: '10px',
+                            padding: isMobile ? '6px 14px' : '8px 16px',
+                            borderRadius: '9999px',
                             backgroundColor: '#f1efeb',
                             border: '1px solid #e4e2e1',
-                            fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                            fontFamily: "'DM Sans', sans-serif",
                             fontSize: isMobile ? '12px' : '13px',
-                            fontWeight: 400,
+                            fontWeight: 500,
                             color: '#000000',
                             cursor: 'pointer',
                             boxShadow: 'none',
-                            transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                            transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                           }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.borderColor = '#fe6200';
                             e.currentTarget.style.color = '#fe6200';
                             e.currentTarget.style.backgroundColor = '#ffffff';
+                            e.currentTarget.style.transform = 'translateY(-1px)';
+                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(254, 98, 0, 0.12)';
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.borderColor = '#e4e2e1';
                             e.currentTarget.style.color = '#000000';
                             e.currentTarget.style.backgroundColor = '#f1efeb';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = 'none';
+                          }}
+                          onMouseDown={(e) => {
+                            e.currentTarget.style.transform = 'scale(0.97)';
+                          }}
+                          onMouseUp={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-1px)';
                           }}
                         >
                           <span>{pill.label}</span>

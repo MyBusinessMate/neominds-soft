@@ -124,7 +124,7 @@ export const EngineeringBlobSection: React.FC = () => {
         position: 'relative',
         width: '100%',
         height: '100vh',
-        backgroundColor: 'var(--colors-background-dark)', // #200b00 Freehand deep dark brown
+        backgroundColor: 'var(--colors-background-dark)', // #fbf9f5 Freehand deep dark brown
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -143,7 +143,7 @@ export const EngineeringBlobSection: React.FC = () => {
           width: '100%',
           height: '100%',
           borderRadius: '0%',
-          background: 'radial-gradient(ellipse at 50% 95%, #fe6200 0%, #cf5000 45%, #873F09 75%, #200b00 100%)',
+          background: 'radial-gradient(ellipse at 50% 95%, #fe6200 0%, #cf5000 45%, #873F09 75%, #fbf9f5 100%)',
           zIndex: 1,
           pointerEvents: 'none',
           willChange: 'width, height, bottom, border-radius, filter',
@@ -220,7 +220,7 @@ export const EngineeringBlobSection: React.FC = () => {
             transition: 'color 0.38s ease',
           }}
         >
-          AI adds real value only when the software around it is solid. Neominds TechHub builds the application, the cloud setup and the AI features together, so your product is secure, fast, easy to maintain and ready to grow with your business.
+          AI only creates value when the system underneath is rock solid. We build your core application, cloud architecture, and AI models as one unified system — fast, secure, maintainable, and built to handle real traffic.
         </p>
       </div>
     </div>

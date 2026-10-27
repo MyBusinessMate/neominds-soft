@@ -23,7 +23,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
   return (
     <div
       style={{
-        backgroundColor: 'var(--colors-background-dark, #200b00)',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         color: '#ffffff',
         minHeight: '100vh',
         paddingTop: '80px',
@@ -49,7 +49,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             alignItems: 'center',
             gap: '8px',
             padding: '6px 14px',
-            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
             border: '1px solid #fe6200',
             borderRadius: '2px',
             color: '#fe6200',
@@ -132,7 +132,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
               color: '#fe6200',
               border: '1px solid #fe6200',
               borderRadius: '2px',
@@ -146,7 +146,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               e.currentTarget.style.color = '#ffffff';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #351505)';
+              e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
               e.currentTarget.style.color = '#fe6200';
             }}
           >
@@ -159,7 +159,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
         <div
           style={{
             padding: '36px 32px',
-            backgroundColor: 'var(--colors-surface-dark-subtle, #351505)',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
             border: '1px solid #1F1F23',
             borderRadius: '2px',
             textAlign: 'left',

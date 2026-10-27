@@ -264,28 +264,14 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #200b00)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
-            <span
-              style={{
-                display: 'inline-block',
-                fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#fe6200',
-                marginBottom: '16px',
-              }}
-            >
-              Services Hub
-            </span>
-
             <ScrollReveal
               as="h1"
               style={{
@@ -368,9 +354,6 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Market Dynamics
-            </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               What is shaping software today
             </h2>
@@ -412,9 +395,6 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1', borderBottom: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '44px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Core Capabilities
-            </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               What we build
             </h2>
@@ -463,9 +443,6 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '48px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Full Service Catalog
-            </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Services we offer
             </h2>
@@ -529,9 +506,6 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
             <div>
-              <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                Domain Expertise
-              </span>
               <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
                 Industries we build for
               </h2>
@@ -589,9 +563,6 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
-            <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              Modern Tech Stack
-            </span>
             <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
               Technologies we use
             </h2>

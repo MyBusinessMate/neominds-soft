@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 import { ServiceFaq } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -22,22 +22,6 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
     >
       <div style={{ maxWidth: '960px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#fe6200',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            <HelpCircle size={14} />
-            <span>Technical Due Diligence</span>
-          </div>
           <ScrollReveal
             as="h2"
             style={{
@@ -101,7 +85,7 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: isExpanded ? '#fe6200' : '#200b00',
+                        color: isExpanded ? '#fe6200' : '#fbf9f5',
                         flexShrink: 0,
                       }}
                     >
