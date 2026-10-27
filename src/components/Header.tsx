@@ -469,7 +469,7 @@ export const Header: React.FC<HeaderProps> = ({
                 flexShrink: 0,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#e05500';
+                e.currentTarget.style.backgroundColor = '#cf5000';
                 e.currentTarget.style.transform = 'translateY(-1px)';
                 e.currentTarget.style.boxShadow = '0 4px 12px rgba(254, 98, 0, 0.32)';
               }}

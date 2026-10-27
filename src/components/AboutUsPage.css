@@ -63,7 +63,7 @@
   font-family: var(--font-heading, inherit);
   letter-spacing: -0.04em;
   line-height: 1.05;
-  color: #181512;
+  color: #000000;
   margin: 0 0 24px 0;
 }
 
@@ -74,7 +74,7 @@
 
 .s-superhero__subtitle {
   font-size: clamp(17px, 2vw, 22px);
-  color: #6e675f;
+  color: #868683;
   max-width: 760px;
   margin: 0 auto 36px auto;
   line-height: 1.6;
@@ -85,9 +85,9 @@
    -------------------------------------------------------------------------- */
 .s-blockquote {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #f0ece2;
-  border-top: 1px solid var(--colors-border-dark, #e5dfd5);
-  border-bottom: 1px solid var(--colors-border-dark, #e5dfd5);
+  background-color: #f1efeb;
+  border-top: 1px solid var(--colors-border-dark, #e4e2e1);
+  border-bottom: 1px solid var(--colors-border-dark, #e4e2e1);
   position: relative;
 }
 
@@ -112,8 +112,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #fbf9f5;
-  border: 1px solid var(--colors-border-dark, #e5dfd5);
+  background: #f1efeb;
+  border: 1px solid var(--colors-border-dark, #e4e2e1);
   border-radius: 4px;
   padding: 32px 24px;
 }
@@ -130,7 +130,7 @@
 .s-blockquote__name {
   font-size: 20px;
   font-weight: 700;
-  color: #181512;
+  color: #000000;
   margin: 0 0 6px 0;
 }
 
@@ -160,7 +160,7 @@
   font-size: clamp(24px, 3.2vw, 38px);
   font-weight: 600;
   font-family: var(--font-heading, inherit);
-  color: #181512;
+  color: #000000;
   line-height: 1.35;
   letter-spacing: -0.02em;
   margin: 0 0 20px 0;
@@ -175,7 +175,7 @@
 
 .s-blockquote__subtext {
   font-size: 16px;
-  color: #6e675f;
+  color: #868683;
   line-height: 1.6;
   margin: 0;
 }
@@ -1033,7 +1033,7 @@
 }
 
 .s-team-panel-cta:hover {
-  background-color: #e05500;
+  background-color: #cf5000;
   transform: translateY(-2px);
 }
 

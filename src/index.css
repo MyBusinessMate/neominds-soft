@@ -32,30 +32,30 @@ html.lenis body {
      Warm Cream / Beige Theme with Orange (#fe6200) as Secondary Accent
      ========================================================================== */
   --colors-primary: #fe6200;
-  --colors-primary-hover: #e05500;
-  --colors-background: #fbf9f5;
-  --colors-surface-light: #f3efe6;
-  --colors-background-dark: #fbf9f5;
-  --colors-surface-dark-subtle: #f0ece2;
-  --colors-text-primary: #181512;
-  --colors-text-muted: #6e675f;
+  --colors-primary-hover: #cf5000;
+  --colors-background: #ffffff;
+  --colors-surface-light: #f1efeb;
+  --colors-background-dark: #f1efeb;
+  --colors-surface-dark-subtle: #f1efeb;
+  --colors-text-primary: #000000;
+  --colors-text-muted: #868683;
   --colors-text-inverse: #ffffff;
-  --colors-border-light: #e5dfd5;
-  --colors-border-dark: #e5dfd5;
+  --colors-border-light: #e4e2e1;
+  --colors-border-dark: #e4e2e1;
   --colors-fail-contrast-orange: #fe6507;
 
   /* Aliases for site-wide component compatibility */
   --color-brand: #fe6200;
-  --color-brand-hover: #e05500;
-  --color-brand-active: #e05500;
+  --color-brand-hover: #cf5000;
+  --color-brand-active: #cf5000;
   --color-brand-focus: #fe6200;
-  --color-bg-primary: #fbf9f5;
-  --color-text-primary: #181512;
-  --color-text-secondary: #6e675f;
-  --color-border: #e5dfd5;
-  --color-border-secondary: #e5dfd5;
-  --color-disabled-bg: #ece7dc;
-  --color-disabled-text: #8e887f;
+  --color-bg-primary: #f1efeb;
+  --color-text-primary: #000000;
+  --color-text-secondary: #868683;
+  --color-border: #e4e2e1;
+  --color-border-secondary: #e4e2e1;
+  --color-disabled-bg: #e4e2e1;
+  --color-disabled-text: #868683;
   --color-text-link: #fe6200;
   --color-btn-filled-text: #ffffff;
 
@@ -63,12 +63,12 @@ html.lenis body {
   --color-primary: var(--colors-primary);
   --color-primary-hover: var(--colors-primary-hover);
   --color-primary-light: rgba(254, 98, 0, 0.12);
-  --color-background: #fbf9f5;
-  --color-background-dark: #fbf9f5;
-  --dark-surface: #f0ece2;
-  --dark-text: #181512;
-  --dark-text-muted: #6e675f;
-  --dark-border: #e5dfd5;
+  --color-background: #f1efeb;
+  --color-background-dark: #f1efeb;
+  --dark-surface: #f1efeb;
+  --dark-text: #000000;
+  --dark-text-muted: #868683;
+  --dark-border: #e4e2e1;
 
   /* Typography Design Tokens (DM Sans for Body & Subheadings) */
   --typography-display-family: 'BL Pylon Serif', 'Newsreader', 'Playfair Display', Georgia, serif;
@@ -217,7 +217,7 @@ html {
 html {
   font-family: var(--font-body);
   font-size: 16px;
-  background-color: var(--colors-background-dark, #fbf9f5);
+  background-color: var(--colors-background-dark, #f1efeb);
   color: var(--color-text-primary);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -226,7 +226,7 @@ html {
 
 body {
   overflow-x: clip;
-  background-color: var(--colors-background-dark, #fbf9f5);
+  background-color: var(--colors-background-dark, #f1efeb);
   color: var(--color-text-primary);
   font-family: var(--font-body);
 }
