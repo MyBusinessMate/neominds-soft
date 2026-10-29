@@ -1,7 +1,6 @@
 import React from 'react';
 import { ArrowRight, LucideIcon } from 'lucide-react';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
-import { ServiceBreadcrumb } from './ServiceBreadcrumb';
 
 interface ServiceHeroProps {
   category: string;
@@ -19,120 +18,105 @@ interface ServiceHeroProps {
 }
 
 export const ServiceHero: React.FC<ServiceHeroProps> = ({
-  category,
-  badge,
+  category: _category,
+  badge: _badge,
   headline,
   headlineHighlight,
   description,
   heroImage,
   heroImageCaption,
-  icon: IconComponent,
+  icon: _IconComponent,
   primaryCtaText = 'Book Free Consultation',
   secondaryCtaText = 'View Case Studies',
-  onNavigateHome,
+  onNavigateHome: _onNavigateHome,
   onViewCaseStudies,
 }) => {
   return (
     <section
       style={{
         position: 'relative',
-        padding: 'clamp(48px, 6vw, 84px) 24px clamp(40px, 5vw, 68px)',
-        background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-        borderBottom: '1px solid #e2e8f0',
+        padding: 'clamp(56px, 7vw, 96px) 24px clamp(48px, 6vw, 76px)',
+        background: 'var(--colors-background-dark, #fbf9f5)',
+        borderBottom: '1px solid #f0ece2',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        {/* 01. Breadcrumb */}
-        <ServiceBreadcrumb
-          category={category}
-          title={`${headline} ${headlineHighlight}`}
-          onNavigateHome={onNavigateHome}
-        />
-
-        {/* 02. Hero 2-Column Standardized Grid */}
+        {/* Hero 2-Column Standardized Grid (No Breadcrumbs, No Clutter Badges) */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(32px, 5vw, 56px)',
+            gap: 'clamp(36px, 5vw, 64px)',
             alignItems: 'center',
           }}
         >
           {/* Left Hero Column */}
           <div>
-            {/* Category / Eyebrow Badge */}
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '6px 14px',
-                backgroundColor: 'rgba(34, 88, 231, 0.08)',
-                border: '1px solid rgba(34, 88, 231, 0.25)',
-                borderRadius: '3px',
-                color: '#2258e7',
-                fontSize: '12.5px',
-                fontWeight: 700,
-                letterSpacing: '0.04em',
-                marginBottom: '20px',
-                textTransform: 'uppercase',
-              }}
-            >
-              <IconComponent size={15} />
-              <span>{badge}</span>
-            </div>
-
-            {/* Large H1 Headline */}
+            {/* Large H1 Headline - BL Pylon Serif Display */}
             <ScrollReveal
               as="h1"
               style={{
-                fontSize: 'clamp(34px, 4.4vw, 54px)',
-                fontWeight: 800,
-                fontFamily: 'var(--font-heading)',
-                lineHeight: 1.12,
-                letterSpacing: '-0.03em',
-                color: '#0f172a',
-                marginBottom: '20px',
+                fontSize: 'clamp(36px, 4.8vw, 58px)',
+                fontWeight: 400,
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                color: '#000000',
+                marginBottom: '24px',
                 display: 'block',
               }}
               blurStrength={8}
             >
-              {headline} <span style={{ color: '#2258e7' }}>{headlineHighlight}</span>
+              {headline} <span style={{ color: '#fe6200' }}>{headlineHighlight}</span>
             </ScrollReveal>
 
-            {/* Supporting Description */}
+            {/* Supporting Description - Warm Stone */}
             <RevealElement variant="text" delay={0.06}>
               <p
                 style={{
-                  fontSize: 'clamp(16px, 1.2vw, 18px)',
+                  fontSize: 'clamp(16px, 1.25vw, 18px)',
                   lineHeight: 1.65,
-                  color: '#475569',
-                  marginBottom: '32px',
+                  color: '#000000',
+                  marginBottom: '36px',
                   maxWidth: '580px',
+                  fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
                 }}
               >
                 {description}
               </p>
             </RevealElement>
 
-            {/* Action Buttons */}
+            {/* Action Buttons - Freehand Rectangular Button System */}
             <RevealElement variant="button" delay={0.12}>
-              <div className="btn-group-lg" style={{ marginBottom: '8px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '14px',
+                  alignItems: 'center',
+                  marginBottom: '8px',
+                }}
+              >
                 <a
                   href="#service-contact"
-                  className="btn btn-primary btn-lg"
                   style={{
-                    backgroundColor: '#2258e7',
-                    color: '#ffffff',
+                    backgroundColor: '#fe6200', color: '#ffffff',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '8px',
+                    gap: '10px',
                     textDecoration: 'none',
-                    fontWeight: 600,
-                    borderRadius: '4px',
-                    padding: '12px 24px',
-                    boxShadow: '0 4px 14px rgba(34, 88, 231, 0.3)',
-                    transition: 'transform 0.2s, box-shadow 0.2s',
+                    fontWeight: 500,
+                    borderRadius: '8px',
+                    padding: '13px 26px',
+                    fontSize: '15px',
+                    letterSpacing: '0.02em',
+                    transition: 'background-color 0.2s, transform 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#cf5000';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#fe6200';
                   }}
                 >
                   <span>{primaryCtaText}</span>
@@ -141,16 +125,25 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
 
                 <button
                   onClick={onViewCaseStudies}
-                  className="btn btn-outline btn-lg"
                   style={{
-                    color: '#0f172a',
-                    borderColor: '#cbd5e1',
-                    borderRadius: '4px',
-                    padding: '12px 22px',
-                    fontWeight: 600,
-                    background: '#ffffff',
+                    color: '#000000',
+                    borderColor: '#f0ece2',
+                    border: '1px solid #f0ece2',
+                    borderRadius: '8px',
+                    padding: '13px 24px',
+                    fontWeight: 500,
+                    fontSize: '15px',
+                    background: 'transparent',
                     cursor: 'pointer',
                     transition: 'border-color 0.2s, background-color 0.2s',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.06)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#f0ece2';
+                    e.currentTarget.style.backgroundColor = 'transparent';
                   }}
                 >
                   <span>{secondaryCtaText}</span>
@@ -159,18 +152,17 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
             </RevealElement>
           </div>
 
-          {/* Right Hero Visual Column (Consistent Layout & Service-Aware Imagery) */}
+          {/* Right Hero Visual Column */}
           <RevealElement variant="card" delay={0.08}>
             <div
               style={{
                 position: 'relative',
                 width: '100%',
-                height: 'clamp(280px, 32vw, 380px)',
+                height: 'clamp(280px, 32vw, 400px)',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                boxShadow: '0 20px 48px rgba(15, 23, 42, 0.12)',
-                border: '1px solid #e2e8f0',
-                backgroundColor: '#0f172a',
+                border: '1px solid #f0ece2',
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
               }}
             >
               <img
@@ -195,44 +187,9 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                   position: 'absolute',
                   inset: 0,
                   background:
-                    'linear-gradient(180deg, rgba(15, 23, 42, 0.15) 0%, rgba(15, 23, 42, 0.75) 100%)',
+                    'linear-gradient(180deg, rgba(32, 11, 0, 0.15) 0%, rgba(32, 11, 0, 0.72) 100%)',
                 }}
               />
-
-              {/* Floating Architectural Badge */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '16px',
-                  left: '16px',
-                  right: '16px',
-                  backgroundColor: 'rgba(15, 23, 42, 0.88)',
-                  backdropFilter: 'blur(12px)',
-                  WebkitBackdropFilter: 'blur(12px)',
-                  border: '1px solid rgba(255, 255, 255, 0.14)',
-                  borderRadius: '6px',
-                  padding: '12px 18px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#22c55e' }} />
-                  <span
-                    style={{
-                      fontSize: '12px',
-                      fontWeight: 700,
-                      color: '#ffffff',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                    }}
-                  >
-                    {heroImageCaption || `${headline} Production Topology`}
-                  </span>
-                </div>
-                <span style={{ fontSize: '11px', color: '#60a5fa', fontWeight: 600 }}>Enterprise SLA</span>
-              </div>
             </div>
           </RevealElement>
         </div>
@@ -240,3 +197,4 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
     </section>
   );
 };
+

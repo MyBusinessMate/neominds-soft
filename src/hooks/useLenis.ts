@@ -22,9 +22,8 @@ export function useLenis() {
     // Decouples visual render from DOM scroll via Lerp inside RAF/GSAP ticker
     const lenis = new Lenis({
       lerp: 0.1, // Exact Ballance linear interpolation rate (10% distance per frame)
-      duration: 1.2, // Buttery momentum deceleration
       smoothWheel: !reduceMotion, // Hijacks mouse wheel for desktop smoothing
-      syncTouch: false, // MANDATORY: Never hijack touch on mobile for 120Hz native momentum
+      syncTouch: false, // CRITICAL BALLANCE MANDATE: Never hijack touch on mobile for 120Hz native momentum
       wheelMultiplier: 1.0, // Natural 1:1 hardware scroll multiplier
       touchMultiplier: 1.0, // Natural touch scrolling on devices
       orientation: 'vertical',
@@ -43,13 +42,13 @@ export function useLenis() {
       window.dispatchEvent(new CustomEvent('lenis-scroll', { detail: e }));
     });
 
-    // 3. Add Lenis to GSAP ticker for synchronized 60fps/120fps animation loop
-    const updateTicker = (time: number) => {
+    // 3. Connect Lenis directly to GSAP's central ticker with zero lag smoothing
+    // This locks Lenis and ScrollTrigger to the exact same render frame without jitter or desync
+    gsap.ticker.lagSmoothing(0);
+    const tickerUpdate = (time: number) => {
       lenis.raf(time * 1000);
     };
-
-    gsap.ticker.add(updateTicker);
-    gsap.ticker.lagSmoothing(0);
+    gsap.ticker.add(tickerUpdate);
 
     // Refresh ScrollTrigger positions after DOM layout stabilizes and assets load
     const refreshTimers = [
@@ -105,7 +104,7 @@ export function useLenis() {
       window.removeEventListener('load', handleWindowLoad);
       window.removeEventListener('resize', handleResize);
       document.removeEventListener('click', handleAnchorClick, { capture: true });
-      gsap.ticker.remove(updateTicker);
+      gsap.ticker.remove(tickerUpdate);
       lenis.destroy();
       lenisRef.current = null;
       globalLenis = null;
@@ -156,4 +155,3 @@ export function useLenis() {
 export function getLenis() {
   return globalLenis;
 }
-

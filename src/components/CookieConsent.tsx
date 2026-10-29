@@ -55,6 +55,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           margin: '0 auto',
           backgroundColor: '#0d111a',
           border: '1px solid rgba(255, 255, 255, 0.15)',
+          borderRadius: '8px',
           padding: 'clamp(18px, 3vw, 24px) clamp(16px, 3vw, 28px)',
           boxShadow: 'none',
           zIndex: 990,
@@ -67,12 +68,12 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
         aria-label="Cookie consent banner"
       >
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-          <Shield size={22} color="#2258e7" style={{ flexShrink: 0, marginTop: '2px' }} />
+          <Shield size={22} color="#fe6200" style={{ flexShrink: 0, marginTop: '2px' }} />
           <div>
             <h4 style={{ fontFamily: 'var(--font-heading)', fontSize: '15px', fontWeight: 700, marginBottom: '6px' }}>
               We value your privacy and cookie transparency
             </h4>
-            <p className="body-text" style={{ fontSize: '13px', lineHeight: 1.5, color: '#8893a7' }}>
+            <p className="body-text" style={{ fontSize: '13px', lineHeight: 1.5, color: '#a3a09b' }}>
               Neominds uses necessary cookies to ensure system stability, analyze web traffic, and personalize your experience. Learn more in our{' '}
               <button
                 onClick={onOpenPrivacy}
@@ -99,6 +100,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               padding: '8px 16px',
               backgroundColor: 'transparent',
               border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
@@ -115,6 +117,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               padding: '8px 20px',
               backgroundColor: 'transparent',
               border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
@@ -124,7 +127,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           <button
             onClick={handleAcceptAll}
             className="btn-primary"
-            style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px' }}
+            style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px', borderRadius: '8px' }}
           >
             Accept All
           </button>
@@ -140,7 +143,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            backgroundColor: 'rgba(32, 11, 0,  0.85)',
             zIndex: 1001,
             display: 'flex',
             alignItems: 'center',
@@ -156,6 +159,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               maxWidth: '560px',
               backgroundColor: '#0a0e17',
               border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '8px',
               padding: 'clamp(20px, 4vw, 32px)',
               color: '#ffffff',
             }}
@@ -165,12 +169,13 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <button
                 onClick={() => setShowSettings(false)}
                 style={{
-                  color: '#8893a7',
+                  color: '#a3a09b',
                   minWidth: '44px',
                   minHeight: '44px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  borderRadius: '8px',
                 }}
                 aria-label="Close settings"
               >
@@ -182,7 +187,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '12px' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Strictly Necessary Cookies</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Essential for core site navigation and security.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Essential for core site navigation and security.</p>
                 </div>
                 <span style={{ fontFamily: 'var(--font-heading)', fontSize: '12px', color: '#10b981', fontWeight: 700 }}>Always Active</span>
               </div>
@@ -190,7 +195,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '12px' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Performance & Analytics</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Helps us measure site traffic and responsiveness.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Helps us measure site traffic and responsiveness.</p>
                 </div>
                 <input
                   type="checkbox"
@@ -203,7 +208,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <h5 style={{ fontFamily: 'var(--font-heading)', fontSize: '14px', fontWeight: 700 }}>Marketing & Attribution</h5>
-                  <p className="body-text" style={{ fontSize: '12px', color: '#8893a7' }}>Used to evaluate campaign performance.</p>
+                  <p className="body-text" style={{ fontSize: '12px', color: '#a3a09b' }}>Used to evaluate campaign performance.</p>
                 </div>
                 <input
                   type="checkbox"
@@ -217,14 +222,14 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
               <button
                 onClick={() => setShowSettings(false)}
-                style={{ padding: '8px 16px', color: '#8893a7', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px' }}
+                style={{ padding: '8px 16px', color: '#a3a09b', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px', borderRadius: '8px' }}
               >
                 Cancel
               </button>
               <button
                 onClick={handleSavePreferences}
                 className="btn-primary"
-                style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px' }}
+                style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px', borderRadius: '8px' }}
               >
                 Save Preferences
               </button>

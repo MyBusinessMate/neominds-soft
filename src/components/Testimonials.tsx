@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
-import { RevealElement } from './scroll-reveal';
 
 interface TestimonialItem {
   id: string;
@@ -10,11 +9,10 @@ interface TestimonialItem {
   author: string;
   title: string;
   photoUrl?: string;
-  hasBlueDot?: boolean;
 }
 
 export const Testimonials: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const testimonials: TestimonialItem[] = [
     {
@@ -26,7 +24,6 @@ export const Testimonials: React.FC = () => {
       author: 'Thomas Golden',
       title: 'USA, TruBridge (formerly TruCode)',
       photoUrl: '/uploads/ESThumbnails/2092/200.tomgolden.png',
-      hasBlueDot: true,
     },
     {
       id: '2',
@@ -45,7 +42,6 @@ export const Testimonials: React.FC = () => {
         'Neominds’s team deeply understood our requirements and have been a proactive part of any problem-solving process. We have only experienced a professional approach to our projects, as well as a pleasant and trust-based collaboration. They’ve quickly found and added the necessary resources.',
       author: 'Sasja Ihn Christensen',
       title: 'Senior Director, Head of Digital Business Development',
-      hasBlueDot: true,
     },
     {
       id: '4',
@@ -65,7 +61,6 @@ export const Testimonials: React.FC = () => {
       author: 'Jesse MacNish',
       title: 'CTO USA, Plato',
       photoUrl: '/uploads/ESThumbnails/34585/200.plato-photo.png',
-      hasBlueDot: true,
     },
     {
       id: '6',
@@ -76,55 +71,17 @@ export const Testimonials: React.FC = () => {
       author: 'Peter Gerard',
       title: 'Head of Product',
     },
-    {
-      id: '7',
-      clientName: 'City Index',
-      logoUrl: '/uploads/ESThumbnails/3281/280.Testimonials_CityIndex_color_50x125.png',
-      quote:
-        'Since our first engagement, I have been impressed not only by the quality of work that Neominds has done for City Index but also their attention to detail and reliability on delivery dates.',
-      author: 'Arthur Grimley',
-      title: 'CIO UK, CityIndex Group',
-      photoUrl: '/uploads/ESThumbnails/2095/200.arthur.png',
-      hasBlueDot: true,
-    },
-    {
-      id: '8',
-      clientName: 'Axure',
-      logoUrl: '/uploads/ESThumbnails/3277/280.Testimonials_Axure_color_50x125.png',
-      quote:
-        'The team at Neominds is very skilled and has been a pleasure to work with. They have enabled us to adopt new technologies as they add their diverse skillset to our team. I would not hesitate to recommend Neominds to anyone looking for a great partner.',
-      author: 'Martin Smith',
-      title: 'CTO USA, Axure Software Solutions, Inc.',
-      photoUrl: '/uploads/ESThumbnails/1331/200.Martin-Smith-CTO@Axure.jpg',
-    },
-    {
-      id: '9',
-      clientName: 'Canopy',
-      logoUrl: '/uploads/2010/04/canopy-color.svg',
-      quote:
-        'Neominds has been providing services to Canopy for the last four years. Their skilled engineers understand our product needs, deliver quality platform increments following agile principles, respond flexibly to changes, and meet evolving deadlines.',
-      author: 'Matt Hobbs',
-      title: 'Chief Product Officer',
-      hasBlueDot: true,
-    },
-
   ];
 
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+  const current = testimonials[currentIndex];
 
   const handlePrev = () => {
-    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const handleNext = () => {
-    setCurrentPage((prev) => (prev < totalPages - 1 ? prev + 1 : 0));
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
-
-  const currentTestimonials = testimonials.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
 
   return (
     <section
@@ -132,281 +89,336 @@ export const Testimonials: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ffffff',
-        paddingTop: 'clamp(70px, 8vw, 110px)',
-        paddingBottom: 'clamp(70px, 8vw, 110px)',
-        borderTop: '1px solid #e4e4e7',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
+        paddingTop: 'clamp(80px, 9vw, 120px)',
+        paddingBottom: 'clamp(80px, 9vw, 120px)',
+        borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+        color: '#000000',
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Section Header */}
-        <div style={{ marginBottom: 'clamp(28px, 4vw, 44px)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '16px' }}>
-          <div>
-            <span style={{ fontSize: '13px', fontWeight: 700, color: '#475067', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              TESTIMONIALS
-            </span>
-            <h2
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: 'clamp(28px, 3.5vw, 44px)',
-                fontWeight: 700,
-                color: '#121212',
-                letterSpacing: '-0.025em',
-                margin: '8px 0 0 0',
-              }}
-            >
-              Our clients say it best
-            </h2>
-          </div>
-
-          {/* Quick Page Info */}
-          <div style={{ fontSize: '13px', color: '#64748b', fontWeight: 500 }}>
-            Showing {currentPage * itemsPerPage + 1}–{Math.min((currentPage + 1) * itemsPerPage, testimonials.length)} of {testimonials.length} reviews
-          </div>
-        </div>
-
-        {/* 3-Column Testimonial Layout with Smooth Fade-in */}
+        {/* Asymmetrical Editorial Showcase with Freehand aesthetics */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(20px, 2.5vw, 32px)',
-            marginBottom: 'clamp(36px, 4vw, 56px)',
+            gridTemplateColumns: 'minmax(280px, 1fr) minmax(340px, 1.8fr)',
+            gap: 'clamp(40px, 6vw, 80px)',
+            alignItems: 'start',
           }}
+          className="testimonials-grid"
         >
-          {currentTestimonials.map((item) => (
-            <RevealElement key={item.id} variant="card">
-              <div
-                style={{
-                  backgroundColor: '#f5f7fc',
-                  border: '1px solid #d0d3dd',
-                  borderRadius: '0px',
-                  boxShadow: 'none',
-                  padding: 'clamp(24px, 3vw, 36px)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '380px',
-                  position: 'relative',
-                  transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease',
-                  cursor: 'default',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.borderColor = '#2258e7';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = '#d0d3dd';
-                }}
-              >
-                <div>
-                  {/* Top Logo / Client Header */}
-                  <div
+          {/* Left Column: Index, Title & Client Directory */}
+          <div>
+            <h2
+              style={{
+                fontFamily: 'var(--typography-heading1-family)',
+                fontSize: 'clamp(32px, 3.6vw, 44px)',
+                fontWeight: 700,
+                lineHeight: 1.2,
+                color: '#000000',
+                marginBottom: '28px',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              What our long-term engineering partners say.
+            </h2>
+
+            {/* Client Interactive Roster */}
+            <div
+              style={{
+                borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+                display: 'flex',
+                flexDirection: 'column',
+              }}
+            >
+              {testimonials.map((item, idx) => {
+                const isActive = idx === currentIndex;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => setCurrentIndex(idx)}
                     style={{
-                      height: '48px',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      marginBottom: '20px',
+                      padding: '16px 0',
+                      background: 'none',
+                      border: 'none',
+                      borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
+                      cursor: 'pointer',
+                      textAlign: 'left',
+                      transition: 'all 0.25s ease',
                     }}
                   >
-                    {item.logoUrl ? (
-                      <img
-                        src={item.logoUrl}
-                        alt={`${item.clientName} enterprise client logo`}
-                        loading="lazy"
-                        style={{ maxHeight: '36px', maxWidth: '140px', objectFit: 'contain' }}
-                        onError={(e) => {
-                          (e.currentTarget as HTMLElement).style.display = 'none';
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                      <span
+                        style={{
+                          fontFamily: 'var(--typography-mono-family)',
+                          fontSize: '12px',
+                          fontWeight: 700,
+                          color: isActive ? '#fe6200' : '#66615c',
                         }}
-                      />
-                    ) : (
-                      <span style={{ fontSize: '15px', fontWeight: 800, color: '#121212' }}>
+                      >
+                        0{idx + 1}
+                      </span>
+                      <span
+                        style={{
+                          fontFamily: 'var(--typography-body-family)',
+                          fontSize: '15px',
+                          fontWeight: isActive ? 700 : 500,
+                          color: isActive ? '#000000' : '#66615c',
+                          transition: 'color 0.25s ease',
+                        }}
+                      >
                         {item.clientName}
                       </span>
-                    )}
+                    </div>
 
-                    {item.hasBlueDot && (
-                      <span className="blue-dot" style={{ width: '8px', height: '8px', flexShrink: 0 }} />
+                    {isActive && (
+                      <span
+                        style={{
+                          width: '6px',
+                          height: '6px',
+                          borderRadius: '50%',
+                          backgroundColor: '#fe6200',
+                        }}
+                      />
                     )}
-                  </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
 
-                  {/* Testimonial Quote */}
-                  <p
+          {/* Right Column: Cardless Editorial Presentation Blended into Cream Background */}
+          <div
+            className="quote-column"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '420px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              borderLeft: '3px solid #fe6200',
+              borderRadius: '8px',
+              padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(24px, 4vw, 44px)',
+              boxShadow: 'none',
+            }}
+          >
+            <div>
+              {/* Client Logo Header */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  marginBottom: '28px',
+                  borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
+                  paddingBottom: '16px',
+                }}
+              >
+                {current.logoUrl ? (
+                  <img
+                    src={current.logoUrl}
+                    alt={`${current.clientName} logo`}
+                    loading="lazy"
                     style={{
-                      fontSize: 'clamp(14px, 1.1vw, 15px)',
-                      lineHeight: 1.65,
-                      color: '#475067',
-                      margin: 0,
+                      maxHeight: '32px',
+                      maxWidth: '140px',
+                      objectFit: 'contain',
+                      opacity: 0.9,
+                    }}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <span
+                    style={{
+                      fontFamily: 'var(--typography-heading1-family)',
+                      fontSize: '20px',
+                      fontWeight: 700,
+                      color: '#000000',
                     }}
                   >
-                    "{item.quote}"
-                  </p>
-                </div>
+                    {current.clientName}
+                  </span>
+                )}
 
-                {/* Author Info & Photo Footer */}
-                <div
+                <span
                   style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    paddingTop: '20px',
-                    marginTop: '20px',
-                    borderTop: '1px solid #e4e4e7',
+                    fontFamily: 'var(--typography-mono-family)',
+                    fontSize: '13px',
+                    fontWeight: 600,
+                    color: '#66615c',
                   }}
                 >
-                  {item.photoUrl ? (
-                    <img
-                      src={item.photoUrl}
-                      alt={`${item.author}, ${item.title} at ${item.clientName}`}
-                      loading="lazy"
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '0px',
-                        objectFit: 'cover',
-                        border: '1px solid #d0d3dd',
-                        boxShadow: 'none',
-                      }}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLElement).style.display = 'none';
-                      }}
-                    />
-                  ) : (
-                    <div
-                      style={{
-                        width: '42px',
-                        height: '42px',
-                        borderRadius: '0px',
-                        backgroundColor: '#e9eefd',
-                        color: '#2258e7',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontWeight: 700,
-                        fontSize: '15px',
-                        flexShrink: 0,
-                      }}
-                    >
-                      {item.author.charAt(0)}
-                    </div>
-                  )}
+                  0{currentIndex + 1} / 0{testimonials.length}
+                </span>
+              </div>
 
-                  <div>
-                    <div style={{ fontWeight: 600, fontSize: '14px', color: '#121212' }}>
-                      {item.author}
-                    </div>
-                    <div style={{ fontSize: '12px', color: '#666e85', marginTop: '2px' }}>
-                      {item.title}
-                    </div>
+              {/* Monumental Quote in BL Pylon Serif */}
+              <blockquote
+                style={{
+                  fontFamily: 'var(--typography-display-family)',
+                  fontSize: 'clamp(22px, 2.3vw, 29px)',
+                  fontWeight: 400,
+                  lineHeight: 1.45,
+                  color: '#000000',
+                  margin: '0 0 36px 0',
+                  letterSpacing: '-0.01em',
+                }}
+              >
+                "{current.quote}"
+              </blockquote>
+            </div>
+
+            {/* Author Credentials & Pagination Controls */}
+            <div
+              style={{
+                borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+                paddingTop: '24px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                flexWrap: 'wrap',
+                gap: '16px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+                {current.photoUrl ? (
+                  <img
+                    src={current.photoUrl}
+                    alt={current.author}
+                    loading="lazy"
+                    style={{
+                      width: '46px',
+                      height: '46px',
+                      borderRadius: '8px',
+                      objectFit: 'cover',
+                      border: '1px solid var(--colors-border-light, #e4e2e1)',
+                    }}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: '46px',
+                      height: '46px',
+                      borderRadius: '8px',
+                      backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                      color: '#fe6200',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontWeight: 700,
+                      fontFamily: 'var(--typography-body-family)',
+                      fontSize: '16px',
+                    }}
+                  >
+                    {current.author.charAt(0)}
+                  </div>
+                )}
+
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--typography-body-family)',
+                      fontWeight: 700,
+                      fontSize: '15px',
+                      color: '#000000',
+                    }}
+                  >
+                    {current.author}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--typography-body-family)',
+                      fontSize: '14px',
+                      color: '#66615c',
+                      marginTop: '2px',
+                    }}
+                  >
+                    {current.title}
                   </div>
                 </div>
               </div>
-            </RevealElement>
-          ))}
-        </div>
 
-        {/* Carousel Navigation Bar matching EffectiveSoft progress */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            paddingTop: '16px',
-            borderTop: '1px solid #e4e4e7',
-          }}
-        >
-          {/* Progress bar */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flex: 1, maxWidth: '280px' }}>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#121212' }}>
-              0{currentPage + 1}
-            </span>
-            <div
-              style={{
-                flex: 1,
-                height: '3px',
-                backgroundColor: '#e4e4e7',
-                borderRadius: '0px',
-                overflow: 'hidden',
-              }}
-            >
-              <div
-                style={{
-                  height: '100%',
-                  width: `${((currentPage + 1) / totalPages) * 100}%`,
-                  backgroundColor: '#2258e7',
-                  transition: 'width 0.4s ease',
-                }}
-              />
+              {/* Prev / Next Controls on light surface */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <button
+                  onClick={handlePrev}
+                  aria-label="Previous testimonial"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '8px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#fe6200';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#000000';
+                  }}
+                >
+                  <ArrowLeft size={16} />
+                </button>
+                <button
+                  onClick={handleNext}
+                  aria-label="Next testimonial"
+                  style={{
+                    width: '38px',
+                    height: '38px',
+                    borderRadius: '8px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.color = '#fe6200';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.color = '#000000';
+                  }}
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </div>
             </div>
-            <span style={{ fontSize: '13px', fontWeight: 600, color: '#989fb3' }}>
-              0{totalPages}
-            </span>
-          </div>
-
-          {/* Controls: Prev / Next */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <button
-              onClick={handlePrev}
-              style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '0px',
-                border: '1px solid #d0d3dd',
-                backgroundColor: '#ffffff',
-                color: '#121212',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                boxShadow: 'none',
-                transition: 'border-color 0.2s, background-color 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#2258e7';
-                e.currentTarget.style.backgroundColor = '#f5f7fc';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#d0d3dd';
-                e.currentTarget.style.backgroundColor = '#ffffff';
-              }}
-              aria-label="Previous testimonials"
-            >
-              <ArrowLeft size={16} />
-            </button>
-
-            <button
-              onClick={handleNext}
-              style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '0px',
-                border: '1px solid #d0d3dd',
-                backgroundColor: '#ffffff',
-                color: '#121212',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                boxShadow: 'none',
-                transition: 'border-color 0.2s, background-color 0.2s',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#2258e7';
-                e.currentTarget.style.backgroundColor = '#f5f7fc';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#d0d3dd';
-                e.currentTarget.style.backgroundColor = '#ffffff';
-              }}
-              aria-label="Next testimonials"
-            >
-              <ArrowRight size={16} />
-            </button>
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .testimonials-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .quote-column {
+            margin-top: 24px;
+          }
+        }
+      `}</style>
     </section>
   );
 };

@@ -39,7 +39,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. BREADCRUMB & BACK HEADER
           ======================================================== */}
@@ -52,15 +52,15 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             gap: '8px',
             backgroundColor: 'transparent',
             border: 'none',
-            color: '#64748b',
+            color: '#a3a09b',
             fontSize: '14px',
             fontWeight: 600,
             cursor: 'pointer',
             padding: '4px 0',
             transition: 'color 0.2s',
           }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = '#2258e7')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#64748b')}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#868683')}
         >
           <ArrowLeft size={16} />
           <span>Back to Engineering Blog</span>
@@ -77,10 +77,10 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               display: 'inline-block',
               fontSize: '12px',
               fontWeight: 700,
-              color: '#2258e7',
-              backgroundColor: 'rgba(34, 88, 231, 0.08)',
+              color: '#fe6200',
+              backgroundColor: 'rgba(254, 98, 0, 0.08)',
               padding: '4px 10px',
-              borderRadius: '2px',
+              borderRadius: '8px',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
               marginBottom: '16px',
@@ -93,16 +93,14 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             style={{
               fontSize: 'clamp(30px, 4vw, 44px)',
               fontWeight: 800,
-              fontFamily: 'var(--font-heading)',
-              color: '#0f172a',
-              lineHeight: 1.22,
+              fontFamily: 'var(--font-heading)', color: '#000000', lineHeight: 1.22,
               marginBottom: '14px',
             }}
           >
             {article.title}
           </h1>
 
-          <p style={{ fontSize: '18px', color: '#475569', lineHeight: 1.5, marginBottom: '24px' }}>
+          <p style={{ fontSize: '18px', color: '#a3a09b', lineHeight: 1.5, marginBottom: '24px' }}>
             {article.subtitle}
           </p>
 
@@ -112,8 +110,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               flexWrap: 'wrap',
               justifyContent: 'space-between',
               alignItems: 'center',
-              borderTop: '1px solid #e2e8f0',
-              borderBottom: '1px solid #e2e8f0',
+              borderTop: '1px solid #f0ece2',
+              borderBottom: '1px solid #f0ece2',
               padding: '16px 0',
               gap: '16px',
             }}
@@ -124,7 +122,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                   width: '40px',
                   height: '40px',
                   borderRadius: '50%',
-                  backgroundColor: '#2258e7',
+                  backgroundColor: '#fe6200',
                   color: '#ffffff',
                   display: 'flex',
                   alignItems: 'center',
@@ -136,12 +134,12 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                 {article.author.name.charAt(0)}
               </div>
               <div>
-                <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#0f172a' }}>{article.author.name}</div>
-                <div style={{ fontSize: '12px', color: '#64748b' }}>{article.author.role}</div>
+                <div style={{ fontSize: '14.5px', fontWeight: 700, color: '#000000' }}>{article.author.name}</div>
+                <div style={{ fontSize: '12px', color: '#a3a09b' }}>{article.author.role}</div>
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '18px', fontSize: '13px', color: '#64748b' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '18px', fontSize: '13px', color: '#a3a09b' }}>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                 <Calendar size={14} />
                 {article.date}
@@ -158,7 +156,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                   gap: '4px',
                   background: 'none',
                   border: 'none',
-                  color: '#2258e7',
+                  color: '#fe6200',
                   cursor: 'pointer',
                   fontWeight: 600,
                 }}
@@ -180,28 +178,28 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             backgroundPosition: 'center',
             borderRadius: '8px',
             marginBottom: '40px',
-            boxShadow: '0 8px 24px rgba(0, 0, 0, 0.08)',
+            boxShadow: '0 8px 24px rgba(32, 11, 0,  0.08)',
           }}
         />
 
         {/* Executive Summary / Key Takeaways Box */}
         <div
           style={{
-            backgroundColor: '#f8fafc',
-            border: '1px solid #cbd5e1',
-            borderLeft: '4px solid #2258e7',
-            borderRadius: '4px',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+            border: '1px solid #f0ece2',
+            borderLeft: '4px solid #fe6200',
+            borderRadius: '8px',
             padding: '24px 28px',
             marginBottom: '40px',
           }}
         >
-          <div style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
+          <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
             Executive Takeaways
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {article.content.keyTakeaways.map((takeaway, idx) => (
-              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: '#334155' }}>
-                <CheckCircle2 size={16} color="#2258e7" style={{ flexShrink: 0, marginTop: '3px' }} />
+              <div key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14.5px', color: '#000000' }}>
+                <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0, marginTop: '3px' }} />
                 <span>{takeaway}</span>
               </div>
             ))}
@@ -209,8 +207,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
         </div>
 
         {/* Main Content Sections */}
-        <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#334155' }}>
-          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#1e293b', marginBottom: '32px', fontWeight: 500 }}>
+        <div style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#000000' }}>
+          <p style={{ fontSize: '18px', lineHeight: 1.65, color: '#000000', marginBottom: '32px', fontWeight: 500 }}>
             {article.content.intro}
           </p>
 
@@ -218,10 +216,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             <div key={sIdx} style={{ marginBottom: '36px' }}>
               <h2
                 style={{
-                  fontSize: '24px',
-                  fontWeight: 700,
-                  fontFamily: 'var(--font-heading)',
-                  color: '#0f172a',
+                  fontSize: '24px', fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#000000',
                   marginBottom: '14px',
                   paddingTop: '16px',
                 }}
@@ -242,16 +237,15 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
               {section.codeSnippet && (
                 <pre
                   style={{
-                    backgroundColor: '#0f172a',
-                    color: '#e2e8f0',
+                    backgroundColor: '#18181b', color: '#f4f4f5',
                     padding: '20px',
-                    borderRadius: '6px',
+                    borderRadius: '8px',
                     overflowX: 'auto',
                     fontSize: '13.5px',
                     fontFamily: 'Consolas, Monaco, monospace',
                     lineHeight: 1.5,
                     marginBottom: '20px',
-                    border: '1px solid #1e293b',
+                    border: '1px solid #27272A',
                   }}
                 >
                   <code>{section.codeSnippet}</code>
@@ -261,26 +255,26 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
           ))}
 
           {/* Conclusion */}
-          <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '28px', marginTop: '40px' }}>
-            <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#0f172a', marginBottom: '12px' }}>
+          <div style={{ borderTop: '1px solid #f0ece2', paddingTop: '28px', marginTop: '40px' }}>
+            <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#000000', marginBottom: '12px' }}>
               Final Architecture Considerations
             </h3>
-            <p style={{ color: '#475569' }}>{article.content.conclusion}</p>
+            <p style={{ color: '#555555' }}>{article.content.conclusion}</p>
           </div>
         </div>
 
         {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #e2e8f0' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '36px', paddingTop: '20px', borderTop: '1px solid #f0ece2' }}>
           {article.tags.map((t) => (
             <span
               key={t}
               style={{
                 fontSize: '12px',
-                backgroundColor: '#f1f5f9',
-                border: '1px solid #e2e8f0',
+                backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                border: '1px solid #f0ece2',
                 padding: '4px 10px',
-                borderRadius: '3px',
-                color: '#475569',
+                borderRadius: '8px',
+                color: '#555555',
               }}
             >
               #{t}
@@ -290,8 +284,8 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
 
         {/* Related Articles Strip */}
         {relatedArticles.length > 0 && (
-          <div style={{ marginTop: '64px', borderTop: '2px solid #f1f5f9', paddingTop: '36px' }}>
-            <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', marginBottom: '20px' }}>
+          <div style={{ marginTop: '64px', borderTop: '2px solid #f0ece2', paddingTop: '36px' }}>
+            <h3 style={{ fontSize: '22px', fontWeight: 700, color: '#000000', fontFamily: 'var(--font-heading)', marginBottom: '20px' }}>
               Related Architecture Essays
             </h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
@@ -303,28 +297,28 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                   style={{
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '6px',
+                    border: '1px solid #f0ece2',
+                    borderRadius: '8px',
                     padding: '20px',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#2258e7';
+                    e.currentTarget.style.borderColor = '#fe6200';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e2e8f0';
+                    e.currentTarget.style.borderColor = '#f0ece2';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase' }}>
+                  <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase' }}>
                     {rel.category}
                   </span>
-                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#0f172a', margin: '8px 0', lineHeight: 1.35 }}>
+                  <h4 style={{ fontSize: '16px', fontWeight: 700, color: '#000000', margin: '8px 0', lineHeight: 1.35 }}>
                     {rel.title}
                   </h4>
-                  <span style={{ fontSize: '12px', color: '#64748b' }}>{rel.readTime}</span>
+                  <span style={{ fontSize: '12px', color: '#555555' }}>{rel.readTime}</span>
                 </div>
               ))}
             </div>

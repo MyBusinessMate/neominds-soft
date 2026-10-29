@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight } from 'lucide-react';
-import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { ScrollReveal } from './scroll-reveal';
 
 interface ServicePill {
   label: string;
@@ -25,7 +25,7 @@ const stackCards: ServiceStackCard[] = [
   {
     id: 1,
     slug: 'software-development',
-    category: 'PILLAR 01 // FOUNDATION',
+    category: 'Core Engineering',
     title: 'BUILD',
     tagline: 'Web, mobile, cross-platform, e-commerce, custom and SaaS software',
     description:
@@ -44,12 +44,12 @@ const stackCards: ServiceStackCard[] = [
     ],
     image: '/services/software-development.png',
     imageAlt: 'Neominds Core Engineering - Web, Mobile, Custom Software and SaaS Development',
-    bgGradient: 'linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%)',
+    bgGradient: 'linear-gradient(135deg, #ffffff 0%, #faf8f5 50%, #f1efeb 100%)',
   },
   {
     id: 2,
     slug: 'ai-integrations',
-    category: 'PILLAR 02 // INTELLIGENCE',
+    category: 'Applied AI Systems',
     title: 'AI',
     tagline: 'Integration, intelligent automation, and AI-native products',
     description:
@@ -67,12 +67,12 @@ const stackCards: ServiceStackCard[] = [
     ],
     image: '/services/ai-development.png',
     imageAlt: 'Neominds AI Systems - Intelligent Automation, LLM Integration, and Autonomous AI Agents',
-    bgGradient: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)',
+    bgGradient: 'linear-gradient(135deg, #fbf9f6 0%, #f5f1eb 50%, #ede7df 100%)',
   },
   {
     id: 3,
     slug: 'cloud-based-software',
-    category: 'PILLAR 03 // EVOLUTION',
+    category: 'Cloud Modernization',
     title: 'MODERNIZE',
     tagline: 'Moving legacy applications to modern code and cloud platforms in stages',
     description:
@@ -90,7 +90,7 @@ const stackCards: ServiceStackCard[] = [
     ],
     image: '/services/devops.png',
     imageAlt: 'Neominds Cloud Evolution - Cloud-Native Architecture and Zero-Downtime Legacy Modernization',
-    bgGradient: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%)',
+    bgGradient: 'linear-gradient(135deg, #f7f5f2 0%, #eeeae3 50%, #e5dfd5 100%)',
   },
 ];
 
@@ -137,7 +137,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
             min-height: auto !important;
             height: auto !important;
             box-shadow: none !important;
-            border-top: 1px solid #e2e8f0 !important;
+            border-top: 1px solid #e4e2e1 !important;
           }
           .services-stack-grid {
             display: flex !important;
@@ -195,39 +195,22 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         className="container"
         style={{
           maxWidth: '1280px',
-          paddingTop: '20px',
-          paddingBottom: 'clamp(24px, 3vw, 40px)',
+          paddingTop: '64px',
+          paddingBottom: '48px',
+          borderBottom: '1px solid #e4e2e1',
         }}
       >
-        <RevealElement variant="text">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-            <span style={{ width: '8px', height: '8px', borderRadius: '0px', backgroundColor: '#2258E7' }} />
-            <span
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '0.15em',
-                color: '#475067',
-                textTransform: 'uppercase',
-              }}
-            >
-              OUR THREE PILLARS // BUILD · AI · MODERNIZE
-            </span>
-          </div>
-        </RevealElement>
-
         <ScrollReveal
           as="h2"
           style={{
-            fontFamily: 'var(--font-heading)',
-            fontSize: 'clamp(28px, 3.2vw, 44px)',
-            fontWeight: 700,
+            fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+            fontSize: 'clamp(28px, 3.2vw, 40px)',
+            fontWeight: 400,
             lineHeight: 1.2,
-            color: '#0f172a',
-            maxWidth: '750px',
+            color: '#000000',
+            maxWidth: '780px',
             margin: 0,
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
             display: 'block',
           }}
           blurStrength={7}
@@ -249,8 +232,8 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
               minHeight: isMobile ? 'auto' : '100vh',
               height: isMobile ? 'auto' : '100vh',
               width: '100%',
-              backgroundColor: '#ffffff',
-              borderTop: idx > 0 ? '1px solid #e2e8f0' : 'none',
+              backgroundColor: '#f1efeb',
+              borderTop: idx > 0 ? '1px solid #e4e2e1' : 'none',
               zIndex: idx + 1,
               display: 'flex',
               alignItems: 'center',
@@ -269,7 +252,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                 alignItems: 'stretch',
               }}
             >
-              {/* Left Visual Column - Full Screen / Edge-to-Edge Image */}
+              {/* Left Visual Column */}
               <div
                 onClick={() => handleCardClick(card.slug)}
                 onMouseEnter={() => setHoveredCard(card.id)}
@@ -280,7 +263,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   width: '100%',
                   height: '100%',
                   minHeight: isMobile ? '320px' : '100%',
-                  backgroundColor: '#0f172a',
+                  backgroundColor: '#e4e2e1',
                   overflow: 'hidden',
                   cursor: 'pointer',
                   userSelect: 'none',
@@ -303,12 +286,12 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   }}
                 />
 
-                {/* Subtle dark gradient overlay for visual depth */}
+                {/* Subtle vignette overlay */}
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(to right, rgba(0, 0, 0, 0.18) 0%, transparent 45%), linear-gradient(to top, rgba(0, 0, 0, 0.25) 0%, transparent 35%)',
+                    background: 'linear-gradient(to right, rgba(32, 11, 0,  0.25) 0%, transparent 45%), linear-gradient(to top, rgba(32, 11, 0,  0.4) 0%, transparent 35%)',
                     pointerEvents: 'none',
                   }}
                 />
@@ -322,7 +305,9 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  padding: isMobile ? '36px 22px 50px' : 'clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px)',
+                  padding: isMobile ? '36px 20px 48px' : 'clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px)',
+                  borderLeft: isMobile ? 'none' : '1px solid #e4e2e1',
+                  borderTop: isMobile ? '1px solid #e4e2e1' : 'none',
                 }}
               >
                 <div style={{ maxWidth: '620px' }}>
@@ -341,15 +326,14 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   >
                     <h2
                       style={{
-                        fontFamily: 'var(--font-heading)',
-                        fontSize: 'clamp(22px, 2.6vw, 36px)',
-                        fontWeight: 800,
-                        letterSpacing: '-0.02em',
-                        lineHeight: 1.18,
-                        color: isHovered ? '#2258e7' : '#0f172a',
-                        textTransform: 'uppercase',
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        fontSize: 'clamp(28px, 3vw, 42px)',
+                        fontWeight: 400,
+                        letterSpacing: '-0.01em',
+                        lineHeight: 1.15,
+                        color: isHovered ? '#fe6200' : '#000000',
                         margin: 0,
-                        transition: 'color 0.2s ease',
+                        transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                       }}
                     >
                       {card.title}
@@ -357,23 +341,24 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
 
                     <div
                       style={{
-                        width: '38px',
-                        height: '38px',
-                        borderRadius: '0px',
-                        backgroundColor: isHovered ? 'rgba(34, 88, 231, 0.1)' : 'transparent',
+                        width: '40px',
+                        height: '40px',
+                        borderRadius: '8px',
+                        backgroundColor: isHovered ? 'rgba(254, 98, 0, 0.12)' : 'transparent',
+                        border: '1px solid #e4e2e1',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
                         flexShrink: 0,
-                        transition: 'background-color 0.2s ease, transform 0.2s ease',
+                        transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                         transform: isHovered ? 'translate(2px, -2px)' : 'translate(0, 0)',
                       }}
                     >
                       <ArrowUpRight
-                        size={26}
+                        size={20}
                         style={{
-                          color: isHovered ? '#2258e7' : '#0f172a',
-                          transition: 'color 0.2s ease',
+                          color: isHovered ? '#fe6200' : '#000000',
+                          transition: 'color 0.38s ease',
                         }}
                       />
                     </div>
@@ -382,11 +367,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Tagline */}
                   <p
                     style={{
-                      fontSize: isMobile ? '13px' : '14px',
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: isMobile ? '15px' : '16px',
                       fontWeight: 600,
-                      color: '#334155',
+                      color: '#000000',
                       margin: '0 0 16px 0',
                       lineHeight: 1.5,
+                      letterSpacing: '-0.01em',
                     }}
                   >
                     {card.tagline}
@@ -395,29 +382,31 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                   {/* Detailed Description with Embedded Keyword Links */}
                   <p
                     style={{
-                      fontSize: 'clamp(14px, 1.05vw, 15.5px)',
-                      lineHeight: 1.65,
-                      color: '#475569',
-                      margin: '0 0 22px 0',
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: 'clamp(14px, 1.1vw, 16px)',
+                      lineHeight: 1.6,
+                      color: '#66615c',
+                      margin: '0 0 24px 0',
                       fontWeight: 400,
                     }}
                   >
                     {renderDescriptionWithLinks(card.description, card.links, handleCardClick)}
                   </p>
 
-                  {/* Connected Neominds Services Pills */}
-                  <div style={{ marginBottom: isMobile ? '20px' : '26px' }}>
+                  {/* Connected Neominds Services Pills (Apple Capsule Ornaments) */}
+                  <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                     <div
                       style={{
+                        fontFamily: "'DM Sans', sans-serif",
                         fontSize: '11px',
                         fontWeight: 700,
-                        letterSpacing: '0.1em',
-                        color: '#64748b',
+                        letterSpacing: '0.08em',
+                        color: '#868683',
                         textTransform: 'uppercase',
                         marginBottom: '10px',
                       }}
                     >
-                      Services in this Practice:
+                      SERVICES IN THIS PRACTICE:
                     </div>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                       {card.servicePills.map((pill) => (
@@ -430,33 +419,42 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                           style={{
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '5px',
-                            padding: isMobile ? '5px 12px' : '6px 14px',
-                            borderRadius: '0px',
-                            backgroundColor: '#f8fafc',
-                            border: '1px solid #cbd5e1',
-                            fontSize: isMobile ? '11px' : '12px',
-                            fontWeight: 600,
-                            color: '#1e293b',
+                            gap: '6px',
+                            padding: isMobile ? '6px 14px' : '8px 16px',
+                            borderRadius: '8px',
+                            backgroundColor: '#f1efeb',
+                            border: '1px solid #e4e2e1',
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontSize: isMobile ? '12px' : '13px',
+                            fontWeight: 500,
+                            color: '#000000',
                             cursor: 'pointer',
                             boxShadow: 'none',
-                            transition: 'all 0.2s ease',
+                            transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
                           }}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = '#2258e7';
-                            e.currentTarget.style.color = '#ffffff';
-                            e.currentTarget.style.borderColor = '#2258e7';
+                            e.currentTarget.style.borderColor = '#fe6200';
+                            e.currentTarget.style.color = '#fe6200';
+                            e.currentTarget.style.backgroundColor = '#ffffff';
                             e.currentTarget.style.transform = 'translateY(-1px)';
+                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(254, 98, 0, 0.12)';
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = '#f8fafc';
-                            e.currentTarget.style.color = '#1e293b';
-                            e.currentTarget.style.borderColor = '#cbd5e1';
+                            e.currentTarget.style.borderColor = '#e4e2e1';
+                            e.currentTarget.style.color = '#000000';
+                            e.currentTarget.style.backgroundColor = '#f1efeb';
                             e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = 'none';
+                          }}
+                          onMouseDown={(e) => {
+                            e.currentTarget.style.transform = 'scale(0.97)';
+                          }}
+                          onMouseUp={(e) => {
+                            e.currentTarget.style.transform = 'translateY(-1px)';
                           }}
                         >
                           <span>{pill.label}</span>
-                          <ArrowUpRight size={12} />
+                          <ArrowUpRight size={13} color="#fe6200" />
                         </button>
                       ))}
                     </div>
@@ -467,15 +465,6 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                     <button
                       onClick={() => handleCardClick(card.slug)}
                       className="btn btn-primary"
-                      style={{
-                        padding: isMobile ? '10px 18px' : '11px 22px',
-                        fontSize: '13px',
-                        fontWeight: 700,
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        boxShadow: '0 4px 14px rgba(34, 88, 231, 0.25)',
-                      }}
                     >
                       <span>Explore Service Details</span>
                       <ArrowUpRight size={16} />
@@ -525,20 +514,20 @@ function renderDescriptionWithLinks(
             e.stopPropagation();
             onNavigate(link.slug);
           }}
+          className="link-standard"
           style={{
-            color: '#2258e7',
+            color: '#000000',
             textDecoration: 'underline',
-            textUnderlineOffset: '4px',
-            textDecorationThickness: '1.5px',
+            textUnderlineOffset: '3px',
             cursor: 'pointer',
             fontWeight: 500,
-            transition: 'color 0.15s ease',
+            transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#1d4ed8';
+            e.currentTarget.style.color = '#fe6200';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#2258e7';
+            e.currentTarget.style.color = '#000000';
           }}
         >
           {link.label}

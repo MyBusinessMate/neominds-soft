@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import {
-  Briefcase,
   MapPin,
   Clock,
   ArrowRight,
@@ -174,21 +173,16 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
   );
 
   return (
-    <div className="p-careers-page" style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '68px', color: '#0f172a', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
+    <div className="p-careers-page" style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '68px', color: '#000000', fontFamily: 'var(--font-body, system-ui, sans-serif)' }}>
       {/* 1. s-hero g-section theme-light g-section--pb-0 s-hero--centered */}
-      <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: '#f8fafc', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '2px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '16px' }}>
-            <Briefcase size={14} />
-            <span>Join Our Global Team</span>
-          </div>
-
-          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
-            Find your dream job at Neominds TechHub
+          <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#000000', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
+            Build software that matters at Neominds TechHub
           </h1>
 
-          <p style={{ fontSize: '18px', color: '#475569', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
-            Work alongside experienced engineers, architects, and AI pioneers building impactful digital products for industry leaders across the globe.
+          <p style={{ fontSize: '18px', color: '#555555', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
+            Work with engineers who take pride in clean code, pragmatic architecture, and production impact. Direct collaboration, high autonomy, zero bureaucracy.
           </p>
 
           <button
@@ -199,12 +193,12 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: '#2258e7',
+              backgroundColor: '#fe6200',
               color: '#ffffff',
               fontSize: '14px',
               fontWeight: 600,
               border: 'none',
-              borderRadius: '2px',
+              borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
@@ -215,13 +209,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 2. g-section s-vacancies theme-light js-explore-vacancies */}
-      <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#ffffff' }}>
+      <section id="vacancies" className="g-section s-vacancies theme-light" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 48px auto' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 16px 0' }}>
               Start doing work that matters
             </h2>
-            <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
               Our philosophy is direct: hire talented engineers, give them clear ownership, and build an environment where craft and technical excellence come first.
             </p>
           </div>
@@ -235,10 +229,10 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 onClick={() => setSelectedDept(dept)}
                 style={{
                   padding: '10px 20px',
-                  borderRadius: '2px',
-                  border: `1px solid ${selectedDept === dept ? '#2258e7' : '#e2e8f0'}`,
-                  backgroundColor: selectedDept === dept ? '#2258e7' : '#ffffff',
-                  color: selectedDept === dept ? '#ffffff' : '#475569',
+                  borderRadius: '8px',
+                  border: `1px solid ${selectedDept === dept ? '#fe6200' : '#f0ece2'}`,
+                  backgroundColor: selectedDept === dept ? '#fe6200' : '#ffffff',
+                  color: selectedDept === dept ? '#ffffff' : '#868683',
                   fontSize: '14px',
                   fontWeight: selectedDept === dept ? 600 : 500,
                   cursor: 'pointer',
@@ -256,9 +250,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '4px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #d0ccc0',
+                  borderRadius: '8px',
                   padding: '28px 32px',
                   display: 'flex',
                   flexWrap: 'wrap',
@@ -270,23 +264,23 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               >
                 <div style={{ flex: '1 1 500px' }}>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', marginBottom: '10px' }}>
-                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#2258e7', backgroundColor: 'rgba(34, 88, 231, 0.08)', padding: '4px 10px', borderRadius: '2px' }}>
+                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.08)', padding: '4px 10px', borderRadius: '8px' }}>
                       {pos.department}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span style={{ fontSize: '13px', color: '#555555', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <Clock size={13} />
                       {pos.type}
                     </span>
-                    <span style={{ fontSize: '13px', color: '#64748b', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span style={{ fontSize: '13px', color: '#555555', display: 'flex', alignItems: 'center', gap: '4px' }}>
                       <MapPin size={13} />
                       {pos.location}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#070b14', margin: '0 0 8px 0' }}>
+                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#000000', margin: '0 0 8px 0' }}>
                     {pos.title}
                   </h3>
-                  <p style={{ fontSize: '14.5px', color: '#475569', lineHeight: 1.6, margin: 0 }}>
+                  <p style={{ fontSize: '14.5px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
                     {pos.desc}
                   </p>
                 </div>
@@ -296,10 +290,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   onClick={() => scrollToCvForm(pos.title)}
                   style={{
                     padding: '12px 24px',
-                    backgroundColor: '#070b14',
-                    color: '#ffffff',
+                    backgroundColor: '#fe6200', color: '#ffffff',
                     border: 'none',
-                    borderRadius: '2px',
+                    borderRadius: '8px',
                     fontSize: '14px',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -309,8 +302,8 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     flexShrink: 0,
                     transition: 'background 0.2s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#070b14')}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
                 >
                   <span>Apply now</span>
                   <ArrowRight size={15} />
@@ -322,13 +315,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 3. s-faq g-section theme-light */}
-      <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: '#f8fafc', borderTop: '1px solid #e2e8f0', borderBottom: '1px solid #e2e8f0' }}>
+      <section className="s-faq g-section theme-light" style={{ padding: 'clamp(64px, 8vw, 96px) 24px', backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', borderTop: '1px solid #f0ece2', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '960px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#070b14', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.8vw, 42px)', fontWeight: 800, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               Frequently asked questions
             </h2>
-            <p style={{ fontSize: '15.5px', color: '#64748b', margin: 0 }}>
+            <p style={{ fontSize: '15.5px', color: '#555555', margin: 0 }}>
               Find quick answers to common questions about our hiring, engineering culture, and work environment.
             </p>
           </div>
@@ -338,9 +331,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '4px',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid #d0ccc0',
+                  borderRadius: '8px',
                   overflow: 'hidden',
                 }}
               >
@@ -360,12 +353,12 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     cursor: 'pointer',
                   }}
                 >
-                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#070b14' }}>
+                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#000000' }}>
                     {faq.q}
                   </span>
                   <ChevronDown
                     size={18}
-                    color="#64748b"
+                    color="#868683"
                     style={{
                       transform: activeFaq === idx ? 'rotate(180deg)' : 'none',
                       transition: 'transform 0.2s ease',
@@ -375,7 +368,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 </button>
 
                 {activeFaq === idx && (
-                  <div style={{ padding: '0 24px 20px 24px', color: '#475569', fontSize: '14.5px', lineHeight: 1.65 }}>
+                  <div style={{ padding: '0 24px 20px 24px', color: '#555555', fontSize: '14.5px', lineHeight: 1.65 }}>
                     {faq.a}
                   </div>
                 )}
@@ -384,34 +377,34 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
           </div>
 
           {/* Fraud Alert Notice */}
-          <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#fffbeb', border: '1px solid #fef3c7', borderRadius: '4px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-            <ShieldAlert size={22} color="#b45309" style={{ flexShrink: 0, marginTop: '2px' }} />
-            <div style={{ fontSize: '13.5px', color: '#78350f', lineHeight: 1.6 }}>
-              <strong>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
+          <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#121212', border: '1px solid #fe6200', borderRadius: '8px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+            <ShieldAlert size={22} color="#fe6200" style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div style={{ fontSize: '13.5px', color: '#D1D5DB', lineHeight: 1.6 }}>
+              <strong style={{ color: '#f5f5f5' }}>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
             </div>
           </div>
         </div>
       </section>
 
       {/* 4. theme-dark g-section s-request (CV Application Form) */}
-      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: '#070b14', color: '#ffffff' }}>
+      <section id="cv-form" className="theme-dark g-section s-request" style={{ padding: 'clamp(64px, 8vw, 100px) 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#ffffff', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: '#000000', letterSpacing: '-0.02em', margin: '0 0 12px 0' }}>
               We look forward to reviewing your resume!
             </h2>
-            <p style={{ fontSize: '16px', color: '#94a3b8', margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#555555', margin: 0 }}>
               Don’t see an exact match above? Submit an open application and let us know what makes you thrive.
             </p>
           </div>
 
           {submitted ? (
-            <div style={{ padding: '48px', backgroundColor: 'rgba(34, 88, 231, 0.1)', border: '1px solid rgba(34, 88, 231, 0.3)', borderRadius: '4px', textAlign: 'center' }}>
-              <CheckCircle2 size={48} color="#60a5fa" style={{ margin: '0 auto 16px auto' }} />
-              <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#ffffff', marginBottom: '8px' }}>
+            <div style={{ padding: '48px', backgroundColor: 'rgba(254, 98, 0, 0.1)', border: '1px solid rgba(254, 98, 0, 0.3)', borderRadius: '8px', textAlign: 'center' }}>
+              <CheckCircle2 size={48} color="#fe6200" style={{ margin: '0 auto 16px auto' }} />
+              <h3 style={{ fontSize: '24px', fontWeight: 800, color: '#000000', marginBottom: '8px' }}>
                 We're in!
               </h3>
-              <p style={{ fontSize: '15px', color: '#94a3b8', maxWidth: '520px', margin: '0 auto' }}>
+              <p style={{ fontSize: '15px', color: '#555555', maxWidth: '520px', margin: '0 auto' }}>
                 Thanks for sharing your application with us. We're already gearing up to review it and will get back to you within 3–5 business days.
               </p>
             </div>
@@ -419,7 +412,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
             <form onSubmit={handleSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '20px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="cv-name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-name" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                     Full Name*
                   </label>
                   <input
@@ -430,12 +423,12 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="Your full name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', color: '#000000', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="cv-email" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-email" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                     Email Address*
                   </label>
                   <input
@@ -446,14 +439,14 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', color: '#000000', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
                 <div>
-                  <label htmlFor="cv-position" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-position" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                     Position of Interest
                   </label>
                   <input
@@ -463,12 +456,12 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="e.g. Senior Full-Stack Engineer"
                     value={formData.position}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', color: '#000000', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="cv-phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                  <label htmlFor="cv-phone" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                     Phone Number
                   </label>
                   <input
@@ -478,13 +471,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                     placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none' }}
+                    style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', color: '#000000', fontSize: '14px', outline: 'none' }}
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="cv-message" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                <label htmlFor="cv-message" style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                   Cover Note / Portfolio Links
                 </label>
                 <textarea
@@ -494,29 +487,29 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   placeholder="Tell us about yourself, your GitHub or portfolio links..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#0f172a', border: '1px solid #1e293b', borderRadius: '2px', color: '#ffffff', fontSize: '14px', outline: 'none', resize: 'vertical' }}
+                  style={{ width: '100%', padding: '14px 16px', backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', color: '#000000', fontSize: '14px', outline: 'none', resize: 'vertical' }}
                 />
               </div>
 
               {/* Resume File Upload */}
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#94a3b8', marginBottom: '8px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#555555', marginBottom: '8px' }}>
                   Upload Resume / CV (PDF, DOCX)
                 </label>
                 <div
                   onClick={() => document.getElementById('resume-upload-input')?.click()}
                   style={{
-                    border: '1px dashed #334155',
-                    borderRadius: '2px',
+                    border: '1px dashed #66615c',
+                    borderRadius: '8px',
                     padding: '24px',
                     textAlign: 'center',
                     cursor: 'pointer',
-                    backgroundColor: '#0b1120',
+                    backgroundColor: '#fbf9f5',
                     transition: 'border-color 0.2s',
                   }}
                 >
-                  <Upload size={22} color="#60a5fa" style={{ margin: '0 auto 8px auto' }} />
-                  <div style={{ fontSize: '13.5px', color: '#cbd5e1' }}>
+                  <Upload size={22} color="#fe6200" style={{ margin: '0 auto 8px auto' }} />
+                  <div style={{ fontSize: '13.5px', color: '#333333' }}>
                     {fileName ? fileName : 'Click to select or drag and drop your resume file'}
                   </div>
                   <input
@@ -538,9 +531,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   required
                   checked={formData.consent}
                   onChange={handleInputChange}
-                  style={{ marginTop: '3px', cursor: 'pointer', accentColor: '#2258e7' }}
+                  style={{ marginTop: '3px', cursor: 'pointer', accentColor: '#fe6200' }}
                 />
-                <label htmlFor="cv-consent" style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5, cursor: 'pointer' }}>
+                <label htmlFor="cv-consent" style={{ fontSize: '13px', color: '#555555', lineHeight: 1.5, cursor: 'pointer' }}>
                   I agree to the processing of my personal data for recruitment purposes in accordance with the Privacy Policy.
                 </label>
               </div>
@@ -549,10 +542,9 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 type="submit"
                 style={{
                   padding: '16px 32px',
-                  backgroundColor: '#2258e7',
-                  color: '#ffffff',
+                  backgroundColor: '#fe6200', color: '#ffffff',
                   border: 'none',
-                  borderRadius: '2px',
+                  borderRadius: '8px',
                   fontSize: '15px',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -577,13 +569,13 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       </section>
 
       {/* 5. s-newsletter g-section js-newsletter theme-light */}
-      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #eef2f6' }}>
+      <section className="s-newsletter g-section js-newsletter theme-light" style={{ padding: '72px 24px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', borderTop: '1px solid #eef2f6' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '24px' }}>
           <div className="s-newsletter__headline">
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#070b14', margin: 0, letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 42px)', fontWeight: 800, color: '#000000', margin: 0, letterSpacing: '-0.02em' }}>
               Join our newsletter
             </h2>
-            <p style={{ fontSize: '15px', color: '#64748b', margin: '8px 0 0 0', maxWidth: '580px' }}>
+            <p style={{ fontSize: '15px', color: '#555555', margin: '8px 0 0 0', maxWidth: '580px' }}>
               Stay up to date with the latest engineering insights, tech announcements, and articles.
             </p>
           </div>
@@ -599,10 +591,10 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 flex: '1 1 280px',
                 padding: '14px 18px',
                 fontSize: '14px',
-                backgroundColor: '#f8fafc',
-                border: '1px solid #cbd5e1',
-                borderRadius: '2px',
-                color: '#0f172a',
+                backgroundColor: '#ffffff',
+                border: '1px solid #d0ccc0',
+                borderRadius: '8px',
+                color: '#000000',
                 outline: 'none',
               }}
             />
@@ -613,12 +605,11 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                 alignItems: 'center',
                 gap: '8px',
                 padding: '14px 28px',
-                backgroundColor: '#2258e7',
-                color: '#ffffff',
+                backgroundColor: '#fe6200', color: '#ffffff',
                 fontSize: '14px',
                 fontWeight: 600,
                 border: 'none',
-                borderRadius: '2px',
+                borderRadius: '8px',
                 cursor: 'pointer',
               }}
             >

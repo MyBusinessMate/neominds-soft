@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Terminal, FileCode, Package, ShieldCheck, Zap, Server } from 'lucide-react';
+import { Terminal, FileCode, Package, ShieldCheck, Zap } from 'lucide-react';
 import { ServiceTechCategory, ServiceDeliverable } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -18,37 +18,21 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#0a0d14',
-        color: '#ffffff',
-        borderTop: '1px solid #1a2233',
-        borderBottom: '1px solid #1a2233',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        color: '#000000',
+        borderTop: '1px solid #e4e2e1',
+        borderBottom: '1px solid #e4e2e1',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#38bdf8',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            <Server size={14} />
-            <span>Architecture & Concrete Artifacts</span>
-          </div>
           <ScrollReveal
             as="h2"
             style={{
               fontSize: 'clamp(28px, 3.4vw, 42px)',
               fontWeight: 800,
-              color: '#ffffff',
+              color: '#000000',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -59,38 +43,37 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
             Technology Matrix & Deliverable Blueprint
           </ScrollReveal>
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '16px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0 }}>
               An interactive matrix of verified production primitives and tangible enterprise deliverables handed over upon launch.
             </p>
           </RevealElement>
         </div>
 
-        {/* 2-Column Asymmetrical Engineering Hub (NOT generic cards) */}
+        {/* 2-Column Asymmetrical Engineering Hub (Seamless Editorial Blend) */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '32px',
+            gap: 'clamp(32px, 5vw, 48px)',
             alignItems: 'stretch',
           }}
         >
-          {/* Left Column: Interactive Terminal Spec Sheet for Tech Stack */}
+          {/* Left Column: Technology Stack Matrix */}
           <div
             style={{
-              backgroundColor: '#0f172a',
-              border: '1px solid #1e293b',
-              borderRadius: '10px',
-              padding: 'clamp(24px, 3.5vw, 36px)',
+              backgroundColor: 'transparent',
+              borderTop: '2px solid #fe6200',
+              paddingTop: '24px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #1e293b', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #e4e2e1', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Terminal size={16} color="#38bdf8" />
-                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#38bdf8' }}>
+                  <Terminal size={16} color="#fe6200" />
+                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#fe6200' }}>
                     TECH_STACK_REGISTRY
                   </span>
                 </div>
@@ -108,11 +91,11 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     key={idx}
                     onClick={() => setActiveCategoryIdx(idx)}
                     style={{
-                      backgroundColor: activeCategoryIdx === idx ? '#2258e7' : '#1e293b',
-                      color: activeCategoryIdx === idx ? '#ffffff' : '#94a3b8',
-                      border: 'none',
+                      backgroundColor: activeCategoryIdx === idx ? '#fe6200' : '#ffffff',
+                      color: activeCategoryIdx === idx ? '#ffffff' : '#000000',
+                      border: activeCategoryIdx === idx ? '1px solid #fe6200' : '1px solid #e4e2e1',
                       padding: '7px 14px',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       fontSize: '12.5px',
                       fontWeight: 600,
                       cursor: 'pointer',
@@ -126,7 +109,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
 
               {/* Active Stack Item Matrix */}
               <div style={{ marginBottom: '24px' }}>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#66615c', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
                   Verified Production Components
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '10px' }}>
@@ -134,17 +117,17 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     <div
                       key={tech}
                       style={{
-                        backgroundColor: '#162234',
-                        border: '1px solid #1e2d42',
-                        borderRadius: '6px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e4e2e1',
+                        borderRadius: '8px',
                         padding: '12px',
                         display: 'flex',
                         alignItems: 'center',
                         gap: '8px',
                       }}
                     >
-                      <Zap size={14} color="#38bdf8" />
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#ffffff' }}>
+                      <Zap size={14} color="#fe6200" />
+                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#000000' }}>
                         {tech}
                       </span>
                     </div>
@@ -153,63 +136,62 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               </div>
             </div>
 
-            <div style={{ padding: '14px 18px', backgroundColor: '#131e2e', borderRadius: '6px', borderLeft: '3px solid #38bdf8' }}>
-              <span style={{ fontSize: '12px', color: '#94a3b8', lineHeight: 1.5, display: 'block' }}>
+            <div style={{ padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #fe6200' }}>
+              <span style={{ fontSize: '12.5px', color: '#66615c', lineHeight: 1.5, display: 'block' }}>
                 All dependencies audited against OWASP Top 10, automated CVE scanners, and cloud-native Kubernetes blueprints.
               </span>
             </div>
           </div>
 
-          {/* Right Column: Editorial Deliverable Spec Table (Not box cards!) */}
+          {/* Right Column: Editorial Deliverable Spec Table */}
           <div
             style={{
-              backgroundColor: '#0f172a',
-              border: '1px solid #1e293b',
-              borderRadius: '10px',
-              padding: 'clamp(24px, 3.5vw, 36px)',
+              backgroundColor: 'transparent',
+              borderTop: '2px solid #059669',
+              paddingTop: '24px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #1e293b', marginBottom: '20px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #e4e2e1', marginBottom: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Package size={16} color="#22c55e" />
-                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#22c55e' }}>
+                  <Package size={16} color="#059669" />
+                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#059669' }}>
                     CLIENT_HANDOVER_BLUEPRINT
                   </span>
                 </div>
-                <span style={{ fontSize: '11px', color: '#cbd5e1', fontWeight: 600 }}>100% IP Transfer</span>
+                <span style={{ fontSize: '11px', color: '#66615c', fontWeight: 600 }}>100% IP Transfer</span>
               </div>
 
-              {/* Linear Editorial Rows (Replaces rectangular boxes) */}
+              {/* Linear Editorial Rows */}
               <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {deliverables.map((del, dIdx) => (
                   <div
                     key={dIdx}
                     style={{
                       padding: '16px 0',
-                      borderBottom: dIdx !== deliverables.length - 1 ? '1px solid #1e293b' : 'none',
+                      borderBottom: dIdx !== deliverables.length - 1 ? '1px solid #e4e2e1' : 'none',
                       display: 'flex',
                       alignItems: 'flex-start',
                       gap: '14px',
                     }}
                   >
-                    <div style={{ width: '28px', height: '28px', borderRadius: '4px', backgroundColor: 'rgba(34, 197, 94, 0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#22c55e', flexShrink: 0, marginTop: '2px' }}>
+                    <div style={{ width: '28px', height: '28px', borderRadius: '8px', backgroundColor: 'rgba(5, 150, 105, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', flexShrink: 0, marginTop: '2px' }}>
                       <FileCode size={15} />
                     </div>
 
                     <div style={{ flex: 1 }}>
                       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '8px', marginBottom: '4px' }}>
-                        <span style={{ fontSize: '14.5px', fontWeight: 700, color: '#ffffff' }}>
+                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                           {del.title}
                         </span>
-                        <span style={{ fontSize: '11px', fontWeight: 600, color: '#94a3b8', fontFamily: 'monospace' }}>
+                        <span style={{ fontSize: '11.5px', fontWeight: 600, color: '#66615c', fontFamily: 'monospace' }}>
                           [{del.format}]
                         </span>
                       </div>
-                      <p style={{ fontSize: '13px', color: '#94a3b8', lineHeight: 1.5, margin: 0 }}>
+                      <p style={{ fontSize: '13.5px', color: '#66615c', lineHeight: 1.55, margin: 0 }}>
                         {del.description}
                       </p>
                     </div>
@@ -218,8 +200,8 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               </div>
             </div>
 
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: '#131e2e', borderRadius: '6px', borderLeft: '3px solid #22c55e' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', fontWeight: 700, color: '#22c55e' }}>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #059669' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12.5px', fontWeight: 600, color: '#059669' }}>
                 <ShieldCheck size={14} />
                 <span>Zero vendor lock-in guarantee: Full repository ownership transferred on deployment.</span>
               </div>

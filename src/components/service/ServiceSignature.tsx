@@ -11,8 +11,8 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#0b0f19',
-        color: '#ffffff',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+        color: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -20,36 +20,13 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
       <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Header */}
         <div style={{ maxWidth: '780px', marginBottom: '56px' }}>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-              marginBottom: '16px',
-            }}
-          >
-            <span style={{ width: '16px', height: '2px', backgroundColor: '#60a5fa' }} />
-            <span
-              style={{
-                fontFamily: 'monospace',
-                fontSize: '12px',
-                fontWeight: 700,
-                color: '#60a5fa',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {data.badge}
-            </span>
-          </div>
-
           <ScrollReveal
             as="h2"
             style={{
               fontSize: 'clamp(28px, 3.4vw, 44px)',
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
-              color: '#ffffff',
+              color: '#000000',
               lineHeight: 1.16,
               marginBottom: '16px',
               display: 'block',
@@ -59,7 +36,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             {data.title}
           </ScrollReveal>
 
-          <p style={{ fontSize: '16px', color: '#94a3b8', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: '16px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
             {data.description}
           </p>
         </div>
@@ -77,24 +54,13 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             <RevealElement key={idx} variant="card" delay={idx * 0.05}>
               <div
                 style={{
-                  backgroundColor: '#131c2e',
-                  border: '1px solid #1e293b',
-                  borderRadius: '6px',
-                  padding: '24px',
+                  backgroundColor: 'transparent',
+                  borderTop: '2px solid #fe6200',
+                  padding: '24px 0 0 0',
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  borderTop: `3px solid ${step.color || '#2258e7'}`,
-                  transition: 'transform 0.2s, border-color 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.borderColor = '#38bdf8';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.borderColor = '#1e293b';
                 }}
               >
                 <div>
@@ -110,21 +76,20 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                       style={{
                         fontSize: '12px',
                         fontWeight: 800,
-                        color: step.color || '#38bdf8',
+                        color: '#fe6200',
                         fontFamily: 'var(--font-heading)',
                       }}
                     >
-                      STAGE {step.number}
+                       STAGE {step.number}
                     </span>
                     {step.badge && (
                       <span
                         style={{
                           fontSize: '11px',
                           fontWeight: 600,
-                          backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                          color: '#e2e8f0',
+                          backgroundColor: 'rgba(0, 0, 0, 0.05)', color: '#000000',
                           padding: '3px 8px',
-                          borderRadius: '3px',
+                          borderRadius: '8px',
                         }}
                       >
                         {step.badge}
@@ -136,7 +101,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                     style={{
                       fontSize: '17px',
                       fontWeight: 700,
-                      color: '#ffffff',
+                      color: '#000000',
                       marginBottom: '10px',
                     }}
                   >
@@ -147,7 +112,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                     style={{
                       fontSize: '13.5px',
                       lineHeight: 1.6,
-                      color: '#94a3b8',
+                      color: '#333333',
                       marginBottom: '16px',
                     }}
                   >
@@ -173,10 +138,10 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                           alignItems: 'center',
                           gap: '6px',
                           fontSize: '12px',
-                          color: '#cbd5e1',
+                          color: '#868683',
                         }}
                       >
-                        <ArrowRight size={12} color={step.color || '#2258e7'} />
+                        <ArrowRight size={12} color={step.color || '#fe6200'} />
                         <span>{d}</span>
                       </div>
                     ))}
@@ -187,16 +152,16 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
           ))}
         </div>
 
-        {/* Highlight Card if Present */}
+        {/* Highlight Banner if Present (Seamless Blend) */}
         {data.highlightCard && (
           <RevealElement variant="card" delay={0.2}>
             <div
               style={{
-                marginTop: '32px',
-                backgroundColor: '#101726',
-                border: '1px solid #1e293b',
-                borderRadius: '6px',
-                padding: '24px 32px',
+                marginTop: '48px',
+                backgroundColor: 'transparent',
+                borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                padding: '24px 0',
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
@@ -205,10 +170,10 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
               }}
             >
               <div>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', marginBottom: '4px' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '4px' }}>
                   {data.highlightCard.title}
                 </div>
-                <div style={{ fontSize: '15px', color: '#cbd5e1' }}>
+                <div style={{ fontSize: '15px', color: '#333333' }}>
                   {data.highlightCard.detail}
                 </div>
               </div>
@@ -217,7 +182,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                 <span style={{ fontSize: '32px', fontWeight: 800, color: '#22c55e', fontFamily: 'var(--font-heading)' }}>
                   {data.highlightCard.value}
                 </span>
-                <span style={{ fontSize: '13px', color: '#94a3b8', fontWeight: 600 }}>
+                <span style={{ fontSize: '13px', color: '#555555', fontWeight: 600 }}>
                   {data.highlightCard.label}
                 </span>
               </div>

@@ -20,27 +20,6 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
   // State for Interactive Tabs variant (Style 2)
   const [activeTabIdx, setActiveTabIdx] = useState(0);
 
-  // Style badge name generator
-  const getVariantSubtitle = (variant: CapabilityStyleType) => {
-    switch (variant) {
-      case 'bento-grid':
-        return 'Asymmetric Architectural Bento';
-      case 'interactive-tabs':
-        return 'Interactive Inspectable Console';
-      case 'numbered-editorial':
-        return 'Structured Editorial Breakdown';
-      case 'split-showcase':
-        return 'Pillar-to-Delivery Split Matrix';
-      case 'dark-cyber':
-        return 'Hardened Cyber Production Topology';
-      case 'timeline-flow':
-        return 'Sequential Delivery Pipeline';
-      case 'minimal-pills':
-        return 'Modular High-Density Primitives';
-      default:
-        return 'Engineered Capabilities';
-    }
-  };
 
   /* =========================================================================
      RENDER VARIANT 1: BENTO GRID (Asymmetric Cards with Hero Feature Tile)
@@ -64,32 +43,32 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             className="bento-tile"
             style={{
               gridColumn: colSpan,
-              backgroundColor: isFeatured ? '#0f172a' : '#ffffff',
-              color: isFeatured ? '#ffffff' : '#0f172a',
-              border: isFeatured ? '1px solid #1e293b' : '1px solid #e2e8f0',
+              backgroundColor: isFeatured ? '#fbf9f5' : '#ffffff',
+              color: '#000000',
+              border: isFeatured ? '1px solid #f0ece2' : '1px solid #e4e2e1',
+              borderTop: '3px solid #fe6200',
               borderRadius: '8px',
               padding: 'clamp(24px, 3.5vw, 36px)',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
               boxShadow: isFeatured
-                ? '0 16px 36px rgba(15, 23, 42, 0.25)'
-                : '0 4px 12px rgba(0, 0, 0, 0.03)',
+                ? '0 16px 36px rgba(32, 11, 0, 0.25)'
+                : '0 4px 12px rgba(32, 11, 0, 0.03)',
               position: 'relative',
               overflow: 'hidden',
               transition: 'transform 0.25s ease, box-shadow 0.25s ease',
             }}
           >
             <div>
-
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px' }}>
                 <div
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: '6px',
-                    backgroundColor: isFeatured ? 'rgba(34, 88, 231, 0.3)' : 'rgba(34, 88, 231, 0.08)',
-                    color: isFeatured ? '#60a5fa' : '#2258e7',
+                    borderRadius: '8px',
+                    backgroundColor: isFeatured ? 'rgba(255, 85, 0, 0.3)' : 'rgba(255, 85, 0, 0.08)',
+                    color: '#fe6200',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -102,7 +81,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '12px',
                     fontWeight: 800,
                     letterSpacing: '0.05em',
-                    color: isFeatured ? '#38bdf8' : '#2258e7',
+                    color: '#fe6200',
                   }}
                 >
                   PILLAR 0{idx + 1}
@@ -116,6 +95,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.25,
                   marginBottom: '12px',
+                  color: '#000000',
                 }}
               >
                 {cap.title}
@@ -125,7 +105,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 style={{
                   fontSize: '14.5px',
                   lineHeight: 1.65,
-                  color: isFeatured ? '#94a3b8' : '#475569',
+                  color: '#333333',
                   marginBottom: '24px',
                 }}
               >
@@ -139,7 +119,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 flexWrap: 'wrap',
                 gap: '8px',
                 paddingTop: '16px',
-                borderTop: isFeatured ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid #f1f5f9',
+                borderTop: isFeatured ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid #e4e2e1',
               }}
             >
               {cap.tags.map((tag) => (
@@ -149,9 +129,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '11.5px',
                     fontWeight: 600,
                     padding: '4px 10px',
-                    borderRadius: '4px',
-                    backgroundColor: isFeatured ? '#1e293b' : '#f1f5f9',
-                    color: isFeatured ? '#cbd5e1' : '#334155',
+                    borderRadius: '8px',
+                    backgroundColor: isFeatured ? '#f0ece2' : '#f1efeb',
+                    color: isFeatured ? '#fe6200' : '#2f3437',
+                    border: isFeatured ? '1px solid rgba(254, 98, 0, 0.2)' : '1px solid #e4e2e1',
                   }}
                 >
                   {tag}
@@ -177,15 +158,15 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '32px',
           backgroundColor: '#ffffff',
-          border: '1px solid #e2e8f0',
-          borderRadius: '10px',
+          border: '1px solid #e4e2e1',
+          borderRadius: '8px',
           padding: 'clamp(20px, 3vw, 36px)',
-          boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
+          boxShadow: '0 8px 30px rgba(32, 11, 0, 0.04)',
         }}
       >
         {/* Left Column: Vertical Clickable Selectors */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <div style={{ fontSize: '11.5px', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
+          <div style={{ fontSize: '11.5px', fontWeight: 700, color: '#66615c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
             Select Active Capability Specification
           </div>
           {capabilities.map((cap, idx) => {
@@ -199,9 +180,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '16px 18px',
-                  borderRadius: '6px',
-                  border: isSelected ? '1.5px solid #2258e7' : '1px solid #edf2f7',
-                  backgroundColor: isSelected ? 'rgba(34, 88, 231, 0.05)' : '#f8fafc',
+                  borderRadius: '8px',
+                  border: isSelected ? '1.5px solid #fe6200' : '1px solid #e4e2e1',
+                  borderLeft: isSelected ? '4px solid #fe6200' : '1px solid #e4e2e1',
+                  backgroundColor: isSelected ? '#f1efeb' : '#ffffff',
                   cursor: 'pointer',
                   textAlign: 'left',
                   transition: 'all 0.2s ease',
@@ -212,7 +194,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     style={{
                       fontSize: '12px',
                       fontWeight: 800,
-                      color: isSelected ? '#2258e7' : '#94a3b8',
+                      color: isSelected ? '#fe6200' : '#66615c',
                     }}
                   >
                     0{idx + 1}
@@ -221,7 +203,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     style={{
                       fontSize: '14.5px',
                       fontWeight: isSelected ? 700 : 600,
-                      color: isSelected ? '#0f172a' : '#475569',
+                      color: isSelected ? '#fe6200' : '#000000',
                     }}
                   >
                     {cap.title}
@@ -230,7 +212,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 <ChevronRight
                   size={16}
                   style={{
-                    color: isSelected ? '#2258e7' : '#cbd5e1',
+                    color: isSelected ? '#fe6200' : '#66615c',
                     transform: isSelected ? 'translateX(3px)' : 'none',
                     transition: 'transform 0.2s',
                   }}
@@ -243,24 +225,18 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
         {/* Right Column: Deep Inspection Inspector Card */}
         <div
           style={{
-            backgroundColor: '#0f172a',
-            color: '#ffffff',
+            backgroundColor: '#f1efeb',
+            color: '#000000',
             borderRadius: '8px',
             padding: 'clamp(28px, 4vw, 44px)',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            border: '1px solid #1e293b',
+            border: '1px solid #e4e2e1',
             position: 'relative',
           }}
         >
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
-              <span style={{ width: '12px', height: '2px', backgroundColor: '#60a5fa' }} />
-              <span style={{ fontFamily: 'monospace', fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                Specification Inspector // Module 0{activeTabIdx + 1}
-              </span>
-            </div>
 
             <h3
               style={{
@@ -268,20 +244,20 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 fontWeight: 800,
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.2,
-                color: '#ffffff',
+                color: '#000000',
                 marginBottom: '16px',
               }}
             >
               {activeCap.title}
             </h3>
 
-            <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#94a3b8', marginBottom: '32px' }}>
+            <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#333333', marginBottom: '32px' }}>
               {activeCap.description}
             </p>
           </div>
 
           <div>
-            <div style={{ fontSize: '12px', fontWeight: 700, color: '#e2e8f0', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
+            <div style={{ fontSize: '12px', fontWeight: 700, color: '#66615c', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
               Verified Architectural Primitives
             </div>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
@@ -292,10 +268,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '12px',
                     fontWeight: 600,
                     padding: '6px 14px',
-                    borderRadius: '4px',
-                    backgroundColor: '#1e293b',
-                    color: '#38bdf8',
-                    border: '1px solid rgba(56, 189, 248, 0.2)',
+                    borderRadius: '8px',
+                    backgroundColor: '#ffffff',
+                    color: '#000000',
+                    border: '1px solid #e4e2e1',
                   }}
                 >
                   {tag}
@@ -316,7 +292,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
       style={{
         display: 'flex',
         flexDirection: 'column',
-        borderTop: '2px solid #0f172a',
+        borderTop: '1px solid #e4e2e1',
       }}
     >
       {capabilities.map((cap, idx) => (
@@ -324,7 +300,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           key={idx}
           style={{
             padding: '36px 0',
-            borderBottom: '1px solid #e2e8f0',
+            borderBottom: '1px solid #e4e2e1',
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
             gap: '32px',
@@ -339,7 +315,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 fontFamily: 'monospace',
                 fontSize: '20px',
                 fontWeight: 800,
-                color: '#2258e7',
+                color: '#fe6200',
                 letterSpacing: '-0.02em',
               }}
             >
@@ -349,7 +325,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               style={{
                 fontSize: '22px',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#000000',
                 fontFamily: 'var(--font-heading)',
                 margin: 0,
                 lineHeight: 1.25,
@@ -361,7 +337,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
 
           {/* Description & Technical Chips */}
           <div>
-            <p style={{ fontSize: '15px', lineHeight: 1.65, color: '#475569', margin: '0 0 16px 0' }}>
+            <p style={{ fontSize: '15.5px', lineHeight: 1.65, color: '#333333', margin: '0 0 16px 0' }}>
               {cap.description}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -372,10 +348,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '11px',
                     fontWeight: 700,
                     textTransform: 'uppercase',
-                    color: '#64748b',
-                    backgroundColor: '#f1f5f9',
-                    padding: '3px 8px',
-                    borderRadius: '2px',
+                    color: '#000000',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid #e4e2e1',
+                    padding: '4px 10px',
+                    borderRadius: '8px',
                   }}
                 >
                   {tag}
@@ -402,7 +379,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
     >
       {/* Sticky Left Pillar Statement */}
       <div style={{ position: 'sticky', top: '100px' }}>
-        <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#2258e7', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
+        <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#fe6200', color: '#ffffff', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '24px' }}>
           <Layers size={24} />
         </div>
         <h3
@@ -410,27 +387,27 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             fontSize: 'clamp(26px, 3vw, 36px)',
             fontWeight: 800,
             fontFamily: 'var(--font-heading)',
-            color: '#0f172a',
+            color: '#000000',
             lineHeight: 1.18,
             marginBottom: '18px',
           }}
         >
           Comprehensive Architectural Scope
         </h3>
-        <p style={{ fontSize: '15.5px', color: '#64748b', lineHeight: 1.65, marginBottom: '28px' }}>
+        <p style={{ fontSize: '15.5px', color: '#333333', lineHeight: 1.65, marginBottom: '28px' }}>
           Every capability in {title} is engineered as an isolated, production-grade module with direct API boundaries, enterprise observability, and strict automated regression coverage.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#1e293b' }}>
-            <CheckCircle2 size={16} color="#2258e7" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+            <CheckCircle2 size={16} color="#fe6200" />
             <span>100% Microservices / Modular Decoupling</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#1e293b' }}>
-            <CheckCircle2 size={16} color="#2258e7" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+            <CheckCircle2 size={16} color="#fe6200" />
             <span>Zero-Downtime Deployment Blueprints</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13.5px', fontWeight: 600, color: '#1e293b' }}>
-            <CheckCircle2 size={16} color="#2258e7" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+            <CheckCircle2 size={16} color="#fe6200" />
             <span>Full Continuous Integration Test Coverage</span>
           </div>
         </div>
@@ -443,23 +420,23 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             key={idx}
             style={{
               backgroundColor: '#ffffff',
-              border: '1px solid #e2e8f0',
-              borderRadius: '6px',
+              border: '1px solid #e4e2e1',
+              borderRadius: '8px',
               padding: '24px 28px',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
-              borderLeft: '4px solid #2258e7',
+              boxShadow: '0 2px 8px rgba(32, 11, 0, 0.02)',
+              borderLeft: '4px solid #fe6200',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-              <span style={{ fontSize: '12px', fontWeight: 800, color: '#2258e7' }}>
+              <span style={{ fontSize: '12px', fontWeight: 800, color: '#fe6200' }}>
                 SPECIFICATION 0{idx + 1}
               </span>
-              <span style={{ fontSize: '11px', color: '#94a3b8', fontWeight: 600 }}>Production Ready</span>
+              <span style={{ fontSize: '11px', color: '#66615c', fontWeight: 600 }}>Production Ready</span>
             </div>
-            <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
+            <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
               {cap.title}
             </h4>
-            <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+            <p style={{ fontSize: '14.5px', color: '#333333', lineHeight: 1.6, margin: '0 0 16px 0' }}>
               {cap.description}
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -469,11 +446,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   style={{
                     fontSize: '11px',
                     fontWeight: 600,
-                    backgroundColor: '#f8fafc',
-                    border: '1px solid #e2e8f0',
-                    color: '#334155',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid #e4e2e1', color: '#000000',
                     padding: '3px 8px',
-                    borderRadius: '3px',
+                    borderRadius: '8px',
                   }}
                 >
                   {tag}
@@ -492,21 +468,21 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
   const renderDarkCyber = () => (
     <div
       style={{
-        backgroundColor: '#080c14',
-        border: '1px solid #1a2333',
-        borderRadius: '10px',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+        border: '1px solid #f0ece2',
+        borderRadius: '8px',
         padding: 'clamp(24px, 4vw, 44px)',
-        boxShadow: '0 20px 48px rgba(0, 0, 0, 0.4)',
+        boxShadow: '0 20px 48px rgba(32, 11, 0, 0.4)',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #1e293b', paddingBottom: '18px', marginBottom: '28px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #f0ece2', paddingBottom: '18px', marginBottom: '28px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Terminal size={16} color="#38bdf8" />
-          <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#38bdf8', fontWeight: 600 }}>
-            NEOMINDS_SYSTEM_DAEMON // {title.toUpperCase().replace(/\s+/g, '_')}
+          <Terminal size={16} color="#fe6200" />
+          <span style={{ fontFamily: 'monospace', fontSize: '13px', color: '#fe6200', fontWeight: 600 }}>
+            Architecture Specifications · {title}
           </span>
         </div>
-        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', padding: '3px 8px', borderRadius: '3px' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', padding: '3px 8px', borderRadius: '8px' }}>
           STATUS: ONLINE
         </span>
       </div>
@@ -522,9 +498,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           <div
             key={idx}
             style={{
-              backgroundColor: '#0f1726',
-              border: '1px solid #1e2d42',
-              borderRadius: '6px',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+              border: '1px solid rgba(255, 255, 255, 0.08)',
+              borderRadius: '8px',
               padding: '24px',
               display: 'flex',
               flexDirection: 'column',
@@ -532,25 +508,25 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#38bdf8';
-              e.currentTarget.style.boxShadow = '0 0 16px rgba(56, 189, 248, 0.15)';
+              e.currentTarget.style.borderColor = '#fe6200';
+              e.currentTarget.style.boxShadow = '0 0 16px rgba(254, 98, 0, 0.15)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#1e2d42';
+              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
               e.currentTarget.style.boxShadow = 'none';
             }}
           >
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                <span style={{ fontFamily: 'monospace', fontSize: '12px', fontWeight: 700, color: '#38bdf8' }}>
+                <span style={{ fontFamily: 'monospace', fontSize: '12px', fontWeight: 700, color: '#fe6200' }}>
                   NODE [0{idx + 1}]
                 </span>
-                <Shield size={14} color="#60a5fa" />
+                <Shield size={14} color="#fe6200" />
               </div>
-              <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
+              <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', marginBottom: '10px' }}>
                 {cap.title}
               </h4>
-              <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: '#94a3b8', marginBottom: '20px' }}>
+              <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: '#333333', marginBottom: '20px' }}>
                 {cap.description}
               </p>
             </div>
@@ -562,10 +538,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   style={{
                     fontFamily: 'monospace',
                     fontSize: '10.5px',
-                    backgroundColor: '#162234',
-                    color: '#e2e8f0',
+                    backgroundColor: 'rgba(32, 11, 0, 0.7)',
+                    color: '#ffffff',
                     padding: '3px 8px',
-                    borderRadius: '2px',
+                    borderRadius: '8px',
                   }}
                 >
                   #{tag}
@@ -591,7 +567,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           bottom: 0,
           left: '50%',
           width: '2px',
-          backgroundColor: '#e2e8f0',
+          backgroundColor: '#e4e2e1',
           transform: 'translateX(-50%)',
         }}
         className="timeline-rail"
@@ -613,25 +589,17 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 style={{
                   width: 'calc(50% - 24px)',
                   backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  border: '1px solid #e4e2e1',
                   borderRadius: '8px',
                   padding: '24px 28px',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.03)',
+                  boxShadow: '0 4px 14px rgba(32, 11, 0, 0.03)',
                   position: 'relative',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <span style={{ width: '24px', height: '24px', borderRadius: '50%', backgroundColor: '#2258e7', color: '#ffffff', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', fontSize: '11px', fontWeight: 800 }}>
-                    {idx + 1}
-                  </span>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#2258e7', textTransform: 'uppercase' }}>
-                    Stage {idx + 1}
-                  </span>
-                </div>
-                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
+                <h4 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
                   {cap.title}
                 </h4>
-                <p style={{ fontSize: '14px', color: '#475569', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+                <p style={{ fontSize: '14px', color: '#333333', lineHeight: 1.6, margin: '0 0 16px 0' }}>
                   {cap.description}
                 </p>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
@@ -641,10 +609,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                       style={{
                         fontSize: '11px',
                         fontWeight: 600,
-                        backgroundColor: '#f1f5f9',
-                        color: '#334155',
+                        backgroundColor: '#f1efeb',
+                        border: '1px solid #e4e2e1', color: '#000000',
                         padding: '3px 8px',
-                        borderRadius: '3px',
+                        borderRadius: '8px',
                       }}
                     >
                       {tag}
@@ -675,21 +643,23 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           key={idx}
           style={{
             backgroundColor: '#ffffff',
-            border: '1px solid #edf2f7',
+            border: '1px solid #e4e2e1',
+            borderTop: '3px solid #fe6200',
             borderRadius: '8px',
             padding: '24px',
-            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+            boxShadow: '0 2px 6px rgba(32, 11, 0, 0.02)',
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = '#2258e7';
+            e.currentTarget.style.borderColor = '#fe6200';
             e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 10px 24px rgba(34, 88, 231, 0.06)';
+            e.currentTarget.style.boxShadow = '0 10px 24px rgba(254, 98, 0, 0.08)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#edf2f7';
+            e.currentTarget.style.borderColor = '#e4e2e1';
+            e.currentTarget.style.borderTopColor = '#fe6200';
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.02)';
+            e.currentTarget.style.boxShadow = '0 2px 6px rgba(32, 11, 0, 0.02)';
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
@@ -697,23 +667,23 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
               style={{
                 fontSize: '11px',
                 fontWeight: 700,
-                color: '#2258e7',
+                color: '#fe6200',
                 fontFamily: 'monospace',
-                borderLeft: '2px solid #2258e7',
+                borderLeft: '2px solid #fe6200',
                 paddingLeft: '6px',
                 letterSpacing: '0.06em',
               }}
             >
               MODULE 0{idx + 1}
             </span>
-            <ArrowRight size={14} color="#94a3b8" />
+            <ArrowRight size={14} color="#66615c" />
           </div>
 
-          <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#0f172a', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
+          <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', fontFamily: 'var(--font-heading)', margin: '0 0 10px 0' }}>
             {cap.title}
           </h4>
 
-          <p style={{ fontSize: '13.5px', color: '#475569', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+          <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.6, margin: '0 0 16px 0' }}>
             {cap.description}
           </p>
 
@@ -724,11 +694,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 style={{
                   fontSize: '11px',
                   fontWeight: 500,
-                  backgroundColor: '#f8fafc',
-                  border: '1px solid #e2e8f0',
-                  color: '#475569',
+                  backgroundColor: '#f1efeb',
+                  border: '1px solid #e4e2e1', color: '#000000',
                   padding: '3px 8px',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                 }}
               >
                 {tag}
@@ -744,33 +713,21 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: styleVariant === 'dark-cyber' ? '#05070c' : '#f8fafc',
-        borderTop: '1px solid #e2e8f0',
-        borderBottom: '1px solid #e2e8f0',
+        backgroundColor: styleVariant === 'dark-cyber' ? '#fbf9f5' : '#f1efeb',
+        borderTop: styleVariant === 'dark-cyber' ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid #e4e2e1',
+        borderBottom: styleVariant === 'dark-cyber' ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid #e4e2e1',
         transition: 'background-color 0.3s',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-          <div
-            style={{
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#2258e7',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            {getVariantSubtitle(styleVariant)}
-          </div>
           <ScrollReveal
             as="h2"
             style={{
               fontSize: 'clamp(28px, 3.4vw, 42px)',
               fontWeight: 800,
-              color: styleVariant === 'dark-cyber' ? '#ffffff' : '#0f172a',
+              color: '#000000',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -784,7 +741,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             <p
               style={{
                 fontSize: '16px',
-                color: styleVariant === 'dark-cyber' ? '#94a3b8' : '#64748b',
+                color: '#333333',
                 lineHeight: 1.6,
                 margin: 0,
               }}

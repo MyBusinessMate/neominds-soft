@@ -69,8 +69,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   return (
     <article
       style={{
-        backgroundColor: '#ffffff',
-        color: '#0f172a',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+        color: '#000000',
         minHeight: '100vh',
         paddingTop: '80px',
         fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist Sans', 'Inter', sans-serif",
@@ -78,13 +78,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       }}
     >
       {/* ========================================================
-          STICKY BREADCRUMB / TOP ACTION BAR (Apple HIG Navigation)
+          TOP ACTION BAR (Apple HIG / Freehand Navigation)
           ======================================================== */}
       <nav
-        aria-label="Breadcrumbs"
+        aria-label="Navigation"
         style={{
-          borderBottom: '1px solid #eaeaea',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          borderBottom: '1px solid #f0ece2',
+          backgroundColor: 'rgba(32, 11, 0, 0.95)',
           backdropFilter: 'blur(12px)',
           position: 'sticky',
           top: '64px',
@@ -103,72 +103,51 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             fontSize: '13px',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-            <button
-              onClick={() => onNavigatePage('home')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#64748b',
-                cursor: 'pointer',
-                padding: '4px 6px',
-                minHeight: '44px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px',
-                fontWeight: 500,
-              }}
-            >
-              <ArrowLeft size={14} /> Home
-            </button>
-            <ChevronRight size={13} color="#94a3b8" />
-            <button
-              onClick={() => onNavigatePage('portfolio')}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: '#64748b',
-                cursor: 'pointer',
-                padding: '4px 6px',
-                minHeight: '44px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                fontWeight: 500,
-              }}
-            >
-              Projects & Case Studies
-            </button>
-            <ChevronRight size={13} color="#94a3b8" />
-            <span
-              style={{
-                color: '#0f172a',
-                fontWeight: 600,
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                maxWidth: '280px',
-              }}
-            >
-              {project.projectName}
-            </span>
-          </div>
+          <button
+            onClick={() => onNavigatePage('portfolio')}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: '#555555',
+              cursor: 'pointer',
+              padding: '6px 0',
+              minHeight: '44px',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontWeight: 500,
+              fontSize: '14px',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#a3a09b')}
+          >
+            <ArrowLeft size={16} /> Back to Projects & Case Studies
+          </button>
 
           <button
             onClick={handleShare}
             aria-label="Share this project case study"
             style={{
-              background: '#f8fafc',
-              border: '1px solid #e2e8f0',
-              color: '#334155',
-              borderRadius: '6px',
-              padding: '6px 12px',
-              minHeight: '44px',
+              background: '#fbf9f5',
+              border: '1px solid #f0ece2',
+              color: '#000000',
+              borderRadius: '8px',
+              padding: '8px 16px',
+              minHeight: '40px',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '6px',
               cursor: 'pointer',
-              fontSize: '12.5px',
+              fontSize: '13px',
               fontWeight: 500,
+              transition: 'border-color 0.2s, background-color 0.2s',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.borderColor = '#fe6200';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.borderColor = '#f0ece2';
             }}
           >
             <Share2 size={14} /> Share
@@ -186,31 +165,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           padding: 'clamp(36px, 5vw, 64px) 24px 24px',
         }}
       >
-        <div
-          style={{
-            fontFamily: "'SF Mono', 'Geist Mono', monospace",
-            fontSize: '12px',
-            fontWeight: 700,
-            color: '#2258e7',
-            letterSpacing: '0.08em',
-            textTransform: 'uppercase',
-            marginBottom: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}
-        >
-          <span style={{ width: '16px', height: '2px', backgroundColor: '#2258e7' }} />
-          <span>PRODUCTION VERIFIED PROJECT</span>
-        </div>
-
         <h1
           style={{
             fontSize: 'clamp(28px, 4.5vw, 48px)',
             fontWeight: 800,
             lineHeight: 1.15,
             letterSpacing: '-0.025em',
-            color: '#0f172a',
+            color: '#000000',
             margin: '0 0 20px 0',
           }}
         >
@@ -221,7 +182,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)',
             lineHeight: 1.6,
-            color: '#475569',
+            color: '#555555',
             margin: '0 0 24px 0',
             maxWidth: '820px',
           }}
@@ -240,10 +201,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               padding: '8px 18px',
               fontSize: '13px',
               fontWeight: 600,
-              color: copied ? '#15803d' : '#0f172a',
-              backgroundColor: copied ? '#f0fdf4' : '#f8fafc',
-              border: copied ? '1px solid #86efac' : '1px solid #e2e8f0',
-              borderRadius: '4px',
+              color: copied ? '#15803d' : '#1a1a1a',
+              backgroundColor: copied ? '#f0fdf4' : '#faf8f5',
+              border: copied ? '1px solid #86efac' : '1px solid #f0ece2',
+              borderRadius: '8px',
               cursor: 'pointer',
               transition: 'all 0.15s ease',
             }}
@@ -269,7 +230,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         <div
           style={{
             backgroundColor: '#fafafa',
-            border: '1px solid #eaeaea',
+            border: '1px solid #f0ece2',
             borderRadius: '8px',
             padding: 'clamp(20px, 3vw, 32px)',
           }}
@@ -282,10 +243,10 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '20px',
               paddingBottom: '12px',
-              borderBottom: '1px solid #eaeaea',
+              borderBottom: '1px solid #f0ece2',
             }}
           >
             Project Overview
@@ -299,55 +260,55 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             }}
           >
             <div>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Client
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                 {project.overview.client}
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Industry
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
                 {project.overview.industry}
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Project Type
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
                 {project.overview.projectType}
               </div>
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Project Duration
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
                 {project.overview.projectDuration}
               </div>
             </div>
 
             <div style={{ gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Services Delivered
               </div>
-              <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#2258e7' }}>
+              <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#fe6200' }}>
                 {project.overview.services}
               </div>
             </div>
 
             <div style={{ gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Technology Stack
               </div>
-              <div style={{ fontSize: '14.5px', color: '#334155', fontFamily: "'SF Mono', 'Geist Mono', monospace" }}>
+              <div style={{ fontSize: '14.5px', color: '#000000', fontFamily: "'SF Mono', 'Geist Mono', monospace" }}>
                 {project.overview.technologyStack}
               </div>
             </div>
@@ -373,7 +334,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -385,7 +346,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -413,7 +374,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -425,7 +386,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -453,7 +414,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -465,7 +426,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -493,7 +454,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -505,7 +466,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -533,7 +494,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -545,7 +506,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -568,7 +529,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           <div
             style={{
               backgroundColor: '#fafafa',
-              border: '1px solid #eaeaea',
+              border: '1px solid #f0ece2',
               borderRadius: '8px',
               padding: '28px',
               marginBottom: '32px',
@@ -578,7 +539,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontSize: '16px',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#000000',
                 marginBottom: '16px',
                 letterSpacing: '-0.01em',
               }}
@@ -604,7 +565,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     gap: '12px',
                     fontSize: '15px',
                     lineHeight: 1.55,
-                    color: '#334155',
+                    color: '#000000',
                   }}
                 >
                   <span
@@ -612,8 +573,8 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                       width: '20px',
                       height: '20px',
                       borderRadius: '50%',
-                      backgroundColor: '#e0e7ff',
-                      color: '#2258e7',
+                      backgroundColor: 'rgba(254, 98, 0, 0.15)',
+                      color: '#fe6200',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -635,7 +596,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontSize: '16px',
                 fontWeight: 700,
-                color: '#0f172a',
+                color: '#000000',
                 marginBottom: '16px',
                 letterSpacing: '-0.01em',
               }}
@@ -651,57 +612,57 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             >
               <div
                 style={{
-                  border: '1px solid #eaeaea',
-                  borderRadius: '6px',
+                  border: '1px solid #f0ece2',
+                  borderRadius: '8px',
                   padding: '16px',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                  <Code2 size={15} color="#2258e7" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                  <Code2 size={15} color="#fe6200" />
+                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Frontend
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
                   {project.technologyImplementation.frontend}
                 </div>
               </div>
 
               <div
                 style={{
-                  border: '1px solid #eaeaea',
-                  borderRadius: '6px',
+                  border: '1px solid #f0ece2',
+                  borderRadius: '8px',
                   padding: '16px',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                  <Layers size={15} color="#2258e7" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                  <Layers size={15} color="#fe6200" />
+                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Backend
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
                   {project.technologyImplementation.backend}
                 </div>
               </div>
 
               <div
                 style={{
-                  border: '1px solid #eaeaea',
-                  borderRadius: '6px',
+                  border: '1px solid #f0ece2',
+                  borderRadius: '8px',
                   padding: '16px',
-                  backgroundColor: '#ffffff',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                  <Database size={15} color="#2258e7" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                  <Database size={15} color="#fe6200" />
+                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Database
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
                   {project.technologyImplementation.database}
                 </div>
               </div>
@@ -709,19 +670,19 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.aiAutomation && (
                 <div
                   style={{
-                    border: '1px solid #eaeaea',
-                    borderRadius: '6px',
+                    border: '1px solid #f0ece2',
+                    borderRadius: '8px',
                     padding: '16px',
-                    backgroundColor: '#ffffff',
+                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                    <Cpu size={15} color="#2258e7" />
-                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em' }}>
+                    <Cpu size={15} color="#fe6200" />
+                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                       AI / Automation
                     </span>
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#0f172a' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
                     {project.technologyImplementation.aiAutomation}
                   </div>
                 </div>
@@ -730,17 +691,17 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.integrations && (
                 <div
                   style={{
-                    border: '1px solid #eaeaea',
-                    borderRadius: '6px',
+                    border: '1px solid #f0ece2',
+                    borderRadius: '8px',
                     padding: '16px',
-                    backgroundColor: '#ffffff',
+                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                     gridColumn: '1 / -1',
                   }}
                 >
-                  <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '6px' }}>
                     Integrations
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: 500, color: '#334155' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 500, color: '#000000' }}>
                     {project.technologyImplementation.integrations}
                   </div>
                 </div>
@@ -757,7 +718,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -769,7 +730,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -798,47 +759,47 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               marginBottom: '20px',
             }}
           >
-            <div style={{ border: '1px solid #eaeaea', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '4px' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Efficiency
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                 {project.resultsAndImpact.efficiency}
               </div>
             </div>
 
-            <div style={{ border: '1px solid #eaeaea', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '4px' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Time Saved
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                 {project.resultsAndImpact.timeSaved}
               </div>
             </div>
 
-            <div style={{ border: '1px solid #eaeaea', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '4px' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Cost Reduction
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                 {project.resultsAndImpact.costReduction}
               </div>
             </div>
 
-            <div style={{ border: '1px solid #eaeaea', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '4px' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Performance
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
                 {project.resultsAndImpact.performance}
               </div>
             </div>
 
-            <div style={{ border: '1px solid #eaeaea', borderRadius: '6px', padding: '18px', backgroundColor: '#fafafa', gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.04em', marginBottom: '4px' }}>
+            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa', gridColumn: '1 / -1' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Business Impact
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#0f172a' }}>
+              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
                 {project.resultsAndImpact.businessImpact}
               </div>
             </div>
@@ -848,7 +809,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '12px',
               fontStyle: 'italic',
-              color: '#64748b',
+              color: '#555555',
               lineHeight: 1.5,
               paddingLeft: '4px',
             }}
@@ -865,7 +826,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             style={{
               fontSize: '22px',
               fontWeight: 700,
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               letterSpacing: '-0.015em',
               display: 'flex',
@@ -877,7 +838,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               style={{
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
                 fontSize: '14px',
-                color: '#2258e7',
+                color: '#fe6200',
                 fontWeight: 700,
               }}
             >
@@ -888,18 +849,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
           <div
             style={{
-              backgroundColor: '#f8fafc',
-              border: '1px solid #e2e8f0',
-              borderLeft: '4px solid #2258e7',
-              borderRadius: '6px',
-              padding: '24px',
+              backgroundColor: 'transparent',
+              borderLeft: '3px solid #fe6200',
+              padding: '12px 0 12px 20px',
             }}
           >
             <p
               style={{
-                fontSize: '16.5px',
-                lineHeight: 1.65,
-                color: '#1e293b',
+                fontSize: '17px',
+                lineHeight: 1.7,
+                color: '#000000',
                 fontStyle: 'italic',
                 margin: 0,
               }}
@@ -914,15 +873,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             ---------------------------------------------------- */}
         <section
           style={{
-            borderTop: '1px solid #eaeaea',
+            borderTop: '1px solid #f0ece2',
             paddingTop: '48px',
             marginBottom: '64px',
           }}
         >
           <div
             style={{
-              backgroundColor: '#0f172a',
-              color: '#ffffff',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+              border: '1px solid #1F1F23',
+              color: '#000000',
               borderRadius: '8px',
               padding: 'clamp(32px, 5vw, 48px)',
               position: 'relative',
@@ -937,7 +897,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 700,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#93c5fd',
+                  color: '#fe6200',
                   marginBottom: '12px',
                 }}
               >
@@ -948,7 +908,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 style={{
                   fontSize: 'clamp(24px, 3.2vw, 36px)',
                   fontWeight: 700,
-                  color: '#ffffff',
+                  color: '#000000',
                   lineHeight: 1.25,
                   letterSpacing: '-0.02em',
                   marginBottom: '16px',
@@ -961,7 +921,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 style={{
                   fontSize: '16px',
                   lineHeight: 1.6,
-                  color: '#cbd5e1',
+                  color: '#000000',
                   marginBottom: '28px',
                 }}
               >
@@ -971,13 +931,12 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               <button
                 onClick={handleDiscussClick}
                 style={{
-                  backgroundColor: '#ffffff',
-                  color: '#0f172a',
+                  backgroundColor: '#fe6200', color: '#ffffff',
                   border: 'none',
                   fontSize: '15px',
                   fontWeight: 700,
                   padding: '14px 28px',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   cursor: 'pointer',
                   minHeight: '48px',
                   display: 'inline-flex',
@@ -987,7 +946,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   transition: 'background-color 0.15s, transform 0.15s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f1f5f9';
+                  e.currentTarget.style.backgroundColor = '#f0ece2';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.backgroundColor = '#ffffff';
@@ -1010,7 +969,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.06em',
-              color: '#64748b',
+              color: '#555555',
               marginBottom: '16px',
               fontFamily: "'SF Mono', 'Geist Mono', monospace",
             }}
@@ -1024,13 +983,13 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 key={idx}
                 onClick={() => onNavigatePage(service.slug)}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  color: '#0f172a',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid #f0ece2',
+                  color: '#000000',
                   fontSize: '13.5px',
                   fontWeight: 600,
                   padding: '10px 18px',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   cursor: 'pointer',
                   minHeight: '44px',
                   display: 'inline-flex',
@@ -1039,16 +998,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   transition: 'border-color 0.2s, background-color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#2258e7';
-                  e.currentTarget.style.backgroundColor = '#f8fafc';
+                  e.currentTarget.style.borderColor = '#fe6200';
+                  e.currentTarget.style.backgroundColor = '#faf8f5';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0';
+                  e.currentTarget.style.borderColor = '#f0ece2';
                   e.currentTarget.style.backgroundColor = '#ffffff';
                 }}
               >
                 <span>{service.name}</span>
-                <ChevronRight size={14} color="#2258e7" />
+                <ChevronRight size={14} color="#fe6200" />
               </button>
             ))}
           </div>
@@ -1065,7 +1024,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 fontWeight: 700,
                 textTransform: 'uppercase',
                 letterSpacing: '0.06em',
-                color: '#64748b',
+                color: '#555555',
                 marginBottom: '20px',
                 fontFamily: "'SF Mono', 'Geist Mono', monospace",
               }}
@@ -1085,9 +1044,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   key={p.id}
                   onClick={() => onNavigatePage('project', p.id)}
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e2e8f0',
-                    borderRadius: '6px',
+                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                    border: '1px solid #f0ece2',
+                    borderRadius: '8px',
                     padding: '20px',
                     cursor: 'pointer',
                     display: 'flex',
@@ -1097,11 +1056,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     transition: 'border-color 0.2s, transform 0.2s',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#2258e7';
+                    e.currentTarget.style.borderColor = '#fe6200';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e2e8f0';
+                    e.currentTarget.style.borderColor = '#f0ece2';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -1110,7 +1069,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                       style={{
                         fontSize: '11px',
                         fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                        color: '#2258e7',
+                        color: '#fe6200',
                         fontWeight: 700,
                         textTransform: 'uppercase',
                         marginBottom: '6px',
@@ -1122,7 +1081,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                       style={{
                         fontSize: '16px',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: '#000000',
                         lineHeight: 1.3,
                         margin: 0,
                       }}
@@ -1137,7 +1096,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                       alignItems: 'center',
                       gap: '4px',
                       fontSize: '13px',
-                      color: '#2258e7',
+                      color: '#fe6200',
                       fontWeight: 600,
                       marginTop: '16px',
                     }}
@@ -1159,9 +1118,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           bottom: 0,
           left: 0,
           right: 0,
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: 'rgba(32, 11, 0,  0.95)',
           backdropFilter: 'blur(10px)',
-          borderTop: '1px solid #eaeaea',
+          borderTop: '1px solid #f0ece2',
           padding: '12px 20px calc(12px + env(safe-area-inset-bottom, 0px))',
           display: 'flex',
           alignItems: 'center',
@@ -1176,7 +1135,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           style={{
             background: 'none',
             border: 'none',
-            color: '#64748b',
+            color: '#555555',
             fontSize: '13px',
             fontWeight: 600,
             cursor: 'pointer',
@@ -1193,13 +1152,12 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         <button
           onClick={handleDiscussClick}
           style={{
-            backgroundColor: '#0f172a',
-            color: '#ffffff',
+            backgroundColor: '#fe6200', color: '#ffffff',
             border: 'none',
             fontSize: '14px',
             fontWeight: 700,
             padding: '10px 20px',
-            borderRadius: '4px',
+            borderRadius: '8px',
             cursor: 'pointer',
             minHeight: '44px',
             display: 'inline-flex',

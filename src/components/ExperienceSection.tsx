@@ -26,19 +26,18 @@ const clientLogos: ClientLogo[] = [
   { id: 'adventr', name: 'Adventr', url: '/uploads/2010/04/Adventr.svg' },
 ];
 
-
 const ExperienceSectionComponent: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const textContainerRef = useRef<HTMLDivElement>(null);
   const [logoBatch, setLogoBatch] = useState(0);
 
-  // Word-by-word slow and buttery smooth scroll illumination
+  // Word-by-word buttery smooth scroll illumination in black #000000 on light cream
   useEffect(() => {
     const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
       const words = textContainerRef.current?.querySelectorAll('.scroll-word');
       if (words) {
-        gsap.set(words, { opacity: 1, color: '#ffffff', y: 0 });
+        gsap.set(words, { opacity: 1, color: '#000000', y: 0 });
       }
       return;
     }
@@ -51,13 +50,13 @@ const ExperienceSectionComponent: React.FC = () => {
       gsap.fromTo(
         words,
         {
-          opacity: 0.18,
-          color: 'rgba(255, 255, 255, 0.25)',
+          opacity: 0.22,
+          color: 'rgba(0, 0, 0, 0.22)',
           y: 4,
         },
         {
           opacity: 1,
-          color: '#ffffff',
+          color: '#000000',
           y: 0,
           stagger: 0.08,
           ease: 'power1.out',
@@ -65,7 +64,7 @@ const ExperienceSectionComponent: React.FC = () => {
             trigger: textContainerRef.current,
             start: 'top 85%',
             end: 'bottom 45%',
-            scrub: 1.2, // Generous smooth scrub factor
+            scrub: 1.2,
           },
         }
       );
@@ -100,32 +99,170 @@ const ExperienceSectionComponent: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#001334',
-        paddingTop: 'clamp(80px, 9vw, 120px)',
-        paddingBottom: 'clamp(60px, 7vw, 100px)',
+        backgroundColor: '#f1efeb', // Freehand warm light cream
+        paddingTop: 'clamp(72px, 9vw, 100px)',
+        paddingBottom: 'clamp(72px, 9vw, 100px)',
         overflow: 'hidden',
         border: 'none',
       }}
     >
-      <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Large Editorial Headline with Pure Word-by-Word Smooth Fill */}
+      <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+
+        {/* Big Bold Headline Statement with Freehand Orange Highlight */}
+        <div style={{ textAlign: 'center', maxWidth: '980px', margin: '0 auto clamp(48px, 6vw, 68px)' }}>
+          <h2
+            style={{
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(32px, 4.4vw, 54px)',
+              fontWeight: 400,
+              lineHeight: 1.18,
+              letterSpacing: '-0.02em',
+              color: '#000000',
+              margin: '0 0 16px 0',
+            }}
+          >
+            We engineered <span style={{ color: '#fe6200' }}>100+</span> production software platforms with <span style={{ color: '#fe6200' }}>99.99%</span> reliability.
+          </h2>
+          <p
+            style={{
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              fontSize: 'clamp(16px, 1.25vw, 19px)',
+              color: '#66615c',
+              lineHeight: 1.6,
+              maxWidth: '680px',
+              margin: '0 auto',
+            }}
+          >
+            Senior engineers embedded directly into your sprints. We ship working features weekly, eliminate technical debt, and keep your production systems resilient.
+          </p>
+        </div>
+
+        {/* 3 Metric Columns with Thin Orange Vertical Dividers (Exact Freehand Layout) */}
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            alignItems: 'center',
+            gap: '0px',
+            backgroundColor: '#ffffff',
+            border: '1px solid #e4e2e1',
+            borderRadius: '8px',
+            overflow: 'hidden',
+            marginBottom: 'clamp(64px, 8vw, 84px)',
+          }}
+        >
+          {/* Metric 1 */}
+          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#000000',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              100+
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Enterprise Systems Shipped
+            </div>
+          </div>
+
+          {/* Metric 2 with Left & Right Orange Dividers */}
+          <div
+            style={{
+              padding: 'clamp(28px, 4vw, 44px)',
+              textAlign: 'center',
+              borderLeft: '1px solid #fe6200',
+              borderRight: '1px solid #fe6200',
+            }}
+          >
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#fe6200',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              20+
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Years Engineering Depth
+            </div>
+          </div>
+
+          {/* Metric 3 */}
+          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
+            <div
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(44px, 5vw, 60px)',
+                fontWeight: 400,
+                color: '#000000',
+                lineHeight: 1,
+                marginBottom: '10px',
+              }}
+            >
+              99.99%
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                fontSize: '14px',
+                color: '#868683',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              }}
+            >
+              Production Availability SLA
+            </div>
+          </div>
+        </div>
+
+        {/* Editorial Scroll Illumination Headline */}
         <div
           ref={textContainerRef}
           style={{
             maxWidth: '1120px',
-            marginBottom: 'clamp(36px, 5vw, 56px)',
+            margin: '0 auto clamp(48px, 6vw, 72px)',
+            textAlign: 'center',
           }}
         >
-          <h2
+          <h3
             style={{
-              fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(28px, 4.2vw, 64px)',
-              fontWeight: 600,
-              lineHeight: 1.25,
-              letterSpacing: '-0.025em',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(26px, 3.4vw, 42px)',
+              fontWeight: 400,
+              lineHeight: 1.3,
+              letterSpacing: '-0.015em',
               margin: 0,
               display: 'flex',
               flexWrap: 'wrap',
+              justifyContent: 'center',
               rowGap: '8px',
             }}
           >
@@ -136,23 +273,18 @@ const ExperienceSectionComponent: React.FC = () => {
                 style={{
                   display: 'inline-block',
                   marginRight: '0.28em',
-                  opacity: 0.18,
-                  color: 'rgba(255, 255, 255, 0.25)',
+                  opacity: 0.22,
+                  color: 'rgba(0, 0, 0, 0.22)',
                   willChange: 'opacity, color, transform',
                 }}
               >
                 {word}
               </span>
             ))}
-          </h2>
+          </h3>
         </div>
 
-        {/* Decorative Blue Dot Motif */}
-        <div style={{ margin: 'clamp(24px, 4vw, 36px) 0 clamp(36px, 5vw, 60px) 0', paddingLeft: '4px' }}>
-          <span className="blue-dot" style={{ width: '8px', height: '8px' }} />
-        </div>
-
-        {/* 4 Logos at a Time with 3D Vertical Rolling Cylinder Effect */}
+        {/* 4 Logos at a Time with Rolling Effect Separated by Hairline Dividers */}
         <div
           style={{
             width: '100%',
@@ -161,8 +293,10 @@ const ExperienceSectionComponent: React.FC = () => {
             alignItems: 'center',
             justifyItems: 'center',
             gap: 'clamp(20px, 3vw, 40px)',
-            paddingTop: '20px',
-            borderTop: 'none',
+            paddingTop: '28px',
+            paddingBottom: '28px',
+            borderTop: '1px solid #e4e2e1',
+            borderBottom: '1px solid #e4e2e1',
           }}
         >
           {slotSets.map((set, slotIdx) => {
@@ -204,10 +338,10 @@ const ExperienceSectionComponent: React.FC = () => {
                       maxHeight: '32px',
                       maxWidth: '160px',
                       objectFit: 'contain',
-                      opacity: 0.9,
+                      opacity: 0.85,
+                      filter: 'invert(1) brightness(0.2)', // crisp dark logo on light background
                     }}
                     onError={(e) => {
-                      // Fallback text if network blocked
                       (e.currentTarget as HTMLElement).style.display = 'none';
                     }}
                   />

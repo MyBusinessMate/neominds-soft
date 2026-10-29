@@ -15,30 +15,19 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#f8fafc',
+        backgroundColor: '#ffffff',
+        borderBottom: '1px solid #e4e2e1',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* Section Heading */}
         <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
-          <div
-            style={{
-              fontSize: '12px',
-              fontWeight: 700,
-              color: '#2258e7',
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              marginBottom: '10px',
-            }}
-          >
-            Phase-Gate Engineering Delivery
-          </div>
           <ScrollReveal
             as="h2"
             style={{
               fontSize: 'clamp(28px, 3.4vw, 42px)',
               fontWeight: 800,
-              color: '#0f172a',
+              color: '#000000',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -49,7 +38,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
             How We Deliver {title}
           </ScrollReveal>
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '16px', color: '#64748b', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0 }}>
               An agile, multi-stage delivery framework engineered to eliminate delivery drift and achieve zero-defect launches.
             </p>
           </RevealElement>
@@ -64,7 +53,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
             position: 'relative',
             marginBottom: '40px',
             paddingBottom: '20px',
-            borderBottom: '2px solid #e2e8f0',
+            borderBottom: '2px solid #e4e2e1',
             overflowX: 'auto',
           }}
         >
@@ -91,9 +80,9 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   style={{
                     width: '32px',
                     height: '32px',
-                    borderRadius: '50%',
-                    backgroundColor: isCurrent ? '#2258e7' : '#e2e8f0',
-                    color: isCurrent ? '#ffffff' : '#64748b',
+                    borderRadius: '8px',
+                    backgroundColor: isCurrent ? '#fe6200' : '#f1efeb',
+                    color: isCurrent ? '#ffffff' : '#000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -105,10 +94,10 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   {step.step}
                 </div>
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#2258e7' : '#94a3b8', textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#fe6200' : '#868683', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     STAGE {step.step}
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#0f172a' : '#64748b' }}>
+                  <div style={{ fontSize: '14px', fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#000000' : '#66615c' }}>
                     {step.title}
                   </div>
                 </div>
@@ -122,8 +111,8 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                       left: 0,
                       right: 0,
                       height: '3px',
-                      backgroundColor: '#2258e7',
-                      borderRadius: '2px',
+                      backgroundColor: '#fe6200',
+                      borderRadius: '8px',
                     }}
                   />
                 )}
@@ -132,56 +121,47 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
           })}
         </div>
 
-        {/* Phase Focus Console (Not a box card) */}
+        {/* Phase Focus Console (Seamless Editorial Blend - No Card Boxes) */}
         <div
           style={{
-            backgroundColor: '#ffffff',
-            border: '1px solid #e2e8f0',
-            borderRadius: '10px',
-            padding: 'clamp(28px, 4vw, 48px)',
-            boxShadow: '0 8px 30px rgba(0, 0, 0, 0.04)',
+            paddingTop: '20px',
           }}
         >
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'clamp(36px, 5vw, 64px)', alignItems: 'start' }}>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', fontWeight: 700, color: '#2258e7', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '8px' }}>
-                <span style={{ width: '10px', height: '2px', backgroundColor: '#2258e7' }} />
-                <span>Active Phase // Stage 0{steps[activeStep].step}</span>
-              </div>
-              <h3 style={{ fontSize: '26px', fontWeight: 800, color: '#0f172a', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0' }}>
+              <h3 style={{ fontSize: 'clamp(24px, 2.8vw, 32px)', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)', margin: '0 0 16px 0', lineHeight: 1.2 }}>
                 {steps[activeStep].title}
               </h3>
-              <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#475569', margin: 0 }}>
+              <p style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#333333', margin: 0, fontWeight: 400 }}>
                 {steps[activeStep].description}
               </p>
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+              <div style={{ fontSize: '12px', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '16px' }}>
                 Milestone Sign-Off Requirements
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {steps[activeStep].deliverables.map((del, dIdx) => (
                   <div
                     key={dIdx}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '12px',
-                      padding: '12px 16px',
-                      backgroundColor: '#f8fafc',
-                      borderRadius: '6px',
-                      border: '1px solid #edf2f7',
+                      gap: '14px',
+                      padding: '14px 0',
+                      borderBottom: '1px solid #e4e2e1',
                     }}
                   >
-                    <CheckCircle2 size={16} color="#2258e7" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '14px', fontWeight: 600, color: '#1e293b' }}>
+                    <CheckCircle2 size={18} color="#fe6200" style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#000000', letterSpacing: '-0.01em' }}>
                       {del}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>

@@ -57,15 +57,15 @@ const PageLoader: React.FC = () => (
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#000000',
+      backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
     }}
   >
     <div
       style={{
         width: '32px',
         height: '32px',
-        border: '3px solid rgba(255, 85, 0, 0.2)',
-        borderTopColor: '#FF5500',
+        border: '3px solid rgba(254, 98, 0, 0.2)',
+        borderTopColor: '#fe6200',
         borderRadius: '50%',
         animation: 'spinLoader 0.7s linear infinite',
       }}
@@ -205,7 +205,7 @@ export const App: React.FC = () => {
       const route = resolveRoute();
       setCurrentPage(route.page);
       setSelectedArticleId(route.articleId);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollTo(0, { immediate: true });
     };
 
     window.addEventListener('popstate', handleUrlChange);
@@ -324,7 +324,7 @@ export const App: React.FC = () => {
               position: 'absolute',
               top: '-100px',
               left: '20px',
-              backgroundColor: '#FF5500',
+              backgroundColor: '#fe6200',
               color: '#ffffff',
               padding: '10px 18px',
               zIndex: 99999,
@@ -353,7 +353,7 @@ export const App: React.FC = () => {
           <Suspense fallback={<PageLoader />}>
             {/* 0. 404 Error Page */}
             {currentPage === '404' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <NotFoundPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -363,7 +363,7 @@ export const App: React.FC = () => {
 
             {/* Dedicated Bespoke AI Services Page (EffectiveSoft.ai Aesthetic & Design) */}
             {currentPage === 'ai-product-engineering' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <AIServicesPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onContactClick={() => handleSelectPage('contacts')}
@@ -373,7 +373,7 @@ export const App: React.FC = () => {
 
             {/* 1. Universal Canonical Service Page System for All Other Services */}
             {isOfficialServicePage && currentPage !== 'ai-product-engineering' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <ServicePageContainer
                   slug={currentPage}
                   onNavigateHome={() => handleSelectPage('home')}
@@ -390,7 +390,7 @@ export const App: React.FC = () => {
 
             {/* 2. Insights & Tech Briefs Hub */}
             {currentPage === 'insights' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <InsightsPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -406,7 +406,7 @@ export const App: React.FC = () => {
 
             {/* 2b. Technical Blog Hub & Reader */}
             {currentPage === 'blog' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 {selectedArticleId ? (
                   <BlogPostDetailPage
                     articleId={selectedArticleId}
@@ -438,7 +438,7 @@ export const App: React.FC = () => {
 
             {/* 2c. Company Updates & Milestones */}
             {currentPage === 'company-updates' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <CompanyUpdatesPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -454,7 +454,7 @@ export const App: React.FC = () => {
 
             {/* 3. Portfolio & Case Studies Listing */}
             {currentPage === 'portfolio' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <PortfolioPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p, id) => {
@@ -471,7 +471,7 @@ export const App: React.FC = () => {
 
             {/* 3b. Dedicated Unified Project & Case Study Page */}
             {currentPage === 'project' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <ProjectPage
                   projectId={selectedArticleId || 'mindspace-mobile-app'}
                   onNavigatePage={(p, id) => {
@@ -488,7 +488,7 @@ export const App: React.FC = () => {
 
             {/* 4. About Us & Leadership */}
             {currentPage === 'about-us' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <AboutUsPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -504,7 +504,7 @@ export const App: React.FC = () => {
 
             {/* 5. Contacts & Global RFP Form */}
             {currentPage === 'contacts' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <ContactsPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -520,7 +520,7 @@ export const App: React.FC = () => {
 
             {/* Careers Page */}
             {currentPage === 'careers' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <CareersPage
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
@@ -534,7 +534,7 @@ export const App: React.FC = () => {
 
             {/* Certification Page */}
             {currentPage === 'certification' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <CertificationPage
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
@@ -548,7 +548,7 @@ export const App: React.FC = () => {
 
             {/* Leadership Page */}
             {currentPage === 'leaders' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <LeadershipPage
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
                   onOpenLegal={(tab: 'privacy' | 'cookie' | 'security') => {
@@ -562,7 +562,7 @@ export const App: React.FC = () => {
 
             {/* Services Hub Page */}
             {currentPage === 'services' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <ServicesHubPage
                   onNavigateToService={(slug) => handleSelectPage(slug as PageType)}
                   onNavigateToContact={() => handleSelectPage('contacts')}
@@ -574,7 +574,7 @@ export const App: React.FC = () => {
 
             {/* Industries Hub Page */}
             {currentPage === 'industries' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <IndustriesHubPage
                   onNavigateToContact={() => handleSelectPage('contacts')}
                   onNavigateToPortfolio={() => handleSelectPage('portfolio')}
@@ -584,7 +584,7 @@ export const App: React.FC = () => {
 
             {/* 6. Privacy Policy Page */}
             {currentPage === 'privacy-policy' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <PrivacyPolicyPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -599,7 +599,7 @@ export const App: React.FC = () => {
 
             {/* 7. Cookie Policy Page */}
             {currentPage === 'cookie-policy' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <CookiePolicyPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -614,7 +614,7 @@ export const App: React.FC = () => {
 
             {/* 8. Security & Compliance Standards Page */}
             {currentPage === 'security-policy' && (
-              <main id="main-content">
+              <main id="main-content" className="smooth-page-enter">
                 <SecurityPolicyPage
                   onNavigateHome={() => handleSelectPage('home')}
                   onNavigatePage={(p) => handleSelectPage(p as PageType)}
@@ -632,7 +632,7 @@ export const App: React.FC = () => {
 
           {/* 10. Default Home View: Complete Interactive Corporate Landing Architecture */}
           {currentPage === 'home' && (
-            <main id="main-content">
+            <main id="main-content" className="smooth-page-enter">
               <HeroSection onTalkClick={() => handleSelectPage('contacts')} />
 
               <ExperienceSection />
@@ -647,7 +647,7 @@ export const App: React.FC = () => {
 
               <CaseStudiesHorizontal
                 onContactClick={() => handleSelectPage('contacts')}
-                onSelectCaseStudy={(id: string) => setSelectedCaseStudy(id)}
+                onSelectCaseStudy={(id: string) => handleSelectPage('project', id)}
               />
 
               <Testimonials />

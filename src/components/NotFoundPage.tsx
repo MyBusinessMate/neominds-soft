@@ -23,8 +23,8 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
   return (
     <div
       style={{
-        backgroundColor: '#ffffff',
-        color: '#0f172a',
+        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+        color: '#000000',
         minHeight: '100vh',
         paddingTop: '80px',
         fontFamily: 'var(--font-body)',
@@ -49,10 +49,10 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             alignItems: 'center',
             gap: '8px',
             padding: '6px 14px',
-            backgroundColor: 'rgba(239, 68, 68, 0.08)',
-            border: '1px solid rgba(239, 68, 68, 0.25)',
-            borderRadius: '2px',
-            color: '#dc2626',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+            border: '1px solid #fe6200',
+            borderRadius: '8px',
+            color: '#fe6200',
             fontSize: '13px',
             fontWeight: 700,
             letterSpacing: '0.06em',
@@ -71,7 +71,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
             fontWeight: 800,
             lineHeight: 1.08,
             letterSpacing: '-0.03em',
-            color: '#0f172a',
+            color: '#000000',
             marginBottom: '20px',
             fontFamily: 'var(--font-heading)',
           }}
@@ -84,7 +84,7 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
           style={{
             fontSize: 'clamp(16px, 1.8vw, 19px)',
             lineHeight: 1.6,
-            color: '#475067',
+            color: '#555555',
             maxWidth: '620px',
             margin: '0 auto 40px auto',
           }}
@@ -109,17 +109,16 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: '#2258e7',
-              color: '#ffffff',
+              backgroundColor: '#fe6200', color: '#ffffff',
               border: 'none',
-              borderRadius: '2px',
+              borderRadius: '8px',
               fontSize: '15px',
               fontWeight: 700,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'opacity 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#183c9e')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#2258e7')}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
           >
             <ArrowLeft size={16} />
             <span>Return to Homepage</span>
@@ -132,17 +131,23 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               padding: '14px 28px',
-              backgroundColor: '#f8fafc',
-              color: '#0f172a',
-              border: '1px solid #d0d3dd',
-              borderRadius: '2px',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+              color: '#fe6200',
+              border: '1px solid #fe6200',
+              borderRadius: '8px',
               fontSize: '15px',
               fontWeight: 700,
               cursor: 'pointer',
-              transition: 'background-color 0.2s',
+              transition: 'all 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#f1f5f9')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#f8fafc')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#fe6200';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
+              e.currentTarget.style.color = '#fe6200';
+            }}
           >
             <span>Contact Engineering Team</span>
             <ArrowRight size={16} />
@@ -153,9 +158,9 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
         <div
           style={{
             padding: '36px 32px',
-            backgroundColor: '#f8fafc',
-            border: '1px solid #e2e8f0',
-            borderRadius: '2px',
+            backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+            border: '1px solid #e4e2e1',
+            borderRadius: '8px',
             textAlign: 'left',
           }}
         >
@@ -165,14 +170,14 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
               alignItems: 'center',
               gap: '8px',
               marginBottom: '20px',
-              color: '#0f172a',
+              color: '#000000',
               fontWeight: 700,
               fontSize: '15px',
               textTransform: 'uppercase',
               letterSpacing: '0.04em',
             }}
           >
-            <Compass size={18} style={{ color: '#2258e7' }} />
+            <Compass size={18} style={{ color: '#fe6200' }} />
             <span>Quick Navigation</span>
           </div>
 
@@ -193,9 +198,9 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
                   justifyContent: 'space-between',
                   padding: '12px 16px',
                   backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
-                  borderRadius: '2px',
-                  color: '#1e293b',
+                  border: '1px solid #e4e2e1',
+                  borderRadius: '8px',
+                  color: '#000000',
                   fontSize: '14px',
                   fontWeight: 600,
                   textAlign: 'left',
@@ -203,12 +208,12 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({
                   transition: 'border-color 0.2s, color 0.2s',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#2258e7';
-                  e.currentTarget.style.color = '#2258e7';
+                  e.currentTarget.style.borderColor = '#fe6200';
+                  e.currentTarget.style.color = '#fe6200';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e2e8f0';
-                  e.currentTarget.style.color = '#1e293b';
+                  e.currentTarget.style.borderColor = '#e4e2e1';
+                  e.currentTarget.style.color = '#000000';
                 }}
               >
                 <span>{item.name}</span>

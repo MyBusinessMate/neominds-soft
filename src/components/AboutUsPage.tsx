@@ -6,14 +6,14 @@ import {
   ShieldCheck,
   Mail,
   Upload,
-  Play,
+  Play,
 } from 'lucide-react';
-import {
-  ABOUT_TEAM_MEMBERS,
+import {
   ABOUT_TESTIMONIALS,
-  ABOUT_LOCATION,
+  ABOUT_LOCATION,
 } from '../data/aboutData';
 import { Footer } from './Footer';
+import { TeamSection } from './team/TeamSection';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import './AboutUsPage.css';
 
@@ -83,18 +83,13 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-superhero" data-block-name="about-first-window">
         <div className="s-superhero__glow"></div>
         <div className="s-superhero__container">
-          <div className="s-superhero__kicker">
-            <span className="s-superhero__kicker-line"></span>
-            <span>About Neominds TechHub</span>
-          </div>
-
           <ScrollReveal as="h1" className="s-superhero__title" blurStrength={8}>
-            Engineering <span>what's next</span>
+            Software engineered <span>to scale</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
             <p className="s-superhero__subtitle">
-              Neominds TechHub is a software and AI engineering company delivering web, mobile, cloud and AI solutions for businesses worldwide.
+              We design, build, and run resilient cloud systems and practical AI applications. Working software in your hands every sprint, zero consulting fluff.
             </p>
           </RevealElement>
 
@@ -108,7 +103,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 else onNavigatePage('contacts');
               }}
             >
-              <span>Discuss your challenge</span>
+              <span>Talk with our team</span>
               <ArrowRight size={16} />
             </button>
           </RevealElement>
@@ -121,35 +116,17 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-blockquote">
         <div className="s-blockquote__container">
           <div className="s-blockquote__author-card">
-            <div
-              style={{
-                width: '84px',
-                height: '84px',
-                borderRadius: '50%',
-                backgroundColor: 'rgba(34, 88, 231, 0.2)',
-                border: '2px solid #2258e7',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '24px',
-                fontWeight: 700,
-                color: '#60a5fa',
-                marginBottom: '12px',
-              }}
-            >
-              CEO
-            </div>
-            <h3 className="s-blockquote__name">Executive Leadership</h3>
+            <h3 className="s-blockquote__name">Leadership &amp; Architecture</h3>
             <p className="s-blockquote__role">Neominds TechHub</p>
           </div>
 
           <div className="s-blockquote__content">
             <div className="s-blockquote__quote-mark">&ldquo;</div>
             <blockquote className="s-blockquote__text">
-              We don’t just get things done: we <span>think bold</span>. It is our team’s core standard.
+              Real engineering isn’t about hype. It’s about building software you can rely on when traffic surges and downtime is not an option.
             </blockquote>
             <p className="s-blockquote__subtext">
-              Every project comes with open sharing of timelines, costs, and risks, backed by weekly demos and full code ownership for our clients.
+              Every partnership comes with direct access to your engineering leads, weekly demonstrable releases, and full code ownership from day one.
             </p>
           </div>
         </div>
@@ -191,7 +168,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 padding: '10px 20px',
                 backgroundColor: 'rgba(7, 11, 20, 0.75)',
                 backdropFilter: 'blur(8px)',
-                borderRadius: '0px',
+                borderRadius: '8px',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
                 color: '#ffffff',
                 fontSize: '14px',
@@ -199,7 +176,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 pointerEvents: 'none',
               }}
             >
-              <Play size={16} style={{ color: '#38bdf8', fill: '#38bdf8' }} />
+              <Play size={16} style={{ color: '#fe6200', fill: '#fe6200' }} />
               <span>Neominds Global Culture &amp; Engineering</span>
             </div>
           </div>
@@ -212,9 +189,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-values" id="values">
         <div className="s-values__container">
           <div className="s-values__header">
-            <div className="s-values__badge">
-              <span>Living our values</span>
-            </div>
             <h2 className="s-values__title">What we stand for?</h2>
           </div>
 
@@ -287,46 +261,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          6. TEAM GALLERY SECTION (.s-team-gallery js-team-gallery)
+          6. TEAM SECTION (Desktop Carousel & Mobile Two-Stage Flow)
           ======================================================== */}
-      <section className="s-team-section" id="team">
-        <div className="s-team-section__container">
-          <div className="s-team-section__header">
-            <div className="s-team-section__badge">
-              <span>Our People &amp; Practice Leaders</span>
-            </div>
-            <h2 className="s-team-section__title">Engineering Minds Behind Every Release</h2>
-            <p className="s-team-section__desc">
-              Meet the principal architects, delivery managers, and domain consultants driving mission-critical projects globally.
-            </p>
-          </div>
-
-          <div className="s-team-section__grid">
-            {ABOUT_TEAM_MEMBERS.map((member) => (
-              <div key={member.id} className="s-team-section__card">
-                <div className="s-team-section__media">
-                  <img
-                    src={member.image}
-                    alt={`${member.name} - ${member.position} at Neominds TechHub`}
-                    loading="lazy"
-                    decoding="async"
-                    width="280"
-                    height="320"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
-                    }}
-                  />
-                </div>
-                <div className="s-team-section__info">
-                  <h4 className="s-team-section__name">{member.name}</h4>
-                  <p className="s-team-section__position">{member.position}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TeamSection />
 
       {/* ========================================================
           7. CLIENT TESTIMONIALS CAROUSEL (.s-carousel theme-dark2)
@@ -415,8 +352,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 style={{
                   width: idx === currentTestimonialIndex ? '28px' : '8px',
                   height: '8px',
-                  borderRadius: '4px',
-                  backgroundColor: idx === currentTestimonialIndex ? '#2258e7' : '#334155',
+                  borderRadius: '8px',
+                  backgroundColor: idx === currentTestimonialIndex ? '#fe6200' : '#66615c',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
@@ -508,23 +445,23 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               <label
                 htmlFor="c-file-upload"
                 style={{
-                  border: '1px dashed #334155',
-                  borderRadius: '4px',
+                  border: '1px dashed #66615c',
+                  borderRadius: '8px',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   gap: '8px',
                   cursor: 'pointer',
-                  backgroundColor: '#0f172a',
+                  backgroundColor: '#fbf9f5',
                   transition: 'border-color 0.2s ease',
                 }}
               >
-                <Upload size={20} style={{ color: '#38bdf8' }} />
-                <span style={{ fontSize: '14px', color: '#e2e8f0', fontWeight: 500 }}>
+                <Upload size={20} style={{ color: '#fe6200' }} />
+                <span style={{ fontSize: '14px', color: '#000000', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
-                <span style={{ fontSize: '12px', color: '#64748b' }}>
+                <span style={{ fontSize: '12px', color: '#868683' }}>
                   SVG, PNG, JPG, PDF or DOC (max. 33 MB)
                 </span>
                 <input
@@ -547,7 +484,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                   onChange={(e) => setFormState({ ...formState, ndaFirst: e.target.checked })}
                 />
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                  <ShieldCheck size={16} style={{ color: '#38bdf8' }} />
+                  <ShieldCheck size={16} style={{ color: '#fe6200' }} />
                   Need an NDA first? We'll sign one before you share any details.
                 </span>
               </label>
@@ -592,7 +529,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#38bdf8',
+                color: '#fe6200',
                 fontWeight: 600,
                 textDecoration: 'none',
               }}

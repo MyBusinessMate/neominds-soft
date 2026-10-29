@@ -4,7 +4,6 @@ import {
   X,
   Mail,
   CheckCircle2,
-  ChevronRight,
 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
@@ -60,34 +59,13 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
   }, [newsletterEmail]);
 
   return (
-    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingTop: '80px', color: '#121212' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
-          1. BREADCRUMB & HERO SECTION (Exact EffectiveSoft s-hero)
+          1. HERO SECTION (Freehand Editorial Hero)
           ======================================================== */}
-      <section className="s-hero g-section theme-light g-section--pt-0 s-hero--img-right" style={{ padding: '40px 24px 60px', backgroundColor: '#fafbff' }}>
+      <section className="s-hero g-section theme-dark g-section--pt-0 s-hero--img-right" style={{ padding: '60px 24px 60px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          {/* Breadcrumb */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#666e85', marginBottom: '32px' }}>
-            <span
-              style={{ cursor: 'pointer', color: '#666e85', transition: 'color 0.2s' }}
-              onClick={() => onNavigatePage && onNavigatePage('home')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#666e85')}
-            >
-              Home
-            </span>
-            <ChevronRight size={12} opacity={0.6} />
-            <span
-              style={{ cursor: 'pointer', color: '#666e85', transition: 'color 0.2s' }}
-              onClick={() => onNavigatePage && onNavigatePage('about-us')}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FF5500')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#666e85')}
-            >
-              Who we are
-            </span>
-            <ChevronRight size={12} opacity={0.6} />
-            <span style={{ color: '#121212', fontWeight: 600 }}>Leadership</span>
-          </div>
+
 
           <div
             style={{
@@ -99,20 +77,19 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
           >
             {/* Left Headline */}
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FF5500', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
-                <span style={{ width: '16px', height: '2px', backgroundColor: '#FF5500' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#fe6200', fontFamily: 'monospace', fontSize: '13px', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '14px' }}>
                 <span>Executive Leadership</span>
               </div>
 
-              <ScrollReveal as="h1" blurStrength={8} style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: '#121212', margin: '0 0 24px' }}>
-                Guiding minds<span style={{ color: '#FF5500' }}>.</span>
+              <ScrollReveal as="h1" blurStrength={8} style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: '#000000', margin: '0 0 24px' }}>
+                Guiding minds<span style={{ color: '#fe6200' }}>.</span>
               </ScrollReveal>
 
               <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#475067', margin: '0 0 16px', fontWeight: 400 }}>
+                <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#333333', margin: '0 0 16px', fontWeight: 400 }}>
                   Meet the architects, engineering leads, and technology directors guiding client delivery at Neominds TechHub. Our leadership team brings decades of direct production experience across enterprise cloud, distributed systems, and applied AI.
                 </p>
-                <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#666e85', margin: 0, fontWeight: 400 }}>
+                <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#555555', margin: 0, fontWeight: 400 }}>
                   We stay hands-on with architecture and delivery: establishing code quality standards, auditing distributed systems, and ensuring every project meets our rigorous technical requirements.
                 </p>
               </RevealElement>
@@ -123,37 +100,37 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               <div
                 style={{
                   position: 'relative',
-                  borderRadius: '0px',
+                  borderRadius: '8px',
                   overflow: 'hidden',
-                  background: '#0c1019',
+                  background: 'var(--colors-surface-dark-subtle, #f0ece2)',
                   padding: '36px',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  border: '1px solid #27272a',
                 }}
               >
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#5f85ed', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
                   Our Philosophy
                 </div>
 
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#ffffff', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#000000', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
                   Engineering grounded in clarity, technical mastery, and long-term partnership.
                 </h3>
-                <p style={{ fontSize: '14.5px', color: '#d0d3dd', lineHeight: 1.65, margin: '0 0 24px' }}>
+                <p style={{ fontSize: '14.5px', color: '#9ca3af', lineHeight: 1.65, margin: '0 0 24px' }}>
                   Our leadership team is composed of hands-on architects and seasoned delivery directors who have built, scaled, and maintained critical software platforms worldwide.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', borderTop: '1px solid #1f1f23', paddingTop: '20px' }}>
                   <div>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff' }}>15+</div>
-                    <div style={{ fontSize: '12px', color: '#989fb3' }}>Avg Yrs Experience</div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>15+</div>
+                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Avg Yrs Experience</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
                   <div>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff' }}>100%</div>
-                    <div style={{ fontSize: '12px', color: '#989fb3' }}>Hands-on Technical</div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>100%</div>
+                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Hands-on Technical</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
                   <div>
-                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#ffffff' }}>24/7</div>
-                    <div style={{ fontSize: '12px', color: '#989fb3' }}>Global Coverage</div>
+                    <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>24/7</div>
+                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Global Coverage</div>
                   </div>
                 </div>
               </div>
@@ -192,10 +169,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               maxWidth: '820px',
               maxHeight: '90vh',
               overflowY: 'auto',
-              backgroundColor: '#ffffff',
-              borderRadius: '16px',
+              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+              border: '1px solid #fe6200',
+              borderRadius: '8px',
               padding: '36px',
-              boxShadow: '0 24px 64px rgba(0, 0, 0, 0.3)',
+              boxShadow: '0 24px 64px rgba(254, 98, 0, 0.25)',
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -208,18 +186,24 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 right: '20px',
                 width: '40px',
                 height: '40px',
-                borderRadius: '50%',
-                backgroundColor: '#f5f7fc',
-                border: 'none',
+                borderRadius: '8px',
+                backgroundColor: '#18181B',
+                border: '1px solid #27272A',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                color: '#121212',
-                transition: 'background-color 0.2s',
+                color: '#FFFFFF',
+                transition: 'all 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e9eefd')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#f5f7fc')}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#fe6200';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
+                e.currentTarget.style.color = '#FFFFFF';
+              }}
               aria-label="Close modal"
             >
               <X size={20} />
@@ -228,7 +212,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px', alignItems: 'flex-start' }}>
               {/* Photo & Quick Info */}
               <div>
-                <div style={{ width: '100%', height: '340px', borderRadius: '12px', overflow: 'hidden', marginBottom: '20px' }}>
+                <div style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #27272A' }}>
                   <img
                     src={selectedLeader.image}
                     alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds TechHub`}
@@ -245,13 +229,12 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '8px',
-                      padding: '10px 18px',
+                      padding: '12px 18px',
                       borderRadius: '8px',
-                      backgroundColor: '#0a66c2',
-                      color: '#ffffff',
+                      backgroundColor: '#fe6200', color: '#ffffff',
                       textDecoration: 'none',
                       fontSize: '13.5px',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       transition: 'opacity 0.2s',
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
@@ -267,14 +250,23 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '8px',
-                      padding: '10px 18px',
+                      padding: '12px 18px',
                       borderRadius: '8px',
-                      backgroundColor: '#f5f7fc',
-                      color: '#FF5500',
-                      border: '1px solid #d0d3dd',
+                      backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                      color: '#fe6200',
+                      border: '1px solid #fe6200',
                       fontSize: '13.5px',
                       fontWeight: 600,
                       cursor: 'pointer',
+                      transition: 'all 0.2s',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#fe6200';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
+                      e.currentTarget.style.color = '#fe6200';
                     }}
                   >
                     <Mail size={16} />
@@ -285,43 +277,43 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
 
               {/* Bio & Focus Details */}
               <div>
-                <div style={{ fontSize: '13px', fontWeight: 600, color: '#FF5500', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                   {selectedLeader.role}
                 </div>
-                <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#121212', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+                <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
                   {selectedLeader.name}
                 </h2>
-                <div style={{ fontSize: '14px', color: '#666e85', marginBottom: '20px' }}>
-                  Based in: <strong>{selectedLeader.location}</strong>
+                <div style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '20px' }}>
+                  Based in: <strong style={{ color: '#FFFFFF' }}>{selectedLeader.location}</strong>
                 </div>
 
-                <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#475067', marginBottom: '20px' }}>
+                <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#D1D5DB', marginBottom: '20px' }}>
                   {selectedLeader.bio}
                 </div>
 
-                <div style={{ backgroundColor: '#fafbff', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #FF5500', marginBottom: '24px' }}>
-                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#FF5500', textTransform: 'uppercase', marginBottom: '4px' }}>
+                <div style={{ backgroundColor: '#121212', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #fe6200', marginBottom: '24px' }}>
+                  <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Track Record & Background
                   </div>
-                  <div style={{ fontSize: '14px', color: '#364c72', lineHeight: 1.55 }}>
+                  <div style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: 1.55 }}>
                     {selectedLeader.background}
                   </div>
                 </div>
 
                 {selectedLeader.quote && (
-                  <div style={{ fontStyle: 'italic', fontSize: '14.5px', color: '#364c72', borderLeft: '2px solid #e4e4e7', paddingLeft: '16px', margin: '0 0 24px' }}>
+                  <div style={{ fontStyle: 'italic', fontSize: '14.5px', color: '#fe6200', borderLeft: '2px solid #fe6200', paddingLeft: '16px', margin: '0 0 24px' }}>
                     "{selectedLeader.quote}"
                   </div>
                 )}
 
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#121212', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '12px' }}>
                     Core Focus Areas
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
                     {selectedLeader.focus.map((item, idx) => (
-                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#475067' }}>
-                        <CheckCircle2 size={16} color="#FF5500" style={{ flexShrink: 0 }} />
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#D1D5DB' }}>
+                        <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{item}</span>
                       </div>
                     ))}
@@ -341,19 +333,19 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
       </div>
 
       {/* ========================================================
-          5. GLOBAL LOCATIONS SECTION (s-contacts theme-light)
+          5. GLOBAL LOCATIONS SECTION (s-contacts theme-dark)
           ======================================================== */}
       <LocationsSection />
 
       {/* ========================================================
           6. NEWSLETTER SUBSCRIPTION (s-newsletter)
           ======================================================== */}
-      <section style={{ backgroundColor: '#fafbff', padding: '54px 24px', borderTop: '1px solid #e4e4e7', borderBottom: '1px solid #e4e4e7' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', padding: '54px 24px', borderTop: '1px solid #e4e2e1', borderBottom: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#121212', margin: '0 0 10px', letterSpacing: '-0.02em' }}>
+          <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#000000', margin: '0 0 10px', letterSpacing: '-0.02em' }}>
             Join our engineering newsletter
           </h3>
-          <p style={{ fontSize: '15px', color: '#666e85', margin: '0 0 28px', lineHeight: 1.55 }}>
+          <p style={{ fontSize: '15px', color: '#555555', margin: '0 0 28px', lineHeight: 1.55 }}>
             Practical engineering insights, architectural patterns, and production AI updates delivered monthly. No spam, ever.
           </p>
 
@@ -368,10 +360,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 flex: '1 1 260px',
                 height: '46px',
                 padding: '0 16px',
-                borderRadius: '6px',
-                border: '1px solid #d0d3dd',
+                borderRadius: '8px',
+                backgroundColor: '#ffffff',
+                border: '1px solid #d0ccc0',
                 fontSize: '14px',
-                color: '#121212',
+                color: '#000000',
                 outline: 'none',
               }}
             />
@@ -380,23 +373,22 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               style={{
                 height: '46px',
                 padding: '0 24px',
-                borderRadius: '6px',
-                backgroundColor: '#FF5500',
-                color: '#ffffff',
+                borderRadius: '8px',
+                backgroundColor: '#fe6200', color: '#ffffff',
                 border: 'none',
-                fontWeight: 600,
+                fontWeight: 700,
                 fontSize: '14px',
                 cursor: 'pointer',
-                transition: 'background-color 0.2s',
+                transition: 'opacity 0.2s',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#e04a00')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#FF5500')}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.9')}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               {newsletterSubmitted ? 'Subscribed!' : 'Subscribe'}
             </button>
           </form>
           {newsletterSubmitted && (
-            <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
+            <div style={{ marginTop: '12px', color: '#fe6200', fontSize: '13.5px', fontWeight: 500 }}>
               Thank you for subscribing to Neominds TechHub insights.
             </div>
           )}

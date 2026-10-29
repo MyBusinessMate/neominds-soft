@@ -40,19 +40,19 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: '#ffffff', color: '#0f172a', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
       {/* ========================================================
           1. HEADER SECTION
           ======================================================== */}
       <section
         style={{
           padding: 'clamp(56px, 7vw, 84px) 24px clamp(36px, 5vw, 48px)',
-          background: 'linear-gradient(180deg, #f8fafc 0%, #ffffff 100%)',
-          borderBottom: '1px solid #e2e8f0',
+          background: 'linear-gradient(180deg, #faf8f5 0%, #ffffff 100%)',
+          borderBottom: '1px solid #f0ece2',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(34, 88, 231, 0.08)', borderRadius: '0px', color: '#2258e7', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: '8px', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <Newspaper size={14} />
             <span>Neominds Corporate Announcements & News</span>
           </div>
@@ -64,17 +64,17 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
               letterSpacing: '-0.03em',
-              color: '#0f172a',
+              color: '#000000',
               marginBottom: '16px',
               display: 'block',
             }}
             blurStrength={7}
           >
-            Company Updates & <span style={{ color: '#2258e7' }}>Milestones</span>
+            Company Updates & <span style={{ color: '#fe6200' }}>Milestones</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '18px', color: '#64748b', maxWidth: '720px', lineHeight: 1.6, marginBottom: '32px' }}>
+            <p style={{ fontSize: '18px', color: '#555555', maxWidth: '720px', lineHeight: 1.6, marginBottom: '32px' }}>
               The latest news, engineering breakthroughs, conference keynotes, executive perspectives, and global expansion announcements from Neominds.
             </p>
           </RevealElement>
@@ -87,9 +87,9 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 onClick={() => setActiveType(type)}
                 className={`btn btn-sm ${activeType === type ? 'btn-primary' : 'btn-outline'}`}
                 style={{
-                  color: activeType === type ? '#ffffff' : '#475569',
-                  borderColor: activeType === type ? '#2258e7' : '#cbd5e1',
-                  backgroundColor: activeType === type ? '#2258e7' : '#f8fafc',
+                  color: activeType === type ? '#ffffff' : '#868683',
+                  borderColor: activeType === type ? '#fe6200' : '#a3a09b',
+                  backgroundColor: activeType === type ? '#fe6200' : '#faf8f5',
                   cursor: 'pointer',
                 }}
               >
@@ -109,11 +109,11 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
             <RevealElement key={update.id} variant="card" delay={idx * 0.1} start="top 90%" end="top 65%">
               <div
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e2e8f0',
+                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid #f0ece2',
                   borderRadius: '8px',
                   overflow: 'hidden',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
+                  boxShadow: '0 4px 20px rgba(32, 11, 0,  0.05)',
                   display: 'grid',
                   gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                 }}
@@ -132,18 +132,18 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%)',
+                      background: 'linear-gradient(180deg, rgba(32, 11, 0, 0.1) 0%, rgba(32, 11, 0, 0.7) 100%)',
                       display: 'flex',
                       flexDirection: 'column',
                       justifyContent: 'space-between',
                       padding: '24px',
                     }}
                   >
-                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#0f172a', border: '1px solid rgba(255, 255, 255, 0.2)', color: '#ffffff', padding: '4px 8px', borderRadius: '0px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #fe6200', color: '#fe6200', padding: '4px 8px', borderRadius: '8px', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, textTransform: 'uppercase', width: 'fit-content' }}>
                       {update.type}
                     </span>
 
-                    <div style={{ color: '#ffffff', fontSize: '13px', display: 'flex', gap: '16px' }}>
+                    <div style={{ color: '#000000', fontSize: '13px', display: 'flex', gap: '16px' }}>
                       <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                         <Calendar size={13} />
                         {update.date}
@@ -161,27 +161,27 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 {/* Text Content */}
                 <div style={{ padding: '36px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div>
-                    <h2 style={{ fontSize: 'clamp(20px, 2vw, 26px)', fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#0f172a', marginBottom: '8px', lineHeight: 1.3 }}>
+                    <h2 style={{ fontSize: 'clamp(20px, 2vw, 26px)', fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#000000', marginBottom: '8px', lineHeight: 1.3 }}>
                       {update.title}
                     </h2>
 
-                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#2258e7', marginBottom: '16px' }}>
+                    <p style={{ fontSize: '15px', fontWeight: 500, color: '#fe6200', marginBottom: '16px' }}>
                       {update.subtitle}
                     </p>
 
-                    <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#64748b', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#555555', marginBottom: '20px' }}>
                       {update.content.intro}
                     </p>
 
                     {/* Key Highlights */}
-                    <div style={{ backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '4px', padding: '16px', marginBottom: '20px' }}>
-                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#0f172a', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
+                    <div style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', border: '1px solid #f0ece2', borderRadius: '8px', padding: '16px', marginBottom: '20px' }}>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
                         Key Announcement Highlights
                       </div>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                         {update.highlights.map((h, i) => (
-                          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13.5px', color: '#334155' }}>
-                            <CheckCircle2 size={14} color="#2258e7" style={{ flexShrink: 0, marginTop: '3px' }} />
+                          <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '13.5px', color: '#000000' }}>
+                            <CheckCircle2 size={14} color="#fe6200" style={{ flexShrink: 0, marginTop: '3px' }} />
                             <span>{h}</span>
                           </div>
                         ))}
@@ -190,17 +190,17 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
 
                     {/* Executive Quote if present */}
                     {update.content.quote && (
-                      <blockquote style={{ borderLeft: '3px solid #2258e7', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#475569' }}>
+                      <blockquote style={{ borderLeft: '3px solid #fe6200', paddingLeft: '14px', margin: '16px 0', fontStyle: 'italic', fontSize: '13.5px', color: '#555555' }}>
                         "{update.content.quote.text}"
-                        <div style={{ fontStyle: 'normal', fontWeight: 700, color: '#0f172a', marginTop: '4px', fontSize: '12px' }}>
+                        <div style={{ fontStyle: 'normal', fontWeight: 700, color: '#000000', marginTop: '4px', fontSize: '12px' }}>
                           // {update.content.quote.author}, {update.content.quote.role}
                         </div>
                       </blockquote>
                     )}
                   </div>
 
-                  <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '13px', color: '#64748b' }}>
+                  <div style={{ borderTop: '1px solid #f0ece2', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: '13px', color: '#555555' }}>
                       {update.content.nextSteps}
                     </span>
 
@@ -223,19 +223,19 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
       {/* ========================================================
           3. PRESS & MEDIA CONTACT STRIP
           ======================================================== */}
-      <section style={{ backgroundColor: '#0f172a', color: '#ffffff', padding: '64px 24px', borderTop: '1px solid #1e293b' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: '12px', fontWeight: 700, color: '#60a5fa', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
+          <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
             Media & Investor Relations
           </div>
           <ScrollReveal
             as="h2"
-            style={{ fontSize: '32px', fontWeight: 800, color: '#ffffff', fontFamily: 'var(--font-heading)', marginBottom: '12px', display: 'block' }}
+            style={{ fontSize: '32px', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)', marginBottom: '12px', display: 'block' }}
             blurStrength={6}
           >
             Request the Neominds 2026 Press Kit
           </ScrollReveal>
-          <p style={{ fontSize: '16px', color: '#94a3b8', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '16px', color: '#555555', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
             For press inquiries, executive speaking engagements, or high-resolution media brand assets, contact our corporate communications office.
           </p>
 
@@ -252,13 +252,13 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 padding: '12px 16px',
                 backgroundColor: 'rgba(255, 255, 255, 0.1)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                borderRadius: '3px',
-                color: '#ffffff',
+                borderRadius: '8px',
+                color: '#000000',
                 fontSize: '14px',
                 outline: 'none',
               }}
             />
-            <button type="submit" className="btn btn-primary btn-md">
+            <button type="submit" className="btn btn-primary btn-md" style={{ borderRadius: '8px' }}>
               <span>Send Request</span>
               <Send size={14} />
             </button>

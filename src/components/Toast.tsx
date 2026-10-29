@@ -38,10 +38,11 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
             backgroundColor: '#12141a',
             border: '1px solid rgba(255, 255, 255, 0.15)',
             borderLeft: `4px solid ${
-              t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#2258e7'
+              t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#fe6200'
             }`,
+            borderRadius: '8px',
             padding: '16px',
-            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.6)',
+            boxShadow: '0 10px 30px rgba(32, 11, 0,  0.6)',
             color: '#ffffff',
             display: 'flex',
             alignItems: 'flex-start',
@@ -60,7 +61,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
               {t.title}
             </h4>
             {t.description && (
-              <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#8893a7', lineHeight: 1.4 }}>
+              <p style={{ fontFamily: 'var(--font-body)', fontSize: '13px', color: '#a3a09b', lineHeight: 1.4 }}>
                 {t.description}
               </p>
             )}
@@ -69,13 +70,14 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
           <button
             onClick={() => onDismiss(t.id)}
             style={{
-              color: '#8893a7',
+              color: '#a3a09b',
               minWidth: '36px',
               minHeight: '36px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
             aria-label="Close notification"
           >

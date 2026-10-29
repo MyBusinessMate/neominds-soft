@@ -20,7 +20,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.88)',
+        backgroundColor: 'rgba(32, 11, 0,  0.88)',
         backdropFilter: 'blur(8px)',
         zIndex: 1000,
         display: 'flex',
@@ -29,6 +29,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         padding: 'clamp(12px, 3vw, 24px)',
       }}
       onClick={onClose}
+      className="smooth-modal-backdrop"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-legal-title"
@@ -42,9 +43,9 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
           backgroundColor: '#0c1018',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           color: '#ffffff',
-          borderRadius: '0px',
+          borderRadius: '8px',
           overflowY: 'auto',
-          boxShadow: '0 25px 60px rgba(0, 0, 0, 0.95)',
+          boxShadow: '0 25px 60px rgba(32, 11, 0,  0.95)',
           position: 'relative',
           padding: 'clamp(24px, 4vw, 44px)',
         }}
@@ -66,6 +67,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
+            borderRadius: '8px',
           }}
           aria-label="Close modal"
         >
@@ -82,10 +84,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'privacy' ? '#ffffff' : '#8893a7',
-              backgroundColor: activeTab === 'privacy' ? '#2258e7' : 'transparent',
+              color: activeTab === 'privacy' ? '#ffffff' : '#a3a09b',
+              backgroundColor: activeTab === 'privacy' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             Privacy Policy
@@ -99,10 +102,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'cookie' ? '#ffffff' : '#8893a7',
-              backgroundColor: activeTab === 'cookie' ? '#2258e7' : 'transparent',
+              color: activeTab === 'cookie' ? '#ffffff' : '#a3a09b',
+              backgroundColor: activeTab === 'cookie' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             Cookie Policy
@@ -116,10 +120,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               fontSize: '14px',
               fontWeight: 700,
               fontFamily: 'var(--font-heading)',
-              color: activeTab === 'security' ? '#ffffff' : '#8893a7',
-              backgroundColor: activeTab === 'security' ? '#2258e7' : 'transparent',
+              color: activeTab === 'security' ? '#ffffff' : '#a3a09b',
+              backgroundColor: activeTab === 'security' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             IS & Security Policy
@@ -132,7 +137,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 id="modal-legal-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Neominds Privacy Policy
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Last Updated: August 2026 • ISO/IEC 27001:2022 Certified
             </p>
 
@@ -161,7 +166,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Cookie Policy
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Transparency in Cookie & Browser Storage Usage
             </p>
 
@@ -182,7 +187,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
               Information Security Policy (ISO 27001)
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#8893a7', marginBottom: '20px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Enterprise-Grade Security Architecture
             </p>
 
@@ -202,7 +207,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         )}
 
         <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', justifyContent: 'flex-end' }}>
-          <button onClick={onClose} className="btn-primary" style={{ padding: '10px 28px', minHeight: '44px' }}>
+          <button onClick={onClose} className="btn-primary" style={{ padding: '10px 28px', minHeight: '44px', borderRadius: '8px' }}>
             Close
           </button>
         </div>
