@@ -355,7 +355,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           font-size: 14px;
           font-weight: 600;
           padding: 12px 28px;
-          border-radius: 9999px;
+          border-radius: 8px;
           border: 1px solid rgba(255, 255, 255, 0.9);
           cursor: pointer;
           transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, background-color 0.2s ease, color 0.2s ease;
@@ -380,8 +380,8 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           position: relative;
           width: 100%;
           background-color: #f5f4f0;
-          border-top-left-radius: 40px;
-          border-top-right-radius: 40px;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
           margin-top: -24px;
           padding: 48px 24px 0 24px;
           overflow: hidden;
@@ -401,7 +401,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           position: relative;
           z-index: 2;
           background-color: #ffffff;
-          border-radius: 28px;
+          border-radius: 8px;
           border: 1px solid rgba(0, 0, 0, 0.08);
           box-shadow: 0 20px 48px -12px rgba(32, 11, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9);
           padding: clamp(32px, 4vw, 54px);
@@ -616,13 +616,13 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           }
 
           .nm-footer-light-canvas {
-            border-top-left-radius: 28px;
-            border-top-right-radius: 28px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
             padding: 32px 16px 0 16px;
           }
 
           .nm-floating-card {
-            border-radius: 20px;
+            border-radius: 8px;
             padding: 24px;
           }
 

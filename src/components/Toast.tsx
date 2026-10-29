@@ -40,6 +40,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
             borderLeft: `4px solid ${
               t.type === 'success' ? '#10b981' : t.type === 'error' ? '#ef4444' : '#fe6200'
             }`,
+            borderRadius: '8px',
             padding: '16px',
             boxShadow: '0 10px 30px rgba(32, 11, 0,  0.6)',
             color: '#ffffff',
@@ -76,6 +77,7 @@ export const Toast: React.FC<ToastProps> = ({ toasts, onDismiss }) => {
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
             aria-label="Close notification"
           >

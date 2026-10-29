@@ -5,6 +5,7 @@ import {
   Menu,
   X,
   ArrowUpRight,
+  ArrowRight,
 } from 'lucide-react';
 
 import { ServiceSlug } from '../data/serviceSlugs';
@@ -40,7 +41,7 @@ export type PageType =
 interface HeaderProps {
   onNavigate: (sectionId: string) => void;
   currentPage?: PageType;
-  onSelectPage?: (page: PageType) => void;
+  onSelectPage?: (page: PageType, articleId?: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -50,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [activeMenu, setActiveMenu] = useState<'what-we-do' | 'who-we-are' | 'insights' | null>(null);
+  const [activeMenu, setActiveMenu] = useState<'what-we-do' | 'who-we-are' | 'insights' | 'case-studies' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>('what-we-do');
 
@@ -94,7 +95,7 @@ export const Header: React.FC<HeaderProps> = ({
     };
   }, [mobileMenuOpen, activeMenu]);
 
-  const handleMouseEnter = useCallback((menu: 'what-we-do' | 'who-we-are' | 'insights') => {
+  const handleMouseEnter = useCallback((menu: 'what-we-do' | 'who-we-are' | 'insights' | 'case-studies') => {
     setActiveMenu(menu);
   }, []);
 
@@ -102,16 +103,16 @@ export const Header: React.FC<HeaderProps> = ({
     setActiveMenu(null);
   }, []);
 
-  const handleMenuToggle = useCallback((e: React.MouseEvent, menu: 'what-we-do' | 'who-we-are' | 'insights') => {
+  const handleMenuToggle = useCallback((e: React.MouseEvent, menu: 'what-we-do' | 'who-we-are' | 'insights' | 'case-studies') => {
     e.stopPropagation();
     setActiveMenu((prev) => (prev === menu ? null : menu));
   }, []);
 
-  const navigateToPage = useCallback((page: PageType) => {
+  const navigateToPage = useCallback((page: PageType, articleId?: string) => {
     setActiveMenu(null);
     setMobileMenuOpen(false);
     if (onSelectPage) {
-      onSelectPage(page);
+      onSelectPage(page, articleId);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [onSelectPage]);
@@ -198,19 +199,19 @@ export const Header: React.FC<HeaderProps> = ({
         {/* ========================================================
             APPLE VISIONOS FLOATING GLASS CAPSULE NAVBAR
             Starts full-width edge-to-edge (100% width, 68px height).
-            When scrolled, smoothly shrinks into floating glass pill capsule (840px, 56px height, 9999px pill radius)
+            When scrolled, smoothly shrinks into floating glass capsule (840px, 56px height, 8px corner radius)
             ======================================================== */}
         <div
           style={{
             width: isScrolled ? 'min(94%, 860px)' : '100%',
             maxWidth: isScrolled ? '860px' : '1360px',
             height: isScrolled ? '56px' : '68px',
-            borderRadius: isScrolled ? '9999px' : '0px',
+            borderRadius: '8px',
             backgroundColor: isScrolled
-              ? 'rgba(255, 255, 255, 0.92)'
+              ? 'rgba(251, 249, 245, 0.92)'
               : activeMenu
-              ? '#ffffff'
-              : 'rgba(255, 255, 255, 0.98)',
+              ? '#fbf9f5'
+              : 'rgba(251, 249, 245, 0.96)',
             backdropFilter: 'blur(28px) saturate(190%)',
             WebkitBackdropFilter: 'blur(28px) saturate(190%)',
             borderTop: isScrolled ? '1px solid rgba(255, 255, 255, 0.75)' : 'none',
@@ -292,7 +293,7 @@ export const Header: React.FC<HeaderProps> = ({
                   alignItems: 'center',
                   gap: '6px',
                   padding: '8px 14px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   backgroundColor: activeMenu === 'what-we-do' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
                   transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
@@ -336,7 +337,7 @@ export const Header: React.FC<HeaderProps> = ({
                   alignItems: 'center',
                   gap: '6px',
                   padding: '8px 14px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   backgroundColor: activeMenu === 'who-we-are' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
                   transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
@@ -383,7 +384,7 @@ export const Header: React.FC<HeaderProps> = ({
                   alignItems: 'center',
                   gap: '6px',
                   padding: '8px 14px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   backgroundColor: activeMenu === 'insights' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
                   transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
@@ -412,33 +413,58 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* 4. Case studies */}
-            <button
-              onClick={() => navigateToPage('portfolio')}
-              style={{
-                color: currentPage === 'portfolio' ? '#fe6200' : '#000000',
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '15px',
-                fontWeight: 600,
-                padding: '8px 14px',
-                borderRadius: '6px',
-                transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
-                border: 'none',
-                background: currentPage === 'portfolio' ? 'rgba(254, 98, 0, 0.08)' : 'none',
-                cursor: 'pointer',
-                letterSpacing: '-0.01em',
-                whiteSpace: 'nowrap',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = '#fe6200';
-                if (currentPage !== 'portfolio') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = currentPage === 'portfolio' ? '#fe6200' : '#000000';
-                if (currentPage !== 'portfolio') e.currentTarget.style.backgroundColor = 'transparent';
-              }}
+            <div
+              style={{ position: 'relative', height: '100%', display: 'flex', alignItems: 'center' }}
+              onMouseEnter={() => handleMouseEnter('case-studies')}
             >
-              Case studies
-            </button>
+              <button
+                onClick={(e) => handleMenuToggle(e, 'case-studies')}
+                style={{
+                  color:
+                    activeMenu === 'case-studies' || currentPage === 'portfolio' || currentPage === 'project'
+                      ? '#fe6200'
+                      : '#000000',
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: isScrolled ? '13.5px' : '15px',
+                  fontWeight: 600,
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: isScrolled ? '5px 9px' : '8px 14px',
+                  borderRadius: '8px',
+                  backgroundColor:
+                    activeMenu === 'case-studies' || currentPage === 'portfolio'
+                      ? 'rgba(254, 98, 0, 0.08)'
+                      : 'transparent',
+                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  border: 'none',
+                  cursor: 'pointer',
+                  letterSpacing: '-0.01em',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={(e) => {
+                  if (activeMenu !== 'case-studies' && currentPage !== 'portfolio') {
+                    e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (activeMenu !== 'case-studies' && currentPage !== 'portfolio') {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }
+                }}
+              >
+                <span style={{ whiteSpace: 'nowrap' }}>Case studies</span>
+                <ChevronDown
+                  size={14}
+                  style={{
+                    transform: activeMenu === 'case-studies' ? 'rotate(180deg)' : 'none',
+                    transition: 'transform 0.2s, color 0.2s',
+                    color: activeMenu === 'case-studies' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
+                  }}
+                />
+              </button>
+            </div>
           </nav>
 
           {/* Right CTA Button: REQUEST A DEMO (Sized proportionally within navbar bounds) */}
@@ -455,7 +481,7 @@ export const Header: React.FC<HeaderProps> = ({
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
                 lineHeight: 1,
-                borderRadius: '3px',
+                borderRadius: '8px',
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
                 border: 'none',
@@ -497,7 +523,7 @@ export const Header: React.FC<HeaderProps> = ({
                 color: '#000000',
                 background: 'rgba(0, 0, 0, 0.04)',
                 border: '1px solid #e4e2e1',
-                borderRadius: '9999px',
+                borderRadius: '8px',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 flexShrink: 0,
@@ -520,14 +546,14 @@ export const Header: React.FC<HeaderProps> = ({
               width: 'min(94%, 1040px)',
               maxWidth: '1040px',
               marginTop: isScrolled ? '12px' : '4px',
-              borderRadius: '24px',
+              borderRadius: '8px',
               border: '1px solid rgba(228, 226, 225, 0.85)',
-              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backgroundColor: 'rgba(251, 249, 245, 0.98)',
               backdropFilter: 'blur(32px) saturate(190%)',
               WebkitBackdropFilter: 'blur(32px) saturate(190%)',
               boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
-              animation: 'megaDropdownFadeIn 0.22s ease-out',
+              animation: 'megaDropdownFadeIn 0.26s cubic-bezier(0.16, 1, 0.3, 1)',
               pointerEvents: 'auto',
               overflow: 'hidden',
               fontFamily: "'DM Sans', sans-serif",
@@ -546,7 +572,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               {/* Column 1: Services */}
               <div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', marginBottom: '16px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Services
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -585,7 +611,7 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Column 2: AI & Specialist */}
               <div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', marginBottom: '16px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   AI & Specialist
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -624,7 +650,7 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Column 3: Technologies */}
               <div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', marginBottom: '16px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Technologies
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -659,7 +685,7 @@ export const Header: React.FC<HeaderProps> = ({
 
               {/* Column 4: Industries */}
               <div>
-                <div style={{ fontSize: '12px', fontWeight: 600, color: '#868683', marginBottom: '16px', letterSpacing: '0.04em', textTransform: 'uppercase' }}>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', marginBottom: '16px', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
                   Industries
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -705,14 +731,14 @@ export const Header: React.FC<HeaderProps> = ({
               width: 'min(94%, 880px)',
               maxWidth: '880px',
               marginTop: isScrolled ? '12px' : '4px',
-              borderRadius: '24px',
+              borderRadius: '8px',
               border: '1px solid rgba(228, 226, 225, 0.85)',
-              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backgroundColor: 'rgba(251, 249, 245, 0.98)',
               backdropFilter: 'blur(32px) saturate(190%)',
               WebkitBackdropFilter: 'blur(32px) saturate(190%)',
               boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
-              animation: 'megaDropdownFadeIn 0.22s ease-out',
+              animation: 'megaDropdownFadeIn 0.26s cubic-bezier(0.16, 1, 0.3, 1)',
               pointerEvents: 'auto',
               overflow: 'hidden',
               fontFamily: "'DM Sans', sans-serif",
@@ -788,7 +814,7 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '10px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '8px',
                   transition: 'background-color 0.2s',
                 }}
@@ -799,7 +825,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     height: '130px',
                     width: '100%',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     background: 'linear-gradient(135deg, #f0ece2 0%, #fbf9f5 100%)',
                     display: 'flex',
                     alignItems: 'center',
@@ -809,7 +835,7 @@ export const Header: React.FC<HeaderProps> = ({
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <div style={{ width: '32px', height: '32px', borderRadius: '4px', backgroundColor: 'rgba(254, 98, 0, 0.2)', border: '1px solid rgba(254, 98, 0, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fe6200' }} aria-hidden="true">
+                    <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.2)', border: '1px solid rgba(254, 98, 0, 0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fe6200' }} aria-hidden="true">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
                     </div>
                   </div>
@@ -835,7 +861,7 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '10px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '8px',
                   transition: 'background-color 0.2s',
                 }}
@@ -846,7 +872,7 @@ export const Header: React.FC<HeaderProps> = ({
                   style={{
                     height: '130px',
                     width: '100%',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundImage: 'url(https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop)',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -878,14 +904,14 @@ export const Header: React.FC<HeaderProps> = ({
               width: 'min(94%, 680px)',
               maxWidth: '680px',
               marginTop: isScrolled ? '12px' : '4px',
-              borderRadius: '24px',
+              borderRadius: '8px',
               border: '1px solid rgba(228, 226, 225, 0.85)',
-              backgroundColor: 'rgba(255, 255, 255, 0.98)',
+              backgroundColor: 'rgba(251, 249, 245, 0.98)',
               backdropFilter: 'blur(32px) saturate(190%)',
               WebkitBackdropFilter: 'blur(32px) saturate(190%)',
               boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
               zIndex: 1001,
-              animation: 'megaDropdownFadeIn 0.22s ease-out',
+              animation: 'megaDropdownFadeIn 0.26s cubic-bezier(0.16, 1, 0.3, 1)',
               pointerEvents: 'auto',
               overflow: 'hidden',
               display: 'grid',
@@ -901,7 +927,7 @@ export const Header: React.FC<HeaderProps> = ({
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
-                backgroundColor: '#ffffff',
+                backgroundColor: '#fbf9f5',
                 borderRight: '1px solid #e4e2e1',
               }}
             >
@@ -1007,6 +1033,183 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
           </div>
         )}
+
+        {/* ========================================================
+            DROPDOWN 4: CASE STUDIES
+            Left: 6 Featured Projects | Right: Spotlight & View All CTA
+            ======================================================== */}
+        {activeMenu === 'case-studies' && (
+          <div
+            style={{
+              width: 'min(94%, 820px)',
+              maxWidth: '820px',
+              marginTop: isScrolled ? '12px' : '4px',
+              borderRadius: '8px',
+              border: '1px solid rgba(228, 226, 225, 0.85)',
+              backgroundColor: 'rgba(251, 249, 245, 0.98)',
+              backdropFilter: 'blur(32px) saturate(190%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(190%)',
+              boxShadow: '0 28px 70px -15px rgba(32, 11, 0, 0.14), 0 4px 14px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95)',
+              zIndex: 1001,
+              animation: 'megaDropdownFadeIn 0.26s cubic-bezier(0.16, 1, 0.3, 1)',
+              pointerEvents: 'auto',
+              overflow: 'hidden',
+              display: 'grid',
+              gridTemplateColumns: '1.2fr 1fr',
+              fontFamily: "'DM Sans', sans-serif",
+              transition: 'margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
+            onMouseEnter={() => handleMouseEnter('case-studies')}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* Left Column: 6 Featured Case Studies */}
+            <div
+              style={{
+                padding: '24px 28px',
+                borderRight: '1px solid #e4e2e1',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '12px',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: '#fe6200',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
+                  marginBottom: '6px',
+                }}
+              >
+                Featured Case Studies
+              </div>
+
+              {[
+                { id: 'mindspace-mobile-app', client: 'Mindspace.ai', title: 'Healthcare Telehealth & Biometrics App', tag: 'Healthcare' },
+                { id: 'authenticom-ai-etl', client: 'Authenticom', title: 'Automotive Data Ingestion Platform', tag: 'Enterprise ETL' },
+                { id: 'fundbot-sql-chatbot', client: 'FundBot', title: 'Natural Language AI SQL Financial Engine', tag: 'FinTech AI' },
+                { id: 'trubridge-medical-ai', client: 'TruBridge', title: 'Automated Medical Coding & Claims', tag: 'HealthTech' },
+                { id: 'adventr', client: 'Adventr', title: 'Interactive Smart-Video Generation Suite', tag: 'Media AI' },
+                { id: 'flooring-inc-dashboard', client: 'Flooring Inc', title: 'E-Commerce Inventory Telemetry', tag: 'Analytics' },
+              ].map((cs) => (
+                <div
+                  key={cs.id}
+                  onClick={() => navigateToPage('project', cs.id)}
+                  style={{
+                    cursor: 'pointer',
+                    padding: '6px 8px',
+                    borderRadius: '8px',
+                    transition: 'all 0.2s ease',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '2px',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.06)';
+                    e.currentTarget.style.transform = 'translateX(3px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.transform = 'translateX(0)';
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 700, color: '#0f172a' }}>{cs.client}</span>
+                    <span style={{ fontSize: '11px', fontWeight: 600, color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.1)', padding: '2px 7px', borderRadius: '8px' }}>
+                      {cs.tag}
+                    </span>
+                  </div>
+                  <span style={{ fontSize: '12.5px', color: '#64748b', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {cs.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Right Column: Case Studies Spotlight & All Portfolio Link */}
+            <div
+              style={{
+                padding: '28px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                backgroundColor: 'rgba(254, 98, 0, 0.03)',
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#fe6200',
+                    letterSpacing: '0.06em',
+                    textTransform: 'uppercase',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Proven Engineering Impact
+                </div>
+                <h4
+                  style={{
+                    fontSize: '17px',
+                    fontWeight: 700,
+                    color: '#0f172a',
+                    lineHeight: 1.35,
+                    margin: '0 0 10px 0',
+                    letterSpacing: '-0.015em',
+                  }}
+                >
+                  Solutions engineered for scale and production reliability
+                </h4>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    lineHeight: 1.5,
+                    color: '#475569',
+                    margin: 0,
+                  }}
+                >
+                  From 15,000+ synchronized dealerships and HIPAA telehealth to real-time AI SQL engines, explore how we partner with product leaders to deliver measurable business velocity.
+                </p>
+              </div>
+
+              <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                <button
+                  type="button"
+                  onClick={() => navigateToPage('portfolio')}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    width: '100%',
+                    padding: '12px 18px',
+                    borderRadius: '8px',
+                    backgroundColor: '#fe6200',
+                    color: '#ffffff',
+                    border: 'none',
+                    fontSize: '13.5px',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 14px rgba(254, 98, 0, 0.25)',
+                    transition: 'all 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#e05600';
+                    e.currentTarget.style.transform = 'translateY(-1px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#fe6200';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <span>Explore All Case Studies</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* ========================================================
@@ -1022,7 +1225,7 @@ export const Header: React.FC<HeaderProps> = ({
             bottom: 0,
             width: '100vw',
             height: '100dvh',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#fbf9f5',
             zIndex: 99999,
             display: 'flex',
             flexDirection: 'column',
@@ -1243,26 +1446,44 @@ export const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Section 4: Case studies */}
-            <button
-              onClick={() => navigateToPage('portfolio')}
-              style={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                padding: '14px 0',
-                color: currentPage === 'portfolio' ? '#fe6200' : '#000000',
-                fontSize: '17px',
-                fontWeight: 600,
-                borderBottom: '1px solid #e4e2e1',
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              <span>Case studies</span>
-              <ChevronRight size={16} opacity={0.6} />
-            </button>
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
+              <button
+                onClick={() => setMobileExpandedSection(mobileExpandedSection === 'case-studies' ? null : 'case-studies')}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '14px 0',
+                  color: mobileExpandedSection === 'case-studies' || currentPage === 'portfolio' ? '#fe6200' : '#000000',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <span>Case studies</span>
+                <ChevronDown
+                  size={16}
+                  style={{
+                    transform: mobileExpandedSection === 'case-studies' ? 'rotate(180deg)' : 'none',
+                    transition: 'transform 0.2s',
+                    color: mobileExpandedSection === 'case-studies' ? '#fe6200' : '#000000',
+                  }}
+                />
+              </button>
+              {mobileExpandedSection === 'case-studies' && (
+                <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div onClick={() => navigateToPage('project', 'mindspace-mobile-app')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Mindspace.ai Healthcare App</div>
+                  <div onClick={() => navigateToPage('project', 'authenticom-ai-etl')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Authenticom Automotive Data</div>
+                  <div onClick={() => navigateToPage('project', 'fundbot-sql-chatbot')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>FundBot SQL Financial AI</div>
+                  <div onClick={() => navigateToPage('project', 'trubridge-medical-ai')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>TruBridge Medical Coding</div>
+                  <div onClick={() => navigateToPage('project', 'flooring-inc-dashboard')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Flooring Inc Inventory Analytics</div>
+                  <div onClick={() => navigateToPage('portfolio')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>Explore All Case Studies →</div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Footer Send Request Button */}
@@ -1275,7 +1496,7 @@ export const Header: React.FC<HeaderProps> = ({
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
                 border: 'none',
-                borderRadius: '3px',
+                borderRadius: '8px',
                 fontSize: '13px',
                 fontWeight: 700,
                 letterSpacing: '0.06em',
@@ -1293,13 +1514,13 @@ export const Header: React.FC<HeaderProps> = ({
       {/* Global CSS Animations & Breakpoints */}
       <style>{`
         @keyframes megaDropdownFadeIn {
-          from {
+          0% {
             opacity: 0;
-            transform: translateY(-8px);
+            transform: translateY(-8px) scale(0.988);
           }
-          to {
+          100% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
           }
         }
         @media (min-width: 860px) {

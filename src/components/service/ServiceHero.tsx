@@ -61,7 +61,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                 lineHeight: 1.15,
                 letterSpacing: '-0.025em',
-                color: '#ffffff',
+                color: '#000000',
                 marginBottom: '24px',
                 display: 'block',
               }}
@@ -76,7 +76,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 style={{
                   fontSize: 'clamp(16px, 1.25vw, 18px)',
                   lineHeight: 1.65,
-                  color: 'rgba(255, 255, 255, 0.75)',
+                  color: '#000000',
                   marginBottom: '36px',
                   maxWidth: '580px',
                   fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
@@ -100,14 +100,13 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 <a
                   href="#service-contact"
                   style={{
-                    backgroundColor: '#fe6200',
-                    color: '#ffffff',
+                    backgroundColor: '#fe6200', color: '#ffffff',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '10px',
                     textDecoration: 'none',
                     fontWeight: 500,
-                    borderRadius: '0px',
+                    borderRadius: '8px',
                     padding: '13px 26px',
                     fontSize: '15px',
                     letterSpacing: '0.02em',
@@ -127,10 +126,10 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 <button
                   onClick={onViewCaseStudies}
                   style={{
-                    color: '#ffffff',
+                    color: '#000000',
                     borderColor: '#f0ece2',
                     border: '1px solid #f0ece2',
-                    borderRadius: '0px',
+                    borderRadius: '8px',
                     padding: '13px 24px',
                     fontWeight: 500,
                     fontSize: '15px',
@@ -160,7 +159,7 @@ export const ServiceHero: React.FC<ServiceHeroProps> = ({
                 position: 'relative',
                 width: '100%',
                 height: 'clamp(280px, 32vw, 400px)',
-                borderRadius: '0px',
+                borderRadius: '8px',
                 overflow: 'hidden',
                 border: '1px solid #f0ece2',
                 backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',

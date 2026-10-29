@@ -343,7 +343,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                       style={{
                         width: '40px',
                         height: '40px',
-                        borderRadius: '0px',
+                        borderRadius: '8px',
                         backgroundColor: isHovered ? 'rgba(254, 98, 0, 0.12)' : 'transparent',
                         border: '1px solid #e4e2e1',
                         display: 'flex',
@@ -421,7 +421,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                             alignItems: 'center',
                             gap: '6px',
                             padding: isMobile ? '6px 14px' : '8px 16px',
-                            borderRadius: '9999px',
+                            borderRadius: '8px',
                             backgroundColor: '#f1efeb',
                             border: '1px solid #e4e2e1',
                             fontFamily: "'DM Sans', sans-serif",

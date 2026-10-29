@@ -90,7 +90,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             color: '#fe6200',
                             backgroundColor: 'rgba(254, 98, 0, 0.1)',
                             padding: '3px 8px',
-                            borderRadius: '3px',
+                            borderRadius: '8px',
                             textTransform: 'uppercase',
                             letterSpacing: '0.04em',
                           }}
@@ -104,7 +104,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                             gap: '4px',
                             fontSize: '12.5px',
                             fontWeight: 700,
-                            color: '#fbf9f5',
+                            color: '#000000',
                           }}
                         >
                           <Calendar size={13} color="#fe6200" />

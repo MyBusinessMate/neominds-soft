@@ -140,7 +140,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
     <div
       style={{
         backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-        color: '#ffffff',
+        color: '#000000',
         minHeight: '100vh',
         paddingTop: '64px',
         fontFamily: 'var(--font-body)',

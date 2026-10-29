@@ -264,11 +264,11 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
@@ -290,7 +290,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               style={{
                 fontSize: '18px',
                 lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.88)',
+                color: '#000000',
                 marginBottom: '36px',
               }}
             >
@@ -301,8 +301,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
               <button
                 onClick={handleEstimateClick}
                 style={{
-                  backgroundColor: '#fe6200',
-                  color: '#ffffff',
+                  backgroundColor: '#fe6200', color: '#ffffff',
                   border: 'none',
                   padding: '14px 28px',
                   borderRadius: '8px',
@@ -329,7 +328,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 }}
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  color: '#ffffff',
+                  color: '#000000',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   padding: '14px 28px',
                   borderRadius: '8px',
@@ -369,7 +368,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
                   borderTop: '2px solid #fe6200',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '24px',
                   boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
                 }}
@@ -407,7 +406,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 style={{
                   border: '1px solid #e4e2e1',
                   borderTop: '2px solid #fe6200',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '30px',
                   backgroundColor: 'var(--colors-surface-light, #f1efeb)',
                   display: 'flex',
@@ -420,7 +419,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                     <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#ffffff', border: '1px solid #e4e2e1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {item.icon}
                     </div>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: '#ffffff', border: '1px solid rgba(254, 98, 0, 0.25)', padding: '3px 8px', borderRadius: '4px' }}>
+                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: '#ffffff', border: '1px solid rgba(254, 98, 0, 0.25)', padding: '3px 8px', borderRadius: '8px' }}>
                       {item.tag}
                     </span>
                   </div>
@@ -459,7 +458,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '24px',
                   cursor: 'pointer',
                   display: 'flex',
@@ -540,7 +539,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 style={{
                   border: '1px solid #e4e2e1',
                   borderTop: '2px solid #fe6200',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '24px',
                   backgroundColor: 'var(--colors-surface-light, #f1efeb)',
                 }}
@@ -578,7 +577,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '20px',
                 }}
               >

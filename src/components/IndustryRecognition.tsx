@@ -156,7 +156,7 @@ const IndustryRecognitionComponent: React.FC = () => {
             <div
               className="card-standard"
               style={{
-                borderRadius: 'var(--radius-md)', // 10px
+                borderRadius: '8px',
                 border: '1px solid var(--colors-border-light)',
                 backgroundColor: 'var(--colors-surface-light)', // #f1efeb
                 padding: 'clamp(28px, 4vw, 40px)',
@@ -210,7 +210,7 @@ const IndustryRecognitionComponent: React.FC = () => {
                     maxHeight: '260px',
                     maxWidth: '100%',
                     objectFit: 'contain',
-                    borderRadius: 'var(--radius-sm)',
+                    borderRadius: '8px',
                   }}
                   loading="lazy"
                 />

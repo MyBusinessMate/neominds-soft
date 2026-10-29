@@ -146,7 +146,8 @@ const ExperienceSectionComponent: React.FC = () => {
             gap: '0px',
             backgroundColor: '#ffffff',
             border: '1px solid #e4e2e1',
-            borderRadius: '0px',
+            borderRadius: '8px',
+            overflow: 'hidden',
             marginBottom: 'clamp(64px, 8vw, 84px)',
           }}
         >

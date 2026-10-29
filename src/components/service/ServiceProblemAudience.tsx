@@ -189,7 +189,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: 0,
@@ -225,7 +225,7 @@ export const ServiceProblemAudience: React.FC<ServiceProblemAudienceProps> = ({
                 <p
                   style={{
                     fontSize: '17px',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     lineHeight: 1.7,
                     fontWeight: 400,
                     margin: '0 0 24px 0',

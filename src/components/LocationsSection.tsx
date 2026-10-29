@@ -146,7 +146,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                 }}
               >
                 <Mail size={16} />
@@ -180,12 +180,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fbf9f5',
+                    color: '#1a1a1a',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -199,7 +199,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#1a1a1a';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -215,12 +215,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fbf9f5',
+                    color: '#1a1a1a',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -234,7 +234,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#1a1a1a';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -252,12 +252,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fbf9f5',
+                    color: '#1a1a1a',
                     transition: 'all 0.2s ease',
                     textDecoration: 'none',
                     border: '1px solid #e4e2e1',
@@ -271,7 +271,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#ffffff';
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#1a1a1a';
                     e.currentTarget.style.transform = 'none';
                   }}
                 >
@@ -331,7 +331,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   backgroundColor: '#e4e2e1',
                   border: '1px solid #e4e2e1',
                   marginBottom: '20px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   overflow: 'hidden',
                 }}
               >
@@ -451,8 +451,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     padding: '8px 16px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    borderRadius: '4px',
-                    color: copied ? '#fe6200' : '#fbf9f5',
+                    borderRadius: '8px',
+                    color: copied ? '#fe6200' : '#1a1a1a',
                     fontSize: '13px',
                     fontWeight: 600,
                     fontFamily: 'var(--typography-body-family)',
@@ -481,7 +481,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     padding: '8px 16px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     color: '#66615c',
                     fontSize: '13px',
                     fontWeight: 600,
@@ -651,8 +651,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       border: '1px solid #e4e2e1',
                       fontSize: '12px',
                       fontWeight: 600,
-                      color: '#fbf9f5',
-                      borderRadius: '4px',
+                      color: '#2f3437',
+                      borderRadius: '8px',
                       letterSpacing: '0.02em',
                       fontFamily: 'var(--typography-mono-family)',
                     }}
@@ -681,7 +681,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     alignItems: 'center',
                     backgroundColor: '#f1efeb',
                     border: '1px solid #e4e2e1',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     transition: 'border-color 0.2s ease',
                   }}
                 >
@@ -732,7 +732,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     paddingInline: '24px',
                     fontWeight: 600,
                     fontSize: '14px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#fe6200',
                     color: '#ffffff',
                     border: 'none',

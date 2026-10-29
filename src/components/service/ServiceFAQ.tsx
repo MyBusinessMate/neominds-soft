@@ -79,13 +79,13 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                       style={{
                         width: '28px',
                         height: '28px',
-                        borderRadius: '0px',
+                        borderRadius: '8px',
                         border: isExpanded ? '1px solid #fe6200' : '1px solid #e4e2e1',
                         backgroundColor: '#ffffff',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: isExpanded ? '#fe6200' : '#fbf9f5',
+                        color: isExpanded ? '#fe6200' : '#1a1a1a',
                         flexShrink: 0,
                       }}
                     >

@@ -12,7 +12,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
         backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-        color: '#ffffff',
+        color: '#000000',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -26,7 +26,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
               fontSize: 'clamp(28px, 3.4vw, 44px)',
               fontWeight: 800,
               fontFamily: 'var(--font-heading)',
-              color: '#ffffff',
+              color: '#000000',
               lineHeight: 1.16,
               marginBottom: '16px',
               display: 'block',
@@ -36,7 +36,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
             {data.title}
           </ScrollReveal>
 
-          <p style={{ fontSize: '16px', color: '#a3a09b', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontSize: '16px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
             {data.description}
           </p>
         </div>
@@ -87,10 +87,9 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                         style={{
                           fontSize: '11px',
                           fontWeight: 600,
-                          backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                          color: '#ffffff',
+                          backgroundColor: 'rgba(0, 0, 0, 0.05)', color: '#000000',
                           padding: '3px 8px',
-                          borderRadius: '3px',
+                          borderRadius: '8px',
                         }}
                       >
                         {step.badge}
@@ -102,7 +101,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                     style={{
                       fontSize: '17px',
                       fontWeight: 700,
-                      color: '#ffffff',
+                      color: '#000000',
                       marginBottom: '10px',
                     }}
                   >
@@ -113,7 +112,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                     style={{
                       fontSize: '13.5px',
                       lineHeight: 1.6,
-                      color: '#a3a09b',
+                      color: '#333333',
                       marginBottom: '16px',
                     }}
                   >
@@ -174,7 +173,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                 <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '4px' }}>
                   {data.highlightCard.title}
                 </div>
-                <div style={{ fontSize: '15px', color: '#e4e2e1' }}>
+                <div style={{ fontSize: '15px', color: '#333333' }}>
                   {data.highlightCard.detail}
                 </div>
               </div>
@@ -183,7 +182,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                 <span style={{ fontSize: '32px', fontWeight: 800, color: '#22c55e', fontFamily: 'var(--font-heading)' }}>
                   {data.highlightCard.value}
                 </span>
-                <span style={{ fontSize: '13px', color: '#a3a09b', fontWeight: 600 }}>
+                <span style={{ fontSize: '13px', color: '#555555', fontWeight: 600 }}>
                   {data.highlightCard.label}
                 </span>
               </div>

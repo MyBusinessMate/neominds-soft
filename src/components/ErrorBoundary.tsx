@@ -63,7 +63,7 @@ export class ErrorBoundary extends Component<Props, State> {
             An unexpected error occurred while rendering this page.
           </p>
           {this.state.error && (
-            <div style={{ textAlign: 'left', background: '#fbf9f5', color: '#fe6200', padding: '16px', borderRadius: '0px', fontSize: '13px', maxWidth: '850px', width: '100%', marginBottom: '24px', overflowX: 'auto', border: '1px solid #f0ece2', fontFamily: 'monospace' }}>
+            <div style={{ textAlign: 'left', background: '#fbf9f5', color: '#fe6200', padding: '16px', borderRadius: '8px', fontSize: '13px', maxWidth: '850px', width: '100%', marginBottom: '24px', overflowX: 'auto', border: '1px solid #f0ece2', fontFamily: 'monospace' }}>
               <strong>Error:</strong> {this.state.error.message}
               <pre style={{ marginTop: '8px', color: '#9ca3af', fontSize: '11px', whiteSpace: 'pre-wrap' }}>{this.state.error.stack}</pre>
             </div>
@@ -71,7 +71,7 @@ export class ErrorBoundary extends Component<Props, State> {
           <button
             onClick={() => window.location.reload()}
             className="btn-primary"
-            style={{ padding: '12px 32px' }}
+            style={{ padding: '12px 32px', borderRadius: '8px' }}
           >
             Reload Application
           </button>

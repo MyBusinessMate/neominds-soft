@@ -55,6 +55,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           margin: '0 auto',
           backgroundColor: '#0d111a',
           border: '1px solid rgba(255, 255, 255, 0.15)',
+          borderRadius: '8px',
           padding: 'clamp(18px, 3vw, 24px) clamp(16px, 3vw, 28px)',
           boxShadow: 'none',
           zIndex: 990,
@@ -99,6 +100,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               padding: '8px 16px',
               backgroundColor: 'transparent',
               border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
@@ -115,6 +117,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               padding: '8px 20px',
               backgroundColor: 'transparent',
               border: '1px solid rgba(255, 255, 255, 0.2)',
+              borderRadius: '8px',
               cursor: 'pointer',
             }}
           >
@@ -124,7 +127,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
           <button
             onClick={handleAcceptAll}
             className="btn-primary"
-            style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px' }}
+            style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px', borderRadius: '8px' }}
           >
             Accept All
           </button>
@@ -156,6 +159,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               maxWidth: '560px',
               backgroundColor: '#0a0e17',
               border: '1px solid rgba(255, 255, 255, 0.15)',
+              borderRadius: '8px',
               padding: 'clamp(20px, 4vw, 32px)',
               color: '#ffffff',
             }}
@@ -171,6 +175,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  borderRadius: '8px',
                 }}
                 aria-label="Close settings"
               >
@@ -217,14 +222,14 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
             <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px' }}>
               <button
                 onClick={() => setShowSettings(false)}
-                style={{ padding: '8px 16px', color: '#a3a09b', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px' }}
+                style={{ padding: '8px 16px', color: '#a3a09b', fontSize: '13px', fontFamily: 'var(--font-heading)', minHeight: '44px', borderRadius: '8px' }}
               >
                 Cancel
               </button>
               <button
                 onClick={handleSavePreferences}
                 className="btn-primary"
-                style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px' }}
+                style={{ padding: '8px 24px', fontSize: '13px', minHeight: '44px', borderRadius: '8px' }}
               >
                 Save Preferences
               </button>

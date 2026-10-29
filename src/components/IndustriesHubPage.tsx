@@ -160,11 +160,11 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#ffffff', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
 
           <div style={{ maxWidth: '840px' }}>
@@ -186,7 +186,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               style={{
                 fontSize: '18px',
                 lineHeight: 1.7,
-                color: 'rgba(255, 255, 255, 0.88)',
+                color: '#000000',
                 marginBottom: '36px',
               }}
             >
@@ -197,8 +197,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               <button
                 onClick={handleEstimateClick}
                 style={{
-                  backgroundColor: '#fe6200',
-                  color: '#ffffff',
+                  backgroundColor: '#fe6200', color: '#ffffff',
                   border: 'none',
                   padding: '14px 28px',
                   borderRadius: '8px',
@@ -225,7 +224,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 }}
                 style={{
                   backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  color: '#ffffff',
+                  color: '#000000',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   padding: '14px 28px',
                   borderRadius: '8px',
@@ -303,7 +302,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '24px' }}>
                     {ind.features.map((feat, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#fbf9f5' }}>
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#333333' }}>
                         <CheckCircle size={14} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{feat}</span>
                       </div>
@@ -317,11 +316,11 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     width: '100%',
                     backgroundColor: '#f1efeb',
                     border: '1px solid #e4e2e1',
-                    borderRadius: '6px',
+                    borderRadius: '8px',
                     padding: '10px',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#fbf9f5',
+                    color: '#1a1a1a',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
@@ -336,7 +335,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#f1efeb';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#1a1a1a';
                     e.currentTarget.style.borderColor = '#e4e2e1';
                   }}
                 >
@@ -373,7 +372,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 style={{
                   backgroundColor: 'var(--colors-surface-light, #f1efeb)',
                   border: '1px solid #e4e2e1',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   padding: '20px',
                 }}
               >

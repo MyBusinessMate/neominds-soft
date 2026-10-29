@@ -80,9 +80,9 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   style={{
                     width: '32px',
                     height: '32px',
-                    borderRadius: '3px',
+                    borderRadius: '8px',
                     backgroundColor: isCurrent ? '#fe6200' : '#f1efeb',
-                    color: isCurrent ? '#ffffff' : '#fbf9f5',
+                    color: isCurrent ? '#ffffff' : '#000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -112,7 +112,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                       right: 0,
                       height: '3px',
                       backgroundColor: '#fe6200',
-                      borderRadius: '2px',
+                      borderRadius: '8px',
                     }}
                   />
                 )}
@@ -154,7 +154,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                     }}
                   >
                     <CheckCircle2 size={18} color="#fe6200" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#fbf9f5', letterSpacing: '-0.01em' }}>
+                    <span style={{ fontSize: '15px', fontWeight: 600, color: '#000000', letterSpacing: '-0.01em' }}>
                       {del}
                     </span>
                   </div>

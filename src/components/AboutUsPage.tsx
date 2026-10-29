@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   ArrowRight,
   ChevronLeft,
@@ -6,17 +6,14 @@ import {
   ShieldCheck,
   Mail,
   Upload,
-  Play,
-  X,
-  Linkedin,
+  Play,
 } from 'lucide-react';
-import {
-  ABOUT_TEAM_MEMBERS,
+import {
   ABOUT_TESTIMONIALS,
-  ABOUT_LOCATION,
-  TeamMember,
+  ABOUT_LOCATION,
 } from '../data/aboutData';
 import { Footer } from './Footer';
+import { TeamSection } from './team/TeamSection';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import './AboutUsPage.css';
 
@@ -34,35 +31,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
 }) => {
   // Testimonial Carousel state
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
-
-  // Team Section interactive state
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const teamCarouselRef = useRef<HTMLDivElement>(null);
-
-  const scrollTeamCarousel = useCallback((direction: 'left' | 'right') => {
-    if (teamCarouselRef.current) {
-      const scrollAmount = direction === 'left' ? -340 : 340;
-      teamCarouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  }, []);
-
-  const handleSelectMember = useCallback((member: TeamMember) => {
-    setSelectedMember(member);
-    // On mobile, keep drawer bar visible and user can tap to expand card from bottom
-    setMobileDrawerOpen(false);
-  }, []);
-
-  const handleOpenMobileCard = useCallback(() => {
-    if (selectedMember) {
-      setMobileDrawerOpen(true);
-    }
-  }, [selectedMember]);
-
-  const handleCloseModal = useCallback(() => {
-    setSelectedMember(null);
-    setMobileDrawerOpen(false);
-  }, []);
 
   // Contact Form state
   const [formState, setFormState] = useState({
@@ -200,7 +168,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 padding: '10px 20px',
                 backgroundColor: 'rgba(7, 11, 20, 0.75)',
                 backdropFilter: 'blur(8px)',
-                borderRadius: '0px',
+                borderRadius: '8px',
                 border: '1px solid rgba(255, 255, 255, 0.15)',
                 color: '#ffffff',
                 fontSize: '14px',
@@ -293,365 +261,9 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          6. TEAM SECTION (.s-team-section - Kudoss inspired layout)
+          6. TEAM SECTION (Desktop Carousel & Mobile Two-Stage Flow)
           ======================================================== */}
-      <section className="s-team-section" id="team">
-        <div className="s-team-section__container">
-          {/* Header inspired by screenshot: "Small team. Big standards." */}
-          <div className="s-team-header-row">
-            <div className="s-team-header-left">
-              <h2 className="s-team-header-title">
-                Small team.
-                <span>Big standards.</span>
-              </h2>
-            </div>
-            <div className="s-team-header-right">
-              <p className="s-team-header-desc">
-                Specialists working closely to transform ideas into meaningful, measurable outcomes.
-              </p>
-              <div className="s-team-carousel-controls">
-                <button
-                  type="button"
-                  className="s-team-ctrl-btn"
-                  onClick={() => scrollTeamCarousel('left')}
-                  aria-label="Previous team members"
-                >
-                  <ChevronLeft size={20} />
-                </button>
-                <button
-                  type="button"
-                  className="s-team-ctrl-btn"
-                  onClick={() => scrollTeamCarousel('right')}
-                  aria-label="Next team members"
-                >
-                  <ChevronRight size={20} />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Carousel with 7 Featured Members */}
-          <div className="s-team-carousel-wrapper">
-            <div className="s-team-carousel-track" ref={teamCarouselRef}>
-              {ABOUT_TEAM_MEMBERS.slice(0, 7).map((member) => {
-                const isSelected = selectedMember?.id === member.id;
-                return (
-                  <div
-                    key={member.id}
-                    className={`s-team-card ${isSelected ? 's-team-card--active' : ''}`}
-                    onClick={() => handleSelectMember(member)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`View profile for ${member.name}`}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleSelectMember(member);
-                      }
-                    }}
-                  >
-                    <div className="s-team-card__image-wrap">
-                      <img
-                        src={member.image}
-                        alt={`${member.name} - ${member.position} at Neominds TechHub`}
-                        loading="lazy"
-                        decoding="async"
-                        className="s-team-card__img"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
-                        }}
-                      />
-                      <div className="s-team-card__overlay-tag">
-                        <span>Click to view profile</span>
-                      </div>
-                    </div>
-                    <div className="s-team-card__footer">
-                      <div className="s-team-card__meta">
-                        <h4 className="s-team-card__name">{member.name}</h4>
-                        <p className="s-team-card__role">{member.position}</p>
-                      </div>
-                      <div className="s-team-card__socials">
-                        <span className="s-team-card__icon-btn" title="LinkedIn">
-                          <Linkedin size={15} />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Rest of the team (remaining 3 of 10) in horizontal layout */}
-          <div className="s-team-subgroup-section">
-            <div className="s-team-subgroup-header">
-              <h3 className="s-team-subgroup-title">Specialist Pod Leads</h3>
-              <p className="s-team-subgroup-subtitle">
-                Core domain consultants driving data pipelines, infrastructure and platform operations.
-              </p>
-            </div>
-            <div className="s-team-subgroup-grid">
-              {ABOUT_TEAM_MEMBERS.slice(7, 10).map((member) => {
-                const isSelected = selectedMember?.id === member.id;
-                return (
-                  <div
-                    key={member.id}
-                    className={`s-team-subcard ${isSelected ? 's-team-subcard--active' : ''}`}
-                    onClick={() => handleSelectMember(member)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`View profile for ${member.name}`}
-                    onKeyDown={(e) => {
-                      if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        handleSelectMember(member);
-                      }
-                    }}
-                  >
-                    <div className="s-team-subcard__pic-wrap">
-                      <img
-                        src={member.image}
-                        alt={`${member.name} - ${member.position} at Neominds`}
-                        loading="lazy"
-                        decoding="async"
-                        className="s-team-subcard__pic"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
-                        }}
-                      />
-                    </div>
-                    <div className="s-team-subcard__info">
-                      <h4 className="s-team-subcard__name">{member.name}</h4>
-                      <p className="s-team-subcard__role">{member.position}</p>
-                      <span className="s-team-subcard__action">
-                        View profile &rarr;
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Footer banner inspired by Kudoss: "Behind every result is a team that cares." */}
-          <div className="s-team-watermark-row">
-            <p className="s-team-watermark-text">
-              Behind every result is <strong>a team that cares.</strong>
-            </p>
-            <div className="s-team-watermark-action">
-              <span className="s-team-watermark-note">Built by specialists</span>
-              <button
-                type="button"
-                className="s-team-watermark-btn"
-                onClick={() => {
-                  const el = document.getElementById('contact-video');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  else onNavigatePage('contacts');
-                }}
-              >
-                <span>More about us</span>
-                <ArrowRight size={14} />
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* DESKTOP SIDE PANEL (Opens on right side with close X button at top) */}
-        {selectedMember && (
-          <aside
-            className="s-team-desktop-panel"
-            aria-labelledby="selected-member-title"
-          >
-            <div className="s-team-desktop-panel__backdrop" onClick={handleCloseModal} />
-            <div className="s-team-desktop-panel__content">
-              <div className="s-team-desktop-panel__header">
-                <span className="s-team-panel-pill">Executive Profile</span>
-                <button
-                  type="button"
-                  className="s-team-desktop-panel__close"
-                  onClick={handleCloseModal}
-                  aria-label="Close profile panel"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="s-team-desktop-panel__scroll">
-                <div className="s-team-panel-hero">
-                  <div className="s-team-panel-img-wrap">
-                    <img
-                      src={selectedMember.image}
-                      alt={selectedMember.name}
-                      className="s-team-panel-img"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src =
-                          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
-                      }}
-                    />
-                  </div>
-                  <div className="s-team-panel-titles">
-                    <h3 id="selected-member-title" className="s-team-panel-name">
-                      {selectedMember.name}
-                    </h3>
-                    <p className="s-team-panel-position">{selectedMember.position}</p>
-                    <span className="s-team-panel-badge">{selectedMember.type}</span>
-                  </div>
-                </div>
-
-                {selectedMember.focus && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Core Domain Focus</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.focus}</p>
-                  </div>
-                )}
-
-                {selectedMember.bio && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Background &amp; Impact</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.bio}</p>
-                  </div>
-                )}
-
-                {selectedMember.experience && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Experience</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.experience}</p>
-                  </div>
-                )}
-
-                {selectedMember.quote && (
-                  <div className="s-team-panel-quote">
-                    <blockquote>&ldquo;{selectedMember.quote}&rdquo;</blockquote>
-                  </div>
-                )}
-
-                <div className="s-team-panel-actions">
-                  <button
-                    type="button"
-                    className="s-team-panel-cta"
-                    onClick={() => {
-                      handleCloseModal();
-                      const el = document.getElementById('contact-video');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      else onNavigatePage('contacts');
-                    }}
-                  >
-                    <span>Connect with {selectedMember.name.split(' ')[0]}</span>
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </aside>
-        )}
-
-        {/* MOBILE DRAWER TRIGGER (Bar at bottom with gradient text: "Read about 'name'") */}
-        {selectedMember && !mobileDrawerOpen && (
-          <div
-            className="s-team-mobile-drawer-trigger"
-            onClick={handleOpenMobileCard}
-            role="button"
-            tabIndex={0}
-            aria-label={`Open profile of ${selectedMember.name}`}
-          >
-            <div className="s-team-drawer-trigger-inner">
-              <span className="s-team-drawer-gradient-text">
-                Read about {selectedMember.name}
-              </span>
-              <span className="s-team-drawer-trigger-btn">
-                Tap to view &uarr;
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* MOBILE BOTTOM SHEET MODAL (Opens upwards from bottom when clicked) */}
-        {selectedMember && mobileDrawerOpen && (
-          <div className="s-team-mobile-sheet">
-            <div className="s-team-mobile-sheet__backdrop" onClick={handleCloseModal} />
-            <div className="s-team-mobile-sheet__content">
-              <div className="s-team-mobile-sheet__handle" onClick={handleCloseModal} />
-              <div className="s-team-mobile-sheet__header">
-                <span className="s-team-drawer-gradient-text">
-                  About {selectedMember.name}
-                </span>
-                <button
-                  type="button"
-                  className="s-team-mobile-sheet__close"
-                  onClick={handleCloseModal}
-                  aria-label="Close"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-
-              <div className="s-team-mobile-sheet__body">
-                <div className="s-team-mobile-sheet__profile">
-                  <img
-                    src={selectedMember.image}
-                    alt={selectedMember.name}
-                    className="s-team-mobile-sheet__avatar"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop';
-                    }}
-                  />
-                  <div>
-                    <h3 className="s-team-mobile-sheet__name">{selectedMember.name}</h3>
-                    <p className="s-team-mobile-sheet__role">{selectedMember.position}</p>
-                    <span className="s-team-panel-badge">{selectedMember.type}</span>
-                  </div>
-                </div>
-
-                {selectedMember.focus && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Core Domain Focus</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.focus}</p>
-                  </div>
-                )}
-
-                {selectedMember.bio && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Background &amp; Impact</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.bio}</p>
-                  </div>
-                )}
-
-                {selectedMember.experience && (
-                  <div className="s-team-panel-section">
-                    <h5 className="s-team-panel-section-title">Experience</h5>
-                    <p className="s-team-panel-section-text">{selectedMember.experience}</p>
-                  </div>
-                )}
-
-                {selectedMember.quote && (
-                  <div className="s-team-panel-quote">
-                    <blockquote>&ldquo;{selectedMember.quote}&rdquo;</blockquote>
-                  </div>
-                )}
-
-                <div className="s-team-panel-actions">
-                  <button
-                    type="button"
-                    className="s-team-panel-cta"
-                    onClick={() => {
-                      handleCloseModal();
-                      const el = document.getElementById('contact-video');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      else onNavigatePage('contacts');
-                    }}
-                  >
-                    <span>Connect with {selectedMember.name.split(' ')[0]}</span>
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
+      <TeamSection />
 
       {/* ========================================================
           7. CLIENT TESTIMONIALS CAROUSEL (.s-carousel theme-dark2)
@@ -740,7 +352,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 style={{
                   width: idx === currentTestimonialIndex ? '28px' : '8px',
                   height: '8px',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   backgroundColor: idx === currentTestimonialIndex ? '#fe6200' : '#66615c',
                   border: 'none',
                   cursor: 'pointer',
@@ -834,7 +446,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 htmlFor="c-file-upload"
                 style={{
                   border: '1px dashed #66615c',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   padding: '24px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -846,7 +458,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 }}
               >
                 <Upload size={20} style={{ color: '#fe6200' }} />
-                <span style={{ fontSize: '14px', color: '#e4e2e1', fontWeight: 500 }}>
+                <span style={{ fontSize: '14px', color: '#000000', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
                 <span style={{ fontSize: '12px', color: '#868683' }}>

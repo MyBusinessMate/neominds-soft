@@ -76,7 +76,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 style={{
                   fontSize: 'clamp(26px, 3.2vw, 36px)',
                   fontWeight: 800,
-                  color: '#ffffff',
+                  color: '#000000',
                   fontFamily: 'var(--font-heading)',
                   marginBottom: '10px',
                   display: 'block',
@@ -95,7 +95,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#868683', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
                     Your Name*
                   </label>
                   <input
@@ -107,11 +107,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                      border: '1px solid #868683',
-                      borderRadius: '4px',
-                      fontSize: '14px',
-                      color: '#ffffff',
+                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -119,7 +115,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#868683', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
                     Work Email*
                   </label>
                   <input
@@ -131,11 +127,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                      border: '1px solid #868683',
-                      borderRadius: '4px',
-                      fontSize: '14px',
-                      color: '#ffffff',
+                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -145,7 +137,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#868683', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
                     Company Name
                   </label>
                   <input
@@ -156,11 +148,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                      border: '1px solid #868683',
-                      borderRadius: '4px',
-                      fontSize: '14px',
-                      color: '#ffffff',
+                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -168,7 +156,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#868683', marginBottom: '6px' }}>
+                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
                     Estimated Budget
                   </label>
                   <select
@@ -177,11 +165,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                     style={{
                       width: '100%',
                       padding: '12px 14px',
-                      backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                      border: '1px solid #868683',
-                      borderRadius: '4px',
-                      fontSize: '14px',
-                      color: '#ffffff',
+                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
                       outline: 'none',
                       boxSizing: 'border-box',
                     }}
@@ -195,7 +179,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#868683', marginBottom: '6px' }}>
+                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
                   Project Goals & Architecture Requirements
                 </label>
                 <textarea
@@ -206,11 +190,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                   style={{
                     width: '100%',
                     padding: '12px 14px',
-                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                    border: '1px solid #868683',
-                    borderRadius: '4px',
-                    fontSize: '14px',
-                    color: '#ffffff',
+                    backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
                     outline: 'none',
                     resize: 'vertical',
                     boxSizing: 'border-box',
@@ -218,7 +198,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 />
               </div>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#a3a09b', cursor: 'pointer' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#444444', cursor: 'pointer' }}>
                 <input
                   type="checkbox"
                   checked={formData.ndaRequired}
@@ -236,7 +216,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                   backgroundColor: '#fe6200',
                   color: '#ffffff',
                   border: 'none',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                   fontSize: '15px',
                   fontWeight: 700,
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',

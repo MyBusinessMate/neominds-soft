@@ -201,7 +201,7 @@ export const Testimonials: React.FC = () => {
               backgroundColor: 'transparent',
               border: 'none',
               borderLeft: '3px solid #fe6200',
-              borderRadius: 0,
+              borderRadius: '8px',
               padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(24px, 4vw, 44px)',
               boxShadow: 'none',
             }}
@@ -265,7 +265,7 @@ export const Testimonials: React.FC = () => {
                   fontSize: 'clamp(22px, 2.3vw, 29px)',
                   fontWeight: 400,
                   lineHeight: 1.45,
-                  color: '#fbf9f5',
+                  color: '#000000',
                   margin: '0 0 36px 0',
                   letterSpacing: '-0.01em',
                 }}
@@ -295,7 +295,7 @@ export const Testimonials: React.FC = () => {
                     style={{
                       width: '46px',
                       height: '46px',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: '8px',
                       objectFit: 'cover',
                       border: '1px solid var(--colors-border-light, #e4e2e1)',
                     }}
@@ -308,7 +308,7 @@ export const Testimonials: React.FC = () => {
                     style={{
                       width: '46px',
                       height: '46px',
-                      borderRadius: 'var(--radius-sm)',
+                      borderRadius: '8px',
                       backgroundColor: 'rgba(254, 98, 0, 0.12)',
                       color: '#fe6200',
                       display: 'flex',
@@ -355,10 +355,10 @@ export const Testimonials: React.FC = () => {
                   style={{
                     width: '38px',
                     height: '38px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -371,7 +371,7 @@ export const Testimonials: React.FC = () => {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#000000';
                   }}
                 >
                   <ArrowLeft size={16} />
@@ -382,10 +382,10 @@ export const Testimonials: React.FC = () => {
                   style={{
                     width: '38px',
                     height: '38px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -398,7 +398,7 @@ export const Testimonials: React.FC = () => {
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#fbf9f5';
+                    e.currentTarget.style.color = '#000000';
                   }}
                 >
                   <ArrowRight size={16} />

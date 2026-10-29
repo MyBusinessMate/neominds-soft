@@ -59,7 +59,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
   }, [newsletterEmail]);
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
           1. HERO SECTION (Freehand Editorial Hero)
           ======================================================== */}
@@ -81,15 +81,15 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <span>Executive Leadership</span>
               </div>
 
-              <ScrollReveal as="h1" blurStrength={8} style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: '#ffffff', margin: '0 0 24px' }}>
+              <ScrollReveal as="h1" blurStrength={8} style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.15, color: '#000000', margin: '0 0 24px' }}>
                 Guiding minds<span style={{ color: '#fe6200' }}>.</span>
               </ScrollReveal>
 
               <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#d1d5db', margin: '0 0 16px', fontWeight: 400 }}>
+                <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#333333', margin: '0 0 16px', fontWeight: 400 }}>
                   Meet the architects, engineering leads, and technology directors guiding client delivery at Neominds TechHub. Our leadership team brings decades of direct production experience across enterprise cloud, distributed systems, and applied AI.
                 </p>
-                <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#9ca3af', margin: 0, fontWeight: 400 }}>
+                <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#555555', margin: 0, fontWeight: 400 }}>
                   We stay hands-on with architecture and delivery: establishing code quality standards, auditing distributed systems, and ensuring every project meets our rigorous technical requirements.
                 </p>
               </RevealElement>
@@ -100,7 +100,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               <div
                 style={{
                   position: 'relative',
-                  borderRadius: '16px',
+                  borderRadius: '8px',
                   overflow: 'hidden',
                   background: 'var(--colors-surface-dark-subtle, #f0ece2)',
                   padding: '36px',
@@ -111,7 +111,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                   Our Philosophy
                 </div>
 
-                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#ffffff', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
+                <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#000000', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
                   Engineering grounded in clarity, technical mastery, and long-term partnership.
                 </h3>
                 <p style={{ fontSize: '14.5px', color: '#9ca3af', lineHeight: 1.65, margin: '0 0 24px' }}>
@@ -171,7 +171,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               overflowY: 'auto',
               backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
               border: '1px solid #fe6200',
-              borderRadius: '16px',
+              borderRadius: '8px',
               padding: '36px',
               boxShadow: '0 24px 64px rgba(254, 98, 0, 0.25)',
             }}
@@ -186,7 +186,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 right: '20px',
                 width: '40px',
                 height: '40px',
-                borderRadius: '50%',
+                borderRadius: '8px',
                 backgroundColor: '#18181B',
                 border: '1px solid #27272A',
                 display: 'flex',
@@ -212,7 +212,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px', alignItems: 'flex-start' }}>
               {/* Photo & Quick Info */}
               <div>
-                <div style={{ width: '100%', height: '340px', borderRadius: '12px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #27272A' }}>
+                <div style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #27272A' }}>
                   <img
                     src={selectedLeader.image}
                     alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds TechHub`}
@@ -231,8 +231,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       gap: '8px',
                       padding: '12px 18px',
                       borderRadius: '8px',
-                      backgroundColor: '#fe6200',
-                      color: '#000000',
+                      backgroundColor: '#fe6200', color: '#ffffff',
                       textDecoration: 'none',
                       fontSize: '13.5px',
                       fontWeight: 700,
@@ -341,12 +340,12 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
       {/* ========================================================
           6. NEWSLETTER SUBSCRIPTION (s-newsletter)
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', padding: '54px 24px', borderTop: '1px solid #1F1F23', borderBottom: '1px solid #1F1F23' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', padding: '54px 24px', borderTop: '1px solid #e4e2e1', borderBottom: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
-          <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 10px', letterSpacing: '-0.02em' }}>
+          <h3 style={{ fontSize: '26px', fontWeight: 700, color: '#000000', margin: '0 0 10px', letterSpacing: '-0.02em' }}>
             Join our engineering newsletter
           </h3>
-          <p style={{ fontSize: '15px', color: '#9CA3AF', margin: '0 0 28px', lineHeight: 1.55 }}>
+          <p style={{ fontSize: '15px', color: '#555555', margin: '0 0 28px', lineHeight: 1.55 }}>
             Practical engineering insights, architectural patterns, and production AI updates delivered monthly. No spam, ever.
           </p>
 
@@ -361,11 +360,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 flex: '1 1 260px',
                 height: '46px',
                 padding: '0 16px',
-                borderRadius: '6px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-                border: '1px solid #27272A',
+                borderRadius: '8px',
+                backgroundColor: '#ffffff',
+                border: '1px solid #d0ccc0',
                 fontSize: '14px',
-                color: '#FFFFFF',
+                color: '#000000',
                 outline: 'none',
               }}
             />
@@ -374,9 +373,8 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               style={{
                 height: '46px',
                 padding: '0 24px',
-                borderRadius: '6px',
-                backgroundColor: '#fe6200',
-                color: '#000000',
+                borderRadius: '8px',
+                backgroundColor: '#fe6200', color: '#ffffff',
                 border: 'none',
                 fontWeight: 700,
                 fontSize: '14px',

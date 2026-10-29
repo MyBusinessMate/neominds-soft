@@ -29,6 +29,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         padding: 'clamp(12px, 3vw, 24px)',
       }}
       onClick={onClose}
+      className="smooth-modal-backdrop"
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-legal-title"
@@ -42,7 +43,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
           backgroundColor: '#0c1018',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           color: '#ffffff',
-          borderRadius: '0px',
+          borderRadius: '8px',
           overflowY: 'auto',
           boxShadow: '0 25px 60px rgba(32, 11, 0,  0.95)',
           position: 'relative',
@@ -66,6 +67,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
             alignItems: 'center',
             justifyContent: 'center',
             cursor: 'pointer',
+            borderRadius: '8px',
           }}
           aria-label="Close modal"
         >
@@ -86,6 +88,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               backgroundColor: activeTab === 'privacy' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             Privacy Policy
@@ -103,6 +106,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               backgroundColor: activeTab === 'cookie' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             Cookie Policy
@@ -120,6 +124,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               backgroundColor: activeTab === 'security' ? '#fe6200' : 'transparent',
               border: 'none',
               cursor: 'pointer',
+              borderRadius: '8px',
             }}
           >
             IS & Security Policy
@@ -202,7 +207,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         )}
 
         <div style={{ marginTop: '36px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', display: 'flex', justifyContent: 'flex-end' }}>
-          <button onClick={onClose} className="btn-primary" style={{ padding: '10px 28px', minHeight: '44px' }}>
+          <button onClick={onClose} className="btn-primary" style={{ padding: '10px 28px', minHeight: '44px', borderRadius: '8px' }}>
             Close
           </button>
         </div>

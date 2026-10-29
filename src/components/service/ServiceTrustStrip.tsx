@@ -83,7 +83,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#fbf9f5',
+                color: '#000000',
                 fontSize: '13.5px',
                 fontWeight: 600,
               }}

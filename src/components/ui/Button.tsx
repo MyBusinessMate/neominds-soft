@@ -83,6 +83,11 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       </>
     );
 
+    const resolvedStyle: React.CSSProperties = {
+      borderRadius: '8px',
+      ...style,
+    };
+
     if (asLink && href) {
       return (
         <a
@@ -90,7 +95,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           target={target}
           rel={rel}
           className={combinedClassName}
-          style={style}
+          style={resolvedStyle}
           aria-disabled={disabled}
         >
           {content}
@@ -103,7 +108,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={combinedClassName}
-        style={style}
+        style={resolvedStyle}
         {...props}
       >
         {content}

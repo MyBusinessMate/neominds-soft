@@ -36,7 +36,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
             style={{
               fontSize: 'clamp(28px, 3.4vw, 40px)',
               fontWeight: 800,
-              color: '#ffffff',
+              color: '#000000',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -104,7 +104,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                   style={{
                     fontSize: '18px',
                     fontWeight: 700,
-                    color: '#ffffff',
+                    color: '#000000',
                     fontFamily: 'var(--font-heading)',
                     margin: '0 0 4px 0',
                   }}
@@ -120,12 +120,12 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                 style={{
                   width: '36px',
                   height: '36px',
-                  borderRadius: '50%',
-                  border: '1px solid #868683',
+                  borderRadius: '8px',
+                  border: '1px solid #d0ccc0',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#ffffff',
+                  color: '#000000',
                   transition: 'all 0.2s',
                 }}
               >

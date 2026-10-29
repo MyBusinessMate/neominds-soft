@@ -313,7 +313,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
-                  borderRadius: '10px',
+                  borderRadius: '8px',
                   padding: '32px 24px',
                   display: 'flex',
                   flexDirection: 'column',

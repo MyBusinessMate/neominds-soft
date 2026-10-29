@@ -34,7 +34,7 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
               style={{
                 fontSize: 'clamp(28px, 3.4vw, 44px)',
                 fontWeight: 800,
-                color: '#ffffff',
+                color: '#000000',
                 fontFamily: 'var(--font-heading)',
                 lineHeight: 1.15,
                 marginBottom: '18px',
@@ -45,11 +45,12 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
               Quantified Impact Delivered in {title}
             </ScrollReveal>
 
-            <p style={{ fontSize: '16px', color: '#e4e2e1', lineHeight: 1.65, margin: '0 0 24px 0' }}>
+            <p style={{ fontSize: '16px', color: '#333333',
+                lineHeight: 1.65, margin: '0 0 24px 0' }}>
               We tie every architectural deliverable directly to bottom-line enterprise results. By engineering out latency, failure points, and operational friction, our partners experience sustained efficiency gains.
             </p>
 
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 14px', backgroundColor: '#f0ece2', borderRadius: '4px', fontSize: '13px', fontWeight: 600, color: '#e4e2e1' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 14px', backgroundColor: '#f0ece2', borderRadius: '8px', fontSize: '13px', fontWeight: 600, color: '#000000' }}>
               <Award size={15} color="#fe6200" />
               <span>Verified against real-world client production benchmarks</span>
             </div>
@@ -76,10 +77,10 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
                 }}
               >
                 <div style={{ maxWidth: '360px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#ffffff', marginBottom: '6px' }}>
+                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
                     {item.label}
                   </div>
-                  <p style={{ fontSize: '13.5px', color: '#c2bfb9', lineHeight: 1.5, margin: 0 }}>
+                  <p style={{ fontSize: '13.5px', color: '#555555', lineHeight: 1.5, margin: 0 }}>
                     {item.description}
                   </p>
                 </div>

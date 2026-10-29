@@ -55,8 +55,8 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
       if (emblemRef.current) {
         tl.fromTo(
           emblemRef.current,
-          { scale: 0.9, opacity: 0 },
-          { scale: 1, opacity: 1, duration: 1.2, ease: 'power2.out' },
+          { scale: 0.96, opacity: 0, y: 20 },
+          { scale: 1, opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' },
           '-=0.8'
         );
       }
@@ -77,64 +77,140 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
     <section
       id="hero"
       ref={heroRef}
+      className="hero-root-section"
       style={{
         position: 'relative',
         width: '100%',
         minHeight: '100vh',
-        backgroundColor: '#fbf9f5', // Freehand warm dark espresso background
+        backgroundColor: '#fbf9f5',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
         overflow: 'hidden',
-        paddingTop: 'clamp(110px, 14vh, 150px)',
+        paddingTop: 'clamp(80px, 11vh, 120px)',
         paddingBottom: '0px',
       }}
     >
-      {/* Background Ambient Warm Glow */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '20%',
-          right: '15%',
-          width: 'clamp(350px, 45vw, 650px)',
-          height: 'clamp(350px, 45vw, 650px)',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(254, 98, 0, 0.16) 0%, rgba(32, 11, 0, 0) 70%)',
-          filter: 'blur(60px)',
-          pointerEvents: 'none',
-          zIndex: 1,
-        }}
-      />
+      {/* ========================================================
+          MOBILE HERO VIEW (< 860px) - EXACT PIXEL MATCH TO MOCKUP
+          ======================================================== */}
+      <div className="mobile-hero-layout">
+        {/* Top Robot Head (Subtly Behind Headline) */}
+        <div className="mobile-robot-top-backdrop">
+          <img
+            src="/images/mobile-hero.png"
+            alt="AI Engineering Robot"
+            className="mobile-robot-top-img"
+          />
+        </div>
 
-      {/* Main Hero Grid Container */}
+        {/* Foreground Content Stack */}
+        <div className="mobile-hero-content">
+          <h1 className="mobile-hero-heading">
+            Building software that scales — and AI that delivers in production.
+          </h1>
+
+          <p className="mobile-hero-subtext">
+            From high-growth SaaS platforms and mobile apps to production multi-agent AI systems.
+          </p>
+
+          <div className="mobile-hero-cta-stack">
+            <Button
+              variant="primary"
+              onClick={onTalkClick}
+              icon={<ArrowRight size={18} strokeWidth={2.4} />}
+              iconPosition="right"
+              className="mobile-cta-primary"
+              style={{
+                width: '100%',
+                backgroundColor: '#fe6200',
+                color: '#ffffff',
+                borderRadius: '8px',
+                padding: '16px 24px',
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: '14.5px',
+                letterSpacing: '0.04em',
+                textTransform: 'uppercase',
+                border: 'none',
+                boxShadow: '0 4px 16px rgba(254, 98, 0, 0.32)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+              }}
+            >
+              REQUEST A DEMO
+            </Button>
+
+            <Button
+              variant="secondary"
+              asLink
+              href="#services"
+              className="mobile-cta-secondary"
+              style={{
+                width: '100%',
+                border: '1.5px solid #111111',
+                color: '#111111',
+                borderRadius: '8px',
+                padding: '15px 24px',
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 700,
+                fontSize: '15.5px',
+                backgroundColor: 'rgba(251, 249, 245, 0.85)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              Explore Capabilities
+            </Button>
+          </div>
+        </div>
+
+        {/* Lower Robot Body (Visible Below the Buttons, exactly as in user reference) */}
+        <div className="mobile-robot-bottom-container">
+          <img
+            src="/images/mobile-hero.png"
+            alt="AI Engineering Suit"
+            className="mobile-robot-bottom-img"
+          />
+        </div>
+      </div>
+
+      {/* ========================================================
+          DESKTOP HERO VIEW (>= 860px) - EXACT PIXEL MATCH TO MOCKUP
+          ======================================================== */}
       <div
-        className="container"
+        className="container desktop-hero-layout"
         style={{
           position: 'relative',
           zIndex: 3,
-          maxWidth: '1280px',
+          maxWidth: '1360px',
           width: '100%',
           margin: '0 auto',
           flex: 1,
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: 'minmax(460px, 1.15fr) minmax(420px, 0.85fr)',
           alignItems: 'center',
-          gap: 'clamp(40px, 6vw, 80px)',
-          paddingBottom: 'clamp(40px, 6vh, 60px)',
+          gap: 'clamp(20px, 3.5vw, 48px)',
+          paddingBottom: 'clamp(16px, 2.5vh, 32px)',
         }}
       >
         {/* Left Column: Headlines & CTA */}
-        <div style={{ maxWidth: '640px' }}>
+        <div style={{ maxWidth: '640px', position: 'relative', zIndex: 10 }}>
           <h1
             ref={headlineRef}
             style={{
-              color: '#ffffff',
-              marginBottom: '24px',
-              letterSpacing: '-0.025em',
+              color: '#000000',
+              marginBottom: '28px',
+              letterSpacing: '-0.03em',
               fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-              fontSize: 'clamp(42px, 5.2vw, 68px)',
+              fontSize: 'clamp(44px, 5.4vw, 72px)',
               fontWeight: 400,
-              lineHeight: 1.12,
+              lineHeight: 1.08,
               textTransform: 'none',
             }}
           >
@@ -143,44 +219,47 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
 
           <p
             style={{
-              color: 'rgba(255, 255, 255, 0.85)',
-              fontSize: 'clamp(16px, 1.25vw, 19px)',
-              lineHeight: 1.6,
+              color: '#222222',
+              fontSize: 'clamp(16px, 1.25vw, 18px)',
+              lineHeight: 1.62,
               fontWeight: 400,
-              marginBottom: '36px',
+              marginBottom: '38px',
+              maxWidth: '560px',
               fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
             }}
           >
             From high-growth SaaS platforms and mobile apps to production multi-agent AI systems. We partner with product leaders to design, build, and scale reliable software with dedicated engineering teams.
           </p>
 
-          {/* CTA Group: Apple Capsule Action Controls */}
+          {/* CTA Group: Primary Pill + Subtle Outline Button */}
           <div
             ref={ctaGroupRef}
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '14px',
+              gap: '16px',
               alignItems: 'center',
+              position: 'relative',
+              zIndex: 10,
             }}
           >
             <Button
               variant="primary"
               onClick={onTalkClick}
-              icon={<ArrowRight size={18} />}
+              icon={<ArrowRight size={18} strokeWidth={2.4} />}
               iconPosition="right"
               style={{
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
-                borderRadius: '9999px',
-                padding: '14px 28px',
+                borderRadius: '8px',
+                padding: '16px 32px',
                 fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 600,
-                fontSize: '15px',
+                fontWeight: 700,
+                fontSize: '14.5px',
                 letterSpacing: '0.04em',
                 textTransform: 'uppercase',
-                border: '1px solid rgba(255, 255, 255, 0.25)',
-                boxShadow: '0 4px 16px rgba(254, 98, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45)',
+                border: 'none',
+                boxShadow: '0 4px 18px rgba(254, 98, 0, 0.38)',
                 transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease',
               }}
             >
@@ -192,14 +271,14 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               asLink
               href="#services"
               style={{
-                borderColor: 'rgba(255, 255, 255, 0.16)',
-                color: '#ffffff',
-                borderRadius: '9999px',
-                padding: '14px 26px',
+                border: '1.5px solid rgba(0, 0, 0, 0.28)',
+                color: '#111111',
+                borderRadius: '8px',
+                padding: '15px 30px',
                 fontFamily: "'DM Sans', sans-serif",
-                fontWeight: 500,
+                fontWeight: 600,
                 fontSize: '15px',
-                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                backgroundColor: 'rgba(251, 249, 245, 0.65)',
                 backdropFilter: 'blur(16px)',
                 WebkitBackdropFilter: 'blur(16px)',
                 transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, border-color 0.2s ease',
@@ -210,147 +289,77 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           </div>
         </div>
 
-        {/* Right Column: Freehand 3D Bronze / Glass Medallion Visual */}
+        {/* Right Column: AI Humanoid Robot in Cream Suit */}
         <div
           ref={emblemRef}
           style={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'flex-end',
             justifyContent: 'center',
             position: 'relative',
+            width: '100%',
+            height: '100%',
           }}
         >
-          {/* Radial Ambient Glow Behind Medallion */}
+          {/* Subtle Ambient Warm Glow behind Head */}
           <div
             style={{
               position: 'absolute',
-              width: '280px',
-              height: '280px',
+              top: '12%',
+              right: '25%',
+              width: '320px',
+              height: '320px',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, rgba(254, 98, 0, 0.28) 0%, rgba(32, 11, 0, 0) 70%)',
-              filter: 'blur(35px)',
+              background: 'radial-gradient(circle, rgba(254, 98, 0, 0.14) 0%, rgba(254, 98, 0, 0.03) 48%, transparent 70%)',
+              filter: 'blur(36px)',
               pointerEvents: 'none',
+              zIndex: 1,
             }}
           />
 
-          {/* Floating 3D Emblem Container with Soft Hover Float */}
+          {/* Floating Robot Container */}
           <div
-            className="hero-emblem-float"
+            className="hero-robot-float"
             style={{
               position: 'relative',
-              width: 'clamp(260px, 30vw, 360px)',
-              height: 'clamp(260px, 30vw, 360px)',
+              width: '100%',
+              maxWidth: '520px',
+              height: 'clamp(460px, 62vh, 660px)',
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'flex-end',
               justifyContent: 'center',
+              zIndex: 2,
             }}
           >
-            {/* SVG 3D Isometric Glass & Bronze Token with Freehand 8-Arm Spark */}
-            <svg
-              viewBox="0 0 320 320"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+            <img
+              src="/images/robot-hero.png"
+              alt="Autonomous AI Engineering & Intelligence"
               style={{
                 width: '100%',
                 height: '100%',
-                filter: 'drop-shadow(0 30px 50px rgba(0, 0, 0, 0.75))',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                objectPosition: 'bottom center',
+                WebkitMaskImage: 'linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.45) 86%, rgba(0,0,0,0.1) 94%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, #000 0%, #000 62%, rgba(0,0,0,0.85) 75%, rgba(0,0,0,0.45) 86%, rgba(0,0,0,0.1) 94%, transparent 100%)',
+                userSelect: 'none',
+                pointerEvents: 'none',
+                display: 'block',
               }}
-            >
-              <defs>
-                <linearGradient id="bronzeFace" x1="40" y1="40" x2="280" y2="280" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#4a220d" />
-                  <stop offset="35%" stopColor="#2c1408" />
-                  <stop offset="70%" stopColor="#1a0b04" />
-                  <stop offset="100%" stopColor="#3d1b0a" />
-                </linearGradient>
-
-                <linearGradient id="bevelLight" x1="40" y1="40" x2="280" y2="280" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="rgba(254, 150, 60, 0.85)" />
-                  <stop offset="40%" stopColor="rgba(254, 98, 0, 0.3)" />
-                  <stop offset="70%" stopColor="rgba(53, 21, 5, 0.6)" />
-                  <stop offset="100%" stopColor="rgba(254, 98, 0, 0.5)" />
-                </linearGradient>
-
-                <linearGradient id="innerGlow" x1="80" y1="80" x2="240" y2="240" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="rgba(254, 98, 0, 0.45)" />
-                  <stop offset="100%" stopColor="rgba(32, 11, 0, 0)" />
-                </linearGradient>
-
-                <radialGradient id="centerSparkGlow" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#ff7a1a" stopOpacity="0.9" />
-                  <stop offset="60%" stopColor="#fe6200" stopOpacity="0.7" />
-                  <stop offset="100%" stopColor="#fe6200" stopOpacity="0" />
-                </radialGradient>
-              </defs>
-
-              {/* 3D Glass/Bronze Rounded Prism Base */}
-              <rect
-                x="44"
-                y="44"
-                width="232"
-                height="232"
-                rx="48"
-                fill="url(#bronzeFace)"
-                stroke="url(#bevelLight)"
-                strokeWidth="3.5"
-              />
-
-              {/* Inner Inset Bevel */}
-              <rect
-                x="56"
-                y="56"
-                width="208"
-                height="208"
-                rx="40"
-                fill="none"
-                stroke="rgba(255, 255, 255, 0.12)"
-                strokeWidth="1.5"
-              />
-
-              {/* Inner Warm Shadow / Vignette */}
-              <rect
-                x="58"
-                y="58"
-                width="204"
-                height="204"
-                rx="38"
-                fill="url(#innerGlow)"
-              />
-
-              {/* Central Ambient Glow */}
-              <circle cx="160" cy="160" r="70" fill="url(#centerSparkGlow)" />
-
-              {/* 8-Blade Freehand Asterisk Glyph in Vibrant Orange */}
-              <g transform="translate(160, 160)">
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-                  <path
-                    key={i}
-                    d="M-5 -46 C-5 -52 5 -52 5 -46 L5 -12 C5 -8 -5 -8 -5 -12 Z"
-                    fill="#fe6200"
-                    transform={`rotate(${angle})`}
-                    style={{
-                      filter: 'drop-shadow(0 2px 6px rgba(254, 98, 0, 0.6))',
-                    }}
-                  />
-                ))}
-                {/* Center Core Rivet */}
-                <circle cx="0" cy="0" r="14" fill="#ffffff" />
-                <circle cx="0" cy="0" r="8" fill="#fe6200" />
-              </g>
-            </svg>
+            />
           </div>
         </div>
       </div>
 
-      {/* Enterprise Partner Logo Strip (Matching Freehand Screenshot Bottom Ticker) */}
+      {/* Enterprise Partner Logo Strip */}
       <div
         ref={tickerRef}
         style={{
           position: 'relative',
-          zIndex: 3,
+          zIndex: 4,
           width: '100%',
-          borderTop: '1px solid #f0ece2',
-          backgroundColor: 'rgba(26, 9, 2, 0.98)',
+          borderTop: '1px solid rgba(0, 0, 0, 0.07)',
+          backgroundColor: '#fbf9f5',
           paddingTop: '20px',
           paddingBottom: '20px',
         }}
@@ -363,69 +372,194 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '14px',
+            gap: '12px',
           }}
         >
           <span
             style={{
-              fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+              color: '#000000',
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: '11px',
-              fontWeight: 500,
+              fontWeight: 700,
               letterSpacing: '0.12em',
-              color: 'rgba(255, 255, 255, 0.55)',
               textTransform: 'uppercase',
+              opacity: 0.65,
             }}
           >
-            TRUSTED BY HIGH-GROWTH ENTERPRISES & INDUSTRY LEADERS
+            TRUSTED BY PRODUCT TEAMS AT HIGH-GROWTH COMPANIES
           </span>
 
           <div
             style={{
-              width: '100%',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: 'clamp(20px, 4vw, 40px)',
+              justifyContent: 'center',
+              gap: 'clamp(20px, 3.5vw, 56px)',
               flexWrap: 'wrap',
               opacity: 0.85,
             }}
           >
-            {clientLogos.map((logo, idx) => (
-              <img
-                key={idx}
-                src={logo.url}
-                alt={`${logo.name} logo`}
-                loading="lazy"
+            {clientLogos.map((client) => (
+              <span
+                key={client.name}
                 style={{
-                  maxHeight: '26px',
-                  maxWidth: '130px',
-                  objectFit: 'contain',
-                  filter: 'brightness(0) invert(1)',
-                  opacity: 0.75,
-                  transition: 'opacity 0.2s',
+                  color: '#000000',
+                  fontFamily: "'BL Pylon Serif', serif",
+                  fontSize: 'clamp(15px, 1.5vw, 21px)',
+                  fontWeight: 500,
+                  letterSpacing: '0.04em',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
-                onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.75')}
-                onError={(e) => {
-                  (e.currentTarget as HTMLElement).style.display = 'none';
-                }}
-              />
+              >
+                {client.name}
+              </span>
             ))}
           </div>
         </div>
       </div>
 
       <style>{`
-        @keyframes floatMedallion {
+        @keyframes floatRobot {
           0%, 100% {
-            transform: translateY(0px) rotate(0deg);
+            transform: translateY(0px);
           }
           50% {
-            transform: translateY(-12px) rotate(1.5deg);
+            transform: translateY(-8px);
           }
         }
-        .hero-emblem-float {
-          animation: floatMedallion 6s ease-in-out infinite;
+        .hero-robot-float {
+          animation: floatRobot 5s ease-in-out infinite;
+        }
+
+        /* Desktop vs Mobile Hero Displays */
+        @media (min-width: 860px) {
+          .mobile-hero-layout {
+            display: none !important;
+          }
+          .desktop-hero-layout {
+            display: grid !important;
+          }
+        }
+
+        @media (max-width: 859px) {
+          .desktop-hero-layout {
+            display: none !important;
+          }
+          .hero-root-section {
+            padding-top: 64px !important;
+            min-height: auto !important;
+          }
+          .mobile-hero-layout {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background-color: #fbf9f5;
+          }
+
+          /* Top Robot Head Backdrop */
+          .mobile-robot-top-backdrop {
+            position: absolute;
+            top: -24px;
+            right: 0;
+            width: 100%;
+            height: 380px;
+            pointer-events: none;
+            z-index: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            overflow: hidden;
+          }
+
+          .mobile-robot-top-img {
+            width: 88%;
+            max-width: 380px;
+            height: auto;
+            object-fit: contain;
+            object-position: top right;
+            opacity: 0.45;
+            filter: contrast(108%);
+            WebkitMaskImage: radial-gradient(circle at 75% 30%, #000 20%, rgba(0,0,0,0.5) 60%, transparent 85%);
+            maskImage: radial-gradient(circle at 75% 30%, #000 20%, rgba(0,0,0,0.5) 60%, transparent 85%);
+          }
+
+          /* Foreground Content */
+          .mobile-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 24px 20px 20px;
+          }
+
+          .mobile-hero-heading {
+            color: #111111;
+            font-family: var(--typography-display-family, 'BL Pylon Serif', serif);
+            font-size: clamp(34px, 8.8vw, 42px);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            margin: 0 0 16px 0;
+            position: relative;
+            z-index: 3;
+          }
+
+          .mobile-hero-subtext {
+            color: #2b2b2b;
+            font-family: var(--typography-body-family, 'DM Sans'), sans-serif;
+            font-size: 15.5px;
+            line-height: 1.5;
+            font-weight: 450;
+            margin: 0 0 24px 0;
+            max-width: 98%;
+            position: relative;
+            z-index: 3;
+          }
+
+          .mobile-hero-cta-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            position: relative;
+            z-index: 3;
+          }
+
+          /* Lower Robot Body (Visible Below the Buttons, exactly as shown in uploaded reference) */
+          .mobile-robot-bottom-container {
+            position: relative;
+            width: 100%;
+            height: clamp(260px, 42vh, 340px);
+            overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            z-index: 2;
+          }
+
+          .mobile-robot-bottom-img {
+            width: 100%;
+            max-width: 440px;
+            height: auto;
+            object-fit: cover;
+            object-position: 50% 68%;
+            transform: scale(1.18);
+            WebkitMaskImage: linear-gradient(
+              to bottom,
+              transparent 0%,
+              #000 15%,
+              #000 85%,
+              transparent 100%
+            );
+            maskImage: linear-gradient(
+              to bottom,
+              transparent 0%,
+              #000 15%,
+              #000 85%,
+              transparent 100%
+            );
+          }
         }
       `}</style>
     </section>

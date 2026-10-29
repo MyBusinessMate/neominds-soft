@@ -113,11 +113,15 @@ html.lenis body {
   --space-10: 80px;
 
   /* Radius Scale: sm: 6px, md: 14px, lg: 20px, xl: 28px, full: 9999px (Apple Precision Radii) */
-  --radius-sm: 6px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --radius-sm: 8px;
+  --radius-md: 8px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
   --radius-full: 9999px;
+  --card-radius-standard: 8px;
+  --card-radius-large: 8px;
+  --badge-radius: 8px;
+  --input-radius: 8px;
 
   /* Elevation Scale */
   --elevation-dropdown-nested: 1;
@@ -521,7 +525,7 @@ a.btn {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
-  border-radius: 0px; /* Freehand strict 0px radius */
+  border-radius: 8px;
   cursor: pointer;
   white-space: nowrap;
   user-select: none;
@@ -564,7 +568,7 @@ button:disabled {
   font-weight: 500;
   padding: 12.8px 24px;
   border: none;
-  border-radius: 0px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color var(--motion-duration-base, 0.38s) var(--motion-easing-button, cubic-bezier(0.187, 0.938, 0.355, 1));
 }
@@ -594,7 +598,7 @@ button:disabled {
   font-weight: 400;
   padding: 12.8px 24px;
   border: 1px solid currentColor;
-  border-radius: 0px;
+  border-radius: 8px;
   cursor: pointer;
   transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1)),
               border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
@@ -617,7 +621,7 @@ button:disabled {
   font-weight: 400;
   padding: 8px 12px;
   border: none;
-  border-radius: 0px;
+  border-radius: 8px;
   cursor: pointer;
   transition: color var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
 }
@@ -633,7 +637,7 @@ button:disabled {
   padding: 8px 16px !important;
   font-size: 14px !important;
   font-weight: 500 !important;
-  border-radius: 0px !important;
+  border-radius: 8px !important;
   background-color: var(--colors-primary, #fe6200) !important;
   color: var(--colors-text-inverse, #ffffff) !important;
   border: none !important;
@@ -652,7 +656,7 @@ button:disabled {
   min-width: 44px;
   min-height: 44px;
   padding: 0;
-  border-radius: 0px;
+  border-radius: 8px;
   background-color: transparent;
   color: inherit;
   border: 1px solid var(--colors-border-dark, #f0ece2);
@@ -676,7 +680,7 @@ button:disabled {
   color: var(--colors-text-primary, #000000);
   padding: 32px;
   border: 1px solid var(--colors-border-light, #e4e2e1);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md, 8px);
   transition: transform var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1)),
               box-shadow var(--motion-duration-base, 0.38s) var(--motion-easing-standard, cubic-bezier(0.215, 0.61, 0.355, 1));
 }
@@ -690,10 +694,10 @@ button:disabled {
 /* G. Dark Card */
 .card-dark {
   background-color: var(--colors-surface-dark-subtle, #f0ece2);
-  color: var(--colors-text-inverse, #ffffff);
+  color: var(--colors-text-primary, #000000);
   padding: 32px;
   border: 1px solid var(--colors-border-dark, #f0ece2);
-  border-radius: var(--radius-md, 10px);
+  border-radius: var(--radius-md, 8px);
 }
 
 /* H. Inputs & Forms (1px radius, focus 2px orange ring) */
@@ -710,7 +714,7 @@ select {
   font-weight: 400;
   padding: 12px 16px;
   border: 1px solid var(--colors-border-light, #e4e2e1);
-  border-radius: var(--radius-sm, 1px);
+  border-radius: var(--radius-sm, 8px);
   outline: none;
   transition: border-color var(--motion-duration-base, 0.38s) var(--motion-easing-standard),
               box-shadow var(--motion-duration-base, 0.38s) var(--motion-easing-standard);
@@ -984,44 +988,6 @@ select:focus {
   }
 }
 
-/* ==========================================================================
-   EFFECTIVESOFT STRICT ARCHITECTURAL GEOMETRY SYSTEM
-   Zero Border-Radius & Zero Shadows Across All Elements & Subpages
-   ========================================================================== */
-*,
-*::before,
-*::after {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-}
-
-/* Flat architectural pill tags matching EffectiveSoft .btn-tag */
-.badge,
-.pill,
-[class*="pill-"],
-.btn-tag,
-[class*="tag-"],
-.chip,
-[class*="chip-"] {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Flat architectural cards matching EffectiveSoft */
-.card,
-[class*="card-"],
-.bento-tile,
-.stat-box,
-.header-panel,
-.dropdown-menu,
-.modal-container,
-dialog,
-[role="dialog"] {
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
 /* Focus indicator */
 :focus-visible {
   outline: 2px solid var(--color-primary) !important;
@@ -1039,5 +1005,125 @@ dialog,
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   BALLANCE & APPLE-SPRING TACTILE MICRO-INTERACTIONS & DIALOG ANIMATIONS
+   ========================================================================== */
+
+/* 1. Global Button and Interactive Press Physics */
+button,
+.btn,
+a[role="button"],
+.clickable-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.2s ease, 
+              color 0.2s ease, 
+              border-color 0.2s ease;
+  will-change: transform;
+}
+
+button:active,
+.btn:active,
+a[role="button"]:active {
+  transform: scale(0.976) !important;
+}
+
+/* 2. Modal and Dialog Spring Keyframes */
+@keyframes smoothBackdropFadeIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+@keyframes smoothModalSpringIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.965);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes smoothSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(36px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes smoothSlideUpSheet {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes smoothPageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.smooth-page-enter {
+  animation: smoothPageFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.smooth-modal-backdrop {
+  animation: smoothBackdropFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.smooth-modal-content {
+  animation: smoothModalSpringIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity;
+}
+
+
+/* Universal Fallback & Utility Spring Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

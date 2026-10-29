@@ -173,6 +173,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         paddingRight: '20px',
       }}
       onClick={onClose}
+      className="smooth-modal-backdrop"
       role="dialog"
       aria-modal="true"
       aria-label="Quick Search"
@@ -183,7 +184,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
           maxWidth: '640px',
           backgroundColor: '#fbf9f5',
           border: '1px solid #f0ece2',
-          borderRadius: '0px',
+          borderRadius: '8px',
           boxShadow: '0 25px 60px rgba(32, 11, 0, 0.95)',
           overflow: 'hidden',
         }}
@@ -227,6 +228,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              borderRadius: '8px',
             }}
             aria-label="Close search"
           >
@@ -237,7 +239,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         {/* Results List */}
         <div data-lenis-prevent style={{ maxHeight: '380px', overflowY: 'auto', padding: '8px 0' }}>
           {filtered.length === 0 ? (
-            <div style={{ padding: '32px 20px', textAlign: 'center', color: '#a3a09b', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
+            <div style={{ padding: '32px 20px', textAlign: 'center', color: '#555555', fontSize: '14px', fontFamily: 'var(--font-body)' }}>
               No results found for &ldquo;{query}&rdquo;
             </div>
           ) : (
@@ -252,6 +254,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                   padding: '12px 20px',
                   cursor: 'pointer',
                   minHeight: '48px',
+                  borderRadius: '8px',
+                  margin: '0 8px',
                   transition: 'background-color 0.15s',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.15)')}
@@ -268,11 +272,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                         color: '#fe6200',
                         backgroundColor: 'rgba(254, 98, 0, 0.12)',
                         padding: '2px 6px',
+                        borderRadius: '8px',
                       }}
                     >
                       {item.category}
                     </span>
-                    <h5 style={{ fontFamily: "var(--typography-display-family, 'BL Pylon Serif'), serif", fontSize: '14px', fontWeight: 500, color: '#ffffff' }}>
+                    <h5 style={{ fontFamily: "var(--typography-display-family, 'BL Pylon Serif'), serif", fontSize: '14px', fontWeight: 500, color: '#000000' }}>
                       {item.title}
                     </h5>
                   </div>

@@ -92,10 +92,10 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                     onClick={() => setActiveCategoryIdx(idx)}
                     style={{
                       backgroundColor: activeCategoryIdx === idx ? '#fe6200' : '#ffffff',
-                      color: activeCategoryIdx === idx ? '#ffffff' : '#fbf9f5',
+                      color: activeCategoryIdx === idx ? '#ffffff' : '#000000',
                       border: activeCategoryIdx === idx ? '1px solid #fe6200' : '1px solid #e4e2e1',
                       padding: '7px 14px',
-                      borderRadius: '4px',
+                      borderRadius: '8px',
                       fontSize: '12.5px',
                       fontWeight: 600,
                       cursor: 'pointer',
@@ -119,7 +119,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                       style={{
                         backgroundColor: '#ffffff',
                         border: '1px solid #e4e2e1',
-                        borderRadius: '6px',
+                        borderRadius: '8px',
                         padding: '12px',
                         display: 'flex',
                         alignItems: 'center',
@@ -127,7 +127,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                       }}
                     >
                       <Zap size={14} color="#fe6200" />
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#fbf9f5' }}>
+                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#000000' }}>
                         {tech}
                       </span>
                     </div>
@@ -136,7 +136,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               </div>
             </div>
 
-            <div style={{ padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '6px', border: '1px solid #e4e2e1', borderLeft: '3px solid #fe6200' }}>
+            <div style={{ padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #fe6200' }}>
               <span style={{ fontSize: '12.5px', color: '#66615c', lineHeight: 1.5, display: 'block' }}>
                 All dependencies audited against OWASP Top 10, automated CVE scanners, and cloud-native Kubernetes blueprints.
               </span>
@@ -178,7 +178,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
                       gap: '14px',
                     }}
                   >
-                    <div style={{ width: '28px', height: '28px', borderRadius: '4px', backgroundColor: 'rgba(5, 150, 105, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', flexShrink: 0, marginTop: '2px' }}>
+                    <div style={{ width: '28px', height: '28px', borderRadius: '8px', backgroundColor: 'rgba(5, 150, 105, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', flexShrink: 0, marginTop: '2px' }}>
                       <FileCode size={15} />
                     </div>
 
@@ -200,7 +200,7 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
               </div>
             </div>
 
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '6px', border: '1px solid #e4e2e1', borderLeft: '3px solid #059669' }}>
+            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #059669' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12.5px', fontWeight: 600, color: '#059669' }}>
                 <ShieldCheck size={14} />
                 <span>Zero vendor lock-in guarantee: Full repository ownership transferred on deployment.</span>

@@ -44,7 +44,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             style={{
               gridColumn: colSpan,
               backgroundColor: isFeatured ? '#fbf9f5' : '#ffffff',
-              color: isFeatured ? '#ffffff' : '#000000',
+              color: '#000000',
               border: isFeatured ? '1px solid #f0ece2' : '1px solid #e4e2e1',
               borderTop: '3px solid #fe6200',
               borderRadius: '8px',
@@ -66,7 +66,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   style={{
                     width: '42px',
                     height: '42px',
-                    borderRadius: '6px',
+                    borderRadius: '8px',
                     backgroundColor: isFeatured ? 'rgba(255, 85, 0, 0.3)' : 'rgba(255, 85, 0, 0.08)',
                     color: '#fe6200',
                     display: 'flex',
@@ -95,7 +95,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   fontFamily: 'var(--font-heading)',
                   lineHeight: 1.25,
                   marginBottom: '12px',
-                  color: isFeatured ? '#ffffff' : '#000000',
+                  color: '#000000',
                 }}
               >
                 {cap.title}
@@ -105,7 +105,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 style={{
                   fontSize: '14.5px',
                   lineHeight: 1.65,
-                  color: isFeatured ? '#e4e2e1' : '#333333',
+                  color: '#333333',
                   marginBottom: '24px',
                 }}
               >
@@ -129,9 +129,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '11.5px',
                     fontWeight: 600,
                     padding: '4px 10px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: isFeatured ? '#f0ece2' : '#f1efeb',
-                    color: isFeatured ? '#fe6200' : '#fbf9f5',
+                    color: isFeatured ? '#fe6200' : '#2f3437',
                     border: isFeatured ? '1px solid rgba(254, 98, 0, 0.2)' : '1px solid #e4e2e1',
                   }}
                 >
@@ -159,7 +159,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
           gap: '32px',
           backgroundColor: '#ffffff',
           border: '1px solid #e4e2e1',
-          borderRadius: '10px',
+          borderRadius: '8px',
           padding: 'clamp(20px, 3vw, 36px)',
           boxShadow: '0 8px 30px rgba(32, 11, 0, 0.04)',
         }}
@@ -180,7 +180,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '16px 18px',
-                  borderRadius: '6px',
+                  borderRadius: '8px',
                   border: isSelected ? '1.5px solid #fe6200' : '1px solid #e4e2e1',
                   borderLeft: isSelected ? '4px solid #fe6200' : '1px solid #e4e2e1',
                   backgroundColor: isSelected ? '#f1efeb' : '#ffffff',
@@ -268,9 +268,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '12px',
                     fontWeight: 600,
                     padding: '6px 14px',
-                    borderRadius: '4px',
+                    borderRadius: '8px',
                     backgroundColor: '#ffffff',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     border: '1px solid #e4e2e1',
                   }}
                 >
@@ -348,11 +348,11 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '11px',
                     fontWeight: 700,
                     textTransform: 'uppercase',
-                    color: '#fbf9f5',
+                    color: '#000000',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
                     padding: '4px 10px',
-                    borderRadius: '3px',
+                    borderRadius: '8px',
                   }}
                 >
                   {tag}
@@ -421,7 +421,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             style={{
               backgroundColor: '#ffffff',
               border: '1px solid #e4e2e1',
-              borderRadius: '6px',
+              borderRadius: '8px',
               padding: '24px 28px',
               boxShadow: '0 2px 8px rgba(32, 11, 0, 0.02)',
               borderLeft: '4px solid #fe6200',
@@ -447,10 +447,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontSize: '11px',
                     fontWeight: 600,
                     backgroundColor: '#f1efeb',
-                    border: '1px solid #e4e2e1',
-                    color: '#fbf9f5',
+                    border: '1px solid #e4e2e1', color: '#000000',
                     padding: '3px 8px',
-                    borderRadius: '3px',
+                    borderRadius: '8px',
                   }}
                 >
                   {tag}
@@ -471,7 +470,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
       style={{
         backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
         border: '1px solid #f0ece2',
-        borderRadius: '10px',
+        borderRadius: '8px',
         padding: 'clamp(24px, 4vw, 44px)',
         boxShadow: '0 20px 48px rgba(32, 11, 0, 0.4)',
       }}
@@ -483,7 +482,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             Architecture Specifications · {title}
           </span>
         </div>
-        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', padding: '3px 8px', borderRadius: '3px' }}>
+        <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)', padding: '3px 8px', borderRadius: '8px' }}>
           STATUS: ONLINE
         </span>
       </div>
@@ -501,7 +500,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             style={{
               backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
               border: '1px solid rgba(255, 255, 255, 0.08)',
-              borderRadius: '6px',
+              borderRadius: '8px',
               padding: '24px',
               display: 'flex',
               flexDirection: 'column',
@@ -524,10 +523,10 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                 </span>
                 <Shield size={14} color="#fe6200" />
               </div>
-              <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#ffffff', marginBottom: '10px' }}>
+              <h4 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', marginBottom: '10px' }}>
                 {cap.title}
               </h4>
-              <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: '#e4e2e1', marginBottom: '20px' }}>
+              <p style={{ fontSize: '13.5px', lineHeight: 1.6, color: '#333333', marginBottom: '20px' }}>
                 {cap.description}
               </p>
             </div>
@@ -540,9 +539,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                     fontFamily: 'monospace',
                     fontSize: '10.5px',
                     backgroundColor: 'rgba(32, 11, 0, 0.7)',
-                    color: '#e4e2e1',
+                    color: '#ffffff',
                     padding: '3px 8px',
-                    borderRadius: '2px',
+                    borderRadius: '8px',
                   }}
                 >
                   #{tag}
@@ -611,10 +610,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                         fontSize: '11px',
                         fontWeight: 600,
                         backgroundColor: '#f1efeb',
-                        border: '1px solid #e4e2e1',
-                        color: '#fbf9f5',
+                        border: '1px solid #e4e2e1', color: '#000000',
                         padding: '3px 8px',
-                        borderRadius: '3px',
+                        borderRadius: '8px',
                       }}
                     >
                       {tag}
@@ -697,10 +695,9 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
                   fontSize: '11px',
                   fontWeight: 500,
                   backgroundColor: '#f1efeb',
-                  border: '1px solid #e4e2e1',
-                  color: '#fbf9f5',
+                  border: '1px solid #e4e2e1', color: '#000000',
                   padding: '3px 8px',
-                  borderRadius: '4px',
+                  borderRadius: '8px',
                 }}
               >
                 {tag}
@@ -730,7 +727,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             style={{
               fontSize: 'clamp(28px, 3.4vw, 42px)',
               fontWeight: 800,
-              color: styleVariant === 'dark-cyber' ? '#ffffff' : '#000000',
+              color: '#000000',
               fontFamily: 'var(--font-heading)',
               lineHeight: 1.15,
               marginBottom: '16px',
@@ -744,7 +741,7 @@ export const ServiceCapabilities: React.FC<ServiceCapabilitiesProps> = ({
             <p
               style={{
                 fontSize: '16px',
-                color: styleVariant === 'dark-cyber' ? '#c2bfb9' : '#333333',
+                color: '#333333',
                 lineHeight: 1.6,
                 margin: 0,
               }}
