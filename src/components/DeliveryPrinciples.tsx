@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Plus, Minus, Check } from 'lucide-react';
-import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { ScrollReveal } from './scroll-reveal';
 
 interface Principle {
   id: string;
@@ -50,11 +50,43 @@ const principles: Principle[] = [
   },
 ];
 
-const statsData = [
-  { label: 'AI-CERTIFIED TALENT', target: 34, suffix: '%' },
-  { label: 'SYSTEMS SHIPPED IN YEAR 1', target: 30, suffix: '+' },
-  { label: 'CLIENTS IN HIGHLY REGULATED INDUSTRIES', target: 86, suffix: '%' },
-  { label: 'DELIVERY RELIABILITY SLA', target: 99, suffix: '%' },
+interface StatRow {
+  numberPosition: 'left' | 'right';
+  target: number;
+  suffix: string;
+  label: string;
+  subtext: string;
+}
+
+const alternatingStats: StatRow[] = [
+  {
+    numberPosition: 'left',
+    target: 34,
+    suffix: '%',
+    label: 'AI-CERTIFIED TALENT',
+    subtext: 'Specialised talent to build and deploy real world systems.',
+  },
+  {
+    numberPosition: 'right',
+    target: 30,
+    suffix: '+',
+    label: 'SYSTEMS SHIPPED IN YEAR 1',
+    subtext: 'From strategy to production, at scale.',
+  },
+  {
+    numberPosition: 'left',
+    target: 86,
+    suffix: '%',
+    label: 'CLIENTS IN HIGHLY REGULATED INDUSTRIES',
+    subtext: 'Trusted by teams in complex, compliance driven sectors.',
+  },
+  {
+    numberPosition: 'right',
+    target: 99,
+    suffix: '%',
+    label: 'DELIVERY RELIABILITY SLA',
+    subtext: 'Consistent delivery across every engagement.',
+  },
 ];
 
 const DeliveryPrinciplesComponent: React.FC = () => {
@@ -73,9 +105,9 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         if (entry.isIntersecting && !hasAnimatedRef.current) {
           hasAnimatedRef.current = true;
 
-          const duration = 2200;
+          const duration = 2000;
           const startTime = performance.now();
-          const targets = statsData.map((s) => s.target);
+          const targets = alternatingStats.map((s) => s.target);
 
           const animate = (now: number) => {
             const elapsed = now - startTime;
@@ -95,7 +127,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     observer.observe(el);
@@ -108,8 +140,8 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         position: 'relative',
         width: '100%',
         backgroundColor: '#f1efeb',
-        paddingTop: 'clamp(64px, 8vw, 80px)',
-        paddingBottom: 'clamp(64px, 8vw, 80px)',
+        paddingTop: 'clamp(64px, 8vw, 90px)',
+        paddingBottom: 'clamp(64px, 8vw, 90px)',
         color: '#000000',
       }}
     >
@@ -123,6 +155,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
           gap: '0 clamp(40px, 6vw, 80px)',
           alignItems: 'start',
+          padding: '0 24px',
         }}
       >
         {/* Left Column: Index & Core Statement */}
@@ -138,7 +171,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             as="h2"
             style={{
               fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-              fontSize: 'clamp(28px, 3vw, 36px)',
+              fontSize: 'clamp(28px, 3.2vw, 40px)',
               fontWeight: 400,
               lineHeight: 1.2,
               color: '#000000',
@@ -153,9 +186,9 @@ const DeliveryPrinciplesComponent: React.FC = () => {
 
           <p
             style={{
-              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               fontSize: '16px',
-              lineHeight: 1.5,
+              lineHeight: 1.55,
               color: 'var(--colors-text-muted, #2b2b2b)',
               maxWidth: '440px',
             }}
@@ -252,9 +285,9 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                 <div style={{ paddingBottom: '24px', paddingLeft: '32px' }}>
                   <p
                     style={{
-                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                      fontSize: '16px',
-                      lineHeight: 1.5,
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      fontSize: '15px',
+                      lineHeight: 1.55,
                       color: 'var(--colors-text-muted, #2b2b2b)',
                       margin: '0 0 16px 0',
                     }}
@@ -270,8 +303,8 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                           display: 'flex',
                           alignItems: 'flex-start',
                           gap: '10px',
-                          fontSize: '14px',
-                          fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                          fontSize: '13.5px',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                           color: '#000000',
                           lineHeight: 1.5,
                         }}
@@ -301,104 +334,151 @@ const DeliveryPrinciplesComponent: React.FC = () => {
           );
         })}
 
-        {/* Clean Editorial Statistics Ledger */}
+        {/* ========================================================
+            EXACT MATCH TO REFERENCE IMAGE (media_1793384180376_f76e36fa.png):
+            4 Alternating Full-Bleed Stats Rows on Cream Background
+            Row 1: Left Number (34%) | Right Label & Subtext
+            Row 2: Left Label & Subtext | Right Number (30+)
+            Row 3: Left Number (86%) | Right Label & Subtext
+            Row 4: Left Label & Subtext | Right Number (99%)
+            ======================================================== */}
         <div
+          ref={statsRef}
           style={{
             gridColumn: '1 / -1',
             gridRow: 8,
-            marginTop: 'clamp(48px, 6vw, 64px)',
+            marginTop: 'clamp(48px, 6vw, 72px)',
+            borderTop: '1px solid #e4e2e1',
+            borderBottom: '1px solid #e4e2e1',
           }}
         >
-          <RevealElement variant="card">
-            <div
-              ref={statsRef}
-              className="stats-ledger stats-grid"
-              data-stats-grid="true"
-              style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #e4e2e1',
-                borderRadius: '8px',
-                overflow: 'hidden',
-              }}
-            >
-              {statsData.map((stat, index) => (
-                <div key={stat.label} className="stats-ledger-item">
-                  <div
-                    className="stat-metric"
-                    style={{
-                      fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                      fontSize: 'clamp(28px, 3.2vw, 44px)',
-                      fontWeight: 500,
-                      color: '#fe6200',
-                      lineHeight: 1.1,
-                      letterSpacing: '-0.02em',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    {counts[index]}
-                    {stat.suffix}
-                  </div>
-                  <span
-                    className="stat-label"
-                    style={{
-                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                      fontSize: '12.5px',
-                      fontWeight: 600,
-                      letterSpacing: '0.04em',
-                      color: '#111111',
-                      textTransform: 'uppercase',
-                      lineHeight: 1.35,
-                    }}
-                  >
-                    {stat.label}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </RevealElement>
+          {alternatingStats.map((stat, idx) => {
+            const isNumLeft = stat.numberPosition === 'left';
+            return (
+              <div
+                key={stat.label}
+                className="nm-stats-row"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: 'clamp(28px, 4vw, 42px) 0',
+                  borderTop: idx > 0 ? '1px solid #e4e2e1' : 'none',
+                  gap: '24px',
+                }}
+              >
+                {/* When Number is on Left */}
+                {isNumLeft ? (
+                  <>
+                    <div
+                      className="nm-stat-num"
+                      style={{
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        fontSize: 'clamp(52px, 9vw, 84px)',
+                        fontWeight: 400,
+                        color: '#fe6200',
+                        lineHeight: 0.95,
+                        letterSpacing: '-0.03em',
+                        minWidth: 'clamp(140px, 22vw, 220px)',
+                      }}
+                    >
+                      {counts[idx]}
+                      {stat.suffix}
+                    </div>
+
+                    <div style={{ maxWidth: '420px', textAlign: 'left' }}>
+                      <div
+                        style={{
+                          fontSize: '12.5px',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: '#111111',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                          marginBottom: '6px',
+                        }}
+                      >
+                        {stat.label}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '14.5px',
+                          color: '#66615c',
+                          lineHeight: 1.5,
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
+                        {stat.subtext}
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  /* When Number is on Right */
+                  <>
+                    <div style={{ maxWidth: '420px', textAlign: 'left' }}>
+                      <div
+                        style={{
+                          fontSize: '12.5px',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                          textTransform: 'uppercase',
+                          color: '#111111',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                          marginBottom: '6px',
+                        }}
+                      >
+                        {stat.label}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '14.5px',
+                          color: '#66615c',
+                          lineHeight: 1.5,
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
+                        {stat.subtext}
+                      </div>
+                    </div>
+
+                    <div
+                      className="nm-stat-num"
+                      style={{
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        fontSize: 'clamp(52px, 9vw, 84px)',
+                        fontWeight: 400,
+                        color: '#fe6200',
+                        lineHeight: 0.95,
+                        letterSpacing: '-0.03em',
+                        textAlign: 'right',
+                        minWidth: 'clamp(140px, 22vw, 220px)',
+                      }}
+                    >
+                      {counts[idx]}
+                      {stat.suffix}
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
 
       <style>{`
-        .stats-ledger {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-        }
-        .stats-ledger-item {
-          padding: 28px 24px;
-          display: flex;
-          flex-direction: column;
-          justifyContent: center;
-          border-right: 1px solid #e4e2e1;
-        }
-        .stats-ledger-item:last-child {
-          border-right: none;
-        }
         @media (max-width: 768px) {
           #delivery {
             display: flex !important;
             flex-direction: column !important;
           }
           .principles-left-col {
-            padding-bottom: 32px !important;
+            padding-bottom: 28px !important;
           }
-          .stats-ledger {
-            grid-template-columns: repeat(2, 1fr) !important;
+          .nm-stats-row {
+            padding: 24px 0 !important;
           }
-          .stats-ledger-item {
-            padding: 18px 16px !important;
-            border-right: none !important;
-          }
-          .stats-ledger-item:nth-child(odd) {
-            border-right: 1px solid #e4e2e1 !important;
-          }
-          .stats-ledger-item:nth-child(n+3) {
-            border-top: 1px solid #e4e2e1 !important;
-          }
-        }
-        @media (max-width: 480px) {
-          .stats-ledger-item {
-            padding: 16px 12px !important;
+          .nm-stat-num {
+            min-width: 110px !important;
           }
         }
       `}</style>

@@ -61,6 +61,33 @@ export const TeamSection: React.FC = () => {
     setIsBioSheetOpen(false);
   };
 
+  // Mobile member navigation arrows
+  const handlePrevMember = () => {
+    if (!selectedMember) return;
+    const currentIndex = TEAM_MEMBERS.findIndex((m) => m.id === selectedMember.id);
+    const prevIndex = (currentIndex - 1 + TEAM_MEMBERS.length) % TEAM_MEMBERS.length;
+    setSelectedMember(TEAM_MEMBERS[prevIndex]);
+  };
+
+  const handleNextMember = () => {
+    if (!selectedMember) return;
+    const currentIndex = TEAM_MEMBERS.findIndex((m) => m.id === selectedMember.id);
+    const nextIndex = (currentIndex + 1) % TEAM_MEMBERS.length;
+    setSelectedMember(TEAM_MEMBERS[nextIndex]);
+  };
+
+  // Manage body class to hide header when profile is open
+  useEffect(() => {
+    if (selectedMember) {
+      document.body.classList.add('nm-profile-open');
+    } else {
+      document.body.classList.remove('nm-profile-open');
+    }
+    return () => {
+      document.body.classList.remove('nm-profile-open');
+    };
+  }, [selectedMember]);
+
   return (
     <section
       id="team"
@@ -453,6 +480,8 @@ export const TeamSection: React.FC = () => {
             member={selectedMember}
             onClose={handleCloseAll}
             onOpenBioSheet={() => setIsBioSheetOpen(true)}
+            onPrev={handlePrevMember}
+            onNext={handleNextMember}
           />
 
           {/* Stage 2: Full Biography Bottom Sheet */}
@@ -460,6 +489,8 @@ export const TeamSection: React.FC = () => {
             member={selectedMember}
             isOpen={isBioSheetOpen}
             onClose={() => setIsBioSheetOpen(false)}
+            onPrev={handlePrevMember}
+            onNext={handleNextMember}
           />
         </>
       )}

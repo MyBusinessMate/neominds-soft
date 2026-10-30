@@ -616,6 +616,7 @@ export const App: React.FC = () => {
                 <IndustriesHubPage
                   onNavigateToContact={() => handleSelectPage('contacts')}
                   onNavigateToPortfolio={() => handleSelectPage('portfolio')}
+                  onNavigatePage={handleSelectPage}
                 />
               </main>
             )}
@@ -627,6 +628,7 @@ export const App: React.FC = () => {
                   onNavigateToContact={() => handleSelectPage('contacts')}
                   onNavigateToPortfolio={() => handleSelectPage('portfolio')}
                   onNavigateToService={(slug) => handleSelectPage(slug as PageType)}
+                  onNavigatePage={handleSelectPage}
                 />
               </main>
             )}

@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Check, HelpCircle, Paperclip, Mic, Smile, X, Volume2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Check, HelpCircle, Mic, Smile, X, Volume2 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { Button } from './ui/Button';
 
@@ -19,26 +19,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
     consent: false,
   });
 
-  const [attachedFiles, setAttachedFiles] = useState<string[]>([]);
-  const [isRecording, setIsRecording] = useState(false);
+    const [isRecording, setIsRecording] = useState(false);
   const [recordedAudio, setRecordedAudio] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const fileName = e.target.files[0].name;
-      setAttachedFiles((prev) => [...prev, fileName]);
-      if (onSuccessToast) onSuccessToast(`File "${fileName}" attached successfully.`);
-    }
-  };
-
-  const removeFile = (index: number) => {
-    setAttachedFiles((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  const toggleRecording = () => {
+  
+    const toggleRecording = () => {
     if (!isRecording) {
       setIsRecording(true);
       setTimeout(() => {
@@ -271,7 +257,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         ndaFirst: false,
                         consent: false,
                       });
-                      setAttachedFiles([]);
                       setRecordedAudio(false);
                     }}
                   >
@@ -538,16 +523,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     </div>
                   </div>
 
-                  {/* Hidden File Input */}
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    style={{ display: 'none' }}
-                    onChange={handleFileUpload}
-                    accept=".pdf,.doc,.docx,.png,.jpg,.zip"
-                  />
-
-                  {/* NDA Checkbox & Action Controls Row */}
+                                    {/* NDA Checkbox & Action Controls Row */}
                   <div
                     style={{
                       display: 'flex',
@@ -582,30 +558,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
                       <button
                         type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          color: 'var(--colors-primary)',
-                          fontSize: '13.5px',
-                          fontFamily: 'var(--typography-body-family)',
-                          fontWeight: 500,
-                          minHeight: '44px',
-                          padding: '4px 6px',
-                          background: 'none',
-                          border: 'none',
-                          cursor: 'pointer',
-                          transition: 'color 0.38s ease',
-                        }}
-                        onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
-                        onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--colors-primary)')}
-                      >
-                        <Paperclip size={15} /> Attach a file (brief, spec or design)
-                      </button>
-
-                      <button
-                        type="button"
                         onClick={toggleRecording}
                         style={{
                           display: 'inline-flex',
@@ -630,50 +582,27 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                     </div>
                   </div>
 
-                  {/* Display Attached Files & Audio Notes */}
-                  {(attachedFiles.length > 0 || recordedAudio) && (
+                  {/* Display Audio Notes */}
+                  {recordedAudio && (
                     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', padding: '2px 0' }}>
-                      {attachedFiles.map((file, idx) => (
-                        <span
-                          key={idx}
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '6px',
-                            backgroundColor: 'rgba(254, 98, 0, 0.12)',
-                            border: '1px solid var(--colors-primary)',
-                            color: '#fe6200',
-                            fontSize: '12px',
-                            padding: '6px 12px',
-                            borderRadius: '8px',
-                            fontWeight: 500,
-                            fontFamily: 'var(--typography-body-family)',
-                          }}
-                        >
-                          <Paperclip size={12} color="var(--colors-primary)" /> {file}
-                          <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => removeFile(idx)} aria-label="Remove attached file" />
-                        </span>
-                      ))}
-                      {recordedAudio && (
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '6px',
-                            backgroundColor: 'rgba(254, 98, 0, 0.12)',
-                            border: '1px solid var(--colors-primary)',
-                            color: '#fe6200',
-                            fontSize: '12px',
-                            padding: '6px 12px',
-                            borderRadius: '8px',
-                            fontWeight: 500,
-                            fontFamily: 'var(--typography-body-family)',
-                          }}
-                        >
-                          <Volume2 size={14} color="var(--colors-primary)" /> Voice Memo (0:14)
-                          <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
-                        </span>
-                      )}
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                          border: '1px solid var(--colors-primary)',
+                          color: '#fe6200',
+                          fontSize: '12px',
+                          padding: '6px 12px',
+                          borderRadius: '8px',
+                          fontWeight: 500,
+                          fontFamily: 'var(--typography-body-family)',
+                        }}
+                      >
+                        <Volume2 size={14} color="var(--colors-primary)" /> Voice Memo (0:14)
+                        <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
+                      </span>
                     </div>
                   )}
 

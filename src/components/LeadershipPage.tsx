@@ -349,7 +349,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             Practical engineering insights, architectural patterns, and production AI updates delivered monthly. No spam, ever.
           </p>
 
-          <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', gap: '10px', maxWidth: '520px', margin: '0 auto', flexWrap: 'wrap' }}>
+          <form onSubmit={handleNewsletterSubmit} className="nm-newsletter-form" data-newsletter="true" style={{ display: 'flex', gap: '10px', maxWidth: '520px', margin: '0 auto', flexWrap: 'wrap' }}>
             <input
               type="email"
               value={newsletterEmail}

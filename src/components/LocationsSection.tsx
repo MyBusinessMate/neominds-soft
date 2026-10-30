@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight, ArrowRight } from 'lucide-react';
+import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface LocationsSectionProps {
@@ -8,10 +8,7 @@ interface LocationsSectionProps {
 }
 
 export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToast }) => {
-  const [email, setEmail] = useState('');
-  const [newsletterConsent, setNewsletterConsent] = useState(false);
-  const [subError, setSubError] = useState('');
-  const [copied, setCopied] = useState(false);
+        const [copied, setCopied] = useState(false);
 
   const officeLocation = {
     title: 'Headquarters',
@@ -49,17 +46,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
     }
   };
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !newsletterConsent) {
-      setSubError('Please enter your email and accept dispatch terms.');
-      return;
-    }
-    setSubError('');
-    if (onSuccessToast) onSuccessToast(`Subscribed "${email}" to Neominds Engineering Briefings.`);
-    setEmail('');
-  };
-
+  
   return (
     <section
       id="locations"
@@ -454,253 +441,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
           </RevealElement>
         </div>
 
-        {/* Technical Dispatch Intake Strip - Centered, Compact with Brand Orange Corner Borders */}
-        <RevealElement variant="card">
-          <div
-            className="nm-technical-briefings-card nm-corner-glow"
-            style={{
-              maxWidth: '740px',
-              margin: '0 auto',
-              padding: 'clamp(32px, 4vw, 44px) clamp(20px, 3.5vw, 40px)',
-              backgroundColor: '#ffffff',
-              border: '1px solid rgba(0, 0, 0, 0.08)',
-              borderRadius: '12px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              textAlign: 'center',
-              boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            {/* Header Content */}
-            <div style={{ maxWidth: '600px', marginBottom: '18px', textAlign: 'center' }}>
-              <h3
-                style={{
-                  fontSize: 'clamp(24px, 2.5vw, 30px)',
-                  fontWeight: 400,
-                  color: '#000000',
-                  margin: '0 0 10px 0',
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  letterSpacing: '-0.02em',
-                  lineHeight: 1.2,
-                }}
-              >
-                Neominds Technical Briefings
-              </h3>
-              <p
-                style={{
-                  color: '#555555',
-                  fontSize: '14.5px',
-                  margin: 0,
-                  lineHeight: 1.6,
-                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                }}
-              >
-                Monthly engineering dispatches on real systems — LLM latency benchmarks, distributed architecture decisions, and production resilience. No promotional fluff, no spam.
-              </p>
-            </div>
-
-            {/* Technical Topic Badges */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: 'center',
-                gap: '8px',
-                maxWidth: '620px',
-                marginBottom: '26px',
-              }}
-            >
-              {[
-                'Distributed Systems',
-                'Applied AI & RAG',
-                'High-Concurrency',
-                'Zero-Trust Architecture',
-              ].map((topic) => (
-                <span
-                  key={topic}
-                  style={{
-                    padding: '5px 12px',
-                    backgroundColor: '#f1efeb',
-                    border: '1px solid #e4e2e1',
-                    fontSize: '11.5px',
-                    fontWeight: 600,
-                    color: '#2f3437',
-                    borderRadius: '6px',
-                    letterSpacing: '0.02em',
-                    fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
-                  }}
-                >
-                  {topic}
-                </span>
-              ))}
-            </div>
-
-            {/* Form */}
-            <form
-              onSubmit={handleSubscribe}
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '14px',
-                width: '100%',
-                maxWidth: '540px',
-                margin: '0 auto',
-              }}
-            >
-              <div
-                style={{
-                  display: 'flex',
-                  gap: '10px',
-                  width: '100%',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
-                }}
-              >
-                <div
-                  style={{
-                    flex: '1 1 280px',
-                    position: 'relative',
-                    display: 'flex',
-                    alignItems: 'center',
-                    backgroundColor: '#f1efeb',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '8px',
-                    transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-                  }}
-                >
-                  <span
-                    style={{
-                      paddingLeft: '14px',
-                      color: '#fe6200',
-                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                      fontSize: '13px',
-                      fontWeight: 600,
-                      userSelect: 'none',
-                    }}
-                  >
-                    Email
-                  </span>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="engineer@company.com"
-                    required
-                    style={{
-                      width: '100%',
-                      height: '46px',
-                      padding: '0 14px 0 8px',
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      outline: 'none',
-                      color: '#000000',
-                      fontSize: '15px',
-                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                    }}
-                    onFocus={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = '#fe6200';
-                      (e.target.parentElement as HTMLElement).style.boxShadow = '0 0 0 2px rgba(254, 98, 0, 0.2)';
-                    }}
-                    onBlur={(e) => {
-                      (e.target.parentElement as HTMLElement).style.borderColor = '#e4e2e1';
-                      (e.target.parentElement as HTMLElement).style.boxShadow = 'none';
-                    }}
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  style={{
-                    height: '46px',
-                    paddingInline: '24px',
-                    fontWeight: 700,
-                    fontSize: '14px',
-                    borderRadius: '8px',
-                    backgroundColor: '#fe6200',
-                    color: '#ffffff',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                    letterSpacing: '0.02em',
-                    transition: 'background-color 0.2s ease, transform 0.15s ease',
-                    boxShadow: '0 2px 8px rgba(254, 98, 0, 0.28)',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#cf5000';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#fe6200';
-                  }}
-                >
-                  <span>Subscribe to Dispatch</span>
-                  <ArrowRight size={15} />
-                </button>
               </div>
-
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '6px',
-                  marginTop: '4px',
-                }}
-              >
-                <label
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    fontSize: '12.5px',
-                    color: '#555555',
-                    cursor: 'pointer',
-                    userSelect: 'none',
-                    lineHeight: 1.5,
-                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                  }}
-                >
-                  <input
-                    type="checkbox"
-                    checked={newsletterConsent}
-                    onChange={(e) => setNewsletterConsent(e.target.checked)}
-                    required
-                    style={{ accentColor: '#fe6200' }}
-                  />
-                  <span>
-                    I agree to receive monthly engineering briefings and technical dispatches. Unsubscribe anytime.
-                  </span>
-                </label>
-
-                <span
-                  style={{
-                    fontSize: '11px',
-                    color: '#66615c',
-                    fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
-                    textAlign: 'center',
-                  }}
-                >
-                  Zero spam protocol • Direct engineering communications only • No third-party data sharing
-                </span>
-              </div>
-
-              {subError && (
-                <p style={{ color: '#ef4444', fontSize: '12px', margin: '4px 0 0 0', fontWeight: 500 }}>
-                  {subError}
-                </p>
-              )}
-            </form>
-          </div>
-        </RevealElement>
-      </div>
 
       <style>{`
         @media (max-width: 768px) {

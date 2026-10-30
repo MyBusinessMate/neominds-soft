@@ -1,133 +1,66 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Award, ShieldCheck } from 'lucide-react';
-import gsap from 'gsap';
+import React from 'react';
+import { ShieldCheck, FileCode, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
-import { Button } from './ui/Button';
 
-interface RecognitionSlide {
-  title: string;
-  imageUrl: string;
-  caption: string;
-  category: string;
-  icon: 'shield' | 'award';
-}
-
-const slides: RecognitionSlide[] = [
+const commitmentsList = [
   {
-    title: 'Claude Partner Network Services Track',
-    imageUrl: '/uploads/ESThumbnails/145843/660.vertical.jpg',
-    caption: 'Select partner in Claude Partner Network',
-    category: 'PARTNER NETWORK',
-    icon: 'shield',
+    num: '01',
+    title: 'Signed NDA on Request',
+    description:
+      'Complete confidentiality for your architecture, proprietary data models, and business logic before any discovery begins.',
+    icon: <ShieldCheck size={22} color="#fe6200" />,
   },
   {
-    title: 'Agentic AI in Digital Engineering Market 2025–2029',
-    imageUrl: '/uploads/ESThumbnails/137362/660.Image.jpg',
-    caption: 'Research and Markets Report recognition',
-    category: 'MARKET REPORT',
-    icon: 'award',
+    num: '02',
+    title: '100% Source Code Ownership',
+    description:
+      'You own all repositories, codebases, pipeline definitions, and artifacts. Zero vendor lock-in or licensing strings attached.',
+    icon: <FileCode size={22} color="#fe6200" />,
   },
   {
-    title: 'Top AI Company',
-    imageUrl: '/uploads/ESThumbnails/131881/660.Top-AI-company-Clutch.jpg',
-    caption: 'Clutch Top AI Company Award',
-    category: 'INDUSTRY AWARD',
-    icon: 'award',
+    num: '03',
+    title: 'Weekly Demo Tracking',
+    description:
+      'Continuous accountability with working software demonstrated in sprint reviews every week, overlapping with your timezone.',
+    icon: <CheckCircle2 size={22} color="#fe6200" />,
   },
 ];
 
-const IndustryRecognitionComponent: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [validImages, setValidImages] = useState<Record<string, boolean>>({});
-  const cardRef = useRef<HTMLDivElement>(null);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const nextSlide = React.useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % slides.length);
-  }, []);
-
-  const prevSlide = React.useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
-  }, []);
-
-  // Pre-validate images to prevent broken image icons in browser
-  useEffect(() => {
-    slides.forEach((slide) => {
-      if (slide.imageUrl) {
-        const img = new window.Image();
-        img.src = slide.imageUrl;
-        img.onload = () => {
-          setValidImages((prev) => ({ ...prev, [slide.imageUrl]: true }));
-        };
-        img.onerror = () => {
-          setValidImages((prev) => ({ ...prev, [slide.imageUrl]: false }));
-        };
-      }
-    });
-  }, []);
-
-  // Continuous slide rotation
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      nextSlide();
-    }, 5000);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
-  }, [currentIndex, nextSlide]);
-
-  useEffect(() => {
-    if (cardRef.current) {
-      const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) {
-        gsap.set(cardRef.current, { opacity: 1 });
-      } else {
-        gsap.fromTo(
-          cardRef.current,
-          { opacity: 0.4 },
-          { opacity: 1, duration: 0.5, ease: 'power2.out' }
-        );
-      }
-    }
-  }, [currentIndex]);
-
-  const currentSlide = slides[currentIndex];
-
+export const IndustryRecognition: React.FC = () => {
   return (
     <section
       id="recognition"
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-background)', // #ffffff Freehand light background
-        paddingTop: 'clamp(80px, 9vw, 120px)',
-        paddingBottom: 'clamp(80px, 9vw, 120px)',
-        borderTop: '1px solid var(--colors-border-light)',
+        backgroundColor: '#ffffff',
+        paddingTop: 'clamp(64px, 8vw, 100px)',
+        paddingBottom: 'clamp(64px, 8vw, 100px)',
+        borderTop: '1px solid #e4e2e1',
         overflow: 'hidden',
       }}
     >
-      <div className="container" style={{ maxWidth: '1280px' }}>
+      <div className="container" style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1.1fr) minmax(320px, 1fr)',
-            alignItems: 'center',
-            gap: 'clamp(40px, 6vw, 80px)',
+            gridTemplateColumns: 'minmax(280px, 1.1fr) minmax(320px, 1.3fr)',
+            alignItems: 'start',
+            gap: 'clamp(36px, 5vw, 72px)',
           }}
           className="recognition-grid"
         >
           {/* Left Column Text */}
-          <div style={{ maxWidth: '580px' }}>
+          <div style={{ maxWidth: '540px' }}>
             <ScrollReveal
               as="h2"
               className="section-title"
               style={{
-                color: 'var(--colors-text-primary)', // #000000
-                marginBottom: '24px',
+                color: '#000000',
+                marginBottom: '20px',
                 display: 'block',
-                fontFamily: 'var(--typography-heading1-family)',
-                fontSize: 'clamp(32px, 3.6vw, 44px)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(30px, 3.8vw, 44px)',
                 fontWeight: 400,
                 lineHeight: 1.2,
                 letterSpacing: '-0.02em',
@@ -139,31 +72,30 @@ const IndustryRecognitionComponent: React.FC = () => {
 
             <RevealElement variant="text" delay={0.05}>
               <p
-                className="body-lead"
                 style={{
-                  color: 'var(--colors-text-muted)', // #333333
-                  fontFamily: 'var(--typography-body-family)',
-                  fontSize: 'clamp(16px, 1.2vw, 18px)',
-                  marginBottom: '24px',
+                  color: '#2b2b2b',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  fontSize: 'clamp(15px, 1.2vw, 17px)',
+                  marginBottom: '20px',
                   lineHeight: 1.6,
                 }}
               >
-                Every Neominds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
+                Every NeoMinds project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
               </p>
             </RevealElement>
 
             <RevealElement variant="text" delay={0.1}>
               <div
                 style={{
-                  paddingTop: '20px',
-                  borderTop: '1px solid var(--colors-border-light)',
+                  paddingTop: '18px',
+                  borderTop: '1px solid #e4e2e1',
                 }}
               >
                 <p
                   style={{
-                    fontFamily: 'var(--typography-body-family)',
-                    fontSize: '14px',
-                    color: 'var(--colors-text-muted)',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    fontSize: '13.5px',
+                    color: '#66615c',
                     lineHeight: 1.6,
                     margin: 0,
                   }}
@@ -174,248 +106,99 @@ const IndustryRecognitionComponent: React.FC = () => {
             </RevealElement>
           </div>
 
-          {/* Right Column Recognition Showcase (card-standard spec with 10px radius and corner glow) */}
-          <RevealElement variant="card">
-            <div
-              className="card-standard nm-corner-glow"
-              style={{
-                borderRadius: '8px',
-                border: '1px solid var(--colors-border-light)',
-                backgroundColor: 'var(--colors-surface-light)', // #f1efeb
-                padding: 'clamp(28px, 4vw, 40px)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                minHeight: '440px',
-                transition: 'all 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
-              }}
-            >
-              {/* Slide Counter Header */}
-              <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'flex-end',
-                  marginBottom: '20px',
-                  paddingBottom: '14px',
-                  borderBottom: '1px solid var(--colors-border-light)',
-                }}
-              >
-                <span
+          {/* Right Column: Clean 3 Commitment Pillars (No carousel, no award cards) */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+            {commitmentsList.map((item, idx) => (
+              <RevealElement key={item.num} variant="card" delay={idx * 0.08}>
+                <div
                   style={{
-                    fontFamily: 'var(--typography-mono-family)',
-                    fontSize: '12px',
-                    color: 'var(--colors-text-muted)',
+                    backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '12px',
+                    padding: '24px 24px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '18px',
+                    transition: 'border-color 0.2s ease, transform 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
-                  0{currentIndex + 1} / 0{slides.length}
-                </span>
-              </div>
-
-              {/* Slide Content */}
-              <div
-                ref={cardRef}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '100%',
-                  padding: '12px 0',
-                }}
-              >
-                {validImages[currentSlide.imageUrl] ? (
-                  <>
-                    <img
-                      src={currentSlide.imageUrl}
-                      alt={`${currentSlide.title} - ${currentSlide.caption}`}
-                      style={{
-                        maxHeight: '260px',
-                        maxWidth: '100%',
-                        objectFit: 'contain',
-                        borderRadius: '8px',
-                      }}
-                      loading="lazy"
-                    />
-                    <span
-                      style={{
-                        fontFamily: 'var(--typography-heading1-family)',
-                        marginTop: '20px',
-                        color: 'var(--colors-text-primary)',
-                        fontSize: '17px',
-                        fontWeight: 400,
-                        textAlign: 'center',
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      {currentSlide.title}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: 'var(--typography-body-family)',
-                        fontSize: '14px',
-                        color: 'var(--colors-text-muted)',
-                        marginTop: '4px',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {currentSlide.caption}
-                    </span>
-                  </>
-                ) : (
                   <div
                     style={{
-                      width: '100%',
-                      minHeight: '240px',
+                      width: '42px',
+                      height: '42px',
+                      borderRadius: '8px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e4e2e1',
                       display: 'flex',
-                      flexDirection: 'column',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid var(--colors-border-light, #e4e2e1)',
-                      borderRadius: '8px',
-                      padding: '32px 20px',
-                      textAlign: 'center',
-                      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)',
+                      flexShrink: 0,
                     }}
                   >
-                    <div
-                      style={{
-                        width: '56px',
-                        height: '56px',
-                        borderRadius: '50%',
-                        backgroundColor: 'rgba(254, 98, 0, 0.08)',
-                        border: '1px solid rgba(254, 98, 0, 0.22)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        marginBottom: '16px',
-                        color: '#fe6200',
-                      }}
-                    >
-                      {currentSlide.icon === 'shield' ? (
-                        <ShieldCheck size={28} color="#fe6200" strokeWidth={1.8} />
-                      ) : (
-                        <Award size={28} color="#fe6200" strokeWidth={1.8} />
-                      )}
-                    </div>
-                    <span
-                      style={{
-                        fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                        fontSize: '11px',
-                        fontWeight: 600,
-                        letterSpacing: '0.08em',
-                        color: '#fe6200',
-                        textTransform: 'uppercase',
-                        marginBottom: '10px',
-                      }}
-                    >
-                      {currentSlide.category}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: "var(--typography-heading1-family, 'BL Pylon Serif', serif)",
-                        fontSize: 'clamp(17px, 1.8vw, 20px)',
-                        fontWeight: 400,
-                        color: 'var(--colors-text-primary, #000000)',
-                        lineHeight: 1.35,
-                        maxWidth: '380px',
-                        marginBottom: '8px',
-                      }}
-                    >
-                      {currentSlide.title}
-                    </span>
-                    <span
-                      style={{
-                        fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                        fontSize: '13.5px',
-                        color: 'var(--colors-text-muted, #2b2b2b)',
-                        lineHeight: 1.5,
-                        maxWidth: '360px',
-                      }}
-                    >
-                      {currentSlide.caption}
-                    </span>
+                    {item.icon}
                   </div>
-                )}
-              </div>
 
-              {/* Controls */}
-              <div
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingTop: '20px',
-                  marginTop: '16px',
-                  borderTop: '1px solid var(--colors-border-light)',
-                }}
-              >
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  {slides.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentIndex(idx)}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                      <span
+                        style={{
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          color: '#fe6200',
+                          fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                          letterSpacing: '0.08em',
+                        }}
+                      >
+                        {item.num}
+                      </span>
+                      <h3
+                        style={{
+                          margin: 0,
+                          fontSize: '17px',
+                          fontWeight: 700,
+                          color: '#000000',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+
+                    <p
                       style={{
-                        width: idx === currentIndex ? '28px' : '14px',
-                        height: '3px',
-                        backgroundColor: idx === currentIndex ? 'var(--colors-primary)' : 'var(--colors-border-light)',
-                        cursor: 'pointer',
-                        transition: 'all 0.38s ease',
-                        border: 'none',
-                        padding: 0,
+                        margin: 0,
+                        fontSize: '14px',
+                        lineHeight: 1.55,
+                        color: '#2b2b2b',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-
-                <div style={{ display: 'flex', gap: '6px' }}>
-                  <Button
-                    variant="icon-only"
-                    onClick={prevSlide}
-                    aria-label="Previous slide"
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      color: 'var(--colors-text-primary)',
-                      borderColor: 'var(--colors-border-light)',
-                    }}
-                  >
-                    <ChevronLeft size={16} />
-                  </Button>
-                  <Button
-                    variant="icon-only"
-                    onClick={nextSlide}
-                    aria-label="Next slide"
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      color: 'var(--colors-text-primary)',
-                      borderColor: 'var(--colors-border-light)',
-                    }}
-                  >
-                    <ChevronRight size={16} />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </RevealElement>
+              </RevealElement>
+            ))}
+          </div>
         </div>
       </div>
 
       <style>{`
-        @media (max-width: 840px) {
+        @media (max-width: 767px) {
           .recognition-grid {
             grid-template-columns: 1fr !important;
+            gap: 28px !important;
           }
         }
       `}</style>
     </section>
   );
 };
-
-export const IndustryRecognition = React.memo(IndustryRecognitionComponent);

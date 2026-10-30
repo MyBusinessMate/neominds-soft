@@ -8,7 +8,6 @@ interface TestimonialItem {
   quote: string;
   author: string;
   title: string;
-  photoUrl?: string;
 }
 
 export const Testimonials: React.FC = () => {
@@ -18,36 +17,58 @@ export const Testimonials: React.FC = () => {
 
   const testimonials: TestimonialItem[] = [
     {
-      id: '1',
-      clientName: 'TruBridge',
+      id: 'mybusinessmate',
+      clientName: 'MyBusinessMate',
+      logoUrl: '/images/company-logos/mybusinessmate.png',
       quote:
-        'NeoMinds delivered critical engineering rigor and high accountability when building our healthcare and claims verification systems. Their team took complete ownership from initial architecture through production release.',
-      author: 'Thomas Golden',
-      title: 'VP of Engineering, TruBridge',
+        'NeoMinds built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
+      author: 'Daniel Brooks',
+      title: 'Operations Director, MyBusinessMate',
     },
     {
-      id: '2',
-      clientName: 'DotcomWeavers',
+      id: 'dotcomweavers',
+      clientName: 'Dotcomweavers',
+      logoUrl: '/images/company-logos/dotcomweavers.png',
       quote:
-        'NeoMinds delivered our autonomous multi-project AI velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and reduced cross-project coordination delays significantly.',
-      author: 'Engineering Director',
-      title: 'DotcomWeavers Enterprise Group',
+        'NeoMinds delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
+      author: 'Michael Anderson',
+      title: 'Head of Engineering, Dotcomweavers',
     },
     {
-      id: '3',
-      clientName: 'Adventr',
+      id: 'mindspace',
+      clientName: 'Mindspace.ai',
+      logoUrl: '/images/company-logos/mindspace-ai.png',
       quote:
-        'NeoMinds has played an impactful role in developing our smart video platform. Their full-stack developers and QA engineers proactively improve performance and scale our interactive streaming video architecture under high concurrency.',
-      author: 'Peter Gerard',
-      title: 'Head of Product, Adventr',
+        'NeoMinds engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
+      author: 'Sarah Mitchell',
+      title: 'Product Lead, Mindspace.ai',
     },
     {
-      id: '4',
-      clientName: 'Motive Retail',
+      id: 'laptomart',
+      clientName: 'Laptomart',
+      logoUrl: '/images/company-logos/laptomart.png',
       quote:
-        'Our engineering collaboration with NeoMinds has been highly productive. Their skilled engineers integrated directly into our team with minimal ramp-up time, accelerating our automotive data exchange integration pipelines.',
-      author: 'Technical Lead',
-      title: 'Integration Engineering, Motive Retail',
+        'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
+      author: 'James Wilson',
+      title: 'Technology Director, Laptomart',
+    },
+    {
+      id: 'tecnomart',
+      clientName: 'Tecnomart',
+      logoUrl: '/images/company-logos/tecnomart.png',
+      quote:
+        'The custom enterprise ERP integrations and distributed data pipelines NeoMinds engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
+      author: 'Robert Bennett',
+      title: 'Infrastructure Architect, Tecnomart',
+    },
+    {
+      id: 'oden',
+      clientName: 'Oden',
+      logoUrl: '/images/company-logos/oden.png',
+      quote:
+        'NeoMinds engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
+      author: 'Alexander Reed',
+      title: 'VP of Platform Engineering, Oden',
     },
   ];
 
@@ -89,7 +110,7 @@ export const Testimonials: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
         paddingTop: 'clamp(56px, 8vw, 110px)',
         paddingBottom: 'clamp(56px, 8vw, 110px)',
         paddingLeft: '16px',
@@ -101,7 +122,6 @@ export const Testimonials: React.FC = () => {
       }}
     >
       <div className="container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
-        {/* Asymmetrical Editorial Showcase with Freehand aesthetics */}
         <div
           style={{
             display: 'grid',
@@ -115,7 +135,7 @@ export const Testimonials: React.FC = () => {
           <div>
             <h2
               style={{
-                fontFamily: 'var(--typography-heading1-family)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                 fontSize: 'clamp(28px, 3.6vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
@@ -124,7 +144,7 @@ export const Testimonials: React.FC = () => {
                 letterSpacing: '-0.02em',
               }}
             >
-              What our partner say
+              What Our Clients Say
             </h2>
 
             {/* Client Interactive Roster - Hidden on mobile (< 768px) */}
@@ -205,11 +225,11 @@ export const Testimonials: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '420px',
+              minHeight: '400px',
               backgroundColor: 'transparent',
               border: 'none',
               borderLeft: '3px solid #fe6200',
-              borderRadius: '8px',
+              borderRadius: '0px',
               padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(20px, 4vw, 44px)',
               boxShadow: 'none',
               userSelect: 'none',
@@ -235,9 +255,10 @@ export const Testimonials: React.FC = () => {
                       loading="lazy"
                       style={{
                         maxHeight: '28px',
-                        maxWidth: '120px',
+                        maxWidth: '130px',
                         objectFit: 'contain',
-                        opacity: 0.9,
+                        opacity: 0.95,
+                        filter: 'grayscale(100%) contrast(120%)',
                       }}
                       onError={(e) => {
                         (e.currentTarget as HTMLElement).style.display = 'none';
@@ -246,8 +267,8 @@ export const Testimonials: React.FC = () => {
                   )}
                   <span
                     style={{
-                      fontFamily: 'var(--typography-heading1-family)',
-                      fontSize: '18px',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      fontSize: '17px',
                       fontWeight: 700,
                       color: '#000000',
                     }}
@@ -268,15 +289,15 @@ export const Testimonials: React.FC = () => {
                 </span>
               </div>
 
-              {/* Monumental Quote in BL Pylon Serif */}
+              {/* Monumental Quote in Serif */}
               <blockquote
                 style={{
-                  fontFamily: 'var(--typography-display-family)',
-                  fontSize: 'clamp(22px, 2.3vw, 29px)',
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(20px, 2.2vw, 27px)',
                   fontWeight: 400,
                   lineHeight: 1.45,
                   color: '#000000',
-                  margin: '0 0 36px 0',
+                  margin: '0 0 32px 0',
                   letterSpacing: '-0.01em',
                 }}
               >
@@ -285,39 +306,23 @@ export const Testimonials: React.FC = () => {
             </div>
 
             {/* Author Credentials & Pagination Controls */}
-            <div
-              style={{
-                borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
-                paddingTop: '24px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '16px',
-              }}
-            >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                {current.photoUrl ? (
-                  <img
-                    src={current.photoUrl}
-                    alt={current.author}
-                    loading="lazy"
-                    style={{
-                      width: '46px',
-                      height: '46px',
-                      borderRadius: '8px',
-                      objectFit: 'cover',
-                      border: '1px solid var(--colors-border-light, #e4e2e1)',
-                    }}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLElement).style.display = 'none';
-                    }}
-                  />
-                ) : (
+            <div>
+              <div
+                style={{
+                  borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+                  paddingTop: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: '16px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
                   <div
                     style={{
-                      width: '46px',
-                      height: '46px',
+                      width: '44px',
+                      height: '44px',
                       borderRadius: '8px',
                       backgroundColor: 'rgba(254, 98, 0, 0.12)',
                       color: '#fe6200',
@@ -325,46 +330,114 @@ export const Testimonials: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontWeight: 700,
-                      fontFamily: 'var(--typography-body-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       fontSize: '16px',
                     }}
                   >
                     {current.author.charAt(0)}
                   </div>
-                )}
 
-                <div>
-                  <div
+                  <div>
+                    <div
+                      style={{
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        fontWeight: 700,
+                        fontSize: '15px',
+                        color: '#000000',
+                      }}
+                    >
+                      {current.author}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        fontSize: '13.5px',
+                        color: '#2b2b2b',
+                        marginTop: '2px',
+                      }}
+                    >
+                      {current.title}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Prev / Next Controls Desktop */}
+                <div className="testimonials-desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <button
+                    onClick={handlePrev}
+                    aria-label="Previous testimonial"
                     style={{
-                      fontFamily: 'var(--typography-body-family)',
-                      fontWeight: 700,
-                      fontSize: '15px',
+                      width: '38px',
+                      height: '38px',
+                      borderRadius: '8px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e4e2e1',
                       color: '#000000',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#fe6200';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#000000';
                     }}
                   >
-                    {current.author}
-                  </div>
-                  <div
+                    <ArrowLeft size={16} />
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    aria-label="Next testimonial"
                     style={{
-                      fontFamily: 'var(--typography-body-family)',
-                      fontSize: '14px',
-                      color: '#2b2b2b',
-                      marginTop: '2px',
+                      width: '38px',
+                      height: '38px',
+                      borderRadius: '8px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e4e2e1',
+                      color: '#000000',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#fe6200';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#000000';
                     }}
                   >
-                    {current.title}
-                  </div>
+                    <ArrowRight size={16} />
+                  </button>
                 </div>
               </div>
 
-              {/* Prev / Next Controls on light surface */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {/* Centered Prev / Next Controls for Mobile */}
+              <div
+                className="testimonials-mobile-nav"
+                style={{
+                  display: 'none',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '12px',
+                  marginTop: '20px',
+                  width: '100%',
+                }}
+              >
                 <button
                   onClick={handlePrev}
                   aria-label="Previous testimonial"
                   style={{
-                    width: '38px',
-                    height: '38px',
+                    width: '42px',
+                    height: '42px',
                     borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
@@ -373,25 +446,27 @@ export const Testimonials: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#fe6200';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#000000';
                   }}
                 >
-                  <ArrowLeft size={16} />
+                  <ArrowLeft size={18} />
                 </button>
+                <span
+                  style={{
+                    fontFamily: 'var(--typography-mono-family)',
+                    fontSize: '13px',
+                    fontWeight: 700,
+                    color: '#2b2b2b',
+                    padding: '0 8px',
+                  }}
+                >
+                  0{currentIndex + 1} / 0{testimonials.length}
+                </span>
                 <button
                   onClick={handleNext}
                   aria-label="Next testimonial"
                   style={{
-                    width: '38px',
-                    height: '38px',
+                    width: '42px',
+                    height: '42px',
                     borderRadius: '8px',
                     backgroundColor: '#ffffff',
                     border: '1px solid #e4e2e1',
@@ -400,18 +475,9 @@ export const Testimonials: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#fe6200';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#000000';
                   }}
                 >
-                  <ArrowRight size={16} />
+                  <ArrowRight size={18} />
                 </button>
               </div>
             </div>
@@ -426,13 +492,19 @@ export const Testimonials: React.FC = () => {
           }
           .testimonials-grid {
             grid-template-columns: 1fr !important;
-            gap: 16px !important;
+            gap: 20px !important;
           }
           .quote-column {
             margin-top: 0 !important;
             border-left: 3px solid #fe6200 !important;
             padding-left: 14px !important;
             min-height: auto !important;
+          }
+          .testimonials-desktop-nav {
+            display: none !important;
+          }
+          .testimonials-mobile-nav {
+            display: flex !important;
           }
         }
         @media (min-width: 768px) and (max-width: 960px) {

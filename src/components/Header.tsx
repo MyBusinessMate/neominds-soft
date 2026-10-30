@@ -188,6 +188,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <header
+        className="nm-main-header"
         onMouseLeave={handleMouseLeave}
         style={{
           position: 'fixed',
@@ -1361,40 +1362,120 @@ export const Header: React.FC<HeaderProps> = ({
                       </div>
                     </div>
 
-                    {/* Sub-block 3: Technologies */}
-                    <div>
-                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                        Technologies
-                      </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        {fintechList.map((srv) => (
-                          <div
-                            key={srv.title}
-                            onClick={() => navigateToPage(srv.page)}
-                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                          >
-                            {srv.title}
-                          </div>
-                        ))}
-                      </div>
+                    <div
+                      onClick={() => navigateToPage('services')}
+                      style={{ color: '#fe6200', fontSize: '14px', fontWeight: 700, cursor: 'pointer', paddingTop: '4px' }}
+                    >
+                      Explore All 15 Services →
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    {/* Sub-block 4: Industries */}
-                    <div>
-                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                        Industries
-                      </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        {healthcareList.map((srv) => (
-                          <div
-                            key={srv.title}
-                            onClick={() => navigateToPage(srv.page)}
-                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                          >
-                            {srv.title}
-                          </div>
-                        ))}
-                      </div>
+            {/* Section 2: Industries (Separated as requested) */}
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
+              <button
+                id="mobile-trigger-industries"
+                aria-expanded={mobileExpandedSection === 'industries'}
+                aria-controls="mobile-section-industries"
+                onClick={() => setMobileExpandedSection(mobileExpandedSection === 'industries' ? null : 'industries')}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '14px 0',
+                  color: mobileExpandedSection === 'industries' || currentPage === 'industries' ? '#fe6200' : '#000000',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                }}
+              >
+                <span>Industries</span>
+                <ChevronRight
+                  size={16}
+                  style={{
+                    transform: mobileExpandedSection === 'industries' ? 'rotate(90deg)' : 'none',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
+                    color: mobileExpandedSection === 'industries' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
+                  }}
+                />
+              </button>
+
+              <div
+                id="mobile-section-industries"
+                role="region"
+                aria-labelledby="mobile-trigger-industries"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'industries' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Enterprise Systems</div>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Financial Tech (FinTech)</div>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Healthcare & Life Sciences</div>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Retail & E-Commerce</div>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Education & EdTech</div>
+                    <div onClick={() => navigateToPage('industries')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>
+                      Explore All Industries →
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Section 3: Technology (Separated as requested) */}
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
+              <button
+                id="mobile-trigger-technology"
+                aria-expanded={mobileExpandedSection === 'technology'}
+                aria-controls="mobile-section-technology"
+                onClick={() => setMobileExpandedSection(mobileExpandedSection === 'technology' ? null : 'technology')}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '14px 0',
+                  color: mobileExpandedSection === 'technology' || currentPage === 'technology' ? '#fe6200' : '#000000',
+                  fontSize: '17px',
+                  fontWeight: 600,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                }}
+              >
+                <span>Technology</span>
+                <ChevronRight
+                  size={16}
+                  style={{
+                    transform: mobileExpandedSection === 'technology' ? 'rotate(90deg)' : 'none',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
+                    color: mobileExpandedSection === 'technology' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
+                  }}
+                />
+              </button>
+
+              <div
+                id="mobile-section-technology"
+                role="region"
+                aria-labelledby="mobile-trigger-technology"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'technology' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div onClick={() => navigateToPage('technology')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Web Architectures (React, Next.js)</div>
+                    <div onClick={() => navigateToPage('technology')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>AI & Agentic Systems (Python, LangChain)</div>
+                    <div onClick={() => navigateToPage('technology')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Machine Learning & Model Serving</div>
+                    <div onClick={() => navigateToPage('technology')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>PostgreSQL & High-Speed Vector DBs</div>
+                    <div onClick={() => navigateToPage('technology')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>
+                      Explore Full Tech Stack →
                     </div>
                   </div>
                 </div>
@@ -1528,10 +1609,10 @@ export const Header: React.FC<HeaderProps> = ({
                 }}
               >
                 <span>Case studies</span>
-                <ChevronDown
+                <ChevronRight
                   size={16}
                   style={{
-                    transform: mobileExpandedSection === 'case-studies' ? 'rotate(180deg)' : 'none',
+                    transform: mobileExpandedSection === 'case-studies' ? 'rotate(90deg)' : 'none',
                     transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
                     color: mobileExpandedSection === 'case-studies' ? '#fe6200' : '#000000',
                     flexShrink: 0,

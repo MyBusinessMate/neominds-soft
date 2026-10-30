@@ -15,9 +15,11 @@
   transform-origin: 0% 50%;
 }
 
+/* Crucial: space must remain inline and allow normal whitespace collapsing 
+   at wrap boundaries so line 2 never gets an indentation or shift */
 .scroll-reveal-space {
-  display: inline-block;
-  white-space: pre;
+  display: inline;
+  white-space: normal;
 }
 
 /* Reduced Motion Fallback: soft fade without heavy blur/tilt */

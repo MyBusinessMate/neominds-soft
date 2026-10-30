@@ -309,7 +309,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
             </p>
           </div>
 
-          <form onSubmit={handleNewsletterSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', maxWidth: '540px' }}>
+          <form onSubmit={handleNewsletterSubmit} className="nm-newsletter-form" data-newsletter="true" style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', maxWidth: '540px' }}>
             <input
               type="email"
               required

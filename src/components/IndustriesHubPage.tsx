@@ -14,8 +14,10 @@ import {
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
 import { LocationsSection } from './LocationsSection';
+import { Footer } from './Footer';
 
 interface IndustriesHubPageProps {
+  onNavigatePage?: (page: any) => void;
   onNavigateToContact?: () => void;
   onNavigateToPortfolio?: () => void;
 }
@@ -23,6 +25,7 @@ interface IndustriesHubPageProps {
 export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
   onNavigateToContact,
   onNavigateToPortfolio,
+  onNavigatePage,
 }) => {
   const industries = [
     {
@@ -260,7 +263,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '28px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '28px' }}>
             {industries.map((ind, idx) => (
               <RevealElement
                 key={idx}
@@ -269,8 +272,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 style={{
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
-                  borderTop: '3px solid #fe6200',
-                  borderRadius: '8px',
+                  borderRadius: '16px',
                   padding: '32px',
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
                   display: 'flex',
@@ -393,6 +395,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
         <ContactSection />
       </div>
       <LocationsSection />
+      <Footer onNavigate={(target) => onNavigatePage ? onNavigatePage(target.replace("#", "")) : (window.location.hash = target)} />
     </div>
   );
 };

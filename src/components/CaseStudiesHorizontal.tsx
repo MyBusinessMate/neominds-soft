@@ -584,10 +584,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
           style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '360px',
+            maxWidth: '380px',
             margin: '0 auto',
             overflow: 'hidden',
-            borderRadius: '8px',
+            borderRadius: '20px',
             userSelect: 'none',
           }}
         >
@@ -618,7 +618,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     minHeight: '390px',
                     background: card.gradient,
                     border: `1px solid ${card.borderColor}`,
-                    borderRadius: '16px',
+                    borderRadius: '20px',
                     padding: '26px 22px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -978,7 +978,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   top: 'calc(clamp(360px, 46vh, 425px) / -2)',
                   background: card.gradient,
                   border: `1px solid ${card.borderColor}`,
-                  borderRadius: '16px',
+                  borderRadius: '20px',
                   padding: 'clamp(26px, 3.8vh, 34px) clamp(22px, 2.6vw, 30px)',
                   display: 'flex',
                   flexDirection: 'column',
@@ -1140,8 +1140,49 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
           </div>
         </div>
       </div>
+    
+      <style>{`
+        @media (max-width: 767px) {
+          .nm-case-studies-section {
+            padding: 40px 16px 36px 16px !important;
+            overflow-x: hidden !important;
+            min-height: auto !important;
+          }
+          .nm-cs-desktop {
+            display: none !important;
+          }
+          .nm-cs-mobile {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            width: 100% !important;
+          }
+        }
+        @media (min-width: 768px) {
+          .nm-case-studies-section {
+            height: 100vh !important;
+            overflow: hidden !important;
+            padding: clamp(28px, 5vh, 48px) 20px clamp(16px, 3vh, 32px) 20px !important;
+            user-select: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justifyContent: space-between !important;
+          }
+          .nm-cs-mobile {
+            display: none !important;
+          }
+          .nm-cs-desktop {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justifyContent: space-between !important;
+            width: 100% !important;
+            height: 100% !important;
+            position: relative !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
-
-

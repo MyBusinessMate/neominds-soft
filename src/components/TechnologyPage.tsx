@@ -13,8 +13,10 @@ import {
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
 import { LocationsSection } from './LocationsSection';
+import { Footer } from './Footer';
 
 interface TechnologyPageProps {
+  onNavigatePage?: (page: any) => void;
   onNavigateToContact?: () => void;
   onNavigateToPortfolio?: () => void;
   onNavigateToService?: (slug: string) => void;
@@ -166,6 +168,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
   onNavigateToContact,
   onNavigateToPortfolio,
   onNavigateToService,
+  onNavigatePage,
 }) => {
   const handleContactClick = () => {
     if (onNavigateToContact) {
@@ -288,7 +291,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             {APPROVED_TECHNOLOGIES.map((tech, idx) => (
               <RevealElement key={tech.id} variant="card" delay={(idx % 3) * 0.06}>
                 <div
-                  className="nm-corner-glow"
+                  
                   style={{
                     backgroundColor: '#ffffff',
                     border: '1px solid rgba(0, 0, 0, 0.08)',
@@ -421,6 +424,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
         <ContactSection />
       </div>
       <LocationsSection />
+      <Footer onNavigate={(target) => onNavigatePage ? onNavigatePage(target.replace("#", "")) : (window.location.hash = target)} />
     </div>
   );
 };

@@ -8,13 +8,12 @@ interface HeroSectionProps {
 }
 
 const clientLogos = [
-  { name: 'Maersk', url: '/uploads/2026/05/maersk-white.svg' },
-  { name: 'Authenticom', url: '/uploads/2026/05/authenticom-white.svg' },
-  { name: 'Webbula', url: '/uploads/2026/07/webbula-white.svg' },
-  { name: 'TruBridge', url: '/uploads/2025/02/TruBridge.svg' },
-  { name: 'Motive Retail', url: '/uploads/2026/05/motiveretail-white.svg' },
-  { name: 'MedScope', url: '/uploads/2010/04/MedScope.svg' },
-  { name: 'Delphi Vision', url: '/uploads/2026/05/delphivision-white.svg' },
+  { name: 'Mindspace.ai', logoUrl: '/images/company-logos/mindspace-ai.png' },
+  { name: 'Dotcomweavers', logoUrl: '/images/company-logos/dotcomweavers.png' },
+  { name: 'MyBusinessMate', logoUrl: '/images/company-logos/mybusinessmate.png' },
+  { name: 'Oden', logoUrl: '/images/company-logos/oden.png' },
+  { name: 'Tecnomart', logoUrl: '/images/company-logos/tecnomart.png' },
+  { name: 'Laptomart', logoUrl: '/images/company-logos/laptomart.png' },
 ];
 
 const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
@@ -92,9 +91,19 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
       }}
     >
       {/* ========================================================
-          MOBILE HERO VIEW (< 860px) - EXACT PIXEL MATCH TO MOCKUP
+          MOBILE HERO VIEW (< 860px) - EXACT MATCH TO REFERENCE DESIGN
+          Robot visual at top, elegant typography beneath, stacked CTAs at bottom
           ======================================================== */}
       <div className="mobile-hero-layout">
+        {/* Top: Robot Visual framed cleanly at upper viewport */}
+        <div className="mobile-robot-container">
+          <img
+            src="/images/mobile-hero.png"
+            alt="AI Engineering Robot"
+            className="mobile-robot-img"
+          />
+        </div>
+
         {/* Foreground Content Stack */}
         <div className="mobile-hero-content">
           <h1 className="mobile-hero-heading">
@@ -116,7 +125,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
                 width: '100%',
                 backgroundColor: '#fe6200',
                 color: '#ffffff',
-                borderRadius: '8px',
+                borderRadius: '9999px',
                 padding: '16px 24px',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
@@ -143,7 +152,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
                 width: '100%',
                 border: '1.5px solid #111111',
                 color: '#111111',
-                borderRadius: '8px',
+                borderRadius: '9999px',
                 padding: '15px 24px',
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
@@ -159,15 +168,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               Explore Capabilities
             </Button>
           </div>
-        </div>
-
-        {/* Properly framed single mobile robot below CTA buttons */}
-        <div className="mobile-robot-container">
-          <img
-            src="/images/mobile-hero.png"
-            alt="AI Engineering Robot"
-            className="mobile-robot-img"
-          />
         </div>
       </div>
 
@@ -390,33 +390,50 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           <div
             className="hero-client-strip-logos"
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 'clamp(20px, 3.2vw, 54px)',
-              flexWrap: 'wrap',
-              opacity: 0.88,
               width: '100%',
               maxWidth: '1240px',
+              overflow: 'hidden',
+              position: 'relative',
+              maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+              padding: '10px 0',
             }}
           >
-            {clientLogos.map((client) => (
-              <span
-                key={client.name}
-                className="hero-client-name"
-                style={{
-                  color: '#000000',
-                  fontFamily: "'BL Pylon Serif', serif",
-                  fontSize: 'clamp(15px, 1.5vw, 21px)',
-                  fontWeight: 500,
-                  letterSpacing: '0.04em',
-                  whiteSpace: 'nowrap',
-                  flexShrink: 0,
-                }}
-              >
-                {client.name}
-              </span>
-            ))}
+            <div className="nm-logo-marquee-track">
+              {[...clientLogos, ...clientLogos, ...clientLogos].map((client, idx) => (
+                <div
+                  key={`${client.name}-${idx}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    padding: '0 20px',
+                  }}
+                >
+                  <img
+                    src={client.logoUrl}
+                    alt={client.name}
+                    style={{
+                      height: 'clamp(28px, 3.2vw, 38px)',
+                      maxWidth: '150px',
+                      objectFit: 'contain',
+                      opacity: 0.82,
+                      filter: 'grayscale(100%) contrast(120%)',
+                      transition: 'opacity 0.2s, filter 0.2s',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.opacity = '1';
+                      e.currentTarget.style.filter = 'grayscale(0%)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.opacity = '0.82';
+                      e.currentTarget.style.filter = 'grayscale(100%) contrast(120%)';
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -434,6 +451,25 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           animation: floatRobot 5s ease-in-out infinite;
         }
 
+        @keyframes logoMarquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-33.333%);
+          }
+        }
+        .nm-logo-marquee-track {
+          display: flex;
+          align-items: center;
+          width: max-content;
+          animation: logoMarquee 24s linear infinite;
+          will-change: transform;
+        }
+        .nm-logo-marquee-track:hover {
+          animation-play-state: paused;
+        }
+
         /* Desktop vs Mobile Hero Displays */
         @media (min-width: 860px) {
           .mobile-hero-layout {
@@ -449,8 +485,9 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: none !important;
           }
           .hero-root-section {
-            padding-top: 64px !important;
+            padding-top: 56px !important;
             min-height: auto !important;
+            background-color: #f6f3ee !important;
           }
           .mobile-hero-layout {
             position: relative;
@@ -458,24 +495,46 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            background-color: #fbf9f5;
+            background-color: #f6f3ee;
+            padding-bottom: 24px;
           }
 
-          /* Foreground Content */
+          /* Top: Mobile Robot Container framed seamlessly */
+          .mobile-robot-container {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justifyContent: center;
+            margin: 0 auto;
+            padding: 12px 16px 0;
+            z-index: 2;
+          }
+
+          .mobile-robot-img {
+            width: 100%;
+            max-width: 380px;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+            display: block;
+          }
+
+          /* Foreground Content beneath robot */
           .mobile-hero-content {
             position: relative;
-            z-index: 2;
-            padding: 24px 20px 20px;
+            z-index: 3;
+            padding: 8px 20px 20px;
           }
 
           .mobile-hero-heading {
             color: #111111;
             font-family: var(--typography-display-family, 'BL Pylon Serif', serif);
-            font-size: clamp(34px, 8.8vw, 42px);
+            font-size: clamp(30px, 7.8vw, 40px);
             font-weight: 400;
             line-height: 1.15;
             letter-spacing: -0.025em;
-            margin: 0 0 16px 0;
+            margin: 0 0 14px 0;
             position: relative;
             z-index: 3;
           }
@@ -483,11 +542,11 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .mobile-hero-subtext {
             color: #2b2b2b;
             font-family: var(--typography-body-family, 'DM Sans'), sans-serif;
-            font-size: 15.5px;
+            font-size: 15px;
             line-height: 1.5;
             font-weight: 450;
-            margin: 0 0 24px 0;
-            max-width: 98%;
+            margin: 0 0 22px 0;
+            max-width: 100%;
             position: relative;
             z-index: 3;
           }
@@ -499,30 +558,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             width: 100%;
             position: relative;
             z-index: 3;
-          }
-
-          /* Single Mobile Robot Container Framed Below CTA Buttons */
-          .mobile-robot-container {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 16px auto 0;
-            padding: 0 16px 20px;
-            z-index: 2;
-          }
-
-          .mobile-robot-img {
-            width: 100%;
-            max-width: 340px;
-            height: auto;
-            max-height: 380px;
-            object-fit: contain;
-            margin: 0 auto;
-            display: block;
-            user-select: none;
-            pointer-events: none;
           }
 
           /* Client Strip Mobile Responsiveness */

@@ -1,17 +1,21 @@
 import React, { useEffect } from 'react';
-import { X, ArrowRight, User } from 'lucide-react';
+import { X, ArrowRight, User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TeamMember } from '../../data/teamData';
 
 interface MobileProfilePreviewProps {
   member: TeamMember | null;
   onClose: () => void;
   onOpenBioSheet: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
 }
 
 export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
   member,
   onClose,
   onOpenBioSheet,
+  onPrev,
+  onNext,
 }) => {
   const [imgError, setImgError] = React.useState(false);
 
@@ -54,6 +58,58 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
         overflow: 'hidden',
       }}
     >
+      {/* Mobile Team Navigation Arrows: simple, small, orange */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 'max(16px, env(safe-area-inset-top, 16px))',
+          left: '16px',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px',
+        }}
+      >
+        {onPrev && (
+          <button
+            type="button"
+            onClick={onPrev}
+            aria-label="Previous team member"
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: '6px',
+              cursor: 'pointer',
+              color: '#fe6200',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ChevronLeft size={20} strokeWidth={2.4} />
+          </button>
+        )}
+        {onNext && (
+          <button
+            type="button"
+            onClick={onNext}
+            aria-label="Next team member"
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: '6px',
+              cursor: 'pointer',
+              color: '#fe6200',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ChevronRight size={20} strokeWidth={2.4} />
+          </button>
+        )}
+      </div>
+
       {/* Floating Circular Close Button */}
       <button
         type="button"

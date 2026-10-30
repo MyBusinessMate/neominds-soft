@@ -1,17 +1,21 @@
 import React, { useEffect, useRef } from 'react';
-import { X, Linkedin, Twitter, Instagram, Globe, User } from 'lucide-react';
+import { X, Linkedin, Twitter, Instagram, Globe, User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TeamMember } from '../../data/teamData';
 
 interface MobileBiographySheetProps {
   member: TeamMember | null;
   isOpen: boolean;
   onClose: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
 }
 
 export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
   member,
   isOpen,
   onClose,
+  onPrev,
+  onNext,
 }) => {
   const [imgError, setImgError] = React.useState(false);
   const sheetRef = useRef<HTMLDivElement>(null);
@@ -94,29 +98,75 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
             }}
           />
 
-          {/* Close button (returns to Stage 1 Preview) */}
-          <button
-            type="button"
-            onClick={onClose}
-            aria-label="Back to profile preview"
+          {/* Top Controls: Simple small orange arrows + close button */}
+          <div
             style={{
               position: 'absolute',
               top: '16px',
               right: '16px',
-              width: '36px',
-              height: '36px',
-              borderRadius: '8px',
-              backgroundColor: '#f1efeb',
-              border: 'none',
-              cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              color: '#66615c',
+              gap: '6px',
             }}
           >
-            <X size={18} strokeWidth={2.4} />
-          </button>
+            {onPrev && (
+              <button
+                type="button"
+                onClick={onPrev}
+                aria-label="Previous team member"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: '6px',
+                  cursor: 'pointer',
+                  color: '#fe6200',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <ChevronLeft size={20} strokeWidth={2.4} />
+              </button>
+            )}
+            {onNext && (
+              <button
+                type="button"
+                onClick={onNext}
+                aria-label="Next team member"
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  padding: '6px',
+                  cursor: 'pointer',
+                  color: '#fe6200',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <ChevronRight size={20} strokeWidth={2.4} />
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={onClose}
+              aria-label="Back to profile preview"
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '8px',
+                backgroundColor: '#f1efeb',
+                border: 'none',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#66615c',
+              }}
+            >
+              <X size={18} strokeWidth={2.4} />
+            </button>
+          </div>
 
           {/* Header Identity Row: Thumbnail + Titles */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingRight: '44px' }}>

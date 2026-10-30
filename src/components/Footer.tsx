@@ -46,12 +46,12 @@ const companyLinks: FooterLink[] = [
 ];
 
 interface FooterProps {
-  onNavigate: (sectionId: string) => void;
+  onNavigate?: (sectionId: string) => void;
   onOpenLegal?: (tab: 'privacy' | 'cookie' | 'security') => void;
   onOpenCookies?: () => void;
 }
 
-const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpenCookies }) => {
+const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) => { window.location.href = target; }, onOpenLegal, onOpenCookies }) => {
   const currentYear = new Date().getFullYear();
 
   const handleLinkClick = (e: React.MouseEvent, link: FooterLink) => {
@@ -61,7 +61,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
     } else if (link.isLegal && onOpenLegal) {
       onOpenLegal(link.isLegal);
     } else {
-      onNavigate(link.target);
+      if (onNavigate) onNavigate(link.target); else window.location.href = link.target;
     }
   };
 
@@ -160,7 +160,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               <div className="nm-card-nav-cols">
                 {/* Column 1: AI Services */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>AI Services</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700 }}>AI Services</h4>
                   <ul className="nm-col-list">
                     {aiServices.map((link) => (
                       <li key={link.label}>
@@ -178,7 +178,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
                 {/* Column 2: General Services */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>General</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700 }}>General</h4>
                   <ul className="nm-col-list">
                     {generalServices.map((link) => (
                       <li key={link.label}>
@@ -196,7 +196,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
                 {/* Column 3: Solutions */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>Solutions</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700 }}>Solutions</h4>
                   <ul className="nm-col-list">
                     {solutionsLinks.map((link) => (
                       <li key={link.label}>
@@ -214,7 +214,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
                 {/* Column 4: Company */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>Company</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700 }}>Company</h4>
                   <ul className="nm-col-list">
                     {companyLinks.map((link) => (
                       <li key={link.label}>
@@ -661,8 +661,15 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
             gap: 24px;
           }
 
+          .nm-watermark-wrapper {
+            margin-top: 20px !important;
+            padding-bottom: 16px !important;
+          }
           .nm-watermark-text {
-            transform: translateY(6%);
+            font-size: clamp(56px, 16vw, 110px) !important;
+            color: #cfc9bc !important;
+            transform: translateY(0) !important;
+            line-height: 1 !important;
           }
         }
       `}</style>
