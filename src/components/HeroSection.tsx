@@ -503,7 +503,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .mobile-robot-container {
             position: relative;
             width: 100%;
-            height: clamp(330px, 46vh, 410px);
+            height: clamp(370px, 52vh, 460px);
             overflow: hidden;
             display: flex;
             align-items: flex-start;
@@ -511,8 +511,8 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             margin: 0;
             padding: 0;
             z-index: 1;
-            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
           }
 
           .mobile-robot-img {
@@ -522,8 +522,8 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             max-height: none;
             object-fit: cover;
             object-position: top center;
-            transform: scale(1.18);
-            transform-origin: top center;
+            transform: scale(1.42) translate(-5%, 2%);
+            transform-origin: 35% top;
             display: block;
             pointer-events: none;
           }
@@ -532,7 +532,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .mobile-hero-content {
             position: relative;
             z-index: 3;
-            margin-top: clamp(-55px, -9vh, -35px);
+            margin-top: clamp(-85px, -13vh, -55px);
             padding: 0 20px 20px;
           }
 

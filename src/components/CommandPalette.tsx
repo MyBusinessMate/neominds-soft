@@ -118,8 +118,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     {
       id: 'sec-1',
       category: 'Section',
-      title: 'Industry Recognition & Clutch Awards',
-      subtitle: 'Research & Markets 2026 AI report citations',
+      title: 'Our Commitments & Standards',
+      subtitle: 'NDA protection, source code ownership, and weekly demo tracking',
       action: () => {
         onClose();
         onSelect('#recognition');

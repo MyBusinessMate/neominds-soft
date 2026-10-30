@@ -323,13 +323,13 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
             <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '28px', backgroundColor: 'var(--colors-background-dark, #fbf9f5)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
                 <Award size={20} color="#fe6200" />
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase' }}>Clutch Global Leader</span>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase' }}>Verified Delivery Standards</span>
               </div>
               <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
-                Top B2B Service Provider
+                Enterprise Service Provider
               </h3>
               <p style={{ fontSize: '14px', color: '#555555', margin: 0, lineHeight: 1.6 }}>
-                Recognized for architectural capability, agile velocity, and reliable project delivery for North American &amp; European clients.
+                Recognized for architectural capability, agile velocity, and reliable production delivery for North American &amp; European clients.
               </p>
             </div>
           </div>

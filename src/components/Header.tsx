@@ -215,6 +215,7 @@ export const Header: React.FC<HeaderProps> = ({
             When scrolled, smoothly shrinks into floating glass capsule (840px, 56px height, 8px corner radius)
             ======================================================== */}
         <div
+          className="nm-header-capsule"
           style={{
             width: isScrolled ? 'min(94%, 860px)' : '100%',
             maxWidth: isScrolled ? '860px' : '1360px',
@@ -1712,6 +1713,10 @@ export const Header: React.FC<HeaderProps> = ({
           }
           .desktop-send-btn {
             display: none !important;
+          }
+          .nm-header-capsule {
+            background-color: #fbf9f5 !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
           }
         }
       `}</style>

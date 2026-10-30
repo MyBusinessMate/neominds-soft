@@ -584,7 +584,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
           style={{
             position: 'relative',
             width: '100%',
-            maxWidth: '380px',
+            maxWidth: '400px',
             margin: '0 auto',
             overflow: 'hidden',
             borderRadius: '20px',
@@ -595,9 +595,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
             className="carousel-track"
             style={{
               display: 'flex',
-              transform: `translateX(-${activeMobileIndex * 100}%)`,
+              width: `${CASE_STUDY_CARDS.length * 100}%`,
+              transform: `translateX(-${(activeMobileIndex * 100) / CASE_STUDY_CARDS.length}%)`,
               transition: 'transform 0.38s cubic-bezier(0.22, 1, 0.36, 1)',
-              width: '100%',
+              willChange: 'transform',
             }}
           >
             {CASE_STUDY_CARDS.map((card) => (
@@ -605,7 +606,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                 key={card.id}
                 onClick={() => handleCardClick(card.id)}
                 style={{
-                  minWidth: '100%',
+                  width: `${100 / CASE_STUDY_CARDS.length}%`,
                   flexShrink: 0,
                   boxSizing: 'border-box',
                   padding: '4px',
