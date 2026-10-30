@@ -29,6 +29,18 @@ export const TeamSection: React.FC = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Hide main navbar whenever a team profile is open
+  useEffect(() => {
+    if (selectedMember) {
+      document.body.classList.add('nm-team-profile-open');
+    } else {
+      document.body.classList.remove('nm-team-profile-open');
+    }
+    return () => {
+      document.body.classList.remove('nm-team-profile-open');
+    };
+  }, [selectedMember]);
+
   // Carousel navigation
   const handlePrev = () => {
     const nextIdx = (activeCarouselIndex - 1 + featuredMembers.length) % featuredMembers.length;

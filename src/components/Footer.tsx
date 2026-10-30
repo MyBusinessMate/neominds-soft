@@ -508,8 +508,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
         }
 
         .nm-col-header.nm-col-header-orange {
-          color: #fe6200;
+          color: #fe6200 !important;
           font-weight: 700;
+          text-shadow: none !important;
+          filter: none !important;
+          box-shadow: none !important;
         }
 
         .nm-col-list {
@@ -662,14 +665,17 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
           }
 
           .nm-watermark-wrapper {
-            margin-top: 20px !important;
-            padding-bottom: 16px !important;
+            margin-top: 24px !important;
+            padding-bottom: 24px !important;
           }
           .nm-watermark-text {
-            font-size: clamp(56px, 16vw, 110px) !important;
-            color: #cfc9bc !important;
+            font-size: clamp(68px, 19vw, 130px) !important;
+            color: #8c857b !important;
+            font-weight: 900 !important;
             transform: translateY(0) !important;
             line-height: 1 !important;
+            opacity: 0.85 !important;
+            letter-spacing: -0.04em !important;
           }
         }
       `}</style>

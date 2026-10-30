@@ -5,7 +5,6 @@ import {
   ChevronRight,
   ShieldCheck,
   Mail,
-  Upload,
 } from 'lucide-react';
 import {
   ABOUT_TESTIMONIALS,
@@ -41,7 +40,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
     ndaFirst: false,
     consent: false,
   });
-  const [selectedFileName, setSelectedFileName] = useState<string | null>(null);
 
   const nextTestimonial = useCallback(() => {
     setCurrentTestimonialIndex((prev) => (prev + 1) % ABOUT_TESTIMONIALS.length);
@@ -69,7 +67,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       ndaFirst: false,
       consent: false,
     });
-    setSelectedFileName(null);
   }, [formState.name, onSuccessToast]);
 
   const currentTestimonial = ABOUT_TESTIMONIALS[currentTestimonialIndex];
@@ -387,41 +384,6 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 value={formState.message}
                 onChange={(e) => setFormState({ ...formState, message: e.target.value })}
               ></textarea>
-            </div>
-
-            <div className="s-contact-form__field s-contact-form__full">
-              <label
-                htmlFor="c-file-upload"
-                style={{
-                  border: '1px dashed #66615c',
-                  borderRadius: '8px',
-                  padding: '24px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '8px',
-                  cursor: 'pointer',
-                  backgroundColor: '#fbf9f5',
-                  transition: 'border-color 0.2s ease',
-                }}
-              >
-                <Upload size={20} style={{ color: '#fe6200' }} />
-                <span style={{ fontSize: '14px', color: '#000000', fontWeight: 500 }}>
-                  {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
-                </span>
-                <span style={{ fontSize: '12px', color: '#4b5563' }}>
-                  SVG, PNG, JPG, PDF or DOC (max. 33 MB)
-                </span>
-                <input
-                  id="c-file-upload"
-                  type="file"
-                  style={{ display: 'none' }}
-                  onChange={(e) => {
-                    const f = e.target.files?.[0];
-                    if (f) setSelectedFileName(f.name);
-                  }}
-                />
-              </label>
             </div>
 
             <div className="s-contact-form__field s-contact-form__full">

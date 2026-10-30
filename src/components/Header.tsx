@@ -1690,8 +1690,12 @@ export const Header: React.FC<HeaderProps> = ({
           opacity: 1;
           visibility: visible;
         }
-        .nm-mobile-accordion-inner {
-          overflow: hidden;
+        body.nm-team-profile-open header,
+        body.nm-modal-open header {
+          transform: translate3d(0, -160%, 0) !important;
+          opacity: 0 !important;
+          pointer-events: none !important;
+          transition: transform 0.3s ease, opacity 0.3s ease !important;
         }
         @media (min-width: 860px) {
           .desktop-nav {

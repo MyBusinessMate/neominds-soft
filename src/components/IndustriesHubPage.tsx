@@ -249,9 +249,9 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       {/* ========================================================
           3. INDUSTRIES WE BUILD FOR (6 INDUSTRIES) - CREAM BEIGE
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '48px' }}>
+      <section style={{ padding: 'clamp(48px, 6vw, 80px) clamp(16px, 4vw, 24px)', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
+        <div style={{ maxWidth: '1240px', margin: '0 auto', width: '100%', boxSizing: 'border-box' }}>
+          <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
               Specialized Solutions
             </span>
@@ -263,7 +263,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '28px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 'clamp(16px, 3vw, 28px)', width: '100%', boxSizing: 'border-box' }}>
             {industries.map((ind, idx) => (
               <RevealElement
                 key={idx}
@@ -273,11 +273,13 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                   backgroundColor: '#ffffff',
                   border: '1px solid #e4e2e1',
                   borderRadius: '16px',
-                  padding: '32px',
+                  padding: 'clamp(20px, 3.5vw, 32px)',
                   boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
+                  width: '100%',
+                  boxSizing: 'border-box',
                 }}
               >
                 <div>
