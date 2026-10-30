@@ -485,7 +485,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: none !important;
           }
           .hero-root-section {
-            padding-top: 56px !important;
+            padding-top: 50px !important;
             min-height: auto !important;
             background-color: #f6f3ee !important;
           }
@@ -499,42 +499,52 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             padding-bottom: 24px;
           }
 
-          /* Top: Mobile Robot Container framed seamlessly */
+          /* Top: Mobile Robot Container stretched & zoomed edge-to-edge */
           .mobile-robot-container {
             position: relative;
             width: 100%;
+            height: clamp(330px, 46vh, 410px);
+            overflow: hidden;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justifyContent: center;
-            margin: 0 auto;
-            padding: 12px 16px 0;
-            z-index: 2;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
           }
 
           .mobile-robot-img {
             width: 100%;
-            max-width: 380px;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
+            object-position: top center;
+            transform: scale(1.18);
+            transform-origin: top center;
             display: block;
+            pointer-events: none;
           }
 
-          /* Foreground Content beneath robot */
+          /* Foreground Content tucked tight against the robot lower torso */
           .mobile-hero-content {
             position: relative;
             z-index: 3;
-            padding: 8px 20px 20px;
+            margin-top: clamp(-55px, -9vh, -35px);
+            padding: 0 20px 20px;
           }
 
           .mobile-hero-heading {
             color: #111111;
             font-family: var(--typography-display-family, 'BL Pylon Serif', serif);
-            font-size: clamp(30px, 7.8vw, 40px);
+            font-size: clamp(32px, 8.2vw, 42px);
             font-weight: 400;
-            line-height: 1.15;
+            line-height: 1.1;
             letter-spacing: -0.025em;
-            margin: 0 0 14px 0;
+            margin: 0 0 12px 0;
+            max-width: 96%;
             position: relative;
             z-index: 3;
           }
@@ -543,10 +553,10 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             color: #2b2b2b;
             font-family: var(--typography-body-family, 'DM Sans'), sans-serif;
             font-size: 15px;
-            line-height: 1.5;
-            font-weight: 450;
-            margin: 0 0 22px 0;
-            max-width: 100%;
+            line-height: 1.48;
+            font-weight: 400;
+            margin: 0 0 20px 0;
+            max-width: 96%;
             position: relative;
             z-index: 3;
           }
@@ -554,7 +564,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .mobile-hero-cta-stack {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             width: 100%;
             position: relative;
             z-index: 3;
@@ -562,9 +572,9 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
 
           /* Client Strip Mobile Responsiveness */
           .hero-client-strip-wrapper {
-            margin-top: 16px !important;
-            padding-top: 24px !important;
-            padding-bottom: 24px !important;
+            margin-top: 10px !important;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
           }
 
           .hero-client-strip-logos {
