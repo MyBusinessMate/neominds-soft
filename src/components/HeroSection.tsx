@@ -92,11 +92,11 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
     >
       {/* ========================================================
           MOBILE HERO VIEW (< 860px) - EXACT MATCH TO REFERENCE DESIGN
-          Full-bleed AI Robot in suit, elegant typography overlaid on suit, stacked pill CTAs
+          Right-anchored AI Robot in suit, left-aligned typography in cream space, stacked pill CTAs
           ======================================================== */}
       <div className="mobile-hero-layout">
-        {/* Top: Robot Visual in Crisp Cream Suit */}
-        <div className="mobile-robot-container">
+        {/* Right-Anchored Background Robot in Suit (Soft fade at lower edge) */}
+        <div className="mobile-robot-backdrop">
           <img
             src="/images/robot-hero-mobile.png"
             alt="AI Engineering Robot in Suit"
@@ -104,7 +104,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           />
         </div>
 
-        {/* Foreground Content Stack Overlaid Seamlessly on Suit */}
+        {/* Left-Aligned Foreground Content Stack in Open Cream Space */}
         <div className="mobile-hero-content">
           <h1 className="mobile-hero-heading">
             Building software that scales — and AI that delivers in production.
@@ -485,78 +485,77 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: none !important;
           }
           .hero-root-section {
-            padding-top: 50px !important;
+            padding-top: 54px !important;
             min-height: auto !important;
             background-color: #f4ecde !important;
           }
           .mobile-hero-layout {
             position: relative;
             width: 100%;
+            min-height: calc(100vh - 54px);
             display: flex;
             flex-direction: column;
+            justify-content: flex-end;
             overflow: hidden;
             background-color: #f4ecde;
-            padding-bottom: 24px;
+            padding: 0 20px 24px 20px;
+            box-sizing: border-box;
           }
 
-          /* Top: Mobile Robot Visual in Crisp Cream Suit (Full-bleed, No dark gradient mask) */
-          .mobile-robot-container {
-            position: relative;
-            width: 100%;
-            height: clamp(400px, 56vh, 490px);
-            overflow: hidden;
+          /* Right-Anchored Background Robot in Suit (Soft fade at lower edge) */
+          .mobile-robot-backdrop {
+            position: absolute;
+            top: 0;
+            right: -6%;
+            width: 88%;
+            max-width: 420px;
+            height: clamp(440px, 62vh, 560px);
+            pointer-events: none;
+            z-index: 1;
             display: flex;
             align-items: flex-start;
-            justifyContent: center;
-            margin: 0;
-            padding: 0;
-            z-index: 1;
+            justifyContent: flex-end;
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 0%, black 72%, transparent 100%);
           }
 
           .mobile-robot-img {
             width: 100%;
             height: 100%;
-            max-width: none;
-            max-height: none;
-            object-fit: cover;
-            object-position: 60% top;
-            transform: scale(1.08);
-            transform-origin: top center;
+            object-fit: contain;
+            object-position: right top;
             display: block;
-            pointer-events: none;
           }
 
-          /* Foreground Content tucked tight over the cream suit without dark shadows */
+          /* Left-Aligned Foreground Content in open cream space */
           .mobile-hero-content {
             position: relative;
-            z-index: 3;
-            margin-top: clamp(-180px, -24vh, -140px);
-            padding: 0 20px 20px;
+            z-index: 5;
+            width: 100%;
+            margin-top: clamp(240px, 34vh, 310px);
+            padding: 0;
           }
 
           .mobile-hero-heading {
             color: #111111;
             font-family: var(--typography-display-family, 'BL Pylon Serif', serif);
-            font-size: clamp(32px, 8.2vw, 42px);
+            font-size: clamp(30px, 7.8vw, 38px);
             font-weight: 400;
-            line-height: 1.1;
+            line-height: 1.12;
             letter-spacing: -0.025em;
-            margin: 0 0 12px 0;
-            max-width: 96%;
-            position: relative;
-            z-index: 3;
+            margin: 0 0 14px 0;
+            max-width: 64%;
+            word-break: break-word;
           }
 
           .mobile-hero-subtext {
             color: #2b2b2b;
             font-family: var(--typography-body-family, 'DM Sans'), sans-serif;
             font-size: 15px;
-            line-height: 1.48;
+            line-height: 1.45;
             font-weight: 400;
-            margin: 0 0 20px 0;
-            max-width: 96%;
-            position: relative;
-            z-index: 3;
+            margin: 0 0 22px 0;
+            max-width: 80%;
           }
 
           .mobile-hero-cta-stack {
@@ -565,7 +564,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             gap: 10px;
             width: 100%;
             position: relative;
-            z-index: 3;
+            z-index: 5;
           }
 
           /* Client Strip Mobile Responsiveness */
