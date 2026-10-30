@@ -92,19 +92,19 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
     >
       {/* ========================================================
           MOBILE HERO VIEW (< 860px) - EXACT MATCH TO REFERENCE DESIGN
-          Robot visual at top, elegant typography beneath, stacked CTAs at bottom
+          Full-bleed AI Robot in suit, elegant typography overlaid on suit, stacked pill CTAs
           ======================================================== */}
       <div className="mobile-hero-layout">
-        {/* Top: Robot Visual framed cleanly at upper viewport */}
+        {/* Top: Robot Visual in Crisp Cream Suit */}
         <div className="mobile-robot-container">
           <img
-            src="/images/mobile-hero.png"
-            alt="AI Engineering Robot"
+            src="/images/robot-hero-mobile.png"
+            alt="AI Engineering Robot in Suit"
             className="mobile-robot-img"
           />
         </div>
 
-        {/* Foreground Content Stack */}
+        {/* Foreground Content Stack Overlaid Seamlessly on Suit */}
         <div className="mobile-hero-content">
           <h1 className="mobile-hero-heading">
             Building software that scales — and AI that delivers in production.
@@ -487,7 +487,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .hero-root-section {
             padding-top: 50px !important;
             min-height: auto !important;
-            background-color: #f6f3ee !important;
+            background-color: #f4ecde !important;
           }
           .mobile-hero-layout {
             position: relative;
@@ -495,15 +495,15 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            background-color: #f6f3ee;
+            background-color: #f4ecde;
             padding-bottom: 24px;
           }
 
-          /* Top: Mobile Robot Container stretched & zoomed edge-to-edge */
+          /* Top: Mobile Robot Visual in Crisp Cream Suit (Full-bleed, No dark gradient mask) */
           .mobile-robot-container {
             position: relative;
             width: 100%;
-            height: clamp(370px, 52vh, 460px);
+            height: clamp(400px, 56vh, 490px);
             overflow: hidden;
             display: flex;
             align-items: flex-start;
@@ -511,8 +511,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             margin: 0;
             padding: 0;
             z-index: 1;
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
           }
 
           .mobile-robot-img {
@@ -521,18 +519,18 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             max-width: none;
             max-height: none;
             object-fit: cover;
-            object-position: top center;
-            transform: scale(1.42) translate(-5%, 2%);
-            transform-origin: 35% top;
+            object-position: 60% top;
+            transform: scale(1.08);
+            transform-origin: top center;
             display: block;
             pointer-events: none;
           }
 
-          /* Foreground Content tucked tight against the robot lower torso */
+          /* Foreground Content tucked tight over the cream suit without dark shadows */
           .mobile-hero-content {
             position: relative;
             z-index: 3;
-            margin-top: clamp(-85px, -13vh, -55px);
+            margin-top: clamp(-180px, -24vh, -140px);
             padding: 0 20px 20px;
           }
 
