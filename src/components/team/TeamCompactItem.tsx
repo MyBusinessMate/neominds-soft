@@ -83,7 +83,7 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, onClic
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#868683',
+              color: '#4b5563',
             }}
           >
             <User size={26} color="#fe6200" />
@@ -111,7 +111,7 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, onClic
           fontFamily: "'DM Sans', sans-serif",
           fontSize: '13px',
           fontWeight: 400,
-          color: '#868683',
+          color: '#4b5563',
           margin: 0,
           lineHeight: 1.3,
           maxWidth: '180px',

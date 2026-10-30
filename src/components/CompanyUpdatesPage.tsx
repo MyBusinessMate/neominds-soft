@@ -87,7 +87,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
                 onClick={() => setActiveType(type)}
                 className={`btn btn-sm ${activeType === type ? 'btn-primary' : 'btn-outline'}`}
                 style={{
-                  color: activeType === type ? '#ffffff' : '#868683',
+                  color: activeType === type ? '#ffffff' : '#333333',
                   borderColor: activeType === type ? '#fe6200' : '#a3a09b',
                   backgroundColor: activeType === type ? '#fe6200' : '#faf8f5',
                   cursor: 'pointer',

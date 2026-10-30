@@ -8,33 +8,31 @@ export interface FooterLink {
   isSettings?: boolean;
 }
 
-const engineeringServices: FooterLink[] = [
+const aiServices: FooterLink[] = [
+  { label: 'AI Automations', target: '#ai-automations' },
+  { label: 'AI Integrations', target: '#ai-integrations' },
+  { label: 'AI Systems', target: '#ai-systems' },
+  { label: 'AI Native Software', target: '#ai-native-software' },
+];
+
+const generalServices: FooterLink[] = [
   { label: 'Web Development', target: '#web-development' },
   { label: 'App Development', target: '#app-development' },
   { label: 'Cross-Platform Mobile App', target: '#cross-platform-app-development' },
   { label: 'Custom Software Development', target: '#custom-software-development' },
+  { label: 'Ecommerce Platform', target: '#ecommerce-platform' },
+  { label: 'Cloud Based Software', target: '#cloud-based-software' },
   { label: 'SaaS Development', target: '#saas-development' },
-  { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
-  { label: 'Product Engineering', target: '#custom-software-development' },
-];
-
-const aiAndCloudServices: FooterLink[] = [
-  { label: 'AI Automations', target: '#ai-automations' },
-  { label: 'AI Integrations', target: '#ai-integrations' },
-  { label: 'AI Systems', target: '#ai-systems' },
-  { label: 'AI Native Softwares', target: '#ai-native-software' },
-  { label: 'Cloud Based Softwares', target: '#cloud-based-software' },
   { label: 'Analytic Dashboard', target: '#analytics-dashboard' },
-  { label: 'Custom Health Softwares', target: '#custom-health-software' },
+  { label: 'Custom Health Software', target: '#custom-health-software' },
+  { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
+  { label: 'Training as a Service', target: '#training-as-service' },
 ];
 
-const industriesAndWork: FooterLink[] = [
-  { label: 'Case Studies & Portfolio', target: '#portfolio' },
-  { label: 'Enterprise Systems', target: '#industries' },
-  { label: 'Financial Tech', target: '#industries' },
-  { label: 'Healthcare & Life Sciences', target: '#industries' },
-  { label: 'E-commerce & Retail', target: '#ecommerce-platform' },
-  { label: 'Training as a Service', target: '#training-as-service' },
+const solutionsLinks: FooterLink[] = [
+  { label: 'Case Studies & Projects', target: '#portfolio' },
+  { label: 'Industries We Serve', target: '#industries' },
+  { label: 'Technology Stack', target: '#technology' },
 ];
 
 const companyLinks: FooterLink[] = [
@@ -113,11 +111,12 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   onKeyDown={(e) => e.key === 'Enter' && onNavigate('#hero')}
                   aria-label="NeoMinds Home"
                 >
-                  <div className="nm-brand-icon-box">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 3.5H8.8L15.2 15.2V3.5H19.5V20.5H14.8L8.4 8.8V20.5H4V3.5Z" fill="#fe6200" />
-                    </svg>
-                  </div>
+                  <img
+                    src="/images/neominds-logo.png"
+                    alt="NeoMinds"
+                    className="nm-footer-logo"
+                    style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+                  />
                   <span className="nm-brand-name">NeoMinds</span>
                 </div>
 
@@ -159,11 +158,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
               {/* Navigation Columns */}
               <div className="nm-card-nav-cols">
-                {/* Column 1: Core Services */}
+                {/* Column 1: AI Services */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header">Services</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>AI Services</h4>
                   <ul className="nm-col-list">
-                    {engineeringServices.map((link) => (
+                    {aiServices.map((link) => (
                       <li key={link.label}>
                         <a
                           href={link.target}
@@ -177,11 +176,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   </ul>
                 </div>
 
-                {/* Column 2: AI & Cloud */}
+                {/* Column 2: General Services */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header">AI &amp; Cloud</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>General</h4>
                   <ul className="nm-col-list">
-                    {aiAndCloudServices.map((link) => (
+                    {generalServices.map((link) => (
                       <li key={link.label}>
                         <a
                           href={link.target}
@@ -195,11 +194,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
                   </ul>
                 </div>
 
-                {/* Column 3: Industries & Work */}
+                {/* Column 3: Solutions */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header">Solutions</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>Solutions</h4>
                   <ul className="nm-col-list">
-                    {industriesAndWork.map((link) => (
+                    {solutionsLinks.map((link) => (
                       <li key={link.label}>
                         <a
                           href={link.target}
@@ -215,7 +214,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
                 {/* Column 4: Company */}
                 <div className="nm-nav-col">
-                  <h4 className="nm-col-header">Company</h4>
+                  <h4 className="nm-col-header nm-col-header-orange" style={{ color: '#fe6200', fontWeight: 700, textShadow: '0 0 12px rgba(254, 98, 0, 0.35)' }}>Company</h4>
                   <ul className="nm-col-list">
                     {companyLinks.map((link) => (
                       <li key={link.label}>
@@ -261,11 +260,16 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
               </div>
             </div>
           </div>
+        </div>
 
-          {/* GIANT GHOST WATERMARK */}
-          <div className="nm-watermark-wrapper" aria-hidden="true">
-            <span className="nm-watermark-text">NeoMinds</span>
-          </div>
+        {/* GIANT GHOST WATERMARK - Positioned directly on the full-width canvas for perfect center alignment */}
+        <div
+          className="nm-watermark-wrapper"
+          aria-hidden="true"
+        >
+          <span className="nm-watermark-text">
+            NeoMinds
+          </span>
         </div>
       </section>
 
@@ -288,24 +292,22 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-footer-dark-banner {
           position: relative;
           width: 100%;
-          padding: 100px 24px 120px 24px;
+          padding: 100px 24px 110px 24px;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
           background-color: #120500;
           overflow: hidden;
-          box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+          border: none;
         }
 
         .nm-dark-banner-glow {
           position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 800px;
-          height: 380px;
-          background: radial-gradient(circle, rgba(254, 98, 0, 0.16) 0%, rgba(32, 11, 0, 0) 70%);
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle at 50% 25%, rgba(254, 98, 0, 0.16) 0%, rgba(254, 98, 0, 0.04) 50%, transparent 100%);
           pointer-events: none;
         }
 
@@ -380,12 +382,12 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           position: relative;
           width: 100%;
           background-color: #f5f4f0;
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-          margin-top: -24px;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          margin-top: 0;
           padding: 48px 24px 0 24px;
           overflow: hidden;
-          box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.12);
+          box-shadow: none;
         }
 
         .nm-footer-canvas-inner {
@@ -455,7 +457,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
         .nm-brand-description {
           font-size: 13.5px;
           line-height: 1.65;
-          color: #666666;
+          color: #2b2b2b;
           margin: 0 0 24px 0;
           max-width: 340px;
         }
@@ -471,7 +473,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           height: 32px;
           border-radius: 50%;
           background-color: #f5f4f0;
-          color: #555555;
+          color: #111111;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -505,6 +507,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           letter-spacing: -0.01em;
         }
 
+        .nm-col-header.nm-col-header-orange {
+          color: #fe6200;
+          font-weight: 700;
+        }
+
         .nm-col-list {
           list-style: none;
           margin: 0;
@@ -516,11 +523,12 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
         .nm-nav-link {
           font-size: 13px;
-          color: #666666;
+          color: #2b2b2b;
           text-decoration: none;
           transition: color 0.15s ease, transform 0.15s ease;
           display: inline-block;
           line-height: 1.4;
+          font-weight: 500;
         }
 
         .nm-nav-link:hover {
@@ -540,7 +548,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
         .nm-card-copyright {
           font-size: 12.5px;
-          color: #888888;
+          color: #333333;
         }
 
         .nm-card-legal-links {
@@ -554,11 +562,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           border: none;
           padding: 0;
           font-size: 12.5px;
-          color: #666666;
+          color: #2b2b2b;
           cursor: pointer;
           text-decoration: underline;
           text-underline-offset: 3px;
-          text-decoration-color: rgba(0, 0, 0, 0.15);
+          text-decoration-color: rgba(0, 0, 0, 0.2);
           transition: color 0.15s ease, text-decoration-color 0.15s ease;
         }
 
@@ -572,9 +580,11 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
            ---------------------------------------------------- */
         .nm-watermark-wrapper {
           width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: flex-end;
+          max-width: 100%;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: flex-end !important;
+          text-align: center !important;
           overflow: hidden;
           margin-top: 10px;
           padding-bottom: 0px;
@@ -584,16 +594,18 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
 
         .nm-watermark-text {
           font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-          font-size: clamp(80px, 16vw, 240px);
+          font-size: clamp(96px, 20vw, 260px);
           font-weight: 900;
-          line-height: 0.78;
+          line-height: 0.8;
           letter-spacing: -0.04em;
-          color: #e5e3dc;
+          color: #ded9cd;
           text-transform: capitalize;
           white-space: nowrap;
           display: block;
-          transform: translateY(12%);
-          opacity: 0.85;
+          margin: 0 auto;
+          text-align: center;
+          transform: translateY(10%);
+          opacity: 1;
         }
 
         /* ----------------------------------------------------
@@ -650,7 +662,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate, onOpenLegal, onOpe
           }
 
           .nm-watermark-text {
-            transform: translateY(8%);
+            transform: translateY(6%);
           }
         }
       `}</style>

@@ -57,3 +57,12 @@ playwright-report/
 blob-report/
 
 .vercel
+
+test-results.json
+issues-screenshots/
+TEST_INFRA.md
+TEST_READY.md
+PROJECT.md
+.agents/
+tests/
+website-content/

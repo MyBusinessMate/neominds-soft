@@ -76,7 +76,7 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#eae6df',
-            color: '#868683',
+            color: '#4b5563',
           }}
         >
           <div

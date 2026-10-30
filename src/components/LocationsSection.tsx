@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface LocationsSectionProps {
@@ -74,605 +74,492 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
       }}
     >
       <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Main Location Section */}
+        {/* Main Location Section - Minimal, Clean & Unified */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
-            gap: 'clamp(36px, 5vw, 64px)',
-            marginBottom: 'clamp(48px, 6vw, 80px)',
-            alignItems: 'start',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: 'clamp(28px, 4vw, 48px)',
+            marginBottom: 'clamp(48px, 6vw, 72px)',
+            alignItems: 'stretch',
           }}
           className="location-grid"
         >
-          {/* Left Column: Heading, Contact Info & Social Media Links */}
-          <div>
-            <ScrollReveal
-              as="h2"
-              className="section-title"
-              style={{
-                color: '#000000',
-                marginBottom: '16px',
-                display: 'block',
-                fontFamily: 'var(--typography-display-family)',
-                fontSize: 'clamp(32px, 3.6vw, 44px)',
-                fontWeight: 700,
-                letterSpacing: '-0.02em',
-              }}
-              blurStrength={6}
-            >
-              Our office
-            </ScrollReveal>
-            <RevealElement variant="text" delay={0.06}>
-              <p
-                className="body-lead"
-                style={{
-                  color: '#66615c',
-                  marginBottom: '24px',
-                  maxWidth: '420px',
-                  fontFamily: 'var(--typography-body-family)',
-                  fontSize: '16px',
-                  lineHeight: 1.6,
-                }}
-              >
-                Our global engineering headquarters is centrally located in Hyderabad. Connected directly with our product engineering teams worldwide.
-              </p>
-            </RevealElement>
-
-            <a
-              href="mailto:contact@neomindstechhub.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '12px',
-                color: '#fe6200',
-                fontSize: '16px',
-                fontWeight: 600,
-                fontFamily: 'var(--typography-body-family)',
-                transition: 'color 0.25s ease',
-                minHeight: '44px',
-                marginBottom: '32px',
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#cf5000')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = '#fe6200')}
-            >
-              <div
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  backgroundColor: '#fe6200',
-                  color: '#ffffff',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRadius: '8px',
-                }}
-              >
-                <Mail size={16} />
-              </div>
-              <span>contact@neomindstechhub.com</span>
-            </a>
-
-            {/* Connect with us on social media */}
-            <div style={{ marginTop: '8px' }}>
-              <span
-                style={{
-                  display: 'block',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  letterSpacing: '0.08em',
-                  color: '#66615c',
-                  textTransform: 'uppercase',
-                  marginBottom: '14px',
-                  fontFamily: 'var(--typography-mono-family)',
-                }}
-              >
-                Connect with us
-              </span>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/company/neominds"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '8px',
-                    backgroundColor: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#1a1a1a',
-                    transition: 'all 0.2s ease',
-                    textDecoration: 'none',
-                    border: '1px solid #e4e2e1',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#fe6200';
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#ffffff';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#ffffff';
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#1a1a1a';
-                    e.currentTarget.style.transform = 'none';
-                  }}
-                >
-                  <Linkedin size={18} />
-                </a>
-
-                {/* X (formerly Twitter) */}
-                <a
-                  href="https://x.com/neominds"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X (Twitter)"
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '8px',
-                    backgroundColor: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#1a1a1a',
-                    transition: 'all 0.2s ease',
-                    textDecoration: 'none',
-                    border: '1px solid #e4e2e1',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#fe6200';
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#ffffff';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#ffffff';
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#1a1a1a';
-                    e.currentTarget.style.transform = 'none';
-                  }}
-                >
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                  </svg>
-                </a>
-
-                {/* Facebook */}
-                <a
-                  href="https://facebook.com/neominds"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  style={{
-                    width: '42px',
-                    height: '42px',
-                    borderRadius: '8px',
-                    backgroundColor: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#1a1a1a',
-                    transition: 'all 0.2s ease',
-                    textDecoration: 'none',
-                    border: '1px solid #e4e2e1',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#fe6200';
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#ffffff';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#ffffff';
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#1a1a1a';
-                    e.currentTarget.style.transform = 'none';
-                  }}
-                >
-                  <Facebook size={18} />
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          {/* Right Column: Architectural Engineering Headquarters Facility Ledger */}
+          {/* Left: Clean Unified Address Details */}
           <RevealElement variant="card">
             <div
               style={{
                 backgroundColor: '#ffffff',
                 border: '1px solid #e4e2e1',
                 borderRadius: '8px',
-                padding: 'clamp(24px, 3.5vw, 36px)',
-                position: 'relative',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                padding: 'clamp(28px, 4vw, 40px)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
               }}
             >
-
-
-              {/* Title & Role */}
-              <div style={{ marginBottom: '20px' }}>
-                <h3
+              <div>
+                <div
                   style={{
-                    fontSize: 'clamp(22px, 2.4vw, 26px)',
+                    display: 'inline-block',
+                    fontSize: '11px',
                     fontWeight: 700,
-                    color: '#000000',
-                    fontFamily: 'var(--typography-heading1-family)',
-                    letterSpacing: '-0.02em',
-                    margin: '0 0 4px 0',
+                    letterSpacing: '0.08em',
+                    color: '#fe6200',
+                    textTransform: 'uppercase',
+                    marginBottom: '12px',
+                    fontFamily: 'var(--typography-mono-family)',
                   }}
                 >
-                  Neominds TechHub
-                </h3>
+                  Global Engineering HQ
+                </div>
+
+                <ScrollReveal
+                  as="h2"
+                  className="section-title"
+                  style={{
+                    color: '#000000',
+                    marginBottom: '12px',
+                    display: 'block',
+                    fontFamily: 'var(--typography-display-family)',
+                    fontSize: 'clamp(28px, 3.2vw, 38px)',
+                    fontWeight: 700,
+                    letterSpacing: '-0.02em',
+                  }}
+                  blurStrength={6}
+                >
+                  Our office
+                </ScrollReveal>
+
                 <p
                   style={{
                     color: '#66615c',
-                    fontSize: '14px',
-                    margin: 0,
+                    marginBottom: '24px',
                     fontFamily: 'var(--typography-body-family)',
+                    fontSize: '15px',
+                    lineHeight: 1.6,
                   }}
                 >
-                  Global Engineering Headquarters & Core Technology Center
+                  Our global headquarters is centrally located in Hyderabad, connected directly with our product engineering teams worldwide.
                 </p>
-              </div>
 
-              {/* Architectural Facility Grid */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  gap: '1px',
-                  backgroundColor: '#e4e2e1',
-                  border: '1px solid #e4e2e1',
-                  marginBottom: '20px',
-                  borderRadius: '8px',
-                  overflow: 'hidden',
-                }}
-              >
-                {/* Suite & Level */}
-                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      marginBottom: '4px',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    SUITE & LEVEL
-                  </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.suite}
-                  </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.building}
-                  </span>
-                </div>
-
-                {/* Locality & Street */}
-                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      marginBottom: '4px',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    STREET & LOCALITY
-                  </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.locality}
-                  </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
-                    Basheerbagh Commercial Core
-                  </span>
-                </div>
-
-                {/* City & Jurisdiction */}
-                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      marginBottom: '4px',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    CITY & JURISDICTION
-                  </span>
-                  <span style={{ display: 'block', fontSize: '14px', fontWeight: 600, color: '#000000', lineHeight: 1.4, fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.cityStateZip}
-                  </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.country}
-                  </span>
-                </div>
-
-                {/* Geo Coordinates */}
-                <div style={{ backgroundColor: '#ffffff', padding: '14px 16px' }}>
-                  <span
-                    style={{
-                      display: 'block',
-                      fontSize: '10px',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      marginBottom: '4px',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    GEO-COORDINATES
-                  </span>
-                  <span style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#fe6200', fontFamily: 'var(--typography-mono-family)', lineHeight: 1.4 }}>
-                    {officeLocation.coordinates}
-                  </span>
-                  <span style={{ display: 'block', fontSize: '13px', color: '#66615c', marginTop: '2px', fontFamily: 'var(--typography-body-family)' }}>
-                    Zone: Asia/Kolkata (IST)
-                  </span>
-                </div>
-              </div>
-
-              {/* Action Buttons: Copy Address & Map Link */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '10px',
-                  marginBottom: '20px',
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={handleCopyAddress}
+                {/* Formatted Address */}
+                <div
                   style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '8px 16px',
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e4e2e1',
+                    padding: '16px 20px',
+                    backgroundColor: '#faf8f5',
+                    border: '1px solid #ede9e3',
                     borderRadius: '8px',
-                    color: copied ? '#fe6200' : '#1a1a1a',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    fontFamily: 'var(--typography-body-family)',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    marginBottom: '24px',
                   }}
                 >
-                  {copied ? <Check size={14} color="#fe6200" /> : <Copy size={14} />}
-                  <span>{copied ? 'Address Copied' : 'Copy Full Address'}</span>
-                </button>
-
-                <a
-                  href="https://maps.google.com/?q=Moguls+Court+Building+Basheerbagh+Hyderabad"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px',
-                    padding: '8px 16px',
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '8px',
-                    color: '#66615c',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    fontFamily: 'var(--typography-body-family)',
-                    textDecoration: 'none',
-                    transition: 'all 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.color = '#000000';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.color = '#66615c';
-                  }}
-                >
-                  <span>Open in Maps</span>
-                  <ArrowUpRight size={14} color="#fe6200" />
-                </a>
-              </div>
-
-              {/* Direct Communications & Compliance Footer */}
-              <div
-                style={{
-                  paddingTop: '16px',
-                  borderTop: '1px solid #e4e2e1',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '12px',
-                }}
-              >
-                <div>
-                  <span
+                  <div
                     style={{
-                      display: 'block',
-                      fontSize: '10.5px',
+                      fontSize: '16px',
                       fontWeight: 700,
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.06em',
-                      marginBottom: '2px',
-                      fontFamily: 'var(--typography-mono-family)',
+                      color: '#000000',
+                      marginBottom: '6px',
+                      fontFamily: 'var(--typography-heading1-family)',
                     }}
                   >
-                    DIRECT DISPATCH
-                  </span>
-                  <a
-                    href={`mailto:${officeLocation.email}`}
+                    Neominds TechHub
+                  </div>
+                  <div
                     style={{
-                      color: '#fe6200',
-                      textDecoration: 'none',
                       fontSize: '14px',
-                      fontWeight: 600,
+                      lineHeight: 1.6,
+                      color: '#444444',
                       fontFamily: 'var(--typography-body-family)',
                     }}
                   >
-                    {officeLocation.email}
+                    Office Space No. 704, 7th Floor, Moguls Court Building,<br />
+                    5-9-59 & 60, Basheerbagh, Hyderabad – 500001,<br />
+                    Telangana State, India
+                  </div>
+                </div>
+
+                {/* Contact & Hours Info */}
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gap: '16px',
+                    marginBottom: '24px',
+                  }}
+                >
+                  <div>
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        color: '#4b5563',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '4px',
+                        fontFamily: 'var(--typography-mono-family)',
+                      }}
+                    >
+                      Email Dispatch
+                    </span>
+                    <a
+                      href="mailto:contact@neomindstechhub.com"
+                      style={{
+                        color: '#fe6200',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        fontFamily: 'var(--typography-body-family)',
+                      }}
+                    >
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Mail size={14} /> contact@neomindstechhub.com</span>
+                    </a>
+                  </div>
+
+                  <div>
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        color: '#4b5563',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                        marginBottom: '4px',
+                        fontFamily: 'var(--typography-mono-family)',
+                      }}
+                    >
+                      Operating Hours
+                    </span>
+                    <span
+                      style={{
+                        color: '#1a1a1a',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        fontFamily: 'var(--typography-body-family)',
+                      }}
+                    >
+                      Mon – Fri: 09:00 – 18:00 IST
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons & Socials */}
+              <div
+                style={{
+                  paddingTop: '20px',
+                  borderTop: '1px solid #e4e2e1',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  flexWrap: 'wrap',
+                  gap: '12px',
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <button
+                    type="button"
+                    onClick={handleCopyAddress}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      padding: '8px 14px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e4e2e1',
+                      borderRadius: '8px',
+                      color: copied ? '#fe6200' : '#1a1a1a',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      fontFamily: 'var(--typography-body-family)',
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#fe6200';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                    }}
+                  >
+                    {copied ? <Check size={14} color="#fe6200" /> : <Copy size={14} />}
+                    <span>{copied ? 'Copied' : 'Copy Address'}</span>
+                  </button>
+
+                  <a
+                    href="https://maps.google.com/?q=Neominds+Tech+Hub+Basheerbagh+Hyderabad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      padding: '8px 14px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e4e2e1',
+                      borderRadius: '8px',
+                      color: '#1a1a1a',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      fontFamily: 'var(--typography-body-family)',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#fe6200';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#1a1a1a';
+                    }}
+                  >
+                    <span>Open in Maps</span>
+                    <ArrowUpRight size={14} color="#fe6200" />
                   </a>
                 </div>
 
-                <div>
-                  <span
+                {/* Social Icons */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <a
+                    href="https://www.linkedin.com/company/neominds"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
                     style={{
-                      display: 'block',
-                      fontSize: '10.5px',
-                      fontWeight: 700,
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.06em',
-                      marginBottom: '2px',
-                      fontFamily: 'var(--typography-mono-family)',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      backgroundColor: '#faf8f5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1a1a1a',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      border: '1px solid #e4e2e1',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#fe6200';
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#faf8f5';
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#1a1a1a';
                     }}
                   >
-                    OPERATING HOURS
-                  </span>
-                  <span style={{ color: '#fbf9f5', fontSize: '13.5px', fontWeight: 500, fontFamily: 'var(--typography-body-family)' }}>
-                    {officeLocation.hours}
-                  </span>
-                </div>
+                    <Linkedin size={16} />
+                  </a>
 
-                <div>
-                  <span
+                  <a
+                    href="https://x.com/neominds"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X (Twitter)"
                     style={{
-                      display: 'block',
-                      fontSize: '10.5px',
-                      fontWeight: 700,
-                      color: '#868683',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.06em',
-                      marginBottom: '2px',
-                      fontFamily: 'var(--typography-mono-family)',
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      backgroundColor: '#faf8f5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1a1a1a',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      border: '1px solid #e4e2e1',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#fe6200';
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#faf8f5';
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#1a1a1a';
                     }}
                   >
-                    SECURITY STANDARD
-                  </span>
-                  <span style={{ color: '#059669', fontSize: '13px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '6px', fontFamily: 'var(--typography-body-family)' }}>
-                    <ShieldCheck size={14} color="#059669" />
-                    SOC 2 & ISO 27001 Aligned
-                  </span>
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="https://facebook.com/neominds"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      backgroundColor: '#faf8f5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1a1a1a',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      border: '1px solid #e4e2e1',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#fe6200';
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#faf8f5';
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#1a1a1a';
+                    }}
+                  >
+                    <Facebook size={16} />
+                  </a>
                 </div>
               </div>
             </div>
           </RevealElement>
+
+          {/* Right: Embedded Google Map */}
+          <RevealElement variant="card">
+            <div
+              style={{
+                width: '100%',
+                height: '100%',
+                minHeight: '420px',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                border: '1px solid #e4e2e1',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
+                backgroundColor: '#ffffff',
+              }}
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.2478606727113!2d78.47230017425652!3d17.39988878348942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6818176fa9aab98f%3A0x1b1e4a4037e0545c!2sNeominds%20Tech%20Hub!5e0!3m2!1sen!2sin!4v1793282847751!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block', width: '100%', height: '100%', minHeight: '420px' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                title="Neominds Tech Hub Location Map"
+              />
+            </div>
+          </RevealElement>
         </div>
 
-        {/* Technical Dispatch Intake Strip */}
+        {/* Technical Dispatch Intake Strip - Centered, Compact with Brand Orange Corner Borders */}
         <RevealElement variant="card">
           <div
+            className="nm-technical-briefings-card nm-corner-glow"
             style={{
-              padding: 'clamp(24px, 3.5vw, 40px)',
+              maxWidth: '740px',
+              margin: '0 auto',
+              padding: 'clamp(32px, 4vw, 44px) clamp(20px, 3.5vw, 40px)',
               backgroundColor: '#ffffff',
-              border: '1px solid #e4e2e1',
-              borderRadius: '8px',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
+              borderRadius: '12px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+              alignItems: 'center',
+              textAlign: 'center',
+              boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
+              position: 'relative',
+              overflow: 'hidden',
             }}
           >
+            {/* Header Content */}
+            <div style={{ maxWidth: '600px', marginBottom: '18px', textAlign: 'center' }}>
+              <h3
+                style={{
+                  fontSize: 'clamp(24px, 2.5vw, 30px)',
+                  fontWeight: 400,
+                  color: '#000000',
+                  margin: '0 0 10px 0',
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.2,
+                }}
+              >
+                Neominds Technical Briefings
+              </h3>
+              <p
+                style={{
+                  color: '#555555',
+                  fontSize: '14.5px',
+                  margin: 0,
+                  lineHeight: 1.6,
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              >
+                Monthly engineering dispatches on real systems — LLM latency benchmarks, distributed architecture decisions, and production resilience. No promotional fluff, no spam.
+              </p>
+            </div>
+
+            {/* Technical Topic Badges */}
             <div
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'flex-start',
                 flexWrap: 'wrap',
-                gap: '16px',
+                justifyContent: 'center',
+                gap: '8px',
+                maxWidth: '620px',
+                marginBottom: '26px',
               }}
             >
-              <div style={{ maxWidth: '640px' }}>
-                <h3
+              {[
+                'Distributed Systems',
+                'Applied AI & RAG',
+                'High-Concurrency',
+                'Zero-Trust Architecture',
+              ].map((topic) => (
+                <span
+                  key={topic}
                   style={{
-                    fontSize: 'clamp(22px, 2.5vw, 28px)',
-                    fontWeight: 700,
-                    color: '#000000',
-                    margin: '0 0 8px 0',
-                    fontFamily: 'var(--font-heading)',
-                    letterSpacing: '-0.02em',
+                    padding: '5px 12px',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid #e4e2e1',
+                    fontSize: '11.5px',
+                    fontWeight: 600,
+                    color: '#2f3437',
+                    borderRadius: '6px',
+                    letterSpacing: '0.02em',
+                    fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
                   }}
                 >
-                  Neominds Technical Briefings
-                </h3>
-                <p style={{ color: '#555555', fontSize: '15px', margin: 0, lineHeight: 1.6, fontFamily: 'var(--font-body)' }}>
-                  Monthly engineering dispatches on real systems — LLM latency benchmarks, distributed architecture decisions, and production resilience. No promotional fluff, no spam.
-                </p>
-              </div>
-
-              {/* Technical Topic Badges */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '8px',
-                  maxWidth: '400px',
-                }}
-              >
-                {[
-                  'Distributed Systems',
-                  'Applied AI & RAG',
-                  'High-Concurrency',
-                  'Zero-Trust Architecture',
-                ].map((topic) => (
-                  <span
-                    key={topic}
-                    style={{
-                      padding: '6px 12px',
-                      backgroundColor: '#f1efeb',
-                      border: '1px solid #e4e2e1',
-                      fontSize: '12px',
-                      fontWeight: 600,
-                      color: '#2f3437',
-                      borderRadius: '8px',
-                      letterSpacing: '0.02em',
-                      fontFamily: 'var(--typography-mono-family)',
-                    }}
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
+                  {topic}
+                </span>
+              ))}
             </div>
 
+            {/* Form */}
             <form
               onSubmit={handleSubscribe}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '12px',
-                maxWidth: '720px',
+                alignItems: 'center',
+                gap: '14px',
+                width: '100%',
+                maxWidth: '540px',
+                margin: '0 auto',
               }}
             >
-              <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                  width: '100%',
+                  flexWrap: 'wrap',
+                  justifyContent: 'center',
+                }}
+              >
                 <div
                   style={{
                     flex: '1 1 280px',
@@ -682,14 +569,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     backgroundColor: '#f1efeb',
                     border: '1px solid #e4e2e1',
                     borderRadius: '8px',
-                    transition: 'border-color 0.2s ease',
+                    transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
                   }}
                 >
                   <span
                     style={{
                       paddingLeft: '14px',
                       color: '#fe6200',
-                      fontFamily: 'var(--typography-body-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       fontSize: '13px',
                       fontWeight: 600,
                       userSelect: 'none',
@@ -712,7 +599,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       outline: 'none',
                       color: '#000000',
                       fontSize: '15px',
-                      fontFamily: 'var(--typography-body-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     }}
                     onFocus={(e) => {
                       (e.target.parentElement as HTMLElement).style.borderColor = '#fe6200';
@@ -730,7 +617,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   style={{
                     height: '46px',
                     paddingInline: '24px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     fontSize: '14px',
                     borderRadius: '8px',
                     backgroundColor: '#fe6200',
@@ -739,9 +626,12 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     cursor: 'pointer',
                     display: 'inline-flex',
                     alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '8px',
-                    fontFamily: 'var(--typography-body-family)',
-                    transition: 'background-color 0.2s ease',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    letterSpacing: '0.02em',
+                    transition: 'background-color 0.2s ease, transform 0.15s ease',
+                    boxShadow: '0 2px 8px rgba(254, 98, 0, 0.28)',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#cf5000';
@@ -755,18 +645,27 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 </button>
               </div>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '6px',
+                  marginTop: '4px',
+                }}
+              >
                 <label
                   style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
                     gap: '8px',
                     fontSize: '12.5px',
-                    color: '#66615c',
+                    color: '#555555',
                     cursor: 'pointer',
                     userSelect: 'none',
                     lineHeight: 1.5,
-                    fontFamily: 'var(--typography-body-family)',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                   }}
                 >
                   <input
@@ -774,14 +673,21 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     checked={newsletterConsent}
                     onChange={(e) => setNewsletterConsent(e.target.checked)}
                     required
-                    style={{ marginTop: '2px', accentColor: '#fe6200' }}
+                    style={{ accentColor: '#fe6200' }}
                   />
                   <span>
                     I agree to receive monthly engineering briefings and technical dispatches. Unsubscribe anytime.
                   </span>
                 </label>
 
-                <span style={{ fontSize: '11px', color: '#868683', paddingLeft: '20px', fontFamily: 'var(--typography-mono-family)' }}>
+                <span
+                  style={{
+                    fontSize: '11px',
+                    color: '#66615c',
+                    fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                    textAlign: 'center',
+                  }}
+                >
                   Zero spam protocol • Direct engineering communications only • No third-party data sharing
                 </span>
               </div>

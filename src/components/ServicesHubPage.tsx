@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Code,
   Smartphone,
@@ -12,6 +12,8 @@ import {
   Globe,
   ArrowRight,
   BarChart3,
+  Workflow,
+  Sparkles,
 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { ContactSection } from './ContactSection';
@@ -24,226 +26,232 @@ interface ServicesHubPageProps {
   onNavigateToIndustries?: () => void;
 }
 
+export interface ApprovedService {
+  id: string;
+  slug: string;
+  title: string;
+  category: 'AI' | 'General';
+  num: string;
+  shortDesc: string;
+  problemSolved: string;
+  whatWeDeliver: string;
+  capabilities: string[];
+  techStack: string[];
+  icon: React.ReactNode;
+}
+
+export const APPROVED_SERVICES: ApprovedService[] = [
+  // CATEGORY 1: AI (4 SERVICES)
+  {
+    id: 'ai-automations',
+    slug: 'ai-automations',
+    title: 'AI Automations',
+    category: 'AI',
+    num: '01',
+    shortDesc: 'Automated document processing, exception routing, and decision workflows.',
+    problemSolved: 'Teams spend excessive hours manually verifying documents, reconciling spreadsheets, and performing repetitive data handoffs.',
+    whatWeDeliver: 'Custom intelligent event-driven automation pipelines with real-time exception queues, error recovery, and enterprise integration.',
+    capabilities: ['Intelligent Document Processing', 'Rule-Based & Agentic Routing', 'Automated QA & Data Sync', 'ERP & CRM Workflow Bridges'],
+    techStack: ['Python', 'n8n', 'Celery', 'LangChain', 'FastAPI'],
+    icon: <Zap size={22} color="#fe6200" />,
+  },
+  {
+    id: 'ai-integrations',
+    slug: 'ai-integrations',
+    title: 'AI Integrations',
+    category: 'AI',
+    num: '02',
+    shortDesc: 'Embed semantic search, LLM reasoning, and vector databases into existing systems.',
+    problemSolved: 'Enterprises struggle to leverage proprietary data with modern generative models due to privacy and integration friction.',
+    whatWeDeliver: 'Zero-data-leakage vector store architectures, context retrieval microservices, and secured API middleware.',
+    capabilities: ['RAG Pipeline Architecture', 'Vector Database Deployment', 'Context Injection Middleware', 'Enterprise Security & Audit Logging'],
+    techStack: ['OpenAI API', 'Anthropic Claude', 'Pinecone', 'pgvector', 'LangGraph'],
+    icon: <Layers size={22} color="#fe6200" />,
+  },
+  {
+    id: 'ai-systems',
+    slug: 'ai-systems',
+    title: 'AI Systems',
+    category: 'AI',
+    num: '03',
+    shortDesc: 'Autonomous multi-agent architectures, reasoning engines, and custom model pipelines.',
+    problemSolved: 'Complex operational tasks require multi-step reasoning, cross-tool orchestration, and continuous state persistence.',
+    whatWeDeliver: 'Production-grade agent swarms with memory systems, fallback safety rails, and observable decision trails.',
+    capabilities: ['Multi-Agent Orchestration', 'Stateful Memory Architecture', 'Automated Tool Execution', 'Deterministic Safety Guardrails'],
+    techStack: ['Python', 'PyTorch', 'LangChain', 'Redis', 'Docker'],
+    icon: <Bot size={22} color="#fe6200" />,
+  },
+  {
+    id: 'ai-native-software',
+    slug: 'ai-native-software',
+    title: 'AI Native Software',
+    category: 'AI',
+    num: '04',
+    shortDesc: 'Software built with generative AI and LLMs as the foundational architecture layer.',
+    problemSolved: 'Legacy UX patterns fail when retrofitted with AI, resulting in slow interactions and disjointed user flows.',
+    whatWeDeliver: 'Greenfield digital applications engineered from first principles around prompt streaming, generative canvases, and dynamic UI.',
+    capabilities: ['Streaming UI/UX Architecture', 'Adaptive Workflow Generation', 'Dynamic Interface Synthesis', 'High-Concurrency Prompt Caching'],
+    techStack: ['Next.js', 'TypeScript', 'Node.js', 'Supabase', 'Tailwind CSS'],
+    icon: <Sparkles size={22} color="#fe6200" />,
+  },
+
+  // CATEGORY 2: GENERAL (11 SERVICES)
+  {
+    id: 'web-development',
+    slug: 'web-development',
+    title: 'Web Development',
+    category: 'General',
+    num: '05',
+    shortDesc: 'Fast, secure, and accessible web applications, client portals, and platforms.',
+    problemSolved: 'Slow-loading, inaccessible web apps that fail under peak concurrency and drag down conversion.',
+    whatWeDeliver: 'Modern single-page and server-rendered web platforms built for sub-second load times and robust scale.',
+    capabilities: ['Full-Stack Web Engineering', 'Responsive Design & WCAG AA', 'API Design & Integration', 'Core Web Vitals Optimization'],
+    techStack: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js'],
+    icon: <Code size={22} color="#fe6200" />,
+  },
+  {
+    id: 'app-development',
+    slug: 'app-development',
+    title: 'App Development',
+    category: 'General',
+    num: '06',
+    shortDesc: 'Native iOS and Android mobile software engineered for performance and platform depth.',
+    problemSolved: 'Sluggish mobile apps with poor offline handling, brittle push notification delivery, and inconsistent device support.',
+    whatWeDeliver: 'Pixel-perfect native applications using Apple HIG and Material Design standards with automated release pipelines.',
+    capabilities: ['Native iOS (Swift & SwiftUI)', 'Native Android (Kotlin & Compose)', 'Offline-First Data Sync', 'App Store & Play Store CI/CD'],
+    techStack: ['Swift', 'SwiftUI', 'Kotlin', 'Jetpack Compose', 'Fastlane'],
+    icon: <Smartphone size={22} color="#fe6200" />,
+  },
+  {
+    id: 'cross-platform-app-development',
+    slug: 'cross-platform-app-development',
+    title: 'Cross Platform Mobile App Development',
+    category: 'General',
+    num: '07',
+    shortDesc: 'Unified codebase running cleanly across iOS, Android, and web with zero compromise.',
+    problemSolved: 'Maintaining two separate mobile codebases doubles development costs and slows feature parity.',
+    whatWeDeliver: 'Single-codebase mobile applications delivering 60fps native feel, code reuse above 90%, and synchronized release cycles.',
+    capabilities: ['React Native & Expo Ecosystem', 'Flutter Cross-Platform Architecture', 'Native Bridge Modules', 'OTA Update Pipelines'],
+    techStack: ['React Native', 'TypeScript', 'Flutter', 'Dart', 'EAS Build'],
+    icon: <Layers size={22} color="#fe6200" />,
+  },
+  {
+    id: 'custom-software-development',
+    slug: 'custom-software-development',
+    title: 'Custom Software Development',
+    category: 'General',
+    num: '08',
+    shortDesc: 'Bespoke enterprise platforms, internal tooling, and full-lifecycle product engineering.',
+    problemSolved: 'Off-the-shelf software forces businesses into rigid workflows and expensive subscription bloat.',
+    whatWeDeliver: 'Custom platforms tailored exactly to your business logic, incorporating end-to-end product engineering from sprint discovery to production maintenance.',
+    capabilities: ['Domain-Driven Architecture', 'Product Discovery & Roadmapping', 'Microservices Decomposition', 'Enterprise Security & RBAC'],
+    techStack: ['TypeScript', 'Node.js', 'Python', 'PostgreSQL', 'Docker'],
+    icon: <Cpu size={22} color="#fe6200" />,
+  },
+  {
+    id: 'ecommerce-platform',
+    slug: 'ecommerce-platform',
+    title: 'Ecommerce Platform',
+    category: 'General',
+    num: '09',
+    shortDesc: 'High-volume headless commerce engines, custom checkouts, and inventory sync.',
+    problemSolved: 'Monolithic commerce platforms experiencing checkout latency, inventory drift, and slow multi-currency scaling.',
+    whatWeDeliver: 'Composable, headless storefronts with distributed cart caching, automated tax routing, and real-time inventory management.',
+    capabilities: ['Headless Storefront Engineering', 'Payment Gateway Integration', 'Inventory & OMS Synchronization', 'High-Concurrency Checkout Optimization'],
+    techStack: ['Shopify Plus', 'Next.js Commerce', 'Stripe', 'Redis', 'PostgreSQL'],
+    icon: <ShoppingCart size={22} color="#fe6200" />,
+  },
+  {
+    id: 'cloud-based-software',
+    slug: 'cloud-based-software',
+    title: 'Cloud Based Software',
+    category: 'General',
+    num: '10',
+    shortDesc: 'Resilient cloud infrastructure, serverless compute, and automated containerization.',
+    problemSolved: 'Fragile on-premise infrastructure with manual deployments, surprise cloud bills, and unexpected downtime.',
+    whatWeDeliver: 'Auto-scaling, multi-region cloud architectures with infrastructure as code, automated health monitoring, and disaster recovery.',
+    capabilities: ['AWS & GCP Cloud Architecture', 'Container Orchestration (Kubernetes)', 'Infrastructure as Code (Terraform)', 'Zero-Downtime CI/CD Pipelines'],
+    techStack: ['AWS', 'Google Cloud', 'Terraform', 'Kubernetes', 'Docker'],
+    icon: <Cloud size={22} color="#fe6200" />,
+  },
+  {
+    id: 'saas-development',
+    slug: 'saas-development',
+    title: 'SaaS Development',
+    category: 'General',
+    num: '11',
+    shortDesc: 'Multi-tenant subscription software with billing, tenant isolation, and administrative controls.',
+    problemSolved: 'Building SaaS applications requires complex multi-tenancy, metered billing, tenant data isolation, and user onboarding.',
+    whatWeDeliver: 'Production-ready SaaS platforms with automated billing, self-service user management, granular RBAC, and telemetry.',
+    capabilities: ['Multi-Tenant Database Isolation', 'Stripe & Paddle Billing Engines', 'Role-Based Access Control', 'Usage Metering & Webhooks'],
+    techStack: ['Next.js', 'PostgreSQL', 'Stripe', 'Node.js', 'Redis'],
+    icon: <Globe size={22} color="#fe6200" />,
+  },
+  {
+    id: 'analytics-dashboard',
+    slug: 'analytics-dashboard',
+    title: 'Analytic Dashboard',
+    category: 'General',
+    num: '12',
+    shortDesc: 'Real-time telemetry, executive reporting metrics, and interactive data visualizations.',
+    problemSolved: 'Decision-makers wait days for static spreadsheet reports while critical business operational signals go unnoticed.',
+    whatWeDeliver: 'Sub-second real-time dashboards with streaming data feeds, interactive drill-downs, and role-based views.',
+    capabilities: ['Real-Time Stream Ingestion', 'Interactive Data Visualization', 'Role-Based Dashboard Security', 'Export & Automated Dispatch Systems'],
+    techStack: ['React', 'D3.js', 'Apache Kafka', 'ClickHouse', 'PostgreSQL'],
+    icon: <BarChart3 size={22} color="#fe6200" />,
+  },
+  {
+    id: 'custom-health-software',
+    slug: 'custom-health-software',
+    title: 'Custom Health Software',
+    category: 'General',
+    num: '13',
+    shortDesc: 'HIPAA-compliant hospital systems, telemedicine platforms, and patient engagement portals.',
+    problemSolved: 'Healthcare providers struggle with disconnected patient records, fragmented clinical tools, and strict regulatory compliance.',
+    whatWeDeliver: 'Secure, compliant clinical software with encrypted health records, provider scheduling, and HL7/FHIR integrations.',
+    capabilities: ['HIPAA & HITECH Compliance', 'HL7 & FHIR Standard Integrations', 'Telehealth & Video Consultations', 'Encrypted Clinical Audit Trails'],
+    techStack: ['Node.js', 'React', 'PostgreSQL', 'WebRTC', 'AWS HealthLake'],
+    icon: <Cpu size={22} color="#fe6200" />,
+  },
+  {
+    id: 'legacy-modernisation',
+    slug: 'legacy-modernisation',
+    title: 'Legacy System Modernisation',
+    category: 'General',
+    num: '14',
+    shortDesc: 'Decompose monolithic mainframes and outdated codebases into cloud microservices with zero downtime.',
+    problemSolved: 'Legacy architectures incur mounting maintenance costs, security vulnerabilities, and developer recruitment bottlenecks.',
+    whatWeDeliver: 'Strangler-pattern monolith decomposition, automated database migration, and test coverage expansion without interrupting live transactions.',
+    capabilities: ['Strangler Fig Migration', 'Zero-Downtime Data Re-platforming', 'Monolith to Microservices', 'Automated Regression Testing'],
+    techStack: ['Java Spring Boot', 'Node.js', 'PostgreSQL', 'Docker', 'AWS'],
+    icon: <RefreshCw size={22} color="#fe6200" />,
+  },
+  {
+    id: 'training-as-service',
+    slug: 'training-as-service',
+    title: 'Training as a Service',
+    category: 'General',
+    num: '15',
+    shortDesc: 'Technical enablement, AI upskilling, and architectural onboarding for client engineering teams.',
+    problemSolved: 'Enterprises invest in new software and AI stacks but internal teams lack the technical depth to maintain and evolve them.',
+    whatWeDeliver: 'Hands-on architectural workshops, code reviews, and production best-practice runbooks delivered by senior engineers.',
+    capabilities: ['Applied AI & Prompt Engineering', 'Modern Full-Stack Architecture', 'DevOps & CI/CD Best Practices', 'Production Runbooks & Documentation'],
+    techStack: ['Interactive Workshops', 'Technical Playbooks', 'Live Pair Programming'],
+    icon: <Workflow size={22} color="#fe6200" />,
+  },
+];
+
 export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
   onNavigateToService,
   onNavigateToContact,
   onNavigateToPortfolio,
-  onNavigateToIndustries,
 }) => {
-  const trends = [
-    {
-      title: 'Artificial intelligence',
-      desc: 'AI now supports work from customer service to forecasting. We help you use it where it saves time or improves decisions.',
-      icon: <Cpu size={22} color="#fe6200" />,
-    },
-    {
-      title: 'Machine learning',
-      desc: 'Models that learn from your own data to predict demand, flag risk or personalize what customers see.',
-      icon: <Layers size={22} color="#fe6200" />,
-    },
-    {
-      title: 'Cloud computing',
-      desc: 'Cloud platforms give you speed, reliability and room to grow without running your own servers.',
-      icon: <Cloud size={22} color="#fe6200" />,
-    },
-    {
-      title: 'Data analytics',
-      desc: 'Dashboards and reports that turn scattered data into clear decisions.',
-      icon: <BarChart3 size={22} color="#fe6200" />,
-    },
-    {
-      title: 'Automation',
-      desc: 'Workflows that run on their own, so your team spends time on work that needs people.',
-      icon: <Zap size={22} color="#fe6200" />,
-    },
-  ];
+  const [activeCategory, setActiveCategory] = useState<'ALL' | 'AI' | 'General'>('ALL');
 
-  const whatWeBuild = [
-    {
-      title: 'Web applications',
-      desc: 'Fast, secure and responsive web apps, portals and sites that grow with your traffic.',
-      icon: <Globe size={24} color="#fe6200" />,
-      tag: 'Scale & Performance',
-    },
-    {
-      title: 'Mobile applications',
-      desc: 'iOS and Android apps designed for smooth use, with updates that are easy to ship.',
-      icon: <Smartphone size={24} color="#fe6200" />,
-      tag: 'iOS & Android',
-    },
-    {
-      title: 'Cloud and SaaS applications',
-      desc: 'Cloud-native products with accounts, billing and analytics ready to scale.',
-      icon: <Cloud size={24} color="#fe6200" />,
-      tag: 'Multi-Tenant SaaS',
-    },
-    {
-      title: 'AI-powered applications',
-      desc: 'Software that uses AI to automate work, answer questions or make predictions.',
-      icon: <Bot size={24} color="#fe6200" />,
-      tag: 'Generative AI & LLMs',
-    },
-  ];
-
-  const servicesList = [
-    {
-      num: '01',
-      title: 'Web Development',
-      slug: 'web-development',
-      desc: 'Fast, secure, responsive websites, portals and web apps that scale with your traffic.',
-      icon: <Code size={20} color="#fe6200" />,
-    },
-    {
-      num: '02',
-      title: 'App Development',
-      slug: 'app-development',
-      desc: 'Native iOS and Android apps built for smooth performance, security, and easy maintenance.',
-      icon: <Smartphone size={20} color="#fe6200" />,
-    },
-    {
-      num: '03',
-      title: 'Cross-Platform Mobile App Development',
-      slug: 'cross-platform-app-development',
-      desc: 'A unified codebase running cleanly across iOS, Android, and web with zero performance compromise.',
-      icon: <Layers size={20} color="#fe6200" />,
-    },
-    {
-      num: '04',
-      title: 'Custom Software Development',
-      slug: 'custom-software-development',
-      desc: 'Engineered around your operational workflow when off-the-shelf software falls short.',
-      icon: <Cpu size={20} color="#fe6200" />,
-    },
-    {
-      num: '05',
-      title: 'AI Automations',
-      slug: 'ai-automations',
-      desc: 'Eliminate repetitive manual tasks across approvals, invoice parsing, QA, and data sync.',
-      icon: <Zap size={20} color="#fe6200" />,
-    },
-    {
-      num: '06',
-      title: 'AI Integrations',
-      slug: 'ai-integrations',
-      desc: 'Embed semantic search, LLM reasoning, and intelligent document processing into existing stacks.',
-      icon: <Layers size={20} color="#fe6200" />,
-    },
-    {
-      num: '07',
-      title: 'AI Systems',
-      slug: 'ai-systems',
-      desc: 'Autonomous agentic systems, specialized reasoning models, and production RAG pipelines.',
-      icon: <Bot size={20} color="#fe6200" />,
-    },
-    {
-      num: '08',
-      title: 'E-commerce Platform',
-      slug: 'ecommerce-platform',
-      desc: 'High-volume storefronts, checkout engines, inventory sync, and localized payment gateways.',
-      icon: <ShoppingCart size={20} color="#fe6200" />,
-    },
-    {
-      num: '09',
-      title: 'AI Native Softwares',
-      slug: 'ai-native-software',
-      desc: 'Software built with generative AI and LLMs as the foundational architecture layer.',
-      icon: <Bot size={20} color="#fe6200" />,
-    },
-    {
-      num: '10',
-      title: 'Cloud Based Softwares',
-      slug: 'cloud-based-software',
-      desc: 'Resilient cloud infrastructure, distributed microservices, and auto-scaling compute pods.',
-      icon: <Cloud size={20} color="#fe6200" />,
-    },
-    {
-      num: '11',
-      title: 'SaaS Development',
-      slug: 'saas-development',
-      desc: 'Multi-tenant subscription platforms with tenant isolation, billing, and role management.',
-      icon: <Globe size={20} color="#fe6200" />,
-    },
-    {
-      num: '12',
-      title: 'Analytic Dashboard',
-      slug: 'analytics-dashboard',
-      desc: 'Real-time telemetry, executive reporting metrics, and interactive analytics dashboards.',
-      icon: <BarChart3 size={20} color="#fe6200" />,
-    },
-    {
-      num: '13',
-      title: 'Custom Health Softwares',
-      slug: 'custom-health-software',
-      desc: 'HIPAA-compliant hospital systems, telemedicine platforms, and patient engagement tools.',
-      icon: <Cpu size={20} color="#fe6200" />,
-    },
-    {
-      num: '14',
-      title: 'Legacy System Modernisation',
-      slug: 'legacy-modernisation',
-      desc: 'Decompose monolithic mainframes and outdated codebases into cloud microservices with zero downtime.',
-      icon: <RefreshCw size={20} color="#fe6200" />,
-    },
-    {
-      num: '15',
-      title: 'Training as a Service',
-      slug: 'training-as-service',
-      desc: 'Technical enablement, AI upskilling, and architectural onboarding for client engineering teams.',
-      icon: <Globe size={20} color="#fe6200" />,
-    },
-    {
-      num: '16',
-      title: 'Product Engineering',
-      slug: 'product-engineering',
-      desc: 'End-to-end product delivery from technical discovery and sprint execution to production scaling.',
-      icon: <Layers size={20} color="#fe6200" />,
-    },
-  ];
-
-  const industriesList = [
-    {
-      title: 'Enterprise',
-      desc: 'Internal systems, ERP integrations, workflow automation, and distributed data pipelines.',
-    },
-    {
-      title: 'Financial Tech',
-      desc: 'Core banking ledgers, automated clearing, payment routing, and fraud compliance systems.',
-    },
-    {
-      title: 'Retail',
-      desc: 'Point-of-sale integrations, dynamic inventory synchronization, and omnichannel billing.',
-    },
-    {
-      title: 'Education',
-      desc: 'Co-teacher systems, facial attendance tracking, fee managers, and learning platforms.',
-    },
-    {
-      title: 'Healthcare',
-      desc: 'HIPAA-compliant patient portals, hospital management systems (HMS), and diagnostic tools.',
-    },
-    {
-      title: 'E-commerce',
-      desc: 'High-throughput stores, catalog caching, checkout optimization, and multi-currency billing.',
-    },
-    {
-      title: 'Real Estate',
-      desc: 'Property management systems, cloud leasing platforms, and tenant portal architectures.',
-    },
-    {
-      title: 'E-learning',
-      desc: 'Modular LMS platforms, interactive learning modules, and automated student progress tracking.',
-    },
-  ];
-
-  const technologies = [
-    { area: 'Web Development', tech: 'React, Next.js, TypeScript, Node.js, Python, Go' },
-    { area: 'Artificial Intelligence', tech: 'OpenAI, Anthropic Claude, LangChain, Llama, Hugging Face' },
-    { area: 'Machine Learning', tech: 'Python, PyTorch, TensorFlow, Scikit-learn, MLflow' },
-    { area: 'Data Management', tech: 'PostgreSQL, MongoDB, Redis, Supabase, Pinecone, DynamoDB' },
-    { area: 'Data Analytics', tech: 'Apache Kafka, Snowflake, BigQuery, Power BI, Databricks' },
-    { area: 'Automations', tech: 'n8n, Celery, Airflow, Temporal, Playwright, Zapier' },
-    { area: 'Product Engineering', tech: 'Docker, Kubernetes, AWS, Azure, GCP, CI/CD, Terraform' },
-  ];
+  const filteredServices = APPROVED_SERVICES.filter((service) => {
+    if (activeCategory === 'ALL') return true;
+    return service.category === activeCategory;
+  });
 
   const handleServiceClick = (slug: string) => {
     if (onNavigateToService) {
@@ -263,62 +271,93 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
     }
   };
 
+  const developmentSteps = [
+    {
+      num: '01',
+      title: 'Discovery & System Architecture',
+      desc: 'We map operational workflows, identify technical bottlenecks, and produce clean architecture diagrams with verified data models before writing code.',
+    },
+    {
+      num: '02',
+      title: 'Iterative Sprint Delivery',
+      desc: 'Senior full-stack engineers embedded in bi-weekly sprints, demonstrating functioning features each week with full codebase visibility.',
+    },
+    {
+      num: '03',
+      title: 'Quality & Security Verification',
+      desc: 'Automated end-to-end regression suites, security audit gates, and load tests executed before staging promotions.',
+    },
+    {
+      num: '04',
+      title: 'Production Launch & SLA Support',
+      desc: 'Zero-downtime blue/green deployment, comprehensive documentation handoff, and ongoing 99.99% availability SLAs.',
+    },
+  ];
+
   return (
     <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '90px 24px 80px', position: 'relative', overflow: 'hidden', borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '90px 24px 70px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-
           <div style={{ maxWidth: '840px' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+              <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#fe6200' }} />
+              <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#fe6200', fontFamily: 'monospace' }}>
+                Engineering &amp; AI Capabilities
+              </span>
+            </div>
+
             <ScrollReveal
               as="h1"
               style={{
-                fontSize: 'clamp(36px, 5.5vw, 62px)',
+                fontSize: 'clamp(36px, 5.2vw, 58px)',
                 fontWeight: 800,
                 letterSpacing: '-0.03em',
-                lineHeight: 1.1,
+                lineHeight: 1.12,
                 marginBottom: '20px',
                 fontFamily: 'var(--font-heading)',
               }}
             >
-              Software development services
+              Software &amp; AI Development Services
             </ScrollReveal>
 
             <p
               style={{
-                fontSize: '18px',
-                lineHeight: 1.7,
-                color: '#000000',
-                marginBottom: '36px',
+                fontSize: '17px',
+                lineHeight: 1.65,
+                color: '#444444',
+                marginBottom: '32px',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               }}
             >
-              Neominds TechHub builds web, mobile, cloud and AI software for businesses worldwide. We plan, design, build, launch and support your product, with clear scope, weekly demos and a team that works your hours.
+              NeoMinds engineers high-performance web, mobile, cloud platforms and autonomous AI systems. We deliver verified software solutions across exactly two core competencies: <strong>AI</strong> and <strong>General Software Engineering</strong>.
             </p>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
               <button
                 onClick={handleEstimateClick}
                 style={{
-                  backgroundColor: '#fe6200', color: '#ffffff',
+                  backgroundColor: '#fe6200',
+                  color: '#ffffff',
                   border: 'none',
-                  padding: '14px 28px',
+                  padding: '13px 26px',
                   borderRadius: '8px',
-                  fontSize: '15px',
+                  fontSize: '14.5px',
                   fontWeight: 600,
                   cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  boxShadow: '0 8px 24px rgba(254, 98, 0, 0.35)',
+                  boxShadow: '0 4px 16px rgba(254, 98, 0, 0.28)',
                   transition: 'background-color 0.2s',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#cf5000')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
               >
-                <span>Get a project estimate</span>
-                <ArrowRight size={16} />
+                <span>Discuss Your Project</span>
+                <ArrowRight size={15} />
               </button>
 
               <button
@@ -327,20 +366,21 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                   else window.location.href = '/portfolio';
                 }}
                 style={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  color: '#000000',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  padding: '14px 28px',
+                  backgroundColor: '#ffffff',
+                  color: '#111111',
+                  border: '1px solid rgba(0, 0, 0, 0.12)',
+                  padding: '13px 26px',
                   borderRadius: '8px',
-                  fontSize: '15px',
+                  fontSize: '14.5px',
                   fontWeight: 600,
                   cursor: 'pointer',
-                  transition: 'background-color 0.2s',
+                  transition: 'background-color 0.2s, border-color 0.2s',
+                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.16)')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)')}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#fe6200')}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)')}
               >
-                View case studies
+                View Case Studies
               </button>
             </div>
           </div>
@@ -348,40 +388,178 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          2. TRENDS BLOCK (5 ITEMS) - CREAM BEIGE BACKGROUND
+          2. STRICT TWO-CATEGORY DISCOVERY STRIP
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
+      <section style={{ padding: '60px 24px 80px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              What is shaping software today
-            </h2>
-          </div>
+          
+          {/* Header & Category Filters */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '36px' }}>
+            <div>
+              <h2 style={{ fontSize: 'clamp(26px, 3.2vw, 36px)', fontWeight: 800, color: '#000000', margin: '0 0 8px 0', fontFamily: 'var(--font-heading)' }}>
+                Service Catalog
+              </h2>
+              <p style={{ fontSize: '15px', color: '#66615c', margin: 0 }}>
+                15 approved engineering services structured under two focused categories.
+              </p>
+            </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '20px' }}>
-            {trends.map((t, idx) => (
-              <RevealElement
-                key={idx}
-                variant="card"
-                delay={idx * 0.05}
+            {/* Strict Two-Category Tab Controls */}
+            <div style={{ display: 'inline-flex', backgroundColor: '#ffffff', padding: '4px', borderRadius: '10px', border: '1px solid #e4e2e1' }}>
+              <button
+                onClick={() => setActiveCategory('ALL')}
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderTop: '2px solid #fe6200',
-                  borderRadius: '8px',
-                  padding: '24px',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                  padding: '8px 18px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'ALL' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'ALL' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
                 }}
               >
-                <div style={{ width: '44px', height: '44px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
-                  {t.icon}
+                All (15)
+              </button>
+              <button
+                onClick={() => setActiveCategory('AI')}
+                style={{
+                  padding: '8px 18px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'AI' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'AI' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                AI (4)
+              </button>
+              <button
+                onClick={() => setActiveCategory('General')}
+                style={{
+                  padding: '8px 18px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13.5px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'General' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'General' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                General (11)
+              </button>
+            </div>
+          </div>
+
+          {/* Service Cards Grid with Corner Glow and Clean Apple HIG Styling */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '22px' }}>
+            {filteredServices.map((service, idx) => (
+              <RevealElement key={service.id} variant="card" delay={(idx % 3) * 0.06}>
+                <div
+                  className="nm-corner-glow"
+                  onClick={() => handleServiceClick(service.slug)}
+                  style={{
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    padding: '28px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    minHeight: '340px',
+                    transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease',
+                    boxShadow: '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
+                    position: 'relative',
+                    overflow: 'hidden',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.boxShadow = '0 14px 34px -8px rgba(0, 0, 0, 0.08)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)';
+                  }}
+                >
+                  <div>
+                    {/* Top Row: Number & Category Badge */}
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                        <div style={{ width: '38px', height: '38px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.08)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          {service.icon}
+                        </div>
+                        <span style={{ fontSize: '14px', fontWeight: 700, color: '#fe6200', fontFamily: 'monospace' }}>
+                          {service.num}
+                        </span>
+                      </div>
+
+                      <span
+                        style={{
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.06em',
+                          color: service.category === 'AI' ? '#fe6200' : '#475569',
+                          backgroundColor: service.category === 'AI' ? 'rgba(254, 98, 0, 0.1)' : '#f1f5f9',
+                          padding: '3px 8px',
+                          borderRadius: '6px',
+                          fontFamily: 'monospace',
+                        }}
+                      >
+                        {service.category}
+                      </span>
+                    </div>
+
+                    <h3 style={{ fontSize: '19px', fontWeight: 700, color: '#000000', margin: '0 0 10px 0', lineHeight: 1.3 }}>
+                      {service.title}
+                    </h3>
+
+                    <p style={{ fontSize: '14px', color: '#444444', lineHeight: 1.6, margin: '0 0 16px 0' }}>
+                      {service.shortDesc}
+                    </p>
+
+                    {/* Capabilities list */}
+                    <div style={{ marginBottom: '18px' }}>
+                      <div style={{ fontSize: '11px', fontWeight: 700, color: '#66615c', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '8px' }}>
+                        Key Capabilities:
+                      </div>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                        {service.capabilities.slice(0, 3).map((cap, i) => (
+                          <span
+                            key={i}
+                            style={{
+                              fontSize: '11.5px',
+                              color: '#334155',
+                              backgroundColor: '#f8fafc',
+                              border: '1px solid #e2e8f0',
+                              padding: '2px 8px',
+                              borderRadius: '4px',
+                            }}
+                          >
+                            {cap}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Action Row */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '14px', borderTop: '1px solid #f1efeb', marginTop: '12px' }}>
+                    <span style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      Explore Service Overview
+                      <ArrowRight size={13} />
+                    </span>
+                  </div>
                 </div>
-                <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', marginBottom: '8px' }}>
-                  {t.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
-                  {t.desc}
-                </p>
               </RevealElement>
             ))}
           </div>
@@ -389,211 +567,56 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          3. WHAT WE BUILD (4 CARDS) - CLEAN WHITE BACKGROUND
-          ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1', borderBottom: '1px solid #e4e2e1' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '44px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              What we build
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(270px, 1fr))', gap: '24px' }}>
-            {whatWeBuild.map((item, idx) => (
-              <div
-                key={idx}
-                style={{
-                  border: '1px solid #e4e2e1',
-                  borderTop: '2px solid #fe6200',
-                  borderRadius: '8px',
-                  padding: '30px',
-                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: '#ffffff', border: '1px solid #e4e2e1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      {item.icon}
-                    </div>
-                    <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: '#ffffff', border: '1px solid rgba(254, 98, 0, 0.25)', padding: '3px 8px', borderRadius: '8px' }}>
-                      {item.tag}
-                    </span>
-                  </div>
-                  <h3 style={{ fontSize: '20px', fontWeight: 700, color: '#000000', marginBottom: '10px' }}>
-                    {item.title}
-                  </h3>
-                  <p style={{ fontSize: '14px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          5. SERVICES WE OFFER (NUMBERED LIST) - CREAM BEIGE BACKGROUND
-          ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '48px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              Services we offer
-            </h2>
-            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
-              From initial architecture to continuous production delivery, our teams cover every stage of the software lifecycle.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '20px' }}>
-            {servicesList.map((service, idx) => (
-              <div
-                key={idx}
-                onClick={() => handleServiceClick(service.slug)}
-                style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '8px',
-                  padding: '24px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  gap: '18px',
-                  alignItems: 'flex-start',
-                  transition: 'all 0.2s ease',
-                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#fe6200';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(254, 98, 0, 0.08)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#e4e2e1';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.03)';
-                }}
-              >
-                <div style={{ fontSize: '16px', fontWeight: 800, color: '#fe6200', fontFamily: 'monospace' }}>
-                  {service.num}
-                </div>
-                <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '6px' }}>
-                    <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#000000', margin: 0 }}>
-                      {service.title}
-                    </h3>
-                    <ArrowRight size={14} color="#fe6200" />
-                  </div>
-                  <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.55, margin: 0 }}>
-                    {service.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          6. INDUSTRIES WE BUILD FOR - CLEAN WHITE BACKGROUND
+          3. OUR APPROACH / DEVELOPMENT METHODOLOGY
           ======================================================== */}
       <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '20px', marginBottom: '40px' }}>
-            <div>
-              <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-                Industries we build for
-              </h2>
-            </div>
-
-            <button
-              onClick={() => {
-                if (onNavigateToIndustries) onNavigateToIndustries();
-                else window.location.href = '/industries';
-              }}
-              style={{
-                backgroundColor: 'transparent',
-                color: '#fe6200',
-                border: 'none',
-                fontSize: '14px',
-                fontWeight: 600,
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-              }}
-            >
-              <span>See all industries (adds Real Estate and Retail)</span>
-              <ArrowRight size={14} />
-            </button>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '20px' }}>
-            {industriesList.map((ind, idx) => (
-              <div
-                key={idx}
-                style={{
-                  border: '1px solid #e4e2e1',
-                  borderTop: '2px solid #fe6200',
-                  borderRadius: '8px',
-                  padding: '24px',
-                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-                }}
-              >
-                <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', marginBottom: '8px' }}>
-                  {ind.title}
-                </h3>
-                <p style={{ fontSize: '13.5px', color: '#333333', lineHeight: 1.6, margin: 0 }}>
-                  {ind.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          8. TECHNOLOGIES WE USE - CREAM BEIGE BACKGROUND
-          ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: 'var(--colors-surface-light, #f1efeb)', borderTop: '1px solid #e4e2e1' }}>
-        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-          <div style={{ marginBottom: '40px' }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: '#000000', marginTop: '6px', fontFamily: 'var(--font-heading)' }}>
-              Technologies we use
+          <div style={{ maxWidth: '720px', marginBottom: '44px' }}>
+            <span style={{ fontSize: '11.5px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#fe6200', fontFamily: 'monospace' }}>
+              Execution Framework
+            </span>
+            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 38px)', fontWeight: 800, color: '#000000', margin: '6px 0 12px 0', fontFamily: 'var(--font-heading)' }}>
+              How We Deliver Production Software
             </h2>
-            <p style={{ fontSize: '16px', color: '#66615c', maxWidth: '680px', marginTop: '8px' }}>
-              The tools behind our work, chosen for your goals.
+            <p style={{ fontSize: '15.5px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+              We eliminate ambiguity with strict technical discovery, verifiable weekly milestone demos, and continuous testing gates before any code reaches production.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
-            {technologies.map((t, idx) => (
-              <div
-                key={idx}
-                style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '8px',
-                  padding: '20px',
-                }}
-              >
-                <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
-                  {t.area}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '22px' }}>
+            {developmentSteps.map((step, idx) => (
+              <RevealElement key={idx} variant="card" delay={idx * 0.08}>
+                <div
+                  style={{
+                    backgroundColor: 'var(--colors-surface-light, #fbf9f5)',
+                    border: '1px solid #e4e2e1',
+                    borderRadius: '12px',
+                    padding: '28px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    minHeight: '220px',
+                  }}
+                >
+                  <div>
+                    <div style={{ fontSize: '18px', fontWeight: 800, color: '#fe6200', fontFamily: 'monospace', marginBottom: '14px' }}>
+                      {step.num}
+                    </div>
+                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', margin: '0 0 10px 0' }}>
+                      {step.title}
+                    </h3>
+                    <p style={{ fontSize: '13.5px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                      {step.desc}
+                    </p>
+                  </div>
                 </div>
-                <div style={{ fontSize: '13px', color: '#333333', lineHeight: 1.5 }}>
-                  {t.tech}
-                </div>
-              </div>
+              </RevealElement>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Shared Contact, Locations & Newsletter */}
+      {/* Shared Contact & Locations */}
       <div id="contact-section">
         <ContactSection />
       </div>

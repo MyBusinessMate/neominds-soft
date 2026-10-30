@@ -94,7 +94,7 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
                   {step.step}
                 </div>
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#fe6200' : '#868683', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 800, color: isCurrent ? '#fe6200' : '#4b5563', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                     STAGE {step.step}
                   </div>
                   <div style={{ fontSize: '14px', fontWeight: isCurrent ? 700 : 500, color: isCurrent ? '#000000' : '#66615c' }}>

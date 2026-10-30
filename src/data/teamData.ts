@@ -26,10 +26,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'ali-asgar',
     name: 'Ali Asgar',
-    role: 'Founder and CEO',
+    role: 'Chief Executive Officer',
     featured: true,
     order: 1,
-    image: '',
+    image: '/images/leaders/leader_shezan.jpg',
     socials: {
       linkedin: 'https://linkedin.com',
       twitter: 'https://x.com',
@@ -76,10 +76,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: 'mohd-khadar',
     name: 'Mohd Khadar',
-    role: 'Co founder',
+    role: 'Co-founder & Chief Technology Officer',
     featured: true,
     order: 2,
-    image: '',
+    image: '/images/leaders/leader_vikram.jpg',
     socials: {
       linkedin: 'https://linkedin.com',
       twitter: 'https://x.com',
@@ -129,7 +129,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Operations Manager',
     featured: true,
     order: 3,
-    image: '',
+    image: '/images/leaders/leader_ananya.jpg',
     socials: {
       linkedin: 'https://linkedin.com',
       website: 'https://neomindstechhub.com',

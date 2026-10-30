@@ -138,7 +138,7 @@ export const ServiceSignature: React.FC<ServiceSignatureProps> = ({ data }) => {
                           alignItems: 'center',
                           gap: '6px',
                           fontSize: '12px',
-                          color: '#868683',
+                          color: '#4b5563',
                         }}
                       >
                         <ArrowRight size={12} color={step.color || '#fe6200'} />

@@ -749,8 +749,8 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
                 <span className="ai-nav-brand-text">NEOMINDS.AI</span>
               </div>
               <p className="ai-footer-desc">
-                AI-enabled product engineering from architecture through production. Over 23
-                years of engineering excellence and rigorous execution.
+                AI-enabled product engineering from architecture through production. Over 30+
+                production systems engineered and deployed in 1 year.
               </p>
             </div>
 

@@ -47,7 +47,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
             Ecosystem Directory
           </ScrollReveal>
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '16px', color: '#868683', lineHeight: 1.6, margin: 0 }}>
+            <p style={{ fontSize: '16px', color: '#4b5563', lineHeight: 1.6, margin: 0 }}>
               Scale your initiatives by integrating {currentTitle} with adjacent platform engineering and AI disciplines.
             </p>
           </RevealElement>
@@ -111,7 +111,7 @@ export const RelatedServices: React.FC<RelatedServicesProps> = ({
                 >
                   {item.title}
                 </h3>
-                <p style={{ fontSize: '13.5px', color: '#868683', margin: 0 }}>
+                <p style={{ fontSize: '13.5px', color: '#4b5563', margin: 0 }}>
                   {item.tagline}
                 </p>
               </div>

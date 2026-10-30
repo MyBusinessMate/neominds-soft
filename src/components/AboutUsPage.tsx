@@ -6,11 +6,10 @@ import {
   ShieldCheck,
   Mail,
   Upload,
-  Play,
 } from 'lucide-react';
-import {
+import {
   ABOUT_TESTIMONIALS,
-  ABOUT_LOCATION,
+  ABOUT_LOCATION,
 } from '../data/aboutData';
 import { Footer } from './Footer';
 import { TeamSection } from './team/TeamSection';
@@ -133,58 +132,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          3. VIDEO / BRAND SHOWCASE SECTION (.s-video__video)
-          ======================================================== */}
-      <section className="s-video-section">
-        <div className="s-video-section__container">
-          <div className="s-video-section__header">
-            <h2 className="s-video-section__title">
-              Living our <span>values</span>
-            </h2>
-            <p className="s-video-section__desc">
-              From collaborative architecture reviews to deep domain research, our culture is rooted in craftsmanship, curiosity, and shared ambition.
-            </p>
-          </div>
-
-          <div className="s-video-section__player">
-            <video
-              poster="/uploads/ESThumbnails/100348/1280.Video.png"
-              preload="metadata"
-              loop
-              muted
-              playsInline
-              autoPlay
-            >
-              <source src="/uploads/2025/06/Video-About-us.mp4" type="video/mp4" />
-              <source src="/uploads/2025/07/about-neominds.webm" type="video/webm" />
-            </video>
-
-            <div
-              style={{
-                position: 'absolute',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: '10px 20px',
-                backgroundColor: 'rgba(7, 11, 20, 0.75)',
-                backdropFilter: 'blur(8px)',
-                borderRadius: '8px',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                color: '#ffffff',
-                fontSize: '14px',
-                fontWeight: 600,
-                pointerEvents: 'none',
-              }}
-            >
-              <Play size={16} style={{ color: '#fe6200', fill: '#fe6200' }} />
-              <span>Neominds Global Culture &amp; Engineering</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          4. CORE VALUES SECTION (.s-values theme-dark2)
+          3. CORE VALUES SECTION (.s-values theme-dark2)
           ======================================================== */}
       <section className="s-values" id="values">
         <div className="s-values__container">
@@ -461,7 +409,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 <span style={{ fontSize: '14px', color: '#000000', fontWeight: 500 }}>
                   {selectedFileName ? selectedFileName : 'Click to upload or drag and drop a file (brief, spec or design)'}
                 </span>
-                <span style={{ fontSize: '12px', color: '#868683' }}>
+                <span style={{ fontSize: '12px', color: '#4b5563' }}>
                   SVG, PNG, JPG, PDF or DOC (max. 33 MB)
                 </span>
                 <input

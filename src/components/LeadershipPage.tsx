@@ -114,23 +114,23 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <h3 style={{ fontSize: '22px', fontWeight: 600, color: '#000000', lineHeight: 1.35, margin: '0 0 16px', letterSpacing: '-0.01em' }}>
                   Engineering grounded in clarity, technical mastery, and long-term partnership.
                 </h3>
-                <p style={{ fontSize: '14.5px', color: '#9ca3af', lineHeight: 1.65, margin: '0 0 24px' }}>
+                <p style={{ fontSize: '14.5px', color: '#2b2b2b', lineHeight: 1.65, margin: '0 0 24px' }}>
                   Our leadership team is composed of hands-on architects and seasoned delivery directors who have built, scaled, and maintained critical software platforms worldwide.
                 </p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px', borderTop: '1px solid #1f1f23', paddingTop: '20px' }}>
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>15+</div>
-                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Avg Yrs Experience</div>
+                    <div style={{ fontSize: '12px', color: '#4b5563' }}>Avg Yrs Experience</div>
                   </div>
                   <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>100%</div>
-                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Hands-on Technical</div>
+                    <div style={{ fontSize: '12px', color: '#4b5563' }}>Hands-on Technical</div>
                   </div>
                   <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>24/7</div>
-                    <div style={{ fontSize: '12px', color: '#9ca3af' }}>Global Coverage</div>
+                    <div style={{ fontSize: '12px', color: '#4b5563' }}>Global Coverage</div>
                   </div>
                 </div>
               </div>
@@ -169,11 +169,11 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
               maxWidth: '820px',
               maxHeight: '90vh',
               overflowY: 'auto',
-              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-              border: '1px solid #fe6200',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e4e2e1',
               borderRadius: '8px',
               padding: '36px',
-              boxShadow: '0 24px 64px rgba(254, 98, 0, 0.25)',
+              boxShadow: '0 24px 64px rgba(0, 0, 0, 0.15)',
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -187,13 +187,13 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 width: '40px',
                 height: '40px',
                 borderRadius: '8px',
-                backgroundColor: '#18181B',
-                border: '1px solid #27272A',
+                backgroundColor: '#f1efeb',
+                border: '1px solid #e4e2e1',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
-                color: '#FFFFFF',
+                color: '#000000',
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
@@ -201,8 +201,8 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 e.currentTarget.style.color = '#ffffff';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
-                e.currentTarget.style.color = '#FFFFFF';
+                e.currentTarget.style.backgroundColor = '#f1efeb';
+                e.currentTarget.style.color = '#000000';
               }}
               aria-label="Close modal"
             >
@@ -212,7 +212,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px', alignItems: 'flex-start' }}>
               {/* Photo & Quick Info */}
               <div>
-                <div style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #27272A' }}>
+                <div style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #e4e2e1' }}>
                   <img
                     src={selectedLeader.image}
                     alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds TechHub`}
@@ -252,7 +252,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       gap: '8px',
                       padding: '12px 18px',
                       borderRadius: '8px',
-                      backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                      backgroundColor: '#f1efeb',
                       color: '#fe6200',
                       border: '1px solid #fe6200',
                       fontSize: '13.5px',
@@ -265,7 +265,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                       e.currentTarget.style.color = '#ffffff';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'var(--colors-surface-dark-subtle, #f0ece2)';
+                      e.currentTarget.style.backgroundColor = '#f1efeb';
                       e.currentTarget.style.color = '#fe6200';
                     }}
                   >
@@ -280,22 +280,22 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                   {selectedLeader.role}
                 </div>
-                <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#FFFFFF', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
+                <h2 style={{ fontSize: '30px', fontWeight: 700, color: '#000000', margin: '0 0 16px', letterSpacing: '-0.02em' }}>
                   {selectedLeader.name}
                 </h2>
-                <div style={{ fontSize: '14px', color: '#9CA3AF', marginBottom: '20px' }}>
-                  Based in: <strong style={{ color: '#FFFFFF' }}>{selectedLeader.location}</strong>
+                <div style={{ fontSize: '14px', color: '#4b5563', marginBottom: '20px' }}>
+                  Based in: <strong style={{ color: '#000000' }}>{selectedLeader.location}</strong>
                 </div>
 
-                <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#D1D5DB', marginBottom: '20px' }}>
+                <div style={{ fontSize: '15px', lineHeight: 1.65, color: '#2b2b2b', marginBottom: '20px' }}>
                   {selectedLeader.bio}
                 </div>
 
-                <div style={{ backgroundColor: '#121212', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #fe6200', marginBottom: '24px' }}>
+                <div style={{ backgroundColor: '#f9f8f6', padding: '16px 20px', borderRadius: '8px', borderLeft: '3px solid #fe6200', border: '1px solid #e4e2e1', marginBottom: '24px' }}>
                   <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '4px' }}>
                     Track Record & Background
                   </div>
-                  <div style={{ fontSize: '14px', color: '#D1D5DB', lineHeight: 1.55 }}>
+                  <div style={{ fontSize: '14px', color: '#2b2b2b', lineHeight: 1.55 }}>
                     {selectedLeader.background}
                   </div>
                 </div>
@@ -307,12 +307,12 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 )}
 
                 <div>
-                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '12px' }}>
+                  <div style={{ fontSize: '13px', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.03em', marginBottom: '12px' }}>
                     Core Focus Areas
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px' }}>
                     {selectedLeader.focus.map((item, idx) => (
-                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#D1D5DB' }}>
+                      <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13.5px', color: '#2b2b2b' }}>
                         <CheckCircle2 size={16} color="#fe6200" style={{ flexShrink: 0 }} />
                         <span>{item}</span>
                       </div>

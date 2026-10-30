@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 interface CaseStudyCard {
   id: string;
   client: string;
+  domainTag: string;
+  metric: string;
   title: string;
   gradient: string;
   borderColor: string;
@@ -19,26 +21,30 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'mindspace-mobile-app',
     client: 'MINDSPACE.AI',
+    domainTag: 'Healthcare AI',
+    metric: '3.4x Patient Velocity',
     title: 'Healthcare Telehealth & Clinical Wellness Mobile App',
     gradient: 'linear-gradient(155deg, #F5E8FF 0%, #EDE9FE 50%, #DDD6FE 100%)',
     borderColor: 'rgba(168, 85, 247, 0.28)',
-    shadowColor: 'rgba(168, 85, 247, 0.18)',
+    shadowColor: 'rgba(168, 85, 247, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M15 60h20l10-25 15 50 15-35 10 15h20" />
-        <circle cx="60" cy="60" r="50" strokeDasharray="6 6" />
+        <circle cx="60" cy="60" r="50" strokeDasharray="4 4" />
       </svg>
     ),
   },
   {
     id: 'authenticom-ai-etl',
     client: 'AUTHENTICOM',
+    domainTag: 'Automotive Data',
+    metric: '10M+ Daily Records',
     title: 'Automotive Data Ingestion & Real-Time DMS Integration Platform',
     gradient: 'linear-gradient(155deg, #E0F2FE 0%, #BAE6FD 50%, #93C5FD 100%)',
     borderColor: 'rgba(14, 165, 233, 0.28)',
-    shadowColor: 'rgba(14, 165, 233, 0.18)',
+    shadowColor: 'rgba(14, 165, 233, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="60" cy="30" rx="42" ry="16" />
         <path d="M18 30v30c0 8.8 18.8 16 42 16s42-7.2 42-16V30" />
         <path d="M18 60v30c0 8.8 18.8 16 42 16s42-7.2 42-16V60" />
@@ -48,27 +54,31 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'fundbot-sql-chatbot',
     client: 'FUNDBOT',
+    domainTag: 'FinTech GenAI',
+    metric: '98.5% Query Accuracy',
     title: 'Natural Language AI SQL Financial Query Engine',
     gradient: 'linear-gradient(155deg, #FEF9C3 0%, #FEF08A 50%, #FDE047 100%)',
     borderColor: 'rgba(234, 179, 8, 0.32)',
-    shadowColor: 'rgba(234, 179, 8, 0.22)',
+    shadowColor: 'rgba(234, 179, 8, 0.20)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M25 35l20 25-20 25" />
         <line x1="55" y1="85" x2="95" y2="85" />
-        <path d="M85 25l5 10 10 5-10 5-5 10-5-10-10-5 10-5z" fill="currentColor" fillOpacity="0.2" />
+        <path d="M85 25l5 10 10 5-10 5-5 10-5-10-10-5 10-5z" fill="currentColor" fillOpacity="0.12" />
       </svg>
     ),
   },
   {
     id: 'trubridge-medical-ai',
     client: 'TRUBRIDGE',
+    domainTag: 'HealthTech AI',
+    metric: '65% Faster Processing',
     title: 'Automated Medical Coding & Claims Verification Engine',
     gradient: 'linear-gradient(155deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%)',
     borderColor: 'rgba(244, 63, 94, 0.28)',
-    shadowColor: 'rgba(244, 63, 94, 0.18)',
+    shadowColor: 'rgba(244, 63, 94, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M60 15L22 32v34c0 26 38 42 38 42s38-16 38-42V32L60 15z" />
         <path d="M42 60l12 12 24-24" />
       </svg>
@@ -77,12 +87,14 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'dotcomweavers-project-buddy',
     client: 'DOTCOMWEAVERS',
+    domainTag: 'Enterprise AI',
+    metric: '40% Velocity Boost',
     title: 'Autonomous Multi-Project AI Assistant & Velocity Engine',
     gradient: 'linear-gradient(155deg, #FFEDD5 0%, #FED7AA 50%, #FDBA74 100%)',
     borderColor: 'rgba(249, 115, 22, 0.28)',
-    shadowColor: 'rgba(249, 115, 22, 0.18)',
+    shadowColor: 'rgba(249, 115, 22, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="60" cy="35" r="14" />
         <circle cx="30" cy="85" r="14" />
         <circle cx="90" cy="85" r="14" />
@@ -93,13 +105,15 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'adventr',
     client: 'ADVENTR',
+    domainTag: 'Smart Video',
+    metric: '2.5M Interactive Views',
     title: 'Interactive Smart-Video Generation & Analytics Suite',
     gradient: 'linear-gradient(155deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%)',
     borderColor: 'rgba(16, 185, 129, 0.28)',
-    shadowColor: 'rgba(16, 185, 129, 0.18)',
+    shadowColor: 'rgba(16, 185, 129, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="50,40 80,60 50,80" fill="currentColor" fillOpacity="0.2" />
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="50,40 80,60 50,80" fill="currentColor" fillOpacity="0.12" />
         <circle cx="60" cy="60" r="45" />
         <path d="M60 15v10M60 95v10M15 60h10M95 60h10" />
       </svg>
@@ -108,12 +122,14 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'flooring-inc-dashboard',
     client: 'FLOORING INC',
+    domainTag: 'E-Commerce Data',
+    metric: '99.99% Architecture Uptime',
     title: 'High-Volume E-Commerce Inventory & Analytics Dashboard',
     gradient: 'linear-gradient(155deg, #E0E7FF 0%, #C7D2FE 50%, #A5B4FC 100%)',
     borderColor: 'rgba(99, 102, 241, 0.28)',
-    shadowColor: 'rgba(99, 102, 241, 0.18)',
+    shadowColor: 'rgba(99, 102, 241, 0.16)',
     watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="20" y="60" width="16" height="40" rx="3" />
         <rect x="44" y="42" width="16" height="58" rx="3" />
         <rect x="68" y="24" width="16" height="76" rx="3" />
@@ -135,8 +151,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(() => (typeof window !== 'undefined' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false));
   const [activeMobileIndex, setActiveMobileIndex] = useState(0);
 
   // Touch swipe tracking for mobile carousel
@@ -144,14 +159,13 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
   const touchEndX = useRef<number | null>(null);
 
   useEffect(() => {
-    const checkViewport = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkMotion = () => {
       setReduceMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
     };
-
-    checkViewport();
-    window.addEventListener('resize', checkViewport);
-    return () => window.removeEventListener('resize', checkViewport);
+    checkMotion();
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    mq.addEventListener('change', checkMotion);
+    return () => mq.removeEventListener('change', checkMotion);
   }, []);
 
   const handlePrev = useCallback(() => {
@@ -184,74 +198,77 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
     touchEndX.current = null;
   };
 
-  // GSAP Curved Scroll Trigger: only active on desktop screens
+  // GSAP Curved Scroll Trigger: responsive media matching (>= 768px)
   useLayoutEffect(() => {
-    if (reduceMotion || isMobile) return;
+    if (typeof window === 'undefined') return;
 
-    const cards = cardRefs.current;
-    if (!cards || cards.length === 0 || !sectionRef.current) return;
+    const mm = gsap.matchMedia();
 
-    const computeLayoutValues = () => {
-      const width = window.innerWidth;
-      const isTablet = width >= 768 && width < 1100;
+    mm.add('(min-width: 768px)', () => {
+      if (reduceMotion) return;
+      const cards = cardRefs.current;
+      if (!cards || cards.length === 0 || !sectionRef.current) return;
 
-      return {
-        cardSpacing: isTablet ? 0.68 : 0.62,
-        totalTravel: 5.0,
-        startOffset: -0.2,
-        horizontalSpan: isTablet ? 230 : 285,
-        curveDepth: isTablet ? 75 : 90,
-        rotationFactor: isTablet ? 11 : 13,
+      const computeLayoutValues = () => {
+        const width = window.innerWidth;
+        const isTablet = width >= 768 && width < 1100;
+
+        return {
+          cardSpacing: isTablet ? 0.68 : 0.62,
+          totalTravel: 5.0,
+          startOffset: -0.2,
+          horizontalSpan: isTablet ? 230 : 285,
+          curveDepth: isTablet ? 75 : 90,
+          rotationFactor: isTablet ? 11 : 13,
+        };
       };
-    };
 
-    const updatePositions = (progress: number) => {
-      const {
-        cardSpacing,
-        totalTravel,
-        startOffset,
-        horizontalSpan,
-        curveDepth,
-        rotationFactor,
-      } = computeLayoutValues();
+      const updatePositions = (progress: number) => {
+        const {
+          cardSpacing,
+          totalTravel,
+          startOffset,
+          horizontalSpan,
+          curveDepth,
+          rotationFactor,
+        } = computeLayoutValues();
 
-      cards.forEach((card, index) => {
-        if (!card) return;
+        cards.forEach((card, index) => {
+          if (!card) return;
 
-        // Position u along normalized arc coordinate (u=0 is center apex)
-        const u = startOffset + progress * totalTravel - index * cardSpacing;
+          // Position u along normalized arc coordinate (u=0 is center apex)
+          const u = startOffset + progress * totalTravel - index * cardSpacing;
 
-        const x = u * horizontalSpan;
-        const y = Math.pow(u, 2) * curveDepth;
-        const rotation = u * rotationFactor;
+          const x = u * horizontalSpan;
+          const y = Math.pow(u, 2) * curveDepth;
+          const rotation = u * rotationFactor;
 
-        // Peak scale near apex, gentle taper outward
-        const scale = Math.max(0.86, Math.min(1.06, 1.06 - 0.075 * Math.pow(u, 2)));
+          // Peak scale near apex, gentle taper outward
+          const scale = Math.max(0.86, Math.min(1.06, 1.06 - 0.075 * Math.pow(u, 2)));
 
-        // Opacity boundary fade for clean entrance and exit
-        const absU = Math.abs(u);
-        let opacity = 1;
-        if (absU > 2.6) {
-          opacity = 0;
-        } else if (absU > 1.8) {
-          opacity = Math.max(0, (2.6 - absU) / 0.8);
-        }
+          // Opacity boundary fade for clean entrance and exit
+          const absU = Math.abs(u);
+          let opacity = 1;
+          if (absU > 2.6) {
+            opacity = 0;
+          } else if (absU > 1.8) {
+            opacity = Math.max(0, (2.6 - absU) / 0.8);
+          }
 
-        // Center card stays stacked on top of flanking neighbors
-        const zIndex = Math.round(100 - absU * 15);
+          // Center card stays stacked on top of flanking neighbors
+          const zIndex = Math.round(100 - absU * 15);
 
-        card.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})`;
-        card.style.zIndex = `${zIndex}`;
-        card.style.opacity = `${opacity}`;
-        card.style.pointerEvents = opacity < 0.25 ? 'none' : 'auto';
-      });
-    };
+          card.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg) scale(${scale})`;
+          card.style.zIndex = `${zIndex}`;
+          card.style.opacity = `${opacity}`;
+          card.style.pointerEvents = opacity < 0.25 ? 'none' : 'auto';
+        });
+      };
 
-    // Initialize immediate state at progress 0
-    updatePositions(0);
+      // Initialize immediate state at progress 0
+      updatePositions(0);
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
+      const st = ScrollTrigger.create({
         trigger: sectionRef.current,
         start: 'top top',
         end: '+=300%',
@@ -266,19 +283,16 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
           updatePositions(self.progress);
         },
       });
-    }, sectionRef);
 
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-
-    window.addEventListener('resize', handleResize);
+      return () => {
+        st.kill();
+      };
+    });
 
     return () => {
-      window.removeEventListener('resize', handleResize);
-      ctx.revert();
+      mm.revert();
     };
-  }, [reduceMotion, isMobile]);
+  }, [reduceMotion]);
 
   const handleCardClick = (id: string) => {
     if (onSelectCaseStudy) {
@@ -293,11 +307,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
     return (
       <section
         id="casestudies"
+        ref={sectionRef}
+        className="nm-case-studies-section"
         style={{
-          backgroundColor: '#fbf9f5',
           padding: '80px 24px',
-          width: '100%',
-          boxSizing: 'border-box',
         }}
       >
         <div style={{ maxWidth: '1240px', margin: '0 auto', textAlign: 'center', marginBottom: '48px' }}>
@@ -323,18 +336,18 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               margin: '0 0 14px 0',
             }}
           >
-            Solutions that stack the deck in your favor
+            Our Case Studies
           </h2>
           <p
             style={{
               fontSize: '16px',
-              color: '#475569',
+              color: '#2b2b2b',
               maxWidth: '620px',
               margin: '0 auto',
               lineHeight: 1.5,
             }}
           >
-            Explore enterprise client deployments engineered for scale, reliability, and measurable velocity.
+            Solutions that stack the deck in your favor — explore enterprise client deployments engineered for scale, reliability, and measurable velocity.
           </p>
         </div>
 
@@ -355,43 +368,105 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                 position: 'relative',
                 background: card.gradient,
                 border: `1px solid ${card.borderColor}`,
-                borderRadius: '8px',
-                padding: '32px 28px',
+                borderRadius: '16px',
+                padding: '34px 30px',
                 minHeight: '380px',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: `0 16px 36px -12px ${card.shadowColor}`,
+                boxShadow: `0 14px 38px -10px ${card.shadowColor}, 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                 cursor: 'pointer',
+                overflow: 'hidden',
+                transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = `0 22px 48px -12px ${card.shadowColor}, 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 1)`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = `0 14px 38px -10px ${card.shadowColor}, 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9)`;
               }}
             >
               <div>
-                <span
-                  style={{
-                    display: 'block',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    letterSpacing: '0.12em',
-                    color: '#0f172a',
-                    opacity: 0.65,
-                    marginBottom: '12px',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {card.client}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px' }}>
+                  <span
+                    style={{
+                      display: 'block',
+                      fontSize: '10.5px',
+                      fontWeight: 700,
+                      letterSpacing: '0.14em',
+                      color: '#444444',
+                      textTransform: 'uppercase',
+                      fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0,
+                    }}
+                  >
+                    {card.client}
+                  </span>
+                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <span
+                      style={{
+                        width: '6px',
+                        height: '6px',
+                        borderRadius: '50%',
+                        backgroundColor: '#fe6200',
+                        display: 'inline-block',
+                        boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
+                        flexShrink: 0,
+                      }}
+                    />
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        letterSpacing: '0.03em',
+                        textTransform: 'uppercase',
+                        color: 'rgba(15, 23, 42, 0.75)',
+                        fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      {card.domainTag}
+                    </span>
+                  </div>
+                </div>
+
                 <h3
                   style={{
                     fontSize: '22px',
                     fontWeight: 700,
-                    color: '#0f172a',
-                    lineHeight: 1.3,
-                    letterSpacing: '-0.02em',
-                    margin: 0,
+                    color: '#000000',
+                    lineHeight: 1.28,
+                    letterSpacing: '-0.025em',
+                    margin: '0 0 14px 0',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                   }}
                 >
                   {card.title}
                 </h3>
+
+                <div
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '12px',
+                    fontWeight: 700,
+                    color: '#0f172a',
+                    backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                    backdropFilter: 'blur(8px)',
+                    WebkitBackdropFilter: 'blur(8px)',
+                    padding: '6px 14px',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255, 255, 255, 0.95)',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                  }}
+                >
+                  <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                  <span>{card.metric}</span>
+                </div>
               </div>
 
               <div
@@ -401,8 +476,8 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   right: '24px',
                   width: '120px',
                   height: '120px',
-                  opacity: 0.12,
-                  color: '#0f172a',
+                  opacity: 0.07,
+                  color: '#000000',
                   pointerEvents: 'none',
                 }}
               >
@@ -420,20 +495,30 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                  color: '#0f172a',
-                  padding: '10px 18px',
-                  borderRadius: '8px',
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  border: '1px solid rgba(255, 255, 255, 0.85)',
-                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.05)',
+                  backgroundColor: '#111111',
+                  color: '#ffffff',
+                  padding: '9px 18px',
+                  borderRadius: '999px',
+                  fontSize: '12.5px',
+                  fontWeight: 600,
+                  border: 'none',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
                   cursor: 'pointer',
                   zIndex: 2,
+                  marginTop: '16px',
+                  transition: 'background-color 0.2s ease, transform 0.15s ease',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#fe6200';
+                  e.currentTarget.style.transform = 'translateY(-1px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#111111';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <span>Read More</span>
-                <ArrowUpRight size={15} />
+                <span>Read case study</span>
+                <ArrowUpRight size={14} />
               </button>
             </div>
           ))}
@@ -442,22 +527,17 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
     );
   }
 
-  // 2. Mobile Clean Touch-Friendly Carousel (Viewport < 768px)
-  if (isMobile) {
-    return (
-      <section
-        id="casestudies"
-        style={{
-          position: 'relative',
-          width: '100%',
-          backgroundColor: '#fbf9f5',
-          overflowX: 'hidden',
-          padding: '48px 18px 42px 18px',
-          boxSizing: 'border-box',
-        }}
-      >
-        {/* Section Heading */}
-        <div style={{ textAlign: 'center', marginBottom: '28px' }}>
+  // Unified Responsive Case Studies Section: guarantees no DOM unmount conflicts
+  return (
+    <section
+      id="casestudies"
+      ref={sectionRef}
+      className="nm-case-studies-section"
+    >
+      {/* 1. Mobile Clean Touch-Friendly Carousel (Viewport < 768px via CSS .nm-cs-mobile) */}
+      <div className="nm-cs-mobile">
+        {/* Section Heading positioned directly above carousel */}
+        <div style={{ textAlign: 'center', marginBottom: '22px', width: '100%', maxWidth: '420px' }}>
           <span
             style={{
               display: 'inline-block',
@@ -466,33 +546,33 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
               color: '#fe6200',
-              marginBottom: '8px',
+              marginBottom: '6px',
             }}
           >
             Case Studies & Impact
           </span>
           <h2
             style={{
-              fontSize: '26px',
+              fontSize: 'clamp(26px, 6vw, 32px)',
               fontWeight: 800,
               color: '#000000',
               letterSpacing: '-0.025em',
-              margin: '0 0 8px 0',
+              margin: '0 0 6px 0',
               lineHeight: 1.2,
             }}
           >
-            Solutions that stack the deck in your favor
+            Our Case Studies
           </h2>
           <p
             style={{
               fontSize: '14px',
-              color: '#475569',
+              color: '#2b2b2b',
               margin: '0 auto',
               lineHeight: 1.45,
-              maxWidth: '320px',
+              maxWidth: '340px',
             }}
           >
-            Swipe through enterprise engineering solutions delivered with audited velocity.
+            Solutions that stack the deck in your favor with audited velocity.
           </p>
         </div>
 
@@ -512,6 +592,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
           }}
         >
           <div
+            className="carousel-track"
             style={{
               display: 'flex',
               transform: `translateX(-${activeMobileIndex * 100}%)`,
@@ -527,7 +608,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   minWidth: '100%',
                   flexShrink: 0,
                   boxSizing: 'border-box',
-                  padding: '6px',
+                  padding: '4px',
                 }}
               >
                 <div
@@ -537,44 +618,96 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     minHeight: '390px',
                     background: card.gradient,
                     border: `1px solid ${card.borderColor}`,
-                    borderRadius: '8px',
-                    padding: '28px 24px',
+                    borderRadius: '16px',
+                    padding: '26px 22px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     boxSizing: 'border-box',
-                    boxShadow: `0 20px 40px -12px ${card.shadowColor}, 0 6px 14px -4px rgba(15, 23, 42, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
+                    boxShadow: `0 16px 36px -10px ${card.shadowColor}, 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                     cursor: 'pointer',
+                    overflow: 'hidden',
                   }}
                 >
-                  {/* Top: Client Name & Title */}
+                  {/* Top: Client Name & Category Tag */}
                   <div>
-                    <span
-                      style={{
-                        display: 'block',
-                        fontSize: '11px',
-                        fontWeight: 800,
-                        letterSpacing: '0.12em',
-                        color: '#0f172a',
-                        opacity: 0.65,
-                        marginBottom: '10px',
-                        textTransform: 'uppercase',
-                      }}
-                    >
-                      {card.client}
-                    </span>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
+                      <span
+                        style={{
+                          fontSize: '10.5px',
+                          fontWeight: 700,
+                          letterSpacing: '0.14em',
+                          color: '#444444',
+                          textTransform: 'uppercase',
+                          fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                          whiteSpace: 'nowrap',
+                          flexShrink: 0,
+                        }}
+                      >
+                        {card.client}
+                      </span>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                        <span
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            backgroundColor: '#fe6200',
+                            display: 'inline-block',
+                            boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
+                            flexShrink: 0,
+                          }}
+                        />
+                        <span
+                          style={{
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            letterSpacing: '0.03em',
+                            textTransform: 'uppercase',
+                            color: 'rgba(15, 23, 42, 0.75)',
+                            fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                            whiteSpace: 'nowrap',
+                          }}
+                        >
+                          {card.domainTag}
+                        </span>
+                      </div>
+                    </div>
+
                     <h3
                       style={{
-                        fontSize: '20px',
+                        fontSize: '19px',
                         fontWeight: 700,
-                        color: '#0f172a',
+                        color: '#000000',
                         lineHeight: 1.3,
-                        letterSpacing: '-0.02em',
-                        margin: 0,
+                        letterSpacing: '-0.025em',
+                        margin: '0 0 12px 0',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
                     >
                       {card.title}
                     </h3>
+
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        color: '#0f172a',
+                        backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                        backdropFilter: 'blur(8px)',
+                        WebkitBackdropFilter: 'blur(8px)',
+                        padding: '6px 14px',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(255, 255, 255, 0.95)',
+                        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                      }}
+                    >
+                      <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                      <span>{card.metric}</span>
+                    </div>
                   </div>
 
                   {/* Watermark Icon */}
@@ -583,17 +716,17 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       position: 'absolute',
                       bottom: '22px',
                       right: '18px',
-                      width: '120px',
-                      height: '120px',
+                      width: '110px',
+                      height: '110px',
                       opacity: 0.12,
-                      color: '#0f172a',
+                      color: '#000000',
                       pointerEvents: 'none',
                     }}
                   >
                     {card.watermark}
                   </div>
 
-                  {/* Bottom: Read More Button */}
+                  {/* Bottom: Read case study Button */}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -605,23 +738,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.94)',
-                      backdropFilter: 'blur(8px)',
-                      WebkitBackdropFilter: 'blur(8px)',
-                      color: '#0f172a',
-                      padding: '10px 18px',
+                      backgroundColor: '#111111',
+                      color: '#ffffff',
+                      padding: '9px 18px',
                       borderRadius: '8px',
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      letterSpacing: '0.01em',
-                      border: '1px solid rgba(255, 255, 255, 0.95)',
-                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)',
+                      fontSize: '12.5px',
+                      fontWeight: 600,
+                      border: 'none',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
                       cursor: 'pointer',
                       zIndex: 3,
+                      marginTop: '16px',
                     }}
                   >
-                    <span>Read More</span>
-                    <ArrowUpRight size={15} />
+                    <span>Read case study</span>
+                    <ArrowUpRight size={14} />
                   </button>
                 </div>
               </div>
@@ -636,7 +767,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
             alignItems: 'center',
             justifyContent: 'center',
             gap: '16px',
-            marginTop: '22px',
+            marginTop: '20px',
           }}
         >
           {/* Previous Button */}
@@ -654,7 +785,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#0f172a',
+              color: '#000000',
               cursor: 'pointer',
               transition: 'transform 0.15s ease, background-color 0.15s ease',
             }}
@@ -672,7 +803,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               fontSize: '14px',
               fontWeight: 800,
               fontVariantNumeric: 'tabular-nums',
-              color: '#0f172a',
+              color: '#000000',
               backgroundColor: '#ffffff',
               border: '1px solid rgba(0, 0, 0, 0.08)',
               boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
@@ -700,7 +831,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#0f172a',
+              color: '#000000',
               cursor: 'pointer',
               transition: 'transform 0.15s ease, background-color 0.15s ease',
             }}
@@ -716,7 +847,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
             alignItems: 'center',
             justifyContent: 'center',
             gap: '7px',
-            marginTop: '14px',
+            marginTop: '12px',
           }}
         >
           {CASE_STUDY_CARDS.map((_, dotIdx) => (
@@ -738,248 +869,279 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
             />
           ))}
         </div>
-      </section>
-    );
-  }
-
-  // 3. Desktop Smooth Scroll-Controlled Curved Showcase (Viewport >= 768px)
-  return (
-    <section
-      id="casestudies"
-      ref={sectionRef}
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '100vh',
-        backgroundColor: '#fbf9f5',
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        padding: 'clamp(28px, 5vh, 48px) 20px clamp(16px, 3vh, 32px) 20px',
-        boxSizing: 'border-box',
-        userSelect: 'none',
-      }}
-    >
-      {/* Ambient background soft radial glow */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '-15%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '80vw',
-          height: '60vh',
-          background: 'radial-gradient(ellipse at center, rgba(254, 98, 0, 0.035) 0%, rgba(251, 249, 245, 0) 70%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-
-      {/* Showcase Section Heading */}
-      <div
-        style={{
-          position: 'relative',
-          zIndex: 10,
-          textAlign: 'center',
-          maxWidth: '920px',
-          width: '100%',
-          marginBottom: 'clamp(20px, 3vh, 32px)',
-        }}
-      >
-        <span
-          style={{
-            display: 'inline-block',
-            fontSize: '11px',
-            fontWeight: 800,
-            letterSpacing: '0.14em',
-            textTransform: 'uppercase',
-            color: '#fe6200',
-            marginBottom: '8px',
-          }}
-        >
-          Case Studies & Impact
-        </span>
-        <h2
-          style={{
-            fontSize: 'clamp(28px, 4vw, 48px)',
-            fontWeight: 800,
-            color: '#000000',
-            letterSpacing: '-0.03em',
-            margin: '0 0 10px 0',
-            lineHeight: 1.15,
-          }}
-        >
-          Solutions that stack the deck in your favor
-        </h2>
-        <p
-          style={{
-            fontSize: 'clamp(14px, 1.4vw, 16px)',
-            color: '#475569',
-            maxWidth: '560px',
-            margin: '0 auto',
-            lineHeight: 1.45,
-          }}
-        >
-          Scroll to explore enterprise engineering solutions delivered with high throughput and audited reliability.
-        </p>
       </div>
 
-      {/* Curved Arc Deck Stage */}
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          perspective: '1200px',
-          zIndex: 1,
-        }}
-      >
-        {/* Origin container positioned at center with positive clearance below heading */}
+      {/* 2. Desktop Smooth Scroll-Controlled Curved Showcase (Viewport >= 768px via CSS .nm-cs-desktop) */}
+      <div className="nm-cs-desktop">
+        {/* Ambient background soft radial glow */}
         <div
           style={{
             position: 'absolute',
-            top: '52%',
+            top: '-15%',
             left: '50%',
-            width: 0,
-            height: 0,
+            transform: 'translateX(-50%)',
+            width: '80vw',
+            height: '60vh',
+            background: 'radial-gradient(ellipse at center, rgba(254, 98, 0, 0.035) 0%, rgba(251, 249, 245, 0) 70%)',
+            pointerEvents: 'none',
+            zIndex: 0,
+          }}
+        />
+
+        {/* Showcase Section Heading */}
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 10,
+            textAlign: 'center',
+            maxWidth: '920px',
+            width: '100%',
+            marginBottom: 'clamp(20px, 3vh, 32px)',
+          }}
+        >
+          <span
+            style={{
+              display: 'inline-block',
+              fontSize: '11px',
+              fontWeight: 800,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#fe6200',
+              marginBottom: '8px',
+            }}
+          >
+            Case Studies & Impact
+          </span>
+          <h2
+            style={{
+              fontSize: 'clamp(28px, 4vw, 48px)',
+              fontWeight: 800,
+              color: '#000000',
+              letterSpacing: '-0.03em',
+              margin: '0 0 10px 0',
+              lineHeight: 1.15,
+            }}
+          >
+            Our Case Studies
+          </h2>
+          <p
+            style={{
+              fontSize: 'clamp(14px, 1.4vw, 16px)',
+              color: '#2b2b2b',
+              maxWidth: '560px',
+              margin: '0 auto',
+              lineHeight: 1.45,
+            }}
+          >
+            Solutions that stack the deck in your favor — scroll to explore enterprise engineering solutions delivered with high throughput and audited reliability.
+          </p>
+        </div>
+
+        {/* Curved Arc Deck Stage */}
+        <div
+          style={{
+            position: 'relative',
+            width: '100%',
+            flex: 1,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            perspective: '1200px',
+            zIndex: 1,
           }}
         >
-          {CASE_STUDY_CARDS.map((card, idx) => (
-            <div
-              key={card.id}
-              ref={(el) => {
-                cardRefs.current[idx] = el;
-              }}
-              onClick={() => handleCardClick(card.id)}
-              style={{
-                position: 'absolute',
-                width: 'clamp(275px, 22vw, 335px)',
-                height: 'clamp(360px, 46vh, 425px)',
-                left: 'calc(clamp(275px, 22vw, 335px) / -2)',
-                top: 'calc(clamp(360px, 46vh, 425px) / -2)',
-                background: card.gradient,
-                border: `1px solid ${card.borderColor}`,
-                borderRadius: '8px',
-                padding: 'clamp(24px, 3.5vh, 32px) clamp(20px, 2.5vw, 28px)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                boxSizing: 'border-box',
-                boxShadow: `0 24px 48px -14px ${card.shadowColor}, 0 8px 18px -6px rgba(15, 23, 42, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.85)`,
-                cursor: 'pointer',
-                willChange: 'transform, opacity',
-                transformOrigin: '50% 65%',
-                transition: 'box-shadow 0.25s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = `0 32px 64px -16px ${card.shadowColor}, 0 12px 24px -8px rgba(15, 23, 42, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.95)`;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = `0 24px 48px -14px ${card.shadowColor}, 0 8px 18px -6px rgba(15, 23, 42, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.85)`;
-              }}
-            >
-              {/* Top: Client Name & Title */}
-              <div>
-                <span
-                  style={{
-                    display: 'block',
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    letterSpacing: '0.12em',
-                    color: '#0f172a',
-                    opacity: 0.65,
-                    marginBottom: '10px',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  {card.client}
-                </span>
-                <h3
-                  style={{
-                    fontSize: 'clamp(18px, 1.8vw, 22px)',
-                    fontWeight: 700,
-                    color: '#0f172a',
-                    lineHeight: 1.3,
-                    letterSpacing: '-0.02em',
-                    margin: 0,
-                  }}
-                >
-                  {card.title}
-                </h3>
-              </div>
-
-              {/* Watermark Icon */}
+          {/* Origin container positioned at center with positive clearance below heading */}
+          <div
+            style={{
+              position: 'absolute',
+              top: '52%',
+              left: '50%',
+              width: 0,
+              height: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {CASE_STUDY_CARDS.map((card, idx) => (
               <div
+                key={card.id}
+                ref={(el) => {
+                  cardRefs.current[idx] = el;
+                }}
+                onClick={() => handleCardClick(card.id)}
                 style={{
                   position: 'absolute',
-                  bottom: '24px',
-                  right: '20px',
-                  width: 'clamp(110px, 14vw, 150px)',
-                  height: 'clamp(110px, 14vw, 150px)',
-                  opacity: 0.12,
-                  color: '#0f172a',
-                  pointerEvents: 'none',
-                }}
-              >
-                {card.watermark}
-              </div>
-
-              {/* Bottom: Read More Button */}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleCardClick(card.id);
-                }}
-                style={{
-                  alignSelf: 'flex-start',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.92)',
-                  backdropFilter: 'blur(8px)',
-                  WebkitBackdropFilter: 'blur(8px)',
-                  color: '#0f172a',
-                  padding: '10px 18px',
-                  borderRadius: '8px',
-                  fontSize: '13px',
-                  fontWeight: 700,
-                  letterSpacing: '0.01em',
-                  border: '1px solid rgba(255, 255, 255, 0.9)',
-                  boxShadow: '0 4px 14px rgba(0, 0, 0, 0.05)',
+                  width: 'clamp(275px, 22vw, 335px)',
+                  height: 'clamp(360px, 46vh, 425px)',
+                  left: 'calc(clamp(275px, 22vw, 335px) / -2)',
+                  top: 'calc(clamp(360px, 46vh, 425px) / -2)',
+                  background: card.gradient,
+                  border: `1px solid ${card.borderColor}`,
+                  borderRadius: '16px',
+                  padding: 'clamp(26px, 3.8vh, 34px) clamp(22px, 2.6vw, 30px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  boxSizing: 'border-box',
+                  boxShadow: `0 24px 54px -14px ${card.shadowColor}, 0 6px 16px -4px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                   cursor: 'pointer',
-                  transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
-                  zIndex: 3,
+                  willChange: 'transform, opacity',
+                  transformOrigin: '50% 65%',
+                  overflow: 'hidden',
+                  transition: 'box-shadow 0.25s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#000000';
-                  e.currentTarget.style.color = '#ffffff';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 6px 18px rgba(0, 0, 0, 0.16)';
+                  e.currentTarget.style.boxShadow = `0 32px 64px -16px ${card.shadowColor}, 0 12px 24px -8px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1)`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.92)';
-                  e.currentTarget.style.color = '#0f172a';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 0, 0, 0.05)';
+                  e.currentTarget.style.boxShadow = `0 24px 54px -14px ${card.shadowColor}, 0 6px 16px -4px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.9)`;
                 }}
               >
-                <span>Read More</span>
-                <ArrowUpRight size={15} />
-              </button>
-            </div>
-          ))}
+                {/* Top: Client Name & Category Tag */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '10.5px',
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                        color: '#444444',
+                        textTransform: 'uppercase',
+                        fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                        whiteSpace: 'nowrap',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {card.client}
+                    </span>
+                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                      <span
+                        style={{
+                          width: '6px',
+                          height: '6px',
+                          borderRadius: '50%',
+                          backgroundColor: '#fe6200',
+                          display: 'inline-block',
+                          boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
+                          flexShrink: 0,
+                        }}
+                      />
+                      <span
+                        style={{
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          letterSpacing: '0.03em',
+                          textTransform: 'uppercase',
+                          color: 'rgba(15, 23, 42, 0.75)',
+                          fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        {card.domainTag}
+                      </span>
+                    </div>
+                  </div>
+
+                  <h3
+                    style={{
+                      fontSize: 'clamp(18px, 1.8vw, 22px)',
+                      fontWeight: 700,
+                      color: '#000000',
+                      lineHeight: 1.28,
+                      letterSpacing: '-0.025em',
+                      margin: '0 0 12px 0',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+
+                  <div
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '12px',
+                      fontWeight: 700,
+                      color: '#0f172a',
+                      backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                      backdropFilter: 'blur(8px)',
+                      WebkitBackdropFilter: 'blur(8px)',
+                      padding: '6px 14px',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(255, 255, 255, 0.95)',
+                      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                    }}
+                  >
+                    <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                    <span>{card.metric}</span>
+                  </div>
+                </div>
+
+                {/* Watermark Icon */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '24px',
+                    right: '20px',
+                    width: 'clamp(110px, 14vw, 150px)',
+                    height: 'clamp(110px, 14vw, 150px)',
+                    opacity: 0.12,
+                    color: '#000000',
+                    pointerEvents: 'none',
+                  }}
+                >
+                  {card.watermark}
+                </div>
+
+                {/* Bottom: Read case study Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleCardClick(card.id);
+                  }}
+                  style={{
+                    alignSelf: 'flex-start',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    backgroundColor: '#111111',
+                    color: '#ffffff',
+                    padding: '9px 18px',
+                    borderRadius: '8px',
+                    fontSize: '12.5px',
+                    fontWeight: 600,
+                    border: 'none',
+                    boxShadow: '0 4px 14px rgba(0, 0, 0, 0.12)',
+                    cursor: 'pointer',
+                    transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
+                    zIndex: 3,
+                    marginTop: '16px',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#fe6200';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 6px 18px rgba(254, 98, 0, 0.28)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#111111';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 14px rgba(0, 0, 0, 0.12)';
+                  }}
+                >
+                  <span>Read case study</span>
+                  <ArrowUpRight size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
 

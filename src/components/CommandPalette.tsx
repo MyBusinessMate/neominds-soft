@@ -281,7 +281,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                       {item.title}
                     </h5>
                   </div>
-                  <p style={{ fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif", fontSize: '12px', color: '#868683' }}>{item.subtitle}</p>
+                  <p style={{ fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif", fontSize: '12px', color: '#4b5563' }}>{item.subtitle}</p>
                 </div>
                 <ArrowRight size={16} color="#fe6200" />
               </div>

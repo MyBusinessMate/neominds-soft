@@ -42,6 +42,7 @@ const CertificationPage = lazy(() => import('./components/CertificationPage').th
 const LeadershipPage = lazy(() => import('./components/LeadershipPage').then((m) => ({ default: m.LeadershipPage })));
 const ServicesHubPage = lazy(() => import('./components/ServicesHubPage').then((m) => ({ default: m.ServicesHubPage })));
 const IndustriesHubPage = lazy(() => import('./components/IndustriesHubPage').then((m) => ({ default: m.IndustriesHubPage })));
+const TechnologyPage = lazy(() => import('./components/TechnologyPage').then((m) => ({ default: m.TechnologyPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
 // Lazy Modals & Palettes
@@ -104,10 +105,20 @@ export const App: React.FC = () => {
       if (slug === 'ai-agents') return 'ai-systems';
       // Product engineering routes directly to custom software development per services list.csv
       if (slug === 'product-engineering') return 'custom-software-development';
+      if (slug === 'technology' || slug === 'tech-stack') return 'technology';
+      if (slug === 'about' || slug === 'about-us') return 'about-us';
+      if (slug === 'leadership' || slug === 'leaders') return 'leaders';
+      if (slug === 'contact' || slug === 'contacts') return 'contacts';
+      if (slug === 'certifications' || slug === 'certification') return 'certification';
+      if (slug === 'blogs' || slug === 'blog') return 'blog';
+      if (slug === 'updates' || slug === 'company-updates') return 'company-updates';
+      if (slug === 'terms-and-conditions' || slug === 'security-policy' || slug === 'terms') return 'security-policy';
+      if (slug === 'case-studies' || slug === 'portfolio' || slug === 'casestudies') return 'portfolio';
+
       if (isServiceSlug(slug)) return slug as PageType;
       if ([
         'insights', 'blog', 'company-updates', 'portfolio', 'about-us', 'contacts',
-        'careers', 'certification', 'leaders', 'services', 'industries',
+        'careers', 'certification', 'leaders', 'services', 'industries', 'technology',
         'privacy-policy', 'cookie-policy', 'security-policy'
       ].includes(slug)) {
         return slug as PageType;
@@ -119,9 +130,15 @@ export const App: React.FC = () => {
     if (cleanPath) {
       if (cleanPath === 'services') return { page: 'services', articleId: null };
       if (cleanPath === 'industries') return { page: 'industries', articleId: null };
+      if (cleanPath === 'technology' || cleanPath === 'tech-stack') return { page: 'technology', articleId: null };
       if (cleanPath === 'careers') return { page: 'careers', articleId: null };
-      if (cleanPath === 'certification') return { page: 'certification', articleId: null };
-      if (cleanPath === 'leaders') return { page: 'leaders', articleId: null };
+      if (cleanPath === 'certifications' || cleanPath === 'certification') return { page: 'certification', articleId: null };
+      if (cleanPath === 'leadership' || cleanPath === 'leaders') return { page: 'leaders', articleId: null };
+      if (cleanPath === 'about' || cleanPath === 'about-us') return { page: 'about-us', articleId: null };
+      if (cleanPath === 'contact' || cleanPath === 'contacts') return { page: 'contacts', articleId: null };
+      if (cleanPath === 'privacy-policy') return { page: 'privacy-policy', articleId: null };
+      if (cleanPath === 'terms-and-conditions' || cleanPath === 'security-policy') return { page: 'security-policy', articleId: null };
+      if (cleanPath === 'cookie-policy') return { page: 'cookie-policy', articleId: null };
 
       const parts = cleanPath.split('/');
       if (parts[0] === 'services' && parts[1]) {
@@ -129,19 +146,19 @@ export const App: React.FC = () => {
         if (resolved) return { page: resolved, articleId: null };
         return { page: '404', articleId: null };
       }
-      if (parts[0] === 'blog') {
+      if (parts[0] === 'blogs' || parts[0] === 'blog') {
         if (parts[1]) {
           return { page: 'blog', articleId: parts[1] };
         }
         return { page: 'blog', articleId: null };
       }
-      if (parts[0] === 'projects' || parts[0] === 'project' || parts[0] === 'case-studies' || parts[0] === 'casestudies' || parts[0] === 'casestudy') {
+      if (parts[0] === 'updates' || parts[0] === 'company-updates') {
         if (parts[1]) {
-          return { page: 'project', articleId: parts[1] };
+          return { page: 'company-updates', articleId: parts[1] };
         }
-        return { page: 'portfolio', articleId: null };
+        return { page: 'company-updates', articleId: null };
       }
-      if (parts[0] === 'portfolio') {
+      if (parts[0] === 'case-studies' || parts[0] === 'projects' || parts[0] === 'project' || parts[0] === 'casestudies' || parts[0] === 'casestudy' || parts[0] === 'portfolio') {
         if (parts[1]) {
           return { page: 'project', articleId: parts[1] };
         }
@@ -166,12 +183,15 @@ export const App: React.FC = () => {
         return { page: 'project', articleId: id };
       }
       if (cleanHash === 'casestudies') return { page: 'portfolio', articleId: null };
-      if (cleanHash === 'leaders') return { page: 'leaders', articleId: null };
+      if (cleanHash === 'leaders' || cleanHash === 'leadership') return { page: 'leaders', articleId: null };
       if (cleanHash === 'careers') return { page: 'careers', articleId: null };
-      if (cleanHash === 'certification') return { page: 'certification', articleId: null };
+      if (cleanHash === 'certification' || cleanHash === 'certifications') return { page: 'certification', articleId: null };
       if (cleanHash === 'services') return { page: 'services', articleId: null };
       if (cleanHash === 'industries') return { page: 'industries', articleId: null };
-      if (cleanHash === 'contact') return { page: 'contacts', articleId: null };
+      if (cleanHash === 'technology' || cleanHash === 'tech-stack') return { page: 'technology', articleId: null };
+      if (cleanHash === 'contact' || cleanHash === 'contacts') return { page: 'contacts', articleId: null };
+      if (cleanHash === 'about' || cleanHash === 'about-us') return { page: 'about-us', articleId: null };
+      if (cleanHash === 'terms-and-conditions' || cleanHash === 'security-policy') return { page: 'security-policy', articleId: null };
       if (['hero', 'delivery', 'recognition'].includes(cleanHash)) {
         return { page: 'home', articleId: null };
       }
@@ -277,11 +297,29 @@ export const App: React.FC = () => {
       } else if (isServiceSlug(page)) {
         targetUrl = `/services/${page}`;
       } else if (page === 'blog' && articleId) {
-        targetUrl = `/blog/${articleId}`;
+        targetUrl = `/blogs/${articleId}`;
+      } else if (page === 'blog') {
+        targetUrl = '/blogs';
+      } else if (page === 'company-updates' && articleId) {
+        targetUrl = `/updates/${articleId}`;
+      } else if (page === 'company-updates') {
+        targetUrl = '/updates';
       } else if (page === 'project' && articleId) {
-        targetUrl = `/projects/${articleId}`;
-      } else if (page === 'project') {
-        targetUrl = '/portfolio';
+        targetUrl = `/case-studies/${articleId}`;
+      } else if (page === 'project' || page === 'portfolio') {
+        targetUrl = '/case-studies';
+      } else if (page === 'about-us') {
+        targetUrl = '/about';
+      } else if (page === 'leaders') {
+        targetUrl = '/leadership';
+      } else if (page === 'contacts') {
+        targetUrl = '/contact';
+      } else if (page === 'certification') {
+        targetUrl = '/certifications';
+      } else if (page === 'security-policy') {
+        targetUrl = '/terms-and-conditions';
+      } else if (page === 'technology') {
+        targetUrl = '/technology';
       } else if (page === '404') {
         targetUrl = '/404';
       } else {
@@ -578,6 +616,17 @@ export const App: React.FC = () => {
                 <IndustriesHubPage
                   onNavigateToContact={() => handleSelectPage('contacts')}
                   onNavigateToPortfolio={() => handleSelectPage('portfolio')}
+                />
+              </main>
+            )}
+
+            {/* Technology Stack Master Page */}
+            {currentPage === 'technology' && (
+              <main id="main-content" className="smooth-page-enter">
+                <TechnologyPage
+                  onNavigateToContact={() => handleSelectPage('contacts')}
+                  onNavigateToPortfolio={() => handleSelectPage('portfolio')}
+                  onNavigateToService={(slug) => handleSelectPage(slug as PageType)}
                 />
               </main>
             )}

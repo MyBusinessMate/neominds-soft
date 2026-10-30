@@ -86,7 +86,7 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
                 {headline}
               </ScrollReveal>
               <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '15.5px', color: '#868683', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontSize: '15.5px', color: '#4b5563', margin: 0, lineHeight: 1.6 }}>
                   {description}
                 </p>
               </RevealElement>

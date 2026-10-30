@@ -22,10 +22,10 @@ export const EngineeringBlobSection: React.FC = () => {
       if (blobRef.current) {
         gsap.fromTo(
           blobRef.current,
-          { scale: 0.86, opacity: 0.65, xPercent: -50, yPercent: -50 },
+          { scale: 0.92, opacity: 0.65, xPercent: -50, yPercent: -50 },
           {
             scale: 1,
-            opacity: 0.92,
+            opacity: 1,
             xPercent: -50,
             yPercent: -50,
             ease: 'power1.out',
@@ -69,20 +69,20 @@ export const EngineeringBlobSection: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        minHeight: 'clamp(580px, 75vh, 780px)',
+        minHeight: 'clamp(380px, 50vh, 520px)',
         backgroundColor: '#fbf9f5',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
         zIndex: 5,
-        padding: 'clamp(90px, 12vh, 150px) 24px',
+        padding: 'clamp(56px, 8vh, 88px) 24px',
       }}
     >
       {/* 
-        A True Circular Orange Glowing Orb.
-        Enforces a strict 1:1 Aspect Ratio with borderRadius: 50%.
-        Feathered seamlessly into #fbf9f5 with zero hard cuts or muddy tones.
+        A Refined Responsive Circular Graphic with Hairline Accent Ring.
+        Sized responsively at min(76vw, 440px) so it never overflows or clips on mobile < 400px.
+        Gentle radial glow without harsh blur banding.
       */}
       <div
         ref={blobRef}
@@ -92,13 +92,13 @@ export const EngineeringBlobSection: React.FC = () => {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          width: 'clamp(460px, 48vw, 680px)',
-          height: 'clamp(460px, 48vw, 680px)',
+          width: 'min(76vw, 440px)',
+          height: 'min(76vw, 440px)',
           aspectRatio: '1 / 1',
           borderRadius: '50%',
+          border: '1px solid rgba(254, 98, 0, 0.32)',
           background:
-            'radial-gradient(circle at 50% 50%, #fe6200 0%, #ff7300 28%, rgba(254, 98, 0, 0.62) 50%, rgba(254, 98, 0, 0.20) 72%, rgba(251, 249, 245, 0) 100%)',
-          filter: 'blur(36px)',
+            'radial-gradient(circle, rgba(254, 98, 0, 0.14) 0%, rgba(254, 98, 0, 0.04) 55%, transparent 75%)',
           zIndex: 1,
           pointerEvents: 'none',
           willChange: 'transform, opacity',

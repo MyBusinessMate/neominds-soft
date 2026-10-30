@@ -314,6 +314,32 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
         },
       };
 
+    case 'technology':
+      return {
+        title: 'Technology & Architecture Stack | NeoMinds',
+        description:
+          'Explore NeoMinds 7 core engineering technologies: Web Development, Artificial Intelligence, Machine Learning, Data Management, Data Analytics, Automations, and Product Engineering.',
+        keywords: [
+          'technology stack',
+          'AI tech stack',
+          'machine learning tools',
+          'data management architectures',
+          'data analytics frameworks',
+          'enterprise automations',
+          'product engineering',
+        ],
+        canonicalPath: '/technology',
+        ogType: 'website',
+        ogImage: DEFAULT_OG_IMAGE,
+        schema: {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          name: 'NeoMinds Technology & Architectural Stack',
+          url: `${PRODUCTION_DOMAIN}/technology`,
+          description: 'Core engineering technologies and frameworks utilized by NeoMinds.',
+        },
+      };
+
     case 'portfolio':
       return {
         title: 'Client Case Studies & Verified Results | Neominds TechHub Portfolio',

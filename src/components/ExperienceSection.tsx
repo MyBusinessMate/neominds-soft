@@ -14,7 +14,7 @@ const clientLogos: ClientLogo[] = [
   { id: 'migiagnostics', name: 'Migiagnostics', url: '/uploads/2025/02/Migiagnostics.svg' },
   { id: 'plato', name: 'Plato', url: '/uploads/2010/04/Plato.svg' },
   { id: 'authenticom', name: 'Authenticom', url: '/uploads/2026/05/authenticom-white.svg' },
-  { id: 'webbula', name: 'Webbula', url: '/uploads/2026/07/webbula-white2.svg' },
+  { id: 'webbula', name: 'Webbula', url: '/uploads/2026/07/webbula-white.svg' },
   { id: 'waterway', name: 'Waterway', url: '/uploads/2010/04/Waterway.svg' },
   { id: 'motiveretail', name: 'Motive Retail', url: '/uploads/2026/05/motiveretail-white.svg' },
   { id: 'yfc', name: 'YourFitnessCoach', url: '/uploads/2010/04/YourFitnessCoach.svg' },
@@ -137,108 +137,151 @@ const ExperienceSectionComponent: React.FC = () => {
           </p>
         </div>
 
-        {/* 3 Metric Columns with Thin Orange Vertical Dividers (Exact Freehand Layout) */}
+        {/* 3 Metric Columns in One Unified Sleek Card Strip with Ambient Orange Corner Glow */}
         <div
+          className="experience-metrics-strip nm-corner-glow"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            alignItems: 'center',
-            gap: '0px',
+            maxWidth: '740px',
+            margin: '0 auto clamp(36px, 4.5vw, 54px) auto',
             backgroundColor: '#ffffff',
-            border: '1px solid #e4e2e1',
-            borderRadius: '8px',
+            border: '1px solid rgba(0, 0, 0, 0.08)',
+            borderRadius: '12px',
+            boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
+            position: 'relative',
             overflow: 'hidden',
-            marginBottom: 'clamp(64px, 8vw, 84px)',
           }}
         >
-          {/* Metric 1 */}
-          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
-            <div
-              style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(44px, 5vw, 60px)',
-                fontWeight: 400,
-                color: '#000000',
-                lineHeight: 1,
-                marginBottom: '10px',
-              }}
-            >
-              100+
-            </div>
-            <div
-              style={{
-                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                fontSize: '14px',
-                color: '#868683',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-              }}
-            >
-              Enterprise Systems Shipped
-            </div>
-          </div>
-
-          {/* Metric 2 with Left & Right Orange Dividers */}
           <div
+            className="experience-metrics-grid"
             style={{
-              padding: 'clamp(28px, 4vw, 44px)',
-              textAlign: 'center',
-              borderLeft: '1px solid #fe6200',
-              borderRight: '1px solid #fe6200',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              alignItems: 'stretch',
+              width: '100%',
+              position: 'relative',
+              zIndex: 2,
             }}
           >
+            {/* Metric 1 */}
             <div
+              className="experience-metric-cell"
               style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(44px, 5vw, 60px)',
-                fontWeight: 400,
-                color: '#fe6200',
-                lineHeight: 1,
-                marginBottom: '10px',
+                padding: 'clamp(20px, 2.4vh, 26px) clamp(12px, 1.5vw, 20px)',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              20+
+              <div
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(34px, 3.4vw, 44px)',
+                  fontWeight: 400,
+                  color: '#000000',
+                  lineHeight: 1.05,
+                  marginBottom: '6px',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                100+
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  fontSize: 'clamp(11px, 0.9vw, 12px)',
+                  color: '#444444',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  lineHeight: 1.35,
+                }}
+              >
+                Enterprise Systems Shipped
+              </div>
             </div>
-            <div
-              style={{
-                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                fontSize: '14px',
-                color: '#868683',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-              }}
-            >
-              Years Engineering Depth
-            </div>
-          </div>
 
-          {/* Metric 3 */}
-          <div style={{ padding: 'clamp(28px, 4vw, 44px)', textAlign: 'center' }}>
+            {/* Metric 2 with Thin Orange Vertical Dividers */}
             <div
+              className="experience-metric-cell experience-metric-cell-center"
               style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(44px, 5vw, 60px)',
-                fontWeight: 400,
-                color: '#000000',
-                lineHeight: 1,
-                marginBottom: '10px',
+                padding: 'clamp(20px, 2.4vh, 26px) clamp(12px, 1.5vw, 20px)',
+                textAlign: 'center',
+                borderLeft: '1px solid rgba(254, 98, 0, 0.35)',
+                borderRight: '1px solid rgba(254, 98, 0, 0.35)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              99.99%
+              <div
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(34px, 3.4vw, 44px)',
+                  fontWeight: 400,
+                  color: '#fe6200',
+                  lineHeight: 1.05,
+                  marginBottom: '6px',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                30+
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  fontSize: 'clamp(11px, 0.9vw, 12px)',
+                  color: '#444444',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  lineHeight: 1.35,
+                }}
+              >
+                Systems Built in 1 Year
+              </div>
             </div>
+
+            {/* Metric 3 */}
             <div
+              className="experience-metric-cell"
               style={{
-                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                fontSize: '14px',
-                color: '#868683',
-                fontWeight: 500,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
+                padding: 'clamp(20px, 2.4vh, 26px) clamp(12px, 1.5vw, 20px)',
+                textAlign: 'center',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
             >
-              Production Availability SLA
+              <div
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(34px, 3.4vw, 44px)',
+                  fontWeight: 400,
+                  color: '#000000',
+                  lineHeight: 1.05,
+                  marginBottom: '6px',
+                  letterSpacing: '-0.02em',
+                }}
+              >
+                99.99%
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  fontSize: 'clamp(11px, 0.9vw, 12px)',
+                  color: '#444444',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  lineHeight: 1.35,
+                }}
+              >
+                Production Availability SLA
+              </div>
             </div>
           </div>
         </div>
@@ -286,13 +329,12 @@ const ExperienceSectionComponent: React.FC = () => {
 
         {/* 4 Logos at a Time with Rolling Effect Separated by Hairline Dividers */}
         <div
+          className="experience-logos-grid"
           style={{
             width: '100%',
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
             alignItems: 'center',
             justifyItems: 'center',
-            gap: 'clamp(20px, 3vw, 40px)',
             paddingTop: '28px',
             paddingBottom: '28px',
             borderTop: '1px solid #e4e2e1',
@@ -353,6 +395,36 @@ const ExperienceSectionComponent: React.FC = () => {
       </div>
 
       <style>{`
+        .experience-logos-grid {
+          grid-template-columns: repeat(4, 1fr);
+          gap: clamp(20px, 3vw, 40px);
+        }
+
+        @media (max-width: 767px) {
+          .experience-metrics-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .experience-metric-cell-center {
+            border-left: none !important;
+            border-right: none !important;
+            border-top: 1px solid #fe6200 !important;
+            border-bottom: 1px solid #fe6200 !important;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .experience-logos-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 20px 16px !important;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+          }
+          .logo-roller-slot {
+            max-width: 150px !important;
+            height: 42px !important;
+          }
+        }
+
         @keyframes logoRollIn {
           0% {
             transform: translateY(110%) rotateX(-70deg);

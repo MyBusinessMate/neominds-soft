@@ -181,67 +181,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. VIDEO / BRAND SHOWCASE SECTION (.s-video__video)
-   -------------------------------------------------------------------------- */
-.s-video-section {
-  padding: clamp(60px, 7vw, 90px) 24px;
-  background-color: #000000;
-  text-align: center;
-}
-
-.s-video-section__container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.s-video-section__header {
-  margin-bottom: 36px;
-}
-
-.s-video-section__title {
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  font-family: var(--font-heading, inherit);
-  letter-spacing: -0.02em;
-  color: #000000;
-  margin-bottom: 12px;
-}
-
-.s-video-section__title span {
-  color: #fe6200;
-}
-
-.s-video-section__desc {
-  font-size: 17px;
-  color: #555555;
-  max-width: 650px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.s-video-section__player {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 540px;
-  background: #f0ece2;
-  border: 1px solid var(--colors-border-dark, #f0ece2);
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 25px 50px -12px rgba(32, 11, 0,  0.5);
-}
-
-.s-video-section__player video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* --------------------------------------------------------------------------
-   4. CORE VALUES SECTION (.s-values theme-dark2)
+   3. CORE VALUES SECTION (.s-values theme-dark2)
    -------------------------------------------------------------------------- */
 .s-values {
   padding: clamp(64px, 8vw, 110px) 24px;

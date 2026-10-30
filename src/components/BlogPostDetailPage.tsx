@@ -60,7 +60,7 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
             transition: 'color 0.2s',
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-          onMouseLeave={(e) => (e.currentTarget.style.color = '#868683')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = '#333333')}
         >
           <ArrowLeft size={16} />
           <span>Back to Engineering Blog</span>

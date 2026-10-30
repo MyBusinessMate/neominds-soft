@@ -96,7 +96,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                     border: 'none',
                     borderLeft: `2px solid ${activeSection === item.id ? '#fe6200' : '#f0ece2'}`,
                     padding: '8px 14px',
-                    color: activeSection === item.id ? '#fe6200' : '#868683',
+                    color: activeSection === item.id ? '#fe6200' : '#333333',
                     fontWeight: activeSection === item.id ? 700 : 500,
                     fontSize: '13.5px',
                     cursor: 'pointer',

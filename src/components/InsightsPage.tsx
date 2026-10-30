@@ -221,7 +221,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   onClick={() => setSelectedCategory(cat)}
                   className={`btn btn-sm ${selectedCategory === cat ? 'btn-primary' : 'btn-outline'}`}
                   style={{
-                    color: selectedCategory === cat ? '#ffffff' : '#868683',
+                    color: selectedCategory === cat ? '#ffffff' : '#333333',
                     borderColor: selectedCategory === cat ? '#fe6200' : '#a3a09b',
                     backgroundColor: selectedCategory === cat ? '#fe6200' : '#faf8f5',
                   }}

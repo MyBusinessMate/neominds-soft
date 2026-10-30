@@ -396,7 +396,15 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
             </RevealElement>
           </div>
 
-          <div style={{ maxWidth: '640px' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+              gap: '24px',
+              alignItems: 'stretch',
+            }}
+          >
+            {/* Left Column: Office Address Details */}
             <RevealElement variant="card" start="top 92%" end="top 65%">
               <div
                 style={{
@@ -405,40 +413,46 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   borderLeft: '4px solid #fe6200',
                   borderRadius: '8px',
                   padding: '32px',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
                 }}
               >
-                <div
-                  style={{
-                    display: 'inline-block',
-                    backgroundColor: 'rgba(254, 98, 0, 0.12)',
-                    border: '1px solid rgba(254, 98, 0, 0.3)',
-                    padding: '4px 10px',
-                    borderRadius: '8px',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    letterSpacing: '0.06em',
-                    color: '#fe6200',
-                    textTransform: 'uppercase',
-                    marginBottom: '14px',
-                  }}
-                >
-                  {OFFICE_LOCATION.title}
+                <div>
+                  <div
+                    style={{
+                      display: 'inline-block',
+                      backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                      border: '1px solid rgba(254, 98, 0, 0.3)',
+                      padding: '4px 10px',
+                      borderRadius: '8px',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      letterSpacing: '0.06em',
+                      color: '#fe6200',
+                      textTransform: 'uppercase',
+                      marginBottom: '14px',
+                    }}
+                  >
+                    {OFFICE_LOCATION.title}
+                  </div>
+
+                  <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#000000', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
+                    Neominds TechHub
+                  </h3>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
+                    <p style={{ fontSize: '15px', color: '#000000', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
+                    <p style={{ fontSize: '15px', color: '#222222', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
+                    <p style={{ fontSize: '15px', color: '#222222', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
+                    <p style={{ fontSize: '13px', color: '#555555', margin: 0 }}>{OFFICE_LOCATION.country}</p>
+                  </div>
                 </div>
 
-                <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#000000', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
-                  Neominds TechHub
-                </h3>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
-                  <p style={{ fontSize: '15px', color: '#000000', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.addressLine1}</p>
-                  <p style={{ fontSize: '15px', color: '#222222', margin: 0 }}>{OFFICE_LOCATION.addressLine2}</p>
-                  <p style={{ fontSize: '15px', color: '#222222', fontWeight: 600, margin: 0 }}>{OFFICE_LOCATION.cityStateZip}</p>
-                  <p style={{ fontSize: '13px', color: '#555555', margin: 0 }}>{OFFICE_LOCATION.country}</p>
-                </div>
-
                 <div
                   style={{
-                    borderTop: '1px solid #f0ece2',
+                    borderTop: '1px solid #dcd7cb',
                     paddingTop: '16px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -457,6 +471,32 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     <span style={{ color: '#555555' }}>{OFFICE_LOCATION.workingHours}</span>
                   </div>
                 </div>
+              </div>
+            </RevealElement>
+
+            {/* Right Column: Google Map Embed */}
+            <RevealElement variant="card" start="top 92%" end="top 65%">
+              <div
+                style={{
+                  height: '100%',
+                  minHeight: '280px',
+                  borderRadius: '8px',
+                  overflow: 'hidden',
+                  border: '1px solid #d0ccc0',
+                  backgroundColor: '#f0ece2',
+                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+                }}
+              >
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.2478606727113!2d78.47230017425652!3d17.39988878348942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6818176fa9aab98f%3A0x1b1e4a4037e0545c!2sNeominds%20Tech%20Hub!5e0!3m2!1sen!2sin!4v1793282847751!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block', width: '100%', minHeight: '280px' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="Neominds Tech Hub Location Map"
+                />
               </div>
             </RevealElement>
           </div>

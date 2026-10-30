@@ -3,8 +3,13 @@ Allow: /
 Allow: /assets/
 Allow: /images/
 Allow: /services/
+Allow: /case-studies/
 Allow: /projects/
+Allow: /blogs/
 Allow: /blog/
+Allow: /updates/
+Allow: /industries/
+Allow: /technology/
 Allow: /llms.txt
 
 # Explicit AI Engine Permissions for AEO

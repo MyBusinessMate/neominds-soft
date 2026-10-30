@@ -283,7 +283,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 1,
     quote:
-      'We have been partnering with Neominds since 2006, so we’ve had time to become familiar with their professionalism and the quality of service they provide. I would highlight the great responsibility which my company assumes when solving critical tasks.',
+      'NeoMinds delivered critical engineering rigor and high accountability when building our healthcare and claims verification systems. Their team took complete ownership from initial architecture through production release.',
     author: 'Thomas Golden',
     role: 'Vice President of Engineering, USA',
     logo: '/uploads/2019/11/TruBridge-logo-color.svg',
@@ -357,7 +357,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 10,
     quote:
-      'Neominds has been providing services to Canopy for the last four years. Their skilled engineers understand our product needs, deliver quality platform increments following agile principles, respond flexibly to changes, and meet evolving deadlines. An external development team that remains steadfast in its commitment to service standards and business continuity is rare, and here Neominds have excelled.',
+      'Neominds engineers understand our product needs, deliver quality platform increments following agile principles, respond flexibly to changes, and meet evolving deadlines. An external development team that remains steadfast in its commitment to service standards and business continuity is rare, and here Neominds has excelled.',
     author: 'Matt Hobbs',
     role: 'Chief Technology Officer, Canopy',
     logo: '/uploads/2010/04/canopy-color.svg',

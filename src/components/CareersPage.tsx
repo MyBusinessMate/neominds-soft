@@ -232,7 +232,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   borderRadius: '8px',
                   border: `1px solid ${selectedDept === dept ? '#fe6200' : '#f0ece2'}`,
                   backgroundColor: selectedDept === dept ? '#fe6200' : '#ffffff',
-                  color: selectedDept === dept ? '#ffffff' : '#868683',
+                  color: selectedDept === dept ? '#ffffff' : '#333333',
                   fontSize: '14px',
                   fontWeight: selectedDept === dept ? 600 : 500,
                   cursor: 'pointer',
@@ -358,7 +358,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
                   </span>
                   <ChevronDown
                     size={18}
-                    color="#868683"
+                    color="#333333"
                     style={{
                       transform: activeFaq === idx ? 'rotate(180deg)' : 'none',
                       transition: 'transform 0.2s ease',

@@ -188,6 +188,10 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
             padding: clamp(48px, 5vw, 84px) clamp(40px, 4.5vw, 76px) !important;
           }
         }
+        .services-stack-section.nm-corner-glow::before,
+        .services-stack-section.nm-corner-glow::after {
+          z-index: 15;
+        }
       `}</style>
 
       {/* Section Introduction Header */}
@@ -225,7 +229,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         return (
           <section
             key={card.id}
-            className="services-stack-section"
+            className="services-stack-section nm-corner-glow"
             style={{
               position: isMobile ? 'relative' : 'sticky',
               top: 0,
@@ -328,12 +332,11 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                       style={{
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                         fontSize: 'clamp(28px, 3vw, 42px)',
-                        fontWeight: 400,
+                        fontWeight: 700,
                         letterSpacing: '-0.01em',
                         lineHeight: 1.15,
-                        color: isHovered ? '#fe6200' : '#000000',
+                        color: '#fe6200',
                         margin: 0,
-                        transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
                       }}
                     >
                       {card.title}
@@ -401,7 +404,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                         fontSize: '11px',
                         fontWeight: 700,
                         letterSpacing: '0.08em',
-                        color: '#868683',
+                        color: '#2b2b2b',
                         textTransform: 'uppercase',
                         marginBottom: '10px',
                       }}

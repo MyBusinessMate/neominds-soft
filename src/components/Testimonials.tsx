@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface TestimonialItem {
@@ -13,63 +13,41 @@ interface TestimonialItem {
 
 export const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
   const testimonials: TestimonialItem[] = [
     {
       id: '1',
       clientName: 'TruBridge',
-      logoUrl: '/uploads/2019/11/TruBridge-logo-color.svg',
       quote:
-        'We have been partnering with Neominds since 2006, so we’ve had time to become familiar with their professionalism and the quality of service they provide. I would highlight the great responsibility which my company assumes when solving critical tasks.',
+        'NeoMinds delivered critical engineering rigor and high accountability when building our healthcare and claims verification systems. Their team took complete ownership from initial architecture through production release.',
       author: 'Thomas Golden',
-      title: 'USA, TruBridge (formerly TruCode)',
-      photoUrl: '/uploads/ESThumbnails/2092/200.tomgolden.png',
+      title: 'VP of Engineering, TruBridge',
     },
     {
       id: '2',
-      clientName: 'Motive Retail',
-      logoUrl: '/uploads/2010/04/motiveretail-color-1.svg',
+      clientName: 'DotcomWeavers',
       quote:
-        'We have had a very positive experience with Neominds’s staff augmentation services. Their skilled, knowledgeable professionals integrated directly into our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds.',
-      author: 'Philipe Araujo',
-      title: 'Business Analyst and Quality Engineer',
+        'NeoMinds delivered our autonomous multi-project AI velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and reduced cross-project coordination delays significantly.',
+      author: 'Engineering Director',
+      title: 'DotcomWeavers Enterprise Group',
     },
     {
       id: '3',
-      clientName: 'Maersk',
-      logoUrl: '/uploads/2010/04/maersk-color-1.svg',
+      clientName: 'Adventr',
       quote:
-        'Neominds’s team deeply understood our requirements and have been a proactive part of any problem-solving process. We have only experienced a professional approach to our projects, as well as a pleasant and trust-based collaboration. They’ve quickly found and added the necessary resources.',
-      author: 'Sasja Ihn Christensen',
-      title: 'Senior Director, Head of Digital Business Development',
+        'NeoMinds has played an impactful role in developing our smart video platform. Their full-stack developers and QA engineers proactively improve performance and scale our interactive streaming video architecture under high concurrency.',
+      author: 'Peter Gerard',
+      title: 'Head of Product, Adventr',
     },
     {
       id: '4',
-      clientName: 'Delphi Vision',
-      logoUrl: '/uploads/2010/04/delphivision-color.svg',
+      clientName: 'Motive Retail',
       quote:
-        'We are extremely satisfied with our collaboration with Neominds. We engaged them for business analysis, UI/UX design, web development, and testing. The results were visually stunning designs and wireframes, remarkable UX suggestions, and an app fully aligned with our requirements.',
-      author: 'Colin Cridland',
-      title: 'Director, Founder at Delphi Vision Ltd',
-    },
-    {
-      id: '5',
-      clientName: 'Plato',
-      logoUrl: '/uploads/ESThumbnails/34584/280.plato-logo.png',
-      quote:
-        'Since working with Neominds, we’ve grown our company from the building phase to the profitability phase. We’ve continued expanding upon their responsibilities, and they’ve continued to accept challenges and integrate with our team. They’ve become mission-critical resources for us.',
-      author: 'Jesse MacNish',
-      title: 'CTO USA, Plato',
-      photoUrl: '/uploads/ESThumbnails/34585/200.plato-photo.png',
-    },
-    {
-      id: '6',
-      clientName: 'Adventr',
-      logoUrl: '/uploads/2010/04/adventr-color.svg',
-      quote:
-        'Neominds has played an impactful role in developing our SaaS app. Their developers and QA engineers show strong engagement, understand our needs, deliver solid results. They proactively improve security and performance of our app, report issues clearly, and help us deploy code with minimal bugs.',
-      author: 'Peter Gerard',
-      title: 'Head of Product',
+        'Our engineering collaboration with NeoMinds has been highly productive. Their skilled engineers integrated directly into our team with minimal ramp-up time, accelerating our automotive data exchange integration pipelines.',
+      author: 'Technical Lead',
+      title: 'Integration Engineering, Motive Retail',
     },
   ];
 
@@ -83,6 +61,28 @@ export const Testimonials: React.FC = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const diff = touchStartX.current - touchEndX.current;
+    const minSwipeDistance = 45;
+    if (diff > minSwipeDistance) {
+      handleNext();
+    } else if (diff < -minSwipeDistance) {
+      handlePrev();
+    }
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <section
       id="testimonials"
@@ -90,13 +90,17 @@ export const Testimonials: React.FC = () => {
         position: 'relative',
         width: '100%',
         backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
-        paddingTop: 'clamp(80px, 9vw, 120px)',
-        paddingBottom: 'clamp(80px, 9vw, 120px)',
+        paddingTop: 'clamp(56px, 8vw, 110px)',
+        paddingBottom: 'clamp(56px, 8vw, 110px)',
+        paddingLeft: '16px',
+        paddingRight: '16px',
+        boxSizing: 'border-box',
         borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
         color: '#000000',
+        overflowX: 'hidden',
       }}
     >
-      <div className="container" style={{ maxWidth: '1280px' }}>
+      <div className="container" style={{ maxWidth: '1280px', margin: '0 auto' }}>
         {/* Asymmetrical Editorial Showcase with Freehand aesthetics */}
         <div
           style={{
@@ -112,19 +116,20 @@ export const Testimonials: React.FC = () => {
             <h2
               style={{
                 fontFamily: 'var(--typography-heading1-family)',
-                fontSize: 'clamp(32px, 3.6vw, 44px)',
+                fontSize: 'clamp(28px, 3.6vw, 44px)',
                 fontWeight: 700,
                 lineHeight: 1.2,
                 color: '#000000',
-                marginBottom: '28px',
+                marginBottom: '24px',
                 letterSpacing: '-0.02em',
               }}
             >
-              What our long-term engineering partners say.
+              What our partner say
             </h2>
 
-            {/* Client Interactive Roster */}
+            {/* Client Interactive Roster - Hidden on mobile (< 768px) */}
             <div
+              className="testimonials-client-roster"
               style={{
                 borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
                 display: 'flex',
@@ -156,7 +161,7 @@ export const Testimonials: React.FC = () => {
                           fontFamily: 'var(--typography-mono-family)',
                           fontSize: '12px',
                           fontWeight: 700,
-                          color: isActive ? '#fe6200' : '#66615c',
+                          color: isActive ? '#fe6200' : '#2b2b2b',
                         }}
                       >
                         0{idx + 1}
@@ -166,7 +171,7 @@ export const Testimonials: React.FC = () => {
                           fontFamily: 'var(--typography-body-family)',
                           fontSize: '15px',
                           fontWeight: isActive ? 700 : 500,
-                          color: isActive ? '#000000' : '#66615c',
+                          color: isActive ? '#000000' : '#2b2b2b',
                           transition: 'color 0.25s ease',
                         }}
                       >
@@ -193,6 +198,9 @@ export const Testimonials: React.FC = () => {
           {/* Right Column: Cardless Editorial Presentation Blended into Cream Background */}
           <div
             className="quote-column"
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -202,8 +210,9 @@ export const Testimonials: React.FC = () => {
               border: 'none',
               borderLeft: '3px solid #fe6200',
               borderRadius: '8px',
-              padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(24px, 4vw, 44px)',
+              padding: 'clamp(8px, 2vw, 16px) 0 clamp(8px, 2vw, 16px) clamp(20px, 4vw, 44px)',
               boxShadow: 'none',
+              userSelect: 'none',
             }}
           >
             <div>
@@ -218,40 +227,41 @@ export const Testimonials: React.FC = () => {
                   paddingBottom: '16px',
                 }}
               >
-                {current.logoUrl ? (
-                  <img
-                    src={current.logoUrl}
-                    alt={`${current.clientName} logo`}
-                    loading="lazy"
-                    style={{
-                      maxHeight: '32px',
-                      maxWidth: '140px',
-                      objectFit: 'contain',
-                      opacity: 0.9,
-                    }}
-                    onError={(e) => {
-                      (e.currentTarget as HTMLElement).style.display = 'none';
-                    }}
-                  />
-                ) : (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  {current.logoUrl && (
+                    <img
+                      src={current.logoUrl}
+                      alt={`${current.clientName} logo`}
+                      loading="lazy"
+                      style={{
+                        maxHeight: '28px',
+                        maxWidth: '120px',
+                        objectFit: 'contain',
+                        opacity: 0.9,
+                      }}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  )}
                   <span
                     style={{
                       fontFamily: 'var(--typography-heading1-family)',
-                      fontSize: '20px',
+                      fontSize: '18px',
                       fontWeight: 700,
                       color: '#000000',
                     }}
                   >
                     {current.clientName}
                   </span>
-                )}
+                </div>
 
                 <span
                   style={{
                     fontFamily: 'var(--typography-mono-family)',
                     fontSize: '13px',
                     fontWeight: 600,
-                    color: '#66615c',
+                    color: '#2b2b2b',
                   }}
                 >
                   0{currentIndex + 1} / 0{testimonials.length}
@@ -338,7 +348,7 @@ export const Testimonials: React.FC = () => {
                     style={{
                       fontFamily: 'var(--typography-body-family)',
                       fontSize: '14px',
-                      color: '#66615c',
+                      color: '#2b2b2b',
                       marginTop: '2px',
                     }}
                   >
@@ -410,12 +420,25 @@ export const Testimonials: React.FC = () => {
       </div>
 
       <style>{`
-        @media (max-width: 860px) {
+        @media (max-width: 767px) {
+          .testimonials-client-roster {
+            display: none !important;
+          }
           .testimonials-grid {
             grid-template-columns: 1fr !important;
+            gap: 16px !important;
           }
           .quote-column {
-            margin-top: 24px;
+            margin-top: 0 !important;
+            border-left: 3px solid #fe6200 !important;
+            padding-left: 14px !important;
+            min-height: auto !important;
+          }
+        }
+        @media (min-width: 768px) and (max-width: 960px) {
+          .testimonials-grid {
+            grid-template-columns: minmax(240px, 1fr) minmax(320px, 1.8fr) !important;
+            gap: 32px !important;
           }
         }
       `}</style>

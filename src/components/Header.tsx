@@ -24,6 +24,7 @@ export type PageType =
   | 'leaders'
   | 'services'
   | 'industries'
+  | 'technology'
   | 'privacy-policy'
   | 'cookie-policy'
   | 'security-policy'
@@ -53,7 +54,18 @@ export const Header: React.FC<HeaderProps> = ({
   const [isVisible, setIsVisible] = useState(true);
   const [activeMenu, setActiveMenu] = useState<'what-we-do' | 'who-we-are' | 'insights' | 'case-studies' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>('what-we-do');
+  const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
+
+  // Lock body scroll when mobile menu is open to ensure clean scroll on small viewports
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
 
   const scrollStopTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -152,13 +164,13 @@ export const Header: React.FC<HeaderProps> = ({
 
   // Column 3: Technologies (7 from CSV)
   const fintechList = [
-    { title: 'Web Development', page: 'web-development' as const },
-    { title: 'Artificial Intelligence', page: 'ai-systems' as const },
-    { title: 'Machine Learning', page: 'ai-native-software' as const },
-    { title: 'Data Management', page: 'cloud-based-software' as const },
-    { title: 'Data Analytics', page: 'analytics-dashboard' as const },
-    { title: 'Automations', page: 'ai-automations' as const },
-    { title: 'Product Engineering', page: 'custom-software-development' as const },
+    { title: 'Web Development', page: 'technology' as const },
+    { title: 'Artificial Intelligence', page: 'technology' as const },
+    { title: 'Machine Learning', page: 'technology' as const },
+    { title: 'Data Management', page: 'technology' as const },
+    { title: 'Data Analytics', page: 'technology' as const },
+    { title: 'Automations', page: 'technology' as const },
+    { title: 'Product Engineering', page: 'technology' as const },
   ];
 
   // Column 4: Industries (8 from CSV)
@@ -232,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
             transition: 'width 0.45s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
           }}
         >
-          {/* Left Brand Logo: Freehand style orange asterisk mark + black DM Sans typography */}
+          {/* Left Brand Logo: Official logo + black DM Sans typography */}
           <div
             onClick={handleLogoClick}
             style={{
@@ -245,13 +257,12 @@ export const Header: React.FC<HeaderProps> = ({
               flexShrink: 0,
             }}
           >
-            {/* Freehand 8-blade orange asterisk / spark mark */}
-            <svg width={isScrolled ? '20' : '22'} height={isScrolled ? '20' : '22'} viewBox="0 0 24 24" fill="none">
-              <path
-                d="M12 1.5L13.8 8.2L20 6.5L15.8 11.2L21.5 14L15.3 15.8L17 22L12.3 17.8L9.5 23.5L7.7 17.3L1.5 19L5.7 14.3L0 11.5L6.2 9.7L4.5 3.5L9.2 7.7L12 1.5Z"
-                fill="#fe6200"
-              />
-            </svg>
+            <img
+              src="/images/neominds-logo.png"
+              alt="NeoMinds"
+              className="nm-header-logo"
+              style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
+            />
             <span
               style={{
                 fontFamily: "'DM Sans', sans-serif",
@@ -276,6 +287,7 @@ export const Header: React.FC<HeaderProps> = ({
               transition: 'gap 0.4s ease',
             }}
             className="desktop-nav"
+            aria-label="Main Navigation"
           >
             {/* 1. What we do */}
             <div
@@ -284,6 +296,8 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <button
                 onClick={(e) => handleMenuToggle(e, 'what-we-do')}
+                aria-expanded={activeMenu === 'what-we-do'}
+                aria-haspopup="true"
                 style={{
                   color: activeMenu === 'what-we-do' ? '#fe6200' : '#000000',
                   fontFamily: "'DM Sans', sans-serif",
@@ -328,6 +342,8 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <button
                 onClick={(e) => handleMenuToggle(e, 'who-we-are')}
+                aria-expanded={activeMenu === 'who-we-are'}
+                aria-haspopup="true"
                 style={{
                   color: activeMenu === 'who-we-are' ? '#fe6200' : '#000000',
                   fontFamily: "'DM Sans', sans-serif",
@@ -372,6 +388,8 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <button
                 onClick={(e) => handleMenuToggle(e, 'insights')}
+                aria-expanded={activeMenu === 'insights'}
+                aria-haspopup="true"
                 style={{
                   color:
                     activeMenu === 'insights' || currentPage === 'insights' || currentPage === 'blog' || currentPage === 'company-updates'
@@ -419,6 +437,8 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <button
                 onClick={(e) => handleMenuToggle(e, 'case-studies')}
+                aria-expanded={activeMenu === 'case-studies'}
+                aria-haspopup="true"
                 style={{
                   color:
                     activeMenu === 'case-studies' || currentPage === 'portfolio' || currentPage === 'project'
@@ -1217,6 +1237,9 @@ export const Header: React.FC<HeaderProps> = ({
           ======================================================== */}
       {mobileMenuOpen && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile Navigation Menu"
           style={{
             position: 'fixed',
             top: 0,
@@ -1225,6 +1248,7 @@ export const Header: React.FC<HeaderProps> = ({
             bottom: 0,
             width: '100vw',
             height: '100dvh',
+            maxHeight: '100dvh',
             backgroundColor: '#fbf9f5',
             zIndex: 99999,
             display: 'flex',
@@ -1232,17 +1256,17 @@ export const Header: React.FC<HeaderProps> = ({
             padding: '24px 20px 36px',
             overflowY: 'auto',
             WebkitOverflowScrolling: 'touch',
+            overscrollBehavior: 'contain',
           }}
         >
           {/* Mobile Header Top */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px', flexShrink: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 1.5L14 8.5L21 6.5L16.5 12L21.5 15.5L14.5 15.5L12 22.5L9.5 15.5L2.5 15.5L7.5 12L3 6.5L10 8.5L12 1.5Z"
-                  fill="#fe6200"
-                />
-              </svg>
+              <img
+                src="/images/neominds-logo.png"
+                alt="NeoMinds"
+                style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
+              />
               <span style={{ fontSize: '20px', fontWeight: 800, color: '#000000', fontFamily: "'DM Sans', sans-serif", letterSpacing: '-0.025em' }}>
                 Neominds
               </span>
@@ -1261,6 +1285,9 @@ export const Header: React.FC<HeaderProps> = ({
             {/* Section 1: What we do */}
             <div>
               <button
+                id="mobile-trigger-what-we-do"
+                aria-expanded={mobileExpandedSection === 'what-we-do'}
+                aria-controls="mobile-section-what-we-do"
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'what-we-do' ? null : 'what-we-do')}
                 style={{
                   width: '100%',
@@ -1268,13 +1295,14 @@ export const Header: React.FC<HeaderProps> = ({
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: '14px 0',
-                  color: '#000000',
+                  color: mobileExpandedSection === 'what-we-do' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
                   borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
+                  textAlign: 'left',
                 }}
               >
                 <span>What we do</span>
@@ -1282,92 +1310,103 @@ export const Header: React.FC<HeaderProps> = ({
                   size={16}
                   style={{
                     transform: mobileExpandedSection === 'what-we-do' ? 'rotate(90deg)' : 'none',
-                    transition: 'transform 0.2s',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
                     color: mobileExpandedSection === 'what-we-do' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
 
-              {mobileExpandedSection === 'what-we-do' && (
-                <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {/* Sub-block 1: Services */}
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      Services
+              <div
+                id="mobile-section-what-we-do"
+                role="region"
+                aria-labelledby="mobile-trigger-what-we-do"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'what-we-do' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    {/* Sub-block 1: Services */}
+                    <div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                        Services
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {ourServicesList.map((srv) => (
+                          <div
+                            key={srv.page}
+                            onClick={() => navigateToPage(srv.page)}
+                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                          >
+                            {srv.title}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {ourServicesList.map((srv) => (
-                        <div
-                          key={srv.page}
-                          onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                        >
-                          {srv.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Sub-block 2: AI & Specialist */}
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      AI & Specialist
+                    {/* Sub-block 2: AI & Specialist */}
+                    <div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                        AI & Specialist
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {artificialIntelligenceList.map((srv) => (
+                          <div
+                            key={srv.page}
+                            onClick={() => navigateToPage(srv.page)}
+                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                          >
+                            {srv.title}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {artificialIntelligenceList.map((srv) => (
-                        <div
-                          key={srv.page}
-                          onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                        >
-                          {srv.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Sub-block 3: Technologies */}
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      Technologies
+                    {/* Sub-block 3: Technologies */}
+                    <div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                        Technologies
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {fintechList.map((srv) => (
+                          <div
+                            key={srv.title}
+                            onClick={() => navigateToPage(srv.page)}
+                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                          >
+                            {srv.title}
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {fintechList.map((srv) => (
-                        <div
-                          key={srv.title}
-                          onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                        >
-                          {srv.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
 
-                  {/* Sub-block 4: Industries */}
-                  <div>
-                    <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
-                      Industries
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {healthcareList.map((srv) => (
-                        <div
-                          key={srv.title}
-                          onClick={() => navigateToPage(srv.page)}
-                          style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
-                        >
-                          {srv.title}
-                        </div>
-                      ))}
+                    {/* Sub-block 4: Industries */}
+                    <div>
+                      <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', marginBottom: '8px' }}>
+                        Industries
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        {healthcareList.map((srv) => (
+                          <div
+                            key={srv.title}
+                            onClick={() => navigateToPage(srv.page)}
+                            style={{ color: currentPage === srv.page ? '#fe6200' : '#2b2b2b', fontSize: '14px', cursor: 'pointer' }}
+                          >
+                            {srv.title}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Section 2: Who we are */}
             <div>
               <button
+                id="mobile-trigger-who-we-are"
+                aria-expanded={mobileExpandedSection === 'who-we-are'}
+                aria-controls="mobile-section-who-we-are"
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'who-we-are' ? null : 'who-we-are')}
                 style={{
                   width: '100%',
@@ -1375,13 +1414,14 @@ export const Header: React.FC<HeaderProps> = ({
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: '14px 0',
-                  color: '#000000',
+                  color: mobileExpandedSection === 'who-we-are' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
                   borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
+                  textAlign: 'left',
                 }}
               >
                 <span>Who we are</span>
@@ -1389,26 +1429,37 @@ export const Header: React.FC<HeaderProps> = ({
                   size={16}
                   style={{
                     transform: mobileExpandedSection === 'who-we-are' ? 'rotate(90deg)' : 'none',
-                    transition: 'transform 0.2s',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
                     color: mobileExpandedSection === 'who-we-are' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
 
-              {mobileExpandedSection === 'who-we-are' && (
-                <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div onClick={() => navigateToPage('about-us')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>About Us</div>
-                  <div onClick={() => navigateToPage('leaders')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Leadership</div>
-                  <div onClick={() => navigateToPage('careers')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Careers</div>
-                  <div onClick={() => navigateToPage('certification')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Certification</div>
-                  <div onClick={() => navigateToPage('contacts')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Contact</div>
+              <div
+                id="mobile-section-who-we-are"
+                role="region"
+                aria-labelledby="mobile-trigger-who-we-are"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'who-we-are' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div onClick={() => navigateToPage('about-us')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>About Us</div>
+                    <div onClick={() => navigateToPage('leaders')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Leadership</div>
+                    <div onClick={() => navigateToPage('careers')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Careers</div>
+                    <div onClick={() => navigateToPage('certification')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Certification</div>
+                    <div onClick={() => navigateToPage('contacts')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Contact</div>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Section 3: Insights */}
             <div>
               <button
+                id="mobile-trigger-insights"
+                aria-expanded={mobileExpandedSection === 'insights'}
+                aria-controls="mobile-section-insights"
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'insights' ? null : 'insights')}
                 style={{
                   width: '100%',
@@ -1416,13 +1467,14 @@ export const Header: React.FC<HeaderProps> = ({
                   justifyContent: 'space-between',
                   alignItems: 'center',
                   padding: '14px 0',
-                  color: '#000000',
+                  color: mobileExpandedSection === 'insights' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
                   borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
+                  textAlign: 'left',
                 }}
               >
                 <span>Insights & Publications</span>
@@ -1430,24 +1482,35 @@ export const Header: React.FC<HeaderProps> = ({
                   size={16}
                   style={{
                     transform: mobileExpandedSection === 'insights' ? 'rotate(90deg)' : 'none',
-                    transition: 'transform 0.2s',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
                     color: mobileExpandedSection === 'insights' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
 
-              {mobileExpandedSection === 'insights' && (
-                <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div onClick={() => navigateToPage('blog')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Blog</div>
-                  <div onClick={() => navigateToPage('company-updates')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Company Updates</div>
-                  <div onClick={() => navigateToPage('insights')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>All Insights Hub</div>
+              <div
+                id="mobile-section-insights"
+                role="region"
+                aria-labelledby="mobile-trigger-insights"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'insights' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div onClick={() => navigateToPage('blog')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Blog</div>
+                    <div onClick={() => navigateToPage('company-updates')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Company Updates</div>
+                    <div onClick={() => navigateToPage('insights')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>All Insights Hub</div>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
 
             {/* Section 4: Case studies */}
             <div style={{ borderBottom: '1px solid #e4e2e1' }}>
               <button
+                id="mobile-trigger-case-studies"
+                aria-expanded={mobileExpandedSection === 'case-studies'}
+                aria-controls="mobile-section-case-studies"
                 onClick={() => setMobileExpandedSection(mobileExpandedSection === 'case-studies' ? null : 'case-studies')}
                 style={{
                   width: '100%',
@@ -1461,6 +1524,7 @@ export const Header: React.FC<HeaderProps> = ({
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
+                  textAlign: 'left',
                 }}
               >
                 <span>Case studies</span>
@@ -1468,26 +1532,35 @@ export const Header: React.FC<HeaderProps> = ({
                   size={16}
                   style={{
                     transform: mobileExpandedSection === 'case-studies' ? 'rotate(180deg)' : 'none',
-                    transition: 'transform 0.2s',
+                    transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s',
                     color: mobileExpandedSection === 'case-studies' ? '#fe6200' : '#000000',
+                    flexShrink: 0,
                   }}
                 />
               </button>
-              {mobileExpandedSection === 'case-studies' && (
-                <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  <div onClick={() => navigateToPage('project', 'mindspace-mobile-app')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Mindspace.ai Healthcare App</div>
-                  <div onClick={() => navigateToPage('project', 'authenticom-ai-etl')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Authenticom Automotive Data</div>
-                  <div onClick={() => navigateToPage('project', 'fundbot-sql-chatbot')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>FundBot SQL Financial AI</div>
-                  <div onClick={() => navigateToPage('project', 'trubridge-medical-ai')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>TruBridge Medical Coding</div>
-                  <div onClick={() => navigateToPage('project', 'flooring-inc-dashboard')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Flooring Inc Inventory Analytics</div>
-                  <div onClick={() => navigateToPage('portfolio')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>Explore All Case Studies →</div>
+
+              <div
+                id="mobile-section-case-studies"
+                role="region"
+                aria-labelledby="mobile-trigger-case-studies"
+                className={`nm-mobile-accordion-panel ${mobileExpandedSection === 'case-studies' ? 'is-expanded' : ''}`}
+              >
+                <div className="nm-mobile-accordion-inner">
+                  <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                    <div onClick={() => navigateToPage('project', 'mindspace-mobile-app')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Mindspace.ai Healthcare App</div>
+                    <div onClick={() => navigateToPage('project', 'authenticom-ai-etl')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Authenticom Automotive Data</div>
+                    <div onClick={() => navigateToPage('project', 'fundbot-sql-chatbot')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>FundBot SQL Financial AI</div>
+                    <div onClick={() => navigateToPage('project', 'trubridge-medical-ai')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>TruBridge Medical Coding</div>
+                    <div onClick={() => navigateToPage('project', 'flooring-inc-dashboard')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Flooring Inc Inventory Analytics</div>
+                    <div onClick={() => navigateToPage('portfolio')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>Explore All Case Studies →</div>
+                  </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
           {/* Mobile Footer Send Request Button */}
-          <div style={{ marginTop: 'auto', paddingTop: '28px' }}>
+          <div style={{ marginTop: 'auto', paddingTop: '28px', flexShrink: 0 }}>
             <button
               onClick={() => navigateToPage('contacts')}
               style={{
@@ -1522,6 +1595,21 @@ export const Header: React.FC<HeaderProps> = ({
             opacity: 1;
             transform: translateY(0) scale(1);
           }
+        }
+        .nm-mobile-accordion-panel {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+          opacity: 0;
+          visibility: hidden;
+        }
+        .nm-mobile-accordion-panel.is-expanded {
+          grid-template-rows: 1fr;
+          opacity: 1;
+          visibility: visible;
+        }
+        .nm-mobile-accordion-inner {
+          overflow: hidden;
         }
         @media (min-width: 860px) {
           .desktop-nav {

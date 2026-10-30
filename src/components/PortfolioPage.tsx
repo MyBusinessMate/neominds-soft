@@ -115,7 +115,7 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 maxWidth: '560px',
               }}
             >
-              Across finance, healthcare, AI, and enterprise logistics, we turn bold ideas into clear product direction, fragmented workflows into automated systems, and legacy tech into scalable platforms. Over 23+ years, Neominds has delivered 1,000+ successful projects globally.
+              Across finance, healthcare, AI, and enterprise logistics, we turn complex challenges into clear product direction, fragmented workflows into automated systems, and legacy infrastructure into scalable software. In just 1 year, NeoMinds has engineered and deployed 30+ production systems globally.
             </p>
           </RevealElement>
 
@@ -161,18 +161,18 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                 </span>
               </div>
               <span style={{ fontSize: '12px', color: '#555555', fontFamily: 'monospace', fontWeight: 600 }}>
-                Delivery Metrics (2003–2026)
+                Audited Production Velocity (Year 1)
               </span>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '20px' }}>
               <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', padding: '18px', borderRadius: '8px', borderLeft: '3px solid #fe6200' }}>
-                <div style={{ fontSize: '32px', fontWeight: 800, color: '#fe6200', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>1,000+</div>
-                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>Successful Products Delivered</div>
+                <div style={{ fontSize: '32px', fontWeight: 800, color: '#fe6200', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>30+</div>
+                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>Production Systems Built</div>
               </div>
               <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', padding: '18px', borderRadius: '8px', borderLeft: '3px solid #16a34a' }}>
-                <div style={{ fontSize: '32px', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>52%</div>
-                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>Clients Partnering &gt; 4 Years</div>
+                <div style={{ fontSize: '32px', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>100%</div>
+                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>On-Time Delivery Success</div>
               </div>
             </div>
 
@@ -264,11 +264,11 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
             return (
               <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <div
+                  className="nm-corner-glow"
                   style={{
                     backgroundColor: '#ffffff',
-                    border: isExpanded ? '2px solid #fe6200' : '1px solid #e4e2e1',
-                    borderTop: '3px solid #fe6200',
-                    borderRadius: '8px',
+                    border: isExpanded ? '2px solid #fe6200' : '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
                     padding: '28px',
                     display: 'flex',
                     flexDirection: 'column',
@@ -276,42 +276,53 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                     transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
                     position: 'relative',
                     overflow: 'hidden',
-                    boxShadow: isExpanded ? '0 16px 36px rgba(254, 98, 0, 0.12)' : '0 4px 16px rgba(0, 0, 0, 0.04)',
+                    boxShadow: isExpanded ? '0 16px 36px rgba(254, 98, 0, 0.12)' : '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
                   }}
                   onMouseEnter={(e) => {
                     if (!isExpanded) {
                       e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.4)';
                       e.currentTarget.style.boxShadow = '0 16px 36px rgba(254, 98, 0, 0.08)';
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!isExpanded) {
                       e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = '#e4e2e1';
-                      e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.04)';
+                      e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                      e.currentTarget.style.boxShadow = '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)';
                     }
                   }}
                 >
-                  {/* Category & Metric Pill */}
+                  {/* Category & Metric Pip */}
                   <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
-                      <span
-                        style={{
-                          fontSize: '11px',
-                          fontWeight: 700,
-                          color: '#fe6200',
-                          fontFamily: 'monospace',
-                          letterSpacing: '0.06em',
-                          textTransform: 'uppercase',
-                          borderLeft: '2px solid #fe6200',
-                          paddingLeft: '6px',
-                        }}
-                      >
-                        {cs.category}
-                      </span>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', gap: '12px' }}>
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                        <span
+                          style={{
+                            width: '6px',
+                            height: '6px',
+                            borderRadius: '50%',
+                            backgroundColor: '#fe6200',
+                            display: 'inline-block',
+                            boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
+                            flexShrink: 0,
+                          }}
+                        />
+                        <span
+                          style={{
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            color: '#fe6200',
+                            fontFamily: 'monospace',
+                            letterSpacing: '0.06em',
+                            textTransform: 'uppercase',
+                          }}
+                        >
+                          {cs.category}
+                        </span>
+                      </div>
                       <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '20px', fontWeight: 800, color: '#fe6200', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
+                        <div style={{ fontSize: '18px', fontWeight: 800, color: '#fe6200', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
                         <div style={{ fontSize: '11px', color: '#66615c', fontWeight: 500 }}>{cs.metricLabel}</div>
                       </div>
                     </div>

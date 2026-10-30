@@ -52,13 +52,13 @@ const principles: Principle[] = [
 
 const statsData = [
   { label: 'AI-CERTIFIED TALENT', target: 34, suffix: '%' },
-  { label: 'YEARS OF ENGINEERING EXPERIENCE', target: 23, suffix: '' },
+  { label: 'SYSTEMS SHIPPED IN YEAR 1', target: 30, suffix: '+' },
   { label: 'CLIENTS IN HIGHLY REGULATED INDUSTRIES', target: 86, suffix: '%' },
-  { label: 'LONGEST ENGAGEMENT IN YEARS', target: 18, suffix: '' },
+  { label: 'DELIVERY RELIABILITY SLA', target: 99, suffix: '%' },
 ];
 
 const DeliveryPrinciplesComponent: React.FC = () => {
-  const [activePrinciple, setActivePrinciple] = useState<string>('outcomes');
+  const [activePrinciple, setActivePrinciple] = useState<string>('');
   const [counts, setCounts] = useState<number[]>([0, 0, 0, 0]);
   const hasAnimatedRef = useRef(false);
   const statsRef = useRef<HTMLDivElement>(null);
@@ -103,8 +103,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
   }, []);
 
   return (
-    <section
-      id="delivery"
+    <div
       style={{
         position: 'relative',
         width: '100%',
@@ -114,266 +113,296 @@ const DeliveryPrinciplesComponent: React.FC = () => {
         color: '#000000',
       }}
     >
-      <div className="container" style={{ maxWidth: '1280px' }}>
-        {/* Asymmetrical Freehand Editorial Header & Principle Rows */}
+      <section
+        id="delivery"
+        className="container"
+        style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
+          gap: '0 clamp(40px, 6vw, 80px)',
+          alignItems: 'start',
+        }}
+      >
+        {/* Left Column: Index & Core Statement */}
         <div
+          className="principles-left-col"
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1fr) minmax(320px, 1.4fr)',
-            gap: 'clamp(40px, 6vw, 80px)',
-            marginBottom: 'clamp(48px, 6vw, 64px)',
-            alignItems: 'start',
+            gridColumn: 1,
+            gridRow: '1 / span 7',
+            paddingBottom: 'clamp(48px, 6vw, 64px)',
           }}
-          className="principles-grid"
         >
-          {/* Left Column: Index & Core Statement */}
-          <div>
-            <ScrollReveal
-              as="h2"
-              style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(28px, 3vw, 36px)',
-                fontWeight: 400,
-                lineHeight: 1.2,
-                color: '#000000',
-                marginBottom: '20px',
-                letterSpacing: '-0.01em',
-                display: 'block',
-              }}
-              blurStrength={6}
-            >
-              We take your project from first idea to launch and long-term support, with one team responsible throughout.
-            </ScrollReveal>
-
-            <p
-              style={{
-                fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                fontSize: '16px',
-                lineHeight: 1.5,
-                color: '#868683',
-                maxWidth: '440px',
-              }}
-            >
-              Direct senior engineering accountability with zero handoff friction between discovery, sprint velocity, and production rollout.
-            </p>
-          </div>
-
-          {/* Right Column: Freehand Principle Rows */}
-          <div
+          <ScrollReveal
+            as="h2"
             style={{
-              borderTop: '1px solid #e4e2e1',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(28px, 3vw, 36px)',
+              fontWeight: 400,
+              lineHeight: 1.2,
+              color: '#000000',
+              marginBottom: '20px',
+              letterSpacing: '-0.01em',
+              display: 'block',
+            }}
+            blurStrength={6}
+          >
+            We take your project from first idea to launch and long-term support, with one team responsible throughout.
+          </ScrollReveal>
+
+          <p
+            style={{
+              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+              fontSize: '16px',
+              lineHeight: 1.5,
+              color: 'var(--colors-text-muted, #2b2b2b)',
+              maxWidth: '440px',
             }}
           >
-            {principles.map((p) => {
-              const isActive = activePrinciple === p.id;
-              return (
-                <div
-                  key={p.id}
-                  style={{
-                    borderBottom: '1px solid #e4e2e1',
-                    transition: 'border-color 0.38s ease',
-                  }}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setActivePrinciple(isActive ? '' : p.id)}
-                    style={{
-                      width: '100%',
-                      padding: '24px 0',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      textAlign: 'left',
-                      background: 'none',
-                      border: 'none',
-                      cursor: 'pointer',
-                      gap: '16px',
-                    }}
-                    aria-expanded={isActive}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
-                      <span
-                        style={{
-                          fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                          fontSize: '13px',
-                          color: isActive ? '#fe6200' : '#868683',
-                          transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
-                        }}
-                      >
-                        {p.num}
-                      </span>
-                      <span
-                        style={{
-                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                          fontSize: 'clamp(20px, 2vw, 24px)',
-                          fontWeight: 400,
-                          color: isActive ? '#000000' : '#868683',
-                          letterSpacing: '-0.01em',
-                          transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
-                        }}
-                      >
-                        {p.title}
-                      </span>
-                    </div>
-
-                    <div
-                      style={{
-                        width: '32px',
-                        height: '32px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: isActive ? '#fe6200' : '#868683',
-                        transition: 'color 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
-                        flexShrink: 0,
-                      }}
-                    >
-                      {isActive ? <Minus size={18} /> : <Plus size={18} />}
-                    </div>
-                  </button>
-
-                  {/* Expandable Details */}
-                  <div
-                    style={{
-                      maxHeight: isActive ? '320px' : '0px',
-                      opacity: isActive ? 1 : 0,
-                      overflow: 'hidden',
-                      transition: 'max-height 0.38s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.25s ease',
-                    }}
-                  >
-                    <div style={{ paddingBottom: '24px', paddingLeft: '32px' }}>
-                      <p
-                        style={{
-                          fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                          fontSize: '16px',
-                          lineHeight: 1.5,
-                          color: '#868683',
-                          margin: '0 0 16px 0',
-                        }}
-                      >
-                        {p.desc}
-                      </p>
-
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        {p.points.map((point, i) => (
-                          <div
-                            key={i}
-                            style={{
-                              display: 'flex',
-                              alignItems: 'flex-start',
-                              gap: '10px',
-                              fontSize: '14px',
-                              fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                              color: '#000000',
-                              lineHeight: 1.5,
-                            }}
-                          >
-                            <span
-                              style={{
-                                width: '16px',
-                                height: '16px',
-                                borderRadius: '50%',
-                                backgroundColor: 'rgba(254, 98, 0, 0.12)',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                flexShrink: 0,
-                                marginTop: '2px',
-                              }}
-                            >
-                              <Check size={11} color="#fe6200" />
-                            </span>
-                            <span>{point}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+            Direct senior engineering accountability with zero handoff friction between discovery, sprint velocity, and production rollout.
+          </p>
         </div>
 
-        {/* Freehand Statistics Ledger (10px card radius, surface-light cards on white or elevated) */}
-        <RevealElement variant="card">
-          <div
-            ref={statsRef}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '16px',
-            }}
-            className="stats-ledger"
-          >
-            {statsData.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="card-standard"
+        {/* Right Column Principle Buttons & Collapsible Details as Direct Siblings */}
+        {principles.map((p, index) => {
+          const isActive = activePrinciple === p.id;
+          const buttonRow = index * 2 + 1;
+          const detailsRow = index * 2 + 2;
+
+          return (
+            <React.Fragment key={p.id}>
+              <button
+                type="button"
+                onClick={() => setActivePrinciple(isActive ? '' : p.id)}
+                aria-expanded={isActive}
+                className="delivery-principle-btn"
                 style={{
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '8px',
-                  padding: '32px 24px',
+                  gridColumn: 2,
+                  gridRow: buttonRow,
+                  width: '100%',
+                  padding: '24px 0',
                   display: 'flex',
-                  flexDirection: 'column',
+                  alignItems: 'center',
                   justifyContent: 'space-between',
-                  minHeight: '170px',
-                  transition: 'transform 0.38s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.38s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                  textAlign: 'left',
+                  background: 'none',
+                  border: 'none',
+                  borderTop: index === 0 ? '1px solid #e4e2e1' : 'none',
+                  borderBottom: !isActive ? '1px solid #e4e2e1' : 'none',
+                  cursor: 'pointer',
+                  gap: '16px',
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-                    fontSize: '13px',
-                    fontWeight: 500,
-                    letterSpacing: '0.04em',
-                    color: '#868683',
-                    textTransform: 'uppercase',
-                    lineHeight: 1.4,
-                    marginBottom: '20px',
-                  }}
-                >
-                  {stat.label}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '16px' }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                      fontSize: '13px',
+                      color: isActive ? '#fe6200' : 'var(--colors-text-muted, #2b2b2b)',
+                      transition: 'color 0.28s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    }}
+                  >
+                    {p.num}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                      fontSize: 'clamp(20px, 2vw, 24px)',
+                      fontWeight: 400,
+                      color: '#000000',
+                      letterSpacing: '-0.01em',
+                      transition: 'color 0.28s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    }}
+                  >
+                    {p.title}
+                  </span>
+                </div>
 
                 <div
-                  className="stat-metric"
                   style={{
-                    fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                    fontSize: 'clamp(36px, 4vw, 56px)',
-                    fontWeight: 400,
-                    color: '#fe6200',
-                    lineHeight: 1.1,
-                    letterSpacing: '-0.02em',
+                    width: '32px',
+                    height: '32px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: isActive ? '#fe6200' : '#000000',
+                    transition: 'color 0.28s cubic-bezier(0.215, 0.61, 0.355, 1)',
+                    flexShrink: 0,
                   }}
                 >
-                  {counts[index]}
-                  {stat.suffix}
+                  {isActive ? <Minus size={18} /> : <Plus size={18} />}
+                </div>
+              </button>
+
+              <div
+                data-accordion-open={isActive ? 'true' : undefined}
+                className={`delivery-principle-details ${isActive ? 'accordion-body-open' : ''}`}
+                style={{
+                  gridColumn: 2,
+                  gridRow: detailsRow,
+                  maxHeight: isActive ? '480px' : '0px',
+                  opacity: isActive ? 1 : 0,
+                  visibility: isActive ? 'visible' : 'hidden',
+                  overflow: 'hidden',
+                  transition: 'max-height 0.28s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.22s ease, visibility 0.28s ease',
+                  borderBottom: '1px solid #e4e2e1',
+                }}
+              >
+                <div style={{ paddingBottom: '24px', paddingLeft: '32px' }}>
+                  <p
+                    style={{
+                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontSize: '16px',
+                      lineHeight: 1.5,
+                      color: 'var(--colors-text-muted, #2b2b2b)',
+                      margin: '0 0 16px 0',
+                    }}
+                  >
+                    {p.desc}
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {p.points.map((point, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '10px',
+                          fontSize: '14px',
+                          fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                          color: '#000000',
+                          lineHeight: 1.5,
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: '16px',
+                            height: '16px',
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            marginTop: '2px',
+                          }}
+                        >
+                          <Check size={11} color="#fe6200" />
+                        </span>
+                        <span>{point}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </RevealElement>
-      </div>
+            </React.Fragment>
+          );
+        })}
+
+        {/* Clean Editorial Statistics Ledger */}
+        <div
+          style={{
+            gridColumn: '1 / -1',
+            gridRow: 8,
+            marginTop: 'clamp(48px, 6vw, 64px)',
+          }}
+        >
+          <RevealElement variant="card">
+            <div
+              ref={statsRef}
+              className="stats-ledger stats-grid"
+              data-stats-grid="true"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid #e4e2e1',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              {statsData.map((stat, index) => (
+                <div key={stat.label} className="stats-ledger-item">
+                  <div
+                    className="stat-metric"
+                    style={{
+                      fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                      fontSize: 'clamp(28px, 3.2vw, 44px)',
+                      fontWeight: 500,
+                      color: '#fe6200',
+                      lineHeight: 1.1,
+                      letterSpacing: '-0.02em',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {counts[index]}
+                    {stat.suffix}
+                  </div>
+                  <span
+                    className="stat-label"
+                    style={{
+                      fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                      fontSize: '12.5px',
+                      fontWeight: 600,
+                      letterSpacing: '0.04em',
+                      color: '#111111',
+                      textTransform: 'uppercase',
+                      lineHeight: 1.35,
+                    }}
+                  >
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </RevealElement>
+        </div>
+      </section>
 
       <style>{`
+        .stats-ledger {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .stats-ledger-item {
+          padding: 28px 24px;
+          display: flex;
+          flex-direction: column;
+          justifyContent: center;
+          border-right: 1px solid #e4e2e1;
+        }
+        .stats-ledger-item:last-child {
+          border-right: none;
+        }
         @media (max-width: 768px) {
-          .principles-grid {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
+          #delivery {
+            display: flex !important;
+            flex-direction: column !important;
+          }
+          .principles-left-col {
+            padding-bottom: 32px !important;
           }
           .stats-ledger {
             grid-template-columns: repeat(2, 1fr) !important;
           }
+          .stats-ledger-item {
+            padding: 18px 16px !important;
+            border-right: none !important;
+          }
+          .stats-ledger-item:nth-child(odd) {
+            border-right: 1px solid #e4e2e1 !important;
+          }
+          .stats-ledger-item:nth-child(n+3) {
+            border-top: 1px solid #e4e2e1 !important;
+          }
         }
         @media (max-width: 480px) {
-          .stats-ledger {
-            grid-template-columns: 1fr !important;
+          .stats-ledger-item {
+            padding: 16px 12px !important;
           }
         }
       `}</style>
-    </section>
+    </div>
   );
 };
 

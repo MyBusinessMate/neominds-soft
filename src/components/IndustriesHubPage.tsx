@@ -283,7 +283,7 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                     <div style={{ width: '48px', height: '48px', borderRadius: '8px', backgroundColor: 'rgba(254, 98, 0, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       {ind.icon}
                     </div>
-                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#868683', fontFamily: 'monospace' }}>
+                    <span style={{ fontSize: '14px', fontWeight: 800, color: '#333333', fontFamily: 'monospace' }}>
                       {ind.num}
                     </span>
                   </div>

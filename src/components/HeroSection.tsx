@@ -10,7 +10,7 @@ interface HeroSectionProps {
 const clientLogos = [
   { name: 'Maersk', url: '/uploads/2026/05/maersk-white.svg' },
   { name: 'Authenticom', url: '/uploads/2026/05/authenticom-white.svg' },
-  { name: 'Webbula', url: '/uploads/2026/07/webbula-white2.svg' },
+  { name: 'Webbula', url: '/uploads/2026/07/webbula-white.svg' },
   { name: 'TruBridge', url: '/uploads/2025/02/TruBridge.svg' },
   { name: 'Motive Retail', url: '/uploads/2026/05/motiveretail-white.svg' },
   { name: 'MedScope', url: '/uploads/2010/04/MedScope.svg' },
@@ -95,15 +95,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           MOBILE HERO VIEW (< 860px) - EXACT PIXEL MATCH TO MOCKUP
           ======================================================== */}
       <div className="mobile-hero-layout">
-        {/* Top Robot Head (Subtly Behind Headline) */}
-        <div className="mobile-robot-top-backdrop">
-          <img
-            src="/images/mobile-hero.png"
-            alt="AI Engineering Robot"
-            className="mobile-robot-top-img"
-          />
-        </div>
-
         {/* Foreground Content Stack */}
         <div className="mobile-hero-content">
           <h1 className="mobile-hero-heading">
@@ -170,12 +161,12 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           </div>
         </div>
 
-        {/* Lower Robot Body (Visible Below the Buttons, exactly as in user reference) */}
-        <div className="mobile-robot-bottom-container">
+        {/* Properly framed single mobile robot below CTA buttons */}
+        <div className="mobile-robot-container">
           <img
             src="/images/mobile-hero.png"
-            alt="AI Engineering Suit"
-            className="mobile-robot-bottom-img"
+            alt="AI Engineering Robot"
+            className="mobile-robot-img"
           />
         </div>
       </div>
@@ -354,60 +345,73 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
       {/* Enterprise Partner Logo Strip */}
       <div
         ref={tickerRef}
+        className="hero-client-strip-wrapper"
         style={{
           position: 'relative',
           zIndex: 4,
           width: '100%',
-          borderTop: '1px solid rgba(0, 0, 0, 0.07)',
           backgroundColor: '#fbf9f5',
-          paddingTop: '20px',
-          paddingBottom: '20px',
+          paddingTop: 'clamp(44px, 5.5vh, 68px)',
+          paddingBottom: 'clamp(32px, 4.5vh, 52px)',
+          marginTop: 'clamp(36px, 4.5vh, 54px)',
         }}
       >
         <div
-          className="container"
+          className="container hero-client-strip-container"
           style={{
             maxWidth: '1280px',
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '12px',
+            gap: '18px',
+            padding: '0 24px',
           }}
         >
           <span
+            className="hero-client-strip-label"
             style={{
               color: '#000000',
               fontFamily: "'DM Sans', sans-serif",
               fontSize: '11px',
               fontWeight: 700,
-              letterSpacing: '0.12em',
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              opacity: 0.65,
+              opacity: 0.6,
+              textAlign: 'center',
+              lineHeight: 1.4,
+              maxWidth: '92%',
+              marginBottom: '2px',
             }}
           >
             TRUSTED BY PRODUCT TEAMS AT HIGH-GROWTH COMPANIES
           </span>
 
           <div
+            className="hero-client-strip-logos"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: 'clamp(20px, 3.5vw, 56px)',
+              gap: 'clamp(20px, 3.2vw, 54px)',
               flexWrap: 'wrap',
-              opacity: 0.85,
+              opacity: 0.88,
+              width: '100%',
+              maxWidth: '1240px',
             }}
           >
             {clientLogos.map((client) => (
               <span
                 key={client.name}
+                className="hero-client-name"
                 style={{
                   color: '#000000',
                   fontFamily: "'BL Pylon Serif', serif",
                   fontSize: 'clamp(15px, 1.5vw, 21px)',
                   fontWeight: 500,
                   letterSpacing: '0.04em',
+                  whiteSpace: 'nowrap',
+                  flexShrink: 0,
                 }}
               >
                 {client.name}
@@ -457,33 +461,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             background-color: #fbf9f5;
           }
 
-          /* Top Robot Head Backdrop */
-          .mobile-robot-top-backdrop {
-            position: absolute;
-            top: -24px;
-            right: 0;
-            width: 100%;
-            height: 380px;
-            pointer-events: none;
-            z-index: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-            overflow: hidden;
-          }
-
-          .mobile-robot-top-img {
-            width: 88%;
-            max-width: 380px;
-            height: auto;
-            object-fit: contain;
-            object-position: top right;
-            opacity: 0.45;
-            filter: contrast(108%);
-            WebkitMaskImage: radial-gradient(circle at 75% 30%, #000 20%, rgba(0,0,0,0.5) 60%, transparent 85%);
-            maskImage: radial-gradient(circle at 75% 30%, #000 20%, rgba(0,0,0,0.5) 60%, transparent 85%);
-          }
-
           /* Foreground Content */
           .mobile-hero-content {
             position: relative;
@@ -524,41 +501,44 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             z-index: 3;
           }
 
-          /* Lower Robot Body (Visible Below the Buttons, exactly as shown in uploaded reference) */
-          .mobile-robot-bottom-container {
+          /* Single Mobile Robot Container Framed Below CTA Buttons */
+          .mobile-robot-container {
             position: relative;
             width: 100%;
-            height: clamp(260px, 42vh, 340px);
-            overflow: hidden;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             justify-content: center;
-            margin-top: 14px;
-            margin-bottom: 8px;
+            margin: 16px auto 0;
+            padding: 0 16px 20px;
             z-index: 2;
           }
 
-          .mobile-robot-bottom-img {
+          .mobile-robot-img {
             width: 100%;
-            max-width: 440px;
+            max-width: 340px;
             height: auto;
-            object-fit: cover;
-            object-position: 50% 68%;
-            transform: scale(1.18);
-            WebkitMaskImage: linear-gradient(
-              to bottom,
-              transparent 0%,
-              #000 15%,
-              #000 85%,
-              transparent 100%
-            );
-            maskImage: linear-gradient(
-              to bottom,
-              transparent 0%,
-              #000 15%,
-              #000 85%,
-              transparent 100%
-            );
+            max-height: 380px;
+            object-fit: contain;
+            margin: 0 auto;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+          }
+
+          /* Client Strip Mobile Responsiveness */
+          .hero-client-strip-wrapper {
+            margin-top: 16px !important;
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
+          }
+
+          .hero-client-strip-logos {
+            gap: 12px 20px !important;
+            padding: 4px 8px !important;
+          }
+
+          .hero-client-name {
+            font-size: 15px !important;
           }
         }
       `}</style>
