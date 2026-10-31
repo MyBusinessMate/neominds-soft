@@ -509,18 +509,18 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           /* Right-Anchored Background Robot in Suit (Soft fade at lower edge) */
           .mobile-robot-backdrop {
             position: absolute;
-            top: -10px;
-            right: -10%;
-            width: 96%;
-            max-width: 440px;
-            height: clamp(480px, 66vh, 580px);
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: clamp(560px, 78vh, 680px);
             pointer-events: none;
             z-index: 1;
             display: flex;
             align-items: flex-start;
             justifyContent: flex-end;
-            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 74%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 0%, black 74%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 0%, black 82%, transparent 100%);
           }
 
           .mobile-robot-img {
@@ -528,8 +528,6 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             height: 100%;
             object-fit: contain;
             object-position: right top;
-            transform: scale(1.16);
-            transform-origin: top right;
             display: block;
           }
 
@@ -538,28 +536,28 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             position: relative;
             z-index: 5;
             width: 100%;
-            margin-top: clamp(230px, 32vh, 300px);
+            margin-top: clamp(250px, 34vh, 320px);
             padding: 0;
           }
 
           .mobile-hero-heading {
             color: #111111;
             font-family: var(--typography-display-family, 'BL Pylon Serif', serif);
-            font-size: clamp(34px, 8.8vw, 42px);
+            font-size: clamp(32px, 8.2vw, 40px);
             font-weight: 400;
-            line-height: 1.08;
+            line-height: 1.1;
             letter-spacing: -0.025em;
-            margin: 0 0 16px 0;
-            max-width: 72%;
+            margin: 0 0 14px 0;
+            max-width: 70%;
           }
 
           .mobile-hero-subtext {
             color: #2b2b2b;
             font-family: var(--typography-body-family, 'DM Sans'), sans-serif;
             font-size: 15px;
-            line-height: 1.48;
+            line-height: 1.45;
             font-weight: 400;
-            margin: 0 0 24px 0;
+            margin: 0 0 20px 0;
             max-width: 82%;
           }
 
