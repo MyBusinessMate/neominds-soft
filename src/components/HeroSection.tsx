@@ -491,7 +491,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           .hero-root-section {
             padding-top: 54px !important;
             min-height: auto !important;
-            background-color: #f4ecde !important;
+            background-color: #f5e9d9 !important;
           }
           .mobile-hero-layout {
             position: relative;
@@ -501,7 +501,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             flex-direction: column;
             justify-content: flex-end;
             overflow: hidden;
-            background-color: #f4ecde;
+            background-color: #f5e9d9;
             padding: 0 20px 24px 20px;
             box-sizing: border-box;
           }
@@ -509,11 +509,10 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           /* Right-Anchored Background Robot in Suit (Soft fade at lower edge) */
           .mobile-robot-backdrop {
             position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            width: 100%;
-            height: clamp(560px, 78vh, 680px);
+            top: -24px;
+            right: -6%;
+            width: 110%;
+            height: clamp(660px, 86vh, 820px);
             pointer-events: none;
             z-index: 1;
             display: flex;
@@ -536,7 +535,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             position: relative;
             z-index: 5;
             width: 100%;
-            margin-top: clamp(250px, 34vh, 320px);
+            margin-top: clamp(260px, 35vh, 320px);
             padding: 0;
           }
 
@@ -548,7 +547,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             line-height: 1.1;
             letter-spacing: -0.025em;
             margin: 0 0 14px 0;
-            max-width: 70%;
+            max-width: 85%;
           }
 
           .mobile-hero-subtext {
@@ -558,7 +557,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             line-height: 1.45;
             font-weight: 400;
             margin: 0 0 20px 0;
-            max-width: 82%;
+            max-width: 85%;
           }
 
           .mobile-hero-cta-stack {
