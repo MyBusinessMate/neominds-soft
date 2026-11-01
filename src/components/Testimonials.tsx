@@ -254,8 +254,8 @@ export const Testimonials: React.FC = () => {
                       alt={`${current.clientName} logo`}
                       loading="lazy"
                       style={{
-                        maxHeight: '32px',
-                        maxWidth: '140px',
+                        maxHeight: '40px',
+                        maxWidth: '160px',
                         objectFit: 'contain',
                       }}
                       onError={(e) => {

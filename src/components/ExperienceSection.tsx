@@ -328,8 +328,8 @@ const ExperienceSectionComponent: React.FC = () => {
             display: 'grid',
             alignItems: 'center',
             justifyItems: 'center',
-            paddingTop: '28px',
-            paddingBottom: '28px',
+            paddingTop: 'clamp(32px, 3.5vw, 44px)',
+            paddingBottom: 'clamp(32px, 3.5vw, 44px)',
             borderTop: '1px solid #e4e2e1',
             borderBottom: '1px solid #e4e2e1',
           }}
@@ -344,8 +344,8 @@ const ExperienceSectionComponent: React.FC = () => {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  maxWidth: '220px',
-                  height: '48px',
+                  maxWidth: '260px',
+                  height: 'clamp(72px, 7vw, 88px)',
                   overflow: 'hidden',
                   perspective: '800px',
                   display: 'flex',
@@ -369,9 +369,12 @@ const ExperienceSectionComponent: React.FC = () => {
                     src={activeLogo.url}
                     alt={`${activeLogo.name} - Enterprise Client, Neominds Software Partner`}
                     loading="lazy"
+                    className="experience-client-logo"
                     style={{
-                      maxHeight: '36px',
-                      maxWidth: '160px',
+                      maxHeight: 'clamp(54px, 5.2vw, 68px)',
+                      maxWidth: 'clamp(190px, 20vw, 240px)',
+                      width: 'auto',
+                      height: 'auto',
                       objectFit: 'contain',
                     }}
                     onError={(e) => {
@@ -388,7 +391,7 @@ const ExperienceSectionComponent: React.FC = () => {
       <style>{`
         .experience-logos-grid {
           grid-template-columns: repeat(4, 1fr);
-          gap: clamp(20px, 3vw, 40px);
+          gap: clamp(24px, 3vw, 44px);
         }
 
         @media (max-width: 767px) {
@@ -406,13 +409,17 @@ const ExperienceSectionComponent: React.FC = () => {
         @media (max-width: 640px) {
           .experience-logos-grid {
             grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px 16px !important;
-            padding-top: 20px !important;
-            padding-bottom: 20px !important;
+            gap: 24px 16px !important;
+            padding-top: 24px !important;
+            padding-bottom: 24px !important;
           }
           .logo-roller-slot {
-            max-width: 150px !important;
-            height: 42px !important;
+            max-width: 160px !important;
+            height: 54px !important;
+          }
+          .experience-client-logo {
+            max-height: 44px !important;
+            max-width: 140px !important;
           }
         }
 
