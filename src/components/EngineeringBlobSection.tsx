@@ -1,4 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
+import { Layers, ShieldCheck, Cpu } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -6,52 +7,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const EngineeringBlobSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const blobRef = useRef<HTMLDivElement>(null);
   const textContentRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduceMotion) {
       if (textContentRef.current) gsap.set(textContentRef.current, { opacity: 1, y: 0 });
-      if (blobRef.current) gsap.set(blobRef.current, { opacity: 0.92, scale: 1, xPercent: -50, yPercent: -50 });
       return;
     }
 
     const ctx = gsap.context(() => {
-      // 1. Proportional Circle Orb: Stays a pure 1:1 circle, centered with xPercent/yPercent
-      if (blobRef.current) {
-        gsap.fromTo(
-          blobRef.current,
-          { scale: 0.92, opacity: 0.65, xPercent: -50, yPercent: -50 },
-          {
-            scale: 1,
-            opacity: 1,
-            xPercent: -50,
-            yPercent: -50,
-            ease: 'power1.out',
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: 'top 85%',
-              end: 'center 45%',
-              scrub: 1.2,
-            },
-          }
-        );
-      }
-
-      // 2. Editorial Text Smooth Entrance
       if (textContentRef.current) {
         gsap.fromTo(
           textContentRef.current,
-          { y: 24, opacity: 0.4 },
+          { y: 24, opacity: 0.5 },
           {
             y: 0,
             opacity: 1,
+            duration: 0.9,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: containerRef.current,
               start: 'top 80%',
-              end: 'top 35%',
+              end: 'top 40%',
               scrub: 1,
             },
           }
@@ -69,43 +47,20 @@ export const EngineeringBlobSection: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        minHeight: 'clamp(380px, 50vh, 520px)',
-        backgroundColor: '#fbf9f5',
+        backgroundColor: '#fbf7f0', // Seamless warm cream background that blends with the page
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
         zIndex: 5,
-        padding: 'clamp(56px, 8vh, 88px) 24px',
+        paddingTop: 'clamp(72px, 9vw, 110px)',
+        paddingBottom: 'clamp(72px, 9vw, 110px)',
+        paddingLeft: '24px',
+        paddingRight: '24px',
+        borderTop: '1px solid #e8e4df',
       }}
     >
-      {/* 
-        A Refined Responsive Circular Graphic with Hairline Accent Ring.
-        Sized responsively at min(76vw, 440px) so it never overflows or clips on mobile < 400px.
-        Gentle radial glow without harsh blur banding.
-      */}
-      <div
-        ref={blobRef}
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 'min(76vw, 440px)',
-          height: 'min(76vw, 440px)',
-          aspectRatio: '1 / 1',
-          borderRadius: '50%',
-          border: '1px solid rgba(254, 98, 0, 0.32)',
-          background:
-            'radial-gradient(circle, rgba(254, 98, 0, 0.14) 0%, rgba(254, 98, 0, 0.04) 55%, transparent 75%)',
-          zIndex: 1,
-          pointerEvents: 'none',
-          willChange: 'transform, opacity',
-        }}
-      />
-
-      {/* Centered Editorial Text Content - High Contrast Black Typography */}
+      {/* Centered Editorial Content */}
       <div
         ref={textContentRef}
         className="container"
@@ -113,66 +68,168 @@ export const EngineeringBlobSection: React.FC = () => {
           position: 'relative',
           zIndex: 3,
           textAlign: 'center',
-          maxWidth: '920px',
+          maxWidth: '960px',
           margin: '0 auto',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
         }}
       >
-        {/* Headline in BL Pylon Serif Display: 100% Solid Black with Signature Accent Dots */}
+        {/* Headline: 2 Lines with "with AI." in vibrant brand orange italic serif */}
         <h2
           style={{
             fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-            fontSize: 'clamp(38px, 5.6vw, 82px)',
+            fontSize: 'clamp(36px, 5.2vw, 76px)',
             fontWeight: 400,
-            lineHeight: 1.14,
+            lineHeight: 1.15,
             letterSpacing: '-0.025em',
-            marginBottom: 'clamp(22px, 3.2vw, 34px)',
+            margin: '0 0 24px 0',
             color: '#000000',
-            textShadow: '0 1px 2px rgba(255, 255, 255, 0.25)',
           }}
         >
-          Strong software
-          <span
-            style={{
-              color: '#fe6200',
-              marginLeft: '0.04em',
-            }}
-          >
-            .
-          </span>
+          Strong software.
           <br />
-          Made smarter with AI
-          <span
-            style={{
-              color: '#fe6200',
-              marginLeft: '0.04em',
-            }}
-          >
-            .
-          </span>
+          Made smarter <span style={{ color: '#fe6200', fontStyle: 'italic' }}>with AI.</span>
         </h2>
 
-        {/* Lead Paragraph: Crisp Pure Black for Uncompromised Legibility over Orange Glow */}
-        <p
-          className="body-lead"
+        {/* Centered Orange Accent Line */}
+        <div
           style={{
-            color: '#1a1a1a',
+            width: '52px',
+            height: '3.5px',
+            backgroundColor: '#fe6200',
+            borderRadius: '2px',
+            marginBottom: '28px',
+          }}
+        />
+
+        {/* Lead Paragraph */}
+        <p
+          style={{
+            color: '#3a3a3a',
             maxWidth: '740px',
-            fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
-            fontSize: 'clamp(16px, 1.35vw, 19px)',
+            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+            fontSize: 'clamp(15px, 1.2vw, 17.5px)',
             lineHeight: 1.65,
-            fontWeight: 500,
+            fontWeight: 400,
             letterSpacing: '-0.01em',
-            margin: '0 auto',
+            margin: '0 auto clamp(36px, 4.5vw, 48px) auto',
           }}
         >
           AI only creates value when the system underneath is rock solid. We build your core application, cloud architecture, and AI models as one unified system — fast, secure, maintainable, and built to handle real traffic.
         </p>
+
+        {/* 3 Value Pillars Strip */}
+        <div
+          className="engineering-pillars-strip"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 'clamp(20px, 3.2vw, 40px)',
+            flexWrap: 'wrap',
+          }}
+        >
+          {/* Pillar 1 */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Layers size={22} color="#fe6200" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+            <span
+              style={{
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                fontSize: 'clamp(14.5px, 1.1vw, 16px)',
+                fontWeight: 600,
+                color: '#111111',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Built for scale
+            </span>
+          </div>
+
+          {/* Divider */}
+          <div
+            className="engineering-pillar-divider"
+            style={{
+              width: '1px',
+              height: '22px',
+              backgroundColor: '#dcd7cf',
+            }}
+          />
+
+          {/* Pillar 2 */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <ShieldCheck size={22} color="#fe6200" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+            <span
+              style={{
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                fontSize: 'clamp(14.5px, 1.1vw, 16px)',
+                fontWeight: 600,
+                color: '#111111',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              Secure by design
+            </span>
+          </div>
+
+          {/* Divider */}
+          <div
+            className="engineering-pillar-divider"
+            style={{
+              width: '1px',
+              height: '22px',
+              backgroundColor: '#dcd7cf',
+            }}
+          />
+
+          {/* Pillar 3 */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <Cpu size={22} color="#fe6200" strokeWidth={1.8} style={{ flexShrink: 0 }} />
+            <span
+              style={{
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                fontSize: 'clamp(14.5px, 1.1vw, 16px)',
+                fontWeight: 600,
+                color: '#111111',
+                letterSpacing: '-0.01em',
+              }}
+            >
+              AI-ready architecture
+            </span>
+          </div>
+        </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .engineering-pillars-strip {
+            flex-direction: column !important;
+            gap: 16px !important;
+            align-items: center !important;
+          }
+          .engineering-pillar-divider {
+            display: none !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
-
-
