@@ -15,8 +15,8 @@ export const ServiceProcess: React.FC<ServiceProcessProps> = ({ title, steps }) 
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: '#ffffff',
-        borderBottom: '1px solid #e4e2e1',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>

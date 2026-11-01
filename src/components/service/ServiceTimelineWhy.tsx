@@ -17,28 +17,36 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
   if (!timeline && !whyChooseThisService) return null;
 
   // Title decomposition for "Why Engineering Leaders Pick Neominds for {Service}"
-  const rawTitle = whyChooseThisService?.title || `Why Engineering Leaders Pick Neominds for ${title}`;
-  let eyebrow = 'WHY ENGINEERING LEADERS PICK';
-  let leadText = 'Neominds for';
-  let highlightText = title;
+  const rawWhyTitle = whyChooseThisService?.title || `Why Engineering Leaders Pick Neominds for ${title}`;
+  let whyEyebrow = 'WHY ENGINEERING LEADERS PICK';
+  let whyLeadText = 'Neominds for';
+  let whyHighlightText = title;
 
-  if (rawTitle.toLowerCase().includes('why engineering leaders pick')) {
-    eyebrow = 'WHY ENGINEERING LEADERS PICK';
-    const afterEyebrow = rawTitle.replace(/why engineering leaders pick\s*/i, '').trim();
+  if (rawWhyTitle.toLowerCase().includes('why engineering leaders pick')) {
+    whyEyebrow = 'WHY ENGINEERING LEADERS PICK';
+    const afterEyebrow = rawWhyTitle.replace(/why engineering leaders pick\s*/i, '').trim();
     if (afterEyebrow.toLowerCase().startsWith('neominds for')) {
-      leadText = 'Neominds for';
-      highlightText = afterEyebrow.replace(/neominds for\s*/i, '').trim() || title;
+      whyLeadText = 'Neominds for';
+      whyHighlightText = afterEyebrow.replace(/neominds for\s*/i, '').trim() || title;
     } else {
-      leadText = afterEyebrow;
-      highlightText = title;
+      whyLeadText = afterEyebrow;
+      whyHighlightText = title;
     }
-  } else if (rawTitle.toLowerCase().startsWith('why choose')) {
-    eyebrow = 'WHY CHOOSE';
-    leadText = 'Neominds for';
-    highlightText = title;
+  } else if (rawWhyTitle.toLowerCase().startsWith('why choose')) {
+    whyEyebrow = 'WHY CHOOSE';
+    whyLeadText = 'Neominds for';
+    whyHighlightText = title;
   }
 
-  // Exact icon renderer matching the 4 key pillars in the reference design
+  // Duration decomposition for "Realistic Project Timeline: 8 to 14 Weeks Typical Delivery"
+  let durationHighlight = timeline?.totalDuration || '';
+  let durationSuffix = '';
+  if (timeline?.totalDuration && timeline.totalDuration.toLowerCase().includes('typical delivery')) {
+    durationHighlight = timeline.totalDuration.replace(/typical delivery/i, '').trim();
+    durationSuffix = 'Typical Delivery';
+  }
+
+  // Exact 4 icons for Why Choose Pillars matching reference mockup
   const renderReasonIcon = (point: string, idx: number) => {
     const p = point.toLowerCase();
     // 1. Team / Engineers icon
@@ -80,6 +88,48 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
     );
   };
 
+  // Exact 4 icons for Timeline Phases matching reference mockup
+  const renderPhaseIcon = (phaseName: string, idx: number) => {
+    const p = phaseName.toLowerCase();
+    // 1. Discovery / Architecture / Stacked Layers
+    if (idx === 0 || p.includes('discovery') || p.includes('architecture') || p.includes('plan')) {
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fe6200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+          <path d="m22 12.5-8.58 3.91a2 2 0 0 1-1.66 0L2 12.5" />
+          <path d="m22 17.5-8.58 3.91a2 2 0 0 1-1.66 0L2 17.5" />
+        </svg>
+      );
+    }
+    // 2. Core Engineering / Integrations / Code </>
+    if (idx === 1 || p.includes('engineering') || p.includes('core') || p.includes('build') || p.includes('code') || p.includes('integration')) {
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fe6200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      );
+    }
+    // 3. Security Hardening / Chaos / Shield with Checkmark
+    if (idx === 2 || p.includes('security') || p.includes('hardening') || p.includes('test') || p.includes('qa') || p.includes('load')) {
+      return (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fe6200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <polyline points="9 12 11 14 15 10" />
+        </svg>
+      );
+    }
+    // 4. Zero-Downtime Cutover & Hypercare / Rocket Ship
+    return (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fe6200" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+        <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+      </svg>
+    );
+  };
+
   return (
     <section
       style={{
@@ -91,127 +141,271 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
         {/* =========================================================================
-            10. TIMELINE / DURATION (Cardless Editorial Columns)
+            10. REALISTIC PROJECT TIMELINE (Vertical Rail + Stacked Step Cards)
             ========================================================================= */}
         {timeline && (
-          <div style={{ marginBottom: whyChooseThisService ? 'clamp(64px, 8vw, 92px)' : 0 }}>
-            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px' }}>
+          <div style={{ marginBottom: whyChooseThisService ? 'clamp(72px, 8.5vw, 104px)' : 0 }}>
+            {/* Header: Centered Eyebrow with flanking lines & Two-Tone Title */}
+            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto clamp(36px, 5vw, 56px)' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '14px',
+                  marginBottom: '14px',
+                }}
+              >
+                <span style={{ width: '32px', height: '1.5px', backgroundColor: '#fe6200', opacity: 0.6 }} />
+                <span
+                  style={{
+                    fontSize: 'clamp(11px, 1.2vw, 12px)',
+                    fontWeight: 800,
+                    letterSpacing: '0.14em',
+                    color: '#fe6200',
+                    textTransform: 'uppercase',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  }}
+                >
+                  Project Timeline
+                </span>
+                <span style={{ width: '32px', height: '1.5px', backgroundColor: '#fe6200', opacity: 0.6 }} />
+              </div>
+
               <ScrollReveal
                 as="h2"
                 style={{
-                  fontSize: 'clamp(28px, 3.4vw, 42px)',
+                  fontSize: 'clamp(32px, 4.2vw, 52px)',
                   fontWeight: 800,
                   color: '#000000',
                   fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                   lineHeight: 1.15,
-                  marginBottom: '16px',
+                  margin: '0 0 14px 0',
+                  letterSpacing: '-0.025em',
                   display: 'block',
                 }}
                 blurStrength={6}
               >
-                Realistic Project Timeline: {timeline.totalDuration}
+                Realistic Project Timeline: <br />
+                <span style={{ color: '#fe6200', fontStyle: 'italic' }}>{durationHighlight}</span>{' '}
+                <span style={{ color: '#000000' }}>{durationSuffix}</span>
               </ScrollReveal>
+
               {timeline.sprintCadence && (
-                <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0, fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif" }}>
+                <p
+                  style={{
+                    fontSize: '15.5px',
+                    color: '#66615c',
+                    lineHeight: 1.6,
+                    margin: 0,
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  }}
+                >
                   {timeline.sprintCadence}
                 </p>
               )}
             </div>
 
-            {/* Timeline Phase Columns */}
+            {/* Vertical Timeline Rail & Cards Layout */}
             <div
+              className="nm-timeline-container"
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: 'clamp(24px, 3.5vw, 40px)',
+                position: 'relative',
+                maxWidth: '920px',
+                margin: '0 auto',
+                paddingLeft: '36px',
               }}
             >
-              {timeline.phases.map((phase, idx) => (
-                <RevealElement key={idx} variant="text" delay={idx * 0.08}>
-                  <div
-                    style={{
-                      height: '100%',
-                      borderTop: '2px solid #fe6200',
-                      paddingTop: '20px',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between',
-                    }}
-                  >
-                    <div>
+              {/* Continuous Vertical Timeline Rail Line */}
+              <div
+                style={{
+                  position: 'absolute',
+                  left: '6px',
+                  top: '32px',
+                  bottom: '32px',
+                  width: '2px',
+                  backgroundColor: 'rgba(254, 98, 0, 0.4)',
+                }}
+              />
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                {timeline.phases.map((phase, idx) => (
+                  <RevealElement key={idx} variant="card" delay={idx * 0.07}>
+                    <div
+                      style={{
+                        position: 'relative',
+                        display: 'flex',
+                        alignItems: 'center',
+                      }}
+                    >
+                      {/* Node Circle on the timeline rail */}
                       <div
                         style={{
+                          position: 'absolute',
+                          left: '-36px',
+                          width: '14px',
+                          height: '14px',
+                          borderRadius: '50%',
+                          backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+                          border: '2.5px solid #fe6200',
+                          zIndex: 2,
+                          boxSizing: 'border-box',
+                        }}
+                      />
+
+                      {/* Step Card with Peach/Cream Tint */}
+                      <div
+                        className="nm-timeline-card"
+                        style={{
+                          width: '100%',
+                          backgroundColor: '#faf6f0',
+                          borderRadius: '12px',
+                          padding: 'clamp(18px, 2.5vw, 24px) clamp(18px, 3vw, 28px)',
+                          border: '1px solid rgba(228, 226, 225, 0.6)',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'space-between',
-                          marginBottom: '14px',
+                          gap: '20px',
+                          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.02)',
                         }}
                       >
-                        <span
-                          style={{
-                            fontSize: '11px',
-                            fontWeight: 800,
-                            color: '#fe6200',
-                            backgroundColor: 'rgba(254, 98, 0, 0.1)',
-                            padding: '3px 8px',
-                            borderRadius: '8px',
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.04em',
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                          }}
-                        >
-                          Step 0{idx + 1}
-                        </span>
-                        <span
-                          style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '4px',
-                            fontSize: '12.5px',
-                            fontWeight: 700,
-                            color: '#000000',
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                          }}
-                        >
-                          <Calendar size={13} color="#fe6200" />
-                          {phase.duration}
-                        </span>
+                        {/* Left: Icon + Content */}
+                        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '18px', flex: 1 }}>
+                          {/* Icon inside soft warm box */}
+                          <div
+                            style={{
+                              width: '46px',
+                              height: '46px',
+                              borderRadius: '10px',
+                              backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              flexShrink: 0,
+                              marginTop: '2px',
+                            }}
+                          >
+                            {renderPhaseIcon(phase.phase, idx)}
+                          </div>
+
+                          {/* Text Information */}
+                          <div style={{ flex: 1 }}>
+                            <div
+                              style={{
+                                fontSize: '11px',
+                                fontWeight: 800,
+                                letterSpacing: '0.08em',
+                                color: '#fe6200',
+                                textTransform: 'uppercase',
+                                marginBottom: '4px',
+                                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                              }}
+                            >
+                              Step 0{idx + 1}
+                            </div>
+
+                            <h3
+                              style={{
+                                fontSize: '16.5px',
+                                fontWeight: 700,
+                                color: '#111111',
+                                marginBottom: '6px',
+                                lineHeight: 1.35,
+                                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                              }}
+                            >
+                              {phase.phase}
+                            </h3>
+
+                            {/* Mobile-only Duration Pill */}
+                            <div className="nm-timeline-mobile-duration">
+                              <span
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '5px',
+                                  fontSize: '12px',
+                                  fontWeight: 700,
+                                  color: '#111111',
+                                  padding: '4px 10px',
+                                  borderRadius: '6px',
+                                  backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                                  marginBottom: '8px',
+                                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                                }}
+                              >
+                                <Calendar size={12} color="#fe6200" />
+                                {phase.duration}
+                              </span>
+                            </div>
+
+                            <p
+                              style={{
+                                fontSize: '14px',
+                                color: '#555555',
+                                lineHeight: 1.55,
+                                margin: 0,
+                                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                              }}
+                            >
+                              {phase.details}
+                            </p>
+                          </div>
+                        </div>
+
+                        {/* Desktop-only Duration Pill on Right */}
+                        <div className="nm-timeline-desktop-duration" style={{ flexShrink: 0 }}>
+                          <div
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '6px',
+                              padding: '7px 14px',
+                              borderRadius: '8px',
+                              backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                              color: '#111111',
+                              fontSize: '13px',
+                              fontWeight: 700,
+                              whiteSpace: 'nowrap',
+                              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                            }}
+                          >
+                            <Calendar size={14} color="#fe6200" />
+                            <span>{phase.duration}</span>
+                          </div>
+                        </div>
                       </div>
-
-                      <h3
-                        style={{
-                          fontSize: '17px',
-                          fontWeight: 700,
-                          color: '#000000',
-                          marginBottom: '10px',
-                          lineHeight: 1.4,
-                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                        }}
-                      >
-                        {phase.phase}
-                      </h3>
-
-                      <p
-                        style={{
-                          fontSize: '14.5px',
-                          color: '#66615c',
-                          lineHeight: 1.65,
-                          margin: 0,
-                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                        }}
-                      >
-                        {phase.details}
-                      </p>
                     </div>
-                  </div>
-                </RevealElement>
-              ))}
+                  </RevealElement>
+                ))}
+              </div>
             </div>
+
+            <style>{`
+              .nm-timeline-desktop-duration {
+                display: block;
+              }
+              .nm-timeline-mobile-duration {
+                display: none;
+              }
+
+              @media (max-width: 768px) {
+                .nm-timeline-desktop-duration {
+                  display: none !important;
+                }
+                .nm-timeline-mobile-duration {
+                  display: block !important;
+                }
+                .nm-timeline-card {
+                  padding: 16px !important;
+                }
+              }
+            `}</style>
           </div>
         )}
 
         {/* =========================================================================
-            11. WHY CHOOSE THIS SERVICE (Exact Reference Layout with Site Fonts)
+            11. WHY CHOOSE THIS SERVICE (Exact 2x2 Grid with Cross Dividers)
             ========================================================================= */}
         {whyChooseThisService && (
           <div
@@ -233,7 +427,7 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                   fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                 }}
               >
-                {eyebrow}
+                {whyEyebrow}
               </div>
 
               <ScrollReveal
@@ -250,8 +444,8 @@ export const ServiceTimelineWhy: React.FC<ServiceTimelineWhyProps> = ({
                 }}
                 blurStrength={6}
               >
-                {leadText} <br />
-                <span style={{ color: '#fe6200' }}>{highlightText}</span>
+                {whyLeadText} <br />
+                <span style={{ color: '#fe6200' }}>{whyHighlightText}</span>
               </ScrollReveal>
             </div>
 
