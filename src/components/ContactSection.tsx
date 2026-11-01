@@ -49,7 +49,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
         style={{
           maxWidth: '1360px',
           margin: '0 auto',
-          padding: 'clamp(56px, 7vw, 100px) clamp(20px, 4vw, 48px)',
+          padding: 'clamp(56px, 7vw, 100px) clamp(20px, 4vw, 48px) clamp(20px, 2.5vw, 32px)',
         }}
       >
         <div

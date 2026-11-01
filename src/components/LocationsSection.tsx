@@ -53,10 +53,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Freehand warm cream beige
-        paddingTop: 'clamp(60px, 7vw, 90px)',
-        paddingBottom: 'clamp(48px, 6vw, 60px)',
-        borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)', // Unified warm cream beige
+        paddingTop: 'clamp(12px, 1.8vw, 24px)',
+        paddingBottom: 'clamp(64px, 7vw, 96px)',
+        borderTop: 'none',
         color: '#000000',
       }}
     >
@@ -66,54 +66,35 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(28px, 4vw, 48px)',
-            marginBottom: 'clamp(48px, 6vw, 72px)',
+            gap: 'clamp(32px, 4.5vw, 64px)',
+            marginBottom: 'clamp(32px, 4vw, 48px)',
             alignItems: 'stretch',
           }}
           className="location-grid"
         >
-          {/* Left: Clean Unified Address Details */}
+          {/* Left: Clean Address Details Seamlessly Blended (No White Box) */}
           <RevealElement variant="card">
             <div
               style={{
-                backgroundColor: '#ffffff',
-                border: '1px solid #e4e2e1',
-                borderRadius: '8px',
-                padding: 'clamp(28px, 4vw, 40px)',
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.03)',
               }}
             >
               <div>
-                <div
-                  style={{
-                    display: 'inline-block',
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    letterSpacing: '0.08em',
-                    color: '#fe6200',
-                    textTransform: 'uppercase',
-                    marginBottom: '12px',
-                    fontFamily: 'var(--typography-mono-family)',
-                  }}
-                >
-                  Global Engineering HQ
-                </div>
-
                 <ScrollReveal
                   as="h2"
                   className="section-title"
                   style={{
                     color: '#000000',
-                    marginBottom: '12px',
+                    marginBottom: '14px',
                     display: 'block',
-                    fontFamily: 'var(--typography-display-family)',
-                    fontSize: 'clamp(28px, 3.2vw, 38px)',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: 'clamp(32px, 3.6vw, 44px)',
                     fontWeight: 700,
                     letterSpacing: '-0.02em',
+                    lineHeight: 1.15,
                   }}
                   blurStrength={6}
                 >
@@ -122,43 +103,42 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
 
                 <p
                   style={{
-                    color: '#66615c',
-                    marginBottom: '24px',
-                    fontFamily: 'var(--typography-body-family)',
-                    fontSize: '15px',
+                    color: '#444444',
+                    marginBottom: '26px',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    fontSize: '15.5px',
                     lineHeight: 1.6,
+                    maxWidth: '480px',
                   }}
                 >
-                  Our global headquarters is centrally located in Hyderabad, connected directly with our product engineering teams worldwide.
+                  Centrally located in Hyderabad, connected directly with our product engineering teams and clients worldwide.
                 </p>
 
-                {/* Formatted Address */}
+                {/* Formatted Address with Orange Brand Accent Bar */}
                 <div
                   style={{
-                    padding: '16px 20px',
-                    backgroundColor: '#faf8f5',
-                    border: '1px solid #ede9e3',
-                    borderRadius: '8px',
-                    marginBottom: '24px',
+                    paddingLeft: '16px',
+                    borderLeft: '3px solid #fe6200',
+                    marginBottom: '26px',
                   }}
                 >
                   <div
                     style={{
-                      fontSize: '16px',
+                      fontSize: '17px',
                       fontWeight: 700,
                       color: '#000000',
                       marginBottom: '6px',
-                      fontFamily: 'var(--typography-heading1-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     }}
                   >
                     Neominds TechHub
                   </div>
                   <div
                     style={{
-                      fontSize: '14px',
+                      fontSize: '14.5px',
                       lineHeight: 1.6,
-                      color: '#444444',
-                      fontFamily: 'var(--typography-body-family)',
+                      color: '#3a3a3a',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     }}
                   >
                     Office Space No. 704, 7th Floor, Moguls Court Building,<br />
@@ -173,7 +153,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                     gap: '16px',
-                    marginBottom: '24px',
+                    marginBottom: '26px',
+                    paddingTop: '20px',
+                    borderTop: '1px solid #e4e2e1',
                   }}
                 >
                   <div>
@@ -182,11 +164,11 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                         display: 'block',
                         fontSize: '11px',
                         fontWeight: 700,
-                        color: '#4b5563',
+                        color: '#66615c',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        marginBottom: '4px',
-                        fontFamily: 'var(--typography-mono-family)',
+                        letterSpacing: '0.08em',
+                        marginBottom: '6px',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
                     >
                       Email Dispatch
@@ -198,10 +180,13 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                         fontSize: '14px',
                         fontWeight: 600,
                         textDecoration: 'none',
-                        fontFamily: 'var(--typography-body-family)',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
                       }}
                     >
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><Mail size={14} /> contact@neomindstechhub.com</span>
+                      <Mail size={15} /> contact@neomindstechhub.com
                     </a>
                   </div>
 
@@ -211,21 +196,21 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                         display: 'block',
                         fontSize: '11px',
                         fontWeight: 700,
-                        color: '#4b5563',
+                        color: '#66615c',
                         textTransform: 'uppercase',
-                        letterSpacing: '0.06em',
-                        marginBottom: '4px',
-                        fontFamily: 'var(--typography-mono-family)',
+                        letterSpacing: '0.08em',
+                        marginBottom: '6px',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
                     >
                       Operating Hours
                     </span>
                     <span
                       style={{
-                        color: '#1a1a1a',
+                        color: '#111111',
                         fontSize: '14px',
                         fontWeight: 500,
-                        fontFamily: 'var(--typography-body-family)',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
                     >
                       Mon – Fri: 09:00 – 18:00 IST
@@ -254,14 +239,14 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '6px',
-                      padding: '8px 14px',
+                      padding: '8px 15px',
                       backgroundColor: '#ffffff',
-                      border: '1px solid #e4e2e1',
+                      border: '1px solid #dcd7cf',
                       borderRadius: '8px',
-                      color: copied ? '#fe6200' : '#1a1a1a',
+                      color: copied ? '#fe6200' : '#111111',
                       fontSize: '13px',
                       fontWeight: 600,
-                      fontFamily: 'var(--typography-body-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       cursor: 'pointer',
                       transition: 'all 0.2s ease',
                     }}
@@ -269,7 +254,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       e.currentTarget.style.borderColor = '#fe6200';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.borderColor = '#dcd7cf';
                     }}
                   >
                     {copied ? <Check size={14} color="#fe6200" /> : <Copy size={14} />}
@@ -283,15 +268,15 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '5px',
-                      padding: '8px 14px',
+                      gap: '6px',
+                      padding: '8px 15px',
                       backgroundColor: '#ffffff',
-                      border: '1px solid #e4e2e1',
+                      border: '1px solid #dcd7cf',
                       borderRadius: '8px',
-                      color: '#1a1a1a',
+                      color: '#111111',
                       fontSize: '13px',
                       fontWeight: 600,
-                      fontFamily: 'var(--typography-body-family)',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
                     }}
@@ -300,8 +285,8 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       e.currentTarget.style.color = '#fe6200';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = '#e4e2e1';
-                      e.currentTarget.style.color = '#1a1a1a';
+                      e.currentTarget.style.borderColor = '#dcd7cf';
+                      e.currentTarget.style.color = '#111111';
                     }}
                   >
                     <span>Open in Maps</span>
