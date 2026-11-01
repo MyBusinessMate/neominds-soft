@@ -282,3 +282,4 @@ export const CustomLoader: React.FC<CustomLoaderProps> = ({
 };
 
 export default CustomLoader;
+
