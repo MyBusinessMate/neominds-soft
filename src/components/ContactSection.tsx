@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, HelpCircle, Mic, Smile, X, Volume2 } from 'lucide-react';
+import { Check, HelpCircle, Smile } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { Button } from './ui/Button';
 
@@ -19,24 +19,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
     consent: false,
   });
 
-    const [isRecording, setIsRecording] = useState(false);
-  const [recordedAudio, setRecordedAudio] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formError, setFormError] = useState('');
-  
-    const toggleRecording = () => {
-    if (!isRecording) {
-      setIsRecording(true);
-      setTimeout(() => {
-        setIsRecording(false);
-        setRecordedAudio(true);
-        if (onSuccessToast) onSuccessToast('Voice message recorded (0:14).');
-      }, 3000);
-    } else {
-      setIsRecording(false);
-      setRecordedAudio(true);
-    }
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -257,7 +241,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                         ndaFirst: false,
                         consent: false,
                       });
-                      setRecordedAudio(false);
                     }}
                   >
                     Send another message
@@ -554,57 +537,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onSuccessToast, 
                       />
                       <span>Need an NDA first? Request one before you share any details, and we'll sign it before we talk.</span>
                     </label>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
-                      <button
-                        type="button"
-                        onClick={toggleRecording}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          color: isRecording ? '#dc2626' : 'var(--colors-primary)',
-                          fontSize: '13.5px',
-                          fontFamily: 'var(--typography-body-family)',
-                          fontWeight: 500,
-                          minHeight: '44px',
-                          padding: '4px 6px',
-                          background: 'none',
-                          border: 'none',
-                          cursor: 'pointer',
-                          transition: 'color 0.38s ease',
-                        }}
-                        onMouseEnter={(e) => !isRecording && (e.currentTarget.style.color = 'var(--colors-primary-hover)')}
-                        onMouseLeave={(e) => !isRecording && (e.currentTarget.style.color = 'var(--colors-primary)')}
-                      >
-                        <Mic size={15} /> {isRecording ? 'Recording (Listening...)' : 'Record a voice message about your project'}
-                      </button>
-                    </div>
                   </div>
-
-                  {/* Display Audio Notes */}
-                  {recordedAudio && (
-                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', padding: '2px 0' }}>
-                      <span
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '6px',
-                          backgroundColor: 'rgba(254, 98, 0, 0.12)',
-                          border: '1px solid var(--colors-primary)',
-                          color: '#fe6200',
-                          fontSize: '12px',
-                          padding: '6px 12px',
-                          borderRadius: '8px',
-                          fontWeight: 500,
-                          fontFamily: 'var(--typography-body-family)',
-                        }}
-                      >
-                        <Volume2 size={14} color="var(--colors-primary)" /> Voice Memo (0:14)
-                        <X size={14} style={{ cursor: 'pointer', marginLeft: '4px' }} onClick={() => setRecordedAudio(false)} aria-label="Remove voice memo" />
-                      </span>
-                    </div>
-                  )}
 
                   {/* Consent Checkbox */}
                   <label
