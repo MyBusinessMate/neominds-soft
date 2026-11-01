@@ -22,6 +22,7 @@ import { updateHeadMetadata } from './utils/seo';
 import { CookieConsent } from './components/CookieConsent';
 import { Toast, ToastMessage } from './components/Toast';
 import { CinematicScroll } from './components/lightswind/cinematic-scroll';
+import { CustomLoader } from './components/CustomLoader';
 
 // Route Code Splitting: Lazy-Loaded Sub-Pages & Modals
 const ServicePageContainer = lazy(() => import('./components/service/ServicePage'));
@@ -50,29 +51,14 @@ const CommandPalette = lazy(() => import('./components/CommandPalette').then((m)
 const CaseStudyModal = lazy(() => import('./components/CaseStudyModal').then((m) => ({ default: m.CaseStudyModal })));
 const LegalModal = lazy(() => import('./components/LegalModal').then((m) => ({ default: m.LegalModal })));
 
-// Clean Suspense Fallback Loader
+// Clean Universal Suspense Fallback Loader
 const PageLoader: React.FC = () => (
-  <div
-    style={{
-      minHeight: '70vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'var(--colors-background-dark, #f1efeb)',
-    }}
-  >
-    <div
-      style={{
-        width: '32px',
-        height: '32px',
-        border: '3px solid rgba(254, 98, 0, 0.2)',
-        borderTopColor: '#fe6200',
-        borderRadius: '50%',
-        animation: 'spinLoader 0.7s linear infinite',
-      }}
-    />
-    <style>{`@keyframes spinLoader { to { transform: rotate(360deg); } }`}</style>
-  </div>
+  <CustomLoader
+    size="md"
+    showLogo={true}
+    showProgress={true}
+    message="Loading experience..."
+  />
 );
 
 export const App: React.FC = () => {
@@ -218,6 +204,14 @@ export const App: React.FC = () => {
   });
   const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  // Trigger sleek route transition indicator on navigation
+  useEffect(() => {
+    setIsNavigating(true);
+    const timer = setTimeout(() => setIsNavigating(false), 450);
+    return () => clearTimeout(timer);
+  }, [currentPage, selectedArticleId]);
 
   // Listen for browser popstate and hashchange events
   useEffect(() => {
@@ -354,6 +348,42 @@ export const App: React.FC = () => {
     <ErrorBoundary>
       <CinematicScroll isGlobal showScrollbar={false} blurSize={60} blurMax={12} blurLayers={2}>
         <div className="neominds-app">
+          {/* Universal Indeterminate Top-Bar Loader during Route Changes */}
+          {isNavigating && (
+            <div
+              style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '2.5px',
+                zIndex: 999999,
+                backgroundColor: 'rgba(254, 98, 0, 0.12)',
+                overflow: 'hidden',
+                pointerEvents: 'none',
+              }}
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  bottom: 0,
+                  left: 0,
+                  background: 'linear-gradient(90deg, #fe6200, #ff8a3d, #fe6200)',
+                  boxShadow: '0 0 8px rgba(254, 98, 0, 0.6)',
+                  animation: 'nmTopBarProgress 0.45s ease-out forwards',
+                }}
+              />
+              <style>{`
+                @keyframes nmTopBarProgress {
+                  0% { left: 0%; width: 0%; }
+                  50% { left: 15%; width: 65%; }
+                  100% { left: 0%; width: 100%; opacity: 0; }
+                }
+              `}</style>
+            </div>
+          )}
+
           {/* Skip to Main Content Link for Accessibility */}
           <a
             href="#main-content"

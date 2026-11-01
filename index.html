@@ -136,7 +136,25 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <!-- Instant Universal Preloader for Initial Cold Load (replaces instantly on React mount) -->
+    <div id="nm-initial-preloader" style="position:fixed;inset:0;background-color:#f1efeb;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999999;font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;">
+      <div style="position:relative;width:64px;height:64px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;">
+        <div style="position:absolute;inset:0;border-radius:50%;border:2.5px solid rgba(0,0,0,0.05);box-sizing:border-box;"></div>
+        <div style="position:absolute;inset:0;border-radius:50%;border:2.5px solid transparent;border-top-color:#fe6200;border-right-color:rgba(254,98,0,0.4);box-sizing:border-box;animation:nmInitialSpin 0.9s cubic-bezier(0.45,0.05,0.55,0.95) infinite;filter:drop-shadow(0 0 6px rgba(254,98,0,0.25));"></div>
+        <img src="/images/neominds-logo.png" alt="Neominds" style="width:26px;height:26px;object-fit:contain;animation:nmInitialPulse 2s ease-in-out infinite;filter:drop-shadow(0 2px 8px rgba(254,98,0,0.3));" />
+      </div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.22em;color:#1a1a1a;text-transform:uppercase;margin-bottom:10px;opacity:0.9;">NEOMINDS</div>
+      <div style="width:120px;height:2px;background:rgba(0,0,0,0.06);border-radius:999px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:0;bottom:0;background:linear-gradient(90deg,rgba(254,98,0,0.4),#fe6200,rgba(254,98,0,0.4));border-radius:999px;animation:nmInitialSlide 1.4s cubic-bezier(0.65,0,0.35,1) infinite;"></div>
+      </div>
+      <style>
+        @keyframes nmInitialSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        @keyframes nmInitialPulse{0%,100%{transform:scale(0.94);opacity:0.85}50%{transform:scale(1.05);opacity:1}}
+        @keyframes nmInitialSlide{0%{left:-40%;width:30%}50%{left:20%;width:60%}100%{left:100%;width:30%}}
+      </style>
+    </div>
+  </div>
   <script>
     // Clean up any stray service workers from other projects on localhost:5173
     if ('serviceWorker' in navigator) {
