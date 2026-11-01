@@ -370,11 +370,9 @@ const ExperienceSectionComponent: React.FC = () => {
                     alt={`${activeLogo.name} - Enterprise Client, Neominds Software Partner`}
                     loading="lazy"
                     style={{
-                      maxHeight: '32px',
+                      maxHeight: '36px',
                       maxWidth: '160px',
                       objectFit: 'contain',
-                      opacity: 0.85,
-                      filter: 'grayscale(100%) contrast(120%)',
                     }}
                     onError={(e) => {
                       (e.currentTarget as HTMLElement).style.display = 'none';

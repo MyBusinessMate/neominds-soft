@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .p-about-page {
-  background-color: #000000;
-  color: #f1efeb;
+  background-color: var(--colors-background-dark, #fbf9f5);
+  color: #111111;
   min-height: 100vh;
   padding-top: 68px;
   font-family: var(--font-body, system-ui, sans-serif);
@@ -1275,7 +1275,7 @@
    -------------------------------------------------------------------------- */
 .s-contact-form-section {
   padding: clamp(64px, 8vw, 110px) 24px;
-  background-color: #000000;
+  background-color: #f0ece2;
   border-top: 1px solid var(--colors-border-dark, #f0ece2);
 }
 

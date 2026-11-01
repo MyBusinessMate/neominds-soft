@@ -377,11 +377,11 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             style={{
               color: '#000000',
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: '11px',
+              fontSize: 'clamp(13.5px, 1.35vw, 15.5px)',
               fontWeight: 700,
-              letterSpacing: '0.14em',
+              letterSpacing: '0.10em',
               textTransform: 'uppercase',
-              opacity: 0.6,
+              opacity: 0.88,
               textAlign: 'center',
               lineHeight: 1.4,
               maxWidth: '92%',
@@ -412,27 +412,17 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     flexShrink: 0,
-                    padding: '0 20px',
+                    padding: '0 24px',
                   }}
                 >
                   <img
                     src={client.logoUrl}
                     alt={client.name}
                     style={{
-                      height: 'clamp(28px, 3.2vw, 38px)',
-                      maxWidth: '150px',
+                      height: 'clamp(32px, 3.6vw, 42px)',
+                      maxWidth: '160px',
                       objectFit: 'contain',
-                      opacity: 0.82,
-                      filter: 'grayscale(100%) contrast(120%)',
-                      transition: 'opacity 0.2s, filter 0.2s',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.opacity = '1';
-                      e.currentTarget.style.filter = 'grayscale(0%)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.opacity = '0.82';
-                      e.currentTarget.style.filter = 'grayscale(100%) contrast(120%)';
+                      display: 'block',
                     }}
                   />
                 </div>

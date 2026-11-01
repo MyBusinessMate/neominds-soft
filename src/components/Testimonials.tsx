@@ -254,11 +254,9 @@ export const Testimonials: React.FC = () => {
                       alt={`${current.clientName} logo`}
                       loading="lazy"
                       style={{
-                        maxHeight: '28px',
-                        maxWidth: '130px',
+                        maxHeight: '32px',
+                        maxWidth: '140px',
                         objectFit: 'contain',
-                        opacity: 0.95,
-                        filter: 'grayscale(100%) contrast(120%)',
                       }}
                       onError={(e) => {
                         (e.currentTarget as HTMLElement).style.display = 'none';

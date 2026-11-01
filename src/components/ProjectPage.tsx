@@ -84,7 +84,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
         aria-label="Navigation"
         style={{
           borderBottom: '1px solid #f0ece2',
-          backgroundColor: 'rgba(32, 11, 0, 0.95)',
+          backgroundColor: 'rgba(251, 249, 245, 0.95)',
           backdropFilter: 'blur(12px)',
           position: 'sticky',
           top: '64px',
