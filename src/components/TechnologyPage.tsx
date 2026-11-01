@@ -181,11 +181,11 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
   };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
+    <div style={{ backgroundColor: 'var(--colors-background-dark, #f1efeb)', minHeight: '100vh', paddingTop: '80px', color: '#000000' }}>
       {/* ========================================================
           1. HERO SECTION
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '90px 24px 70px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ backgroundColor: 'var(--colors-background-dark, #f1efeb)', color: '#000000', padding: '90px 24px 70px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '820px' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>

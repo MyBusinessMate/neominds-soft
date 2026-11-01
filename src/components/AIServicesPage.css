@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 .ai-page-wrapper {
-  background-color: var(--colors-background-dark, #fbf9f5);
+  background-color: var(--colors-background-dark, #f1efeb);
   color: #1a1a1a;
   font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;

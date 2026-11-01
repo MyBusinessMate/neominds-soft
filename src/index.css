@@ -42,7 +42,7 @@ body.nm-profile-open header {
      ========================================================================== */
   --colors-primary: #fe6200;
   --colors-primary-hover: #cf5000;
-  --colors-background: #ffffff;
+  --colors-background: #f1efeb;
   --colors-surface-light: #f1efeb;
   --colors-background-dark: #f1efeb;
   --colors-surface-dark-subtle: #f1efeb;
@@ -1181,7 +1181,7 @@ a[role="button"]:active {
 .nm-case-studies-section {
   position: relative;
   width: 100%;
-  background-color: #fbf9f5;
+  background-color: #f1efeb;
   box-sizing: border-box;
 }
 

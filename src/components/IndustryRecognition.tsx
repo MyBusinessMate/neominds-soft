@@ -33,7 +33,7 @@ export const IndustryRecognition: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f1efeb',
         paddingTop: 'clamp(64px, 8vw, 100px)',
         paddingBottom: 'clamp(64px, 8vw, 100px)',
         borderTop: '1px solid #e8e5e0',

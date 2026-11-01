@@ -125,7 +125,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f1efeb',
       }}
     >
       {/* Embedded Responsive Styles for Smooth Performance on Any Viewport */}
@@ -199,8 +199,8 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
         className="container"
         style={{
           maxWidth: '1280px',
-          paddingTop: '64px',
-          paddingBottom: '48px',
+          paddingTop: 'clamp(64px, 7vw, 96px)',
+          paddingBottom: 'clamp(36px, 4.5vw, 56px)',
           borderBottom: '1px solid #e4e2e1',
         }}
       >
@@ -208,13 +208,13 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
           as="h2"
           style={{
             fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-            fontSize: 'clamp(28px, 3.2vw, 40px)',
-            fontWeight: 400,
-            lineHeight: 1.2,
+            fontSize: 'clamp(36px, 4.4vw, 56px)',
+            fontWeight: 700,
+            lineHeight: 1.15,
             color: '#000000',
-            maxWidth: '780px',
+            maxWidth: '880px',
             margin: 0,
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.02em',
             display: 'block',
           }}
           blurStrength={7}

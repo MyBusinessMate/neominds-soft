@@ -353,9 +353,9 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
       </section>
 
       {/* ========================================================
-          4. TECHNOLOGIES WE USE - CLEAN WHITE
+          4. TECHNOLOGIES WE USE - UNIFIED WARM CREAM
           ======================================================== */}
-      <section style={{ padding: '80px 24px', backgroundColor: '#ffffff', borderTop: '1px solid #e4e2e1' }}>
+      <section style={{ padding: '80px 24px', backgroundColor: '#f1efeb', borderTop: '1px solid #e4e2e1' }}>
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ marginBottom: '40px' }}>
             <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', letterSpacing: '0.08em', textTransform: 'uppercase' }}>

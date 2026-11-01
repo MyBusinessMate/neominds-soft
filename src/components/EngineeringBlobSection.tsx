@@ -47,7 +47,7 @@ export const EngineeringBlobSection: React.FC = () => {
       style={{
         position: 'relative',
         width: '100%',
-        backgroundColor: '#fbf7f0', // Seamless warm cream background that blends with the page
+        backgroundColor: '#f1efeb', // Unified warm cream background throughout the site
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
