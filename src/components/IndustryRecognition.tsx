@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, FileCode, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Layers, CalendarCheck } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 const commitmentsList = [
@@ -8,21 +8,21 @@ const commitmentsList = [
     title: 'Signed NDA on Request',
     description:
       'Complete confidentiality for your architecture, proprietary data models, and business logic before any discovery begins.',
-    icon: <ShieldCheck size={22} color="#fe6200" />,
+    icon: <ShieldCheck size={36} strokeWidth={1.8} color="#000000" />,
   },
   {
     num: '02',
     title: '100% Source Code Ownership',
     description:
       'You own all repositories, codebases, pipeline definitions, and artifacts. Zero vendor lock-in or licensing strings attached.',
-    icon: <FileCode size={22} color="#fe6200" />,
+    icon: <Layers size={36} strokeWidth={1.8} color="#000000" />,
   },
   {
     num: '03',
     title: 'Weekly Demo Tracking',
     description:
       'Continuous accountability with working software demonstrated in sprint reviews every week, overlapping with your timezone.',
-    icon: <CheckCircle2 size={22} color="#fe6200" />,
+    icon: <CalendarCheck size={36} strokeWidth={1.8} color="#000000" />,
   },
 ];
 
@@ -36,7 +36,7 @@ export const IndustryRecognition: React.FC = () => {
         backgroundColor: '#ffffff',
         paddingTop: 'clamp(64px, 8vw, 100px)',
         paddingBottom: 'clamp(64px, 8vw, 100px)',
-        borderTop: '1px solid #e4e2e1',
+        borderTop: '1px solid #e8e5e0',
         overflow: 'hidden',
       }}
     >
@@ -44,40 +44,53 @@ export const IndustryRecognition: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'minmax(280px, 1.1fr) minmax(320px, 1.3fr)',
+            gridTemplateColumns: 'minmax(300px, 1fr) minmax(360px, 1.25fr)',
             alignItems: 'start',
-            gap: 'clamp(36px, 5vw, 72px)',
+            gap: 'clamp(44px, 6vw, 84px)',
           }}
           className="recognition-grid"
         >
           {/* Left Column Text */}
           <div style={{ maxWidth: '540px' }}>
+            <RevealElement variant="text" delay={0.02}>
+              {/* Top Orange Accent Bar */}
+              <div
+                style={{
+                  width: '52px',
+                  height: '4px',
+                  backgroundColor: '#fe6200',
+                  borderRadius: '1px',
+                  marginBottom: '24px',
+                }}
+              />
+            </RevealElement>
+
             <ScrollReveal
               as="h2"
-              className="section-title"
+              className="commitments-title"
               style={{
                 color: '#000000',
-                marginBottom: '20px',
-                display: 'block',
                 fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(30px, 3.8vw, 44px)',
-                fontWeight: 400,
-                lineHeight: 1.2,
-                letterSpacing: '-0.02em',
+                fontSize: 'clamp(38px, 4.6vw, 58px)',
+                fontWeight: 700,
+                lineHeight: 1.08,
+                letterSpacing: '-0.025em',
+                margin: '0 0 24px 0',
               }}
               blurStrength={4}
             >
-              Our commitments
+              Our<br />
+              Commitments
             </ScrollReveal>
 
             <RevealElement variant="text" delay={0.05}>
               <p
                 style={{
-                  color: '#2b2b2b',
+                  color: '#3a3a3a',
                   fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                  fontSize: 'clamp(15px, 1.2vw, 17px)',
-                  marginBottom: '20px',
-                  lineHeight: 1.6,
+                  fontSize: 'clamp(15px, 1.15vw, 16.5px)',
+                  marginBottom: '32px',
+                  lineHeight: 1.65,
                 }}
               >
                 Every NeoMinds project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
@@ -85,18 +98,39 @@ export const IndustryRecognition: React.FC = () => {
             </RevealElement>
 
             <RevealElement variant="text" delay={0.1}>
+              {/* Horizontal Divider */}
               <div
                 style={{
-                  paddingTop: '18px',
-                  borderTop: '1px solid #e4e2e1',
+                  borderTop: '1px solid #e5e5e5',
+                  marginBottom: '26px',
+                }}
+              />
+
+              {/* Compliance Note with Vertical Orange Bar */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  gap: '14px',
                 }}
               >
+                <div
+                  style={{
+                    width: '3.5px',
+                    minWidth: '3.5px',
+                    height: '38px',
+                    backgroundColor: '#fe6200',
+                    borderRadius: '2px',
+                    marginTop: '2px',
+                    flexShrink: 0,
+                  }}
+                />
                 <p
                   style={{
                     fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     fontSize: '13.5px',
-                    color: '#66615c',
-                    lineHeight: 1.6,
+                    color: '#555555',
+                    lineHeight: 1.55,
                     margin: 0,
                   }}
                 >
@@ -106,66 +140,98 @@ export const IndustryRecognition: React.FC = () => {
             </RevealElement>
           </div>
 
-          {/* Right Column: Clean 3 Commitment Pillars (No carousel, no award cards) */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', width: '100%' }}>
+          {/* Right Column: 3 Commitment Items with Center Timeline Line & Nodes */}
+          <div
+            className="commitments-right-column"
+            style={{
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 'clamp(36px, 4.5vw, 52px)',
+              width: '100%',
+              paddingLeft: 'clamp(36px, 4.5vw, 64px)',
+              borderLeft: '1px solid #e8e5e0',
+            }}
+          >
             {commitmentsList.map((item, idx) => (
-              <RevealElement key={item.num} variant="card" delay={idx * 0.08}>
+              <RevealElement key={item.num} variant="text" delay={idx * 0.08}>
                 <div
+                  className="commitment-item-row"
                   style={{
-                    backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '12px',
-                    padding: '24px 24px',
+                    position: 'relative',
                     display: 'flex',
                     alignItems: 'flex-start',
-                    gap: '18px',
-                    transition: 'border-color 0.2s ease, transform 0.2s ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    gap: 'clamp(18px, 2.2vw, 24px)',
                   }}
                 >
+                  {/* Timeline Node - centered precisely on the border line */}
                   <div
+                    className="commitment-timeline-node"
+                    style={{
+                      position: 'absolute',
+                      left: 'calc(-1 * clamp(36px, 4.5vw, 64px) - 4.5px)',
+                      top: '12px',
+                      width: '9px',
+                      height: '9px',
+                      backgroundColor: '#fe6200',
+                    }}
+                  />
+
+                  {/* Icon */}
+                  <div
+                    className="commitment-icon-wrap"
                     style={{
                       width: '42px',
                       height: '42px',
-                      borderRadius: '8px',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #e4e2e1',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
+                      marginTop: '1px',
                     }}
                   >
                     {item.icon}
                   </div>
 
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '6px' }}>
+                  {/* Text Content */}
+                  <div style={{ flex: 1 }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        marginBottom: '8px',
+                        flexWrap: 'wrap',
+                      }}
+                    >
                       <span
                         style={{
-                          fontSize: '11px',
+                          fontSize: 'clamp(18px, 1.4vw, 21px)',
                           fontWeight: 700,
                           color: '#fe6200',
-                          fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
-                          letterSpacing: '0.08em',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                          letterSpacing: '-0.01em',
                         }}
                       >
                         {item.num}
                       </span>
+                      <span
+                        style={{
+                          color: '#d1d5db',
+                          fontSize: 'clamp(17px, 1.3vw, 20px)',
+                          fontWeight: 300,
+                        }}
+                      >
+                        |
+                      </span>
                       <h3
                         style={{
                           margin: 0,
-                          fontSize: '17px',
+                          fontSize: 'clamp(18px, 1.4vw, 21px)',
                           fontWeight: 700,
                           color: '#000000',
                           fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                          letterSpacing: '-0.015em',
                         }}
                       >
                         {item.title}
@@ -175,10 +241,11 @@ export const IndustryRecognition: React.FC = () => {
                     <p
                       style={{
                         margin: 0,
-                        fontSize: '14px',
-                        lineHeight: 1.55,
-                        color: '#2b2b2b',
+                        fontSize: 'clamp(14px, 1.05vw, 15px)',
+                        lineHeight: 1.6,
+                        color: '#4a4a4a',
                         fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        maxWidth: '560px',
                       }}
                     >
                       {item.description}
@@ -192,10 +259,18 @@ export const IndustryRecognition: React.FC = () => {
       </div>
 
       <style>{`
-        @media (max-width: 767px) {
+        @media (max-width: 860px) {
           .recognition-grid {
             grid-template-columns: 1fr !important;
-            gap: 28px !important;
+            gap: 40px !important;
+          }
+          .commitments-right-column {
+            border-left: none !important;
+            padding-left: 0 !important;
+            gap: 32px !important;
+          }
+          .commitment-timeline-node {
+            display: none !important;
           }
         }
       `}</style>
