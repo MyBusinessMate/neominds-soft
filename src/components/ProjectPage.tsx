@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
 import { PageType } from './Header';
+import { Testimonials } from './Testimonials';
 import { Footer } from './Footer';
 
 interface ProjectPageProps {
@@ -1109,6 +1110,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </div>
           </section>
         )}
+
+        {/* Global Client Testimonials */}
+        <Testimonials />
       </main>
 
       {/* Mobile Sticky Thumb-Zone Action Bar */}

@@ -4,6 +4,7 @@ import {
   ChevronRight,
 } from 'lucide-react';
 import { Footer } from './Footer';
+import { Testimonials } from './Testimonials';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface PortfolioPageProps {
@@ -493,6 +494,11 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
           })}
         </div>
       </section>
+
+      {/* ========================================================
+          GLOBAL CLIENT TESTIMONIALS
+          ======================================================== */}
+      <Testimonials />
 
       {/* ========================================================
           LEAD CTA STRIP

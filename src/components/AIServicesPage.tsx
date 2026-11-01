@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { AI_CLIENT_LOGOS } from '../data/aiLogosData';
+import { Testimonials } from './Testimonials';
 import './AIServicesPage.css';
 
 interface AIServicesPageProps {
@@ -738,7 +739,12 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
       </section>
 
       {/* --------------------------------------------------------------------
-          8. Dark Footer Section
+          8. Global Testimonials Section
+          -------------------------------------------------------------------- */}
+      <Testimonials />
+
+      {/* --------------------------------------------------------------------
+          9. Dark Footer Section
           -------------------------------------------------------------------- */}
       <footer className="ai-footer" id="contact-footer">
         <div className="ai-footer-container">

@@ -39,6 +39,7 @@ import { ServiceOutcomes } from './ServiceOutcomes';
 import { RelatedServices } from './RelatedServices';
 import { ServiceFAQ } from './ServiceFAQ';
 import { ServiceCTA } from './ServiceCTA';
+import { Testimonials } from '../Testimonials';
 import { Footer } from '../Footer';
 
 
@@ -223,6 +224,9 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           }}
         />
       </div>
+
+      {/* Global Client Testimonials Section */}
+      <Testimonials />
 
       {/* 12. FAQ Accordion */}
       <ServiceFAQ title={data.title} faqs={data.faqs} />
