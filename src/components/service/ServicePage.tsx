@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowUpRight, Send, CheckCircle2, Check, Calendar, Code } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Send, CheckCircle2, Calendar, Clock, BookOpen, Check } from 'lucide-react';
 import { UniversalServiceData } from '../../types/service';
 import { Testimonials } from '../Testimonials';
 import { Footer } from '../Footer';
@@ -21,9 +21,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({
   onSuccessToast,
   onOpenLegal,
 }) => {
-  // Active stage for "How We Deliver" interactive stepper
-  const [activeStageIndex, setActiveStageIndex] = useState(0);
-
   // Contact form state
   const [formData, setFormData] = useState({
     name: '',
@@ -63,8 +60,9 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       category: s.category,
     }));
 
-  const activeStage = data.process && data.process.length > 0
-    ? data.process[Math.min(activeStageIndex, data.process.length - 1)]
+  // Primary featured case study for the editorial narrative
+  const primaryCaseStudy = data.caseStudies && data.caseStudies.length > 0
+    ? data.caseStudies[0]
     : null;
 
   return (
@@ -78,19 +76,19 @@ export const ServicePage: React.FC<ServicePageProps> = ({
       }}
     >
       {/* ========================================================
-          FULL-WIDTH EDITORIAL CANVAS (Standard 1240px Container)
-          Balanced layouts filling the canvas with zero half-empty voids
+          EDITORIAL CONTAINER: 80% Blog Style / 20% Creative
+          Focused 880px reading container with natural editorial flow
           ======================================================== */}
-      <div
+      <article
         style={{
-          maxWidth: '1240px',
+          maxWidth: '880px',
           margin: '0 auto',
-          padding: '24px clamp(20px, 4vw, 40px) clamp(64px, 8vw, 100px)',
+          padding: '24px 24px 80px',
           boxSizing: 'border-box',
         }}
       >
         {/* Back Link */}
-        <div style={{ marginBottom: '24px' }}>
+        <div style={{ marginBottom: '28px' }}>
           <button
             onClick={() => onNavigatePage('services')}
             style={{
@@ -111,574 +109,387 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             onMouseLeave={(e) => (e.currentTarget.style.color = '#77726d')}
           >
             <ArrowLeft size={16} />
-            <span>All Services</span>
+            <span>All Engineering Services</span>
           </button>
         </div>
 
         {/* ========================================================
-            HERO: 2-Column Balanced Spread
-            Left: Headline, Description & Metrics
-            Right: Large Cover Visual
+            ARTICLE HEADER (Blog Style)
             ======================================================== */}
-        <header
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1.15fr 0.85fr',
-            gap: 'clamp(32px, 5vw, 60px)',
-            alignItems: 'center',
-            paddingBottom: 'clamp(48px, 6vw, 64px)',
-          }}
-          className="nm-hero-grid"
-        >
-          {/* Left Column */}
-          <div>
-            <div
+        <header style={{ marginBottom: '36px' }}>
+          {/* Eyebrow & Read Time */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: '16px',
+              flexWrap: 'wrap',
+            }}
+          >
+            <span
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px',
-                fontSize: '12px',
+                fontSize: '11px',
                 fontWeight: 800,
                 letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 color: '#fe6200',
-                marginBottom: '14px',
+                backgroundColor: '#fbf0e8',
+                padding: '4px 10px',
+                borderRadius: '4px',
               }}
             >
-              <span>{data.category}</span>
-              <span style={{ color: '#c4bfb6' }}>•</span>
-              <span style={{ color: '#77726d' }}>Engineering Specification</span>
-            </div>
-
-            <h1
-              style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(36px, 4.6vw, 54px)',
-                fontWeight: 800,
-                color: '#000000',
-                lineHeight: 1.15,
-                letterSpacing: '-0.025em',
-                margin: '0 0 18px 0',
-              }}
-            >
-              {data.hero.headline}{' '}
-              <span style={{ color: '#fe6200', fontStyle: 'italic' }}>
-                {data.hero.headlineHighlight}
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: 'clamp(17px, 1.2vw, 18.5px)',
-                lineHeight: 1.65,
-                color: '#44403c',
-                margin: '0 0 24px 0',
-                fontWeight: 400,
-              }}
-            >
-              {data.hero.description}
-            </p>
-
-            {/* Quick Metrics Bar */}
-            <div
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'center',
-                gap: 'clamp(16px, 3vw, 28px)',
-                padding: '16px 0',
-                borderTop: '1px solid #e4e2e1',
-                borderBottom: '1px solid #e4e2e1',
-                fontSize: '13.5px',
-                color: '#55514c',
-                marginBottom: '26px',
-              }}
-            >
-              {data.metrics.map((m, idx) => (
-                <div key={idx} style={{ display: 'flex', alignItems: 'baseline', gap: '6px' }}>
-                  <span
-                    style={{
-                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                      fontSize: '19px',
-                      fontWeight: 800,
-                      color: '#fe6200',
-                    }}
-                  >
-                    {m.value}
-                  </span>
-                  <span style={{ color: '#77726d', fontWeight: 500 }}>{m.label}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Direct Action Links */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', alignItems: 'center' }}>
-              <a
-                href="#service-contact"
-                style={{
-                  backgroundColor: '#fe6200',
-                  color: '#ffffff',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  textDecoration: 'none',
-                  fontWeight: 700,
-                  borderRadius: '8px',
-                  padding: '13px 26px',
-                  fontSize: '15px',
-                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                  transition: 'background-color 0.2s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#cf5000')}
-                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
-              >
-                <span>Book Discovery Call</span>
-              </a>
-
-              <a
-                href="#service-pillars"
-                style={{
-                  color: '#111111',
-                  border: '1px solid #d0ccc0',
-                  borderRadius: '8px',
-                  padding: '13px 24px',
-                  fontWeight: 600,
-                  fontSize: '15px',
-                  background: '#faf6f0',
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                  transition: 'border-color 0.2s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#fe6200')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#d0ccc0')}
-              >
-                <span>Core Capabilities</span>
-              </a>
-            </div>
+              {data.category}
+            </span>
+            <span style={{ color: '#c4bfb6' }}>•</span>
+            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <BookOpen size={13} />
+              Engineering Whitepaper
+            </span>
+            <span style={{ color: '#c4bfb6' }}>•</span>
+            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Clock size={13} />
+              7 min read
+            </span>
           </div>
 
-          {/* Right Column: Visual Cover */}
-          {data.hero.heroImage && (
-            <div>
+          {/* Main Title */}
+          <h1
+            style={{
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(34px, 4.8vw, 50px)',
+              fontWeight: 800,
+              color: '#000000',
+              lineHeight: 1.18,
+              letterSpacing: '-0.025em',
+              margin: '0 0 18px 0',
+            }}
+          >
+            {data.hero.headline}{' '}
+            <span style={{ color: '#fe6200', fontStyle: 'italic' }}>
+              {data.hero.headlineHighlight}
+            </span>
+          </h1>
+
+          {/* Subtitle / Article Lead */}
+          <p
+            style={{
+              fontSize: 'clamp(18px, 1.3vw, 20px)',
+              lineHeight: 1.6,
+              color: '#3f3b37',
+              margin: '0 0 24px 0',
+              fontWeight: 400,
+            }}
+          >
+            {data.hero.description}
+          </p>
+
+          {/* Byline / Author Row */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              borderTop: '1px solid #e4e2e1',
+              borderBottom: '1px solid #e4e2e1',
+              padding: '14px 0',
+              gap: '16px',
+              flexWrap: 'wrap',
+              fontSize: '13px',
+              color: '#77726d',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <div
                 style={{
-                  width: '100%',
-                  height: 'clamp(280px, 32vw, 420px)',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  backgroundColor: '#e4e2e1',
+                  width: '32px',
+                  height: '32px',
+                  borderRadius: '50%',
+                  backgroundColor: '#fe6200',
+                  color: '#ffffff',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontWeight: 800,
+                  fontSize: '13px',
                 }}
               >
-                <img
-                  src={data.hero.heroImage}
-                  alt={data.hero.heroImageCaption || data.title}
-                  loading="eager"
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                    display: 'block',
-                  }}
-                />
+                N
               </div>
-              {data.hero.heroImageCaption && (
-                <div
-                  style={{
-                    marginTop: '8px',
-                    fontSize: '13px',
-                    color: '#77726d',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  {data.hero.heroImageCaption}
-                </div>
-              )}
+              <div>
+                <strong style={{ color: '#111111', fontWeight: 600 }}>Neominds Engineering</strong>
+                <span style={{ margin: '0 6px', color: '#c4bfb6' }}>·</span>
+                <span>Principal Systems Architecture Group</span>
+              </div>
             </div>
-          )}
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <Calendar size={13} />
+                Updated November 2026
+              </span>
+            </div>
+          </div>
         </header>
 
+        {/* Hero Cover Visual (Blog Article Cover) */}
+        {data.hero.heroImage && (
+          <figure style={{ margin: '0 0 40px 0' }}>
+            <div
+              style={{
+                width: '100%',
+                height: 'clamp(280px, 38vw, 420px)',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                backgroundColor: '#e4e2e1',
+              }}
+            >
+              <img
+                src={data.hero.heroImage}
+                alt={data.hero.heroImageCaption || data.title}
+                loading="eager"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block',
+                }}
+              />
+            </div>
+            {data.hero.heroImageCaption && (
+              <figcaption
+                style={{
+                  marginTop: '8px',
+                  fontSize: '13px',
+                  color: '#77726d',
+                  fontStyle: 'italic',
+                  textAlign: 'left',
+                }}
+              >
+                Figure 1: {data.hero.heroImageCaption}
+              </figcaption>
+            )}
+          </figure>
+        )}
+
         {/* ========================================================
-            SECTION 1: STRATEGIC PERSPECTIVE
-            Top: Statement Headline across the full width
-            Below: 2 balanced prose columns filling the width
+            EXECUTIVE SUMMARY (Blog TL;DR Box)
             ======================================================== */}
         <section
           style={{
-            borderTop: '1px solid #e4e2e1',
-            padding: 'clamp(48px, 6vw, 68px) 0',
+            backgroundColor: '#f7f4ed',
+            border: '1px solid #e6e2da',
+            borderLeft: '4px solid #fe6200',
+            borderRadius: '6px',
+            padding: '24px 28px',
+            marginBottom: '44px',
           }}
         >
-          <div style={{ maxWidth: '960px', marginBottom: '28px' }}>
-            <div
-              style={{
-                fontSize: '11px',
-                fontWeight: 800,
-                letterSpacing: '0.14em',
-                textTransform: 'uppercase',
-                color: '#fe6200',
-                marginBottom: '10px',
-              }}
-            >
-              Strategic Perspective
-            </div>
-
-            <h2
-              style={{
-                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(28px, 3.2vw, 38px)',
-                fontWeight: 800,
-                color: '#111111',
-                lineHeight: 1.25,
-                margin: 0,
-                letterSpacing: '-0.02em',
-              }}
-            >
-              {data.overview.statement}
-            </h2>
+          <div
+            style={{
+              fontSize: '11.5px',
+              fontWeight: 800,
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+              color: '#fe6200',
+              marginBottom: '10px',
+            }}
+          >
+            Executive Summary & Architecture Benchmarks
           </div>
 
-          {/* 2 Balanced Prose Columns */}
+          <p
+            style={{
+              fontSize: '16px',
+              lineHeight: 1.7,
+              color: '#2a2724',
+              margin: '0 0 16px 0',
+              fontWeight: 500,
+            }}
+          >
+            {data.overview.statement}
+          </p>
+
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: 'clamp(32px, 5vw, 60px)',
-              alignItems: 'start',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              gap: '14px',
+              paddingTop: '14px',
+              borderTop: '1px solid #e8e3d8',
             }}
-            className="nm-two-col"
           >
-            <div>
-              <p
-                style={{
-                  fontSize: '17px',
-                  lineHeight: 1.8,
-                  color: '#33312e',
-                  margin: 0,
-                }}
-              >
-                {data.overview.paragraphs[0]}
-              </p>
-            </div>
-
-            <div>
-              {data.overview.paragraphs[1] && (
-                <p
+            {data.metrics.map((m, idx) => (
+              <div key={idx} style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                <span
                   style={{
-                    fontSize: '17px',
-                    lineHeight: 1.8,
-                    color: '#33312e',
-                    margin: '0 0 20px 0',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: '20px',
+                    fontWeight: 800,
+                    color: '#fe6200',
                   }}
                 >
-                  {data.overview.paragraphs[1]}
-                </p>
-              )}
-
-              {data.overview.keyTakeaway && (
-                <blockquote
-                  style={{
-                    borderLeft: '3px solid #fe6200',
-                    paddingLeft: '18px',
-                    margin: 0,
-                    fontSize: '16.5px',
-                    lineHeight: 1.65,
-                    color: '#111111',
-                    fontStyle: 'italic',
-                    fontWeight: 600,
-                  }}
-                >
-                  "{data.overview.keyTakeaway}"
-                </blockquote>
-              )}
-            </div>
+                  {m.value}
+                </span>
+                <span style={{ fontSize: '13px', color: '#55514c', fontWeight: 500 }}>
+                  {m.label}
+                </span>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* ========================================================
-            SECTION 2: THE BOTTLENECK
-            Top: Section Headline across full width
-            Below: 2 balanced columns (Problem/Result Left, Solution/Audience Right)
+            SECTION 1: THE BOTTLENECK & PRODUCTION FRICTION
             ======================================================== */}
-        {data.mainProblemSolved && (
-          <section
+        <section style={{ marginBottom: '48px' }}>
+          <h2
             style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(48px, 6vw, 68px) 0',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(24px, 2.8vw, 32px)',
+              fontWeight: 800,
+              color: '#111111',
+              lineHeight: 1.25,
+              margin: '0 0 16px 0',
+              letterSpacing: '-0.02em',
             }}
           >
-            <div style={{ marginBottom: '32px' }}>
+            The Engineering Challenge: Why Existing Systems Break at Scale
+          </h2>
+
+          <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 18px 0' }}>
+            {data.overview.paragraphs[0]}
+          </p>
+
+          {data.overview.paragraphs[1] && (
+            <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 24px 0' }}>
+              {data.overview.paragraphs[1]}
+            </p>
+          )}
+
+          {data.overview.keyTakeaway && (
+            <blockquote
+              style={{
+                borderLeft: '3px solid #fe6200',
+                padding: '8px 0 8px 20px',
+                margin: '28px 0',
+                fontSize: '18px',
+                lineHeight: 1.6,
+                color: '#111111',
+                fontStyle: 'italic',
+                fontWeight: 600,
+                backgroundColor: 'transparent',
+              }}
+            >
+              "{data.overview.keyTakeaway}"
+            </blockquote>
+          )}
+
+          {data.mainProblemSolved && (
+            <div style={{ marginTop: '24px' }}>
+              <h3
+                style={{
+                  fontSize: '19px',
+                  fontWeight: 700,
+                  color: '#111111',
+                  margin: '0 0 10px 0',
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                }}
+              >
+                Production Failure Points We Eliminate
+              </h3>
+              <p style={{ fontSize: '16.5px', lineHeight: 1.75, color: '#44403c', margin: '0 0 14px 0' }}>
+                {data.mainProblemSolved.problem}
+              </p>
+
               <div
                 style={{
-                  fontSize: '11px',
-                  fontWeight: 800,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: '#fe6200',
-                  marginBottom: '10px',
+                  backgroundColor: '#faf7f2',
+                  border: '1px solid #e8e4db',
+                  padding: '16px 20px',
+                  borderRadius: '6px',
+                  margin: '18px 0',
                 }}
               >
-                The Bottleneck
-              </div>
-
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(28px, 3.2vw, 38px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.25,
-                  margin: 0,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                The Friction in Production & How We Eliminate It
-              </h2>
-            </div>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'clamp(32px, 5vw, 60px)',
-                alignItems: 'start',
-              }}
-              className="nm-two-col"
-            >
-              {/* Left Column: Problem & Result */}
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#111111',
-                    margin: '0 0 12px 0',
-                  }}
-                >
-                  Where Existing Systems Fail
-                </h3>
-                <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 20px 0' }}>
-                  {data.mainProblemSolved.problem}
-                </p>
-
-                <div style={{ borderLeft: '3px solid #fe6200', paddingLeft: '18px', marginTop: '16px' }}>
-                  <div
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 800,
-                      textTransform: 'uppercase',
-                      color: '#fe6200',
-                      letterSpacing: '0.08em',
-                      marginBottom: '4px',
-                    }}
-                  >
-                    Direct Result
-                  </div>
-                  <div style={{ fontSize: '15.5px', fontWeight: 600, color: '#111111', lineHeight: 1.55 }}>
-                    {data.mainProblemSolved.result}
-                  </div>
+                <div style={{ fontSize: '12px', fontWeight: 800, textTransform: 'uppercase', color: '#fe6200', marginBottom: '4px' }}>
+                  Direct Architectural Result
+                </div>
+                <div style={{ fontSize: '15.5px', fontWeight: 600, color: '#111111', lineHeight: 1.55 }}>
+                  {data.mainProblemSolved.result}
                 </div>
               </div>
-
-              {/* Right Column: Solution & Audience */}
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#111111',
-                    margin: '0 0 12px 0',
-                  }}
-                >
-                  How We Engineer It Differently
-                </h3>
-                <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 24px 0' }}>
-                  {data.mainProblemSolved.solution}
-                </p>
-
-                {data.targetAudience && data.targetAudience.profiles && (
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '12px',
-                        fontWeight: 700,
-                        textTransform: 'uppercase',
-                        color: '#77726d',
-                        letterSpacing: '0.08em',
-                        marginBottom: '10px',
-                      }}
-                    >
-                      {data.targetAudience.heading || `Engineered For`}
-                    </div>
-                    <ul style={{ paddingLeft: '20px', margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                      {data.targetAudience.profiles.map((prof, pIdx) => (
-                        <li key={pIdx} style={{ fontSize: '15.5px', lineHeight: 1.65, color: '#33312e' }}>
-                          <strong style={{ color: '#111111' }}>{prof.role}:</strong> {prof.situation}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
             </div>
-          </section>
-        )}
+          )}
+        </section>
 
         {/* ========================================================
-            SECTION 3: OUR CORE ENGINEERING PILLARS
-            Exact visual match to reference image:
-            - Centered — OUR EXPERTISE — with orange rules
-            - Centered BL Pylon Serif heading and subtitle
-            - 2x2 grid with icon container (< / >), PILLAR 0X, heading,
-              description, and rounded tag pills
-            - Subtle horizontal divider between rows
+            SECTION 2: CORE ENGINEERING CAPABILITIES
             ======================================================== */}
         {data.capabilities && data.capabilities.length > 0 && (
-          <section
-            id="service-pillars"
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(56px, 7vw, 76px) 0',
-            }}
-          >
-            {/* Header centered */}
-            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px auto' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '14px',
-                  marginBottom: '12px',
-                }}
-              >
-                <span style={{ width: '36px', height: '1.5px', backgroundColor: '#fe6200' }} />
-                <span
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 800,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: '#fe6200',
-                  }}
-                >
-                  Our Expertise
-                </span>
-                <span style={{ width: '36px', height: '1.5px', backgroundColor: '#fe6200' }} />
-              </div>
-
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(30px, 3.6vw, 42px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.2,
-                  margin: '0 0 12px 0',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Our Core Engineering Pillars
-              </h2>
-
-              <p style={{ fontSize: '16.5px', color: '#66615c', margin: 0, lineHeight: 1.6 }}>
-                End-to-end {data.title.toLowerCase()}, from custom applications to performance engineering.
-              </p>
-            </div>
-
-            {/* 2-Column Balanced Grid of Pillars */}
-            <div
+          <section id="service-pillars" style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+            <h2
               style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'clamp(32px, 5vw, 60px) clamp(32px, 5vw, 60px)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
+                fontWeight: 800,
+                color: '#111111',
+                lineHeight: 1.25,
+                margin: '0 0 12px 0',
+                letterSpacing: '-0.02em',
               }}
-              className="nm-two-col"
             >
+              Core Engineering Pillars & Technical Scope
+            </h2>
+
+            <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#55514c', margin: '0 0 28px 0' }}>
+              We design every {data.title.toLowerCase()} deployment as an integrated, production-grade system. Here is the architectural scope included in every engagement:
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '26px' }}>
               {data.capabilities.map((cap, cIdx) => (
                 <div
                   key={cIdx}
                   style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '20px',
-                    paddingBottom: '28px',
-                    borderBottom: '1px solid #e4e2e1',
+                    borderLeft: '2px solid #fe6200',
+                    paddingLeft: '18px',
                   }}
                 >
-                  {/* Icon Square */}
                   <div
                     style={{
-                      width: '52px',
-                      height: '52px',
-                      borderRadius: '12px',
-                      backgroundColor: '#fcf2ea',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      marginTop: '4px',
+                      fontSize: '11px',
+                      fontWeight: 800,
+                      color: '#fe6200',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      marginBottom: '4px',
                     }}
                   >
-                    <Code size={22} color="#fe6200" strokeWidth={2.5} />
+                    Pillar 0{cIdx + 1}
                   </div>
 
-                  {/* Pillar Content */}
-                  <div style={{ flex: 1 }}>
-                    <div
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 800,
-                        color: '#fe6200',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        marginBottom: '6px',
-                      }}
-                    >
-                      Pillar 0{cIdx + 1}
+                  <h3
+                    style={{
+                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                      fontSize: '20px',
+                      fontWeight: 700,
+                      color: '#111111',
+                      margin: '0 0 8px 0',
+                    }}
+                  >
+                    {cap.title}
+                  </h3>
+
+                  <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#33312e', margin: '0 0 10px 0' }}>
+                    {cap.description}
+                  </p>
+
+                  {cap.tags && cap.tags.length > 0 && (
+                    <div style={{ fontSize: '13px', color: '#77726d' }}>
+                      <strong style={{ color: '#44403c', fontWeight: 600 }}>Production Stack:</strong>{' '}
+                      {cap.tags.join(' · ')}
                     </div>
-
-                    <h3
-                      style={{
-                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                        fontSize: '21px',
-                        fontWeight: 700,
-                        color: '#111111',
-                        margin: '0 0 8px 0',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {cap.title}
-                    </h3>
-
-                    <p style={{ fontSize: '15px', lineHeight: 1.65, color: '#44403c', margin: '0 0 14px 0' }}>
-                      {cap.description}
-                    </p>
-
-                    {cap.tags && cap.tags.length > 0 && (
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                        {cap.tags.map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            style={{
-                              backgroundColor: '#fbf4ed',
-                              padding: '4px 10px',
-                              borderRadius: '6px',
-                              fontSize: '12px',
-                              fontWeight: 600,
-                              color: '#44403c',
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -686,188 +497,88 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         )}
 
         {/* ========================================================
-            SECTION 4: HOW WE DELIVER (INTERACTIVE STEPPER)
-            Exact visual match to reference image:
-            - Centered title & subtitle
-            - Horizontal tab bar: 01, 02, 03, 04 with active orange line
-            - 2-column active stage details:
-              Left: Large Stage Title & Description
-              Right: Milestone Sign-off Requirements with checkmarks
+            SECTION 3: DELIVERY RUNBOOK (Step-by-Step Article Style)
             ======================================================== */}
         {data.process && data.process.length > 0 && (
-          <section
-            id="service-process"
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(56px, 7vw, 76px) 0',
-            }}
-          >
-            {/* Centered Heading */}
-            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 40px auto' }}>
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(30px, 3.6vw, 42px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.2,
-                  margin: '0 0 12px 0',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                How We Deliver {data.title}
-              </h2>
-
-              <p style={{ fontSize: '16.5px', color: '#66615c', margin: 0, lineHeight: 1.6 }}>
-                An agile, multi-stage delivery framework engineered to eliminate delivery drift and achieve zero-defect launches.
-              </p>
-            </div>
-
-            {/* Stepper Tabs Bar */}
-            <div
+          <section id="service-process" style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+            <h2
               style={{
-                display: 'grid',
-                gridTemplateColumns: `repeat(${data.process.length}, 1fr)`,
-                borderBottom: '1px solid #e4e2e1',
-                marginBottom: '40px',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
+                fontWeight: 800,
+                color: '#111111',
+                lineHeight: 1.25,
+                margin: '0 0 12px 0',
+                letterSpacing: '-0.02em',
               }}
-              className="nm-stage-tabs"
             >
-              {data.process.map((step, sIdx) => {
-                const isActive = sIdx === activeStageIndex;
-                return (
-                  <button
-                    key={sIdx}
-                    onClick={() => setActiveStageIndex(sIdx)}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      padding: '16px 12px',
-                      backgroundColor: 'transparent',
-                      border: 'none',
-                      borderBottom: isActive ? '3px solid #fe6200' : '3px solid transparent',
-                      cursor: 'pointer',
-                      textAlign: 'left',
-                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                      transition: 'all 0.2s',
-                    }}
-                  >
+              How We Deliver: An Agile Engineering Framework
+            </h2>
+
+            <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#55514c', margin: '0 0 28px 0' }}>
+              We eliminate delivery drift through two-week sprint cadences, live staging environments, and concrete milestone sign-off requirements at each stage.
+            </p>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {data.process.map((st, sIdx) => (
+                <div
+                  key={sIdx}
+                  style={{
+                    borderTop: '1px solid #e4e2e1',
+                    paddingTop: '18px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '6px' }}>
                     <span
                       style={{
-                        padding: '4px 8px',
-                        borderRadius: '6px',
-                        fontSize: '12px',
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        fontSize: '18px',
                         fontWeight: 800,
-                        backgroundColor: isActive ? '#fe6200' : '#f0ece6',
-                        color: isActive ? '#ffffff' : '#77726d',
-                        transition: 'all 0.2s',
+                        color: '#fe6200',
                       }}
                     >
-                      0{sIdx + 1}
+                      Stage 0{sIdx + 1}.
                     </span>
-                    <div>
-                      <div
-                        style={{
-                          fontSize: '10.5px',
-                          fontWeight: 800,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.1em',
-                          color: isActive ? '#fe6200' : '#88847f',
-                        }}
-                      >
-                        Stage 0{sIdx + 1}
-                      </div>
-                      <div
-                        style={{
-                          fontSize: '14px',
-                          fontWeight: 700,
-                          color: isActive ? '#111111' : '#66615c',
-                        }}
-                      >
-                        {step.title}
-                      </div>
+                    <h3
+                      style={{
+                        fontSize: '18.5px',
+                        fontWeight: 700,
+                        color: '#111111',
+                        margin: 0,
+                      }}
+                    >
+                      {st.title}
+                    </h3>
+                  </div>
+
+                  <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#44403c', margin: '0 0 10px 0' }}>
+                    {st.description}
+                  </p>
+
+                  {st.deliverables && st.deliverables.length > 0 && (
+                    <div style={{ fontSize: '13.5px', color: '#66615c', lineHeight: 1.6 }}>
+                      <strong style={{ color: '#222222' }}>Sign-off Requirements:</strong> {st.deliverables.join(' · ')}
                     </div>
-                  </button>
-                );
-              })}
+                  )}
+                </div>
+              ))}
             </div>
 
-            {/* Active Stage Details */}
-            {activeStage && (
+            {data.timeline && data.timeline.phases && (
               <div
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: 'clamp(32px, 5vw, 60px)',
-                  alignItems: 'start',
+                  marginTop: '32px',
+                  backgroundColor: '#f6f3ee',
+                  padding: '20px 24px',
+                  borderRadius: '6px',
+                  border: '1px solid #e6e2da',
                 }}
-                className="nm-two-col"
               >
-                {/* Left Column: Stage Overview */}
-                <div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                      fontSize: 'clamp(24px, 2.6vw, 32px)',
-                      fontWeight: 800,
-                      color: '#111111',
-                      margin: '0 0 16px 0',
-                      lineHeight: 1.25,
-                    }}
-                  >
-                    {activeStage.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontSize: '17px',
-                      lineHeight: 1.75,
-                      color: '#44403c',
-                      margin: 0,
-                    }}
-                  >
-                    {activeStage.description}
-                  </p>
+                <div style={{ fontSize: '13px', fontWeight: 800, textTransform: 'uppercase', color: '#fe6200', marginBottom: '4px' }}>
+                  Realistic Project Timeline: {data.timeline.totalDuration}
                 </div>
-
-                {/* Right Column: Milestone Sign-offs */}
-                <div>
-                  <div
-                    style={{
-                      fontSize: '11.5px',
-                      fontWeight: 800,
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      color: '#111111',
-                      marginBottom: '16px',
-                    }}
-                  >
-                    Milestone Sign-off Requirements
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    {activeStage.deliverables && activeStage.deliverables.map((del, dIdx) => (
-                      <div
-                        key={dIdx}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '12px',
-                          padding: '14px 0',
-                          borderBottom: '1px solid #e4e2e1',
-                          fontSize: '15.5px',
-                          fontWeight: 600,
-                          color: '#111111',
-                        }}
-                      >
-                        <span style={{ color: '#fe6200', flexShrink: 0 }}>
-                          <CheckCircle2 size={18} />
-                        </span>
-                        <span>{del}</span>
-                      </div>
-                    ))}
-                  </div>
+                <div style={{ fontSize: '15px', color: '#44403c', lineHeight: 1.6 }}>
+                  {data.timeline.sprintCadence || 'Bi-weekly sprint demos on live staging with direct Slack collaboration with principal architects.'}
                 </div>
               </div>
             )}
@@ -875,446 +586,183 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         )}
 
         {/* ========================================================
-            SECTION 5: REALISTIC PROJECT TIMELINE
-            Exact visual match to reference image:
-            - Centered title & subtitle
-            - 4 columns across desktop with orange top rule
-            - Step 0X badge on left, calendar icon + Weeks on right
-            - Bold phase title + concise phase description
+            SECTION 4: PRODUCTION CASE IN POINT (Blog Case Narrative)
             ======================================================== */}
-        {data.timeline && data.timeline.phases && data.timeline.phases.length > 0 && (
-          <section
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(56px, 7vw, 76px) 0',
-            }}
-          >
-            {/* Header centered */}
-            <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto 48px auto' }}>
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(30px, 3.6vw, 42px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.2,
-                  margin: '0 0 12px 0',
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Realistic Project Timeline: {data.timeline.totalDuration} Typical Delivery
-              </h2>
-
-              <p style={{ fontSize: '16.5px', color: '#66615c', margin: 0, lineHeight: 1.6 }}>
-                Two-week agile release cycles with live staging demos and direct Slack collaboration.
-              </p>
-            </div>
-
-            {/* 4 Equal Columns */}
+        {primaryCaseStudy && (
+          <section style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
             <div
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: 'clamp(20px, 2.5vw, 32px)',
+                fontSize: '11px',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#fe6200',
+                marginBottom: '8px',
               }}
-              className="nm-four-col"
             >
-              {data.timeline.phases.map((ph, pIdx) => (
-                <div
-                  key={pIdx}
-                  style={{
-                    borderTop: '2px solid #fe6200',
-                    paddingTop: '18px',
-                  }}
-                >
-                  {/* Badge Row */}
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginBottom: '12px',
-                    }}
-                  >
-                    <span
-                      style={{
-                        backgroundColor: '#fbece2',
-                        color: '#fe6200',
-                        padding: '3px 8px',
-                        borderRadius: '4px',
-                        fontSize: '11px',
-                        fontWeight: 800,
-                        letterSpacing: '0.06em',
-                      }}
-                    >
-                      STEP 0{pIdx + 1}
-                    </span>
-
-                    <span
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        color: '#fe6200',
-                        fontSize: '12.5px',
-                        fontWeight: 700,
-                      }}
-                    >
-                      <Calendar size={13} />
-                      <span>{ph.duration}</span>
-                    </span>
-                  </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                      fontSize: '17.5px',
-                      fontWeight: 700,
-                      color: '#111111',
-                      margin: '0 0 10px 0',
-                      lineHeight: 1.35,
-                    }}
-                  >
-                    {ph.phase}
-                  </h3>
-
-                  <p style={{ fontSize: '14px', lineHeight: 1.65, color: '#44403c', margin: 0 }}>
-                    {ph.details}
-                  </p>
-                </div>
-              ))}
+              Production Case in Point
             </div>
-          </section>
-        )}
 
-        {/* ========================================================
-            SECTION 6: FEATURED CLIENT TRANSFORMATIONS
-            Exact visual match to reference image:
-            - Header: Title on left, "Browse Full Portfolio →" on right
-            - 3 White Cards with:
-              - Category tag (peach) + client name
-              - BL Pylon Serif title + DM Sans description
-              - Charcoal stat box (#352f2c) with green SLA metric (< 150ms / 99.99%)
-              - Tech tag pills
-              - Full-width orange outline CTA button
-            ======================================================== */}
-        {data.caseStudies && data.caseStudies.length > 0 && (
-          <section
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(56px, 7vw, 76px) 0',
-            }}
-          >
-            {/* Header */}
+            <h2
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
+                fontWeight: 800,
+                color: '#111111',
+                lineHeight: 1.25,
+                margin: '0 0 16px 0',
+                letterSpacing: '-0.02em',
+              }}
+            >
+              {primaryCaseStudy.title}
+            </h2>
+
+            <div
+              style={{
+                borderLeft: '3px solid #fe6200',
+                paddingLeft: '18px',
+                marginBottom: '20px',
+              }}
+            >
+              <div style={{ fontSize: '13px', color: '#77726d', fontWeight: 600 }}>
+                Client: {primaryCaseStudy.client} · {primaryCaseStudy.category}
+              </div>
+            </div>
+
+            <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 20px 0' }}>
+              {primaryCaseStudy.description}
+            </p>
+
+            {/* In-article Stat Callout */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
-                flexWrap: 'wrap',
-                gap: '16px',
-                marginBottom: '36px',
-              }}
-            >
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(28px, 3.4vw, 40px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  margin: 0,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Featured Client Transformations
-              </h2>
-
-              <button
-                onClick={() => onNavigatePage('portfolio')}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  backgroundColor: '#faf6f0',
-                  border: '1px solid #d0ccc0',
-                  borderRadius: '999px',
-                  padding: '9px 18px',
-                  fontSize: '13.5px',
-                  fontWeight: 600,
-                  color: '#111111',
-                  cursor: 'pointer',
-                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                  transition: 'border-color 0.2s',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#fe6200')}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = '#d0ccc0')}
-              >
-                <span>Browse Full Portfolio</span>
-                <span style={{ fontSize: '15px' }}>→</span>
-              </button>
-            </div>
-
-            {/* 3 Responsive Cards */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
                 gap: '24px',
+                backgroundColor: '#ffffff',
+                border: '1px solid #e4e2e1',
+                padding: '18px 24px',
+                borderRadius: '8px',
+                margin: '20px 0',
+                flexWrap: 'wrap',
               }}
             >
-              {data.caseStudies.slice(0, 3).map((cs, csIdx) => (
+              <div>
                 <div
-                  key={csIdx}
                   style={{
-                    backgroundColor: '#ffffff',
-                    borderRadius: '16px',
-                    border: '1px solid #e8e4de',
-                    padding: '28px',
-                    boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: '26px',
+                    fontWeight: 800,
+                    color: '#fe6200',
+                    lineHeight: 1.1,
                   }}
                 >
-                  <div>
-                    {/* Top Row: Tag + Client */}
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '12px',
-                        marginBottom: '16px',
-                      }}
-                    >
-                      <span
-                        style={{
-                          backgroundColor: '#fbece2',
-                          color: '#fe6200',
-                          padding: '4px 10px',
-                          borderRadius: '4px',
-                          fontSize: '11px',
-                          fontWeight: 800,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.06em',
-                        }}
-                      >
-                        {cs.category}
-                      </span>
-                      <span style={{ fontSize: '13px', color: '#77726d', fontWeight: 500 }}>
-                        {cs.client}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h3
-                      style={{
-                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                        fontSize: '20px',
-                        fontWeight: 700,
-                        color: '#111111',
-                        margin: '0 0 12px 0',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      {cs.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p
-                      style={{
-                        fontSize: '14.5px',
-                        lineHeight: 1.6,
-                        color: '#44403c',
-                        margin: '0 0 20px 0',
-                      }}
-                    >
-                      {cs.description}
-                    </p>
-                  </div>
-
-                  <div>
-                    {/* Dark Charcoal Stat Box */}
-                    <div
-                      style={{
-                        backgroundColor: '#352f2c',
-                        borderRadius: '10px',
-                        padding: '16px 18px',
-                        color: '#ffffff',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        gap: '16px',
-                        marginBottom: '18px',
-                      }}
-                    >
-                      {/* Metric with Green Left Bar */}
-                      <div
-                        style={{
-                          borderLeft: '4px solid #10b981',
-                          paddingLeft: '12px',
-                        }}
-                      >
-                        <div
-                          style={{
-                            fontSize: '22px',
-                            fontWeight: 800,
-                            color: '#10b981',
-                            lineHeight: 1.1,
-                          }}
-                        >
-                          {cs.metric}
-                        </div>
-                        <div style={{ fontSize: '11.5px', color: '#9ca3af', marginTop: '2px' }}>
-                          {cs.metricLabel}
-                        </div>
-                      </div>
-
-                      {/* Secondary Stat */}
-                      <div
-                        style={{
-                          fontSize: '13.5px',
-                          fontWeight: 600,
-                          color: '#ffffff',
-                          textAlign: 'right',
-                          lineHeight: 1.35,
-                        }}
-                      >
-                        {cs.stats}
-                      </div>
-                    </div>
-
-                    {/* Tech Tags */}
-                    {cs.tags && cs.tags.length > 0 && (
-                      <div
-                        style={{
-                          display: 'flex',
-                          flexWrap: 'wrap',
-                          gap: '6px',
-                          marginBottom: '20px',
-                        }}
-                      >
-                        {cs.tags.map((tag, tIdx) => (
-                          <span
-                            key={tIdx}
-                            style={{
-                              backgroundColor: '#f1efeb',
-                              padding: '4px 9px',
-                              borderRadius: '5px',
-                              fontSize: '12px',
-                              color: '#55514c',
-                            }}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Bottom CTA Button */}
-                    <a
-                      href="#service-contact"
-                      style={{
-                        display: 'block',
-                        width: '100%',
-                        textAlign: 'center',
-                        backgroundColor: '#fef0e6',
-                        border: '1.5px solid #fe6200',
-                        color: '#fe6200',
-                        borderRadius: '8px',
-                        padding: '12px',
-                        fontSize: '14px',
-                        fontWeight: 700,
-                        textDecoration: 'none',
-                        boxSizing: 'border-box',
-                        transition: 'all 0.2s',
-                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = '#fe6200';
-                        e.currentTarget.style.color = '#ffffff';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = '#fef0e6';
-                        e.currentTarget.style.color = '#fe6200';
-                      }}
-                    >
-                      Request Solution Architecture Brief ↗
-                    </a>
-                  </div>
+                  {primaryCaseStudy.metric}
                 </div>
-              ))}
+                <div style={{ fontSize: '12px', color: '#77726d', fontWeight: 500 }}>
+                  {primaryCaseStudy.metricLabel}
+                </div>
+              </div>
+
+              <div style={{ width: '1px', height: '36px', backgroundColor: '#e4e2e1' }} />
+
+              <div style={{ fontSize: '15px', fontWeight: 600, color: '#111111' }}>
+                {primaryCaseStudy.stats}
+              </div>
             </div>
+
+            {primaryCaseStudy.tags && primaryCaseStudy.tags.length > 0 && (
+              <div style={{ fontSize: '13.5px', color: '#77726d' }}>
+                <strong style={{ color: '#33312e' }}>Verified Architecture:</strong> {primaryCaseStudy.tags.join(' · ')}
+              </div>
+            )}
           </section>
         )}
 
         {/* ========================================================
-            SECTION 7: WHY ENGINEERING LEADERS PICK NEOMINDS
-            Exact visual match to reference image:
-            - Centered title at top: Why Engineering Leaders Pick Neominds for [Service]
-            - 4 columns across desktop with orange top rule
-            - Orange circle checkmark icon + bold title + description
-            - Spans full width, ZERO empty left void!
+            SECTION 5: CODE OWNERSHIP & VERIFIED STACK
             ======================================================== */}
-        {data.whyChooseThisService && (
-          <section
+        <section style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+          <h2
             style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(56px, 7vw, 76px) 0',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(24px, 2.8vw, 32px)',
+              fontWeight: 800,
+              color: '#111111',
+              lineHeight: 1.25,
+              margin: '0 0 16px 0',
+              letterSpacing: '-0.02em',
             }}
           >
-            {/* Header across full width (Centered) */}
-            <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto 48px auto' }}>
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(30px, 3.6vw, 42px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.2,
-                  margin: 0,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                {data.whyChooseThisService.title}
-              </h2>
-            </div>
+            100% Direct Code & IP Ownership Guarantee
+          </h2>
 
-            {/* 4 Equal Columns */}
-            <div
+          <p style={{ fontSize: '17px', lineHeight: 1.8, color: '#33312e', margin: '0 0 20px 0' }}>
+            We build for direct customer ownership. Every repository, infrastructure configuration script (Terraform / Docker / Kubernetes), and database migration belongs 100% to your organization from Day 1. There are zero proprietary runtime locks, zero obfuscated modules, and zero ongoing vendor hostage code.
+          </p>
+
+          {data.deliverables && data.deliverables.length > 0 && (
+            <div style={{ margin: '24px 0' }}>
+              <div style={{ fontSize: '13.5px', fontWeight: 700, textTransform: 'uppercase', color: '#111111', marginBottom: '12px' }}>
+                Tangible Engineering Deliverables
+              </div>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {data.deliverables.map((del, dIdx) => (
+                  <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '15.5px', lineHeight: 1.6, color: '#33312e' }}>
+                    <span style={{ color: '#fe6200', marginTop: '3px', flexShrink: 0 }}>
+                      <Check size={16} strokeWidth={2.5} />
+                    </span>
+                    <div>
+                      <strong style={{ color: '#111111' }}>{del.title}:</strong> {del.description}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {data.techStack && data.techStack.length > 0 && (
+            <div style={{ marginTop: '28px', borderTop: '1px solid #e4e2e1', paddingTop: '20px' }}>
+              <div style={{ fontSize: '13.5px', fontWeight: 700, textTransform: 'uppercase', color: '#111111', marginBottom: '12px' }}>
+                Verified Production Technologies
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {data.techStack.map((cat, cIdx) => (
+                  <div key={cIdx} style={{ fontSize: '15px', color: '#44403c' }}>
+                    <strong style={{ color: '#111111' }}>{cat.category}:</strong> {cat.items.join(', ')}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+
+        {/* ========================================================
+            SECTION 6: OPERATING STANDARDS
+            ======================================================== */}
+        {data.whyChooseThisService && (
+          <section style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+            <h2
               style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: 'clamp(24px, 3vw, 36px)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
+                fontWeight: 800,
+                color: '#111111',
+                lineHeight: 1.25,
+                margin: '0 0 16px 0',
+                letterSpacing: '-0.02em',
               }}
             >
-              {data.whyChooseThisService.reasons.map((r, rIdx) => (
-                <div
-                  key={rIdx}
-                  style={{
-                    borderTop: '2px solid #fe6200',
-                    paddingTop: '18px',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', marginBottom: '8px' }}>
-                    <span style={{ color: '#fe6200', marginTop: '2px', flexShrink: 0 }}>
-                      <CheckCircle2 size={18} />
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                        fontSize: '17px',
-                        fontWeight: 700,
-                        color: '#111111',
-                        margin: 0,
-                        lineHeight: 1.35,
-                      }}
-                    >
-                      {r.point}
-                    </h3>
-                  </div>
+              {data.whyChooseThisService.title}
+            </h2>
 
-                  <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#44403c', margin: 0, paddingLeft: '28px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {data.whyChooseThisService.reasons.map((r, rIdx) => (
+                <div key={rIdx} style={{ borderLeft: '2px solid #fe6200', paddingLeft: '16px' }}>
+                  <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#111111', margin: '0 0 6px 0' }}>
+                    {r.point}
+                  </h3>
+                  <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#44403c', margin: 0 }}>
                     {r.detail}
                   </p>
                 </div>
@@ -1324,186 +772,31 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         )}
 
         {/* ========================================================
-            SECTION 8: PRODUCTION TECHNOLOGIES & DELIVERABLES
-            Top: Headline & Handover Statement
-            Below: 2 Balanced Columns filling the 1240px width
-            ======================================================== */}
-        {data.techStack && data.techStack.length > 0 && (
-          <section
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(48px, 6vw, 68px) 0',
-            }}
-          >
-            <div style={{ marginBottom: '32px' }}>
-              <div
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 800,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: '#fe6200',
-                  marginBottom: '10px',
-                }}
-              >
-                Handover Guarantee
-              </div>
-
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(28px, 3.2vw, 38px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.25,
-                  margin: 0,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Production Technologies & What You Own
-              </h2>
-            </div>
-
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'clamp(32px, 5vw, 60px)',
-                alignItems: 'start',
-              }}
-              className="nm-two-col"
-            >
-              {/* Left Column: Stack */}
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#111111',
-                    margin: '0 0 16px 0',
-                  }}
-                >
-                  Verified Production Stack
-                </h3>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                  {data.techStack.map((cat, catIdx) => (
-                    <div key={catIdx} style={{ fontSize: '15.5px', lineHeight: 1.6, color: '#33312e', borderBottom: '1px solid #e4e2e1', paddingBottom: '10px' }}>
-                      <strong style={{ color: '#111111' }}>{cat.category}:</strong> {cat.items.join(', ')}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: Tangible Deliverables */}
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                    fontSize: '22px',
-                    fontWeight: 700,
-                    color: '#111111',
-                    margin: '0 0 16px 0',
-                  }}
-                >
-                  100% Direct Code Handover
-                </h3>
-
-                <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#44403c', margin: '0 0 20px 0' }}>
-                  Every repository, database migration script, and deployment workflow belongs entirely to your team. Zero proprietary lock-in.
-                </p>
-
-                {data.deliverables && data.deliverables.length > 0 && (
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    {data.deliverables.map((del, dIdx) => (
-                      <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '15.5px', lineHeight: 1.6, color: '#33312e' }}>
-                        <span style={{ color: '#fe6200', marginTop: '3px', flexShrink: 0 }}>
-                          <Check size={16} strokeWidth={2.5} />
-                        </span>
-                        <div>
-                          <strong style={{ color: '#111111' }}>{del.title}:</strong> {del.description}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ========================================================
-            SECTION 9: FREQUENTLY ASKED QUESTIONS
-            Top: Headline across full width
-            Below: 2 Balanced Columns of FAQs
+            SECTION 7: FREQUENTLY ASKED QUESTIONS
             ======================================================== */}
         {data.faqs && data.faqs.length > 0 && (
-          <section
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              padding: 'clamp(48px, 6vw, 68px) 0',
-            }}
-          >
-            <div style={{ marginBottom: '36px' }}>
-              <div
-                style={{
-                  fontSize: '11px',
-                  fontWeight: 800,
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: '#fe6200',
-                  marginBottom: '10px',
-                }}
-              >
-                Common Questions
-              </div>
-
-              <h2
-                style={{
-                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: 'clamp(28px, 3.2vw, 38px)',
-                  fontWeight: 800,
-                  color: '#111111',
-                  lineHeight: 1.25,
-                  margin: 0,
-                  letterSpacing: '-0.02em',
-                }}
-              >
-                Frequently Asked Questions About {data.title}
-              </h2>
-            </div>
-
-            {/* 2-Column Balanced FAQ Grid */}
-            <div
+          <section style={{ marginBottom: '56px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+            <h2
               style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: 'clamp(32px, 5vw, 60px)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
+                fontWeight: 800,
+                color: '#111111',
+                lineHeight: 1.25,
+                margin: '0 0 20px 0',
+                letterSpacing: '-0.02em',
               }}
-              className="nm-two-col"
             >
+              Frequently Asked Technical Questions
+            </h2>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '22px' }}>
               {data.faqs.map((faq, fIdx) => (
-                <div
-                  key={fIdx}
-                  style={{
-                    borderTop: '1px solid #e4e2e1',
-                    paddingTop: '20px',
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                      fontSize: '19.5px',
-                      fontWeight: 700,
-                      color: '#111111',
-                      margin: '0 0 10px 0',
-                      lineHeight: 1.35,
-                    }}
-                  >
+                <div key={fIdx} style={{ borderBottom: '1px solid #e4e2e1', paddingBottom: '18px' }}>
+                  <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#111111', margin: '0 0 8px 0' }}>
                     {faq.question}
                   </h3>
-                  <p style={{ fontSize: '16px', lineHeight: 1.7, color: '#44403c', margin: 0 }}>
+                  <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#44403c', margin: 0 }}>
                     {faq.answer}
                   </p>
                 </div>
@@ -1513,35 +806,34 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         )}
 
         {/* ========================================================
-            SECTION 10: DISCOVERY & PROPOSAL FORM
-            Top: Headline & Description across full width
-            Below: 2-Column Balanced Form Spread
+            SECTION 8: TECHNICAL INQUIRY & CONSULTATION FORM
             ======================================================== */}
         <section
           id="service-contact"
           style={{
             borderTop: '1px solid #e4e2e1',
-            padding: 'clamp(48px, 6vw, 68px) 0',
+            paddingTop: '40px',
+            marginBottom: '48px',
           }}
         >
-          <div style={{ marginBottom: '32px' }}>
+          <div style={{ marginBottom: '24px' }}>
             <div
               style={{
                 fontSize: '11px',
                 fontWeight: 800,
-                letterSpacing: '0.14em',
+                letterSpacing: '0.12em',
                 textTransform: 'uppercase',
                 color: '#fe6200',
-                marginBottom: '10px',
+                marginBottom: '8px',
               }}
             >
-              Direct Engagement
+              Direct Technical Discussion
             </div>
 
             <h2
               style={{
                 fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                fontSize: 'clamp(28px, 3.2vw, 38px)',
+                fontSize: 'clamp(24px, 2.8vw, 32px)',
                 fontWeight: 800,
                 color: '#111111',
                 lineHeight: 1.25,
@@ -1552,7 +844,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               {data.cta.headline}
             </h2>
 
-            <p style={{ fontSize: '16.5px', lineHeight: 1.65, color: '#44403c', margin: 0, maxWidth: '780px' }}>
+            <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#55514c', margin: 0 }}>
               {data.cta.description}
             </p>
           </div>
@@ -1572,8 +864,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '18px' }} className="nm-form-row">
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '14px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '13px', fontWeight: 700, color: '#222222', marginBottom: '6px' }}>
                     Your Name *
@@ -1586,11 +878,11 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '12px 16px',
+                      padding: '11px 14px',
                       backgroundColor: '#faf6f0',
                       border: '1px solid #d0ccc0',
-                      borderRadius: '8px',
-                      fontSize: '15px',
+                      borderRadius: '6px',
+                      fontSize: '14.5px',
                       color: '#111111',
                       outline: 'none',
                       boxSizing: 'border-box',
@@ -1611,11 +903,11 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '12px 16px',
+                      padding: '11px 14px',
                       backgroundColor: '#faf6f0',
                       border: '1px solid #d0ccc0',
-                      borderRadius: '8px',
-                      fontSize: '15px',
+                      borderRadius: '6px',
+                      fontSize: '14.5px',
                       color: '#111111',
                       outline: 'none',
                       boxSizing: 'border-box',
@@ -1635,11 +927,11 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                     style={{
                       width: '100%',
-                      padding: '12px 16px',
+                      padding: '11px 14px',
                       backgroundColor: '#faf6f0',
                       border: '1px solid #d0ccc0',
-                      borderRadius: '8px',
-                      fontSize: '15px',
+                      borderRadius: '6px',
+                      fontSize: '14.5px',
                       color: '#111111',
                       outline: 'none',
                       boxSizing: 'border-box',
@@ -1661,11 +953,11 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
                   style={{
                     width: '100%',
-                    padding: '12px 16px',
+                    padding: '11px 14px',
                     backgroundColor: '#faf6f0',
                     border: '1px solid #d0ccc0',
-                    borderRadius: '8px',
-                    fontSize: '15px',
+                    borderRadius: '6px',
+                    fontSize: '14.5px',
                     color: '#111111',
                     outline: 'none',
                     boxSizing: 'border-box',
@@ -1683,7 +975,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
                   style={{ width: '16px', height: '16px', accentColor: '#fe6200', cursor: 'pointer' }}
                 />
-                <label htmlFor="srv-nda" style={{ fontSize: '14px', color: '#55514c', cursor: 'pointer' }}>
+                <label htmlFor="srv-nda" style={{ fontSize: '13.5px', color: '#55514c', cursor: 'pointer' }}>
                   Need an NDA signed first? We sign it before our technical discussion.
                 </label>
               </div>
@@ -1695,13 +987,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '10px',
-                    padding: '14px 28px',
+                    gap: '8px',
+                    padding: '12px 24px',
                     backgroundColor: '#fe6200',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: '8px',
-                    fontSize: '15px',
+                    borderRadius: '6px',
+                    fontSize: '14.5px',
                     fontWeight: 700,
                     cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     opacity: isSubmitting ? 0.7 : 1,
@@ -1715,7 +1007,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     if (!isSubmitting) e.currentTarget.style.backgroundColor = '#fe6200';
                   }}
                 >
-                  <Send size={16} />
+                  <Send size={15} />
                   <span>{isSubmitting ? 'Sending...' : data.cta.buttonText}</span>
                 </button>
               </div>
@@ -1724,19 +1016,19 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         </section>
 
         {/* ========================================================
-            SECTION 11: RELATED DISCIPLINES
+            SECTION 9: RELATED DISCIPLINES (Clean Article Footer Links)
             ======================================================== */}
         {relatedItems.length > 0 && (
-          <section style={{ borderTop: '1px solid #e4e2e1', paddingTop: '48px' }}>
-            <div style={{ marginBottom: '24px' }}>
+          <section style={{ borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
+            <div style={{ marginBottom: '18px' }}>
               <div
                 style={{
                   fontSize: '11px',
                   fontWeight: 800,
-                  letterSpacing: '0.14em',
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   color: '#fe6200',
-                  marginBottom: '10px',
+                  marginBottom: '6px',
                 }}
               >
                 Related Disciplines
@@ -1745,29 +1037,23 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               <h2
                 style={{
                   fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                  fontSize: '24px',
+                  fontSize: '22px',
                   fontWeight: 700,
                   color: '#111111',
                   margin: 0,
                 }}
               >
-                Related Engineering Services
+                Other Engineering Services
               </h2>
             </div>
 
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '20px',
-              }}
-            >
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
               {relatedItems.map((item, rIdx) => (
                 <div
                   key={rIdx}
                   onClick={() => onNavigatePage(item.slug)}
                   style={{
-                    padding: '18px 0',
+                    padding: '14px 0',
                     borderBottom: '1px solid #e4e2e1',
                     display: 'flex',
                     alignItems: 'center',
@@ -1775,72 +1061,39 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     cursor: 'pointer',
                     transition: 'padding-left 0.2s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.paddingLeft = '8px')}
+                  onMouseEnter={(e) => (e.currentTarget.style.paddingLeft = '6px')}
                   onMouseLeave={(e) => (e.currentTarget.style.paddingLeft = '0px')}
                 >
                   <div>
-                    <h3
+                    <div
                       style={{
-                        fontSize: '17px',
+                        fontSize: '16px',
                         fontWeight: 700,
                         color: '#111111',
-                        margin: '0 0 4px 0',
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                       }}
                     >
                       {item.title}
-                    </h3>
-                    <p style={{ fontSize: '13.5px', color: '#77726d', margin: 0 }}>
+                    </div>
+                    <div style={{ fontSize: '13px', color: '#77726d', marginTop: '2px' }}>
                       {item.tagline}
-                    </p>
+                    </div>
                   </div>
                   <div style={{ color: '#fe6200' }}>
-                    <ArrowUpRight size={18} />
+                    <ArrowUpRight size={16} />
                   </div>
                 </div>
               ))}
             </div>
           </section>
         )}
-      </div>
+      </article>
 
       {/* Global Client Testimonials Section */}
       <Testimonials />
 
       {/* Footer */}
       <Footer onNavigate={onNavigatePage} onOpenLegal={onOpenLegal} />
-
-      <style>{`
-        @media (max-width: 960px) {
-          .nm-hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 32px !important;
-          }
-          .nm-two-col {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-          }
-          .nm-four-col {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 24px !important;
-          }
-          .nm-form-row {
-            grid-template-columns: 1fr !important;
-          }
-          .nm-stage-tabs {
-            grid-template-columns: 1fr 1fr !important;
-            gap: 8px !important;
-          }
-        }
-        @media (max-width: 600px) {
-          .nm-four-col {
-            grid-template-columns: 1fr !important;
-          }
-          .nm-stage-tabs {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </div>
   );
 };
