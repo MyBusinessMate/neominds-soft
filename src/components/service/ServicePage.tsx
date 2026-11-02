@@ -33,7 +33,6 @@ import { ServiceOverview } from './ServiceOverview';
 import { ServiceCapabilities } from './ServiceCapabilities';
 import { ServiceSignature } from './ServiceSignature';
 import { ServiceProcess } from './ServiceProcess';
-import { ServiceCaseStudies } from './ServiceCaseStudies';
 import { ServiceTechnology } from './ServiceTechnology';
 import { ServiceOutcomes } from './ServiceOutcomes';
 import { RelatedServices } from './RelatedServices';
@@ -160,10 +159,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         primaryCtaText={data.hero.primaryCtaText}
         secondaryCtaText={data.hero.secondaryCtaText}
         onNavigateHome={onNavigateHome}
-        onViewCaseStudies={() => {
-          const el = document.getElementById('case-studies-section');
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }}
+        onViewCaseStudies={() => onNavigatePage('portfolio')}
       />
 
       {/* 03. Trust / Capability Strip */}
@@ -213,17 +209,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         whyChooseThisService={data.whyChooseThisService}
       />
 
-      {/* Case Study Showcase */}
-      <div id="case-studies-section">
-        <ServiceCaseStudies
-          caseStudies={data.caseStudies}
-          onViewAllPortfolio={() => onNavigatePage('portfolio')}
-          onContactClick={() => {
-            const el = document.getElementById('service-contact');
-            if (el) el.scrollIntoView({ behavior: 'smooth' });
-          }}
-        />
-      </div>
+
 
       {/* Global Client Testimonials Section */}
       <Testimonials />
