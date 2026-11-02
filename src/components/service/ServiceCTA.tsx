@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Lock } from 'lucide-react';
+import { Send, CheckCircle2 } from 'lucide-react';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
 interface ServiceCTAProps {
@@ -11,41 +11,35 @@ interface ServiceCTAProps {
 }
 
 export const ServiceCTA: React.FC<ServiceCTAProps> = ({
-  title,
   headline,
   description,
   buttonText,
   onSuccessToast,
 }) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     company: '',
-    budget: '$50k - $100k',
-    message: '',
-    ndaRequired: true,
+    projectScope: '',
+    ndaRequired: false,
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) return;
-
     setIsSubmitting(true);
+
     setTimeout(() => {
       setIsSubmitting(false);
-      onSuccessToast(
-        `Your inquiry for "${title}" has been received! Our Principal Solution Architect will review your specifications and contact you within 2 business hours.`
-      );
+      setIsSubmitted(true);
+      onSuccessToast('Your discovery request has been received. A Principal Architect will reach out within 24 hours.');
       setFormData({
         name: '',
         email: '',
-        phone: '',
         company: '',
-        budget: '$50k - $100k',
-        message: '',
-        ndaRequired: true,
+        projectScope: '',
+        ndaRequired: false,
       });
     }, 600);
   };
@@ -54,203 +48,322 @@ export const ServiceCTA: React.FC<ServiceCTAProps> = ({
     <section
       id="service-contact"
       style={{
-        padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-        borderTop: '1px solid #f0ece2',
+        padding: 'clamp(64px, 7vw, 100px) 24px',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
       }}
     >
-      <div style={{ maxWidth: '840px', margin: '0 auto' }}>
-        <RevealElement variant="card">
+      <div style={{ maxWidth: '820px', margin: '0 auto' }}>
+        {/* Header */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
           <div
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-              border: '1px solid #f0ece2',
-              borderRadius: '8px',
-              padding: 'clamp(28px, 4vw, 48px)',
-              boxShadow: '0 12px 32px rgba(32, 11, 0,  0.05)',
+              fontSize: '11px',
+              fontWeight: 800,
+              letterSpacing: '0.14em',
+              color: '#fe6200',
+              textTransform: 'uppercase',
+              marginBottom: '14px',
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
             }}
           >
-            <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-              <ScrollReveal
-                as="h2"
-                style={{
-                  fontSize: 'clamp(26px, 3.2vw, 36px)',
-                  fontWeight: 800,
-                  color: '#000000',
-                  fontFamily: 'var(--font-heading)',
-                  marginBottom: '10px',
-                  display: 'block',
-                }}
-                blurStrength={6}
-              >
-                {headline}
-              </ScrollReveal>
-              <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '15.5px', color: '#4b5563', margin: 0, lineHeight: 1.6 }}>
-                  {description}
-                </p>
-              </RevealElement>
+            Direct Engagement
+          </div>
+
+          <ScrollReveal
+            as="h2"
+            style={{
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 800,
+              color: '#000000',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              lineHeight: 1.15,
+              marginBottom: '14px',
+              letterSpacing: '-0.025em',
+              display: 'block',
+            }}
+            blurStrength={6}
+          >
+            {headline}
+          </ScrollReveal>
+
+          <RevealElement variant="text" delay={0.06}>
+            <p
+              style={{
+                fontSize: '15.5px',
+                color: '#66615c',
+                margin: '0 auto',
+                maxWidth: '640px',
+                lineHeight: 1.6,
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              {description}
+            </p>
+          </RevealElement>
+        </div>
+
+        {/* Minimal Form (Zero Cards, Blended Seamlessly with Cream Background) */}
+        {isSubmitted ? (
+          <div
+            style={{
+              textAlign: 'center',
+              padding: '48px 24px',
+              borderTop: '1px solid #e4e2e1',
+              borderBottom: '1px solid #e4e2e1',
+            }}
+          >
+            <div
+              style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '50%',
+                backgroundColor: 'rgba(254, 98, 0, 0.1)',
+                color: '#fe6200',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 16px auto',
+              }}
+            >
+              <CheckCircle2 size={24} />
             </div>
-
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
-                    Your Name*
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="Jane Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
-                    Work Email*
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="jane@company.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  />
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Acme Corp"
-                    value={formData.company}
-                    onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
-                    Estimated Budget
-                  </label>
-                  <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    style={{
-                      width: '100%',
-                      padding: '12px 14px',
-                      backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
-                      outline: 'none',
-                      boxSizing: 'border-box',
-                    }}
-                  >
-                    <option value="<$25k">&lt; $25k (Pilot / MVP Scope)</option>
-                    <option value="$25k - $50k">$25k - $50k (Standard Project)</option>
-                    <option value="$50k - $100k">$50k - $100k (Enterprise Scale)</option>
-                    <option value="$100k+">$100k+ (Strategic Dedicated Squad)</option>
-                  </select>
-                </div>
-              </div>
-
+            <h3
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: '24px',
+                fontWeight: 700,
+                color: '#111111',
+                margin: '0 0 8px 0',
+              }}
+            >
+              Proposal Request Received
+            </h3>
+            <p
+              style={{
+                fontSize: '15px',
+                color: '#66615c',
+                lineHeight: 1.6,
+                margin: 0,
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              A principal architect will review your project requirements and respond within one business day.
+            </p>
+          </div>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px',
+              borderTop: '1px solid #e4e2e1',
+              paddingTop: '36px',
+            }}
+          >
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '18px',
+              }}
+            >
               <div>
-                <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#222222', marginBottom: '6px' }}>
-                  Project Goals & Architecture Requirements
+                <label
+                  style={{
+                    display: 'block',
+                    fontSize: '12.5px',
+                    fontWeight: 700,
+                    color: '#222222',
+                    marginBottom: '6px',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  }}
+                >
+                  Your Name *
                 </label>
-                <textarea
-                  rows={4}
-                  placeholder={`Describe your technical requirements for ${title}...`}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Alex Miller"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   style={{
                     width: '100%',
-                    padding: '12px 14px',
-                    backgroundColor: '#ffffff', border: '1px solid #d0ccc0', borderRadius: '8px', fontSize: '14px', color: '#000000',
+                    padding: '12px 16px',
+                    backgroundColor: '#faf6f0',
+                    border: '1px solid #d0ccc0',
+                    borderRadius: '8px',
+                    fontSize: '14.5px',
+                    color: '#111111',
                     outline: 'none',
-                    resize: 'vertical',
                     boxSizing: 'border-box',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                   }}
                 />
               </div>
 
-              <label style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '13px', color: '#444444', cursor: 'pointer' }}>
+              <div>
+                <label
+                  style={{
+                    display: 'block',
+                    fontSize: '12.5px',
+                    fontWeight: 700,
+                    color: '#222222',
+                    marginBottom: '6px',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  }}
+                >
+                  Work Email *
+                </label>
                 <input
-                  type="checkbox"
-                  checked={formData.ndaRequired}
-                  onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
-                  style={{ width: '16px', height: '16px', accentColor: '#fe6200' }}
+                  type="email"
+                  required
+                  placeholder="alex@company.com"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  style={{
+                    width: '100%',
+                    padding: '12px 16px',
+                    backgroundColor: '#faf6f0',
+                    border: '1px solid #d0ccc0',
+                    borderRadius: '8px',
+                    fontSize: '14.5px',
+                    color: '#111111',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  }}
                 />
-                <span>Require signed Mutual Non-Disclosure Agreement (MNDA) before consultation</span>
-              </label>
+              </div>
+            </div>
 
+            <div>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '12.5px',
+                  fontWeight: 700,
+                  color: '#222222',
+                  marginBottom: '6px',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              >
+                Company / Organization
+              </label>
+              <input
+                type="text"
+                placeholder="Company Name"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: '#faf6f0',
+                  border: '1px solid #d0ccc0',
+                  borderRadius: '8px',
+                  fontSize: '14.5px',
+                  color: '#111111',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              />
+            </div>
+
+            <div>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '12.5px',
+                  fontWeight: 700,
+                  color: '#222222',
+                  marginBottom: '6px',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              >
+                Project Scope & Timeline *
+              </label>
+              <textarea
+                required
+                rows={4}
+                placeholder="Briefly describe what you are building, timeline expectations, and any existing tech stack..."
+                value={formData.projectScope}
+                onChange={(e) => setFormData({ ...formData, projectScope: e.target.value })}
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  backgroundColor: '#faf6f0',
+                  border: '1px solid #d0ccc0',
+                  borderRadius: '8px',
+                  fontSize: '14.5px',
+                  color: '#111111',
+                  outline: 'none',
+                  boxSizing: 'border-box',
+                  resize: 'vertical',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              />
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <input
+                type="checkbox"
+                id="cta-nda"
+                checked={formData.ndaRequired}
+                onChange={(e) => setFormData({ ...formData, ndaRequired: e.target.checked })}
+                style={{ width: '16px', height: '16px', accentColor: '#fe6200', cursor: 'pointer' }}
+              />
+              <label
+                htmlFor="cta-nda"
+                style={{
+                  fontSize: '13.5px',
+                  color: '#55514c',
+                  cursor: 'pointer',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                }}
+              >
+                Need an NDA first? Request one before sharing details and we will sign it immediately.
+              </label>
+            </div>
+
+            <div>
               <button
                 type="submit"
                 disabled={isSubmitting}
                 style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '8px',
                   padding: '14px 28px',
                   backgroundColor: '#fe6200',
                   color: '#ffffff',
                   border: 'none',
                   borderRadius: '8px',
-                  fontSize: '15px',
                   fontWeight: 700,
+                  fontSize: '15px',
                   cursor: isSubmitting ? 'not-allowed' : 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '8px',
+                  opacity: isSubmitting ? 0.7 : 1,
                   transition: 'background-color 0.2s',
+                  fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                 }}
                 onMouseEnter={(e) => {
-                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#e04a00';
+                  if (!isSubmitting) e.currentTarget.style.backgroundColor = '#cf5000';
                 }}
                 onMouseLeave={(e) => {
                   if (!isSubmitting) e.currentTarget.style.backgroundColor = '#fe6200';
                 }}
               >
-                {isSubmitting ? (
-                  <span>Transmitting Proposal...</span>
-                ) : (
-                  <>
-                    <span>{buttonText}</span>
-                    <Send size={16} />
-                  </>
-                )}
+                <Send size={16} />
+                <span>{isSubmitting ? 'Submitting Request...' : buttonText}</span>
               </button>
-
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: '#a3a09b', fontSize: '12px', marginTop: '4px' }}>
-                <Lock size={13} />
-                <span>Strict enterprise privacy protection. 100% intellectual property ownership transferred.</span>
-              </div>
-            </form>
-          </div>
-        </RevealElement>
+            </div>
+          </form>
+        )}
       </div>
     </section>
   );
 };
+
+export default ServiceCTA;

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Terminal, FileCode, Package, ShieldCheck, Zap } from 'lucide-react';
+import React from 'react';
 import { ServiceTechCategory, ServiceDeliverable } from '../../types/service';
 import { ScrollReveal, RevealElement } from '../scroll-reveal';
 
@@ -12,203 +11,252 @@ export const ServiceTechnology: React.FC<ServiceTechnologyProps> = ({
   techStack,
   deliverables,
 }) => {
-  const [activeCategoryIdx, setActiveCategoryIdx] = useState(0);
-
   return (
     <section
       style={{
-        padding: 'clamp(64px, 7vw, 96px) 24px',
+        padding: 'clamp(64px, 7vw, 100px) 24px',
         backgroundColor: 'var(--colors-surface-light, #f1efeb)',
         color: '#000000',
-        borderTop: '1px solid #e4e2e1',
-        borderBottom: '1px solid #e4e2e1',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
       }}
     >
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        {/* Section Heading */}
-        <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 56px' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        {/* Section Eyebrow with flanking hairline rules */}
+        <div style={{ textAlign: 'center', maxWidth: '820px', margin: '0 auto clamp(40px, 5vw, 64px)' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '14px',
+              marginBottom: '14px',
+            }}
+          >
+            <span style={{ width: '32px', height: '1.5px', backgroundColor: '#fe6200', opacity: 0.6 }} />
+            <span
+              style={{
+                fontSize: 'clamp(11px, 1.2vw, 12px)',
+                fontWeight: 800,
+                letterSpacing: '0.14em',
+                color: '#fe6200',
+                textTransform: 'uppercase',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              Technology & Deliverables
+            </span>
+            <span style={{ width: '32px', height: '1.5px', backgroundColor: '#fe6200', opacity: 0.6 }} />
+          </div>
+
           <ScrollReveal
             as="h2"
             style={{
-              fontSize: 'clamp(28px, 3.4vw, 42px)',
+              fontSize: 'clamp(32px, 4.4vw, 52px)',
               fontWeight: 800,
               color: '#000000',
-              fontFamily: 'var(--font-heading)',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
               lineHeight: 1.15,
-              marginBottom: '16px',
+              margin: '0 0 14px 0',
+              letterSpacing: '-0.025em',
               display: 'block',
             }}
             blurStrength={6}
           >
-            Technology Matrix & Deliverable Blueprint
+            Production Technologies & Concrete Deliverables
           </ScrollReveal>
+
           <RevealElement variant="text" delay={0.06}>
-            <p style={{ fontSize: '16.5px', color: '#66615c', lineHeight: 1.6, margin: 0 }}>
-              An interactive matrix of verified production primitives and tangible enterprise deliverables handed over upon launch.
+            <p
+              style={{
+                fontSize: '15.5px',
+                color: '#66615c',
+                lineHeight: 1.6,
+                margin: '0 auto',
+                maxWidth: '680px',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              Proven production tools your team can actually understand, audit, and run. Plus 100% direct handover of every asset.
             </p>
           </RevealElement>
         </div>
 
-        {/* 2-Column Asymmetrical Engineering Hub (Seamless Editorial Blend) */}
+        {/* 2-Column Minimalist Editorial Layout (Zero Boxes, Zero Click-to-Change) */}
         <div
+          className="nm-tech-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(32px, 5vw, 48px)',
-            alignItems: 'stretch',
+            gridTemplateColumns: '1fr 1fr',
+            gap: 'clamp(40px, 6vw, 80px)',
+            alignItems: 'start',
           }}
         >
-          {/* Left Column: Technology Stack Matrix */}
-          <div
-            style={{
-              backgroundColor: 'transparent',
-              borderTop: '2px solid #fe6200',
-              paddingTop: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #e4e2e1', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Terminal size={16} color="#fe6200" />
-                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#fe6200' }}>
-                    TECH_STACK_REGISTRY
-                  </span>
-                </div>
-                <div style={{ display: 'flex', gap: '6px' }}>
-                  <div style={{ width: '9px', height: '9px', borderRadius: '50%', backgroundColor: '#ef4444' }} />
-                  <div style={{ width: '9px', height: '9px', borderRadius: '50%', backgroundColor: '#f59e0b' }} />
-                  <div style={{ width: '9px', height: '9px', borderRadius: '50%', backgroundColor: '#22c55e' }} />
-                </div>
-              </div>
+          {/* Left: Production Tech Stack */}
+          <div>
+            <div
+              style={{
+                fontSize: '11px',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#fe6200',
+                marginBottom: '16px',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              Production Stack
+            </div>
+            <h3
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(22px, 2.2vw, 28px)',
+                fontWeight: 700,
+                color: '#111111',
+                margin: '0 0 24px 0',
+                letterSpacing: '-0.015em',
+              }}
+            >
+              Engineered With Modern, Maintainable Tooling
+            </h3>
 
-              {/* Category Pills Selector */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '24px' }}>
-                {techStack.map((cat, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveCategoryIdx(idx)}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {techStack.map((cat, idx) => (
+                <div key={idx} style={{ paddingBottom: '20px', borderBottom: '1px solid #e4e2e1' }}>
+                  <div
                     style={{
-                      backgroundColor: activeCategoryIdx === idx ? '#fe6200' : '#ffffff',
-                      color: activeCategoryIdx === idx ? '#ffffff' : '#000000',
-                      border: activeCategoryIdx === idx ? '1px solid #fe6200' : '1px solid #e4e2e1',
-                      padding: '7px 14px',
-                      borderRadius: '8px',
-                      fontSize: '12.5px',
-                      fontWeight: 600,
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
+                      fontSize: '13px',
+                      fontWeight: 700,
+                      color: '#222222',
+                      marginBottom: '10px',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     }}
                   >
                     {cat.category}
-                  </button>
-                ))}
-              </div>
-
-              {/* Active Stack Item Matrix */}
-              <div style={{ marginBottom: '24px' }}>
-                <div style={{ fontSize: '12px', fontWeight: 700, color: '#66615c', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '12px' }}>
-                  Verified Production Components
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '10px' }}>
-                  {techStack[activeCategoryIdx]?.items.map((tech) => (
-                    <div
-                      key={tech}
-                      style={{
-                        backgroundColor: '#ffffff',
-                        border: '1px solid #e4e2e1',
-                        borderRadius: '8px',
-                        padding: '12px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                      }}
-                    >
-                      <Zap size={14} color="#fe6200" />
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: '#000000' }}>
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                    {cat.items.map((tech) => (
+                      <span
+                        key={tech}
+                        style={{
+                          fontSize: '12px',
+                          fontWeight: 500,
+                          padding: '5px 14px',
+                          borderRadius: '9999px',
+                          backgroundColor: '#faf6f0',
+                          color: '#222222',
+                          border: '1px solid rgba(228, 226, 225, 0.8)',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
                         {tech}
                       </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div style={{ padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #fe6200' }}>
-              <span style={{ fontSize: '12.5px', color: '#66615c', lineHeight: 1.5, display: 'block' }}>
-                All dependencies audited against OWASP Top 10, automated CVE scanners, and cloud-native Kubernetes blueprints.
-              </span>
+              ))}
             </div>
           </div>
 
-          {/* Right Column: Editorial Deliverable Spec Table */}
-          <div
-            style={{
-              backgroundColor: 'transparent',
-              borderTop: '2px solid #059669',
-              paddingTop: '24px',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-            }}
-          >
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingBottom: '16px', borderBottom: '1px solid #e4e2e1', marginBottom: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <Package size={16} color="#059669" />
-                  <span style={{ fontSize: '13px', fontFamily: 'monospace', fontWeight: 700, color: '#059669' }}>
-                    CLIENT_HANDOVER_BLUEPRINT
-                  </span>
-                </div>
-                <span style={{ fontSize: '11px', color: '#66615c', fontWeight: 600 }}>100% IP Transfer</span>
-              </div>
+          {/* Right: Tangible Deliverables Handover */}
+          <div>
+            <div
+              style={{
+                fontSize: '11px',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#fe6200',
+                marginBottom: '16px',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              Handover Guarantee
+            </div>
+            <h3
+              style={{
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                fontSize: 'clamp(22px, 2.2vw, 28px)',
+                fontWeight: 700,
+                color: '#111111',
+                margin: '0 0 24px 0',
+                letterSpacing: '-0.015em',
+              }}
+            >
+              What You Actually Own & Receive
+            </h3>
 
-              {/* Linear Editorial Rows */}
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {deliverables.map((del, dIdx) => (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+              {deliverables.map((del, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '14px',
+                    paddingBottom: '18px',
+                    borderBottom: '1px solid #e4e2e1',
+                  }}
+                >
                   <div
-                    key={dIdx}
                     style={{
-                      padding: '16px 0',
-                      borderBottom: dIdx !== deliverables.length - 1 ? '1px solid #e4e2e1' : 'none',
+                      width: '26px',
+                      height: '26px',
+                      borderRadius: '50%',
+                      backgroundColor: 'rgba(254, 98, 0, 0.1)',
+                      color: '#fe6200',
                       display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '14px',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexShrink: 0,
+                      marginTop: '2px',
                     }}
                   >
-                    <div style={{ width: '28px', height: '28px', borderRadius: '8px', backgroundColor: 'rgba(5, 150, 105, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#059669', flexShrink: 0, marginTop: '2px' }}>
-                      <FileCode size={15} />
-                    </div>
-
-                    <div style={{ flex: 1 }}>
-                      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '8px', marginBottom: '4px' }}>
-                        <span style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                          {del.title}
-                        </span>
-                        <span style={{ fontSize: '11.5px', fontWeight: 600, color: '#66615c', fontFamily: 'monospace' }}>
-                          [{del.format}]
-                        </span>
-                      </div>
-                      <p style={{ fontSize: '13.5px', color: '#66615c', lineHeight: 1.55, margin: 0 }}>
-                        {del.description}
-                      </p>
-                    </div>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{ marginTop: '20px', padding: '14px 18px', backgroundColor: '#ffffff', borderRadius: '8px', border: '1px solid #e4e2e1', borderLeft: '3px solid #059669' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12.5px', fontWeight: 600, color: '#059669' }}>
-                <ShieldCheck size={14} />
-                <span>Zero vendor lock-in guarantee: Full repository ownership transferred on deployment.</span>
-              </div>
+                  <div>
+                    <h4
+                      style={{
+                        fontSize: '15.5px',
+                        fontWeight: 700,
+                        color: '#111111',
+                        margin: '0 0 4px 0',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      }}
+                    >
+                      {del.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontSize: '14px',
+                        color: '#66615c',
+                        lineHeight: 1.55,
+                        margin: 0,
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      }}
+                    >
+                      {del.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Responsive CSS */}
+        <style>{`
+          @media (max-width: 860px) {
+            .nm-tech-grid {
+              grid-template-columns: 1fr !important;
+              gap: 40px !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
 };
+
+export default ServiceTechnology;

@@ -1987,7 +1987,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
       'You own everything we build',
     ],
     overview: {
-      statement: 'Most development engagements start too late: after product decisions have already been made badly. We start at the beginning, where the highest-leverage product decisions are shaped.',
+      statement: 'Most development engagements start too late: after product decisions have already been made badly. We start at the beginning, where the highest-impact product decisions are shaped.',
       paragraphs: [
         'Product engineering means combining product thinking with engineering execution. We help you figure out what to build, then build it with architectural rigor rather than blindly executing a flawed brief.',
         'We have taken products from a napkin description to live, revenue-generating software. We know what questions to ask at each stage and what mistakes to avoid.',

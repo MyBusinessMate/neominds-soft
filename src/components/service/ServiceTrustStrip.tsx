@@ -14,7 +14,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
     'Enterprise-ready SLA',
     'SOC 2 & ISO 27001 Aligned',
     'Cloud-Native Architecture',
-    'Full IP & Source Code Transfer',
+    '100% IP & Source Code Handover',
   ],
 }) => {
   return (
@@ -25,7 +25,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
         padding: '36px 24px',
       }}
     >
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
         {/* 4 Quantified Metrics */}
         <RevealElement variant="card">
           <div
@@ -41,10 +41,10 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
               <div key={idx}>
                 <div
                   style={{
-                    fontSize: 'clamp(26px, 2.5vw, 34px)',
+                    fontSize: 'clamp(28px, 2.5vw, 36px)',
                     fontWeight: 800,
                     color: '#fe6200',
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                     lineHeight: 1,
                   }}
                 >
@@ -56,6 +56,7 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                     fontWeight: 600,
                     color: '#66615c',
                     marginTop: '6px',
+                    fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                   }}
                 >
                   {m.label}
@@ -83,9 +84,10 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                color: '#000000',
+                color: '#111111',
                 fontSize: '13.5px',
                 fontWeight: 600,
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               }}
             >
               {pIdx === 0 && <Award size={15} color="#fe6200" />}
@@ -100,3 +102,5 @@ export const ServiceTrustStrip: React.FC<ServiceTrustStripProps> = ({
     </section>
   );
 };
+
+export default ServiceTrustStrip;

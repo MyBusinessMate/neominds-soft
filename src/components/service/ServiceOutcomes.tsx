@@ -1,4 +1,4 @@
-import { Award } from 'lucide-react';
+import React from 'react';
 import { ServiceOutcome } from '../../types/service';
 import { ScrollReveal } from '../scroll-reveal';
 
@@ -8,68 +8,81 @@ interface ServiceOutcomesProps {
 }
 
 export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcomes }) => {
+  if (!outcomes || outcomes.length === 0) return null;
+
   return (
     <section
       style={{
         padding: 'clamp(64px, 7vw, 96px) 24px',
-        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
       }}
     >
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        {/* Editorial 2-Column Split: Big Headline & Context Left, Monolithic Statistic Strip Right */}
+      <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        {/* Editorial 2-Column Split: Big Headline & Context Left, Clean Metric Strip Right */}
         <div
+          className="nm-outcomes-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: '1fr 1fr',
             gap: 'clamp(36px, 6vw, 64px)',
-            alignItems: 'center',
+            alignItems: 'start',
           }}
         >
-          {/* Left Column: Value Vector Context */}
+          {/* Left Column: Context */}
           <div>
+            <div
+              style={{
+                fontSize: '11px',
+                fontWeight: 800,
+                letterSpacing: '0.14em',
+                color: '#fe6200',
+                textTransform: 'uppercase',
+                marginBottom: '14px',
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              Measurable Outcomes
+            </div>
+
             <ScrollReveal
               as="h2"
               style={{
-                fontSize: 'clamp(28px, 3.4vw, 44px)',
+                fontSize: 'clamp(32px, 4.4vw, 48px)',
                 fontWeight: 800,
                 color: '#000000',
-                fontFamily: 'var(--font-heading)',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                 lineHeight: 1.15,
-                marginBottom: '18px',
+                marginBottom: '16px',
+                letterSpacing: '-0.025em',
                 display: 'block',
               }}
               blurStrength={6}
             >
-              Quantified Impact Delivered in {title}
+              Real Numbers Delivered in {title}
             </ScrollReveal>
 
-            <p style={{ fontSize: '16px', color: '#333333',
-                lineHeight: 1.65, margin: '0 0 24px 0' }}>
-              We tie every architectural deliverable directly to bottom-line enterprise results. By engineering out latency, failure points, and operational friction, our partners experience sustained efficiency gains.
+            <p
+              style={{
+                fontSize: '15.5px',
+                color: '#55514c',
+                lineHeight: 1.65,
+                margin: 0,
+                fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              }}
+            >
+              We tie engineering work directly to business outcomes. Less downtime, faster load speeds, and systems that your in-house engineers can operate without calling outside consultants at 2 AM.
             </p>
-
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 14px', backgroundColor: '#f0ece2', borderRadius: '8px', fontSize: '13px', fontWeight: 600, color: '#000000' }}>
-              <Award size={15} color="#fe6200" />
-              <span>Verified against real-world client production benchmarks</span>
-            </div>
           </div>
 
-          {/* Right Column: Monolithic Monospace Metric Ledger (NOT rectangular cards) */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              borderTop: '1px solid #f0ece2',
-            }}
-          >
+          {/* Right Column: Clean Metric Ledger (Zero Cards, Clean Hairline Rows) */}
+          <div style={{ borderTop: '1px solid #e4e2e1' }}>
             {outcomes.map((item, idx) => (
               <div
                 key={idx}
                 style={{
-                  padding: '28px 0',
-                  borderBottom: '1px solid #f0ece2',
+                  padding: '24px 0',
+                  borderBottom: '1px solid #e4e2e1',
                   display: 'flex',
                   alignItems: 'baseline',
                   justifyContent: 'space-between',
@@ -77,20 +90,36 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
                 }}
               >
                 <div style={{ maxWidth: '360px' }}>
-                  <div style={{ fontSize: '16px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>
+                  <div
+                    style={{
+                      fontSize: '15.5px',
+                      fontWeight: 700,
+                      color: '#111111',
+                      marginBottom: '4px',
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    }}
+                  >
                     {item.label}
                   </div>
-                  <p style={{ fontSize: '13.5px', color: '#555555', lineHeight: 1.5, margin: 0 }}>
+                  <p
+                    style={{
+                      fontSize: '13.5px',
+                      color: '#66615c',
+                      lineHeight: 1.55,
+                      margin: 0,
+                      fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    }}
+                  >
                     {item.description}
                   </p>
                 </div>
 
                 <div
                   style={{
-                    fontSize: 'clamp(32px, 3.5vw, 46px)',
+                    fontSize: 'clamp(28px, 3.2vw, 42px)',
                     fontWeight: 800,
                     color: '#fe6200',
-                    fontFamily: 'var(--font-heading)',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                     lineHeight: 1,
                     textAlign: 'right',
                     flexShrink: 0,
@@ -102,7 +131,18 @@ export const ServiceOutcomes: React.FC<ServiceOutcomesProps> = ({ title, outcome
             ))}
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 860px) {
+            .nm-outcomes-grid {
+              grid-template-columns: 1fr !important;
+              gap: 32px !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
 };
+
+export default ServiceOutcomes;

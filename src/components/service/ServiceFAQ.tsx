@@ -11,34 +11,52 @@ interface ServiceFAQProps {
 export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(0);
 
+  if (!faqs || faqs.length === 0) return null;
+
   return (
     <section
       style={{
-        padding: 'clamp(64px, 7vw, 96px) 24px',
+        padding: 'clamp(64px, 7vw, 100px) 24px',
         backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-        borderTop: '1px solid #e4e2e1',
-        borderBottom: '1px solid #e4e2e1',
+        borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
       }}
     >
       <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+        {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+          <div
+            style={{
+              fontSize: '11px',
+              fontWeight: 800,
+              letterSpacing: '0.14em',
+              color: '#fe6200',
+              textTransform: 'uppercase',
+              marginBottom: '14px',
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+            }}
+          >
+            Clear Answers
+          </div>
+
           <ScrollReveal
             as="h2"
             style={{
-              fontSize: 'clamp(28px, 3.2vw, 38px)',
-              fontWeight: 400,
+              fontSize: 'clamp(32px, 4vw, 48px)',
+              fontWeight: 800,
               color: '#000000',
               fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-              lineHeight: 1.18,
+              lineHeight: 1.15,
+              margin: 0,
+              letterSpacing: '-0.025em',
               display: 'block',
             }}
             blurStrength={6}
           >
-            Frequently Asked Questions About {title}
+            Frequently Asked Questions About <span style={{ color: '#fe6200', fontStyle: 'italic' }}>{title}</span>
           </ScrollReveal>
         </div>
 
-        {/* Editorial Minimal Rule Accordion */}
+        {/* Editorial Minimal Rule Accordion (Zero Boxes, Zero White Background) */}
         <RevealElement variant="card">
           <div style={{ display: 'flex', flexDirection: 'column', borderTop: '1px solid #e4e2e1' }}>
             {faqs.map((faq, idx) => {
@@ -48,7 +66,6 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                   key={idx}
                   style={{
                     borderBottom: '1px solid #e4e2e1',
-                    transition: 'background-color 0.2s',
                   }}
                 >
                   <button
@@ -67,10 +84,25 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '16px', paddingRight: '16px' }}>
-                      <span style={{ fontSize: '13px', fontWeight: 600, color: isExpanded ? '#fe6200' : '#66615c', fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace" }}>
-                        Q0{idx + 1}
+                      <span
+                        style={{
+                          fontSize: '12.5px',
+                          fontWeight: 700,
+                          color: isExpanded ? '#fe6200' : '#88827c',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
+                        0{idx + 1}
                       </span>
-                      <span style={{ fontSize: '16.5px', fontWeight: 600, color: isExpanded ? '#fe6200' : '#000000', transition: 'color 0.2s' }}>
+                      <span
+                        style={{
+                          fontSize: '17px',
+                          fontWeight: 700,
+                          color: isExpanded ? '#fe6200' : '#111111',
+                          transition: 'color 0.2s',
+                          fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        }}
+                      >
                         {faq.question}
                       </span>
                     </div>
@@ -79,13 +111,13 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                       style={{
                         width: '28px',
                         height: '28px',
-                        borderRadius: '8px',
-                        border: isExpanded ? '1px solid #fe6200' : '1px solid #e4e2e1',
-                        backgroundColor: '#ffffff',
+                        borderRadius: '50%',
+                        border: isExpanded ? '1px solid #fe6200' : '1px solid #d0ccc0',
+                        backgroundColor: '#faf6f0',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        color: isExpanded ? '#fe6200' : '#1a1a1a',
+                        color: isExpanded ? '#fe6200' : '#55514c',
                         flexShrink: 0,
                       }}
                     >
@@ -97,10 +129,10 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
                     <div
                       style={{
                         padding: '0 8px 24px 44px',
+                        color: '#55514c',
                         fontSize: '15.5px',
-                        lineHeight: 1.7,
-                        color: '#333333',
-                        fontFamily: "var(--typography-body-family, 'Fustat'), sans-serif",
+                        lineHeight: 1.65,
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}
                     >
                       {faq.answer}
@@ -115,3 +147,5 @@ export const ServiceFAQ: React.FC<ServiceFAQProps> = ({ title, faqs }) => {
     </section>
   );
 };
+
+export default ServiceFAQ;

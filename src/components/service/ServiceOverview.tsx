@@ -17,36 +17,24 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
       style={{
         backgroundColor: 'var(--colors-surface-light, #f1efeb)',
         borderBottom: '1px solid var(--colors-border-light, #e4e2e1)',
-        padding: 'clamp(56px, 6.5vw, 88px) clamp(20px, 4vw, 48px)',
+        padding: 'clamp(64px, 7vw, 100px) 24px',
       }}
     >
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        {/* Editorial Eyebrow Tag */}
+      <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
+        {/* Editorial Eyebrow */}
         <RevealElement variant="text">
           <div
             style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
               fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.12em',
+              fontWeight: 800,
+              letterSpacing: '0.14em',
               textTransform: 'uppercase',
               color: '#fe6200',
               fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-              marginBottom: '16px',
+              marginBottom: '14px',
             }}
           >
-            <span
-              style={{
-                width: '6px',
-                height: '6px',
-                borderRadius: '50%',
-                backgroundColor: '#fe6200',
-                display: 'inline-block',
-              }}
-            />
-            Strategic Overview
+            Engineering Perspective
           </div>
         </RevealElement>
 
@@ -54,14 +42,14 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
         <ScrollReveal
           as="h2"
           style={{
-            fontSize: 'clamp(24px, 2.5vw, 34px)',
-            fontWeight: 700,
+            fontSize: 'clamp(28px, 3.4vw, 42px)',
+            fontWeight: 800,
             fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
             color: '#111111',
-            lineHeight: 1.32,
+            lineHeight: 1.25,
             letterSpacing: '-0.02em',
-            maxWidth: '980px',
-            marginBottom: 'clamp(32px, 4vw, 48px)',
+            maxWidth: '1000px',
+            marginBottom: 'clamp(36px, 4vw, 54px)',
             display: 'block',
           }}
           blurStrength={5}
@@ -69,12 +57,13 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
           {statement}
         </ScrollReveal>
 
-        {/* Balanced 2-Column Editorial Grid */}
+        {/* Balanced 2-Column Editorial Flow (Zero Cards, Zero Boxes) */}
         <div
+          className="nm-overview-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: 'clamp(32px, 4.5vw, 56px)',
+            gridTemplateColumns: '1.4fr 1fr',
+            gap: 'clamp(36px, 5vw, 64px)',
             alignItems: 'start',
           }}
         >
@@ -85,9 +74,9 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
                 <p
                   key={idx}
                   style={{
-                    fontSize: '16px',
+                    fontSize: '15.5px',
                     lineHeight: 1.75,
-                    color: '#333333',
+                    color: '#44403c',
                     fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     margin: 0,
                     fontWeight: 400,
@@ -99,25 +88,22 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
             </div>
           </RevealElement>
 
-          {/* Right Column: Utilitarian Key Takeaway Card */}
-          <RevealElement variant="card" delay={0.1}>
+          {/* Right Column: Clean Editorial Key Takeaway (No Box, Just Clean Accent Line) */}
+          <RevealElement variant="text" delay={0.1}>
             <div
               style={{
-                backgroundColor: '#faf8f5',
-                border: '1px solid #e4e2e1',
-                borderLeft: '3px solid #fe6200',
-                borderRadius: '8px',
-                padding: 'clamp(22px, 3vw, 28px)',
+                borderLeft: '2px solid #fe6200',
+                paddingLeft: '22px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '12px',
+                gap: '10px',
               }}
             >
               <span
                 style={{
                   fontSize: '11px',
-                  fontWeight: 700,
-                  letterSpacing: '0.1em',
+                  fontWeight: 800,
+                  letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   color: '#fe6200',
                   fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
@@ -125,15 +111,14 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
               >
                 Key Takeaway
               </span>
-
               <p
                 style={{
                   fontSize: '15.5px',
-                  fontWeight: 600,
+                  lineHeight: 1.7,
                   color: '#111111',
-                  lineHeight: 1.55,
-                  margin: 0,
                   fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                  margin: 0,
+                  fontWeight: 600,
                 }}
               >
                 {keyTakeaway}
@@ -141,7 +126,18 @@ export const ServiceOverview: React.FC<ServiceOverviewProps> = ({
             </div>
           </RevealElement>
         </div>
+
+        <style>{`
+          @media (max-width: 860px) {
+            .nm-overview-grid {
+              grid-template-columns: 1fr !important;
+              gap: 32px !important;
+            }
+          }
+        `}</style>
       </div>
     </section>
   );
 };
+
+export default ServiceOverview;

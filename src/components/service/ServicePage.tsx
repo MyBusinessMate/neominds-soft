@@ -31,7 +31,6 @@ import { ServiceHero } from './ServiceHero';
 import { ServiceTrustStrip } from './ServiceTrustStrip';
 import { ServiceOverview } from './ServiceOverview';
 import { ServiceCapabilities } from './ServiceCapabilities';
-import { ServiceSignature } from './ServiceSignature';
 import { ServiceProcess } from './ServiceProcess';
 import { ServiceTechnology } from './ServiceTechnology';
 import { ServiceOutcomes } from './ServiceOutcomes';
@@ -139,7 +138,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
   return (
     <div
       style={{
-        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
         color: '#000000',
         minHeight: '100vh',
         paddingTop: '64px',
@@ -189,9 +188,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({
         icon={ServiceIcon}
         styleVariant={data.capabilityStyle || 'bento-grid'}
       />
-
-      {/* Service-Specific Architecture / Workflow Signature */}
-      <ServiceSignature data={data.signature} />
 
       {/* 08. Process / How It Works */}
       <ServiceProcess title={data.title} steps={data.process} />
