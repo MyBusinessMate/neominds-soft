@@ -148,16 +148,16 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       }}
     >
       {/* ========================================================
-          FULL-CANVAS EDITORIAL CONTAINER (Standard 1280px Container)
+          FULL-CANVAS EDITORIAL CONTAINER (Standard 1360px Container)
           Utilizes full desktop canvas with a 2-column layout:
           Left: 70% Blog Article Content
           Right: 30% Sticky Editorial Sidebar & Specs
           ======================================================== */}
       <div
         style={{
-          maxWidth: '1280px',
+          maxWidth: '1360px',
           margin: '0 auto',
-          padding: '0 clamp(20px, 3.5vw, 40px) 80px',
+          padding: '0 clamp(20px, 3.5vw, 44px) 80px',
           boxSizing: 'border-box',
         }}
       >

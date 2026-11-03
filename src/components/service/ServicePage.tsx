@@ -95,9 +95,9 @@ export const ServicePage: React.FC<ServicePageProps> = ({
           ======================================================== */}
       <div
         style={{
-          maxWidth: '1280px',
+          maxWidth: '1360px',
           margin: '0 auto',
-          padding: '0 clamp(20px, 3.5vw, 40px) 80px',
+          padding: '0 clamp(20px, 3.5vw, 44px) 80px',
           boxSizing: 'border-box',
         }}
       >
@@ -740,7 +740,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               )}
             </section>
 
-            {/* Section 6: Operating Standards */}
+            {/* Section 6: Operating Standards (Balanced 2x2 Grid with Zero Wasted Space) */}
             {data.whyChooseThisService && (
               <section id="standards" style={{ marginBottom: '52px', borderTop: '1px solid #e4e2e1', paddingTop: '36px' }}>
                 <h2
@@ -750,20 +750,64 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     fontWeight: 800,
                     color: '#111111',
                     lineHeight: 1.25,
-                    margin: '0 0 16px 0',
+                    margin: '0 0 24px 0',
                     letterSpacing: '-0.02em',
                   }}
                 >
                   {data.whyChooseThisService.title}
                 </h2>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gap: '16px',
+                  }}
+                >
                   {data.whyChooseThisService.reasons.map((r, rIdx) => (
-                    <div key={rIdx} style={{ borderLeft: '2px solid #e4e2e1', paddingLeft: '16px' }}>
-                      <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#111111', margin: '0 0 6px 0' }}>
-                        {r.point}
-                      </h3>
-                      <p style={{ fontSize: '15.5px', lineHeight: 1.7, color: '#44403c', margin: 0 }}>
+                    <div
+                      key={rIdx}
+                      className="nm-corner-glow"
+                      style={{
+                        backgroundColor: '#ffffff',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        borderRadius: '12px',
+                        padding: '24px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between',
+                        boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        transition: 'transform 0.2s ease, border-color 0.2s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.4)';
+                        e.currentTarget.style.transform = 'translateY(-2px)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                        e.currentTarget.style.transform = 'none';
+                      }}
+                    >
+                      <div>
+                        <div
+                          style={{
+                            fontFamily: "var(--typography-mono-family, 'Geist Mono'), monospace",
+                            fontSize: '12px',
+                            fontWeight: 700,
+                            color: '#fe6200',
+                            marginBottom: '10px',
+                            letterSpacing: '0.05em',
+                          }}
+                        >
+                          0{rIdx + 1}
+                        </div>
+                        <h3 style={{ fontSize: '17px', fontWeight: 700, color: '#111111', margin: '0 0 8px 0', lineHeight: 1.35 }}>
+                          {r.point}
+                        </h3>
+                      </div>
+                      <p style={{ fontSize: '14.5px', lineHeight: 1.65, color: '#55514c', margin: 0 }}>
                         {r.detail}
                       </p>
                     </div>

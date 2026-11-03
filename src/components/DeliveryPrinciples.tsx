@@ -399,7 +399,7 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                         fontSize: 'clamp(38px, 3.4vw, 50px)',
                         fontWeight: 400,
-                        color: '#fe6200',
+                        color: idx === 1 ? '#fe6200' : '#000000',
                         lineHeight: 1.05,
                         letterSpacing: '-0.02em',
                         marginBottom: '10px',
