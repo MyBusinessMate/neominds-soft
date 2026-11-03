@@ -45,9 +45,7 @@ public/docs/
 # Scratch & Temporary Scripts / Agent Files
 scratch*
 serve.js
-scripts/*
-!scripts/prerender-seo.mjs
-!scripts/generate-seo-assets.mjs
+scripts/
 *.py
 ui-slop/
 
