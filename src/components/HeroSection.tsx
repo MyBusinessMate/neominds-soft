@@ -86,7 +86,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         overflow: 'hidden',
-        paddingTop: 'clamp(104px, 13.5vh, 150px)',
+        paddingTop: 'clamp(124px, 16vh, 175px)',
         paddingBottom: '0px',
       }}
     >
@@ -191,12 +191,12 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           gridTemplateColumns: 'minmax(460px, 1.15fr) minmax(420px, 0.85fr)',
           alignItems: 'center',
           gap: 'clamp(20px, 3.5vw, 48px)',
-          paddingTop: 'clamp(24px, 3.5vh, 48px)',
+          paddingTop: 'clamp(36px, 4.5vh, 60px)',
           paddingBottom: 'clamp(16px, 2.5vh, 32px)',
         }}
       >
         {/* Left Column: Headlines & CTA */}
-        <div style={{ maxWidth: '640px', position: 'relative', zIndex: 10, paddingTop: 'clamp(12px, 2vh, 28px)' }}>
+        <div style={{ maxWidth: '640px', position: 'relative', zIndex: 10, paddingTop: 'clamp(20px, 2.8vh, 40px)' }}>
           <h1
             ref={headlineRef}
             style={{

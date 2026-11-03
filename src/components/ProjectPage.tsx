@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, ReactNode } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
@@ -8,8 +8,6 @@ import {
   Layers,
   Cpu,
   Share2,
-  Clock,
-  BookOpen,
   Check,
   ShieldCheck,
   Sparkles,
@@ -46,6 +44,36 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
     }
   }, [projectId, project?.title]);
 
+  const renderFormattedText = (text?: string): ReactNode => {
+    if (!text) return '';
+    // Parse markdown ***bold italic***, **bold**, *italic*
+    const parts = text.split(/(\*\*\*[^*]+\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('***') && part.endsWith('***')) {
+        return (
+          <strong key={i} style={{ fontWeight: 700, fontStyle: 'italic', color: '#111111' }}>
+            {part.slice(3, -3)}
+          </strong>
+        );
+      }
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return (
+          <strong key={i} style={{ fontWeight: 700, color: '#111111' }}>
+            {part.slice(2, -2)}
+          </strong>
+        );
+      }
+      if (part.startsWith('*') && part.endsWith('*')) {
+        return (
+          <em key={i} style={{ fontStyle: 'italic', color: '#222222' }}>
+            {part.slice(1, -1)}
+          </em>
+        );
+      }
+      return part;
+    });
+  };
+
   const cleanMarkdown = (text?: string) => {
     if (!text) return '';
     return text.replace(/^[#*_\-\s]+/, '').replace(/[*_#]+/g, '').trim();
@@ -64,7 +92,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
           margin: idx === paras.length - 1 ? 0 : `0 0 ${marginBottom} 0`,
         }}
       >
-        {cleanMarkdown(p)}
+        {renderFormattedText(p.trim())}
       </p>
     ));
   };
@@ -201,43 +229,6 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             paddingBottom: '36px',
           }}
         >
-          {/* Eyebrow & Badges */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '16px',
-              flexWrap: 'wrap',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '11px',
-                fontWeight: 800,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: '#fe6200',
-                backgroundColor: '#fbf0e8',
-                padding: '4px 10px',
-                borderRadius: '4px',
-                fontFamily: 'monospace',
-              }}
-            >
-              {project.overview.industry || 'Enterprise Software'}
-            </span>
-            <span style={{ color: '#c4bfb6' }}>•</span>
-            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <BookOpen size={13} />
-              Production Case Study
-            </span>
-            <span style={{ color: '#c4bfb6' }}>•</span>
-            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Clock size={13} />
-              {cleanDuration} Delivery
-            </span>
-          </div>
-
           {/* Main Title */}
           <h1
             style={{
@@ -465,7 +456,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -494,7 +485,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -523,7 +514,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -552,7 +543,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -582,7 +573,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     fontWeight: 800,
                     textTransform: 'uppercase',
                     letterSpacing: '0.12em',
-                    color: '#fe6200',
+                    color: '#66615c',
                     marginBottom: '10px',
                   }}
                 >
@@ -607,30 +598,48 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     gap: '12px',
                   }}
                 >
-                  {project.keyFeatures.map((feat, idx) => (
-                    <div
-                      key={idx}
-                      style={{
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '12px',
-                        backgroundColor: '#ffffff',
-                        border: '1px solid rgba(0, 0, 0, 0.08)',
-                        borderRadius: '10px',
-                        padding: '14px 18px',
-                        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
-                      }}
-                    >
-                      <CheckCircle2
-                        size={17}
-                        color="#fe6200"
-                        style={{ flexShrink: 0, marginTop: '2px' }}
-                      />
-                      <span style={{ fontSize: '15px', color: '#1a1a1a', lineHeight: 1.55 }}>
-                        {feat.replace(/^[•\-\*]\s*/, '')}
-                      </span>
-                    </div>
-                  ))}
+                  {project.keyFeatures.map((feat, idx) => {
+                    const cleanFeat = feat.replace(/^[•\-\*]\s*/, '').trim();
+                    const dashIdx = cleanFeat.indexOf(' – ') !== -1 ? cleanFeat.indexOf(' – ') : cleanFeat.indexOf(' - ');
+                    let titlePart = '';
+                    let descPart = cleanFeat;
+                    if (dashIdx !== -1) {
+                      titlePart = cleanFeat.substring(0, dashIdx).trim();
+                      descPart = cleanFeat.substring(dashIdx + 3).trim();
+                    }
+                    return (
+                      <div
+                        key={idx}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '12px',
+                          backgroundColor: '#ffffff',
+                          border: '1px solid rgba(0, 0, 0, 0.08)',
+                          borderRadius: '10px',
+                          padding: '14px 18px',
+                          boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+                        }}
+                      >
+                        <CheckCircle2
+                          size={17}
+                          color="#111111"
+                          style={{ flexShrink: 0, marginTop: '2px' }}
+                        />
+                        <span style={{ fontSize: '15px', color: '#1a1a1a', lineHeight: 1.55 }}>
+                          {titlePart ? (
+                            <>
+                              <strong style={{ fontWeight: 700, color: '#111111' }}>{renderFormattedText(titlePart)}</strong>
+                              {' — '}
+                              <span>{renderFormattedText(descPart)}</span>
+                            </>
+                          ) : (
+                            renderFormattedText(cleanFeat)
+                          )}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </section>
             )}
@@ -643,7 +652,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -887,7 +896,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -920,7 +929,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 }}
               >
                 <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#66615c', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Efficiency
                   </div>
                   <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
@@ -929,7 +938,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 </div>
 
                 <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#66615c', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Time Saved
                   </div>
                   <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
@@ -938,7 +947,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 </div>
 
                 <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#66615c', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Cost Reduction
                   </div>
                   <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
@@ -947,7 +956,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 </div>
 
                 <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#66615c', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Performance
                   </div>
                   <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
@@ -956,7 +965,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 </div>
 
                 <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', gridColumn: '1 / -1', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#66615c', letterSpacing: '0.06em', marginBottom: '4px' }}>
                     Business Impact
                   </div>
                   <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.5 }}>
@@ -974,7 +983,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.12em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -983,7 +992,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               <div
                 style={{
                   backgroundColor: '#ffffff',
-                  borderLeft: '4px solid #fe6200',
+                  borderLeft: '4px solid #111111',
                   borderRadius: '0 12px 12px 0',
                   padding: '24px 28px',
                   boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
@@ -1001,7 +1010,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                 >
                   "{project.keyTakeaway}"
                 </p>
-                <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: 700, color: '#fe6200' }}>
+                <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: 700, fontStyle: 'italic', color: '#111111' }}>
                   — Neominds Lead Systems Architect
                 </div>
               </div>
@@ -1038,7 +1047,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '14px',
                   fontFamily: 'monospace',
                 }}
@@ -1244,7 +1253,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '8px',
                   fontFamily: 'monospace',
                 }}

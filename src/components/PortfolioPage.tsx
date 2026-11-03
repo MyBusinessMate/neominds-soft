@@ -139,10 +139,10 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                 fontFamily: 'monospace',
                 fontSize: '11.5px',
                 fontWeight: 700,
-                color: '#fe6200',
+                color: '#66615c',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                backgroundColor: '#f0ede6',
                 padding: '4px 12px',
                 borderRadius: '6px',
                 display: 'inline-block',
@@ -437,13 +437,13 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                               width: '38px',
                               height: '38px',
                               borderRadius: '8px',
-                              backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                              backgroundColor: '#f1ede6',
                               display: 'flex',
                               alignItems: 'center',
                               justifyContent: 'center',
                               fontSize: '13px',
                               fontWeight: 800,
-                              color: '#fe6200',
+                              color: '#111111',
                               fontFamily: 'monospace',
                             }}
                           >
@@ -468,8 +468,8 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                             fontWeight: 700,
                             textTransform: 'uppercase',
                             letterSpacing: '0.06em',
-                            color: '#fe6200',
-                            backgroundColor: 'rgba(254, 98, 0, 0.1)',
+                            color: '#55514c',
+                            backgroundColor: '#f0ede6',
                             padding: '3px 8px',
                             borderRadius: '6px',
                             fontFamily: 'monospace',
@@ -496,7 +496,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                         <span style={{ fontSize: '12px', color: '#66615c', fontWeight: 500 }}>
                           Timeline: <strong style={{ color: '#111111' }}>{timeline.split('(')[0].trim()}</strong>
                         </span>
-                        <span style={{ fontSize: '12px', color: '#fe6200', fontWeight: 700 }}>
+                        <span style={{ fontSize: '12px', color: '#111111', fontWeight: 700, fontStyle: 'italic' }}>
                           {cs.metric} {cs.metricLabel}
                         </span>
                       </div>

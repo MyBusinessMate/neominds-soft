@@ -5,8 +5,6 @@ import {
   Send,
   CheckCircle2,
   Calendar,
-  Clock,
-  BookOpen,
   Check,
   ChevronRight,
   ShieldCheck,
@@ -133,42 +131,6 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             ARTICLE HEADER (Full-Width Across 1280px)
             ======================================================== */}
         <header style={{ marginBottom: '40px', borderBottom: '1px solid #e4e2e1', paddingBottom: '32px' }}>
-          {/* Eyebrow & Read Time */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '16px',
-              flexWrap: 'wrap',
-            }}
-          >
-            <span
-              style={{
-                fontSize: '11px',
-                fontWeight: 800,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: '#fe6200',
-                backgroundColor: '#fbf0e8',
-                padding: '4px 10px',
-                borderRadius: '4px',
-              }}
-            >
-              {data.category}
-            </span>
-            <span style={{ color: '#c4bfb6' }}>•</span>
-            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <BookOpen size={13} />
-              Engineering Specification
-            </span>
-            <span style={{ color: '#c4bfb6' }}>•</span>
-            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
-              <Clock size={13} />
-              7 min read
-            </span>
-          </div>
-
           {/* Main Title */}
           <h1
             style={{
@@ -247,7 +209,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               <a
                 href="#service-contact"
                 style={{
-                  color: '#fe6200',
+                  color: '#111111',
                   textDecoration: 'none',
                   fontWeight: 700,
                   fontSize: '13.5px',
@@ -328,7 +290,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               style={{
                 backgroundColor: '#f7f4ed',
                 border: '1px solid #e6e2da',
-                borderLeft: '4px solid #fe6200',
+                borderLeft: '4px solid #111111',
                 borderRadius: '6px',
                 padding: '24px 28px',
                 marginBottom: '44px',
@@ -340,7 +302,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '10px',
                 }}
               >
@@ -375,7 +337,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                         fontSize: '20px',
                         fontWeight: 800,
-                        color: '#fe6200',
+                        color: '#111111',
                       }}
                     >
                       {m.value}
@@ -417,7 +379,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               {data.overview.keyTakeaway && (
                 <blockquote
                   style={{
-                    borderLeft: '3px solid #fe6200',
+                    borderLeft: '3px solid #111111',
                     padding: '8px 0 8px 20px',
                     margin: '28px 0',
                     fontSize: '18px',
@@ -458,7 +420,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                       margin: '18px 0',
                     }}
                   >
-                    <div style={{ fontSize: '11.5px', fontWeight: 800, textTransform: 'uppercase', color: '#fe6200', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '11.5px', fontWeight: 800, textTransform: 'uppercase', color: '#66615c', marginBottom: '4px' }}>
                       Direct Architectural Result
                     </div>
                     <div style={{ fontSize: '15.5px', fontWeight: 600, color: '#111111', lineHeight: 1.55 }}>
@@ -495,7 +457,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     <div
                       key={cIdx}
                       style={{
-                        borderLeft: '2px solid #fe6200',
+                        borderLeft: '2px solid #e4e2e1',
                         paddingLeft: '18px',
                       }}
                     >
@@ -503,7 +465,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                         style={{
                           fontSize: '11px',
                           fontWeight: 800,
-                          color: '#fe6200',
+                          color: '#66615c',
                           textTransform: 'uppercase',
                           letterSpacing: '0.1em',
                           marginBottom: '4px',
@@ -576,7 +538,8 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                             fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                             fontSize: '18px',
                             fontWeight: 800,
-                            color: '#fe6200',
+                            fontStyle: 'italic',
+                            color: '#111111',
                           }}
                         >
                           Stage 0{sIdx + 1}.
@@ -616,7 +579,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                       border: '1px solid #e6e2da',
                     }}
                   >
-                    <div style={{ fontSize: '12.5px', fontWeight: 800, textTransform: 'uppercase', color: '#fe6200', marginBottom: '4px' }}>
+                    <div style={{ fontSize: '12.5px', fontWeight: 800, textTransform: 'uppercase', color: '#66615c', marginBottom: '4px' }}>
                       Realistic Project Timeline: {data.timeline.totalDuration}
                     </div>
                     <div style={{ fontSize: '15px', color: '#44403c', lineHeight: 1.6 }}>
@@ -636,7 +599,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     fontWeight: 800,
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: '#fe6200',
+                    color: '#66615c',
                     marginBottom: '8px',
                   }}
                 >
@@ -659,7 +622,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
                 <div
                   style={{
-                    borderLeft: '3px solid #fe6200',
+                    borderLeft: '3px solid #111111',
                     paddingLeft: '18px',
                     marginBottom: '20px',
                   }}
@@ -695,7 +658,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
                         fontSize: '26px',
                         fontWeight: 800,
-                        color: '#fe6200',
+                        color: '#111111',
                         lineHeight: 1.1,
                       }}
                     >
@@ -749,7 +712,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {data.deliverables.map((del, dIdx) => (
                       <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '15.5px', lineHeight: 1.6, color: '#33312e' }}>
-                        <span style={{ color: '#fe6200', marginTop: '3px', flexShrink: 0 }}>
+                        <span style={{ color: '#111111', marginTop: '3px', flexShrink: 0 }}>
                           <Check size={16} strokeWidth={2.5} />
                         </span>
                         <div>
@@ -796,7 +759,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {data.whyChooseThisService.reasons.map((r, rIdx) => (
-                    <div key={rIdx} style={{ borderLeft: '2px solid #fe6200', paddingLeft: '16px' }}>
+                    <div key={rIdx} style={{ borderLeft: '2px solid #e4e2e1', paddingLeft: '16px' }}>
                       <h3 style={{ fontSize: '17.5px', fontWeight: 700, color: '#111111', margin: '0 0 6px 0' }}>
                         {r.point}
                       </h3>
@@ -857,7 +820,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     fontWeight: 800,
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: '#fe6200',
+                    color: '#66615c',
                     marginBottom: '8px',
                   }}
                 >
@@ -885,7 +848,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
               {isSubmitted ? (
                 <div style={{ padding: '24px 0', display: 'flex', alignItems: 'center', gap: '14px' }}>
-                  <div style={{ color: '#fe6200' }}>
+                  <div style={{ color: '#16a34a' }}>
                     <CheckCircle2 size={28} />
                   </div>
                   <div>
@@ -1081,7 +1044,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   fontWeight: 800,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '14px',
                 }}
               >
@@ -1225,7 +1188,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                     <div style={{ color: '#77726d', fontSize: '11.5px', textTransform: 'uppercase', fontWeight: 700 }}>
                       Typical Delivery Window
                     </div>
-                    <div style={{ fontWeight: 600, color: '#fe6200', marginTop: '2px' }}>
+                    <div style={{ fontWeight: 700, fontStyle: 'italic', color: '#111111', marginTop: '2px' }}>
                       {data.timeline.totalDuration}
                     </div>
                   </div>
@@ -1347,7 +1310,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   fontWeight: 800,
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: '#fe6200',
+                  color: '#66615c',
                   marginBottom: '6px',
                 }}
               >
