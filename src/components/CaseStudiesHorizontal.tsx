@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef, useState, useEffect, useCallback } from
 import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { getTechIconPath } from '../utils/techIcons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,6 +12,7 @@ interface CaseStudyCard {
   domainTag: string;
   metric: string;
   title: string;
+  techs: string[];
   gradient: string;
   borderColor: string;
   shadowColor: string;
@@ -19,11 +21,32 @@ interface CaseStudyCard {
 
 const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
+    id: 'flooring-inc-dashboard',
+    client: 'FLOORING.INC',
+    domainTag: 'E-Commerce AI & Analytics',
+    metric: '360° Real-Time Analytics',
+    title: '360° E-Commerce Analytics Dashboard & Groq AI Queries',
+    techs: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Groq'],
+    gradient: 'linear-gradient(155deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%)',
+    borderColor: 'rgba(99, 102, 241, 0.28)',
+    shadowColor: 'rgba(99, 102, 241, 0.16)',
+    watermark: (
+      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="20" y="60" width="16" height="40" rx="3" />
+        <rect x="44" y="42" width="16" height="58" rx="3" />
+        <rect x="68" y="24" width="16" height="76" rx="3" />
+        <rect x="92" y="50" width="16" height="50" rx="3" />
+        <path d="M15 104h90" />
+      </svg>
+    ),
+  },
+  {
     id: 'mindspace-mobile-app',
     client: 'MINDSPACE.AI',
-    domainTag: 'Healthcare AI',
-    metric: '3.4x Patient Velocity',
-    title: 'Healthcare Telehealth & Clinical Wellness Mobile App',
+    domainTag: 'Healthcare & GenAI',
+    metric: '24/7 AI Companion TARA',
+    title: 'Healthcare Mental Wellness & AI Companion Mobile Platform',
+    techs: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
     gradient: 'linear-gradient(155deg, #F5E8FF 0%, #EDE9FE 50%, #DDD6FE 100%)',
     borderColor: 'rgba(168, 85, 247, 0.28)',
     shadowColor: 'rgba(168, 85, 247, 0.16)',
@@ -35,28 +58,31 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
     ),
   },
   {
-    id: 'authenticom-ai-etl',
-    client: 'AUTHENTICOM',
-    domainTag: 'Automotive Data',
-    metric: '10M+ Daily Records',
-    title: 'Automotive Data Ingestion & Real-Time DMS Integration Platform',
-    gradient: 'linear-gradient(155deg, #E0F2FE 0%, #BAE6FD 50%, #93C5FD 100%)',
-    borderColor: 'rgba(14, 165, 233, 0.28)',
-    shadowColor: 'rgba(14, 165, 233, 0.16)',
+    id: 'nda-fintech-legacy',
+    client: 'FINANCIAL SERVICES',
+    domainTag: 'Enterprise FinTech',
+    metric: 'Zero Data Loss Migration',
+    title: 'Financial Systems Modernisation & Core Database Migration',
+    techs: ['Oracle', 'PostgreSQL', 'Python', 'Docker'],
+    gradient: 'linear-gradient(155deg, #ECFDF5 0%, #D1FAE5 50%, #A7F3D0 100%)',
+    borderColor: 'rgba(16, 185, 129, 0.28)',
+    shadowColor: 'rgba(16, 185, 129, 0.16)',
     watermark: (
       <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <ellipse cx="60" cy="30" rx="42" ry="16" />
-        <path d="M18 30v30c0 8.8 18.8 16 42 16s42-7.2 42-16V30" />
-        <path d="M18 60v30c0 8.8 18.8 16 42 16s42-7.2 42-16V60" />
+        <rect x="25" y="45" width="70" height="55" rx="6" />
+        <path d="M40 45V30a20 20 0 0 1 40 0v15" />
+        <circle cx="60" cy="72" r="6" />
+        <path d="M60 78v8" />
       </svg>
     ),
   },
   {
     id: 'fundbot-sql-chatbot',
     client: 'FUNDBOT',
-    domainTag: 'FinTech GenAI',
+    domainTag: 'FinTech AI Engine',
     metric: '98.5% Query Accuracy',
     title: 'Natural Language AI SQL Financial Query Engine',
+    techs: ['Python', 'FastAPI', 'OpenAI', 'PostgreSQL'],
     gradient: 'linear-gradient(155deg, #FEF9C3 0%, #FEF08A 50%, #FDE047 100%)',
     borderColor: 'rgba(234, 179, 8, 0.32)',
     shadowColor: 'rgba(234, 179, 8, 0.20)',
@@ -69,27 +95,30 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
     ),
   },
   {
-    id: 'trubridge-medical-ai',
-    client: 'TRUBRIDGE',
-    domainTag: 'HealthTech AI',
-    metric: '65% Faster Processing',
-    title: 'Automated Medical Coding & Claims Verification Engine',
-    gradient: 'linear-gradient(155deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%)',
-    borderColor: 'rgba(244, 63, 94, 0.28)',
-    shadowColor: 'rgba(244, 63, 94, 0.16)',
+    id: 'bytexl-lms',
+    client: 'BYTEXL',
+    domainTag: 'EdTech Platform',
+    metric: '100,000+ Active Students',
+    title: 'Enterprise Learning Management System & Higher Ed Platform',
+    techs: ['React', 'Node.js', 'MongoDB', 'AWS'],
+    gradient: 'linear-gradient(155deg, #E0F2FE 0%, #BAE6FD 50%, #93C5FD 100%)',
+    borderColor: 'rgba(14, 165, 233, 0.28)',
+    shadowColor: 'rgba(14, 165, 233, 0.16)',
     watermark: (
       <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M60 15L22 32v34c0 26 38 42 38 42s38-16 38-42V32L60 15z" />
-        <path d="M42 60l12 12 24-24" />
+        <path d="M60 20L15 45l45 25 45-25-45-25z" />
+        <path d="M25 51v35c0 10 15 18 35 18s35-8 35-18V51" />
+        <path d="M105 45v40" />
       </svg>
     ),
   },
   {
     id: 'dotcomweavers-project-buddy',
     client: 'DOTCOMWEAVERS',
-    domainTag: 'Enterprise AI',
+    domainTag: 'Enterprise AI Agent',
     metric: '40% Velocity Boost',
-    title: 'Autonomous Multi-Project AI Assistant & Velocity Engine',
+    title: 'Project Buddy Multi-Platform AI Knowledge Assistant',
+    techs: ['Python', 'FastAPI', 'Docker', 'Next.js'],
     gradient: 'linear-gradient(155deg, #FFEDD5 0%, #FED7AA 50%, #FDBA74 100%)',
     borderColor: 'rgba(249, 115, 22, 0.28)',
     shadowColor: 'rgba(249, 115, 22, 0.16)',
@@ -103,38 +132,19 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
     ),
   },
   {
-    id: 'adventr',
-    client: 'ADVENTR',
-    domainTag: 'Smart Video',
-    metric: '2.5M Interactive Views',
-    title: 'Interactive Smart-Video Generation & Analytics Suite',
-    gradient: 'linear-gradient(155deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%)',
-    borderColor: 'rgba(16, 185, 129, 0.28)',
-    shadowColor: 'rgba(16, 185, 129, 0.16)',
+    id: 'fero-invoice-automation',
+    client: 'FERO',
+    domainTag: 'Logistics AI & FinTech',
+    metric: '85% Automated Audits',
+    title: 'AI-Powered Freight Invoice Automation & Rate Audit',
+    techs: ['Python', 'FastAPI', 'PostgreSQL', 'Docker'],
+    gradient: 'linear-gradient(155deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%)',
+    borderColor: 'rgba(244, 63, 94, 0.28)',
+    shadowColor: 'rgba(244, 63, 94, 0.16)',
     watermark: (
       <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polygon points="50,40 80,60 50,80" fill="currentColor" fillOpacity="0.12" />
-        <circle cx="60" cy="60" r="45" />
-        <path d="M60 15v10M60 95v10M15 60h10M95 60h10" />
-      </svg>
-    ),
-  },
-  {
-    id: 'flooring-inc-dashboard',
-    client: 'FLOORING INC',
-    domainTag: 'E-Commerce Data',
-    metric: '99.99% Architecture Uptime',
-    title: 'High-Volume E-Commerce Inventory & Analytics Dashboard',
-    gradient: 'linear-gradient(155deg, #E0E7FF 0%, #C7D2FE 50%, #A5B4FC 100%)',
-    borderColor: 'rgba(99, 102, 241, 0.28)',
-    shadowColor: 'rgba(99, 102, 241, 0.16)',
-    watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="20" y="60" width="16" height="40" rx="3" />
-        <rect x="44" y="42" width="16" height="58" rx="3" />
-        <rect x="68" y="24" width="16" height="76" rx="3" />
-        <rect x="92" y="50" width="16" height="50" rx="3" />
-        <path d="M15 104h90" />
+        <path d="M30 20h40l25 25v55a5 5 0 0 1-5 5H30a5 5 0 0 1-5-5V25a5 5 0 0 1 5-5z" />
+        <path d="M45 65l10 10 20-20" />
       </svg>
     ),
   },
@@ -467,6 +477,42 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
                   <span>{card.metric}</span>
                 </div>
+
+                {/* Tech Stack SVGs */}
+                {card.techs && card.techs.length > 0 && (
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginTop: '12px' }}>
+                    {card.techs.map((tech) => {
+                      const icon = getTechIconPath(tech);
+                      return (
+                        <span
+                          key={tech}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '4px',
+                            fontSize: '11px',
+                            fontWeight: 600,
+                            padding: '3px 8px',
+                            borderRadius: '6px',
+                            backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                            border: '1px solid rgba(0, 0, 0, 0.07)',
+                            color: '#1a1a1a',
+                          }}
+                        >
+                          {icon && (
+                            <img
+                              src={icon}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                            />
+                          )}
+                          <span>{tech}</span>
+                        </span>
+                      );
+                    })}
+                  </div>
+                )}
               </div>
 
               <div
@@ -709,6 +755,42 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
                       <span>{card.metric}</span>
                     </div>
+
+                    {/* Tech Stack SVGs */}
+                    {card.techs && card.techs.length > 0 && (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '5px', flexWrap: 'wrap', marginTop: '10px' }}>
+                        {card.techs.map((tech) => {
+                          const icon = getTechIconPath(tech);
+                          return (
+                            <span
+                              key={tech}
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                                fontSize: '10.5px',
+                                fontWeight: 600,
+                                padding: '2px 7px',
+                                borderRadius: '5px',
+                                backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                                border: '1px solid rgba(0, 0, 0, 0.07)',
+                                color: '#1a1a1a',
+                              }}
+                            >
+                              {icon && (
+                                <img
+                                  src={icon}
+                                  alt=""
+                                  aria-hidden="true"
+                                  style={{ width: '12px', height: '12px', objectFit: 'contain' }}
+                                />
+                              )}
+                              <span>{tech}</span>
+                            </span>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
 
                   {/* Watermark Icon */}
@@ -1079,6 +1161,42 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
                     <span>{card.metric}</span>
                   </div>
+
+                  {/* Tech Stack SVGs */}
+                  {card.techs && card.techs.length > 0 && (
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap', marginTop: '12px' }}>
+                      {card.techs.map((tech) => {
+                        const icon = getTechIconPath(tech);
+                        return (
+                          <span
+                            key={tech}
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              fontSize: '11px',
+                              fontWeight: 600,
+                              padding: '3px 8px',
+                              borderRadius: '6px',
+                              backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                              border: '1px solid rgba(0, 0, 0, 0.07)',
+                              color: '#1a1a1a',
+                            }}
+                          >
+                            {icon && (
+                              <img
+                                src={icon}
+                                alt=""
+                                aria-hidden="true"
+                                style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                              />
+                            )}
+                            <span>{tech}</span>
+                          </span>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
 
                 {/* Watermark Icon */}

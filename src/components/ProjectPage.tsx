@@ -9,8 +9,10 @@ import {
   Layers,
   Cpu,
   Share2,
+  Clock,
 } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
+import { parseTechStackWithIcons } from '../utils/techIcons';
 import { PageType } from './Header';
 import { Testimonials } from './Testimonials';
 import { Footer } from './Footer';
@@ -288,11 +290,25 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </div>
 
             <div>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
                 Project Duration
               </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
-                {project.overview.projectDuration}
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '13.5px',
+                  fontWeight: 700,
+                  color: '#fe6200',
+                  backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                  border: '1px solid rgba(254, 98, 0, 0.16)',
+                  padding: '4px 10px',
+                  borderRadius: '6px',
+                }}
+              >
+                <Clock size={13} strokeWidth={2.5} />
+                <span>{project.overview.projectDuration}</span>
               </div>
             </div>
 
@@ -306,11 +322,38 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </div>
 
             <div style={{ gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
                 Technology Stack
               </div>
-              <div style={{ fontSize: '14.5px', color: '#000000', fontFamily: "'SF Mono', 'Geist Mono', monospace" }}>
-                {project.overview.technologyStack}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {parseTechStackWithIcons(project.overview.technologyStack).map((item, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      fontSize: '12.5px',
+                      fontWeight: 600,
+                      padding: '4px 10px',
+                      borderRadius: '6px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid #e5e0d8',
+                      color: '#1a1a1a',
+                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.03)',
+                    }}
+                  >
+                    {item.iconPath && (
+                      <img
+                        src={item.iconPath}
+                        alt=""
+                        aria-hidden="true"
+                        style={{ width: '15px', height: '15px', objectFit: 'contain' }}
+                      />
+                    )}
+                    <span>{item.name}</span>
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -619,14 +662,43 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <Code2 size={15} color="#fe6200" />
                   <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Frontend
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
                   {project.technologyImplementation.frontend}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {parseTechStackWithIcons(project.technologyImplementation.frontend).map((item, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        fontSize: '11.5px',
+                        fontWeight: 600,
+                        padding: '3px 8px',
+                        borderRadius: '5px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e5e0d8',
+                        color: '#1a1a1a',
+                      }}
+                    >
+                      {item.iconPath && (
+                        <img
+                          src={item.iconPath}
+                          alt=""
+                          aria-hidden="true"
+                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                        />
+                      )}
+                      <span>{item.name}</span>
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -638,14 +710,43 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <Layers size={15} color="#fe6200" />
                   <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Backend
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
                   {project.technologyImplementation.backend}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {parseTechStackWithIcons(project.technologyImplementation.backend).map((item, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        fontSize: '11.5px',
+                        fontWeight: 600,
+                        padding: '3px 8px',
+                        borderRadius: '5px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e5e0d8',
+                        color: '#1a1a1a',
+                      }}
+                    >
+                      {item.iconPath && (
+                        <img
+                          src={item.iconPath}
+                          alt=""
+                          aria-hidden="true"
+                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                        />
+                      )}
+                      <span>{item.name}</span>
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -657,14 +758,43 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                   <Database size={15} color="#fe6200" />
                   <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                     Database
                   </span>
                 </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
                   {project.technologyImplementation.database}
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {parseTechStackWithIcons(project.technologyImplementation.database).map((item, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '5px',
+                        fontSize: '11.5px',
+                        fontWeight: 600,
+                        padding: '3px 8px',
+                        borderRadius: '5px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid #e5e0d8',
+                        color: '#1a1a1a',
+                      }}
+                    >
+                      {item.iconPath && (
+                        <img
+                          src={item.iconPath}
+                          alt=""
+                          aria-hidden="true"
+                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                        />
+                      )}
+                      <span>{item.name}</span>
+                    </span>
+                  ))}
                 </div>
               </div>
 
@@ -677,14 +807,43 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                     backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                     <Cpu size={15} color="#fe6200" />
                     <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
                       AI / Automation
                     </span>
                   </div>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000' }}>
+                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
                     {project.technologyImplementation.aiAutomation}
+                  </div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                    {parseTechStackWithIcons(project.technologyImplementation.aiAutomation).map((item, idx) => (
+                      <span
+                        key={idx}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          fontSize: '11.5px',
+                          fontWeight: 600,
+                          padding: '3px 8px',
+                          borderRadius: '5px',
+                          backgroundColor: '#ffffff',
+                          border: '1px solid #e5e0d8',
+                          color: '#1a1a1a',
+                        }}
+                      >
+                        {item.iconPath && (
+                          <img
+                            src={item.iconPath}
+                            alt=""
+                            aria-hidden="true"
+                            style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                          />
+                        )}
+                        <span>{item.name}</span>
+                      </span>
+                    ))}
                   </div>
                 </div>
               )}
