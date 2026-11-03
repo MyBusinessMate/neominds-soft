@@ -34,10 +34,31 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
     return getUnifiedProject(projectId);
   }, [projectId]);
 
-  // Scroll to top when project ID changes
+  // Scroll to top and update document title when project ID changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [projectId]);
+    if (project?.title) {
+      document.title = `${project.title} | Neominds Enterprise Case Studies`;
+    }
+  }, [projectId, project?.title]);
+
+  const renderParagraphs = (text: string, marginBottom = '16px') => {
+    if (!text) return null;
+    const paras = text.split(/\n\n+/).filter(Boolean);
+    return paras.map((p, idx) => (
+      <p
+        key={idx}
+        style={{
+          fontSize: '16px',
+          lineHeight: 1.7,
+          color: '#2f3437',
+          margin: idx === paras.length - 1 ? 0 : `0 0 ${marginBottom} 0`,
+        }}
+      >
+        {p}
+      </p>
+    ));
+  };
 
   // Companion related projects
   const companionProjects = useMemo(() => {
@@ -398,16 +419,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </span>
             Client Context
           </h2>
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              margin: 0,
-            }}
-          >
-            {project.clientContext}
-          </p>
+          {renderParagraphs(project.clientContext)}
         </section>
 
         {/* ----------------------------------------------------
@@ -438,16 +450,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </span>
             The Challenge
           </h2>
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              margin: 0,
-            }}
-          >
-            {project.challenge}
-          </p>
+          {renderParagraphs(project.challenge)}
         </section>
 
         {/* ----------------------------------------------------
@@ -478,16 +481,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </span>
             Project Constraints
           </h2>
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              margin: 0,
-            }}
-          >
-            {project.constraints}
-          </p>
+          {renderParagraphs(project.constraints)}
         </section>
 
         {/* ----------------------------------------------------
@@ -518,16 +512,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </span>
             Our Approach
           </h2>
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              margin: 0,
-            }}
-          >
-            {project.approach}
-          </p>
+          {renderParagraphs(project.approach)}
         </section>
 
         {/* ----------------------------------------------------
@@ -558,16 +543,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             </span>
             The Solution
           </h2>
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              marginBottom: '28px',
-            }}
-          >
-            {project.solution}
-          </p>
+          <div style={{ marginBottom: '28px' }}>
+            {renderParagraphs(project.solution)}
+          </div>
 
           {/* Key Features and Capabilities */}
           <div
@@ -899,16 +877,9 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             Results and Business Impact
           </h2>
 
-          <p
-            style={{
-              fontSize: '16px',
-              lineHeight: 1.7,
-              color: '#2f3437',
-              marginBottom: '24px',
-            }}
-          >
-            {project.resultsAndImpact.summary}
-          </p>
+          <div style={{ marginBottom: '24px' }}>
+            {renderParagraphs(project.resultsAndImpact.summary)}
+          </div>
 
           {/* 5-Item Verified Impact Grid */}
           <div
