@@ -2,14 +2,18 @@ import React, { useState, useEffect, useMemo } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
-  Check,
-  ChevronRight,
+  CheckCircle2,
   Code2,
   Database,
   Layers,
   Cpu,
   Share2,
   Clock,
+  BookOpen,
+  Check,
+  ShieldCheck,
+  Sparkles,
+  ArrowUpRight,
 } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
 import { parseTechStackWithIcons } from '../utils/techIcons';
@@ -42,20 +46,25 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
     }
   }, [projectId, project?.title]);
 
-  const renderParagraphs = (text: string, marginBottom = '16px') => {
+  const cleanMarkdown = (text?: string) => {
+    if (!text) return '';
+    return text.replace(/^[#*_\-\s]+/, '').replace(/[*_#]+/g, '').trim();
+  };
+
+  const renderParagraphs = (text: string, marginBottom = '18px') => {
     if (!text) return null;
     const paras = text.split(/\n\n+/).filter(Boolean);
     return paras.map((p, idx) => (
       <p
         key={idx}
         style={{
-          fontSize: '16px',
-          lineHeight: 1.7,
-          color: '#2f3437',
+          fontSize: '16.5px',
+          lineHeight: 1.75,
+          color: '#333333',
           margin: idx === paras.length - 1 ? 0 : `0 0 ${marginBottom} 0`,
         }}
       >
-        {p}
+        {cleanMarkdown(p)}
       </p>
     ));
   };
@@ -73,14 +82,15 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } else if (typeof navigator !== 'undefined' && navigator.share) {
-      navigator.share({
-        title: project.title,
-        text: project.overview.services,
-        url: window.location.href,
-      }).catch(() => {});
+      navigator
+        .share({
+          title: project.title,
+          text: project.overview.services,
+          url: window.location.href,
+        })
+        .catch(() => {});
     }
   };
-
 
   const handleDiscussClick = () => {
     if (onOpenContact) {
@@ -90,1243 +100,1249 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
     }
   };
 
+  const techStackList = useMemo(() => {
+    return parseTechStackWithIcons(project.overview.technologyStack);
+  }, [project.overview.technologyStack]);
+
+  const cleanDuration = useMemo(() => {
+    if (!project.overview.projectDuration) return '3–4 Months';
+    return project.overview.projectDuration.split('(')[0].trim();
+  }, [project.overview.projectDuration]);
+
   return (
     <article
       style={{
-        backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-        color: '#000000',
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        color: '#111111',
         minHeight: '100vh',
-        paddingTop: '80px',
-        fontFamily: "-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist Sans', 'Inter', sans-serif",
-        WebkitFontSmoothing: 'antialiased',
+        paddingTop: '124px', // Generous space so floating header never overlaps
+        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
       }}
     >
       {/* ========================================================
-          TOP ACTION BAR (Apple HIG / Freehand Navigation)
+          FULL-CANVAS EDITORIAL CONTAINER (Standard 1280px Container)
+          Utilizes full desktop canvas with a 2-column layout:
+          Left: 70% Blog Article Content
+          Right: 30% Sticky Editorial Sidebar & Specs
           ======================================================== */}
-      <nav
-        aria-label="Navigation"
+      <div
         style={{
-          borderBottom: '1px solid #f0ece2',
-          backgroundColor: 'rgba(251, 249, 245, 0.95)',
-          backdropFilter: 'blur(12px)',
-          position: 'sticky',
-          top: '64px',
-          zIndex: 40,
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '0 clamp(20px, 3.5vw, 40px) 80px',
+          boxSizing: 'border-box',
         }}
       >
+        {/* Back Link */}
         <div
           style={{
-            maxWidth: '1080px',
-            margin: '0 auto',
-            padding: '12px 24px',
+            marginBottom: '24px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '16px',
-            fontSize: '13px',
+            flexWrap: 'wrap',
+            gap: '12px',
           }}
         >
           <button
             onClick={() => onNavigatePage('portfolio')}
             style={{
-              background: 'none',
-              border: 'none',
-              color: '#555555',
-              cursor: 'pointer',
-              padding: '6px 0',
-              minHeight: '44px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              fontWeight: 500,
-              fontSize: '14px',
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#a3a09b')}
-          >
-            <ArrowLeft size={16} /> Back to Projects & Case Studies
-          </button>
-
-          <button
-            onClick={handleShare}
-            aria-label="Share this project case study"
-            style={{
-              background: '#fbf9f5',
-              border: '1px solid #f0ece2',
-              color: '#000000',
-              borderRadius: '8px',
-              padding: '8px 16px',
-              minHeight: '40px',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              cursor: 'pointer',
-              fontSize: '13px',
-              fontWeight: 500,
-              transition: 'border-color 0.2s, background-color 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = '#fe6200';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = '#f0ece2';
-            }}
-          >
-            <Share2 size={14} /> Share
-          </button>
-        </div>
-      </nav>
-
-      {/* ========================================================
-          PAGE HEADER: [Project Name]. Case Study
-          ======================================================== */}
-      <header
-        style={{
-          maxWidth: '1080px',
-          margin: '0 auto',
-          padding: 'clamp(36px, 5vw, 64px) 24px 24px',
-        }}
-      >
-        <h1
-          style={{
-            fontSize: 'clamp(28px, 4.5vw, 48px)',
-            fontWeight: 800,
-            lineHeight: 1.15,
-            letterSpacing: '-0.025em',
-            color: '#000000',
-            margin: '0 0 20px 0',
-          }}
-        >
-          {project.title}
-        </h1>
-
-        <p
-          style={{
-            fontSize: 'clamp(16px, 1.8vw, 19px)',
-            lineHeight: 1.6,
-            color: '#555555',
-            margin: '0 0 24px 0',
-            maxWidth: '820px',
-          }}
-        >
-          {project.solution}
-        </p>
-
-        <div>
-          <button
-            onClick={handleShare}
-            aria-label="Share case study link"
-            style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '8px 18px',
-              fontSize: '13px',
+              backgroundColor: 'transparent',
+              border: 'none',
+              color: '#77726d',
+              fontSize: '13.5px',
               fontWeight: 600,
-              color: copied ? '#15803d' : '#1a1a1a',
-              backgroundColor: copied ? '#f0fdf4' : '#faf8f5',
-              border: copied ? '1px solid #86efac' : '1px solid #f0ece2',
-              borderRadius: '8px',
               cursor: 'pointer',
+              padding: 0,
+              fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#77726d')}
+          >
+            <ArrowLeft size={16} />
+            <span>All Case Studies & Projects</span>
+          </button>
+
+          <button
+            onClick={handleShare}
+            aria-label="Share this case study"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              backgroundColor: copied ? '#f0fdf4' : '#ffffff',
+              border: copied ? '1px solid #86efac' : '1px solid rgba(0, 0, 0, 0.08)',
+              borderRadius: '8px',
+              padding: '6px 14px',
+              fontSize: '12.5px',
+              fontWeight: 600,
+              color: copied ? '#15803d' : '#444444',
+              cursor: 'pointer',
+              boxShadow: '0 2px 4px rgba(0, 0, 0, 0.02)',
               transition: 'all 0.15s ease',
             }}
           >
-            {copied ? <Check size={14} /> : <Share2 size={14} />}
-            <span>{copied ? 'Link Copied to Clipboard' : 'Share Case Study'}</span>
+            {copied ? <Check size={13} /> : <Share2 size={13} />}
+            <span>{copied ? 'Link Copied' : 'Share Case Study'}</span>
           </button>
         </div>
-      </header>
 
-
-      {/* ========================================================
-          PROJECT OVERVIEW (Bento Meta Grid)
-          ======================================================== */}
-      <section
-        aria-labelledby="overview-heading"
-        style={{
-          maxWidth: '1080px',
-          margin: '0 auto 48px',
-          padding: '0 24px',
-        }}
-      >
-        <div
+        {/* ========================================================
+            ARTICLE HEADER (Full-Width Across 1280px)
+            ======================================================== */}
+        <header
           style={{
-            backgroundColor: '#fafafa',
-            border: '1px solid #f0ece2',
-            borderRadius: '8px',
-            padding: 'clamp(20px, 3vw, 32px)',
+            marginBottom: '40px',
+            borderBottom: '1px solid #e4e2e1',
+            paddingBottom: '36px',
           }}
         >
-          <h2
-            id="overview-heading"
-            style={{
-              fontFamily: "'SF Mono', 'Geist Mono', monospace",
-              fontSize: '13px',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              color: '#000000',
-              marginBottom: '20px',
-              paddingBottom: '12px',
-              borderBottom: '1px solid #f0ece2',
-            }}
-          >
-            Project Overview
-          </h2>
-
+          {/* Eyebrow & Badges */}
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-              gap: '20px 28px',
-            }}
-          >
-            <div>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Client
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                {project.overview.client}
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Industry
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
-                {project.overview.industry}
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Project Type
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
-                {project.overview.projectType}
-              </div>
-            </div>
-
-            <div>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '6px' }}>
-                Project Duration
-              </div>
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  fontSize: '13.5px',
-                  fontWeight: 700,
-                  color: '#fe6200',
-                  backgroundColor: 'rgba(254, 98, 0, 0.08)',
-                  border: '1px solid rgba(254, 98, 0, 0.16)',
-                  padding: '4px 10px',
-                  borderRadius: '6px',
-                }}
-              >
-                <Clock size={13} strokeWidth={2.5} />
-                <span>{project.overview.projectDuration}</span>
-              </div>
-            </div>
-
-            <div style={{ gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Services Delivered
-              </div>
-              <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#fe6200' }}>
-                {project.overview.services}
-              </div>
-            </div>
-
-            <div style={{ gridColumn: '1 / -1' }}>
-              <div style={{ fontSize: '12px', color: '#555555', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '8px' }}>
-                Technology Stack
-              </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {parseTechStackWithIcons(project.overview.technologyStack).map((item, idx) => (
-                  <span
-                    key={idx}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      fontSize: '12.5px',
-                      fontWeight: 600,
-                      padding: '4px 10px',
-                      borderRadius: '6px',
-                      backgroundColor: '#ffffff',
-                      border: '1px solid #e5e0d8',
-                      color: '#1a1a1a',
-                      boxShadow: '0 1px 3px rgba(0, 0, 0, 0.03)',
-                    }}
-                  >
-                    {item.iconPath && (
-                      <img
-                        src={item.iconPath}
-                        alt=""
-                        aria-hidden="true"
-                        style={{ width: '15px', height: '15px', objectFit: 'contain' }}
-                      />
-                    )}
-                    <span>{item.name}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ========================================================
-          MAIN ARTICLE CONTENT: 7 NUMBERED SECTIONS
-          ======================================================== */}
-      <main
-        style={{
-          maxWidth: '880px',
-          margin: '0 auto',
-          padding: '0 24px 80px',
-        }}
-      >
-        {/* ----------------------------------------------------
-            1. Client Context
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
               display: 'flex',
               alignItems: 'center',
-              gap: '10px',
+              gap: '12px',
+              marginBottom: '16px',
+              flexWrap: 'wrap',
             }}
           >
             <span
               style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
+                fontSize: '11px',
+                fontWeight: 800,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
                 color: '#fe6200',
-                fontWeight: 700,
+                backgroundColor: '#fbf0e8',
+                padding: '4px 10px',
+                borderRadius: '4px',
+                fontFamily: 'monospace',
               }}
             >
-              1.
+              {project.overview.industry || 'Enterprise Software'}
             </span>
-            Client Context
-          </h2>
-          {renderParagraphs(project.clientContext)}
-        </section>
-
-        {/* ----------------------------------------------------
-            2. The Challenge
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
-              }}
-            >
-              2.
+            <span style={{ color: '#c4bfb6' }}>•</span>
+            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <BookOpen size={13} />
+              Production Case Study
             </span>
-            The Challenge
-          </h2>
-          {renderParagraphs(project.challenge)}
-        </section>
-
-        {/* ----------------------------------------------------
-            3. Project Constraints
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
-              }}
-            >
-              3.
+            <span style={{ color: '#c4bfb6' }}>•</span>
+            <span style={{ fontSize: '13px', color: '#77726d', display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <Clock size={13} />
+              {cleanDuration} Delivery
             </span>
-            Project Constraints
-          </h2>
-          {renderParagraphs(project.constraints)}
-        </section>
-
-        {/* ----------------------------------------------------
-            4. Our Approach
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '48px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
-              }}
-            >
-              4.
-            </span>
-            Our Approach
-          </h2>
-          {renderParagraphs(project.approach)}
-        </section>
-
-        {/* ----------------------------------------------------
-            5. The Solution
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '56px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
-              }}
-            >
-              5.
-            </span>
-            The Solution
-          </h2>
-          <div style={{ marginBottom: '28px' }}>
-            {renderParagraphs(project.solution)}
           </div>
 
-          {/* Key Features and Capabilities */}
+          {/* Main Title */}
+          <h1
+            style={{
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              fontSize: 'clamp(34px, 4.4vw, 54px)',
+              fontWeight: 800,
+              color: '#000000',
+              lineHeight: 1.15,
+              letterSpacing: '-0.025em',
+              margin: '0 0 18px 0',
+              maxWidth: '1080px',
+            }}
+          >
+            {project.projectName || project.title}
+          </h1>
+
+          {/* Subtitle / Executive Lead */}
+          <p
+            style={{
+              fontSize: 'clamp(18px, 1.25vw, 21px)',
+              lineHeight: 1.6,
+              color: '#3f3b37',
+              margin: '0 0 28px 0',
+              fontWeight: 400,
+              maxWidth: '980px',
+            }}
+          >
+            {project.solution}
+          </p>
+
+          {/* 3 Metric Strip with Corner Glow (Exact Match to ExperienceSection) */}
           <div
+            className="nm-corner-glow"
             style={{
-              backgroundColor: '#fafafa',
-              border: '1px solid #f0ece2',
-              borderRadius: '8px',
-              padding: '28px',
-              marginBottom: '32px',
+              maxWidth: '860px',
+              backgroundColor: '#ffffff',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
+              borderRadius: '12px',
+              boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
+              position: 'relative',
+              overflow: 'hidden',
+              marginBottom: '28px',
             }}
           >
-            <h3
-              style={{
-                fontSize: '16px',
-                fontWeight: 700,
-                color: '#000000',
-                marginBottom: '16px',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              Key Features and Capabilities
-            </h3>
-            <ul
-              style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '12px',
-              }}
-            >
-              {project.keyFeatures.map((feature, idx) => (
-                <li
-                  key={idx}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '12px',
-                    fontSize: '15px',
-                    lineHeight: 1.55,
-                    color: '#000000',
-                  }}
-                >
-                  <span
-                    style={{
-                      width: '20px',
-                      height: '20px',
-                      borderRadius: '50%',
-                      backgroundColor: 'rgba(254, 98, 0, 0.15)',
-                      color: '#fe6200',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      flexShrink: 0,
-                      marginTop: '2px',
-                    }}
-                  >
-                    <Check size={12} strokeWidth={2.5} />
-                  </span>
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Technology and Implementation */}
-          <div>
-            <h3
-              style={{
-                fontSize: '16px',
-                fontWeight: 700,
-                color: '#000000',
-                marginBottom: '16px',
-                letterSpacing: '-0.01em',
-              }}
-            >
-              Technology and Implementation
-            </h3>
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '14px',
+                gridTemplateColumns: 'repeat(3, 1fr)',
+                alignItems: 'stretch',
+                width: '100%',
+                position: 'relative',
+                zIndex: 2,
               }}
             >
+              {/* Metric 1 */}
               <div
                 style={{
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '12px',
-                  padding: '18px',
-                  backgroundColor: '#ffffff',
-                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                  padding: 'clamp(18px, 2.2vh, 24px) clamp(12px, 1.5vw, 20px)',
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <Code2 size={15} color="#fe6200" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
-                    Frontend
-                  </span>
-                </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
-                  {project.technologyImplementation.frontend}
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {parseTechStackWithIcons(project.technologyImplementation.frontend).map((item, idx) => (
-                    <span
-                      key={idx}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        fontSize: '11.5px',
-                        fontWeight: 600,
-                        padding: '3px 8px',
-                        borderRadius: '5px',
-                        backgroundColor: '#fbf9f5',
-                        border: '1px solid #e5e0d8',
-                        color: '#1a1a1a',
-                      }}
-                    >
-                      {item.iconPath && (
-                        <img
-                          src={item.iconPath}
-                          alt=""
-                          aria-hidden="true"
-                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
-                        />
-                      )}
-                      <span>{item.name}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div
-                style={{
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '12px',
-                  padding: '18px',
-                  backgroundColor: '#ffffff',
-                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <Layers size={15} color="#fe6200" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
-                    Backend
-                  </span>
-                </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
-                  {project.technologyImplementation.backend}
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {parseTechStackWithIcons(project.technologyImplementation.backend).map((item, idx) => (
-                    <span
-                      key={idx}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        fontSize: '11.5px',
-                        fontWeight: 600,
-                        padding: '3px 8px',
-                        borderRadius: '5px',
-                        backgroundColor: '#fbf9f5',
-                        border: '1px solid #e5e0d8',
-                        color: '#1a1a1a',
-                      }}
-                    >
-                      {item.iconPath && (
-                        <img
-                          src={item.iconPath}
-                          alt=""
-                          aria-hidden="true"
-                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
-                        />
-                      )}
-                      <span>{item.name}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div
-                style={{
-                  border: '1px solid rgba(0, 0, 0, 0.08)',
-                  borderRadius: '12px',
-                  padding: '18px',
-                  backgroundColor: '#ffffff',
-                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <Database size={15} color="#fe6200" />
-                  <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
-                    Database
-                  </span>
-                </div>
-                <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
-                  {project.technologyImplementation.database}
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                  {parseTechStackWithIcons(project.technologyImplementation.database).map((item, idx) => (
-                    <span
-                      key={idx}
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '5px',
-                        fontSize: '11.5px',
-                        fontWeight: 600,
-                        padding: '3px 8px',
-                        borderRadius: '5px',
-                        backgroundColor: '#fbf9f5',
-                        border: '1px solid #e5e0d8',
-                        color: '#1a1a1a',
-                      }}
-                    >
-                      {item.iconPath && (
-                        <img
-                          src={item.iconPath}
-                          alt=""
-                          aria-hidden="true"
-                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
-                        />
-                      )}
-                      <span>{item.name}</span>
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {project.technologyImplementation.aiAutomation && (
                 <div
                   style={{
-                    border: '1px solid rgba(0, 0, 0, 0.08)',
-                    borderRadius: '12px',
-                    padding: '18px',
-                    backgroundColor: '#ffffff',
-                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: 'clamp(28px, 2.8vw, 38px)',
+                    fontWeight: 400,
+                    color: '#000000',
+                    lineHeight: 1.1,
+                    marginBottom: '4px',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                    <Cpu size={15} color="#fe6200" />
-                    <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
-                      AI / Automation
-                    </span>
-                  </div>
-                  <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
-                    {project.technologyImplementation.aiAutomation}
-                  </div>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                    {parseTechStackWithIcons(project.technologyImplementation.aiAutomation).map((item, idx) => (
-                      <span
-                        key={idx}
-                        style={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          gap: '5px',
-                          fontSize: '11.5px',
-                          fontWeight: 600,
-                          padding: '3px 8px',
-                          borderRadius: '5px',
-                          backgroundColor: '#fbf9f5',
-                          border: '1px solid #e5e0d8',
-                          color: '#1a1a1a',
-                        }}
-                      >
-                        {item.iconPath && (
-                          <img
-                            src={item.iconPath}
-                            alt=""
-                            aria-hidden="true"
-                            style={{ width: '13px', height: '13px', objectFit: 'contain' }}
-                          />
-                        )}
-                        <span>{item.name}</span>
-                      </span>
-                    ))}
-                  </div>
+                  {cleanDuration}
                 </div>
-              )}
-
-              {project.technologyImplementation.integrations && (
                 <div
                   style={{
-                    border: '1px solid rgba(0, 0, 0, 0.08)',
-                    borderRadius: '12px',
-                    padding: '18px',
-                    backgroundColor: '#ffffff',
-                    gridColumn: '1 / -1',
-                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    fontSize: '11px',
+                    color: '#66615c',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
                   }}
                 >
-                  <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '6px' }}>
-                    Integrations
-                  </div>
-                  <div style={{ fontSize: '14px', fontWeight: 500, color: '#000000' }}>
-                    {project.technologyImplementation.integrations}
-                  </div>
+                  Project Timeline
                 </div>
-              )}
+              </div>
+
+              {/* Metric 2 with Thin Orange Vertical Dividers */}
+              <div
+                style={{
+                  padding: 'clamp(18px, 2.2vh, 24px) clamp(12px, 1.5vw, 20px)',
+                  textAlign: 'center',
+                  borderLeft: '1px solid rgba(254, 98, 0, 0.35)',
+                  borderRight: '1px solid rgba(254, 98, 0, 0.35)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: 'clamp(28px, 2.8vw, 38px)',
+                    fontWeight: 400,
+                    color: '#fe6200',
+                    lineHeight: 1.1,
+                    marginBottom: '4px',
+                  }}
+                >
+                  {project.resultsAndImpact.efficiency || 'Production'}
+                </div>
+                <div
+                  style={{
+                    fontSize: '11px',
+                    color: '#66615c',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                  }}
+                >
+                  Engineering Outcome
+                </div>
+              </div>
+
+              {/* Metric 3 */}
+              <div
+                style={{
+                  padding: 'clamp(18px, 2.2vh, 24px) clamp(12px, 1.5vw, 20px)',
+                  textAlign: 'center',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: 'clamp(28px, 2.8vw, 38px)',
+                    fontWeight: 400,
+                    color: '#000000',
+                    lineHeight: 1.1,
+                    marginBottom: '4px',
+                  }}
+                >
+                  100%
+                </div>
+                <div
+                  style={{
+                    fontSize: '11px',
+                    color: '#66615c',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.08em',
+                  }}
+                >
+                  IP & Code Ownership
+                </div>
+              </div>
             </div>
           </div>
-        </section>
 
-        {/* ----------------------------------------------------
-            6. Results and Business Impact
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '56px' }}>
-          <h2
+          {/* Author / Spec byline */}
+          <div
             style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
               display: 'flex',
               alignItems: 'center',
-              gap: '10px',
+              gap: '12px',
+              fontSize: '13px',
+              color: '#77726d',
+              flexWrap: 'wrap',
             }}
           >
-            <span
+            <div
               style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                backgroundColor: '#fe6200',
+                color: '#ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontWeight: 800,
+                fontSize: '12px',
               }}
             >
-              6.
-            </span>
-            Results and Business Impact
-          </h2>
-
-          <div style={{ marginBottom: '24px' }}>
-            {renderParagraphs(project.resultsAndImpact.summary)}
+              N
+            </div>
+            <div>
+              <strong style={{ color: '#111111' }}>Neominds Engineering</strong> · Principal Systems Architecture Group
+            </div>
+            <span style={{ color: '#c4bfb6' }}>•</span>
+            <div>Updated November 2026</div>
           </div>
+        </header>
 
-          {/* 5-Item Verified Impact Grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: '16px',
-              marginBottom: '20px',
-            }}
-          >
-            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Efficiency
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                {project.resultsAndImpact.efficiency}
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Time Saved
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                {project.resultsAndImpact.timeSaved}
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Cost Reduction
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                {project.resultsAndImpact.costReduction}
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Performance
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000' }}>
-                {project.resultsAndImpact.performance}
-              </div>
-            </div>
-
-            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', gridColumn: '1 / -1', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
-              <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
-                Business Impact
-              </div>
-              <div style={{ fontSize: '15px', fontWeight: 600, color: '#000000' }}>
-                {project.resultsAndImpact.businessImpact}
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{
-              fontSize: '12px',
-              fontStyle: 'italic',
-              color: '#555555',
-              lineHeight: 1.5,
-              paddingLeft: '4px',
-            }}
-          >
-            Only include metrics and outcomes that can be verified. If quantitative data is unavailable, describe the confirmed qualitative improvements instead.
-          </div>
-        </section>
-
-        {/* ----------------------------------------------------
-            7. Key Takeaway
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '64px' }}>
-          <h2
-            style={{
-              fontSize: '22px',
-              fontWeight: 700,
-              color: '#000000',
-              marginBottom: '16px',
-              letterSpacing: '-0.015em',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                fontSize: '14px',
-                color: '#fe6200',
-                fontWeight: 700,
-              }}
-            >
-              7.
-            </span>
-            Key Takeaway
-          </h2>
-
-          <div
-            style={{
-              backgroundColor: 'transparent',
-              borderLeft: '3px solid #fe6200',
-              padding: '12px 0 12px 20px',
-            }}
-          >
-            <p
-              style={{
-                fontSize: '17px',
-                lineHeight: 1.7,
-                color: '#000000',
-                fontStyle: 'italic',
-                margin: 0,
-              }}
-            >
-              "{project.keyTakeaway}"
-            </p>
-          </div>
-        </section>
-
-        {/* ----------------------------------------------------
-            Discuss Your Project & CTA
-            ---------------------------------------------------- */}
-        <section
+        {/* ========================================================
+            2-COLUMN EDITORIAL ARTICLE BODY
+            Left: 70% Deep Reading Flow (80% blog article look)
+            Right: 30% Sticky Editorial Rail
+            ======================================================== */}
+        <div
           style={{
-            borderTop: '1px solid #f0ece2',
-            paddingTop: '48px',
-            marginBottom: '64px',
+            display: 'grid',
+            gridTemplateColumns: 'minmax(0, 1fr) 340px',
+            gap: 'clamp(32px, 4vw, 54px)',
+            alignItems: 'start',
           }}
+          className="nm-editorial-layout"
         >
-          <div
-            style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-              border: '1px solid #1F1F23',
-              color: '#000000',
-              borderRadius: '8px',
-              padding: 'clamp(32px, 5vw, 48px)',
-              position: 'relative',
-              overflow: 'hidden',
-            }}
-          >
-            <div style={{ maxWidth: '640px' }}>
+          {/* ======================================================
+              LEFT COLUMN: 80% BLOG ARTICLE EDITORIAL FLOW
+              ====================================================== */}
+          <main className="nm-editorial-body" style={{ minWidth: 0 }}>
+            {/* 1. Client Context & Executive Summary */}
+            <section id="client-context" style={{ marginBottom: '48px' }}>
               <div
                 style={{
-                  fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                  fontSize: '12px',
-                  fontWeight: 700,
-                  letterSpacing: '0.08em',
+                  fontSize: '11px',
+                  fontWeight: 800,
                   textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
                   color: '#fe6200',
-                  marginBottom: '12px',
+                  marginBottom: '10px',
                 }}
               >
-                Start A Conversation
+                1. Executive Summary & Client Context
               </div>
-
               <h2
                 style={{
-                  fontSize: 'clamp(24px, 3.2vw, 36px)',
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
                   fontWeight: 700,
                   color: '#000000',
                   lineHeight: 1.25,
-                  letterSpacing: '-0.02em',
-                  marginBottom: '16px',
+                  margin: '0 0 16px 0',
                 }}
               >
-                Discuss Your Project
+                Building for {project.overview.client} at Production Scale
+              </h2>
+              {renderParagraphs(project.clientContext)}
+            </section>
+
+            {/* 2. The Core Engineering Challenge */}
+            <section id="the-challenge" style={{ marginBottom: '48px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                2. The Engineering Challenge
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#000000',
+                  lineHeight: 1.25,
+                  margin: '0 0 16px 0',
+                }}
+              >
+                Bottlenecks, Friction & Operational Risks
+              </h2>
+              {renderParagraphs(project.challenge)}
+            </section>
+
+            {/* 3. Technical Constraints & Architecture */}
+            <section id="constraints" style={{ marginBottom: '48px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                3. Constraints & Failure Domains
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#000000',
+                  lineHeight: 1.25,
+                  margin: '0 0 16px 0',
+                }}
+              >
+                Engineering Boundaries & Non-Negotiable Requirements
+              </h2>
+              {renderParagraphs(project.constraints)}
+            </section>
+
+            {/* 4. Our Approach & System Architecture */}
+            <section id="approach" style={{ marginBottom: '48px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                4. Engineering Strategy
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#000000',
+                  lineHeight: 1.25,
+                  margin: '0 0 16px 0',
+                }}
+              >
+                Architecture, Sequencing & Milestone Delivery
+              </h2>
+              {renderParagraphs(project.approach)}
+            </section>
+
+            {/* 5. Key Capabilities & Deliverables */}
+            {project.keyFeatures && project.keyFeatures.length > 0 && (
+              <section id="key-features" style={{ marginBottom: '48px' }}>
+                <div
+                  style={{
+                    fontSize: '11px',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.12em',
+                    color: '#fe6200',
+                    marginBottom: '10px',
+                  }}
+                >
+                  5. Deliverables & Features
+                </div>
+                <h2
+                  style={{
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: 'clamp(24px, 2.5vw, 32px)',
+                    fontWeight: 700,
+                    color: '#000000',
+                    lineHeight: 1.25,
+                    margin: '0 0 20px 0',
+                  }}
+                >
+                  Shipped Systems & Key Features
+                </h2>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px',
+                  }}
+                >
+                  {project.keyFeatures.map((feat, idx) => (
+                    <div
+                      key={idx}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '12px',
+                        backgroundColor: '#ffffff',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        borderRadius: '10px',
+                        padding: '14px 18px',
+                        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.02)',
+                      }}
+                    >
+                      <CheckCircle2
+                        size={17}
+                        color="#fe6200"
+                        style={{ flexShrink: 0, marginTop: '2px' }}
+                      />
+                      <span style={{ fontSize: '15px', color: '#1a1a1a', lineHeight: 1.55 }}>
+                        {feat.replace(/^[•\-\*]\s*/, '')}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* 6. Technology Implementation Breakdown */}
+            <section id="tech-implementation" style={{ marginBottom: '48px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                6. Technology Implementation
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#000000',
+                  lineHeight: 1.25,
+                  margin: '0 0 20px 0',
+                }}
+              >
+                Production Stack & Integration Layers
               </h2>
 
-              <p
+              <div
                 style={{
-                  fontSize: '16px',
-                  lineHeight: 1.6,
-                  color: '#000000',
-                  marginBottom: '28px',
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                  gap: '14px',
                 }}
               >
-                {project.discussStatement}
+                {/* Frontend Card */}
+                {project.technologyImplementation.frontend && (
+                  <div
+                    style={{
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      borderRadius: '12px',
+                      padding: '18px',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <Code2 size={16} color="#fe6200" />
+                      <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
+                        Frontend
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
+                      {project.technologyImplementation.frontend}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {parseTechStackWithIcons(project.technologyImplementation.frontend).map((item, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            fontSize: '11.5px',
+                            fontWeight: 600,
+                            padding: '3px 8px',
+                            borderRadius: '5px',
+                            backgroundColor: '#fbf9f5',
+                            border: '1px solid #e5e0d8',
+                            color: '#1a1a1a',
+                          }}
+                        >
+                          {item.iconPath && (
+                            <img
+                              src={item.iconPath}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                            />
+                          )}
+                          <span>{item.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Backend Card */}
+                {project.technologyImplementation.backend && (
+                  <div
+                    style={{
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      borderRadius: '12px',
+                      padding: '18px',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <Layers size={16} color="#fe6200" />
+                      <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
+                        Backend
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
+                      {project.technologyImplementation.backend}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {parseTechStackWithIcons(project.technologyImplementation.backend).map((item, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            fontSize: '11.5px',
+                            fontWeight: 600,
+                            padding: '3px 8px',
+                            borderRadius: '5px',
+                            backgroundColor: '#fbf9f5',
+                            border: '1px solid #e5e0d8',
+                            color: '#1a1a1a',
+                          }}
+                        >
+                          {item.iconPath && (
+                            <img
+                              src={item.iconPath}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                            />
+                          )}
+                          <span>{item.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Database Card */}
+                {project.technologyImplementation.database && (
+                  <div
+                    style={{
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      borderRadius: '12px',
+                      padding: '18px',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <Database size={16} color="#fe6200" />
+                      <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
+                        Database
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
+                      {project.technologyImplementation.database}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {parseTechStackWithIcons(project.technologyImplementation.database).map((item, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            fontSize: '11.5px',
+                            fontWeight: 600,
+                            padding: '3px 8px',
+                            borderRadius: '5px',
+                            backgroundColor: '#fbf9f5',
+                            border: '1px solid #e5e0d8',
+                            color: '#1a1a1a',
+                          }}
+                        >
+                          {item.iconPath && (
+                            <img
+                              src={item.iconPath}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                            />
+                          )}
+                          <span>{item.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* AI / Automation Card */}
+                {project.technologyImplementation.aiAutomation && (
+                  <div
+                    style={{
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      borderRadius: '12px',
+                      padding: '18px',
+                      backgroundColor: '#ffffff',
+                      boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                      <Cpu size={16} color="#fe6200" />
+                      <span style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em' }}>
+                        AI & Automation
+                      </span>
+                    </div>
+                    <div style={{ fontSize: '14px', fontWeight: 600, color: '#000000', marginBottom: '10px' }}>
+                      {project.technologyImplementation.aiAutomation}
+                    </div>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                      {parseTechStackWithIcons(project.technologyImplementation.aiAutomation).map((item, idx) => (
+                        <span
+                          key={idx}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '5px',
+                            fontSize: '11.5px',
+                            fontWeight: 600,
+                            padding: '3px 8px',
+                            borderRadius: '5px',
+                            backgroundColor: '#fbf9f5',
+                            border: '1px solid #e5e0d8',
+                            color: '#1a1a1a',
+                          }}
+                        >
+                          {item.iconPath && (
+                            <img
+                              src={item.iconPath}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                            />
+                          )}
+                          <span>{item.name}</span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </section>
+
+            {/* 7. Results and Business Impact */}
+            <section id="results" style={{ marginBottom: '48px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                7. Results and Business Impact
+              </div>
+              <h2
+                style={{
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontWeight: 700,
+                  color: '#000000',
+                  lineHeight: 1.25,
+                  margin: '0 0 16px 0',
+                }}
+              >
+                Verified Production Outcomes
+              </h2>
+
+              <p style={{ fontSize: '16.5px', lineHeight: 1.7, color: '#333333', marginBottom: '24px' }}>
+                {project.resultsAndImpact.summary}
               </p>
 
+              {/* Clean Metric Outcomes Grid */}
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                  gap: '16px',
+                  marginBottom: '20px',
+                }}
+              >
+                <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                    Efficiency
+                  </div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
+                    {cleanMarkdown(project.resultsAndImpact.efficiency)}
+                  </div>
+                </div>
+
+                <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                    Time Saved
+                  </div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
+                    {cleanMarkdown(project.resultsAndImpact.timeSaved)}
+                  </div>
+                </div>
+
+                <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                    Cost Reduction
+                  </div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
+                    {cleanMarkdown(project.resultsAndImpact.costReduction)}
+                  </div>
+                </div>
+
+                <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                    Performance
+                  </div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.45 }}>
+                    {cleanMarkdown(project.resultsAndImpact.performance)}
+                  </div>
+                </div>
+
+                <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', gridColumn: '1 / -1', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
+                  <div style={{ fontSize: '11px', fontWeight: 700, textTransform: 'uppercase', color: '#fe6200', letterSpacing: '0.06em', marginBottom: '4px' }}>
+                    Business Impact
+                  </div>
+                  <div style={{ fontSize: '14.5px', fontWeight: 600, color: '#111111', lineHeight: 1.5 }}>
+                    {cleanMarkdown(project.resultsAndImpact.businessImpact)}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* 8. Key Takeaway */}
+            <section id="key-takeaway" style={{ marginBottom: '56px' }}>
+              <div
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.12em',
+                  color: '#fe6200',
+                  marginBottom: '10px',
+                }}
+              >
+                8. Architect Perspective
+              </div>
+              <div
+                style={{
+                  backgroundColor: '#ffffff',
+                  borderLeft: '4px solid #fe6200',
+                  borderRadius: '0 12px 12px 0',
+                  padding: '24px 28px',
+                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                    fontSize: '18.5px',
+                    lineHeight: 1.6,
+                    color: '#000000',
+                    fontStyle: 'italic',
+                    margin: 0,
+                  }}
+                >
+                  "{project.keyTakeaway}"
+                </p>
+                <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: 700, color: '#fe6200' }}>
+                  — Neominds Lead Systems Architect
+                </div>
+              </div>
+            </section>
+          </main>
+
+          {/* ======================================================
+              RIGHT COLUMN: STICKY EDITORIAL SIDEBAR & SPEC RAIL
+              (Identical to ServicePage.tsx)
+              ====================================================== */}
+          <aside
+            style={{
+              position: 'sticky',
+              top: '100px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '24px',
+            }}
+            className="nm-editorial-sidebar"
+          >
+            {/* 1. On This Page: Interactive Table of Contents */}
+            <div
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: '12px',
+                padding: '22px 24px',
+                boxShadow: '0 8px 24px -10px rgba(0, 0, 0, 0.06)',
+              }}
+            >
+              <div
+                style={{
+                  fontSize: '11.5px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  color: '#fe6200',
+                  marginBottom: '14px',
+                  fontFamily: 'monospace',
+                }}
+              >
+                On This Page
+              </div>
+
+              <nav style={{ display: 'flex', flexDirection: 'column', gap: '9px', fontSize: '13.5px' }}>
+                <a
+                  href="#client-context"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  1. Executive Summary & Client
+                </a>
+                <a
+                  href="#the-challenge"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  2. The Engineering Challenge
+                </a>
+                <a
+                  href="#constraints"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  3. Constraints & Architecture
+                </a>
+                <a
+                  href="#approach"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  4. Strategy & Sequencing
+                </a>
+                <a
+                  href="#key-features"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  5. Deliverables & Features
+                </a>
+                <a
+                  href="#tech-implementation"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  6. Technology Implementation
+                </a>
+                <a
+                  href="#results"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  7. Results & Business Impact
+                </a>
+                <a
+                  href="#key-takeaway"
+                  style={{ color: '#444444', textDecoration: 'none', transition: 'color 0.15s' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#444444')}
+                >
+                  8. Architect Takeaway
+                </a>
+              </nav>
+            </div>
+
+            {/* 2. Direct Architect Engagement Card */}
+            <div
+              className="nm-corner-glow"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '1px solid rgba(254, 98, 0, 0.35)',
+                borderRadius: '12px',
+                padding: '22px 24px',
+                boxShadow: '0 10px 30px -12px rgba(254, 98, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.02)',
+                position: 'relative',
+                overflow: 'hidden',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                <ShieldCheck size={18} color="#fe6200" />
+                <span style={{ fontSize: '14px', fontWeight: 700, color: '#111111' }}>
+                  Architecture Consultation
+                </span>
+              </div>
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: '#55514c', margin: '0 0 16px 0' }}>
+                Looking to build a similar high-performance platform or modernize your existing data systems?
+              </p>
               <button
                 onClick={handleDiscussClick}
                 style={{
-                  backgroundColor: '#fe6200', color: '#ffffff',
+                  width: '100%',
+                  textAlign: 'center',
+                  backgroundColor: '#fe6200',
+                  color: '#ffffff',
                   border: 'none',
-                  fontSize: '15px',
-                  fontWeight: 700,
-                  padding: '14px 28px',
                   borderRadius: '8px',
+                  padding: '11px 18px',
+                  fontSize: '13.5px',
+                  fontWeight: 700,
                   cursor: 'pointer',
-                  minHeight: '48px',
-                  display: 'inline-flex',
+                  transition: 'background-color 0.2s',
+                  boxShadow: '0 4px 14px rgba(254, 98, 0, 0.35)',
+                  display: 'flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  boxShadow: 'none',
-                  transition: 'background-color 0.15s, transform 0.15s',
+                  justifyContent: 'center',
+                  gap: '6px',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#f0ece2';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ffffff';
-                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#cf5000')}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
               >
-                <span>{project.ctaText}</span>
-                <ArrowRight size={16} />
+                <span>Discuss Your Project</span>
+                <ArrowRight size={14} />
               </button>
             </div>
-          </div>
-        </section>
 
-        {/* ----------------------------------------------------
-            Related Services
-            ---------------------------------------------------- */}
-        <section style={{ marginBottom: '56px' }}>
-          <h3
-            style={{
-              fontSize: '14px',
-              fontWeight: 700,
-              textTransform: 'uppercase',
-              letterSpacing: '0.06em',
-              color: '#555555',
-              marginBottom: '16px',
-              fontFamily: "'SF Mono', 'Geist Mono', monospace",
-            }}
-          >
-            Related Services
-          </h3>
-
-          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-            {project.relatedServices.map((service, idx) => (
-              <button
-                key={idx}
-                onClick={() => onNavigatePage(service.slug)}
+            {/* 3. Verified Tech Stack Tags with SVGs */}
+            {techStackList && techStackList.length > 0 && (
+              <div
                 style={{
-                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                  border: '1px solid #f0ece2',
-                  color: '#000000',
-                  fontSize: '13.5px',
-                  fontWeight: 600,
-                  padding: '10px 18px',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  minHeight: '44px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '6px',
-                  transition: 'border-color 0.2s, background-color 0.2s',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#fe6200';
-                  e.currentTarget.style.backgroundColor = '#faf8f5';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#f0ece2';
-                  e.currentTarget.style.backgroundColor = '#ffffff';
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '22px 24px',
+                  boxShadow: '0 8px 24px -10px rgba(0, 0, 0, 0.06)',
                 }}
               >
-                <span>{service.name}</span>
-                <ChevronRight size={14} color="#fe6200" />
-              </button>
-            ))}
-          </div>
-        </section>
+                <div
+                  style={{
+                    fontSize: '11.5px',
+                    fontWeight: 800,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    color: '#77726d',
+                    marginBottom: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontFamily: 'monospace',
+                  }}
+                >
+                  <Sparkles size={13} color="#fe6200" />
+                  Verified Tech Stack
+                </div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                  {techStackList.map((item, idx) => (
+                    <span
+                      key={idx}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        fontSize: '11.5px',
+                        fontWeight: 600,
+                        color: '#1a1a1a',
+                        backgroundColor: '#f5f3ee',
+                        border: '1px solid rgba(0, 0, 0, 0.06)',
+                        padding: '4px 9px',
+                        borderRadius: '6px',
+                      }}
+                    >
+                      {item.iconPath && (
+                        <img
+                          src={item.iconPath}
+                          alt=""
+                          aria-hidden="true"
+                          style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                        />
+                      )}
+                      <span>{item.name}</span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </aside>
+        </div>
 
-        {/* ----------------------------------------------------
-            Related Projects
-            ---------------------------------------------------- */}
+        {/* ========================================================
+            RELATED CASE STUDIES STRIP
+            ======================================================== */}
         {companionProjects.length > 0 && (
-          <section style={{ marginBottom: '40px' }}>
-            <h3
-              style={{
-                fontSize: '14px',
-                fontWeight: 700,
-                textTransform: 'uppercase',
-                letterSpacing: '0.06em',
-                color: '#555555',
-                marginBottom: '20px',
-                fontFamily: "'SF Mono', 'Geist Mono', monospace",
-              }}
-            >
-              Related Projects
-            </h3>
+          <section
+            style={{
+              marginTop: '80px',
+              paddingTop: '64px',
+              borderTop: '1px solid #e4e2e1',
+            }}
+          >
+            <div style={{ marginBottom: '28px' }}>
+              <div
+                style={{
+                  fontSize: '11.5px',
+                  fontWeight: 800,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  color: '#fe6200',
+                  marginBottom: '8px',
+                  fontFamily: 'monospace',
+                }}
+              >
+                Companion Projects
+              </div>
+              <h2
+                style={{
+                  fontSize: 'clamp(24px, 2.8vw, 34px)',
+                  fontWeight: 800,
+                  color: '#000000',
+                  margin: 0,
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                }}
+              >
+                Related Case Studies
+              </h2>
+            </div>
 
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                gap: '16px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '18px',
               }}
             >
-              {companionProjects.map((p) => (
+              {companionProjects.slice(0, 3).map((item) => (
                 <div
-                  key={p.id}
-                  onClick={() => onNavigatePage('project', p.id)}
+                  key={item.id}
+                  onClick={() => onNavigatePage('project', item.id)}
+                  className="nm-corner-glow"
                   style={{
-                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                    border: '1px solid #f0ece2',
-                    borderRadius: '8px',
-                    padding: '20px',
-                    cursor: 'pointer',
+                    padding: '20px 24px',
+                    backgroundColor: '#ffffff',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    boxShadow: '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
                     display: 'flex',
-                    flexDirection: 'column',
+                    alignItems: 'center',
                     justifyContent: 'space-between',
-                    minHeight: '160px',
-                    transition: 'border-color 0.2s, transform 0.2s',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s',
+                    position: 'relative',
+                    overflow: 'hidden',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.5)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 12px 28px -6px rgba(254, 98, 0, 0.12)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#f0ece2';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                    e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.boxShadow = '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)';
                   }}
                 >
-                  <div>
+                  <div style={{ paddingRight: '12px' }}>
                     <div
                       style={{
-                        fontSize: '11px',
-                        fontFamily: "'SF Mono', 'Geist Mono', monospace",
-                        color: '#fe6200',
+                        fontSize: '16.5px',
                         fontWeight: 700,
-                        textTransform: 'uppercase',
-                        marginBottom: '6px',
+                        color: '#111111',
+                        fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        marginBottom: '4px',
                       }}
                     >
-                      {p.overview.industry}
+                      {item.projectName || item.title}
                     </div>
-                    <h4
-                      style={{
-                        fontSize: '16px',
-                        fontWeight: 700,
-                        color: '#000000',
-                        lineHeight: 1.3,
-                        margin: 0,
-                      }}
-                    >
-                      {p.projectName}
-                    </h4>
+                    <div style={{ fontSize: '13px', color: '#77726d' }}>
+                      {item.overview.industry} · {item.overview.client}
+                    </div>
                   </div>
-
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      fontSize: '13px',
-                      color: '#fe6200',
-                      fontWeight: 600,
-                      marginTop: '16px',
-                    }}
-                  >
-                    <span>View project case study</span>
-                    <ArrowRight size={14} />
+                  <div style={{ color: '#fe6200', flexShrink: 0 }}>
+                    <ArrowUpRight size={18} />
                   </div>
                 </div>
               ))}
             </div>
           </section>
         )}
-
-        {/* Global Client Testimonials */}
-        <Testimonials />
-      </main>
-
-      {/* Mobile Sticky Thumb-Zone Action Bar */}
-      <div
-        style={{
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          backgroundColor: 'rgba(32, 11, 0,  0.95)',
-          backdropFilter: 'blur(10px)',
-          borderTop: '1px solid #f0ece2',
-          padding: '12px 20px calc(12px + env(safe-area-inset-bottom, 0px))',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '12px',
-          zIndex: 45,
-        }}
-        className="mobile-sticky-cta"
-      >
-        <button
-          onClick={() => onNavigatePage('portfolio')}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#555555',
-            fontSize: '13px',
-            fontWeight: 600,
-            cursor: 'pointer',
-            minHeight: '44px',
-            padding: '8px 12px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '4px',
-          }}
-        >
-          <ArrowLeft size={16} /> All Projects
-        </button>
-
-        <button
-          onClick={handleDiscussClick}
-          style={{
-            backgroundColor: '#fe6200', color: '#ffffff',
-            border: 'none',
-            fontSize: '14px',
-            fontWeight: 700,
-            padding: '10px 20px',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            minHeight: '44px',
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-          }}
-        >
-          <span>Discuss Project</span>
-          <ArrowRight size={15} />
-        </button>
       </div>
 
+      {/* Shared Testimonials, Locations & Footer */}
+      <Testimonials />
+      <Footer onNavigate={(target) => onNavigatePage(target.replace('#', '') as PageType)} />
+
       <style>{`
-        @media (min-width: 768px) {
-          .mobile-sticky-cta {
-            display: none !important;
+        @media (max-width: 900px) {
+          .nm-editorial-layout {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+          }
+          .nm-editorial-sidebar {
+            position: static !important;
+            top: auto !important;
           }
         }
       `}</style>
-
-      {/* Site Footer */}
-      <Footer onNavigate={(target) => {
-        if (target === '#casestudies') {
-          onNavigatePage('portfolio');
-        } else if (target === '#contact') {
-          handleDiscussClick();
-        } else {
-          onNavigatePage('home');
-        }
-      }} />
     </article>
   );
 };

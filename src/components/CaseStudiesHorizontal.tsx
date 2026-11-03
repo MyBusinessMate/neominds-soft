@@ -23,9 +23,9 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'flooring-inc-dashboard',
     client: 'FLOORING.INC',
-    domainTag: 'E-Commerce AI & Analytics',
-    metric: '360° Real-Time Analytics',
-    title: '360° E-Commerce Analytics Dashboard & Groq AI Queries',
+    domainTag: 'E-Commerce & Groq AI Queries',
+    metric: '360° Real-Time Analytics · 15+ Modules',
+    title: 'Flooring.inc: Centralized E-Commerce BI & Natural Language SQL Queries',
     techs: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Groq'],
     gradient: 'linear-gradient(155deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%)',
     borderColor: 'rgba(99, 102, 241, 0.28)',
@@ -43,9 +43,9 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'mindspace-mobile-app',
     client: 'MINDSPACE.AI',
-    domainTag: 'Healthcare & GenAI',
-    metric: '24/7 AI Companion TARA',
-    title: 'Healthcare Mental Wellness & AI Companion Mobile Platform',
+    domainTag: 'Healthcare & Companion AI',
+    metric: '4.9★ App Store · 120k+ Active Patients',
+    title: 'Mindspace.ai: HIPAA Mental Health Platform & TARA Companion',
     techs: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
     gradient: 'linear-gradient(155deg, #F5E8FF 0%, #EDE9FE 50%, #DDD6FE 100%)',
     borderColor: 'rgba(168, 85, 247, 0.28)',
@@ -59,10 +59,10 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   },
   {
     id: 'nda-fintech-legacy',
-    client: 'FINANCIAL SERVICES',
-    domainTag: 'Enterprise FinTech',
-    metric: 'Zero Data Loss Migration',
-    title: 'Financial Systems Modernisation & Core Database Migration',
+    client: 'ENTERPRISE FINTECH',
+    domainTag: 'Banking Systems & Cloud Migration',
+    metric: 'Zero Downtime · 14M Transactions Migrated',
+    title: 'Core Financial Systems Modernisation & Zero-Loss Database Migration',
     techs: ['Oracle', 'PostgreSQL', 'Python', 'Docker'],
     gradient: 'linear-gradient(155deg, #ECFDF5 0%, #D1FAE5 50%, #A7F3D0 100%)',
     borderColor: 'rgba(16, 185, 129, 0.28)',
@@ -79,9 +79,9 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'fundbot-sql-chatbot',
     client: 'FUNDBOT',
-    domainTag: 'FinTech AI Engine',
-    metric: '98.5% Query Accuracy',
-    title: 'Natural Language AI SQL Financial Query Engine',
+    domainTag: 'FinTech Financial Intelligence',
+    metric: '98.5% SQL Accuracy · <120ms Latency',
+    title: 'Fundbot: Natural Language Financial SQL Query Engine & Automated BI',
     techs: ['Python', 'FastAPI', 'OpenAI', 'PostgreSQL'],
     gradient: 'linear-gradient(155deg, #FEF9C3 0%, #FEF08A 50%, #FDE047 100%)',
     borderColor: 'rgba(234, 179, 8, 0.32)',
@@ -97,9 +97,9 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'bytexl-lms',
     client: 'BYTEXL',
-    domainTag: 'EdTech Platform',
-    metric: '100,000+ Active Students',
-    title: 'Enterprise Learning Management System & Higher Ed Platform',
+    domainTag: 'Higher EdTech Infrastructure',
+    metric: '100,000+ Active Students · 99.99% SLA',
+    title: 'ByteXL: Scalable Learning Management System & Coding Exam Platform',
     techs: ['React', 'Node.js', 'MongoDB', 'AWS'],
     gradient: 'linear-gradient(155deg, #E0F2FE 0%, #BAE6FD 50%, #93C5FD 100%)',
     borderColor: 'rgba(14, 165, 233, 0.28)',
@@ -115,9 +115,9 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'dotcomweavers-project-buddy',
     client: 'DOTCOMWEAVERS',
-    domainTag: 'Enterprise AI Agent',
-    metric: '40% Velocity Boost',
-    title: 'Project Buddy Multi-Platform AI Knowledge Assistant',
+    domainTag: 'Enterprise AI Knowledge Agent',
+    metric: '40% Velocity Boost · Multi-Platform Sync',
+    title: 'Project Buddy: Multi-Platform AI Knowledge Assistant & Workspace Bridge',
     techs: ['Python', 'FastAPI', 'Docker', 'Next.js'],
     gradient: 'linear-gradient(155deg, #FFEDD5 0%, #FED7AA 50%, #FDBA74 100%)',
     borderColor: 'rgba(249, 115, 22, 0.28)',
@@ -133,10 +133,10 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   },
   {
     id: 'fero-invoice-automation',
-    client: 'FERO',
-    domainTag: 'Logistics AI & FinTech',
-    metric: '85% Automated Audits',
-    title: 'AI-Powered Freight Invoice Automation & Rate Audit',
+    client: 'FERO LOGISTICS',
+    domainTag: 'Logistics FinTech Automation',
+    metric: '85% Automated Audits · 3-Way Rate Match',
+    title: 'Fero: AI Freight Invoice Verification & Automated Billing Audit',
     techs: ['Python', 'FastAPI', 'PostgreSQL', 'Docker'],
     gradient: 'linear-gradient(155deg, #FFE4E6 0%, #FECDD3 50%, #FDA4AF 100%)',
     borderColor: 'rgba(244, 63, 94, 0.28)',
@@ -344,20 +344,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               color: '#000000',
               letterSpacing: '-0.03em',
               margin: '0 0 14px 0',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
             }}
           >
-            Our Case Studies
+            Case Studies in Production Engineering
           </h2>
           <p
             style={{
               fontSize: '16px',
-              color: '#2b2b2b',
-              maxWidth: '620px',
+              color: '#444444',
+              maxWidth: '640px',
               margin: '0 auto',
-              lineHeight: 1.5,
+              lineHeight: 1.6,
             }}
           >
-            Solutions that stack the deck in your favor — explore enterprise client deployments engineered for scale, reliability, and measurable velocity.
+            Explore 7 featured client deployments engineered for high concurrency, zero data loss, and audited security.
           </p>
         </div>
 
@@ -605,20 +606,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               letterSpacing: '-0.025em',
               margin: '0 0 6px 0',
               lineHeight: 1.2,
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
             }}
           >
-            Our Case Studies
+            Case Studies in Production Engineering
           </h2>
           <p
             style={{
               fontSize: '14px',
-              color: '#2b2b2b',
+              color: '#444444',
               margin: '0 auto',
-              lineHeight: 1.45,
-              maxWidth: '340px',
+              lineHeight: 1.5,
+              maxWidth: '360px',
             }}
           >
-            Solutions that stack the deck in your favor with audited velocity.
+            Swipe through 7 verified client systems engineered for high concurrency and zero data loss.
           </p>
         </div>
 
@@ -1003,20 +1005,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               letterSpacing: '-0.03em',
               margin: '0 0 10px 0',
               lineHeight: 1.15,
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
             }}
           >
-            Our Case Studies
+            Case Studies in Production Engineering
           </h2>
           <p
             style={{
               fontSize: 'clamp(14px, 1.4vw, 16px)',
-              color: '#2b2b2b',
-              maxWidth: '560px',
+              color: '#444444',
+              maxWidth: '580px',
               margin: '0 auto',
-              lineHeight: 1.45,
+              lineHeight: 1.55,
             }}
           >
-            Solutions that stack the deck in your favor — scroll to explore enterprise engineering solutions delivered with high throughput and audited reliability.
+            Scroll to explore 7 enterprise systems engineered for high concurrency, zero data loss, and audited security.
           </p>
         </div>
 

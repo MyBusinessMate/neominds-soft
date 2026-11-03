@@ -1,11 +1,19 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   ArrowRight,
-  ChevronRight,
+  CheckCircle,
+  Cpu,
+  Layers,
+  ShieldCheck,
+  Zap,
 } from 'lucide-react';
 import { Footer } from './Footer';
-import { Testimonials } from './Testimonials';
+import { ContactSection } from './ContactSection';
+import { LocationsSection } from './LocationsSection';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
+import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
+import { UNIFIED_CASE_STUDIES } from '../data/unifiedCaseStudiesData';
+import { getTechIconPath } from '../utils/techIcons';
 
 interface PortfolioPageProps {
   onNavigateHome?: () => void;
@@ -13,591 +21,720 @@ interface PortfolioPageProps {
   onSuccessToast: (msg: string) => void;
 }
 
-import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
-import { getTechIconPath } from '../utils/techIcons';
+type CategoryFilter = 'ALL' | 'AI' | 'HEALTHCARE' | 'FINTECH' | 'ENTERPRISE';
 
-const FILTERS = [
-  'All',
-  'Enterprise',
-  'Healthcare',
-  'EdTech',
-  'FinTech',
-  'Retail',
-  'E-commerce',
-  'Real Estate',
-] as const;
-type FilterType = typeof FILTERS[number];
+const CATEGORY_MAP: Record<string, CategoryFilter> = {
+  // AI & Analytics
+  'flooring-inc-dashboard': 'AI',
+  'dotcomweavers-project-buddy': 'AI',
+  'the1am-content-creator': 'AI',
+  'fundbot-sql-chatbot': 'AI',
+  'fero-invoice-automation': 'AI',
+  'metacognition-qa-automation': 'AI',
+  'nda-ai-tracking': 'AI',
+  'laptomart-ai-crm': 'AI',
+  'nda-ai-agents-model': 'AI',
+  'flexport-burn-reports': 'AI',
 
-const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
+  // Healthcare & EdTech
+  'mindspace-mobile-app': 'HEALTHCARE',
+  'mindspace-dashboard': 'HEALTHCARE',
+  'edutech-co-teacher': 'HEALTHCARE',
+  'ayyo-mobile-app': 'HEALTHCARE',
+  'edutech-facial-attendance': 'HEALTHCARE',
+  'montessori-os': 'HEALTHCARE',
+  'aigooru-fee-manager': 'HEALTHCARE',
+  'bytexl-lms': 'HEALTHCARE',
+
+  // FinTech & Logistics
+  'nda-fintech-legacy': 'FINTECH',
+  'tecnomart-billing': 'FINTECH',
+  'keocapital-hr-screening': 'FINTECH',
+  'keocapital-hr-joining': 'FINTECH',
+  'flavourbombs-security-scan': 'FINTECH',
+  'flyover-lead-capture': 'FINTECH',
+
+  // Enterprise & Cloud
+  'mybusinessmate-web': 'ENTERPRISE',
+  'mybusinessmate-app': 'ENTERPRISE',
+  'expiro-app': 'ENTERPRISE',
+  'nda-healthcare-hms': 'ENTERPRISE',
+  'interzoon-cloud-system': 'ENTERPRISE',
+  'nda-realestate-mgmt': 'ENTERPRISE',
+};
+
+const EXECUTION_STANDARDS = [
+  {
+    num: '01',
+    title: 'Architecture & Discovery',
+    desc: 'Deep technical audits, database schema modeling, and failure-domain mapping before writing a line of code.',
+    icon: <Layers size={20} color="#fe6200" />,
+  },
+  {
+    num: '02',
+    title: '2-Week Staging Demos',
+    desc: 'Transparent Git pull requests, verifiable staging releases, and weekly sprint demos directly with senior engineers.',
+    icon: <Zap size={20} color="#fe6200" />,
+  },
+  {
+    num: '03',
+    title: 'Automated QA & Gates',
+    desc: 'Zero-regression test suites, static analysis, load simulation, and SOC2/HIPAA compliance validation.',
+    icon: <ShieldCheck size={20} color="#fe6200" />,
+  },
+  {
+    num: '04',
+    title: '100% IP & Code Handover',
+    desc: 'Every repository, migration script, and CI/CD workflow belongs entirely to you. No proprietary lock-in.',
+    icon: <Cpu size={20} color="#fe6200" />,
+  },
+];
+
+export const PortfolioPage: React.FC<PortfolioPageProps> = ({
   onNavigatePage,
-  onSuccessToast,
 }) => {
-  const [activeFilter, setActiveFilter] = useState<FilterType>('All');
-  const [expandedCardId, setExpandedCardId] = useState<string | null>(null);
-  const [leadEmail, setLeadEmail] = useState('');
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('ALL');
 
-  const handleLeadSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (!leadEmail) return;
-    onSuccessToast('Thank you! A custom portfolio case study deck has been sent to your email.');
-    setLeadEmail('');
-  }, [leadEmail, onSuccessToast]);
+  const filteredCases = useMemo(() => {
+    if (activeCategory === 'ALL') return PORTFOLIO_CASE_STUDIES;
+    return PORTFOLIO_CASE_STUDIES.filter((cs) => {
+      const mapped = CATEGORY_MAP[cs.id];
+      return mapped === activeCategory;
+    });
+  }, [activeCategory]);
 
-  const filteredCases = useMemo(
-    () =>
-      activeFilter === 'All'
-        ? PORTFOLIO_CASE_STUDIES
-        : PORTFOLIO_CASE_STUDIES.filter((item) => item.category === activeFilter),
-    [activeFilter]
-  );
+  const handleDiscussClick = () => {
+    const el = document.getElementById('contact-section');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      onNavigatePage('contacts');
+    }
+  };
 
   return (
-    <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+    <div
+      style={{
+        backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+        color: '#111111',
+        minHeight: '100vh',
+        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+      }}
+    >
       {/* ========================================================
-          HERO SECTION
+          1. HERO SECTION (Aligned with ServicesHubPage)
           ======================================================== */}
       <section
         style={{
-          padding: 'clamp(64px, 8vw, 90px) 24px clamp(48px, 6vw, 70px)',
-          maxWidth: '1240px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '48px',
-          alignItems: 'center',
+          backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+          padding: 'clamp(110px, 13vw, 140px) 24px 64px',
+          borderBottom: '1px solid #e4e2e1',
         }}
       >
-        <div>
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '12px',
-              marginBottom: '24px',
-            }}
-          >
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          {/* Eyebrow Pill */}
+          <div style={{ marginBottom: '16px' }}>
             <span
               style={{
                 fontFamily: 'monospace',
-                fontSize: '13px',
+                fontSize: '11.5px',
                 fontWeight: 700,
                 color: '#fe6200',
-                letterSpacing: '0.08em',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
+                backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                padding: '4px 12px',
+                borderRadius: '6px',
+                display: 'inline-block',
               }}
             >
-              Verified Case Studies · Production Results
+              Verified Client Engagements · 30+ Systems Shipped
             </span>
           </div>
 
+          {/* Main Title */}
           <ScrollReveal
             as="h1"
             style={{
-              fontSize: 'clamp(36px, 5vw, 56px)',
+              fontSize: 'clamp(34px, 4.8vw, 56px)',
               fontWeight: 800,
-              lineHeight: 1.12,
-              letterSpacing: '-0.02em',
+              lineHeight: 1.15,
+              letterSpacing: '-0.025em',
               color: '#000000',
-              marginBottom: '24px',
-              fontFamily: 'var(--font-heading)',
-              display: 'block',
+              marginBottom: '20px',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              maxWidth: '920px',
             }}
-            blurStrength={8}
           >
-            Engineering <span style={{ color: '#fe6200' }}>Impactful</span> Digital Products
+            Software We’ve Shipped — And the Numbers to Prove It.
           </ScrollReveal>
 
-          <RevealElement variant="text" delay={0.06}>
-            <p
-              style={{
-                fontSize: 'clamp(16px, 1.2vw, 18px)',
-                lineHeight: 1.6,
-                color: '#555555',
-                marginBottom: '36px',
-                maxWidth: '560px',
-              }}
-            >
-              Across finance, healthcare, AI, and enterprise logistics, we turn complex challenges into clear product direction, fragmented workflows into automated systems, and legacy infrastructure into scalable software. In just 1 year, NeoMinds has engineered and deployed 30+ production systems globally.
-            </p>
-          </RevealElement>
-
-          <div className="btn-group-lg">
-            <button
-              onClick={() => {
-                const el = document.getElementById('portfolio-grid');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="btn btn-primary btn-lg"
-            >
-              <span>Explore Case Studies</span>
-              <ArrowRight size={16} />
-            </button>
-
-            <button
-              onClick={() => onNavigatePage('contacts')}
-              className="btn btn-outline btn-lg"
-              style={{ color: '#000000', borderColor: 'rgba(255, 255, 255, 0.35)' }}
-            >
-              <span>Request Custom Portfolio</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Hero Visual Mockup */}
-        <RevealElement variant="card" start="top 90%" end="top 60%">
-          <div
+          {/* Subtitle / Value Proposition */}
+          <p
             style={{
-              backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-              border: '1px solid #f0ece2',
-              borderRadius: '8px',
-              padding: '28px',
-              boxShadow: '0 20px 48px rgba(32, 11, 0,  0.4)',
-              position: 'relative',
+              fontSize: 'clamp(16px, 1.25vw, 18.5px)',
+              lineHeight: 1.65,
+              color: '#555555',
+              maxWidth: '780px',
+              margin: '0 0 32px 0',
             }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '20px', borderBottom: '1px solid #f0ece2', paddingBottom: '12px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ width: '8px', height: '8px', backgroundColor: '#16a34a' }} />
-                <span style={{ fontSize: '11px', color: '#16a34a', fontFamily: 'monospace', fontWeight: 700, letterSpacing: '0.04em' }}>
-                  AUDITED PRODUCTION LOG
-                </span>
-              </div>
-              <span style={{ fontSize: '12px', color: '#555555', fontFamily: 'monospace', fontWeight: 600 }}>
-                Audited Production Velocity (Year 1)
-              </span>
-            </div>
+            We partner with ambitious startups and global enterprises to design, build, and operate software that stands up to heavy production traffic. From AI-driven SQL query engines to HIPAA-compliant clinical platforms — here is the verified record of how we deliver.
+          </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px', marginBottom: '20px' }}>
-              <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', padding: '18px', borderRadius: '8px', borderLeft: '3px solid #fe6200' }}>
-                <div style={{ fontSize: '32px', fontWeight: 800, color: '#fe6200', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>30+</div>
-                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>Production Systems Built</div>
-              </div>
-              <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', padding: '18px', borderRadius: '8px', borderLeft: '3px solid #16a34a' }}>
-                <div style={{ fontSize: '32px', fontWeight: 800, color: '#16a34a', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>100%</div>
-                <div style={{ fontSize: '13px', color: '#555555', marginTop: '4px', fontWeight: 500 }}>On-Time Delivery Success</div>
-              </div>
-            </div>
+          {/* Action CTAs */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
+            <button
+              onClick={handleDiscussClick}
+              style={{
+                backgroundColor: '#fe6200',
+                color: '#ffffff',
+                border: 'none',
+                padding: '13px 26px',
+                borderRadius: '8px',
+                fontSize: '14.5px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: '0 4px 16px rgba(254, 98, 0, 0.28)',
+                transition: 'background-color 0.2s',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#cf5000')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
+            >
+              <span>Discuss Your Project</span>
+              <ArrowRight size={15} />
+            </button>
 
-            <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', border: '1px solid #f0ece2', padding: '16px 20px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <div>
-                <div style={{ fontSize: '12px', color: '#555555', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600 }}>Top Vertical Specializations</div>
-                <div style={{ fontSize: '15px', fontWeight: 700, color: '#000000', marginTop: '4px' }}>Fintech, HealthTech, AI & Automotive</div>
-              </div>
-              <div style={{ backgroundColor: 'rgba(254, 98, 0, 0.1)', color: '#fe6200', padding: '6px 12px', borderRadius: '8px', fontSize: '12px', fontWeight: 700 }}>
-                ISO 27001
-              </div>
-            </div>
-          </div>
-        </RevealElement>
-      </section>
-
-      {/* ========================================================
-          FILTER TABS BAR - CREAM BEIGE BACKGROUND
-          ======================================================== */}
-      <section
-        id="portfolio-grid"
-        style={{
-          borderTop: '1px solid #e4e2e1',
-          borderBottom: '1px solid #e4e2e1',
-          backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-          padding: '16px 24px',
-          position: 'sticky',
-          top: '68px',
-          zIndex: 100,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: '1240px',
-            margin: '0 auto',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px',
-          }}
-        >
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-            {FILTERS.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => {
-                  setActiveFilter(filter);
-                  setExpandedCardId(null);
-                }}
-                style={{
-                  backgroundColor: activeFilter === filter ? '#fe6200' : '#ffffff',
-                  color: activeFilter === filter ? '#ffffff' : '#2f3437',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  padding: '8px 18px',
-                  borderRadius: '8px',
-                  border: activeFilter === filter ? '1px solid #fe6200' : '1px solid #e4e2e1',
-                  cursor: 'pointer',
-                  transition: 'all 0.18s',
-                }}
-              >
-                {filter} {filter === 'All' ? `(${PORTFOLIO_CASE_STUDIES.length})` : ''}
-              </button>
-            ))}
-          </div>
-
-          <div style={{ fontSize: '13px', color: '#66615c', fontWeight: 500 }}>
-            Showing <strong>{filteredCases.length}</strong> featured projects
+            <button
+              onClick={() => {
+                const el = document.getElementById('case-studies-catalog');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              style={{
+                backgroundColor: '#ffffff',
+                color: '#111111',
+                border: '1px solid rgba(0, 0, 0, 0.12)',
+                padding: '13px 26px',
+                borderRadius: '8px',
+                fontSize: '14.5px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                transition: 'background-color 0.2s, border-color 0.2s',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.03)',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#fe6200')}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)')}
+            >
+              Explore Case Studies
+            </button>
           </div>
         </div>
       </section>
 
       {/* ========================================================
-          CASE STUDIES GRID - CREAM BEIGE BACKGROUND
+          2. CASE STUDIES CATALOG (Same Showcasing Style as ServicesHubPage)
           ======================================================== */}
-      <section style={{ backgroundColor: 'var(--colors-surface-light, #f1efeb)', padding: '60px 24px 80px' }}>
-        <div
-          style={{
-            maxWidth: '1240px',
-            margin: '0 auto',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-            gap: '28px',
-          }}
-        >
-          {filteredCases.map((cs, idx) => {
-            const isExpanded = expandedCardId === cs.id;
-            return (
-              <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
-                <div
-                  className="nm-corner-glow"
-                  style={{
-                    backgroundColor: '#ffffff',
-                    border: isExpanded ? '2px solid #fe6200' : '1px solid rgba(0, 0, 0, 0.08)',
-                    borderRadius: '12px',
-                    padding: '28px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    transition: 'transform 0.2s, border-color 0.2s, box-shadow 0.2s',
-                    position: 'relative',
-                    overflow: 'hidden',
-                    boxShadow: isExpanded ? '0 16px 36px rgba(254, 98, 0, 0.12)' : '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!isExpanded) {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
+      <section
+        id="case-studies-catalog"
+        style={{
+          padding: '60px 24px 80px',
+          backgroundColor: 'var(--colors-surface-light, #f1efeb)',
+          borderTop: '1px solid #e4e2e1',
+        }}
+      >
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          {/* Header & Category Filter Tabs */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'flex-end',
+              flexWrap: 'wrap',
+              gap: '20px',
+              marginBottom: '36px',
+            }}
+          >
+            <div>
+              <h2
+                style={{
+                  fontSize: 'clamp(26px, 3.2vw, 36px)',
+                  fontWeight: 800,
+                  color: '#000000',
+                  margin: '0 0 8px 0',
+                  fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                }}
+              >
+                Case Study Catalog
+              </h2>
+              <p style={{ fontSize: '15px', color: '#66615c', margin: 0 }}>
+                30 verified client projects engineered across artificial intelligence, enterprise platforms, and digital products.
+              </p>
+            </div>
+
+            {/* Filter Pill Controls */}
+            <div
+              style={{
+                display: 'inline-flex',
+                backgroundColor: '#ffffff',
+                padding: '4px',
+                borderRadius: '10px',
+                border: '1px solid #e4e2e1',
+                flexWrap: 'wrap',
+                gap: '2px',
+              }}
+            >
+              <button
+                onClick={() => setActiveCategory('ALL')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'ALL' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'ALL' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                All (30)
+              </button>
+              <button
+                onClick={() => setActiveCategory('AI')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'AI' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'AI' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                AI & Analytics (10)
+              </button>
+              <button
+                onClick={() => setActiveCategory('HEALTHCARE')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'HEALTHCARE' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'HEALTHCARE' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                Healthcare & EdTech (8)
+              </button>
+              <button
+                onClick={() => setActiveCategory('FINTECH')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'FINTECH' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'FINTECH' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                FinTech & Logistics (6)
+              </button>
+              <button
+                onClick={() => setActiveCategory('ENTERPRISE')}
+                style={{
+                  padding: '8px 16px',
+                  borderRadius: '7px',
+                  border: 'none',
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  backgroundColor: activeCategory === 'ENTERPRISE' ? '#fe6200' : 'transparent',
+                  color: activeCategory === 'ENTERPRISE' ? '#ffffff' : '#444444',
+                  transition: 'all 0.15s ease',
+                }}
+              >
+                Enterprise & Cloud (6)
+              </button>
+            </div>
+          </div>
+
+          {/* Cards Grid with Corner Glow and Clean Apple HIG Styling */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
+              gap: '22px',
+            }}
+          >
+            {filteredCases.map((cs, idx) => {
+              const unified = UNIFIED_CASE_STUDIES[cs.id];
+              const timeline = unified?.overview?.projectDuration || '3–4 Months';
+              const capabilities = unified?.keyFeatures && unified.keyFeatures.length >= 3
+                ? unified.keyFeatures.slice(0, 3)
+                : [
+                    `Production-hardened ${cs.service} system`,
+                    `High-concurrency data resilience`,
+                    `Full source code & IP handover`,
+                  ];
+
+              const formattedNum = String(idx + 1).padStart(2, '0');
+
+              return (
+                <RevealElement key={cs.id} variant="card" delay={(idx % 3) * 0.06}>
+                  <div
+                    className="nm-corner-glow"
+                    onClick={() => onNavigatePage('project', cs.id)}
+                    style={{
+                      backgroundColor: '#ffffff',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      borderRadius: '12px',
+                      padding: '28px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      minHeight: '380px',
+                      transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease',
+                      boxShadow: '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
+                      position: 'relative',
+                      overflow: 'hidden',
+                    }}
+                    onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.4)';
-                      e.currentTarget.style.boxShadow = '0 16px 36px rgba(254, 98, 0, 0.08)';
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!isExpanded) {
-                      e.currentTarget.style.transform = 'translateY(0)';
+                      e.currentTarget.style.transform = 'translateY(-3px)';
+                      e.currentTarget.style.boxShadow = '0 14px 34px -8px rgba(0, 0, 0, 0.08)';
+                    }}
+                    onMouseLeave={(e) => {
                       e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
+                      e.currentTarget.style.transform = 'translateY(0)';
                       e.currentTarget.style.boxShadow = '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)';
-                    }
-                  }}
-                >
-                  {/* Category & Metric Pip */}
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px', gap: '12px' }}>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                        <span
-                          style={{
-                            width: '6px',
-                            height: '6px',
-                            borderRadius: '50%',
-                            backgroundColor: '#fe6200',
-                            display: 'inline-block',
-                            boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
-                            flexShrink: 0,
-                          }}
-                        />
+                    }}
+                  >
+                    <div>
+                      {/* Top Row: Number & Category Badge */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          marginBottom: '14px',
+                        }}
+                      >
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                          <div
+                            style={{
+                              width: '38px',
+                              height: '38px',
+                              borderRadius: '8px',
+                              backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              fontSize: '13px',
+                              fontWeight: 800,
+                              color: '#fe6200',
+                              fontFamily: 'monospace',
+                            }}
+                          >
+                            {formattedNum}
+                          </div>
+                          <span
+                            style={{
+                              fontSize: '11px',
+                              fontWeight: 700,
+                              color: '#111111',
+                              letterSpacing: '0.04em',
+                              textTransform: 'uppercase',
+                            }}
+                          >
+                            {cs.client}
+                          </span>
+                        </div>
+
                         <span
                           style={{
                             fontSize: '11px',
                             fontWeight: 700,
-                            color: '#fe6200',
-                            fontFamily: 'monospace',
-                            letterSpacing: '0.06em',
                             textTransform: 'uppercase',
+                            letterSpacing: '0.06em',
+                            color: '#fe6200',
+                            backgroundColor: 'rgba(254, 98, 0, 0.1)',
+                            padding: '3px 8px',
+                            borderRadius: '6px',
+                            fontFamily: 'monospace',
                           }}
                         >
                           {cs.category}
                         </span>
                       </div>
-                      <div style={{ textAlign: 'right' }}>
-                        <div style={{ fontSize: '18px', fontWeight: 800, color: '#fe6200', fontFamily: 'var(--font-heading)' }}>{cs.metric}</div>
-                        <div style={{ fontSize: '11px', color: '#66615c', fontWeight: 500 }}>{cs.metricLabel}</div>
-                      </div>
-                    </div>
 
-                    {/* Client & Service Subtitle */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
-                        Client: {cs.client}
-                      </span>
-                      <span style={{ color: '#66615c' }}>•</span>
-                      <span style={{ fontSize: '12px', color: '#fe6200', fontWeight: 600 }}>
-                        {cs.service}
-                      </span>
-                    </div>
-
-                    <h3
-                      onClick={() => onNavigatePage('project', cs.id)}
-                      style={{
-                        fontSize: '20px',
-                        fontWeight: 700,
-                        color: '#000000',
-                        lineHeight: 1.3,
-                        marginBottom: '12px',
-                        fontFamily: 'var(--font-heading)',
-                        cursor: 'pointer',
-                        transition: 'color 0.15s ease',
-                      }}
-                      onMouseEnter={(e) => (e.currentTarget.style.color = '#fe6200')}
-                      onMouseLeave={(e) => (e.currentTarget.style.color = '#000000')}
-                    >
-                      {cs.title}
-                    </h3>
-
-                    <p
-                      style={{
-                        fontSize: '14.5px',
-                        lineHeight: 1.55,
-                        color: '#333333',
-                        marginBottom: '18px',
-                      }}
-                    >
-                      {cs.description}
-                    </p>
-                  </div>
-
-                  <div>
-                    {/* Tech Tags */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
-                      {cs.tags.map((tag) => {
-                        const icon = getTechIconPath(tag);
-                        return (
-                          <span
-                            key={tag}
-                            style={{
-                              fontSize: '11.5px',
-                              color: '#1a1a1a',
-                              backgroundColor: '#f1efeb',
-                              border: '1px solid #e4e2e1',
-                              padding: '3px 8px',
-                              borderRadius: '8px',
-                              fontWeight: 600,
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '4px',
-                            }}
-                          >
-                            {icon && (
-                              <img
-                                src={icon}
-                                alt=""
-                                aria-hidden="true"
-                                style={{ width: '12px', height: '12px', objectFit: 'contain' }}
-                              />
-                            )}
-                            <span>{tag}</span>
-                          </span>
-                        );
-                      })}
-                    </div>
-
-                    {/* Full Case Study Template Expansion Area */}
-                    {isExpanded && (
+                      {/* Project Timeline & Metric Pill */}
                       <div
                         style={{
-                          backgroundColor: '#f1efeb',
-                          border: '1px solid #e4e2e1',
-                          borderRadius: '8px',
-                          padding: '18px',
-                          marginBottom: '18px',
                           display: 'flex',
-                          flexDirection: 'column',
-                          gap: '14px',
-                          fontSize: '13px',
-                          color: '#2f3437',
-                          lineHeight: 1.5,
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          gap: '8px',
+                          marginBottom: '14px',
+                          padding: '6px 10px',
+                          backgroundColor: '#faf8f5',
+                          borderRadius: '6px',
+                          border: '1px solid rgba(0, 0, 0, 0.04)',
                         }}
                       >
-                        <div>
-                          <strong style={{ color: '#000000', display: 'block', marginBottom: '2px' }}>Client Context</strong>
-                          {cs.details.clientContext}
-                        </div>
-                        <div>
-                          <strong style={{ color: '#000000', display: 'block', marginBottom: '2px' }}>Challenge & Constraints</strong>
-                          {cs.details.challenge} {cs.details.constraints}
-                        </div>
-                        <div>
-                          <strong style={{ color: '#000000', display: 'block', marginBottom: '2px' }}>Engineering Solution</strong>
-                          {cs.details.approach} {cs.details.solution}
-                        </div>
-                        <div>
-                          <strong style={{ color: '#059669', display: 'block', marginBottom: '2px' }}>Verified Results</strong>
-                          {cs.details.results}
-                        </div>
-                        <div style={{ backgroundColor: '#ffffff', padding: '10px 12px', borderRadius: '8px', borderLeft: '3px solid #fe6200', border: '1px solid #e4e2e1' }}>
-                          <strong style={{ color: '#000000', display: 'block', marginBottom: '2px' }}>Key Takeaway</strong>
-                          <span style={{ fontStyle: 'italic', color: '#333333' }}>"{cs.details.takeaway}"</span>
-                        </div>
+                        <span style={{ fontSize: '12px', color: '#66615c', fontWeight: 500 }}>
+                          Timeline: <strong style={{ color: '#111111' }}>{timeline.split('(')[0].trim()}</strong>
+                        </span>
+                        <span style={{ fontSize: '12px', color: '#fe6200', fontWeight: 700 }}>
+                          {cs.metric} {cs.metricLabel}
+                        </span>
                       </div>
-                    )}
 
-                    {/* Bottom Action */}
-                    <div
-                      style={{
-                        borderTop: '1px solid #e4e2e1',
-                        paddingTop: '14px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                      }}
-                    >
-                      <span style={{ fontSize: '12.5px', fontWeight: 700, color: '#059669' }}>{cs.stats}</span>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <button
-                          onClick={() => setExpandedCardId(isExpanded ? null : cs.id)}
-                          style={{
-                            background: 'none',
-                            border: 'none',
-                            color: '#fe6200',
-                            fontSize: '13.5px',
-                            fontWeight: 600,
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '4px',
-                            cursor: 'pointer',
-                            padding: '4px 6px',
-                          }}
-                        >
-                          <span>{isExpanded ? 'Hide scope' : 'Read scope'}</span>
-                          <ChevronRight
-                            size={14}
+                      {/* Title */}
+                      <h3
+                        style={{
+                          fontSize: '18.5px',
+                          fontWeight: 700,
+                          color: '#000000',
+                          lineHeight: 1.35,
+                          marginBottom: '10px',
+                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                        }}
+                      >
+                        {cs.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p
+                        style={{
+                          fontSize: '13.5px',
+                          lineHeight: 1.6,
+                          color: '#444444',
+                          marginBottom: '18px',
+                        }}
+                      >
+                        {cs.description}
+                      </p>
+
+                      {/* Key Capabilities Checklist */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '8px',
+                          marginBottom: '20px',
+                        }}
+                      >
+                        {capabilities.map((cap, i) => (
+                          <div
+                            key={i}
                             style={{
-                              transform: isExpanded ? 'rotate(90deg)' : 'none',
-                              transition: 'transform 0.2s',
+                              display: 'flex',
+                              alignItems: 'flex-start',
+                              gap: '8px',
+                              fontSize: '12.5px',
+                              color: '#333333',
+                              lineHeight: 1.45,
                             }}
-                          />
-                        </button>
-                        <button
-                          onClick={() => onNavigatePage('project', cs.id)}
+                          >
+                            <CheckCircle
+                              size={14}
+                              color="#fe6200"
+                              style={{ flexShrink: 0, marginTop: '2px' }}
+                            />
+                            <span>{cap.replace(/^[•\-\*]\s*/, '').slice(0, 85)}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      {/* Tech Stack Tags with SVGs */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexWrap: 'wrap',
+                          gap: '6px',
+                          marginBottom: '16px',
+                        }}
+                      >
+                        {cs.tags.slice(0, 5).map((tag) => {
+                          const icon = getTechIconPath(tag);
+                          return (
+                            <span
+                              key={tag}
+                              style={{
+                                fontSize: '11px',
+                                color: '#1a1a1a',
+                                backgroundColor: '#f5f3ee',
+                                border: '1px solid rgba(0, 0, 0, 0.06)',
+                                padding: '3px 8px',
+                                borderRadius: '6px',
+                                fontWeight: 600,
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '5px',
+                              }}
+                            >
+                              {icon && (
+                                <img
+                                  src={icon}
+                                  alt=""
+                                  aria-hidden="true"
+                                  style={{ width: '12px', height: '12px', objectFit: 'contain' }}
+                                />
+                              )}
+                              <span>{tag}</span>
+                            </span>
+                          );
+                        })}
+                      </div>
+
+                      {/* Bottom Action Row */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          paddingTop: '12px',
+                          borderTop: '1px solid #f1efeb',
+                        }}
+                      >
+                        <span
                           style={{
-                            backgroundColor: '#fbf9f5',
-                            color: '#000000',
-                            border: 'none',
-                            fontSize: '12px',
+                            fontSize: '13px',
                             fontWeight: 600,
-                            padding: '6px 12px',
-                            borderRadius: '8px',
-                            cursor: 'pointer',
+                            color: '#fe6200',
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '4px',
+                            gap: '6px',
                           }}
                         >
-                          <span>Full Project</span>
-                          <ArrowRight size={12} />
-                        </button>
+                          Read Full Case Study
+                          <ArrowRight size={13} />
+                        </span>
                       </div>
                     </div>
                   </div>
-                </div>
-              </RevealElement>
-            );
-          })}
+                </RevealElement>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* ========================================================
-          GLOBAL CLIENT TESTIMONIALS
+          3. OUR PRODUCTION STANDARDS (Mirroring ServicesHubPage)
           ======================================================== */}
-      <Testimonials />
+      <section
+        style={{
+          padding: '80px 24px',
+          backgroundColor: '#ffffff',
+          borderTop: '1px solid #e4e2e1',
+        }}
+      >
+        <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '720px', marginBottom: '44px' }}>
+            <span
+              style={{
+                fontSize: '11.5px',
+                fontWeight: 700,
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                color: '#fe6200',
+                fontFamily: 'monospace',
+              }}
+            >
+              Engineering Rigor
+            </span>
+            <h2
+              style={{
+                fontSize: 'clamp(28px, 3.5vw, 38px)',
+                fontWeight: 800,
+                color: '#000000',
+                margin: '6px 0 12px 0',
+                fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+              }}
+            >
+              How We Deliver Mission-Critical Systems
+            </h2>
+            <p style={{ fontSize: '15.5px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+              Every client project follows strict engineering gates: discovery modeling, bi-weekly staging releases, automated regression verification, and full code handover without proprietary lock-in.
+            </p>
+          </div>
 
-      {/* ========================================================
-          LEAD CTA STRIP
-          ======================================================== */}
-      <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section
-          style={{
-            backgroundColor: '#fe6200',
-            padding: '48px 24px',
-            color: '#000000',
-          }}
-        >
           <div
             style={{
-              maxWidth: '1240px',
-              margin: '0 auto',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '24px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '22px',
             }}
           >
-            <div>
-              <ScrollReveal
-                as="h3"
-                style={{ fontSize: '24px', fontWeight: 800, color: '#000000', marginBottom: '8px', fontFamily: 'var(--font-heading)', display: 'block' }}
-                blurStrength={6}
-              >
-                Looking for a specialized project reference in your industry?
-              </ScrollReveal>
-              <RevealElement variant="text" delay={0.06}>
-                <p style={{ fontSize: '15px', color: '#000000', margin: 0 }}>
-                  Over 80% of our enterprise systems operate under strict NDA. Contact us for custom architectures and code walk-throughs.
-                </p>
+            {EXECUTION_STANDARDS.map((std, idx) => (
+              <RevealElement key={idx} variant="card" delay={idx * 0.08}>
+                <div
+                  style={{
+                    backgroundColor: 'var(--colors-surface-light, #fbf9f5)',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    padding: '28px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    minHeight: '220px',
+                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        fontSize: '18px',
+                        fontWeight: 800,
+                        color: '#fe6200',
+                        fontFamily: 'monospace',
+                        marginBottom: '14px',
+                      }}
+                    >
+                      {std.num}
+                    </div>
+                    <h3
+                      style={{
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        color: '#000000',
+                        margin: '0 0 10px 0',
+                      }}
+                    >
+                      {std.title}
+                    </h3>
+                    <p style={{ fontSize: '13.5px', color: '#555555', lineHeight: 1.6, margin: 0 }}>
+                      {std.desc}
+                    </p>
+                  </div>
+                </div>
               </RevealElement>
-            </div>
-
-            <form onSubmit={handleLeadSubmit} style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              <input
-                type="email"
-                placeholder="Enter your corporate email"
-                value={leadEmail}
-                onChange={(e) => setLeadEmail(e.target.value)}
-                required
-                style={{
-                  padding: '12px 18px',
-                  fontSize: '14px',
-                  backgroundColor: '#ffffff',
-                  border: '1px solid #ffffff',
-                  borderRadius: '8px',
-                  color: '#000000',
-                  minWidth: '280px',
-                  outline: 'none',
-                }}
-              />
-              <button
-                type="submit"
-                className="btn btn-md"
-                style={{ backgroundColor: '#fbf9f5', color: '#000000', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}
-              >
-                Get Custom Deck
-              </button>
-            </form>
+            ))}
           </div>
-        </section>
-      </RevealElement>
+        </div>
+      </section>
 
-      {/* ========================================================
-          GLOBAL FOOTER
-          ======================================================== */}
-      <Footer
-        onNavigate={(target) => {
-          if (target === '#contact') {
-            onNavigatePage('contacts');
-          } else if (target === '#casestudies') {
-            onNavigatePage('portfolio');
-          } else {
-            onNavigatePage('home');
-          }
-        }}
-      />
+      {/* Shared Contact & Locations */}
+      <div id="contact-section">
+        <ContactSection />
+      </div>
+      <LocationsSection />
+      <Footer onNavigate={(target) => onNavigatePage(target.replace('#', ''))} />
     </div>
   );
 };
-
-export const PortfolioPage = React.memo(PortfolioPageComponent);
