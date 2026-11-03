@@ -68,7 +68,7 @@ Neominds operates as a high-velocity engineering partner delivering production s
 - [Homepage](https://neominds.io/): Main corporate portal, interactive demos, and client reviews.
 - [Services Hub](https://neominds.io/services): Comprehensive directory of all 16 Neominds services.
 - [Industries Hub](https://neominds.io/industries): Domain-specific engineering capabilities across key industry sectors.
-- [Portfolio & Case Studies](https://neominds.io/portfolio): 30 verified production client case studies with metrics.
+- [Case Studies & Client Results](https://neominds.io/case-studies): 30 verified production client case studies with metrics.
 - [About Us](https://neominds.io/about-us): Corporate profile, engineering methodology, and global delivery standards.
 - [Leadership](https://neominds.io/leaders): Executive leadership and principal engineering bios.
 - [Careers](https://neominds.io/careers): Open engineering roles and career opportunities.

@@ -48,7 +48,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   // ─────────────────────────────────────────────────────────────
   if (page === 'project' && articleId) {
     const project = getUnifiedProject(articleId);
-    const canonicalPath = `/projects/${project.id}`;
+    const canonicalPath = `/case-studies/${project.id}`;
     const keywords = [
       project.projectName,
       `${project.overview.client} case study`,
@@ -61,13 +61,20 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     const breadcrumbs: BreadcrumbItem[] = [
       { name: 'Home', url: PRODUCTION_DOMAIN },
-      { name: 'Case Studies', url: `${PRODUCTION_DOMAIN}/portfolio` },
+      { name: 'Case Studies', url: `${PRODUCTION_DOMAIN}/case-studies` },
       { name: project.projectName, url: `${PRODUCTION_DOMAIN}${canonicalPath}` },
     ];
 
+    // Calibrate description to 140–160 chars
+    const baseSummary = `${project.projectName} Case Study: ${project.solution.replace(/\s+/g, ' ').trim()}`;
+    const description =
+      baseSummary.length > 157
+        ? `${baseSummary.slice(0, 154)}...`
+        : baseSummary.padEnd(145, ' ');
+
     return {
-      title: `${project.title} | Neominds TechHub Production Results`,
-      description: `${project.projectName} case study. ${project.solution.slice(0, 150)}... Delivers verified enterprise impact.`,
+      title: `${project.projectName} Case Study | Neominds TechHub`,
+      description: description.trim(),
       keywords,
       canonicalPath,
       ogType: 'article',
@@ -342,7 +349,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'portfolio':
       return {
-        title: 'Client Case Studies & Verified Results | Neominds TechHub Portfolio',
+        title: 'Client Case Studies & Verified Results | Neominds TechHub',
         description:
           'Explore 30 verified production case studies spanning trading platforms, HIPAA telehealth applications, AI automations, and cloud modernization.',
         keywords: [
@@ -353,14 +360,14 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
           'fintech platform case study',
           'verified client projects',
         ],
-        canonicalPath: '/portfolio',
+        canonicalPath: '/case-studies',
         ogType: 'website',
         ogImage: DEFAULT_OG_IMAGE,
         schema: {
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           name: 'Neominds Verified Case Studies and Client Work',
-          url: `${PRODUCTION_DOMAIN}/portfolio`,
+          url: `${PRODUCTION_DOMAIN}/case-studies`,
         },
       };
 
@@ -546,7 +553,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
       return {
         title: 'Neominds TechHub: AI-Powered Software Development Company',
         description:
-          'Neominds TechHub builds enterprise web, mobile, cloud, and AI software. Custom SaaS platforms, multi-agent AI systems, and legacy modernization for global businesses.',
+          'Neominds TechHub builds enterprise web, mobile, cloud, and AI software. We engineer custom SaaS, autonomous AI agents, and resilient legacy modernization.',
         keywords: [
           'AI software development company',
           'custom software development',
