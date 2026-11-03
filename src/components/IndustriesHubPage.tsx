@@ -269,17 +269,20 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
                 key={idx}
                 variant="card"
                 delay={idx * 0.05}
+                className="nm-corner-glow"
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '16px',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
                   padding: 'clamp(20px, 3.5vw, 32px)',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
+                  boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
                   width: '100%',
                   boxSizing: 'border-box',
+                  overflow: 'hidden',
+                  position: 'relative',
                 }}
               >
                 <div>
@@ -374,10 +377,11 @@ export const IndustriesHubPage: React.FC<IndustriesHubPageProps> = ({
               <div
                 key={idx}
                 style={{
-                  backgroundColor: 'var(--colors-surface-light, #f1efeb)',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '8px',
-                  padding: '20px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '22px',
+                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                 }}
               >
                 <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000', marginBottom: '6px' }}>

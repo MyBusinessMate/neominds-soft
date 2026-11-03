@@ -98,13 +98,15 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             {/* Right Hero Visual Card */}
             <div style={{ position: 'relative' }}>
               <div
+                className="nm-corner-glow"
                 style={{
                   position: 'relative',
-                  borderRadius: '8px',
+                  borderRadius: '12px',
                   overflow: 'hidden',
-                  background: 'var(--colors-surface-dark-subtle, #f0ece2)',
-                  padding: '36px',
-                  border: '1px solid #27272a',
+                  backgroundColor: '#ffffff',
+                  padding: 'clamp(28px, 3.2vw, 36px)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
                 }}
               >
                 <div style={{ fontSize: '13px', fontWeight: 600, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '12px' }}>
@@ -117,17 +119,17 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                 <p style={{ fontSize: '14.5px', color: '#2b2b2b', lineHeight: 1.65, margin: '0 0 24px' }}>
                   Our leadership team is composed of hands-on architects and seasoned delivery directors who have built, scaled, and maintained critical software platforms worldwide.
                 </p>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', borderTop: '1px solid #1f1f23', paddingTop: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', borderTop: '1px solid rgba(254, 98, 0, 0.25)', paddingTop: '20px' }}>
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>15+</div>
                     <div style={{ fontSize: '12px', color: '#4b5563' }}>Avg Yrs Experience</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(254, 98, 0, 0.25)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>100%</div>
                     <div style={{ fontSize: '12px', color: '#4b5563' }}>Hands-on Technical</div>
                   </div>
-                  <div style={{ width: '1px', height: '32px', backgroundColor: 'var(--colors-border-dark, #f0ece2)' }} />
+                  <div style={{ width: '1px', height: '32px', backgroundColor: 'rgba(254, 98, 0, 0.25)' }} />
                   <div>
                     <div style={{ fontSize: '24px', fontWeight: 700, color: '#fe6200' }}>24/7</div>
                     <div style={{ fontSize: '12px', color: '#4b5563' }}>Global Coverage</div>

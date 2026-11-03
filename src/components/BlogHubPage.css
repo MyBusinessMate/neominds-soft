@@ -217,7 +217,7 @@
   max-height: 380px;
   overflow: hidden;
   background-color: #f1efeb;
-  border-radius: 8px;
+  border-radius: 12px;
   position: relative;
   cursor: pointer;
 }

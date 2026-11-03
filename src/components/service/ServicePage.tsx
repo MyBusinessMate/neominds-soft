@@ -675,16 +675,18 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
                 {/* In-article Stat Callout */}
                 <div
+                  className="nm-corner-glow"
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '24px',
                     backgroundColor: '#ffffff',
-                    border: '1px solid #e4e2e1',
-                    padding: '18px 24px',
-                    borderRadius: '8px',
-                    margin: '20px 0',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    padding: '20px 28px',
+                    borderRadius: '12px',
+                    margin: '24px 0',
                     flexWrap: 'wrap',
+                    boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
                   }}
                 >
                   <div>
@@ -1067,9 +1069,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
             <div
               style={{
                 backgroundColor: '#ffffff',
-                border: '1px solid #e4e2e1',
-                borderRadius: '8px',
-                padding: '20px 22px',
+                border: '1px solid rgba(0, 0, 0, 0.08)',
+                borderRadius: '12px',
+                padding: '22px 24px',
+                boxShadow: '0 8px 24px -10px rgba(0, 0, 0, 0.06)',
               }}
             >
               <div
@@ -1241,11 +1244,15 @@ export const ServicePage: React.FC<ServicePageProps> = ({
 
             {/* 3. Direct Architect Engagement Card */}
             <div
+              className="nm-corner-glow"
               style={{
                 backgroundColor: '#ffffff',
-                border: '1.5px solid #fe6200',
-                borderRadius: '8px',
-                padding: '20px 22px',
+                border: '1px solid rgba(254, 98, 0, 0.35)',
+                borderRadius: '12px',
+                padding: '22px 24px',
+                boxShadow: '0 10px 30px -12px rgba(254, 98, 0, 0.2), 0 2px 6px rgba(0, 0, 0, 0.02)',
+                position: 'relative',
+                overflow: 'hidden',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -1264,12 +1271,13 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                   textAlign: 'center',
                   backgroundColor: '#fe6200',
                   color: '#ffffff',
-                  borderRadius: '6px',
-                  padding: '10px 16px',
+                  borderRadius: '8px',
+                  padding: '11px 18px',
                   fontSize: '13.5px',
                   fontWeight: 700,
                   textDecoration: 'none',
                   transition: 'background-color 0.2s',
+                  boxShadow: '0 4px 14px rgba(254, 98, 0, 0.35)',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#cf5000')}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#fe6200')}
@@ -1283,9 +1291,10 @@ export const ServicePage: React.FC<ServicePageProps> = ({
               <div
                 style={{
                   backgroundColor: '#ffffff',
-                  border: '1px solid #e4e2e1',
-                  borderRadius: '8px',
-                  padding: '20px 22px',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '22px 24px',
+                  boxShadow: '0 8px 24px -10px rgba(0, 0, 0, 0.06)',
                 }}
               >
                 <div
@@ -1369,24 +1378,30 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 <div
                   key={rIdx}
                   onClick={() => onNavigatePage(item.slug)}
+                  className="nm-corner-glow"
                   style={{
-                    padding: '16px 20px',
+                    padding: '18px 22px',
                     backgroundColor: '#ffffff',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '8px',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    boxShadow: '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     cursor: 'pointer',
                     transition: 'all 0.2s',
+                    position: 'relative',
+                    overflow: 'hidden',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
+                    e.currentTarget.style.borderColor = 'rgba(254, 98, 0, 0.5)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 12px 28px -6px rgba(254, 98, 0, 0.12)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
+                    e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.08)';
                     e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.boxShadow = '0 6px 20px -6px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02)';
                   }}
                 >
                   <div>

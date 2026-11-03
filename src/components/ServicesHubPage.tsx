@@ -589,13 +589,14 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 <div
                   style={{
                     backgroundColor: 'var(--colors-surface-light, #fbf9f5)',
-                    border: '1px solid #e4e2e1',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
                     borderRadius: '12px',
                     padding: '28px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     minHeight: '220px',
+                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                   }}
                 >
                   <div>

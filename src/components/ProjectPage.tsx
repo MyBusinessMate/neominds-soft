@@ -634,10 +634,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
             >
               <div
                 style={{
-                  border: '1px solid #f0ece2',
-                  borderRadius: '8px',
-                  padding: '16px',
-                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '18px',
+                  backgroundColor: '#ffffff',
+                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -661,7 +662,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                         fontWeight: 600,
                         padding: '3px 8px',
                         borderRadius: '5px',
-                        backgroundColor: '#ffffff',
+                        backgroundColor: '#fbf9f5',
                         border: '1px solid #e5e0d8',
                         color: '#1a1a1a',
                       }}
@@ -682,10 +683,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
               <div
                 style={{
-                  border: '1px solid #f0ece2',
-                  borderRadius: '8px',
-                  padding: '16px',
-                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '18px',
+                  backgroundColor: '#ffffff',
+                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -709,7 +711,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                         fontWeight: 600,
                         padding: '3px 8px',
                         borderRadius: '5px',
-                        backgroundColor: '#ffffff',
+                        backgroundColor: '#fbf9f5',
                         border: '1px solid #e5e0d8',
                         color: '#1a1a1a',
                       }}
@@ -730,10 +732,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
 
               <div
                 style={{
-                  border: '1px solid #f0ece2',
-                  borderRadius: '8px',
-                  padding: '16px',
-                  backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                  border: '1px solid rgba(0, 0, 0, 0.08)',
+                  borderRadius: '12px',
+                  padding: '18px',
+                  backgroundColor: '#ffffff',
+                  boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -757,7 +760,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                         fontWeight: 600,
                         padding: '3px 8px',
                         borderRadius: '5px',
-                        backgroundColor: '#ffffff',
+                        backgroundColor: '#fbf9f5',
                         border: '1px solid #e5e0d8',
                         color: '#1a1a1a',
                       }}
@@ -779,10 +782,11 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.aiAutomation && (
                 <div
                   style={{
-                    border: '1px solid #f0ece2',
-                    borderRadius: '8px',
-                    padding: '16px',
-                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    padding: '18px',
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -806,7 +810,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                           fontWeight: 600,
                           padding: '3px 8px',
                           borderRadius: '5px',
-                          backgroundColor: '#ffffff',
+                          backgroundColor: '#fbf9f5',
                           border: '1px solid #e5e0d8',
                           color: '#1a1a1a',
                         }}
@@ -829,11 +833,12 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               {project.technologyImplementation.integrations && (
                 <div
                   style={{
-                    border: '1px solid #f0ece2',
-                    borderRadius: '8px',
-                    padding: '16px',
-                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
+                    border: '1px solid rgba(0, 0, 0, 0.08)',
+                    borderRadius: '12px',
+                    padding: '18px',
+                    backgroundColor: '#ffffff',
                     gridColumn: '1 / -1',
+                    boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)',
                   }}
                 >
                   <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '6px' }}>
@@ -890,7 +895,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               marginBottom: '20px',
             }}
           >
-            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Efficiency
               </div>
@@ -899,7 +904,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Time Saved
               </div>
@@ -908,7 +913,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Cost Reduction
               </div>
@@ -917,7 +922,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa' }}>
+            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Performance
               </div>
@@ -926,7 +931,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               </div>
             </div>
 
-            <div style={{ border: '1px solid #f0ece2', borderRadius: '8px', padding: '18px', backgroundColor: '#fafafa', gridColumn: '1 / -1' }}>
+            <div style={{ border: '1px solid rgba(0, 0, 0, 0.08)', borderRadius: '12px', padding: '18px 20px', backgroundColor: '#ffffff', gridColumn: '1 / -1', boxShadow: '0 4px 16px -8px rgba(0, 0, 0, 0.06)' }}>
               <div style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', color: '#555555', letterSpacing: '0.04em', marginBottom: '4px' }}>
                 Business Impact
               </div>

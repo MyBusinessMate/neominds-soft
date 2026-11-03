@@ -23,20 +23,21 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
           onClick();
         }
       }}
+      className="nm-corner-glow"
       style={{
         position: 'relative',
         width: '100%',
         minHeight: '400px',
         height: 'clamp(400px, 46vw, 470px)',
-        borderRadius: '8px',
+        borderRadius: '12px',
         overflow: 'hidden',
-        border: isActive ? '1.5px solid #fe6200' : '1px solid #e4e2e1',
+        border: isActive ? '1.5px solid #fe6200' : '1px solid rgba(0, 0, 0, 0.08)',
         backgroundColor: '#f1efeb',
         cursor: 'pointer',
         transition: 'transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease',
         boxShadow: isActive
           ? '0 18px 40px -12px rgba(254, 98, 0, 0.22), 0 4px 12px rgba(0, 0, 0, 0.04)'
-          : '0 8px 24px -8px rgba(0, 0, 0, 0.06)',
+          : '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-4px)';
@@ -44,7 +45,7 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.borderColor = isActive ? '#fe6200' : '#e4e2e1';
+        e.currentTarget.style.borderColor = isActive ? '#fe6200' : 'rgba(0, 0, 0, 0.08)';
       }}
     >
       {/* Portrait Image with Initials Fallback */}

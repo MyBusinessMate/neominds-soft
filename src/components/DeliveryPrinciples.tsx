@@ -350,49 +350,59 @@ const DeliveryPrinciplesComponent: React.FC = () => {
             marginTop: 'clamp(48px, 6vw, 72px)',
           }}
         >
-          {/* Desktop View: 4 Individual Cards */}
-          <div className="desktop-stats-cards">
+          <div
+            className="nm-delivery-stats-strip nm-corner-glow"
+            style={{
+              width: '100%',
+              backgroundColor: '#ffffff',
+              border: '1px solid rgba(0, 0, 0, 0.08)',
+              borderRadius: '12px',
+              boxShadow: '0 10px 30px -12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02)',
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
             <div
+              className="nm-delivery-stats-grid"
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: 'clamp(16px, 2vw, 24px)',
+                alignItems: 'stretch',
+                width: '100%',
+                position: 'relative',
+                zIndex: 2,
               }}
             >
               {alternatingStats.map((stat, idx) => (
                 <div
                   key={stat.label}
+                  className="nm-delivery-stat-cell"
                   style={{
-                    backgroundColor: '#ffffff',
-                    border: '1px solid #e4e2e1',
-                    borderRadius: '8px',
-                    padding: 'clamp(24px, 2.4vw, 32px) clamp(18px, 1.8vw, 24px)',
+                    padding: 'clamp(24px, 2.5vw, 32px) clamp(18px, 1.8vw, 24px)',
+                    borderRight: idx < alternatingStats.length - 1 ? '1px solid rgba(254, 98, 0, 0.35)' : 'none',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     minHeight: '190px',
-                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.02)',
-                    transition: 'border-color 0.25s ease, transform 0.25s ease',
+                    transition: 'background-color 0.25s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#fe6200';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.backgroundColor = 'rgba(254, 98, 0, 0.02)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = '#e4e2e1';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
                   }}
                 >
                   <div>
                     <div
                       style={{
                         fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                        fontSize: 'clamp(38px, 3.4vw, 52px)',
+                        fontSize: 'clamp(38px, 3.4vw, 50px)',
                         fontWeight: 400,
                         color: '#fe6200',
                         lineHeight: 1.05,
                         letterSpacing: '-0.02em',
-                        marginBottom: '12px',
+                        marginBottom: '10px',
                       }}
                     >
                       {counts[idx]}
@@ -401,9 +411,9 @@ const DeliveryPrinciplesComponent: React.FC = () => {
                     <div
                       style={{
                         fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                        fontSize: '12px',
+                        fontSize: '11px',
                         fontWeight: 700,
-                        letterSpacing: '0.06em',
+                        letterSpacing: '0.08em',
                         color: '#111111',
                         textTransform: 'uppercase',
                         lineHeight: 1.35,
@@ -427,155 +437,45 @@ const DeliveryPrinciplesComponent: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Mobile View: Alternating Stats Rows as in Reference */}
-          <div
-            className="mobile-stats-alternating"
-            style={{
-              borderTop: '1px solid #e4e2e1',
-              borderBottom: '1px solid #e4e2e1',
-            }}
-          >
-            {alternatingStats.map((stat, idx) => {
-              const isNumLeft = stat.numberPosition === 'left';
-              return (
-                <div
-                  key={stat.label}
-                  className="nm-stats-row"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '24px 0',
-                    borderTop: idx > 0 ? '1px solid #e4e2e1' : 'none',
-                    gap: '20px',
-                  }}
-                >
-                  {/* When Number is on Left */}
-                  {isNumLeft ? (
-                    <>
-                      <div
-                        className="nm-stat-num"
-                        style={{
-                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                          fontSize: 'clamp(52px, 12vw, 76px)',
-                          fontWeight: 400,
-                          color: '#fe6200',
-                          lineHeight: 0.95,
-                          letterSpacing: '-0.03em',
-                          minWidth: 'clamp(110px, 28vw, 150px)',
-                        }}
-                      >
-                        {counts[idx]}
-                        {stat.suffix}
-                      </div>
-
-                      <div style={{ flex: 1, textAlign: 'left' }}>
-                        <div
-                          style={{
-                            fontSize: '12px',
-                            fontWeight: 700,
-                            letterSpacing: '0.08em',
-                            textTransform: 'uppercase',
-                            color: '#111111',
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                            marginBottom: '6px',
-                          }}
-                        >
-                          {stat.label}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: '13.5px',
-                            color: '#66615c',
-                            lineHeight: 1.45,
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                          }}
-                        >
-                          {stat.subtext}
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    /* When Number is on Right */
-                    <>
-                      <div style={{ flex: 1, textAlign: 'left' }}>
-                        <div
-                          style={{
-                            fontSize: '12px',
-                            fontWeight: 700,
-                            letterSpacing: '0.08em',
-                            textTransform: 'uppercase',
-                            color: '#111111',
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                            marginBottom: '6px',
-                          }}
-                        >
-                          {stat.label}
-                        </div>
-                        <div
-                          style={{
-                            fontSize: '13.5px',
-                            color: '#66615c',
-                            lineHeight: 1.45,
-                            fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
-                          }}
-                        >
-                          {stat.subtext}
-                        </div>
-                      </div>
-
-                      <div
-                        className="nm-stat-num"
-                        style={{
-                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
-                          fontSize: 'clamp(52px, 12vw, 76px)',
-                          fontWeight: 400,
-                          color: '#fe6200',
-                          lineHeight: 0.95,
-                          letterSpacing: '-0.03em',
-                          textAlign: 'right',
-                          minWidth: 'clamp(110px, 28vw, 150px)',
-                        }}
-                      >
-                        {counts[idx]}
-                        {stat.suffix}
-                      </div>
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
       <style>{`
-        @media (min-width: 769px) {
-          .desktop-stats-cards {
-            display: block !important;
+        @media (max-width: 900px) {
+          .nm-delivery-stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
           }
-          .mobile-stats-alternating {
-            display: none !important;
+          .nm-delivery-stat-cell:nth-child(2) {
+            border-right: none !important;
+          }
+          .nm-delivery-stat-cell:nth-child(1),
+          .nm-delivery-stat-cell:nth-child(2) {
+            border-bottom: 1px solid rgba(254, 98, 0, 0.35) !important;
+          }
+        }
+
+        @media (max-width: 580px) {
+          .nm-delivery-stats-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .nm-delivery-stat-cell {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(254, 98, 0, 0.35) !important;
+            min-height: auto !important;
+            padding: 22px 18px !important;
+          }
+          .nm-delivery-stat-cell:last-child {
+            border-bottom: none !important;
           }
         }
 
         @media (max-width: 768px) {
-          .desktop-stats-cards {
-            display: none !important;
-          }
-          .mobile-stats-alternating {
-            display: block !important;
-          }
           #delivery {
             display: flex !important;
             flex-direction: column !important;
           }
           .principles-left-col {
             padding-bottom: 28px !important;
-          }
-          .nm-stats-row {
-            padding: 20px 0 !important;
           }
         }
       `}</style>
