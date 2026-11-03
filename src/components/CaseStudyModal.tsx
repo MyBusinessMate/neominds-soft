@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
-import { X, ArrowRight, ExternalLink, Check, Code2, Layers, Database, Cpu } from 'lucide-react';
+import { X, ArrowRight, ExternalLink, Check, Code2, Layers, Database, Cpu, Clock } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
+import { parseTechStackWithIcons } from '../utils/techIcons';
 
 interface CaseStudyModalProps {
   studyId: string | null;
@@ -207,16 +208,47 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
               <span style={{ color: '#000000', fontWeight: 500 }}>{project.overview.projectType}</span>
             </div>
             <div>
-              <span style={{ color: '#555555', display: 'block', fontSize: '11px', fontWeight: 600 }}>Duration</span>
-              <span style={{ color: '#000000', fontWeight: 500 }}>{project.overview.projectDuration}</span>
+              <span style={{ color: '#555555', display: 'block', fontSize: '11px', fontWeight: 600, marginBottom: '2px' }}>Duration</span>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: '#fe6200', fontWeight: 700, fontSize: '13px' }}>
+                <Clock size={12} strokeWidth={2.5} />
+                <span>{project.overview.projectDuration}</span>
+              </span>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
               <span style={{ color: '#555555', display: 'block', fontSize: '11px', fontWeight: 600 }}>Services Delivered</span>
               <span style={{ color: '#fe6200', fontWeight: 600 }}>{project.overview.services}</span>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
-              <span style={{ color: '#555555', display: 'block', fontSize: '11px', fontWeight: 600 }}>Technology Stack</span>
-              <span style={{ color: '#333333', fontFamily: "'SF Mono', 'Geist Mono', monospace", fontSize: '12.5px' }}>{project.overview.technologyStack}</span>
+              <span style={{ color: '#555555', display: 'block', fontSize: '11px', fontWeight: 600, marginBottom: '6px' }}>Technology Stack</span>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {parseTechStackWithIcons(project.overview.technologyStack).map((item, idx) => (
+                  <span
+                    key={idx}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      fontSize: '12px',
+                      fontWeight: 600,
+                      padding: '3px 8px',
+                      borderRadius: '5px',
+                      backgroundColor: '#ffffff',
+                      border: '1px solid rgba(0, 0, 0, 0.08)',
+                      color: '#1a1a1a',
+                    }}
+                  >
+                    {item.iconPath && (
+                      <img
+                        src={item.iconPath}
+                        alt=""
+                        aria-hidden="true"
+                        style={{ width: '13px', height: '13px', objectFit: 'contain' }}
+                      />
+                    )}
+                    <span>{item.name}</span>
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -14,6 +14,7 @@ interface PortfolioPageProps {
 }
 
 import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
+import { getTechIconPath } from '../utils/techIcons';
 
 const FILTERS = [
   'All',
@@ -372,22 +373,36 @@ const PortfolioPageComponent: React.FC<PortfolioPageProps> = ({
                   <div>
                     {/* Tech Tags */}
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '18px' }}>
-                      {cs.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          style={{
-                            fontSize: '11.5px',
-                            color: '#1a1a1a',
-                            backgroundColor: '#f1efeb',
-                            border: '1px solid #e4e2e1',
-                            padding: '3px 8px',
-                            borderRadius: '8px',
-                            fontWeight: 600,
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      {cs.tags.map((tag) => {
+                        const icon = getTechIconPath(tag);
+                        return (
+                          <span
+                            key={tag}
+                            style={{
+                              fontSize: '11.5px',
+                              color: '#1a1a1a',
+                              backgroundColor: '#f1efeb',
+                              border: '1px solid #e4e2e1',
+                              padding: '3px 8px',
+                              borderRadius: '8px',
+                              fontWeight: 600,
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                            }}
+                          >
+                            {icon && (
+                              <img
+                                src={icon}
+                                alt=""
+                                aria-hidden="true"
+                                style={{ width: '12px', height: '12px', objectFit: 'contain' }}
+                              />
+                            )}
+                            <span>{tag}</span>
+                          </span>
+                        );
+                      })}
                     </div>
 
                     {/* Full Case Study Template Expansion Area */}
