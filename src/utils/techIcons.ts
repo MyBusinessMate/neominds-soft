@@ -128,3 +128,4 @@ export function parseTechStackWithIcons(techStack: string | string[]): { name: s
     iconPath: getTechIconPath(name),
   }));
 }
+
