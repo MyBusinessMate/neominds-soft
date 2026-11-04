@@ -104,6 +104,9 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           />
         </div>
 
+        {/* Ambient Warm Gradient & Orange Glow Overlay behind mobile headline */}
+        <div className="mobile-hero-glow-overlay" />
+
         {/* Left-Aligned Foreground Content Stack in Open Cream Space */}
         <div className="mobile-hero-content">
           <h1 className="mobile-hero-heading">
@@ -521,6 +524,18 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             display: block;
           }
 
+          /* Ambient Gradient & Warm Brand Glow Overlay behind mobile headline */
+          .mobile-hero-glow-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            background:
+              radial-gradient(ellipse 95% 75% at 15% 62%, rgba(245, 233, 217, 0.96) 0%, rgba(245, 233, 217, 0.88) 42%, rgba(245, 233, 217, 0.45) 68%, transparent 88%),
+              linear-gradient(to top, #f5e9d9 0%, rgba(245, 233, 217, 0.95) 32%, rgba(245, 233, 217, 0.6) 55%, transparent 80%),
+              radial-gradient(circle at 18% 48%, rgba(254, 98, 0, 0.12) 0%, rgba(254, 98, 0, 0.04) 45%, transparent 70%);
+          }
+
           /* Left-Aligned Foreground Content in open cream space */
           .mobile-hero-content {
             position: relative;
@@ -528,6 +543,19 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             width: 100%;
             margin-top: clamp(260px, 35vh, 320px);
             padding: 0;
+          }
+
+          .mobile-hero-content::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -20px;
+            right: -10px;
+            bottom: 40px;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(ellipse at 35% 35%, rgba(245, 233, 217, 0.92) 0%, rgba(245, 233, 217, 0.72) 48%, transparent 85%);
+            filter: blur(14px);
           }
 
           .mobile-hero-heading {
@@ -539,6 +567,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             letter-spacing: -0.025em;
             margin: 0 0 14px 0;
             max-width: 85%;
+            text-shadow: 0 1px 18px rgba(245, 233, 217, 0.7);
           }
 
           .mobile-hero-subtext {
