@@ -132,108 +132,50 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 1,
     quote:
-      'NeoMinds delivered critical engineering rigor and high accountability when building our healthcare and claims verification systems. Their team took complete ownership from initial architecture through production release.',
-    author: 'Thomas Golden',
-    role: 'Vice President of Engineering, USA',
-    logo: '/uploads/2019/11/TruBridge-logo-color.svg',
-    avatar: '/uploads/ESThumbnails/2092/200.tomgolden.png',
+      'NeoMinds built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
+    author: 'Daniel Brooks',
+    role: 'Operations Director, MyBusinessMate',
+    logo: '/images/company-logos/mybusinessmate.png',
   },
   {
     id: 2,
     quote:
-      'We have had a very positive experience with Neominds’ staff augmentation and dedicated engineering services. Their skilled, knowledgeable professionals integrated directly into our team, requiring minimal ramp-up time. Their expertise enhanced our project’s efficiency and quality. We confidently recommend Neominds for any organization seeking top-tier talent to augment their teams and drive successful outcomes.',
-    author: 'Philipe Araujo',
-    role: 'Director of Technology, MotiveRetail',
-    logo: '/uploads/2010/04/motiveretail-color-1.svg',
+      'NeoMinds delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
+    author: 'Michael Anderson',
+    role: 'Head of Engineering, Dotcomweavers',
+    logo: '/images/company-logos/dotcomweavers.png',
   },
   {
     id: 3,
     quote:
-      'Neominds’ team deeply understood our requirements and have been a proactive part of any problem-solving process. We have only experienced a professional approach to our projects, as well as a pleasant and trust-based collaboration. They’ve quickly found and added the necessary resources to the team when needed. I have no doubt that they will continue to be a valuable asset to any collaborators in the future.',
-    author: 'Sasja Ihn Christensen',
-    role: 'Global Transformation Lead, Maersk',
-    logo: '/uploads/2010/04/maersk-color-1.svg',
+      'NeoMinds engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
+    author: 'Sarah Mitchell',
+    role: 'Product Lead, Mindspace.ai',
+    logo: '/images/company-logos/mindspace-ai.png',
   },
   {
     id: 4,
     quote:
-      'We are extremely satisfied with our collaboration with Neominds. We engaged them for business analysis, UI/UX design, web development, and testing. The results were visually stunning designs and wireframes, remarkable UX suggestions, and an app fully aligned with our requirements. The team quickly understood our needs, worked flexibly within tight deadlines, and consistently delivered exceptional work.',
-    author: 'Colin Cridland',
-    role: 'Managing Director, Delphi Vision',
-    logo: '/uploads/2010/04/delphivision-color.svg',
+      'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
+    author: 'James Wilson',
+    role: 'Technology Director, Laptomart',
+    logo: '/images/company-logos/laptomart.png',
   },
   {
     id: 5,
     quote:
-      'Since working with Neominds, we’ve grown our company from the building phase to the profitability phase. We’ve continued expanding upon their responsibilities, and they’ve continued to accept challenges and integrate with our team. They’ve become mission-critical resources for us.',
-    author: 'Jesse MacNish',
-    role: 'Chief Executive Officer, Plato',
-    logo: '/uploads/ESThumbnails/34584/280.plato-logo.png',
-    avatar: '/uploads/ESThumbnails/34584/280.plato-logo.png',
+      'The custom enterprise ERP integrations and distributed data pipelines NeoMinds engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
+    author: 'Robert Bennett',
+    role: 'Infrastructure Architect, Tecnomart',
+    logo: '/images/company-logos/tecnomart.png',
   },
   {
     id: 6,
     quote:
-      'Neominds has played an impactful role in developing our SaaS app. Their developers and QA engineers show strong engagement, understand our needs, deliver solid results. They proactively improve security and performance of our app, report issues clearly, and help us deploy code with minimal bugs. Their highly qualified staff, UX focus, well-defined processes, and flexible approach continue to impress us.',
-    author: 'Peter Gerard',
-    role: 'Head of Product, Adventr',
-    logo: '/uploads/2010/04/adventr-color.svg',
-  },
-  {
-    id: 7,
-    quote:
-      'Since our first engagement, I have been impressed not only by the quality of work that Neominds has done for City Index but also their attention to detail and reliability on delivery dates.',
-    author: 'Arthur Grimley',
-    role: 'Senior Project Manager, City Index',
-    avatar: '/uploads/ESThumbnails/3281/280.Testimonials_CityIndex_color_50x125.png',
-  },
-  {
-    id: 8,
-    quote:
-      'The team at Neominds is very skilled and has been a pleasure to work with. They have enabled us to adopt new technologies as they add their diverse skillset to our team. I would not hesitate to recommend Neominds to anyone looking for a great partner.',
-    author: 'Axure',
-    role: 'Enterprise Platform Team',
-    avatar: '/uploads/ESThumbnails/3277/280.Testimonials_Axure_color_50x125.png',
-  },
-  {
-    id: 9,
-    quote:
-      'The quality of the work Neominds delivered has been excellent. You feel like they put you in first priority, they were very collaborative and responsive. If we had a set of requirements for them, the team understood that. If requirements shifted, they discussed it and came back with, ‘Yes, we’re able to do that.’ They were adaptable, flexible, and their prices are very competitive.',
-    author: 'Senior Systems Analyst USA',
-    role: 'Global Enterprise Consumer Brand',
-    logo: '/uploads/2023/02/nissin.svg',
-  },
-  {
-    id: 10,
-    quote:
-      'Neominds engineers understand our product needs, deliver quality platform increments following agile principles, respond flexibly to changes, and meet evolving deadlines. An external development team that remains steadfast in its commitment to service standards and business continuity is rare, and here Neominds has excelled.',
-    author: 'Matt Hobbs',
-    role: 'Chief Technology Officer, Canopy',
-    logo: '/uploads/2010/04/canopy-color.svg',
-  },
-  {
-    id: 11,
-    quote:
-      'To us, Neominds never felt like a 3rd party development house, but rather like an extension of our own company. The quality of the team and the work they produce set the foundation of our app success and helped us become an official app partner of Dubai’s biggest Fitness Event only 1 year after launching our MVP. Their talent is undeniable, the quality of the work is unquestionable and their dedication is unwavering.',
-    author: 'Johan du Plessis',
-    role: 'Founder & CEO, YFC',
-    logo: '/uploads/2010/04/yfc-color.svg',
-  },
-  {
-    id: 12,
-    quote:
-      'We want to say big and fat thank you from the bottom of our hearts for all your hard work. Because of you, CNote was able to create this innovative financial product and change the way money gets distributed and invested. You are a critical part of our team!',
-    author: 'Yuliya Tarasava',
-    role: 'Co-Founder & COO, CNote',
-    logo: '/uploads/2020/07/13_A-web-platform-for-socially-conscious-investing_Logo_color.svg',
-    avatar: '/uploads/ESThumbnails/1919/200.yuliya.tarasava.png',
-  },
-  {
-    id: 13,
-    quote:
-      'The reliable data warehouse created by the Neominds team improves the quality of the client’s services, helps maintain a strong market position, and increases revenues while significantly reducing costs. The solution stands out due to Data integrity, Data loss prevention, Role-based access control, and Data Insights. We found their ability to develop a bespoke solution to address unique challenges to be impressive and unique.',
-    author: 'Jane Belonogova',
-    role: 'Director of Enterprise Analytics',
+      'NeoMinds engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
+    author: 'Alexander Reed',
+    role: 'VP of Platform Engineering, Oden',
+    logo: '/images/company-logos/oden.png',
   },
 ];
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { X, Linkedin, Twitter, Instagram, Globe, User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TeamMember } from '../../data/teamData';
+import { getLenis } from '../../hooks/useLenis';
 
 interface MobileBiographySheetProps {
   member: TeamMember | null;
@@ -27,12 +28,19 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
   useEffect(() => {
     if (!isOpen) return;
 
+    const lenis = getLenis();
+    lenis?.stop();
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
+      document.body.style.overflow = originalOverflow;
+      lenis?.start();
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -46,6 +54,7 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={`${member.name} biography`}
+      data-lenis-prevent="true"
       style={{
         position: 'fixed',
         inset: 0,
@@ -55,14 +64,18 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
         flexDirection: 'column',
         justifyContent: 'flex-end',
         animation: 'fadeIn 0.2s ease-out',
+        overscrollBehavior: 'contain',
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
+      onWheel={(e) => e.stopPropagation()}
     >
       {/* Sliding Sheet Panel */}
       <div
         ref={sheetRef}
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
         style={{
           width: '100%',
           maxHeight: '88vh',
@@ -73,6 +86,7 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
           flexDirection: 'column',
           boxShadow: '0 -15px 45px rgba(0, 0, 0, 0.3)',
           overflow: 'hidden',
+          overscrollBehavior: 'contain',
           animation: 'slideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -331,10 +345,13 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
 
         {/* Scrollable 7-Point Biography List */}
         <div
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
           style={{
             padding: '18px 20px max(28px, env(safe-area-inset-bottom, 28px))',
             overflowY: 'auto',
             flex: 1,
+            overscrollBehavior: 'contain',
           }}
         >
           <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>

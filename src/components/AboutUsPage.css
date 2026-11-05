@@ -63,21 +63,22 @@
   font-family: var(--font-heading, inherit);
   letter-spacing: -0.04em;
   line-height: 1.05;
-  color: #000000;
+  color: #000000 !important;
   margin: 0 0 24px 0;
 }
 
 .s-superhero__title span {
-  color: #fe6200;
+  color: #000000 !important;
 }
 
 
 .s-superhero__subtitle {
   font-size: clamp(17px, 2vw, 22px);
-  color: #868683;
+  color: #111111 !important;
   max-width: 760px;
   margin: 0 auto 36px auto;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
@@ -228,74 +229,76 @@
 .s-values__grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(28px, 4vw, 40px);
+  gap: 20px;
 }
 
 @media (min-width: 640px) {
   .s-values__grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
 @media (min-width: 1024px) {
   .s-values__grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 36px 32px;
+    gap: 28px;
   }
 }
 
-/* Cardless Editorial Presentation: Text blends seamlessly into background */
+/* Elevated, Highly Scannable Value Cards */
 .s-values__card {
-  background: transparent;
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
-  border-radius: 8px;
-  padding: 24px 0 0 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: clamp(24px, 3.2vw, 36px) clamp(20px, 2.8vw, 32px);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 16px;
   position: relative;
-  overflow: visible;
-  box-shadow: none;
-  transition: border-color 0.2s ease;
-}
-
-.s-values__card::before {
-  display: none;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease, border-color 0.28s ease;
 }
 
 .s-values__card:hover {
-  transform: none;
-  border-color: #fe6200;
-  box-shadow: none;
-}
-
-.s-values__card:hover::before {
-  display: none;
+  transform: translateY(-4px);
+  border-color: rgba(254, 98, 0, 0.4);
+  box-shadow: 0 16px 36px -10px rgba(254, 98, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .s-values__card-number {
-  font-size: 13px;
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: rgba(254, 98, 0, 0.09);
   color: #fe6200;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-family: var(--font-body, system-ui, sans-serif);
 }
 
 .s-values__card-name {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: clamp(22px, 2.2vw, 26px);
   font-weight: 700;
   font-family: var(--typography-display-family, "BL Pylon Serif", serif);
   color: #000000;
   margin: 0;
   line-height: 1.25;
+  letter-spacing: -0.02em;
 }
 
 .s-values__card-text {
-  font-size: 15px;
-  color: #4a4845;
+  font-size: clamp(14.5px, 1.4vw, 16px);
+  color: #2c2b29;
   line-height: 1.65;
   margin: 0;
+  font-family: var(--font-body, system-ui, sans-serif);
 }
 
 .s-values__card-text span {
@@ -1191,24 +1194,27 @@
   height: 44px;
   border-radius: 8px;
   background-color: #000000;
-  border: 1px solid var(--colors-border-dark, #f0ece2);
-  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .s-testimonials__ctrl-btn:hover {
   background-color: #fe6200;
   border-color: #fe6200;
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .s-testimonials__card {
-  background: #fbf9f5;
-  border: 1px solid var(--colors-border-dark, #f0ece2);
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
   padding: clamp(32px, 5vw, 48px);
   min-height: 280px;
   display: flex;
@@ -1219,7 +1225,7 @@
 
 .s-testimonials__quote {
   font-size: clamp(17px, 2.2vw, 22px);
-  color: #333333;
+  color: #222222;
   line-height: 1.6;
   margin: 0;
   font-style: italic;
@@ -1232,7 +1238,7 @@
   flex-wrap: wrap;
   gap: 16px;
   padding-top: 20px;
-  border-top: 1px solid var(--colors-border-dark, #f0ece2);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .s-testimonials__author-wrap {
@@ -1246,7 +1252,7 @@
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #66615c;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .s-testimonials__author-name {
@@ -1257,17 +1263,16 @@
 }
 
 .s-testimonials__author-role {
-  font-size: 13px;
+  font-size: 13.5px;
   color: #555555;
   margin: 0;
 }
 
 .s-testimonials__logo {
-  max-height: 36px;
-  max-width: 140px;
+  max-height: 40px;
+  max-width: 150px;
   object-fit: contain;
-  opacity: 0.85;
-  filter: brightness(1.2);
+  opacity: 0.95;
 }
 
 /* --------------------------------------------------------------------------

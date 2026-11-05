@@ -79,12 +79,12 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="s-superhero" data-block-name="about-first-window">
         <div className="s-superhero__glow"></div>
         <div className="s-superhero__container">
-          <ScrollReveal as="h1" className="s-superhero__title" blurStrength={8}>
-            Software engineered <span>to scale</span>
+          <ScrollReveal as="h1" className="s-superhero__title" style={{ color: '#000000' }} blurStrength={8}>
+            Software engineered to scale
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
-            <p className="s-superhero__subtitle">
+            <p className="s-superhero__subtitle" style={{ color: '#111111' }}>
               We design, build, and run resilient cloud systems and practical AI applications. Working software in your hands every sprint, zero consulting fluff.
             </p>
           </RevealElement>

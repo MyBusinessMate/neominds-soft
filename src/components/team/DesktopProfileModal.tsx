@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { X, Linkedin, Twitter, Instagram, Globe, User } from 'lucide-react';
 import { TeamMember } from '../../data/teamData';
+import { getLenis } from '../../hooks/useLenis';
 
 interface DesktopProfileModalProps {
   member: TeamMember | null;
@@ -16,10 +17,12 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
     setImgError(false);
   }, [member?.id]);
 
-  // Lock body scroll and handle Escape key
+  // Lock body scroll, pause Lenis, and handle Escape key
   useEffect(() => {
     if (!member) return;
 
+    const lenis = getLenis();
+    lenis?.stop();
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
@@ -33,6 +36,7 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      lenis?.start();
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [member, onClose]);
@@ -46,6 +50,7 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
       role="dialog"
       aria-modal="true"
       aria-labelledby="desktop-profile-name"
+      data-lenis-prevent="true"
       style={{
         position: 'fixed',
         inset: 0,
@@ -58,14 +63,18 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
         justifyContent: 'flex-end', // Anchors towards the right as shown in reference
         padding: 'clamp(20px, 3.5vw, 48px)',
         animation: 'fadeIn 0.25s ease-out',
+        overscrollBehavior: 'contain',
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
+      onWheel={(e) => e.stopPropagation()}
     >
       {/* Modal Dialog Card */}
       <div
         ref={modalRef}
+        data-lenis-prevent="true"
+        onWheel={(e) => e.stopPropagation()}
         style={{
           position: 'relative',
           width: 'min(94vw, 920px)',
@@ -78,6 +87,7 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
           overflow: 'hidden',
           display: 'grid',
           gridTemplateColumns: 'minmax(320px, 45%) 1fr',
+          overscrollBehavior: 'contain',
           animation: 'slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -370,9 +380,13 @@ export const DesktopProfileModal: React.FC<DesktopProfileModalProps> = ({ member
 
           {/* Scrollable 7-Point Biography List */}
           <div
+            data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
             style={{
               padding: '4px clamp(24px, 3vw, 36px) 32px',
               overflowY: 'auto',
+              overscrollBehavior: 'contain',
+              WebkitOverflowScrolling: 'touch',
               flex: 1,
             }}
           >

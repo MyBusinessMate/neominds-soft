@@ -10,6 +10,7 @@ import {
 
 import { ServiceSlug } from '../data/serviceSlugs';
 import { DEMO_FORM_URL } from '../constants/links';
+import { getLenis } from '../hooks/useLenis';
 
 export type PageType =
   | 'home'
@@ -57,13 +58,16 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
 
-  // Lock body scroll when mobile menu is open to ensure clean scroll on small viewports
+  // Lock body scroll and pause Lenis when mobile menu is open to ensure clean scroll on small viewports
   useEffect(() => {
     if (mobileMenuOpen) {
+      const lenis = getLenis();
+      lenis?.stop();
       const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       return () => {
         document.body.style.overflow = originalOverflow;
+        lenis?.start();
       };
     }
   }, [mobileMenuOpen]);
@@ -1247,6 +1251,8 @@ export const Header: React.FC<HeaderProps> = ({
           role="dialog"
           aria-modal="true"
           aria-label="Mobile Navigation Menu"
+          data-lenis-prevent="true"
+          onWheel={(e) => e.stopPropagation()}
           style={{
             position: 'fixed',
             top: 0,
@@ -1288,9 +1294,9 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Mobile Navigation Accordions in Black & Orange */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
             {/* Section 1: What we do */}
-            <div>
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
               <button
                 id="mobile-trigger-what-we-do"
                 aria-expanded={mobileExpandedSection === 'what-we-do'}
@@ -1301,11 +1307,10 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'what-we-do' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
-                  borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
@@ -1391,7 +1396,7 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'industries' || currentPage === 'industries' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
@@ -1446,7 +1451,7 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'technology' || currentPage === 'technology' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
@@ -1488,8 +1493,8 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* Section 2: Who we are */}
-            <div>
+            {/* Section 4: Who we are */}
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
               <button
                 id="mobile-trigger-who-we-are"
                 aria-expanded={mobileExpandedSection === 'who-we-are'}
@@ -1500,11 +1505,10 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'who-we-are' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
-                  borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
@@ -1541,8 +1545,8 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
             </div>
 
-            {/* Section 3: Insights */}
-            <div>
+            {/* Section 5: Insights */}
+            <div style={{ borderBottom: '1px solid #e4e2e1' }}>
               <button
                 id="mobile-trigger-insights"
                 aria-expanded={mobileExpandedSection === 'insights'}
@@ -1553,11 +1557,10 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'insights' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
-                  borderBottom: '1px solid #e4e2e1',
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
@@ -1604,7 +1607,7 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  padding: '14px 0',
+                  padding: '16px 0',
                   color: mobileExpandedSection === 'case-studies' || currentPage === 'portfolio' ? '#fe6200' : '#000000',
                   fontSize: '17px',
                   fontWeight: 600,
@@ -1692,11 +1695,16 @@ export const Header: React.FC<HeaderProps> = ({
           transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
           opacity: 0;
           visibility: hidden;
+          overflow: hidden;
         }
         .nm-mobile-accordion-panel.is-expanded {
           grid-template-rows: 1fr;
           opacity: 1;
           visibility: visible;
+        }
+        .nm-mobile-accordion-inner {
+          min-height: 0;
+          overflow: hidden;
         }
         body.nm-team-profile-open header,
         body.nm-modal-open header {

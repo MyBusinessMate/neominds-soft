@@ -174,7 +174,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'mohiuddin-syed',
     name: 'Mohiuddin Syed',
     role: 'Backend Developer',
-    featured: true,
+    featured: false,
     order: 4,
     image: '/team/Mohiuddin Syed.webp',
     socials: {
