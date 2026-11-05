@@ -107,6 +107,15 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             src="/images/robot-hero-mobile.png"
             alt="AI Engineering Robot in Suit"
             className="mobile-robot-img"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('/images/robot-hero.png')) {
+                target.src = '/images/robot-hero.png';
+              }
+            }}
           />
         </div>
 
@@ -322,8 +331,12 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           />
 
           <img
-            src="/images/robot-hero-large.png"
+            src="/images/robot-hero.png"
+            srcSet="/images/robot-hero.png 1x, /images/robot-hero-large.png 2x"
             alt="AI Engineering Robot in Bespoke Suit"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             style={{
               position: 'relative',
               zIndex: 2,
@@ -335,6 +348,12 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               filter: 'drop-shadow(0 20px 48px rgba(0, 0, 0, 0.12))',
               userSelect: 'none',
               pointerEvents: 'none',
+            }}
+            onError={(e) => {
+              const target = e.currentTarget;
+              if (!target.src.endsWith('/images/robot-hero.png')) {
+                target.src = '/images/robot-hero.png';
+              }
             }}
           />
         </div>
@@ -481,17 +500,17 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           /* Robot Positioned Top-Right Behind Text */
           .mobile-robot-backdrop {
             position: absolute;
-            top: -10px;
-            right: -25px;
-            width: 88vw;
-            max-width: 380px;
+            top: 0px;
+            right: 0px;
+            width: 82vw;
+            max-width: 360px;
             height: clamp(340px, 50vh, 440px);
-            z-index: 1;
+            z-index: 2;
             pointer-events: none;
             user-select: none;
-            opacity: 0.96;
-            mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
-            -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 98%);
+            opacity: 1;
+            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
           }
 
           .mobile-robot-img {
@@ -507,11 +526,10 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             position: absolute;
             inset: 0;
             pointer-events: none;
-            z-index: 2;
+            z-index: 1;
             background:
-              radial-gradient(ellipse 95% 75% at 15% 62%, rgba(245, 233, 217, 0.96) 0%, rgba(245, 233, 217, 0.88) 42%, rgba(245, 233, 217, 0.45) 68%, transparent 88%),
-              linear-gradient(to top, #f5e9d9 0%, rgba(245, 233, 217, 0.95) 32%, rgba(245, 233, 217, 0.6) 55%, transparent 80%),
-              radial-gradient(circle at 18% 48%, rgba(254, 98, 0, 0.12) 0%, rgba(254, 98, 0, 0.04) 45%, transparent 70%);
+              radial-gradient(ellipse 95% 75% at 20% 50%, rgba(245, 233, 217, 0.95) 0%, rgba(245, 233, 217, 0.8) 45%, transparent 80%),
+              radial-gradient(circle at 18% 35%, rgba(254, 98, 0, 0.14) 0%, rgba(254, 98, 0, 0.04) 50%, transparent 70%);
           }
 
           /* Left-Aligned Foreground Content in open cream space */
