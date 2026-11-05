@@ -31,7 +31,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 1,
     image: '/team/Ali Asgar.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -80,7 +80,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 2,
     image: '/team/Abdul Khadar.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -129,7 +129,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 3,
     image: '/team/Syeda Sidrah Fatima.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -178,7 +178,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 4,
     image: '/team/Mohiuddin Syed.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -227,7 +227,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 5,
     image: '/team/Mohammed Ayaan Ur Rahman.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -276,7 +276,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 6,
     image: '/team/Shezan Ahmed.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -325,7 +325,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 7,
     image: '/team/Zain Atif.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -374,7 +374,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 8,
     image: '/team/Abdul Samad.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
@@ -423,7 +423,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     order: 9,
     image: '/team/Ahmed Ba Suleman.webp',
     socials: {
-      linkedin: 'https://linkedin.com',
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',
     },
     bioPoints: [
