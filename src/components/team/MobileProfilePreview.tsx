@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X, ArrowRight, User, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TeamMember } from '../../data/teamData';
+import { getLenis } from '../../hooks/useLenis';
 
 interface MobileProfilePreviewProps {
   member: TeamMember | null;
@@ -25,6 +26,8 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
 
   useEffect(() => {
     if (!member) return;
+    const lenis = getLenis();
+    lenis?.stop();
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
@@ -35,6 +38,7 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      lenis?.start();
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [member, onClose]);
@@ -46,6 +50,8 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
       role="dialog"
       aria-modal="true"
       aria-label={`${member.name} preview`}
+      data-lenis-prevent="true"
+      onWheel={(e) => e.stopPropagation()}
       style={{
         position: 'fixed',
         inset: 0,
@@ -56,6 +62,7 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
         justifyContent: 'space-between',
         animation: 'fadeIn 0.24s ease-out',
         overflow: 'hidden',
+        overscrollBehavior: 'contain',
       }}
     >
       {/* Mobile Team Navigation Arrows: simple, small, orange */}

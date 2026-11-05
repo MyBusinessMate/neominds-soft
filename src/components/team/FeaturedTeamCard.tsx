@@ -108,16 +108,17 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
 
       {/* 
         Smooth Gradient Overlay:
-        Active card gets vibrant warm orange tint; others get rich dark fade.
+        Dark fade at bottom ensures name & role are crystal clear.
       */}
       <div
         aria-hidden="true"
         style={{
           position: 'absolute',
           inset: 0,
+          zIndex: 4,
           background: isActive
-            ? 'linear-gradient(to top, rgba(254, 98, 0, 0.94) 0%, rgba(254, 98, 0, 0.65) 28%, rgba(254, 98, 0, 0.15) 55%, transparent 72%)'
-            : 'linear-gradient(to top, rgba(18, 16, 15, 0.92) 0%, rgba(18, 16, 15, 0.6) 32%, rgba(18, 16, 15, 0.1) 60%, transparent 75%)',
+            ? 'linear-gradient(to top, rgba(14, 12, 10, 0.95) 0%, rgba(14, 12, 10, 0.65) 28%, rgba(254, 98, 0, 0.15) 55%, transparent 72%)'
+            : 'linear-gradient(to top, rgba(14, 12, 10, 0.92) 0%, rgba(14, 12, 10, 0.62) 30%, rgba(14, 12, 10, 0.12) 55%, transparent 72%)',
           pointerEvents: 'none',
         }}
       />
@@ -133,19 +134,19 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
           display: 'flex',
           alignItems: 'flex-end',
           justifyContent: 'space-between',
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
         <div style={{ flex: 1, paddingRight: '12px' }}>
           <h3
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: 'clamp(18px, 1.8vw, 22px)',
-              fontWeight: 700,
+              fontSize: 'clamp(20px, 2vw, 24px)',
+              fontWeight: 800,
               color: '#ffffff',
-              margin: '0 0 4px 0',
+              margin: '0 0 6px 0',
               lineHeight: 1.2,
-              textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)',
+              textShadow: '0 2px 8px rgba(0, 0, 0, 0.85)',
             }}
           >
             {member.name}
@@ -153,11 +154,12 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
           <p
             style={{
               fontFamily: "'DM Sans', sans-serif",
-              fontSize: '14px',
-              fontWeight: 500,
-              color: 'rgba(255, 255, 255, 0.88)',
+              fontSize: '14.5px',
+              fontWeight: 600,
+              color: 'rgba(255, 255, 255, 0.95)',
               margin: 0,
               lineHeight: 1.3,
+              textShadow: '0 1px 4px rgba(0, 0, 0, 0.85)',
             }}
           >
             {member.role}
