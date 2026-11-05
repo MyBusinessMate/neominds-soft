@@ -122,6 +122,10 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const navigateToPage = useCallback((page: PageType, articleId?: string) => {
+    if (page === 'training-as-service') {
+      window.location.href = 'https://training.neomindstechhub.com/';
+      return;
+    }
     setActiveMenu(null);
     setMobileMenuOpen(false);
     if (onSelectPage) {
@@ -159,7 +163,7 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'AI Native Softwares', page: 'ai-native-software' as const, hasExternalArrow: false },
     { title: 'Analytic Dashboard', page: 'analytics-dashboard' as const, hasExternalArrow: false },
     { title: 'Custom Health Softwares', page: 'custom-health-software' as const, hasExternalArrow: false },
-    { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false },
+    { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false, externalUrl: 'https://training.neomindstechhub.com/' },
     { title: 'All Services', page: 'services' as const, hasExternalArrow: true },
   ];
 

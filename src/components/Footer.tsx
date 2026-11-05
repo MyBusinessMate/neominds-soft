@@ -26,7 +26,7 @@ const generalServices: FooterLink[] = [
   { label: 'Analytic Dashboard', target: '#analytics-dashboard' },
   { label: 'Custom Health Software', target: '#custom-health-software' },
   { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
-  { label: 'Training as a Service', target: '#training-as-service' },
+  { label: 'Training as a Service', target: 'https://training.neomindstechhub.com/' },
 ];
 
 const solutionsLinks: FooterLink[] = [
@@ -55,6 +55,10 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
   const currentYear = new Date().getFullYear();
 
   const handleLinkClick = (e: React.MouseEvent, link: FooterLink) => {
+    if (link.target.startsWith('http://') || link.target.startsWith('https://')) {
+      window.location.href = link.target;
+      return;
+    }
     e.preventDefault();
     if (link.isSettings && onOpenCookies) {
       onOpenCookies();

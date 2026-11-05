@@ -74,6 +74,11 @@ export const App: React.FC = () => {
     const rawPath = window.location.pathname || '/';
     const cleanPath = rawPath.replace(/^\/+|\/+$/g, '').trim();
 
+    if (cleanPath === 'services/training-as-service' || cleanPath === 'training-as-service' || cleanHash === 'training-as-service') {
+      window.location.replace('https://training.neomindstechhub.com/');
+      return { page: 'home', articleId: null };
+    }
+
     const matchSlug = (slug: string): PageType | null => {
       if (!slug || slug === 'home') return 'home';
       if (slug === 'ai-services' || slug === 'ai-development-service' || slug === 'ai-product-engineering') {
@@ -252,6 +257,10 @@ export const App: React.FC = () => {
   const handleNavigate = useCallback(
     (targetId: string) => {
       const cleanTarget = targetId.replace('#', '');
+      if (cleanTarget === 'training-as-service' || targetId.includes('training.neomindstechhub.com')) {
+        window.location.href = 'https://training.neomindstechhub.com/';
+        return;
+      }
       if (cleanTarget === 'product-engineering') {
         handleSelectPage('custom-software-development');
         return;
@@ -279,6 +288,10 @@ export const App: React.FC = () => {
 
   const handleSelectPage = useCallback(
     (page: PageType, articleId?: string | null) => {
+      if (page === 'training-as-service') {
+        window.location.href = 'https://training.neomindstechhub.com/';
+        return;
+      }
       setCurrentPage(page);
       if (articleId !== undefined) {
         setSelectedArticleId(articleId);
