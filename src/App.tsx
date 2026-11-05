@@ -38,7 +38,8 @@ const InsightsPage = lazy(() => import('./components/InsightsPage').then((m) => 
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })));
 const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage').then((m) => ({ default: m.CookiePolicyPage })));
 const SecurityPolicyPage = lazy(() => import('./components/SecurityPolicyPage').then((m) => ({ default: m.SecurityPolicyPage })));
-// const CareersPage = lazy(() => import('./components/CareersPage').then((m) => ({ default: m.CareersPage })));
+const CareersPage = lazy(() => import('./components/CareersPage').then((m) => ({ default: m.CareersPage })));
+void CareersPage; // Retained for instant 1-click reactivation of Careers page
 const CertificationPage = lazy(() => import('./components/CertificationPage').then((m) => ({ default: m.CertificationPage })));
 const LeadershipPage = lazy(() => import('./components/LeadershipPage').then((m) => ({ default: m.LeadershipPage })));
 const ServicesHubPage = lazy(() => import('./components/ServicesHubPage').then((m) => ({ default: m.ServicesHubPage })));
