@@ -38,7 +38,7 @@ const InsightsPage = lazy(() => import('./components/InsightsPage').then((m) => 
 const PrivacyPolicyPage = lazy(() => import('./components/PrivacyPolicyPage').then((m) => ({ default: m.PrivacyPolicyPage })));
 const CookiePolicyPage = lazy(() => import('./components/CookiePolicyPage').then((m) => ({ default: m.CookiePolicyPage })));
 const SecurityPolicyPage = lazy(() => import('./components/SecurityPolicyPage').then((m) => ({ default: m.SecurityPolicyPage })));
-const CareersPage = lazy(() => import('./components/CareersPage').then((m) => ({ default: m.CareersPage })));
+// const CareersPage = lazy(() => import('./components/CareersPage').then((m) => ({ default: m.CareersPage })));
 const CertificationPage = lazy(() => import('./components/CertificationPage').then((m) => ({ default: m.CertificationPage })));
 const LeadershipPage = lazy(() => import('./components/LeadershipPage').then((m) => ({ default: m.LeadershipPage })));
 const ServicesHubPage = lazy(() => import('./components/ServicesHubPage').then((m) => ({ default: m.ServicesHubPage })));
@@ -586,7 +586,8 @@ export const App: React.FC = () => {
               </main>
             )}
 
-            {/* Careers Page */}
+            {/* Careers Page (Commented out per user request; easily restored by uncommenting) */}
+            {/*
             {currentPage === 'careers' && (
               <main id="main-content" className="smooth-page-enter">
                 <CareersPage
@@ -599,6 +600,7 @@ export const App: React.FC = () => {
                 />
               </main>
             )}
+            */}
 
             {/* Certification Page */}
             {currentPage === 'certification' && (
@@ -714,7 +716,7 @@ export const App: React.FC = () => {
           {/* 10. Default Home View: Complete Interactive Corporate Landing Architecture */}
           {currentPage === 'home' && (
             <main id="main-content" className="smooth-page-enter">
-              <HeroSection onTalkClick={() => handleSelectPage('contacts')} />
+              <HeroSection onTalkClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScEhR0UH4QBYOWjG8ADyqwzv10Hq1ud6f92DGhT_3Wws-uHUA/viewform', '_blank', 'noopener,noreferrer')} />
 
               <ExperienceSection />
 

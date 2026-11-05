@@ -19,93 +19,110 @@ export const TOP_7_LEADERS: LeaderItem[] = [
   {
     id: 'ali-asgar',
     name: 'Ali Asgar',
-    role: 'Chief Executive Officer',
-    image: '/images/leaders/leader_shezan.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+    role: 'Founder & CEO',
+    image: '/team/Ali Asgar.webp',
     linkedin: 'https://www.linkedin.com',
-    location: 'Hyderabad, India / London, UK',
-    bio: 'Guides executive vision and engineering strategy, prioritizing practical, production-grade software delivery for global clients.',
-    background: 'Steered cross-functional teams building core cloud platforms and digital infrastructure for high-growth enterprises.',
+    location: 'Hyderabad, India',
+    bio: 'Guides executive vision and engineering strategy at Neominds Tech Hub, prioritizing practical, production-grade software delivery for global enterprise clients.',
+    background: 'Steered high-growth engineering initiatives delivering scalable cloud platforms and digital infrastructure for international enterprises.',
     focus: ['Enterprise client partnerships', 'Technical strategy', 'Next-generation AI integrations', 'Team scalability'],
-    quote: 'Software succeeds when architecture aligns directly with real business outcomes and durable user value.',
+    quote: 'Resilient software succeeds when architectural precision aligns directly with real business outcomes and durable user value.',
   },
   {
-    id: 'mohd-khadar',
-    name: 'Mohd Khadar',
-    role: 'Co-founder & Chief Technology Officer',
-    image: '/images/leaders/leader_vikram.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+    id: 'abdul-khadar',
+    name: 'Abdul Khadar',
+    role: 'Co-founder',
+    image: '/team/Abdul Khadar.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
     bio: 'Co-directs operational architecture and technical capabilities, shaping foundational product methodologies and execution pipelines.',
-    background: 'Spearheaded internal engineering workflows and operational scaffolding that enabled rapid project ramp-ups.',
-    focus: ['Operational strategy', 'Technical capability development', 'Product lifecycle governance', 'Engineering operations'],
-    quote: 'Consistency in day-to-day execution compounds into transformative long-term progress.',
+    background: 'Spearheaded internal engineering workflows, automated test harnesses, and delivery frameworks enabling rapid client project ramp-ups.',
+    focus: ['System reliability', 'Technology operations', 'Product lifecycle governance', 'Engineering culture'],
+    quote: 'Rigorous engineering discipline and consistent delivery cadences compound into market-leading digital products.',
   },
   {
     id: 'syeda-sidra-fatima',
-    name: 'Syeda Sidra Fatima',
+    name: 'Syeda Sidrah Fatima',
     role: 'Operations Manager',
-    image: '/images/leaders/leader_ananya.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
+    image: '/team/Syeda Sidrah Fatima.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
-    bio: 'Coordinates organizational resource management, delivery logistics, and cross-disciplinary communication across engineering pods.',
-    background: 'Structured multi-time-zone delivery mechanisms that reduced turnaround latency and preserved project velocity.',
-    focus: ['Project governance', 'Agile operations', 'Stakeholder coordination', 'Quality audits & team enablement'],
+    bio: 'Coordinates organizational resource management, delivery logistics, and cross-disciplinary communication across all active engineering pods.',
+    background: 'Structured seamless multi-time-zone delivery mechanisms that reduced turnaround latency and preserved project velocity across international client accounts.',
+    focus: ['Agile operations', 'Project governance', 'Stakeholder coordination', 'Quality audits & team enablement'],
     quote: 'Clear operational clarity and reliable communication form the bedrock of exceptional engineering outcomes.',
   },
   {
-    id: 'vikram-reddy',
-    name: 'Dr. Vikram Reddy',
-    role: 'Chief Technology Director',
-    image: '/images/leaders/leader_vikram.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+    id: 'mohiuddin-syed',
+    name: 'Mohiuddin Syed',
+    role: 'Backend Developer',
+    image: '/team/Mohiuddin Syed.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
-    bio: 'Dr. Reddy steers technological architecture, R&D in applied AI, and technical excellence across all Neominds TechHub delivery centers.',
-    background: 'Ph.D. in Computer Science with a specialization in distributed systems and applied machine learning; 14+ years designing high-throughput data platforms.',
-    focus: ['Applied AI & LLM architectures', 'Cloud-native infrastructure (AWS & Azure)', 'System scalability & security', 'Technical mentoring'],
-    quote: 'AI adds real business value only when the software foundation around it is rock-solid.',
+    bio: 'Architects and builds high-throughput server-side architectures, REST and GraphQL APIs, and scalable distributed microservices.',
+    background: 'Engineered critical data processing pipelines handling millions of monthly records with sub-100ms response latencies.',
+    focus: ['Distributed backend systems', 'PostgreSQL & Redis', 'High-throughput APIs', 'Database optimization'],
+    quote: 'A resilient backend is silent, deterministic, and effortlessly scales under peak concurrent demand.',
   },
   {
-    id: 'rajesh-iyer',
-    name: 'Rajesh Iyer',
-    role: 'Director, Global Delivery',
-    image: '/images/leaders/leader_rajesh.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop',
+    id: 'mohammed-ayaan-ur-rahman',
+    name: 'Mohammed Ayaan Ur Rahman',
+    role: 'DevOps Engineer',
+    image: '/team/Mohammed Ayaan Ur Rahman.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
-    bio: 'Rajesh directs our software delivery teams, establishing consistent sprint cadences, automated CI/CD practices, and weekly demonstration rituals.',
-    background: '12+ years directing end-to-end agile delivery for healthcare, SaaS, and financial services products.',
-    focus: ['Full-cycle software delivery', 'CI/CD & release engineering', 'Scrum & Kanban governance', 'Technical risk mitigation'],
-    quote: 'Weekly working software demos are the ultimate truth in engineering delivery.',
+    bio: 'Orchestrates cloud infrastructure automation, container platforms, and resilient CI/CD deployment pipelines across enterprise environments.',
+    background: 'Implemented zero-downtime deployment pipelines and multi-region staging environments that cut release cycles from days to minutes.',
+    focus: ['CI/CD pipeline automation', 'Docker & Kubernetes', 'Cloud security compliance', 'Infrastructure as Code'],
+    quote: 'Automate everything, verify continuously, and ensure deployments are completely friction-free.',
   },
   {
-    id: 'arjun-verma',
-    name: 'Arjun Verma',
-    role: 'Director, Global IT & Security',
-    image: '/images/leaders/leader_arjun.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
+    id: 'shezan-ahmed',
+    name: 'Shezan Ahmed',
+    role: 'Product Developer',
+    image: '/team/Shezan Ahmed.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
-    bio: 'Arjun oversees information security, ISO 27001 compliance protocols, zero-trust infrastructure, and enterprise data protection standards.',
-    background: 'Certified Information Systems Security Professional (CISSP) with 11+ years leading cyber defense in financial and cloud environments.',
-    focus: ['ISO 27001 & SOC 2 compliance', 'Zero-trust infrastructure', 'Data protection (GDPR / HIPAA)', 'Penetration testing & code audits'],
-    quote: 'Enterprise security is not a checkpoint at release; it is engineered into every line of code from day zero.',
+    bio: 'Transforms complex product requirements and domain logic into cohesive, intuitive, and high-performance software applications.',
+    background: 'Delivered foundational web applications and client platforms from technical discovery to production deployment across multiple industries.',
+    focus: ['Product UX architecture', 'Full-stack engineering', 'React & TypeScript ecosystem', 'Rapid feature delivery'],
+    quote: 'Great products emerge at the intersection of empathetic UX, robust code, and obsessive attention to detail.',
   },
   {
-    id: 'kavita-menon',
-    name: 'Kavita Menon',
-    role: 'Director, Human Resources',
-    image: '/images/leaders/leader_kavita.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=600&auto=format&fit=crop',
+    id: 'zain-atif',
+    name: 'Zain Atif',
+    role: 'Frontend Developer',
+    image: '/team/Zain Atif.webp',
     linkedin: 'https://www.linkedin.com',
     location: 'Hyderabad, India',
-    bio: 'Kavita drives talent strategy, technical recruitment, and engineer development programs across Neominds TechHub.',
-    background: 'Over a decade building high-retention engineering cultures for fast-growing technology companies.',
-    focus: ['Engineering talent acquisition', 'Continuous learning & certification', 'Inclusive engineering culture', 'People operations'],
-    quote: 'A software company is only as exceptional as the daily environment it creates for its engineers.',
+    bio: 'Specializes in crafting fast, accessible, and responsive user interfaces with pixel-perfect precision and fluid micro-interactions.',
+    background: 'Engineered high-performance web interfaces achieving 95+ Core Web Vitals across diverse mobile and desktop form factors.',
+    focus: ['Reactive frontend architecture', 'Responsive design systems', 'Web performance optimization', 'WCAG accessibility'],
+    quote: 'Fluid interactions, immediate responsiveness, and clean typography make software feel effortless to use.',
+  },
+  {
+    id: 'abdul-samad',
+    name: 'Abdul Samad',
+    role: 'Full Stack Developer',
+    image: '/team/Abdul Samad.webp',
+    linkedin: 'https://www.linkedin.com',
+    location: 'Hyderabad, India',
+    bio: 'Builds end-to-end full-stack web platforms, bridging database models, server business logic, and modern interactive frontends.',
+    background: 'Developed complete end-to-end applications integrating third-party payment gateways, real-time messaging, and interactive dashboards.',
+    focus: ['Full-stack application architecture', 'API development', 'Database modeling', 'Third-party integrations'],
+    quote: 'Full-stack harmony is achieved when data models and frontend components speak the exact same language.',
+  },
+  {
+    id: 'ahmed-ba-suleman',
+    name: 'Ahmed Ba Suleman',
+    role: 'AI Automations Specialist',
+    image: '/team/Ahmed Ba Suleman.webp',
+    linkedin: 'https://www.linkedin.com',
+    location: 'Hyderabad, India',
+    bio: 'Designs and builds autonomous AI agentic workflows, multi-tool LLM integrations, and enterprise process automations.',
+    background: 'Built production AI automation pipelines that eliminate manual repetitive tasks, reducing document processing times from hours to seconds.',
+    focus: ['Autonomous AI agents', 'RAG pipeline orchestration', 'Workflow automations', 'Intelligent document pipelines'],
+    quote: 'True AI transformation isn\'t about novelty; it\'s about eliminating friction and giving humans superpowers.',
   },
 ];
 
@@ -351,15 +368,16 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                 {/* Visual Card matching exact screenshot */}
                 <div
                   onClick={() => onSelectLeader && onSelectLeader(leader)}
+                  className="nm-team-portrait-container"
                   style={{
                     position: 'relative',
                     width: '320px',
                     height: '380px',
                     borderRadius: '8px',
                     overflow: 'hidden',
-                    background: 'var(--colors-surface-dark-subtle, #f0ece2)',
-                    border: '1px solid #1F1F23',
-                    boxShadow: '0 12px 28px rgba(32, 11, 0,  0.6)',
+                    backgroundColor: '#f1efeb',
+                    border: '1px solid rgba(0, 0, 0, 0.12)',
+                    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.08)',
                     cursor: 'pointer',
                     transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s ease',
                   }}
@@ -370,26 +388,27 @@ export const LeadershipCarousel: React.FC<LeadershipCarouselProps> = ({
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow = '0 12px 28px rgba(32, 11, 0,  0.6)';
-                    e.currentTarget.style.borderColor = 'var(--colors-border-dark, #f0ece2)';
+                    e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.08)';
+                    e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.12)';
                   }}
                 >
+                  {/* 5-Second Morphing Background Glow */}
+                  <div className="nm-team-glow-cream" />
+                  <div className="nm-team-glow-orange" />
+
                   {/* Portrait Person Crop */}
                   <img
                     src={leader.image}
                     alt={`${leader.name} - ${leader.role}`}
                     loading="lazy"
                     decoding="async"
-                    onError={(e) => {
-                      if (leader.fallbackImage && (e.target as HTMLImageElement).src !== leader.fallbackImage) {
-                        (e.target as HTMLImageElement).src = leader.fallbackImage;
-                      }
-                    }}
                     style={{
+                      position: 'relative',
+                      zIndex: 3,
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center top',
+                      objectFit: 'contain',
+                      objectPosition: 'bottom center',
                       pointerEvents: 'none',
                       transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
                     }}

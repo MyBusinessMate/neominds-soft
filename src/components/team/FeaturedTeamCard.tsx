@@ -23,7 +23,7 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
           onClick();
         }
       }}
-      className="nm-corner-glow"
+      className="nm-corner-glow nm-team-portrait-container"
       style={{
         position: 'relative',
         width: '100%',
@@ -48,6 +48,10 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
         e.currentTarget.style.borderColor = isActive ? '#fe6200' : 'rgba(0, 0, 0, 0.08)';
       }}
     >
+      {/* 5-Second Morphing Background Glow */}
+      <div className="nm-team-glow-cream" />
+      <div className="nm-team-glow-orange" />
+
       {/* Portrait Image with Initials Fallback */}
       {member.image && !imgError ? (
         <img
@@ -60,8 +64,9 @@ export const FeaturedTeamCard: React.FC<FeaturedTeamCardProps> = ({ member, isAc
             inset: 0,
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'top center',
+            objectFit: 'contain',
+            objectPosition: 'bottom center',
+            zIndex: 3,
             transition: 'transform 0.5s ease',
           }}
         />

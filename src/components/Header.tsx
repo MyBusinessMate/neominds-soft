@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 
 import { ServiceSlug } from '../data/serviceSlugs';
+import { DEMO_FORM_URL } from '../constants/links';
 
 export type PageType =
   | 'home'
@@ -275,7 +276,7 @@ export const Header: React.FC<HeaderProps> = ({
                 whiteSpace: 'nowrap',
               }}
             >
-              Neominds
+              Neominds Tech Hub
             </span>
           </div>
 
@@ -492,7 +493,7 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Right CTA Button: REQUEST A DEMO (Sized proportionally within navbar bounds) */}
           <div style={{ display: 'flex', alignItems: 'center', gap: isScrolled ? '10px' : '14px', flexShrink: 0 }}>
             <button
-              onClick={() => navigateToPage('contacts')}
+              onClick={() => window.open(DEMO_FORM_URL, '_blank', 'noopener,noreferrer')}
               className="desktop-send-btn"
               style={{
                 height: isScrolled ? '36px' : '40px',
@@ -956,7 +957,7 @@ export const Header: React.FC<HeaderProps> = ({
               {[
                 { title: 'About Us', page: 'about-us' as const },
                 { title: 'Leadership', page: 'leaders' as const },
-                { title: 'Careers', page: 'careers' as const },
+                // { title: 'Careers', page: 'careers' as const }, // Commented out per user request; easily restored by uncommenting
                 { title: 'Certification', page: 'certification' as const },
                 { title: 'Contact', page: 'contacts' as const },
                 { title: 'Security & Compliance', page: 'security-policy' as const },
@@ -1026,7 +1027,7 @@ export const Header: React.FC<HeaderProps> = ({
                     fontFamily: 'var(--font-body)',
                   }}
                 >
-                  Neominds has been providing services to Canopy for four years. Their skilled engineers understand product needs, deliver quality platform increments, and meet evolving deadlines with engineering discipline.
+                  Neominds Tech Hub has been providing services to Canopy for four years. Their skilled engineers understand product needs, deliver quality platform increments, and meet evolving deadlines with engineering discipline.
                 </p>
               </div>
 
@@ -1270,7 +1271,7 @@ export const Header: React.FC<HeaderProps> = ({
                 style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
               />
               <span style={{ fontSize: '20px', fontWeight: 800, color: '#000000', fontFamily: "'DM Sans', sans-serif", letterSpacing: '-0.025em' }}>
-                Neominds
+                Neominds Tech Hub
               </span>
             </div>
             <button
@@ -1528,7 +1529,7 @@ export const Header: React.FC<HeaderProps> = ({
                   <div style={{ padding: '12px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div onClick={() => navigateToPage('about-us')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>About Us</div>
                     <div onClick={() => navigateToPage('leaders')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Leadership</div>
-                    <div onClick={() => navigateToPage('careers')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Careers</div>
+                    {/* <div onClick={() => navigateToPage('careers')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Careers</div> */}
                     <div onClick={() => navigateToPage('certification')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Certification</div>
                     <div onClick={() => navigateToPage('contacts')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Contact</div>
                   </div>
@@ -1644,7 +1645,10 @@ export const Header: React.FC<HeaderProps> = ({
           {/* Mobile Footer Send Request Button */}
           <div style={{ marginTop: 'auto', paddingTop: '28px', flexShrink: 0 }}>
             <button
-              onClick={() => navigateToPage('contacts')}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.open(DEMO_FORM_URL, '_blank', 'noopener,noreferrer');
+              }}
               style={{
                 width: '100%',
                 height: '46px',

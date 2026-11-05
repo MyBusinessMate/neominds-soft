@@ -172,6 +172,7 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: '14px', paddingRight: '44px' }}>
             {/* Square Avatar Thumbnail */}
             <div
+              className="nm-team-portrait-container"
               style={{
                 width: '52px',
                 height: '52px',
@@ -185,12 +186,21 @@ export const MobileBiographySheet: React.FC<MobileBiographySheetProps> = ({
                 justifyContent: 'center',
               }}
             >
+              <div className="nm-team-glow-cream" />
+              <div className="nm-team-glow-orange" />
               {member.image && !imgError ? (
                 <img
                   src={member.image}
                   alt={member.name}
                   onError={() => setImgError(true)}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{
+                    position: 'relative',
+                    zIndex: 3,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    objectPosition: 'bottom center',
+                  }}
                 />
               ) : (
                 <User size={26} color="#fe6200" />

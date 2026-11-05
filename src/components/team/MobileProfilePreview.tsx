@@ -138,8 +138,9 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
         <X size={20} strokeWidth={2.4} />
       </button>
 
-      {/* Full-Height Edge-to-Edge Portrait Area */}
+      {/* Full-Height Edge-to-Edge Portrait Area with 5s Morphing Glow */}
       <div
+        className="nm-team-portrait-container"
         style={{
           position: 'absolute',
           inset: 0,
@@ -147,16 +148,20 @@ export const MobileProfilePreview: React.FC<MobileProfilePreviewProps> = ({
           backgroundColor: '#eae6df',
         }}
       >
+        <div className="nm-team-glow-cream" />
+        <div className="nm-team-glow-orange" />
         {member.image && !imgError ? (
           <img
             src={member.image}
             alt={member.name}
             onError={() => setImgError(true)}
             style={{
+              position: 'relative',
+              zIndex: 3,
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'top center',
+              objectFit: 'contain',
+              objectPosition: 'bottom center',
             }}
           />
         ) : (

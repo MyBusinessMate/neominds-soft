@@ -38,7 +38,7 @@ const solutionsLinks: FooterLink[] = [
 const companyLinks: FooterLink[] = [
   { label: 'About Us', target: '#about-us' },
   { label: 'Leadership', target: '#leaders' },
-  { label: 'Careers', target: '#careers' },
+  // { label: 'Careers', target: '#careers' }, // Commented out per user request; easily restored by uncommenting
   { label: 'Certifications', target: '#certification' },
   { label: 'Insights & Blog', target: '#blog' },
   { label: 'Company Updates', target: '#company-updates' },

@@ -189,6 +189,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       {/* ========================================================
           4. VALUES CTA SECTION (.s-cta js-cta)
           ======================================================== */}
+      {/* 4. VALUES CTA SECTION (Commented out per user request; easily restored by uncommenting) */}
+      {/*
       <section className="s-cta-section">
         <div className="s-cta-section__container">
           <h2 className="s-cta-section__title">
@@ -204,6 +206,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           </button>
         </div>
       </section>
+      */}
 
       {/* ========================================================
           6. TEAM SECTION (Desktop Carousel & Mobile Two-Stage Flow)

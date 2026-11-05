@@ -45,7 +45,7 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, onClic
     >
       {/* Circular Avatar */}
       <div
-        className="compact-avatar"
+        className="compact-avatar nm-team-portrait-container"
         style={{
           width: 'clamp(68px, 6vw, 76px)',
           height: 'clamp(68px, 6vw, 76px)',
@@ -62,6 +62,8 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, onClic
           flexShrink: 0,
         }}
       >
+        <div className="nm-team-glow-cream" />
+        <div className="nm-team-glow-orange" />
         {member.image && !imgError ? (
           <img
             src={member.image}
@@ -69,9 +71,12 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, onClic
             loading="lazy"
             onError={() => setImgError(true)}
             style={{
+              position: 'relative',
+              zIndex: 3,
               width: '100%',
               height: '100%',
-              objectFit: 'cover',
+              objectFit: 'contain',
+              objectPosition: 'bottom center',
               borderRadius: '50%',
               display: 'block',
             }}

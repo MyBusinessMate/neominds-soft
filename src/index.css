@@ -1261,3 +1261,71 @@ a[role="button"]:active {
     box-sizing: border-box !important;
   }
 }
+
+/* ==========================================================================
+   TEAM PORTRAIT 5-SECOND MORPHING ORANGE-TO-CREAM GLOW
+   Smoothly transitions between brand orange and warm cream every 5 seconds
+   ========================================================================== */
+@keyframes nmMorphGlowOrange {
+  0%, 100% {
+    opacity: 0.92;
+    transform: scale(1) translateY(0);
+    filter: blur(24px);
+    background: radial-gradient(ellipse 85% 75% at 50% 40%, rgba(254, 98, 0, 0.58) 0%, rgba(254, 98, 0, 0.28) 45%, rgba(245, 233, 217, 0) 75%);
+  }
+  50% {
+    opacity: 0.22;
+    transform: scale(1.15) translateY(4%);
+    filter: blur(36px);
+    background: radial-gradient(ellipse 85% 75% at 50% 55%, rgba(254, 98, 0, 0.14) 0%, rgba(254, 98, 0, 0.03) 40%, rgba(241, 239, 235, 0) 75%);
+  }
+}
+
+@keyframes nmMorphGlowCream {
+  0%, 100% {
+    opacity: 0.35;
+    background: radial-gradient(ellipse at 50% 50%, #f5e9d9 0%, #f1efeb 65%, #eedfcb 100%);
+  }
+  50% {
+    opacity: 0.95;
+    background: radial-gradient(ellipse at 50% 45%, #faf4ed 0%, #f5e9d9 55%, #eae3d6 100%);
+  }
+}
+
+.nm-team-portrait-container {
+  position: relative;
+  overflow: hidden;
+  background-color: #f1efeb;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.nm-team-glow-cream {
+  position: absolute;
+  inset: 0;
+  animation: nmMorphGlowCream 5s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.nm-team-glow-orange {
+  position: absolute;
+  inset: -15%;
+  animation: nmMorphGlowOrange 5s ease-in-out infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.nm-team-portrait-img {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+

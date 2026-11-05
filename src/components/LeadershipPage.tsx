@@ -214,11 +214,16 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '32px', alignItems: 'flex-start' }}>
               {/* Photo & Quick Info */}
               <div>
-                <div style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #e4e2e1' }}>
+                <div
+                  className="nm-team-portrait-container"
+                  style={{ width: '100%', height: '340px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px', border: '1px solid #e4e2e1', backgroundColor: '#f1efeb' }}
+                >
+                  <div className="nm-team-glow-cream" />
+                  <div className="nm-team-glow-orange" />
                   <img
                     src={selectedLeader.image}
-                    alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds TechHub`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center' }}
+                    alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds Tech Hub`}
+                    className="nm-team-portrait-img"
                   />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>

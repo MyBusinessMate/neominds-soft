@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { Button } from './ui/Button';
+import { DEMO_FORM_URL } from '../constants/links';
 
 interface HeroSectionProps {
   onTalkClick: () => void;
@@ -22,6 +23,11 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
   const ctaGroupRef = useRef<HTMLDivElement>(null);
   const emblemRef = useRef<HTMLDivElement>(null);
   const tickerRef = useRef<HTMLDivElement>(null);
+
+  const handleDemoClick = () => {
+    if (onTalkClick) onTalkClick();
+    window.open(DEMO_FORM_URL, '_blank', 'noopener,noreferrer');
+  };
 
   useEffect(() => {
     const reduceMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -124,7 +130,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           <div className="mobile-hero-cta-stack">
             <Button
               variant="primary"
-              onClick={onTalkClick}
+              onClick={handleDemoClick}
               icon={<ArrowRight size={18} strokeWidth={2.4} />}
               iconPosition="right"
               className="mobile-cta-primary"
@@ -244,7 +250,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           >
             <Button
               variant="primary"
-              onClick={onTalkClick}
+              onClick={handleDemoClick}
               icon={<ArrowRight size={18} strokeWidth={2.4} />}
               iconPosition="right"
               style={{
@@ -554,8 +560,10 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             bottom: 40px;
             z-index: -1;
             pointer-events: none;
-            background: radial-gradient(ellipse at 35% 35%, rgba(245, 233, 217, 0.92) 0%, rgba(245, 233, 217, 0.72) 48%, transparent 85%);
-            filter: blur(14px);
+            background:
+              radial-gradient(ellipse 90% 65% at 25% 35%, rgba(254, 98, 0, 0.22) 0%, rgba(254, 98, 0, 0.08) 45%, transparent 75%),
+              radial-gradient(ellipse at 35% 35%, rgba(245, 233, 217, 0.95) 0%, rgba(245, 233, 217, 0.82) 48%, transparent 85%);
+            filter: blur(16px);
           }
 
           .mobile-hero-heading {
