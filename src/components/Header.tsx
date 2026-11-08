@@ -6,6 +6,12 @@ import {
   X,
   ArrowUpRight,
   ArrowRight,
+
+
+
+
+
+
 } from 'lucide-react';
 
 import { ServiceSlug } from '../data/serviceSlugs';
@@ -50,6 +56,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({
   onNavigate,
   currentPage = 'home',
+  
   onSelectPage,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -126,6 +133,10 @@ export const Header: React.FC<HeaderProps> = ({
   }, []);
 
   const navigateToPage = useCallback((page: PageType, articleId?: string) => {
+    if (page === 'training-as-service') {
+      window.location.href = 'https://training.neomindstechhub.com/';
+      return;
+    }
     setActiveMenu(null);
     setMobileMenuOpen(false);
     if (onSelectPage) {
@@ -163,7 +174,7 @@ export const Header: React.FC<HeaderProps> = ({
     { title: 'AI Native Softwares', page: 'ai-native-software' as const, hasExternalArrow: false },
     { title: 'Analytic Dashboard', page: 'analytics-dashboard' as const, hasExternalArrow: false },
     { title: 'Custom Health Softwares', page: 'custom-health-software' as const, hasExternalArrow: false },
-    { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false },
+    { title: 'Training as a Service', page: 'training-as-service' as const, hasExternalArrow: false, externalUrl: 'https://training.neomindstechhub.com/' },
     { title: 'All Services', page: 'services' as const, hasExternalArrow: true },
   ];
 
@@ -222,8 +233,8 @@ export const Header: React.FC<HeaderProps> = ({
         <div
           className="nm-header-capsule"
           style={{
-            width: isScrolled ? 'min(94%, 860px)' : '100%',
-            maxWidth: isScrolled ? '860px' : '1360px',
+            width: isScrolled ? 'min(96%, 1240px)' : '100%',
+            maxWidth: isScrolled ? '1240px' : '1360px',
             height: isScrolled ? '56px' : '68px',
             borderRadius: '8px',
             backgroundColor: isScrolled
@@ -1709,7 +1720,7 @@ export const Header: React.FC<HeaderProps> = ({
           pointer-events: none !important;
           transition: transform 0.3s ease, opacity 0.3s ease !important;
         }
-        @media (min-width: 860px) {
+        @media (min-width: 960px) {
           .desktop-nav {
             display: flex !important;
           }
@@ -1720,7 +1731,7 @@ export const Header: React.FC<HeaderProps> = ({
             display: inline-flex !important;
           }
         }
-        @media (max-width: 859px) {
+        @media (max-width: 959px) {
           .desktop-nav {
             display: none !important;
           }

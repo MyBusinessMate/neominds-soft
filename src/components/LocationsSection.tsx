@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Facebook, Linkedin, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { Mail, Facebook, Linkedin, Instagram, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface LocationsSectionProps {
@@ -297,7 +297,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 {/* Social Icons */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                   <a
-                    href="https://www.linkedin.com/company/neominds"
+                    href="https://www.linkedin.com/company/neomindstechhub/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn"
@@ -329,7 +329,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   </a>
 
                   <a
-                    href="https://x.com/neominds"
+                    href="https://x.com/neomindstechhub"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="X (Twitter)"
@@ -363,7 +363,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                   </a>
 
                   <a
-                    href="https://facebook.com/neominds"
+                    href="https://www.facebook.com/profile.php?id=61584792628834"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -392,6 +392,38 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     }}
                   >
                     <Facebook size={16} />
+                  </a>
+
+                  <a
+                    href="https://www.instagram.com/neomindstechhub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '8px',
+                      backgroundColor: '#faf8f5',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: '#1a1a1a',
+                      transition: 'all 0.2s ease',
+                      textDecoration: 'none',
+                      border: '1px solid #e4e2e1',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#fe6200';
+                      e.currentTarget.style.borderColor = '#fe6200';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#faf8f5';
+                      e.currentTarget.style.borderColor = '#e4e2e1';
+                      e.currentTarget.style.color = '#1a1a1a';
+                    }}
+                  >
+                    <Instagram size={16} />
                   </a>
                 </div>
               </div>

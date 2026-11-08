@@ -1,5 +1,18 @@
 import React from 'react';
-import { Linkedin, Youtube, Instagram } from 'lucide-react';
+import { Linkedin, Youtube, Instagram, Facebook } from 'lucide-react';
+
+const BrandXIcon: React.FC<{ size?: number; className?: string }> = ({ size = 15, className = '' }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    style={{ display: 'inline-block', verticalAlign: 'middle' }}
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 
 export interface FooterLink {
   label: string;
@@ -26,7 +39,7 @@ const generalServices: FooterLink[] = [
   { label: 'Analytic Dashboard', target: '#analytics-dashboard' },
   { label: 'Custom Health Software', target: '#custom-health-software' },
   { label: 'Legacy Modernisation', target: '#legacy-modernisation' },
-  { label: 'Training as a Service', target: '#training-as-service' },
+  { label: 'Training as a Service', target: 'https://training.neomindstechhub.com/' },
 ];
 
 const solutionsLinks: FooterLink[] = [
@@ -55,6 +68,10 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
   const currentYear = new Date().getFullYear();
 
   const handleLinkClick = (e: React.MouseEvent, link: FooterLink) => {
+    if (link.target.startsWith('http://') || link.target.startsWith('https://')) {
+      window.location.href = link.target;
+      return;
+    }
     e.preventDefault();
     if (link.isSettings && onOpenCookies) {
       onOpenCookies();
@@ -127,13 +144,31 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                 {/* Social Channels */}
                 <div className="nm-brand-socials">
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/company/neomindstechhub/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
                     aria-label="NeoMinds on LinkedIn"
                   >
                     <Linkedin size={16} />
+                  </a>
+                  <a
+                    href="https://x.com/neomindstechhub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nm-social-link"
+                    aria-label="NeoMinds on X"
+                  >
+                    <BrandXIcon size={15} />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61584792628834"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nm-social-link"
+                    aria-label="NeoMinds on Facebook"
+                  >
+                    <Facebook size={16} />
                   </a>
                   <a
                     href="https://youtube.com"
@@ -145,7 +180,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     <Youtube size={16} />
                   </a>
                   <a
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/neomindstechhub"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"

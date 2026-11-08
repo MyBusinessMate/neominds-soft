@@ -806,7 +806,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
               <div className="ai-footer-links">
                 <a
                   className="ai-footer-link"
-                  href="https://www.linkedin.com/company/neominds-techhub"
+                  href="https://www.linkedin.com/company/neomindstechhub/"
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -819,6 +819,22 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
                   rel="noreferrer"
                 >
                   Twitter / X
+                </a>
+                <a
+                  className="ai-footer-link"
+                  href="https://www.facebook.com/profile.php?id=61584792628834"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook
+                </a>
+                <a
+                  className="ai-footer-link"
+                  href="https://www.instagram.com/neomindstechhub"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Instagram
                 </a>
 
                 <a
