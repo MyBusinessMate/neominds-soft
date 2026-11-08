@@ -149,7 +149,7 @@ export const SERVICE_METADATA_MAP: Record<string, ServiceMetaSummary> = {
   // ─────────────────────────────────────────────────────────────
   'ai-automations': {
     title: 'AI Automations',
-    description: 'Intelligent AI process automation. Replace repetitive manual back-office tasks with automated document processing, invoice parsing, and event-driven AI pipelines.',
+    description: 'Intelligent AI process automation. Replace manual back-office tasks with automated document processing, invoice parsing, and event-driven AI pipelines.',
     heroImage: '/services/ai-automations.png',
     category: 'AI & Intelligence',
     keywords: [
@@ -265,7 +265,7 @@ export const SERVICE_METADATA_MAP: Record<string, ServiceMetaSummary> = {
 
   'product-engineering': {
     title: 'Product Engineering',
-    description: 'Full-cycle digital product engineering from technical discovery and prototype validation to production deployment and enterprise scaling.',
+    description: 'Full-cycle digital product engineering from technical discovery and prototype validation to robust production deployment and enterprise global scaling.',
     heroImage: '/services/product-engineering.png',
     category: 'Specialist',
     keywords: [

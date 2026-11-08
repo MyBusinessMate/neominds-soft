@@ -17,7 +17,7 @@ Neominds operates as a high-velocity engineering partner delivering production s
 
 ## Global Contact
 - RFQ / Project Inquiries: contact@neomindstechhub.com
-- Main Website: https://neominds.io
+- Main Website: https://neomindstechhub.co
 
 ## Neominds Services (16 Canonical Services)
 
@@ -65,17 +65,17 @@ Neominds operates as a high-velocity engineering partner delivering production s
 6. Enterprise Operations & Logistics (IoT Fleet Telemetry, ERP Integrations)
 
 ## Canonical Web Pages
-- [Homepage](https://neominds.io/): Main corporate portal, interactive demos, and client reviews.
-- [Services Hub](https://neominds.io/services): Comprehensive directory of all 16 Neominds services.
-- [Industries Hub](https://neominds.io/industries): Domain-specific engineering capabilities across key industry sectors.
-- [Case Studies & Client Results](https://neominds.io/case-studies): 30 verified production client case studies with metrics.
-- [About Us](https://neominds.io/about-us): Corporate profile, engineering methodology, and global delivery standards.
-- [Leadership](https://neominds.io/leaders): Executive leadership and principal engineering bios.
-- [Careers](https://neominds.io/careers): Open engineering roles and career opportunities.
-- [Certification](https://neominds.io/certification): Compliance standards, security certifications, and industry recognitions.
-- [Blog & Publications](https://neominds.io/blog): Technical articles, architectural breakdowns, and AI engineering analysis.
-- [Company Updates](https://neominds.io/company-updates): Press releases, announcements, and milestones.
-- [Contact & RFQ](https://neominds.io/contacts): Project consultation, RFP submission, and NDA requests.
-- [Privacy Policy](https://neominds.io/privacy-policy): Privacy and data processing terms.
-- [Cookie Policy](https://neominds.io/cookie-policy): Cookie usage and consent management.
-- [Security Policy](https://neominds.io/security-policy): Security posture and vulnerability disclosure.
+- [Homepage](https://neomindstechhub.co/): Main corporate portal, interactive demos, and client reviews.
+- [Services Hub](https://neomindstechhub.co/services): Comprehensive directory of all 16 Neominds services.
+- [Industries Hub](https://neomindstechhub.co/industries): Domain-specific engineering capabilities across key industry sectors.
+- [Case Studies & Client Results](https://neomindstechhub.co/case-studies): 30 verified production client case studies with metrics.
+- [About Us](https://neomindstechhub.co/about-us): Corporate profile, engineering methodology, and global delivery standards.
+- [Leadership](https://neomindstechhub.co/leaders): Executive leadership and principal engineering bios.
+- [Careers](https://neomindstechhub.co/careers): Open engineering roles and career opportunities.
+- [Certification](https://neomindstechhub.co/certification): Compliance standards, security certifications, and industry recognitions.
+- [Blog & Publications](https://neomindstechhub.co/blog): Technical articles, architectural breakdowns, and AI engineering analysis.
+- [Company Updates](https://neomindstechhub.co/company-updates): Press releases, announcements, and milestones.
+- [Contact & RFQ](https://neomindstechhub.co/contacts): Project consultation, RFP submission, and NDA requests.
+- [Privacy Policy](https://neomindstechhub.co/privacy-policy): Privacy and data processing terms.
+- [Cookie Policy](https://neomindstechhub.co/cookie-policy): Cookie usage and consent management.
+- [Security Policy](https://neomindstechhub.co/security-policy): Security posture and vulnerability disclosure.

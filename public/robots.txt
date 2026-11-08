@@ -11,6 +11,7 @@ Allow: /updates/
 Allow: /industries/
 Allow: /technology/
 Allow: /llms.txt
+Allow: /llms-full.txt
 
 # Explicit AI Engine Permissions for AEO
 User-agent: GPTBot
@@ -25,4 +26,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://neominds.io/sitemap.xml
+Sitemap: https://neomindstechhub.co/sitemap.xml

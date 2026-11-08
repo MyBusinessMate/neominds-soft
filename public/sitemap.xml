@@ -1,416 +1,416 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://neominds.io/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://neominds.io/industries</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/industries</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/technology</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/technology</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/about-us</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/about-us</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/leaders</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/leaders</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- <url>
-    <loc>https://neominds.io/careers</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/careers</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url> -->
   <url>
-    <loc>https://neominds.io/certification</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/certification</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/contacts</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/contacts</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/company-updates</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/company-updates</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://neominds.io/privacy-policy</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/privacy-policy</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://neominds.io/terms-and-conditions</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/terms-and-conditions</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://neominds.io/cookie-policy</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/cookie-policy</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://neominds.io/security-policy</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/security-policy</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/software-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/software-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/mobile-app-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/mobile-app-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/web-cms-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/web-cms-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/ai-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/ai-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/ai-agents</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/ai-agents</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/ai-product-engineering</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/ai-product-engineering</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/devops</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/devops</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/ecommerce-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/ecommerce-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/cloud-native</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/cloud-native</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/legacy-modernization</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/legacy-modernization</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/mvp-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/mvp-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/enterprise-architecture</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/enterprise-architecture</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/qa-engineering</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/qa-engineering</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/data-engineering</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/data-engineering</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/cybersecurity</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/cybersecurity</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/services/product-engineering</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/services/product-engineering</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/flooring-inc-dashboard</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/flooring-inc-dashboard</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/mindspace-dashboard</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/mindspace-dashboard</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/mindspace-mobile-app</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/mindspace-mobile-app</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/mybusinessmate-web</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/mybusinessmate-web</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/mybusinessmate-app</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/mybusinessmate-app</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/edutech-co-teacher</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/edutech-co-teacher</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/montessori-os</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/montessori-os</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/expiro-app</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/expiro-app</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/the1am-content-creator</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/the1am-content-creator</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/aigooru-fee-manager</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/aigooru-fee-manager</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/fundbot-sql-chatbot</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/fundbot-sql-chatbot</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/bytexl-lms</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/bytexl-lms</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/tecnomart-billing</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/tecnomart-billing</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/ayyo-mobile-app</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/ayyo-mobile-app</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/interzoon-cloud-system</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/interzoon-cloud-system</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/laptomart-ai-crm</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/laptomart-ai-crm</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/dotcomweavers-project-buddy</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/dotcomweavers-project-buddy</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/fero-invoice-automation</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/fero-invoice-automation</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/edutech-facial-attendance</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/edutech-facial-attendance</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/flexport-burn-reports</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/flexport-burn-reports</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/keocapital-hr-screening</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/keocapital-hr-screening</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/keocapital-hr-joining</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/keocapital-hr-joining</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/metacognition-qa-automation</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/metacognition-qa-automation</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/nda-ai-tracking</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/nda-ai-tracking</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/nda-healthcare-hms</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/nda-healthcare-hms</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/nda-fintech-legacy</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/nda-fintech-legacy</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/flavourbombs-security-scan</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/flavourbombs-security-scan</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/flyover-lead-capture</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/flyover-lead-capture</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/nda-ai-agents-model</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/nda-ai-agents-model</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/case-studies/nda-realestate-mgmt</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/case-studies/nda-realestate-mgmt</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/why-ai-projects-fail-in-enterprises</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/why-ai-projects-fail-in-enterprises</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/ai-in-education</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/ai-in-education</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/ai-in-product-development</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/ai-in-product-development</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/ai-in-software-development-lifecycle</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/ai-in-software-development-lifecycle</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/ai-in-hr</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/ai-in-hr</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/event-driven-microservices-zero-downtime</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/event-driven-microservices-zero-downtime</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://neominds.io/blog/healthcare-revenue-cycle-management-automation</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://neomindstechhub.co/blog/healthcare-revenue-cycle-management-automation</loc>
+    <lastmod>2026-11-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>

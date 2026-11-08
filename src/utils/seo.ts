@@ -21,8 +21,8 @@ export interface PageMeta {
   schema?: Record<string, any>;
 }
 
-const PRODUCTION_DOMAIN = 'https://neominds.io';
-const DEFAULT_OG_IMAGE = 'https://neominds.io/images/hero-ribbon.jpg';
+const PRODUCTION_DOMAIN = 'https://neomindstechhub.co';
+const DEFAULT_OG_IMAGE = 'https://neomindstechhub.co/images/hero-ribbon.jpg';
 const DEFAULT_GEO_REGION = 'IN-TG';
 const DEFAULT_GEO_PLACENAME = 'Hyderabad, Telangana State, India';
 const DEFAULT_GEO_POSITION = '17.4018;78.4772';
@@ -34,8 +34,8 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   // ─────────────────────────────────────────────────────────────
   if (page === '404') {
     return {
-      title: 'Page Not Found (404) | Neominds TechHub',
-      description: 'The requested page could not be found. Explore Neominds TechHub enterprise AI and custom software solutions.',
+      title: 'Page Not Found (404) | Neominds TechHub Engineering',
+      description: 'The requested URL was not found on Neominds TechHub. Explore our enterprise software engineering, AI systems, case studies, and modern digital platforms.',
       keywords: ['404', 'page not found', 'Neominds TechHub'],
       canonicalPath: '/404',
       ogType: 'website',
@@ -206,7 +206,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
         description: serviceMeta.description,
         provider: {
           '@type': 'Organization',
-          '@id': 'https://neominds.io/#organization',
+          '@id': 'https://neomindstechhub.co/#organization',
           name: 'Neominds TechHub',
           url: PRODUCTION_DOMAIN,
           logo: `${PRODUCTION_DOMAIN}/favicon.svg`,
@@ -254,7 +254,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
     }
 
     return {
-      title: `${serviceMeta.title} Services | Neominds TechHub Enterprise Engineering`,
+      title: `${serviceMeta.title} Services | Neominds TechHub`,
       description: serviceMeta.description,
       keywords: serviceMeta.keywords,
       canonicalPath,
@@ -273,7 +273,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
   switch (page) {
     case 'services':
       return {
-        title: 'Enterprise Software & AI Engineering Services | Neominds TechHub',
+        title: 'Enterprise Software & AI Services | Neominds TechHub',
         description:
           'Explore 16 production software engineering services. Full-stack web, native mobile, cloud microservices, autonomous AI systems, and legacy modernization.',
         keywords: [
@@ -293,13 +293,13 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
           '@type': 'CollectionPage',
           name: 'Neominds Software & AI Engineering Services',
           url: `${PRODUCTION_DOMAIN}/services`,
-          description: 'Comprehensive directory of enterprise software development and AI engineering services.',
+          description: 'Comprehensive directory of enterprise software development, autonomous AI systems, cloud platforms, and digital product engineering services by Neominds.',
         },
       };
 
     case 'industries':
       return {
-        title: 'Industries We Serve: FinTech, HealthTech, Retail, Real Estate | Neominds',
+        title: 'Industries We Serve: Health, FinTech & Retail | Neominds',
         description:
           'Domain-engineered software solutions for Healthcare (HIPAA), Financial Services, High-Volume E-Commerce, Education, and Enterprise Logistics worldwide.',
         keywords: [
@@ -323,7 +323,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'technology':
       return {
-        title: 'Technology & Architecture Stack | NeoMinds',
+        title: 'Enterprise Technology & Architecture Stack | Neominds',
         description:
           'Explore NeoMinds 7 core engineering technologies: Web Development, Artificial Intelligence, Machine Learning, Data Management, Data Analytics, Automations, and Product Engineering.',
         keywords: [
@@ -343,7 +343,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
           '@type': 'WebPage',
           name: 'NeoMinds Technology & Architectural Stack',
           url: `${PRODUCTION_DOMAIN}/technology`,
-          description: 'Core engineering technologies and frameworks utilized by NeoMinds.',
+          description: 'Core engineering technologies and frameworks utilized by Neominds TechHub, including React, Next.js, TypeScript, Python, AWS, and modern generative AI models.',
         },
       };
 
@@ -373,7 +373,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'insights':
       return {
-        title: 'Technology Insights, Whitepapers & Research | Neominds TechHub',
+        title: 'Technology Insights & Whitepapers | Neominds TechHub',
         description:
           'Authoritative technical research, architecture blueprints, and engineering analyses on multi-agent AI, zero-trust security, and cloud scalability.',
         keywords: [
@@ -407,7 +407,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'about-us':
       return {
-        title: 'About Us: Mission, Principles & Global Presence | Neominds TechHub',
+        title: 'About Neominds TechHub: Global Software Engineering',
         description:
           'Learn about Neominds TechHub. Our engineering culture, zero-mock production standards, 100% IP ownership handover, and global delivery squads.',
         keywords: [
@@ -463,7 +463,7 @@ export const getPageMetadata = (page: PageType | '404', articleId?: string | nul
 
     case 'certification':
       return {
-        title: 'Security Certifications & Compliance: SOC 2, ISO 27001, HIPAA | Neominds',
+        title: 'Security Certifications: SOC 2 & ISO 27001 | Neominds',
         description:
           'Review Neominds security controls, ISO/IEC 27001 accreditation, SOC 2 Type II compliance, and HIPAA safeguards protecting enterprise client IP.',
         keywords: [
