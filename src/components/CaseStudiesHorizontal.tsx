@@ -380,11 +380,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                 background: card.gradient,
                 border: `1px solid ${card.borderColor}`,
                 borderRadius: '16px',
-                padding: '34px 30px',
-                minHeight: '380px',
+                padding: '30px 26px 80px 26px',
+                minHeight: '430px',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
                 boxShadow: `0 14px 38px -10px ${card.shadowColor}, 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                 cursor: 'pointer',
                 overflow: 'hidden',
@@ -446,13 +445,18 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
 
                 <h3
                   style={{
-                    fontSize: '22px',
+                    fontSize: '20px',
                     fontWeight: 700,
                     color: '#000000',
-                    lineHeight: 1.28,
+                    lineHeight: 1.25,
                     letterSpacing: '-0.025em',
-                    margin: '0 0 14px 0',
+                    margin: '0 0 12px 0',
                     fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                    display: '-webkit-box',
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                    minHeight: '66px',
                   }}
                 >
                   {card.title}
@@ -462,20 +466,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '8px',
-                    fontSize: '12px',
+                    gap: '6px',
+                    fontSize: '11.5px',
                     fontWeight: 700,
                     color: '#0f172a',
-                    backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
                     backdropFilter: 'blur(8px)',
                     WebkitBackdropFilter: 'blur(8px)',
-                    padding: '6px 14px',
+                    padding: '6px 12px',
                     borderRadius: '8px',
                     border: '1px solid rgba(255, 255, 255, 0.95)',
                     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                    lineHeight: 1.3,
                   }}
                 >
-                  <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                  <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.06em', flexShrink: 0 }}>Outcome:</span>
                   <span>{card.metric}</span>
                 </div>
 
@@ -538,7 +543,9 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   handleCardClick(card.id);
                 }}
                 style={{
-                  alignSelf: 'flex-start',
+                  position: 'absolute',
+                  bottom: '24px',
+                  left: '26px',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '8px',
@@ -551,8 +558,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   border: 'none',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
                   cursor: 'pointer',
-                  zIndex: 2,
-                  marginTop: '16px',
+                  zIndex: 4,
                   transition: 'background-color 0.2s ease, transform 0.15s ease',
                 }}
                 onMouseEnter={(e) => {
@@ -664,14 +670,14 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                   style={{
                     position: 'relative',
                     width: '100%',
-                    minHeight: '390px',
+                    minHeight: '430px',
+                    height: '430px',
                     background: card.gradient,
                     border: `1px solid ${card.borderColor}`,
                     borderRadius: '20px',
-                    padding: '26px 22px',
+                    padding: '24px 20px 74px 20px',
                     display: 'flex',
                     flexDirection: 'column',
-                    justifyContent: 'space-between',
                     boxSizing: 'border-box',
                     boxShadow: `0 16px 36px -10px ${card.shadowColor}, 0 2px 6px rgba(0, 0, 0, 0.02), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                     cursor: 'pointer',
@@ -725,13 +731,18 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
 
                     <h3
                       style={{
-                        fontSize: '19px',
+                        fontSize: '18px',
                         fontWeight: 700,
                         color: '#000000',
-                        lineHeight: 1.3,
+                        lineHeight: 1.25,
                         letterSpacing: '-0.025em',
                         margin: '0 0 12px 0',
                         fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                        display: '-webkit-box',
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
+                        minHeight: '66px',
                       }}
                     >
                       {card.title}
@@ -741,20 +752,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '8px',
-                        fontSize: '12px',
+                        gap: '6px',
+                        fontSize: '11px',
                         fontWeight: 700,
                         color: '#0f172a',
-                        backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.9)',
                         backdropFilter: 'blur(8px)',
                         WebkitBackdropFilter: 'blur(8px)',
-                        padding: '6px 14px',
+                        padding: '6px 12px',
                         borderRadius: '8px',
                         border: '1px solid rgba(255, 255, 255, 0.95)',
                         boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                        lineHeight: 1.3,
                       }}
                     >
-                      <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                      <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.06em', flexShrink: 0 }}>Outcome:</span>
                       <span>{card.metric}</span>
                     </div>
 
@@ -819,7 +831,9 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       handleCardClick(card.id);
                     }}
                     style={{
-                      alignSelf: 'flex-start',
+                      position: 'absolute',
+                      bottom: '22px',
+                      left: '20px',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
@@ -832,8 +846,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       border: 'none',
                       boxShadow: '0 4px 12px rgba(0, 0, 0, 0.12)',
                       cursor: 'pointer',
-                      zIndex: 3,
-                      marginTop: '16px',
+                      zIndex: 4,
                     }}
                   >
                     <span>Read case study</span>
@@ -1058,17 +1071,16 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                 onClick={() => handleCardClick(card.id)}
                 style={{
                   position: 'absolute',
-                  width: 'clamp(275px, 22vw, 335px)',
-                  height: 'clamp(360px, 46vh, 425px)',
-                  left: 'calc(clamp(275px, 22vw, 335px) / -2)',
-                  top: 'calc(clamp(360px, 46vh, 425px) / -2)',
+                  width: 'clamp(295px, 23vw, 355px)',
+                  height: 'clamp(410px, 49vh, 465px)',
+                  left: 'calc(clamp(295px, 23vw, 355px) / -2)',
+                  top: 'calc(clamp(410px, 49vh, 465px) / -2)',
                   background: card.gradient,
                   border: `1px solid ${card.borderColor}`,
                   borderRadius: '20px',
-                  padding: 'clamp(26px, 3.8vh, 34px) clamp(22px, 2.6vw, 30px)',
+                  padding: 'clamp(26px, 3.4vh, 32px) clamp(22px, 2.4vw, 28px) 76px clamp(22px, 2.4vw, 28px)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
                   boxSizing: 'border-box',
                   boxShadow: `0 24px 54px -14px ${card.shadowColor}, 0 6px 16px -4px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.9)`,
                   cursor: 'pointer',
@@ -1132,13 +1144,18 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
 
                   <h3
                     style={{
-                      fontSize: 'clamp(18px, 1.8vw, 22px)',
+                      fontSize: 'clamp(18px, 1.7vw, 21px)',
                       fontWeight: 700,
                       color: '#000000',
-                      lineHeight: 1.28,
+                      lineHeight: 1.25,
                       letterSpacing: '-0.025em',
                       margin: '0 0 12px 0',
                       fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden',
+                      minHeight: '66px',
                     }}
                   >
                     {card.title}
@@ -1148,20 +1165,21 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '8px',
-                      fontSize: '12px',
+                      gap: '6px',
+                      fontSize: '11.5px',
                       fontWeight: 700,
                       color: '#0f172a',
-                      backgroundColor: 'rgba(255, 255, 255, 0.88)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.9)',
                       backdropFilter: 'blur(8px)',
                       WebkitBackdropFilter: 'blur(8px)',
-                      padding: '6px 14px',
+                      padding: '6px 12px',
                       borderRadius: '8px',
                       border: '1px solid rgba(255, 255, 255, 0.95)',
                       boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+                      lineHeight: 1.3,
                     }}
                   >
-                    <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10.5px', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Outcome:</span>
+                    <span style={{ color: '#fe6200', fontWeight: 800, fontSize: '10px', textTransform: 'uppercase', letterSpacing: '0.06em', flexShrink: 0 }}>Outcome:</span>
                     <span>{card.metric}</span>
                   </div>
 
@@ -1226,7 +1244,9 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     handleCardClick(card.id);
                   }}
                   style={{
-                    alignSelf: 'flex-start',
+                    position: 'absolute',
+                    bottom: '24px',
+                    left: 'clamp(22px, 2.4vw, 28px)',
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '8px',
@@ -1240,8 +1260,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                     boxShadow: '0 4px 14px rgba(0, 0, 0, 0.12)',
                     cursor: 'pointer',
                     transition: 'all 0.22s cubic-bezier(0.16, 1, 0.3, 1)',
-                    zIndex: 3,
-                    marginTop: '16px',
+                    zIndex: 4,
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#fe6200';
