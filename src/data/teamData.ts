@@ -38,7 +38,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       {
         number: 1,
         heading: 'Background',
-        description: 'Guides executive vision and engineering strategy at Neominds Tech Hub, prioritizing high-velocity, production-grade software delivery for global clients.',
+        description: 'Guides executive vision and engineering strategy at NeoMinds TechHub, prioritizing high-velocity, production-grade software delivery for global clients.',
       },
       {
         number: 2,
@@ -87,7 +87,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
       {
         number: 1,
         heading: 'Background',
-        description: 'Co-directs operational architecture and technical roadmaps at Neominds Tech Hub, shaping foundational development methodologies and execution pipelines.',
+        description: 'Co-directs operational architecture and technical roadmaps at NeoMinds TechHub, shaping foundational development methodologies and execution pipelines.',
       },
       {
         number: 2,
@@ -127,7 +127,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     role: 'Operations Manager',
     featured: true,
     order: 3,
-    image: '/team/Syeda Sidrah Fatima.webp',
+    image: '/team/Syeda Sidrah Fatima.webp?v=2',
     socials: {
       linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
       website: 'https://neominds-soft.vercel.app',

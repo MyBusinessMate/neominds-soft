@@ -22,6 +22,12 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            // Firebase/Firestore SDK — isolated so it stays out of the eager
+            // vendor-core bundle and only loads via the CMS's dynamic import
+            // (public site) or the lazy admin route.
+            if (id.includes('firebase') || id.includes('@firebase') || id.includes('@grpc') || id.includes('protobufjs')) {
+              return 'vendor-firebase';
+            }
             if (id.includes('react') || id.includes('scheduler')) {
               return 'vendor-react';
             }

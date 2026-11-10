@@ -13,6 +13,7 @@ import { LocationsSection } from './LocationsSection';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import { PORTFOLIO_CASE_STUDIES } from '../data/portfolioData';
 import { UNIFIED_CASE_STUDIES } from '../data/unifiedCaseStudiesData';
+import { getCmsCaseStudy, useCmsOverlay } from '../lib/cms/overlay';
 import { getTechIconPath } from '../utils/techIcons';
 
 interface PortfolioPageProps {
@@ -94,6 +95,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
   onNavigatePage,
 }) => {
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>('ALL');
+  useCmsOverlay(); // re-render once published CMS case studies load
 
   const filteredCases = useMemo(() => {
     if (activeCategory === 'ALL') return PORTFOLIO_CASE_STUDIES;
@@ -378,7 +380,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
             }}
           >
             {filteredCases.map((cs, idx) => {
-              const unified = UNIFIED_CASE_STUDIES[cs.id];
+              const unified = getCmsCaseStudy(cs.id) || UNIFIED_CASE_STUDIES[cs.id];
               const timeline = unified?.overview?.projectDuration || '3–4 Months';
               const capabilities = unified?.keyFeatures && unified.keyFeatures.length >= 3
                 ? unified.keyFeatures.slice(0, 3)

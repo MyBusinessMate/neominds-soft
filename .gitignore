@@ -58,6 +58,8 @@ playwright-report/
 blob-report/
 
 .vercel
+.wrangler/
+.tanstack/
 
 test-results.json
 issues-screenshots/

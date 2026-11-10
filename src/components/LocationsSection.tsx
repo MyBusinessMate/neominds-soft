@@ -13,7 +13,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
   const officeLocation = {
     title: 'Headquarters',
     facilityCode: 'Hyderabad Engineering HQ',
-    name: 'Neominds TechHub',
+    name: 'NeoMinds TechHub',
     suite: 'Suite No. 704, 7th Floor',
     building: 'Moguls Court Building',
     locality: '5-9-59 & 60, Basheerbagh',
@@ -131,7 +131,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                     }}
                   >
-                    Neominds TechHub
+                    NeoMinds TechHub
                   </div>
                   <div
                     style={{
@@ -452,7 +452,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="Neominds Tech Hub Location Map"
+                title="NeoMinds TechHub Location Map"
               />
             </div>
           </RevealElement>

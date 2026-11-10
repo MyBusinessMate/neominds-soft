@@ -93,7 +93,7 @@ export const IndustryRecognition: React.FC = () => {
                   lineHeight: 1.65,
                 }}
               >
-                Every NeoMinds project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
+                Every NeoMinds TechHub project comes with a signed NDA on request, full ownership of your source code, and delivery tracked through weekly demos. Our team works hours that overlap with yours, wherever you are.
               </p>
             </RevealElement>
 

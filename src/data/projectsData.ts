@@ -1,6 +1,7 @@
 import { ServiceSlug } from './serviceSlugs';
 import { PORTFOLIO_CASE_STUDIES } from './portfolioData';
 import { UNIFIED_CASE_STUDIES } from './unifiedCaseStudiesData';
+import { getCmsCaseStudy } from '../lib/cms/overlay';
 
 export interface ProjectOverview {
   client: string;
@@ -63,7 +64,11 @@ export const UNIFIED_PROJECTS: Record<string, UnifiedProject> = {
 // Helper to retrieve project by ID or slug with safe fallback
 export function getUnifiedProject(idOrSlug: string): UnifiedProject {
   const cleanId = (idOrSlug || '').trim().toLowerCase();
-  
+
+  // Published CMS content (if any) takes precedence over the static bundle.
+  const fromCms = getCmsCaseStudy(cleanId);
+  if (fromCms) return fromCms;
+
   if (UNIFIED_PROJECTS[cleanId]) {
     return UNIFIED_PROJECTS[cleanId];
   }
@@ -141,7 +146,7 @@ export function getUnifiedProject(idOrSlug: string): UnifiedProject {
         match.details.takeaway ||
         'Engineering systems for long-term production reliability requires disciplined architecture, clear user interfaces, and automated verification loops.',
       discussStatement:
-        `NeoMinds helps ambitious organizations like ${match.client} build reliable software that solves real business bottlenecks.`,
+        `NeoMinds TechHub helps ambitious organizations like ${match.client} build reliable software that solves real business bottlenecks.`,
       ctaText: 'Discuss Your Project',
       relatedServices: [
         { name: 'Custom Software Development', slug: 'custom-software-development' },

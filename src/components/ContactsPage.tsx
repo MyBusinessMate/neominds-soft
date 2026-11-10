@@ -88,7 +88,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
           }}
           blurStrength={8}
         >
-          Get in touch with <span style={{ color: '#fe6200' }}>Neominds TechHub</span>
+          Get in touch with <span style={{ color: '#fe6200' }}>NeoMinds TechHub</span>
         </ScrollReveal>
 
         <RevealElement variant="text" delay={0.06}>
@@ -439,7 +439,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   </div>
 
                   <h3 style={{ fontSize: '20px', fontWeight: 800, color: '#000000', marginBottom: '14px', fontFamily: 'var(--font-heading)' }}>
-                    Neominds TechHub
+                    NeoMinds TechHub
                   </h3>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginBottom: '20px' }}>
@@ -495,7 +495,7 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="strict-origin-when-cross-origin"
-                  title="Neominds Tech Hub Location Map"
+                  title="NeoMinds TechHub Location Map"
                 />
               </div>
             </RevealElement>

@@ -135,7 +135,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
         {activeTab === 'privacy' && (
           <div>
             <h2 id="modal-legal-title" style={{ fontFamily: 'var(--font-heading)', fontSize: '24px', fontWeight: 700, marginBottom: '16px' }}>
-              Neominds Privacy Policy
+              NeoMinds TechHub Privacy Policy
             </h2>
             <p style={{ fontFamily: 'var(--font-body)', fontSize: '14px', color: '#a3a09b', marginBottom: '20px' }}>
               Last Updated: August 2026 • ISO/IEC 27001:2022 Certified
@@ -143,7 +143,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px', lineHeight: 1.7, color: '#d0d3dd', fontFamily: 'var(--font-body)' }}>
               <p>
-                Neominds Inc. (&quot;Neominds&quot;, &quot;we&quot;, &quot;our&quot;) is dedicated to protecting your privacy and ensuring transparency in all our software engineering operations. This Privacy Policy outlines how we collect, process, and safeguard information when you interact with our website and enterprise engineering services.
+                NeoMinds TechHub Inc. (&quot;NeoMinds TechHub&quot;, &quot;we&quot;, &quot;our&quot;) is dedicated to protecting your privacy and ensuring transparency in all our software engineering operations. This Privacy Policy outlines how we collect, process, and safeguard information when you interact with our website and enterprise engineering services.
               </p>
               <h4 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', fontSize: '16px', fontWeight: 700, marginTop: '8px' }}>1. Data Collection & Processing</h4>
               <p>
@@ -151,7 +151,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
               </p>
               <h4 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', fontSize: '16px', fontWeight: 700, marginTop: '8px' }}>2. Enterprise NDA & Confidentiality</h4>
               <p>
-                All technical disclosures and proprietary requirements submitted to Neominds are treated with strict confidentiality. Mutual Non-Disclosure Agreements (NDAs) are executed prior to deep architectural analysis.
+                All technical disclosures and proprietary requirements submitted to NeoMinds TechHub are treated with strict confidentiality. Mutual Non-Disclosure Agreements (NDAs) are executed prior to deep architectural analysis.
               </p>
               <h4 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', fontSize: '16px', fontWeight: 700, marginTop: '8px' }}>3. International Data Transfers & GDPR Compliance</h4>
               <p>
@@ -193,7 +193,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ initialTab = 'privacy', 
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px', lineHeight: 1.7, color: '#d0d3dd', fontFamily: 'var(--font-body)' }}>
               <p>
-                Neominds maintains an enterprise Information Security Management System (ISMS) certified to ISO/IEC 27001:2022.
+                NeoMinds TechHub maintains an enterprise Information Security Management System (ISMS) certified to ISO/IEC 27001:2022.
               </p>
               <h4 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', fontSize: '16px', fontWeight: 700, marginTop: '8px' }}>Key Security Controls:</h4>
               <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>

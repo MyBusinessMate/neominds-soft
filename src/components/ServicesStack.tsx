@@ -43,7 +43,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'E-commerce Platform', slug: 'ecommerce-platform' },
     ],
     image: '/services/software-development.png',
-    imageAlt: 'Neominds Core Engineering - Web, Mobile, Custom Software and SaaS Development',
+    imageAlt: 'NeoMinds TechHub Core Engineering - Web, Mobile, Custom Software and SaaS Development',
     bgGradient: 'linear-gradient(135deg, #ffffff 0%, #faf8f5 50%, #f1efeb 100%)',
   },
   {
@@ -66,7 +66,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'AI-Native Software', slug: 'ai-native-software' },
     ],
     image: '/services/ai-development.png',
-    imageAlt: 'Neominds AI Systems - Intelligent Automation, LLM Integration, and Autonomous AI Agents',
+    imageAlt: 'NeoMinds TechHub AI Systems - Intelligent Automation, LLM Integration, and Autonomous AI Agents',
     bgGradient: 'linear-gradient(135deg, #fbf9f6 0%, #f5f1eb 50%, #ede7df 100%)',
   },
   {
@@ -89,7 +89,7 @@ const stackCards: ServiceStackCard[] = [
       { label: 'Analytic Dashboard', slug: 'analytics-dashboard' },
     ],
     image: '/services/devops.png',
-    imageAlt: 'Neominds Cloud Evolution - Cloud-Native Architecture and Zero-Downtime Legacy Modernization',
+    imageAlt: 'NeoMinds TechHub Cloud Evolution - Cloud-Native Architecture and Zero-Downtime Legacy Modernization',
     bgGradient: 'linear-gradient(135deg, #f7f5f2 0%, #eeeae3 50%, #e5dfd5 100%)',
   },
 ];
@@ -396,7 +396,7 @@ export const ServicesStack: React.FC<ServicesStackProps> = ({ onSelectService })
                     {renderDescriptionWithLinks(card.description, card.links, handleCardClick)}
                   </p>
 
-                  {/* Connected Neominds Services Pills (Apple Capsule Ornaments) */}
+                  {/* Connected NeoMinds TechHub Services Pills (Apple Capsule Ornaments) */}
                   <div style={{ marginBottom: isMobile ? '24px' : '32px' }}>
                     <div
                       style={{

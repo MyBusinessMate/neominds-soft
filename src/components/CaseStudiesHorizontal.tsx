@@ -9,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 interface CaseStudyCard {
   id: string;
   client: string;
-  domainTag: string;
   metric: string;
   title: string;
   techs: string[];
@@ -23,7 +22,6 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'flooring-inc-dashboard',
     client: 'FLOORING.INC',
-    domainTag: 'E-Commerce & Groq AI Queries',
     metric: '360° Real-Time Analytics · 15+ Modules',
     title: 'Flooring.inc: Centralized E-Commerce BI & Natural Language SQL Queries',
     techs: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Groq'],
@@ -41,26 +39,8 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
     ),
   },
   {
-    id: 'mindspace-mobile-app',
-    client: 'MINDSPACE.AI',
-    domainTag: 'Healthcare & Companion AI',
-    metric: '4.9★ App Store · 120k+ Active Patients',
-    title: 'Mindspace.ai: HIPAA Mental Health Platform & TARA Companion',
-    techs: ['React Native', 'TypeScript', 'Node.js', 'Firebase'],
-    gradient: 'linear-gradient(155deg, #F5E8FF 0%, #EDE9FE 50%, #DDD6FE 100%)',
-    borderColor: 'rgba(168, 85, 247, 0.28)',
-    shadowColor: 'rgba(168, 85, 247, 0.16)',
-    watermark: (
-      <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M15 60h20l10-25 15 50 15-35 10 15h20" />
-        <circle cx="60" cy="60" r="50" strokeDasharray="4 4" />
-      </svg>
-    ),
-  },
-  {
     id: 'nda-fintech-legacy',
     client: 'ENTERPRISE FINTECH',
-    domainTag: 'Banking Systems & Cloud Migration',
     metric: 'Zero Downtime · 14M Transactions Migrated',
     title: 'Core Financial Systems Modernisation & Zero-Loss Database Migration',
     techs: ['Oracle', 'PostgreSQL', 'Python', 'Docker'],
@@ -79,7 +59,6 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'fundbot-sql-chatbot',
     client: 'FUNDBOT',
-    domainTag: 'FinTech Financial Intelligence',
     metric: '98.5% SQL Accuracy · <120ms Latency',
     title: 'Fundbot: Natural Language Financial SQL Query Engine & Automated BI',
     techs: ['Python', 'FastAPI', 'OpenAI', 'PostgreSQL'],
@@ -97,7 +76,6 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'bytexl-lms',
     client: 'BYTEXL',
-    domainTag: 'Higher EdTech Infrastructure',
     metric: '100,000+ Active Students · 99.99% SLA',
     title: 'ByteXL: Scalable Learning Management System & Coding Exam Platform',
     techs: ['React', 'Node.js', 'MongoDB', 'AWS'],
@@ -115,7 +93,6 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'dotcomweavers-project-buddy',
     client: 'DOTCOMWEAVERS',
-    domainTag: 'Enterprise AI Knowledge Agent',
     metric: '40% Velocity Boost · Multi-Platform Sync',
     title: 'Project Buddy: Multi-Platform AI Knowledge Assistant & Workspace Bridge',
     techs: ['Python', 'FastAPI', 'Docker', 'Next.js'],
@@ -134,7 +111,6 @@ const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
     id: 'fero-invoice-automation',
     client: 'FERO LOGISTICS',
-    domainTag: 'Logistics FinTech Automation',
     metric: '85% Automated Audits · 3-Way Rate Match',
     title: 'Fero: AI Freight Invoice Verification & Automated Billing Audit',
     techs: ['Python', 'FastAPI', 'PostgreSQL', 'Docker'],
@@ -358,7 +334,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               lineHeight: 1.6,
             }}
           >
-            Explore 7 featured client deployments engineered for high concurrency, zero data loss, and audited security.
+            Explore 6 featured client deployments engineered for high concurrency, zero data loss, and audited security.
           </p>
         </div>
 
@@ -399,7 +375,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               }}
             >
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px' }}>
+                <div style={{ marginBottom: '12px' }}>
                   <span
                     style={{
                       display: 'block',
@@ -410,37 +386,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                       textTransform: 'uppercase',
                       fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
                       whiteSpace: 'nowrap',
-                      flexShrink: 0,
                     }}
                   >
                     {card.client}
                   </span>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                    <span
-                      style={{
-                        width: '6px',
-                        height: '6px',
-                        borderRadius: '50%',
-                        backgroundColor: '#fe6200',
-                        display: 'inline-block',
-                        boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
-                        flexShrink: 0,
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontSize: '11px',
-                        fontWeight: 700,
-                        letterSpacing: '0.03em',
-                        textTransform: 'uppercase',
-                        color: 'rgba(15, 23, 42, 0.75)',
-                        fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
-                        whiteSpace: 'nowrap',
-                      }}
-                    >
-                      {card.domainTag}
-                    </span>
-                  </div>
                 </div>
 
                 <h3
@@ -626,7 +575,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               maxWidth: '360px',
             }}
           >
-            Swipe through 7 verified client systems engineered for high concurrency and zero data loss.
+            Swipe through 6 verified client systems engineered for high concurrency and zero data loss.
           </p>
         </div>
 
@@ -686,9 +635,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                 >
                   {/* Top: Client Name & Category Tag */}
                   <div>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
+                    <div style={{ marginBottom: '12px' }}>
                       <span
                         style={{
+                          display: 'block',
                           fontSize: '10.5px',
                           fontWeight: 700,
                           letterSpacing: '0.14em',
@@ -696,37 +646,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                           textTransform: 'uppercase',
                           fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
                           whiteSpace: 'nowrap',
-                          flexShrink: 0,
                         }}
                       >
                         {card.client}
                       </span>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                        <span
-                          style={{
-                            width: '6px',
-                            height: '6px',
-                            borderRadius: '50%',
-                            backgroundColor: '#fe6200',
-                            display: 'inline-block',
-                            boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
-                            flexShrink: 0,
-                          }}
-                        />
-                        <span
-                          style={{
-                            fontSize: '11px',
-                            fontWeight: 700,
-                            letterSpacing: '0.03em',
-                            textTransform: 'uppercase',
-                            color: 'rgba(15, 23, 42, 0.75)',
-                            fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
-                            whiteSpace: 'nowrap',
-                          }}
-                        >
-                          {card.domainTag}
-                        </span>
-                      </div>
                     </div>
 
                     <h3
@@ -1032,7 +955,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               lineHeight: 1.55,
             }}
           >
-            Scroll to explore 7 enterprise systems engineered for high concurrency, zero data loss, and audited security.
+            Scroll to explore 6 enterprise systems engineered for high concurrency, zero data loss, and audited security.
           </p>
         </div>
 
@@ -1098,7 +1021,7 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
               >
                 {/* Top: Client Name & Category Tag */}
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '12px' }}>
+                  <div style={{ marginBottom: '12px' }}>
                     <span
                       style={{
                         display: 'block',
@@ -1109,37 +1032,10 @@ export const CaseStudiesHorizontal: React.FC<CaseStudiesHorizontalProps> = ({
                         textTransform: 'uppercase',
                         fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
                         whiteSpace: 'nowrap',
-                        flexShrink: 0,
                       }}
                     >
                       {card.client}
                     </span>
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-                      <span
-                        style={{
-                          width: '6px',
-                          height: '6px',
-                          borderRadius: '50%',
-                          backgroundColor: '#fe6200',
-                          display: 'inline-block',
-                          boxShadow: '0 0 6px rgba(254, 98, 0, 0.6)',
-                          flexShrink: 0,
-                        }}
-                      />
-                      <span
-                        style={{
-                          fontSize: '11px',
-                          fontWeight: 700,
-                          letterSpacing: '0.03em',
-                          textTransform: 'uppercase',
-                          color: 'rgba(15, 23, 42, 0.75)',
-                          fontFamily: "var(--typography-mono-family, 'Fira Code', monospace)",
-                          whiteSpace: 'nowrap',
-                        }}
-                      >
-                        {card.domainTag}
-                      </span>
-                    </div>
                   </div>
 
                   <h3

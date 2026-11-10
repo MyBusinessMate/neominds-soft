@@ -107,17 +107,18 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       </section>
 
       {/* ========================================================
-          2. FOUNDER / CEO MESSAGE (.s-blockquote theme-dark2)
+          2. FOUNDER / CEO MESSAGE (.s-blockquote)
           ======================================================== */}
       <section className="s-blockquote">
         <div className="s-blockquote__container">
           <div className="s-blockquote__author-card">
+            <span className="s-blockquote__eyebrow">OUR COMMITMENT</span>
             <h3 className="s-blockquote__name">Leadership &amp; Architecture</h3>
-            <p className="s-blockquote__role">Neominds TechHub</p>
+            <p className="s-blockquote__role">NeoMinds TechHub</p>
           </div>
 
           <div className="s-blockquote__content">
-            <div className="s-blockquote__quote-mark">&ldquo;</div>
+            <div className="s-blockquote__quote-mark" aria-hidden="true">&ldquo;</div>
             <blockquote className="s-blockquote__text">
               Real engineering isn’t about hype. It’s about building software you can rely on when traffic surges and downtime is not an option.
             </blockquote>
@@ -255,7 +256,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 {currentTestimonial.avatar && (
                   <img
                     src={currentTestimonial.avatar}
-                    alt={`${currentTestimonial.author} - Client Testimonial, Neominds TechHub`}
+                    alt={`${currentTestimonial.author} - Client Testimonial, NeoMinds TechHub`}
                     className="s-testimonials__avatar"
                     loading="lazy"
                     decoding="async"

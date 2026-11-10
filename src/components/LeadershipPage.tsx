@@ -87,7 +87,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
 
               <RevealElement variant="text" delay={0.06}>
                 <p style={{ fontSize: '17px', lineHeight: 1.65, color: '#333333', margin: '0 0 16px', fontWeight: 400 }}>
-                  Meet the architects, engineering leads, and technology directors guiding client delivery at Neominds TechHub. Our leadership team brings decades of direct production experience across enterprise cloud, distributed systems, and applied AI.
+                  Meet the architects, engineering leads, and technology directors guiding client delivery at NeoMinds TechHub. Our leadership team brings decades of direct production experience across enterprise cloud, distributed systems, and applied AI.
                 </p>
                 <p style={{ fontSize: '16px', lineHeight: 1.65, color: '#555555', margin: 0, fontWeight: 400 }}>
                   We stay hands-on with architecture and delivery: establishing code quality standards, auditing distributed systems, and ensuring every project meets our rigorous technical requirements.
@@ -222,7 +222,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
                   <div className="nm-team-glow-orange" />
                   <img
                     src={selectedLeader.image}
-                    alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, Neominds Tech Hub`}
+                    alt={`${selectedLeader.name} - ${selectedLeader.role} Leadership Profile, NeoMinds TechHub`}
                     className="nm-team-portrait-img"
                   />
                 </div>
@@ -396,7 +396,7 @@ const LeadershipPageComponent: React.FC<LeadershipPageProps> = ({ onNavigatePage
           </form>
           {newsletterSubmitted && (
             <div style={{ marginTop: '12px', color: '#fe6200', fontSize: '13.5px', fontWeight: 500 }}>
-              Thank you for subscribing to Neominds TechHub insights.
+              Thank you for subscribing to NeoMinds TechHub insights.
             </div>
           )}
         </div>

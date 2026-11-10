@@ -10,6 +10,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { BLOG_POSTS_DATA } from '../data/blogData';
+import { getCmsBlogPosts, useCmsOverlay } from '../lib/cms/overlay';
 import { Footer } from './Footer';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 import './BlogHubPage.css';
@@ -32,6 +33,8 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [visibleCount, setVisibleCount] = useState<number>(5);
+  const cmsVersion = useCmsOverlay();
+  const posts = getCmsBlogPosts() ?? BLOG_POSTS_DATA;
 
   const allTags = [
     'All',
@@ -62,7 +65,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
   ];
 
   const filteredPosts = useMemo(() => {
-    return BLOG_POSTS_DATA.filter((post) => {
+    return posts.filter((post) => {
       const matchesCat =
         selectedCategory === 'All' ||
         post.category.toLowerCase() === selectedCategory.toLowerCase() ||
@@ -77,7 +80,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
 
       return matchesCat && matchesSearch;
     });
-  }, [selectedCategory, searchQuery]);
+  }, [selectedCategory, searchQuery, posts, cmsVersion]);
 
   const visiblePosts = filteredPosts.slice(0, visibleCount);
   const hasMore = visibleCount < filteredPosts.length;
@@ -89,7 +92,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail) return;
-    onSuccessToast(`Thank you! "${newsletterEmail}" is subscribed to the Neominds Technical Publications.`);
+    onSuccessToast(`Thank you! "${newsletterEmail}" is subscribed to the NeoMinds TechHub Technical Publications.`);
     setNewsletterEmail('');
   };
 
@@ -103,7 +106,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
           <div className="b-hero__text">
             <div className="b-hero__badge">
               <BookOpen size={14} />
-              <span>Neominds Technical Publications</span>
+              <span>NeoMinds TechHub Technical Publications</span>
             </div>
 
             <ScrollReveal as="h1" className="b-hero__title" blurStrength={8}>
@@ -206,7 +209,7 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                     >
                       <img
                         src={post.coverImage}
-                        alt={`${post.title} - Neominds Engineering Technical Analysis`}
+                        alt={`${post.title} - NeoMinds TechHub Engineering Technical Analysis`}
                         loading="lazy"
                         onError={(e) => {
                           // Fallback if local image fails

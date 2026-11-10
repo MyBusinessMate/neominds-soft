@@ -21,7 +21,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'MyBusinessMate',
       logoUrl: '/images/company-logos/mybusinessmate.png',
       quote:
-        'NeoMinds built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
+        'NeoMinds TechHub built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
       author: 'Daniel Brooks',
       title: 'Operations Director, MyBusinessMate',
     },
@@ -30,7 +30,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Dotcomweavers',
       logoUrl: '/images/company-logos/dotcomweavers.png',
       quote:
-        'NeoMinds delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
+        'NeoMinds TechHub delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
       author: 'Michael Anderson',
       title: 'Head of Engineering, Dotcomweavers',
     },
@@ -39,7 +39,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Mindspace.ai',
       logoUrl: '/images/company-logos/mindspace-ai.png',
       quote:
-        'NeoMinds engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
+        'NeoMinds TechHub engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
       author: 'Sarah Mitchell',
       title: 'Product Lead, Mindspace.ai',
     },
@@ -48,7 +48,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Laptomart',
       logoUrl: '/images/company-logos/laptomart.png',
       quote:
-        'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
+        'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds TechHub. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
       author: 'James Wilson',
       title: 'Technology Director, Laptomart',
     },
@@ -57,7 +57,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Tecnomart',
       logoUrl: '/images/company-logos/tecnomart.png',
       quote:
-        'The custom enterprise ERP integrations and distributed data pipelines NeoMinds engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
+        'The custom enterprise ERP integrations and distributed data pipelines NeoMinds TechHub engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
       author: 'Robert Bennett',
       title: 'Infrastructure Architect, Tecnomart',
     },
@@ -66,7 +66,7 @@ export const Testimonials: React.FC = () => {
       clientName: 'Oden',
       logoUrl: '/images/company-logos/oden.png',
       quote:
-        'NeoMinds engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
+        'NeoMinds TechHub engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
       author: 'Alexander Reed',
       title: 'VP of Platform Engineering, Oden',
     },
