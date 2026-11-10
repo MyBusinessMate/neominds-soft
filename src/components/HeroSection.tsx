@@ -127,7 +127,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
           <h1 className="mobile-hero-heading">
             Building<br />
             software that<br />
-            scales — and AI<br />
+            scales - and AI<br />
             that delivers<br />
             in production.
           </h1>
@@ -228,7 +228,7 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
               textTransform: 'none',
             }}
           >
-            Building software that scales — and AI that delivers in production.
+            Building software that scales - and AI that delivers in production.
           </h1>
 
           <p

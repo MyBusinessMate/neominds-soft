@@ -166,7 +166,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
               maxWidth: '920px',
             }}
           >
-            Software We’ve Shipped — And the Numbers to Prove It.
+            Software We’ve Shipped - And the Numbers to Prove It.
           </ScrollReveal>
 
           {/* Subtitle / Value Proposition */}
@@ -179,7 +179,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
               margin: '0 0 32px 0',
             }}
           >
-            We partner with ambitious startups and global enterprises to design, build, and operate software that stands up to heavy production traffic. From AI-driven SQL query engines to HIPAA-compliant clinical platforms — here is the verified record of how we deliver.
+            We partner with ambitious startups and global enterprises to design, build, and operate software that stands up to heavy production traffic. From AI-driven SQL query engines to HIPAA-compliant clinical platforms - here is the verified record of how we deliver.
           </p>
 
           {/* Action CTAs */}

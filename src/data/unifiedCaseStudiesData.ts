@@ -68,8 +68,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "mindspace-dashboard": {
     "id": "mindspace-dashboard",
     "slug": "mindspace-dashboard",
-    "projectName": "Mindspace.ai: Admin Dashboard — AI-Powered Healthcare Analytics & Platform Management",
-    "title": "Mindspace.ai: Admin Dashboard — AI-Powered Healthcare Analytics & Platform Management. Case Study",
+    "projectName": "Mindspace.ai: Admin Dashboard - AI-Powered Healthcare Analytics & Platform Management",
+    "title": "Mindspace.ai: Admin Dashboard - AI-Powered Healthcare Analytics & Platform Management. Case Study",
     "overview": {
       "client": "Mindspace.ai",
       "industry": "Healthcare / Mental Wellness / Digital Health",
@@ -107,7 +107,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "Operational Analytics: Visual reporting for platform growth, user activity, and engagement.",
       "businessImpact": "AI-Assisted Communication: Automated generation of notification content using Groq."
     },
-    "keyTakeaway": "An intelligent healthcare platform needs more than a great user experience. It needs an equally intelligent administrative foundation — one that transforms application data into operational visibility, actionable insights, and better platform management.",
+    "keyTakeaway": "An intelligent healthcare platform needs more than a great user experience. It needs an equally intelligent administrative foundation - one that transforms application data into operational visibility, actionable insights, and better platform management.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -262,8 +262,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "mybusinessmate-app": {
     "id": "mybusinessmate-app",
     "slug": "mybusinessmate-app",
-    "projectName": "MyBusinessMate.ai: Native Mobile Application — Business Management",
-    "title": "MyBusinessMate.ai: Native Mobile Application — Business Management. Case Study",
+    "projectName": "MyBusinessMate.ai: Native Mobile Application - Business Management",
+    "title": "MyBusinessMate.ai: Native Mobile Application - Business Management. Case Study",
     "overview": {
       "client": "MyBusinessMate.ai",
       "industry": "Enterprise Software & Business Technology",
@@ -449,8 +449,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "expiro-app": {
     "id": "expiro-app",
     "slug": "expiro-app",
-    "projectName": "Expirio: Smart Expiry Alerts & Recipe Ideas — Less Waste",
-    "title": "Expirio: Smart Expiry Alerts & Recipe Ideas — Less Waste. Case Study",
+    "projectName": "Expirio: Smart Expiry Alerts & Recipe Ideas - Less Waste",
+    "title": "Expirio: Smart Expiry Alerts & Recipe Ideas - Less Waste. Case Study",
     "overview": {
       "client": "Expirio",
       "industry": "Enterprise Software, Inventory Management & Sustainability",
@@ -513,8 +513,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "the1am-content-creator": {
     "id": "the1am-content-creator",
     "slug": "the1am-content-creator",
-    "projectName": "The1AM: AI Content Creator — One Prompt → Image + Caption + Schedule",
-    "title": "The1AM: AI Content Creator — One Prompt → Image + Caption + Schedule. Case Study",
+    "projectName": "The1AM: AI Content Creator - One Prompt → Image + Caption + Schedule",
+    "title": "The1AM: AI Content Creator - One Prompt → Image + Caption + Schedule. Case Study",
     "overview": {
       "client": "The1AM",
       "industry": "Enterprise Software, Marketing & Content Automation",
@@ -552,7 +552,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "Reduced Tool Switching",
       "businessImpact": "The unified workflow reduces the need to move between separate design, writing, and scheduling applications."
     },
-    "keyTakeaway": "One idea should not require five different tools to become a published post. AI should handle the repetitive work, so creators and businesses can focus on what matters most — creativity, strategy, and storytelling.",
+    "keyTakeaway": "One idea should not require five different tools to become a published post. AI should handle the repetitive work, so creators and businesses can focus on what matters most - creativity, strategy, and storytelling.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -578,8 +578,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "aigooru-fee-manager": {
     "id": "aigooru-fee-manager",
     "slug": "aigooru-fee-manager",
-    "projectName": "Aigooru: Smart Fee Management — Payments, Reminders & Financial Intelligence",
-    "title": "Aigooru: Smart Fee Management — Payments, Reminders & Financial Intelligence. Case Study",
+    "projectName": "Aigooru: Smart Fee Management - Payments, Reminders & Financial Intelligence",
+    "title": "Aigooru: Smart Fee Management - Payments, Reminders & Financial Intelligence. Case Study",
     "overview": {
       "client": "Aigooru",
       "industry": "Education Technology (EdTech) / Financial Management",
@@ -616,7 +616,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "Reduced Administrative Workload",
       "businessImpact": "Automating payment tracking, ledger updates, receipt generation, and reminders reduces repetitive administrative tasks."
     },
-    "keyTakeaway": "\"Fee management should not be about chasing payments and balancing spreadsheets. It should be about giving institutions the financial clarity, automation, and intelligence to focus on what matters most — education.\" Aigooru demonstrates how workflow automation, digital payments, and machine learning can transform traditional institutional fee administration into a more transparent, proactive, and scalable financial management experience.",
+    "keyTakeaway": "\"Fee management should not be about chasing payments and balancing spreadsheets. It should be about giving institutions the financial clarity, automation, and intelligence to focus on what matters most - education.\" Aigooru demonstrates how workflow automation, digital payments, and machine learning can transform traditional institutional fee administration into a more transparent, proactive, and scalable financial management experience.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -642,8 +642,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "fundbot-sql-chatbot": {
     "id": "fundbot-sql-chatbot",
     "slug": "fundbot-sql-chatbot",
-    "projectName": "Fundbot: AI SQL Chatbot — Ask Your Data in Plain English",
-    "title": "Fundbot: AI SQL Chatbot — Ask Your Data in Plain English. Case Study",
+    "projectName": "Fundbot: AI SQL Chatbot - Ask Your Data in Plain English",
+    "title": "Fundbot: AI SQL Chatbot - Ask Your Data in Plain English. Case Study",
     "overview": {
       "client": "Fundbot",
       "industry": "FinTech / Enterprise Software / Business Intelligence",
@@ -706,8 +706,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "bytexl-lms": {
     "id": "bytexl-lms",
     "slug": "bytexl-lms",
-    "projectName": "ByteXL: Enterprise Learning Management System — Centralizing Digital Education",
-    "title": "ByteXL: Enterprise Learning Management System — Centralizing Digital Education. Case Study",
+    "projectName": "ByteXL: Enterprise Learning Management System - Centralizing Digital Education",
+    "title": "ByteXL: Enterprise Learning Management System - Centralizing Digital Education. Case Study",
     "overview": {
       "client": "ByteXL",
       "industry": "Education Technology (EdTech)",
@@ -744,7 +744,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "Simplified Course Administration",
       "businessImpact": "Structured course and enrollment management can reduce fragmented administrative workflows."
     },
-    "keyTakeaway": "Learning should not be fragmented across disconnected tools. A connected digital learning environment brings students, educators, content, and progress together — making education easier to manage and more accessible.",
+    "keyTakeaway": "Learning should not be fragmented across disconnected tools. A connected digital learning environment brings students, educators, content, and progress together - making education easier to manage and more accessible.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -770,8 +770,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "tecnomart-billing": {
     "id": "tecnomart-billing",
     "slug": "tecnomart-billing",
-    "projectName": "Tecnomart: Smart Billing System — Automated Billing & Digital Receipts",
-    "title": "Tecnomart: Smart Billing System — Automated Billing & Digital Receipts. Case Study",
+    "projectName": "Tecnomart: Smart Billing System - Automated Billing & Digital Receipts",
+    "title": "Tecnomart: Smart Billing System - Automated Billing & Digital Receipts. Case Study",
     "overview": {
       "client": "Tecnomart",
       "industry": "Retail Technology / Payment Solutions",
@@ -834,8 +834,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "ayyo-mobile-app": {
     "id": "ayyo-mobile-app",
     "slug": "ayyo-mobile-app",
-    "projectName": "Ayyo: Community-Driven Civic Platform — Turning Local Problems into Collective Action",
-    "title": "Ayyo: Community-Driven Civic Platform — Turning Local Problems into Collective Action. Case Study",
+    "projectName": "Ayyo: Community-Driven Civic Platform - Turning Local Problems into Collective Action",
+    "title": "Ayyo: Community-Driven Civic Platform - Turning Local Problems into Collective Action. Case Study",
     "overview": {
       "client": "Ayyo",
       "industry": "CivicTech / Enterprise",
@@ -898,8 +898,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "interzoon-cloud-system": {
     "id": "interzoon-cloud-system",
     "slug": "interzoon-cloud-system",
-    "projectName": "Interzoon: Cloud-Based Internal Management System — Secure, Scalable & Connected Operations",
-    "title": "Interzoon: Cloud-Based Internal Management System — Secure, Scalable & Connected Operations. Case Study",
+    "projectName": "Interzoon: Cloud-Based Internal Management System - Secure, Scalable & Connected Operations",
+    "title": "Interzoon: Cloud-Based Internal Management System - Secure, Scalable & Connected Operations. Case Study",
     "overview": {
       "client": "Interzoon",
       "industry": "Enterprise Technology / FinTech / Global Trade",
@@ -962,8 +962,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "laptomart-ai-crm": {
     "id": "laptomart-ai-crm",
     "slug": "laptomart-ai-crm",
-    "projectName": "Laptomart: AI-Powered B2B Sales CRM — Unified Sales, Commerce & Customer Intelligence",
-    "title": "Laptomart: AI-Powered B2B Sales CRM — Unified Sales, Commerce & Customer Intelligence. Case Study",
+    "projectName": "Laptomart: AI-Powered B2B Sales CRM - Unified Sales, Commerce & Customer Intelligence",
+    "title": "Laptomart: AI-Powered B2B Sales CRM - Unified Sales, Commerce & Customer Intelligence. Case Study",
     "overview": {
       "client": "Laptomart",
       "industry": "Enterprise / E-commerce / Sales Technology",
@@ -1027,8 +1027,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "dotcomweavers-project-buddy": {
     "id": "dotcomweavers-project-buddy",
     "slug": "dotcomweavers-project-buddy",
-    "projectName": "DotcomWeavers: Project Buddy — Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira",
-    "title": "DotcomWeavers: Project Buddy — Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira. Case Study",
+    "projectName": "DotcomWeavers: Project Buddy - Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira",
+    "title": "DotcomWeavers: Project Buddy - Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira. Case Study",
     "overview": {
       "client": "DotcomWeavers",
       "industry": "Enterprise / AI Technology",
@@ -1066,7 +1066,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "| Information retrieval time | 15–30 minutes | 1–2 seconds |",
       "businessImpact": "| Information accuracy | \\60% | \\95% |"
     },
-    "keyTakeaway": "Enterprise knowledge should not be buried inside folders and documents. Project Buddy turns organizational documentation into an intelligent, searchable knowledge system — delivering grounded answers with context and citations, directly where teams collaborate.",
+    "keyTakeaway": "Enterprise knowledge should not be buried inside folders and documents. Project Buddy turns organizational documentation into an intelligent, searchable knowledge system - delivering grounded answers with context and citations, directly where teams collaborate.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -1092,8 +1092,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "fero-invoice-automation": {
     "id": "fero-invoice-automation",
     "slug": "fero-invoice-automation",
-    "projectName": "Fero: AI-Powered Invoice Automation — Intelligent Document Processing & Financial Workflow Automation",
-    "title": "Fero: AI-Powered Invoice Automation — Intelligent Document Processing & Financial Workflow Automation. Case Study",
+    "projectName": "Fero: AI-Powered Invoice Automation - Intelligent Document Processing & Financial Workflow Automation",
+    "title": "Fero: AI-Powered Invoice Automation - Intelligent Document Processing & Financial Workflow Automation. Case Study",
     "overview": {
       "client": "Fero",
       "industry": "Enterprise / Logistics / Financial Operations",
@@ -1157,8 +1157,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "edutech-facial-attendance": {
     "id": "edutech-facial-attendance",
     "slug": "edutech-facial-attendance",
-    "projectName": "EduTech: Facial Attendance — AI-Powered Workforce Intelligence & Privacy-First Attendance",
-    "title": "EduTech: Facial Attendance — AI-Powered Workforce Intelligence & Privacy-First Attendance. Case Study",
+    "projectName": "EduTech: Facial Attendance - AI-Powered Workforce Intelligence & Privacy-First Attendance",
+    "title": "EduTech: Facial Attendance - AI-Powered Workforce Intelligence & Privacy-First Attendance. Case Study",
     "overview": {
       "client": "EduTech",
       "industry": "EdTech / Enterprise / Workforce Management",
@@ -1221,8 +1221,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "flexport-burn-reports": {
     "id": "flexport-burn-reports",
     "slug": "flexport-burn-reports",
-    "projectName": "Flexport: Intelligent Burn Report Automation — AI-Powered Reporting & Workflow Orchestration",
-    "title": "Flexport: Intelligent Burn Report Automation — AI-Powered Reporting & Workflow Orchestration. Case Study",
+    "projectName": "Flexport: Intelligent Burn Report Automation - AI-Powered Reporting & Workflow Orchestration",
+    "title": "Flexport: Intelligent Burn Report Automation - AI-Powered Reporting & Workflow Orchestration. Case Study",
     "overview": {
       "client": "Flexport",
       "industry": "Enterprise / Logistics / Supply Chain",
@@ -1286,8 +1286,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "keocapital-hr-screening": {
     "id": "keocapital-hr-screening",
     "slug": "keocapital-hr-screening",
-    "projectName": "KeoCapital: AI-Powered HR Screening Automation — Intelligent Candidate Evaluation & Recruitment Workflows",
-    "title": "KeoCapital: AI-Powered HR Screening Automation — Intelligent Candidate Evaluation & Recruitment Workflows. Case Study",
+    "projectName": "KeoCapital: AI-Powered HR Screening Automation - Intelligent Candidate Evaluation & Recruitment Workflows",
+    "title": "KeoCapital: AI-Powered HR Screening Automation - Intelligent Candidate Evaluation & Recruitment Workflows. Case Study",
     "overview": {
       "client": "KeoCapital",
       "industry": "Enterprise / FinTech",
@@ -1351,8 +1351,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "keocapital-hr-joining": {
     "id": "keocapital-hr-joining",
     "slug": "keocapital-hr-joining",
-    "projectName": "KeoCapital: AI-Powered HR Joining Automation — Intelligent Employee Onboarding & Workflow Orchestration",
-    "title": "KeoCapital: AI-Powered HR Joining Automation — Intelligent Employee Onboarding & Workflow Orchestration. Case Study",
+    "projectName": "KeoCapital: AI-Powered HR Joining Automation - Intelligent Employee Onboarding & Workflow Orchestration",
+    "title": "KeoCapital: AI-Powered HR Joining Automation - Intelligent Employee Onboarding & Workflow Orchestration. Case Study",
     "overview": {
       "client": "KeoCapital",
       "industry": "Enterprise / FinTech",
@@ -1417,8 +1417,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "metacognition-qa-automation": {
     "id": "metacognition-qa-automation",
     "slug": "metacognition-qa-automation",
-    "projectName": "Metacognition: AI-Powered QA Automation — Intelligent Testing & Quality Assurance Workflows",
-    "title": "Metacognition: AI-Powered QA Automation — Intelligent Testing & Quality Assurance Workflows. Case Study",
+    "projectName": "Metacognition: AI-Powered QA Automation - Intelligent Testing & Quality Assurance Workflows",
+    "title": "Metacognition: AI-Powered QA Automation - Intelligent Testing & Quality Assurance Workflows. Case Study",
     "overview": {
       "client": "Metacognition",
       "industry": "Enterprise / Technology",
@@ -1482,8 +1482,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "nda-ai-tracking": {
     "id": "nda-ai-tracking",
     "slug": "nda-ai-tracking",
-    "projectName": "NDA: Automated AI Tracking System — Intelligent Monitoring & Workflow Automation",
-    "title": "NDA: Automated AI Tracking System — Intelligent Monitoring & Workflow Automation. Case Study",
+    "projectName": "NDA: Automated AI Tracking System - Intelligent Monitoring & Workflow Automation",
+    "title": "NDA: Automated AI Tracking System - Intelligent Monitoring & Workflow Automation. Case Study",
     "overview": {
       "client": "Confidential (NDA)",
       "industry": "Enterprise / Technology",
@@ -1547,8 +1547,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "nda-healthcare-hms": {
     "id": "nda-healthcare-hms",
     "slug": "nda-healthcare-hms",
-    "projectName": "NDA: Modern Healthcare Management System — Secure, Scalable & Cloud-Based Healthcare Platform",
-    "title": "NDA: Modern Healthcare Management System — Secure, Scalable & Cloud-Based Healthcare Platform. Case Study",
+    "projectName": "NDA: Modern Healthcare Management System - Secure, Scalable & Cloud-Based Healthcare Platform",
+    "title": "NDA: Modern Healthcare Management System - Secure, Scalable & Cloud-Based Healthcare Platform. Case Study",
     "overview": {
       "client": "Confidential (NDA)",
       "industry": "Healthcare",
@@ -1585,7 +1585,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "performance": "A more maintainable web application architecture.",
       "businessImpact": "Cloud-based backend capabilities."
     },
-    "keyTakeaway": "Healthcare technology must balance usability, security, and scalability. A modern healthcare management system should provide more than digital records — it should establish a reliable foundation for connected healthcare operations.",
+    "keyTakeaway": "Healthcare technology must balance usability, security, and scalability. A modern healthcare management system should provide more than digital records - it should establish a reliable foundation for connected healthcare operations.",
     "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
@@ -1611,8 +1611,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "nda-fintech-legacy": {
     "id": "nda-fintech-legacy",
     "slug": "nda-fintech-legacy",
-    "projectName": "NDA: Financial Systems Legacy Modernisation — Modern Oracle Database Migration & Enterprise Transformation",
-    "title": "NDA: Financial Systems Legacy Modernisation — Modern Oracle Database Migration & Enterprise Transformation. Case Study",
+    "projectName": "NDA: Financial Systems Legacy Modernisation - Modern Oracle Database Migration & Enterprise Transformation",
+    "title": "NDA: Financial Systems Legacy Modernisation - Modern Oracle Database Migration & Enterprise Transformation. Case Study",
     "overview": {
       "client": "Confidential (NDA)",
       "industry": "FinTech / Financial Services",
@@ -1675,8 +1675,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "flavourbombs-security-scan": {
     "id": "flavourbombs-security-scan",
     "slug": "flavourbombs-security-scan",
-    "projectName": "Flavour Bombs: Magento Security Scan Automation — Intelligent E-commerce Security Monitoring",
-    "title": "Flavour Bombs: Magento Security Scan Automation — Intelligent E-commerce Security Monitoring. Case Study",
+    "projectName": "Flavour Bombs: Magento Security Scan Automation - Intelligent E-commerce Security Monitoring",
+    "title": "Flavour Bombs: Magento Security Scan Automation - Intelligent E-commerce Security Monitoring. Case Study",
     "overview": {
       "client": "Flavour Bombs",
       "industry": "E-commerce / Food & Beverage",
@@ -1740,8 +1740,8 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
   "flyover-lead-capture": {
     "id": "flyover-lead-capture",
     "slug": "flyover-lead-capture",
-    "projectName": "The Flyover: AI-Powered Lead Capture Automation — Intelligent Lead Processing & Sales Workflow Orchestration",
-    "title": "The Flyover: AI-Powered Lead Capture Automation — Intelligent Lead Processing & Sales Workflow Orchestration. Case Study",
+    "projectName": "The Flyover: AI-Powered Lead Capture Automation - Intelligent Lead Processing & Sales Workflow Orchestration",
+    "title": "The Flyover: AI-Powered Lead Capture Automation - Intelligent Lead Processing & Sales Workflow Orchestration. Case Study",
     "overview": {
       "client": "The Flyover",
       "industry": "Enterprise / Business Operations",
@@ -1811,7 +1811,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "client": "Confidential (NDA)",
       "industry": "Enterprise AI & Machine Learning",
       "services": "Machine Learning, LLM Development, Model Specialization, AI Agent Development, Enterprise AI Integration",
-      "technologyStack": "Machine Learning, Large Language Models (LLMs), AI Agents, Model Training and Fine-Tuning, Backend Infrastructure — specific frameworks and providers to be confirmed.",
+      "technologyStack": "Machine Learning, Large Language Models (LLMs), AI Agents, Model Training and Fine-Tuning, Backend Infrastructure - specific frameworks and providers to be confirmed.",
       "projectType": "AI System",
       "projectDuration": "5 Months (Domain LLM Fine-Tuning & Multi-Agent Swarm)"
     },

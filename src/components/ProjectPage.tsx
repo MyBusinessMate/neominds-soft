@@ -630,7 +630,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                           {titlePart ? (
                             <>
                               <strong style={{ fontWeight: 700, color: '#111111' }}>{renderFormattedText(titlePart)}</strong>
-                              {' — '}
+                              {' - '}
                               <span>{renderFormattedText(descPart)}</span>
                             </>
                           ) : (
@@ -1011,7 +1011,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   "{project.keyTakeaway}"
                 </p>
                 <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: 700, fontStyle: 'italic', color: '#111111' }}>
-                  — Neominds Lead Systems Architect
+                  - Neominds Lead Systems Architect
                 </div>
               </div>
             </section>

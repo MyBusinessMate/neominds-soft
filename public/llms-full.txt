@@ -1,4 +1,4 @@
-# Neominds — Complete Enterprise Systems & AI Architecture Documentation
+# Neominds - Complete Enterprise Systems & AI Architecture Documentation
 
 > Comprehensive reference document compiling all 28 enterprise services, delivery frameworks, architecture blueprints, and engineering standards for Neominds.
 
@@ -36,7 +36,7 @@ Website: https://neomindstechhub.co
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![AI Agent Systems Production Architecture](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: AI Agent Systems Production Architecture
-  - **Live SLA Badge**: **96.5%** — *Multi-Step Task Success*
+  - **Live SLA Badge**: **96.5%** - *Multi-Step Task Success*
 
 ---
 
@@ -192,7 +192,7 @@ Deploying auto-scaling agent clusters on Kubernetes with LangSmith observability
 
 ### Case Study: Interactive Smart-Video Generation & Analytics Suite
 - **Client**: Adventr (Enterprise AI & Media)
-- **Headline Metric**: **4K 60fps** — *Zero-Latency Branching Video*
+- **Headline Metric**: **4K 60fps** - *Zero-Latency Branching Video*
 - **Operational Scale**: 600% Higher User Engagement
 
 **Case Narrative & Architecture Deployed**:
@@ -203,7 +203,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 ### Verified Client Endorsement
 > *"Neominds engineered a multi-agent swarm that automates our daily semiconductor supply chain risk analysis. 6 specialized agents coordinate to analyze 40,000 supplier records, cutting analysis time from 8 hours to 14 minutes."*
 >
-> — **Elena Rostova**, Head of Global Procurement at **Aura Microelectronics**  
+> - **Elena Rostova**, Head of Global Procurement at **Aura Microelectronics**  
 > *Production Impact*: **Analysis Time: 8h to 14m**
 
 ---
@@ -264,7 +264,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 > **Answer**: Our consensus protocol initiates an adversarial peer review cycle. If the agents cannot reconcile findings through evidence citation, the dispute is escalated to an arbitrator agent or routed to a human supervisor console with a diff summary.
 
 ### Q3: Can agent swarms run on our private on-premise cloud infrastructure?
-> **Answer**: Yes. The entire multi-agent stack—including the Kafka messaging bus, Qdrant vector memory, and self-hosted open-source models like Llama 3—can be deployed within your private Kubernetes clusters with zero internet egress.
+> **Answer**: Yes. The entire multi-agent stack-including the Kafka messaging bus, Qdrant vector memory, and self-hosted open-source models like Llama 3-can be deployed within your private Kubernetes clusters with zero internet egress.
 
 ### Q4: How do you monitor token usage and costs across hundreds of active agents?
 > **Answer**: Our centralized telemetry gateway instruments OpenTelemetry and LangSmith tracing across all inter-agent messages, tracking per-agent token consumption, latency, and costs in real time.
@@ -311,7 +311,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Autonomous AI Agent Architecture](/services/ai-agents.png)
   - **Image Caption**: Autonomous AI Agent Architecture
-  - **Live SLA Badge**: **94.2%** — *Zero-Intervention Task Completion*
+  - **Live SLA Badge**: **94.2%** - *Zero-Intervention Task Completion*
 
 ---
 
@@ -467,7 +467,7 @@ Deploying containerized agent runtimes with live LangSmith tracing, Slack notifi
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -478,7 +478,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds built an autonomous market intelligence agent swarm that ingests, cross-references, and synthesizes competitive data across 50 sources daily, saving our research team 120 hours every week."*
 >
-> — **Alexander Wright**, Head of Strategic Intelligence at **Apex Horizon Ventures**  
+> - **Alexander Wright**, Head of Strategic Intelligence at **Apex Horizon Ventures**  
 > *Production Impact*: **120 Hours Saved Weekly**
 
 ---
@@ -586,7 +586,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Intelligent AI Automation Topology](/services/ai-automations.png)
   - **Image Caption**: Intelligent AI Automation Topology
-  - **Live SLA Badge**: **80%** — *Manual Processing Time Eliminated*
+  - **Live SLA Badge**: **80%** - *Manual Processing Time Eliminated*
 
 ---
 
@@ -742,7 +742,7 @@ Running the automation pipeline in parallel shadow mode alongside human operator
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -753,7 +753,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds automated our accounts payable pipeline. We process over 15,000 vendor invoices monthly, cutting cycle times from 4 days to 45 seconds while reducing data entry errors to zero."*
 >
-> — **Danielle Brooks**, VP of Financial Operations at **OmniLogistics Global**  
+> - **Danielle Brooks**, VP of Financial Operations at **OmniLogistics Global**  
 > *Production Impact*: **45s Invoice Processing Time**
 
 ---
@@ -861,7 +861,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![AI Development Production Architecture](/services/ai-development.png)
   - **Image Caption**: AI Development Production Architecture
-  - **Live SLA Badge**: **98.4%** — *Context Grounding Accuracy*
+  - **Live SLA Badge**: **98.4%** - *Context Grounding Accuracy*
 
 ---
 
@@ -1017,7 +1017,7 @@ Deploying auto-scaling GPU clusters on Kubernetes with Ragas continuous evaluati
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -1028,7 +1028,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds engineered a private RAG pipeline indexing 400,000 internal engineering documents. Our technical support engineers now resolve tier-3 escalations 60% faster with zero hallucinations."*
 >
-> — **Dr. Michael Chen**, Chief AI Officer at **Aetheria Systems**  
+> - **Dr. Michael Chen**, Chief AI Officer at **Aetheria Systems**  
 > *Production Impact*: **98.4% Factuality Grounding**
 
 ---
@@ -1136,7 +1136,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![AI Product Engineering Production Architecture](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: AI Product Engineering Production Architecture
-  - **Live SLA Badge**: **+60%** — *User Retention Lift*
+  - **Live SLA Badge**: **+60%** - *User Retention Lift*
 
 ---
 
@@ -1290,7 +1290,7 @@ Launching invite-only beta, analyzing real user token latency and satisfaction, 
 
 ### Case Study: Interactive Smart-Video Generation & Analytics Suite
 - **Client**: Adventr (Enterprise AI & Media)
-- **Headline Metric**: **4K 60fps** — *Zero-Latency Branching Video*
+- **Headline Metric**: **4K 60fps** - *Zero-Latency Branching Video*
 - **Operational Scale**: 600% Higher User Engagement
 
 **Case Narrative & Architecture Deployed**:
@@ -1301,7 +1301,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 ### Verified Client Endorsement
 > *"Neominds engineered our B2B legal contract analysis platform from concept to launch. We achieved an 84% gross margin by implementing their multi-model routing gateway and scaled to 45,000 paying users."*
 >
-> — **Harrison Vance**, Founder & CEO at **LexisAI Global**  
+> - **Harrison Vance**, Founder & CEO at **LexisAI Global**  
 > *Production Impact*: **84% Gross Margin at Scale**
 
 ---
@@ -1409,7 +1409,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Real-Time Analytics Dashboard Architecture](/services/analytics-dashboard.png)
   - **Image Caption**: Real-Time Analytics Dashboard Architecture
-  - **Live SLA Badge**: **< 80ms** — *Query Latency on 100M+ Rows*
+  - **Live SLA Badge**: **< 80ms** - *Query Latency on 100M+ Rows*
 
 ---
 
@@ -1565,7 +1565,7 @@ Configuring multi-tenant security filters, testing database query caching rules,
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -1576,7 +1576,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds built our multi-tenant customer analytics portal on ClickHouse. Our enterprise customers now analyze 50 million transaction records in under 80 milliseconds directly inside our SaaS product."*
 >
-> — **Rachel Kovalev**, VP of Product Analytics at **City Index Analytics**  
+> - **Rachel Kovalev**, VP of Product Analytics at **City Index Analytics**  
 > *Production Impact*: **< 80ms Query on 50M Records**
 
 ---
@@ -1684,7 +1684,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Applied AI Production Architecture](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Applied AI Production Architecture
-  - **Live SLA Badge**: **94.8%** — *Predictive Precision*
+  - **Live SLA Badge**: **94.8%** - *Predictive Precision*
 
 ---
 
@@ -1840,7 +1840,7 @@ Integrating predictions into core ERP/CRM business tools and automating weekly m
 
 ### Case Study: Interactive Smart-Video Generation & Analytics Suite
 - **Client**: Adventr (Enterprise AI & Media)
-- **Headline Metric**: **4K 60fps** — *Zero-Latency Branching Video*
+- **Headline Metric**: **4K 60fps** - *Zero-Latency Branching Video*
 - **Operational Scale**: 600% Higher User Engagement
 
 **Case Narrative & Architecture Deployed**:
@@ -1851,7 +1851,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 ### Verified Client Endorsement
 > *"Neominds built our industrial predictive maintenance pipeline. Analyzing 8,000 factory sensor streams, the model detected 14 impending turbine failures, saving our plants $3.4M in unplanned downtime."*
 >
-> — **Carl Gustafsson**, Director of Plant Operations at **AeroPower Industrial**  
+> - **Carl Gustafsson**, Director of Plant Operations at **AeroPower Industrial**  
 > *Production Impact*: **$3.4M Downtime Avoided**
 
 ---
@@ -1959,7 +1959,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Multimodal Chatbot & Video Bot Architecture](/services/chatbot-videobot.png)
   - **Image Caption**: Multimodal Chatbot & Video Bot Architecture
-  - **Live SLA Badge**: **< 350ms** — *Voice-to-Speech Response Latency*
+  - **Live SLA Badge**: **< 350ms** - *Voice-to-Speech Response Latency*
 
 ---
 
@@ -2115,7 +2115,7 @@ Embedding widgets into web and mobile apps, provisioning WhatsApp lines, and lau
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -2126,7 +2126,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds deployed an interactive video avatar for our patient intake portal. It resolves 82% of pre-consultation inquiries autonomously with an astonishing 96% patient satisfaction rating."*
 >
-> — **Dr. Evelyn Reed**, Chief Medical Officer at **Vanguard Health Care**  
+> - **Dr. Evelyn Reed**, Chief Medical Officer at **Vanguard Health Care**  
 > *Production Impact*: **82% Autonomous Resolution Rate**
 
 ---
@@ -2234,7 +2234,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![DevOps & Cloud Infrastructure Architecture](/services/devops.png)
   - **Image Caption**: DevOps & Cloud Infrastructure Architecture
-  - **Live SLA Badge**: **15 min** — *Commit to Production Pipeline Velocity*
+  - **Live SLA Badge**: **15 min** - *Commit to Production Pipeline Velocity*
 
 ---
 
@@ -2390,7 +2390,7 @@ Instrumenting distributed tracing, building executive Grafana dashboards, conduc
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -2401,7 +2401,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds migrated our entire AWS footprint to Terraform and ArgoCD. We went from manual 4-hour bi-weekly releases with constant downtime to 12 automated zero-downtime deployments every single day."*
 >
-> — **Vikram Sethi**, Head of Infrastructure at **ScaleX Data**  
+> - **Vikram Sethi**, Head of Infrastructure at **ScaleX Data**  
 > *Production Impact*: **Zero-Downtime Releases (12x/day)**
 
 ---
@@ -2509,7 +2509,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Digital Banking Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Digital Banking Production Architecture
-  - **Live SLA Badge**: **99.999%** — *Ledger Availability*
+  - **Live SLA Badge**: **99.999%** - *Ledger Availability*
 
 ---
 
@@ -2665,7 +2665,7 @@ Zero-downtime ledger migration, live transactional parallel runs, automated SOC 
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -2676,7 +2676,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Neominds engineered our neo-bank core ledger from scratch. We scaled to 600,000 active customer accounts and processed over $4.2B in transactions with zero ledger drift and 99.999% uptime."*
 >
-> — **Julian Henderson**, Chief Technology Officer at **Aura Digital Bank**  
+> - **Julian Henderson**, Chief Technology Officer at **Aura Digital Bank**  
 > *Production Impact*: **$4.2B Processed Volume**
 
 ---
@@ -2784,7 +2784,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Ecommerce Development Production Architecture](/services/ecommerce-development.png)
   - **Image Caption**: Ecommerce Development Production Architecture
-  - **Live SLA Badge**: **+28%** — *Average Checkout Conversion Lift*
+  - **Live SLA Badge**: **+28%** - *Average Checkout Conversion Lift*
 
 ---
 
@@ -2940,7 +2940,7 @@ Deploying bidirectional order fulfillment webhooks, configuring automated invent
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -2951,7 +2951,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"During our annual Black Friday launch, Neominds architecture processed 18,000 orders in the first 10 minutes with zero checkout timeouts and zero overselling."*
 >
-> — **Julian Meyer**, Director of Ecommerce at **Aura Apparel**  
+> - **Julian Meyer**, Director of Ecommerce at **Aura Apparel**  
 > *Production Impact*: **18k Orders in 10 Minutes**
 
 ---
@@ -3059,7 +3059,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Financial Analytics Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Financial Analytics Production Architecture
-  - **Live SLA Badge**: **< 100ms** — *Financial Query Latency*
+  - **Live SLA Badge**: **< 100ms** - *Financial Query Latency*
 
 ---
 
@@ -3215,7 +3215,7 @@ Running parallel reconciliation checks against historical audited statements, ve
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -3226,7 +3226,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Neominds built our global treasury intelligence platform on ClickHouse. Our executive team now monitors consolidated cash runway across 14 international subsidiaries in real time with zero manual spreadsheet work."*
 >
-> — **Henrik Vanger**, Chief Financial Officer at **Nordic Logistics Group**  
+> - **Henrik Vanger**, Chief Financial Officer at **Nordic Logistics Group**  
 > *Production Impact*: **Real-Time Multi-Entity Cash BI**
 
 ---
@@ -3334,7 +3334,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Fraud & Risk Management Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Fraud & Risk Management Production Architecture
-  - **Live SLA Badge**: **< 10ms** — *Inline Scoring Latency*
+  - **Live SLA Badge**: **< 10ms** - *Inline Scoring Latency*
 
 ---
 
@@ -3490,7 +3490,7 @@ Switching to active blocking, deploying the risk investigation review portal, an
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -3501,7 +3501,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Neominds built our real-time fraud scoring pipeline. We cut monthly fraud chargeback losses by 82% while reducing wrongful false declines on legitimate customers by 75%."*
 >
-> — **Sebastian Cruz**, Head of Risk & Compliance at **PayPulse Global**  
+> - **Sebastian Cruz**, Head of Risk & Compliance at **PayPulse Global**  
 > *Production Impact*: **82% Drop in Fraud Losses**
 
 ---
@@ -3609,7 +3609,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Generative AI Production Architecture](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Generative AI Production Architecture
-  - **Live SLA Badge**: **10x** — *Asset Creation Velocity*
+  - **Live SLA Badge**: **10x** - *Asset Creation Velocity*
 
 ---
 
@@ -3765,7 +3765,7 @@ Deploying auto-scaling GPU inference clusters on Kubernetes with token analytics
 
 ### Case Study: Interactive Smart-Video Generation & Analytics Suite
 - **Client**: Adventr (Enterprise AI & Media)
-- **Headline Metric**: **4K 60fps** — *Zero-Latency Branching Video*
+- **Headline Metric**: **4K 60fps** - *Zero-Latency Branching Video*
 - **Operational Scale**: 600% Higher User Engagement
 
 **Case Narrative & Architecture Deployed**:
@@ -3776,7 +3776,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 ### Verified Client Endorsement
 > *"Neominds fine-tuned a private foundation model on 10 years of our engineering documentation. It generates technical specifications 10x faster while ensuring proprietary schematics never leave our private cloud."*
 >
-> — **Viktor Lindqvist**, Chief Technology Officer at **Nordic Precision Engineering**  
+> - **Viktor Lindqvist**, Chief Technology Officer at **Nordic Precision Engineering**  
 > *Production Impact*: **10x Faster Technical Specs**
 
 ---
@@ -3884,7 +3884,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Healthcare Analytics Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Healthcare Analytics Production Architecture
-  - **Live SLA Badge**: **< 100ms** — *Cohort Query Latency*
+  - **Live SLA Badge**: **< 100ms** - *Cohort Query Latency*
 
 ---
 
@@ -4040,7 +4040,7 @@ Validating quality measure calculations against historical CMS audits, certifyin
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -4051,7 +4051,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds built our population health analytics warehouse. We unified data across 450,000 covered lives, identifying 18,000 unaddressed care gaps and saving $4.8M in preventable hospital admissions."*
 >
-> — **Dr. Jonathan Blake**, Chief Medical Officer at **Alliance ACO Healthcare**  
+> - **Dr. Jonathan Blake**, Chief Medical Officer at **Alliance ACO Healthcare**  
 > *Production Impact*: **$4.8M Saved in Preventable Care**
 
 ---
@@ -4159,7 +4159,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Healthcare Automation Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Healthcare Automation Production Architecture
-  - **Live SLA Badge**: **85%** — *Faster Prior Authorizations*
+  - **Live SLA Badge**: **85%** - *Faster Prior Authorizations*
 
 ---
 
@@ -4315,7 +4315,7 @@ Executing end-to-end transaction testing with healthcare clearinghouses, certify
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -4326,7 +4326,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds automated our prior authorization and claims scrubbing workflows. Our prior auth turnaround dropped from 6 days to 3 hours, and our clean claims rate reached 98.4%."*
 >
-> — **Marcus Vance**, VP of Revenue Cycle Management at **Premier Surgical Care**  
+> - **Marcus Vance**, VP of Revenue Cycle Management at **Premier Surgical Care**  
 > *Production Impact*: **3-Hour Prior Auth Turnaround**
 
 ---
@@ -4434,7 +4434,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Healthcare Management Software Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Healthcare Management Software Production Architecture
-  - **Live SLA Badge**: **100%** — *HIPAA & HITECH Compliant*
+  - **Live SLA Badge**: **100%** - *HIPAA & HITECH Compliant*
 
 ---
 
@@ -4590,7 +4590,7 @@ Deploying to private HIPAA cloud infrastructure, conducting staff training, and 
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -4601,7 +4601,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds built our outpatient specialty clinic software. Our physicians cut documentation time by 50% and we achieved 100% bidirectional FHIR sync with our regional hospital Epic system."*
 >
-> — **Dr. Arthur Vance**, Chief Medical Information Officer at **MetroHealth Specialty Network**  
+> - **Dr. Arthur Vance**, Chief Medical Information Officer at **MetroHealth Specialty Network**  
 > *Production Impact*: **-50% Documentation Time**
 
 ---
@@ -4709,7 +4709,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Intelligent Automation Production Architecture](https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Intelligent Automation Production Architecture
-  - **Live SLA Badge**: **5x** — *Operator Velocity*
+  - **Live SLA Badge**: **5x** - *Operator Velocity*
 
 ---
 
@@ -4865,7 +4865,7 @@ Running the pipeline in shadow mode alongside human operators, verifying accurac
 
 ### Case Study: Interactive Smart-Video Generation & Analytics Suite
 - **Client**: Adventr (Enterprise AI & Media)
-- **Headline Metric**: **4K 60fps** — *Zero-Latency Branching Video*
+- **Headline Metric**: **4K 60fps** - *Zero-Latency Branching Video*
 - **Operational Scale**: 600% Higher User Engagement
 
 **Case Narrative & Architecture Deployed**:
@@ -4876,7 +4876,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 ### Verified Client Endorsement
 > *"Neominds built a human-in-the-loop claims triage system for our insurance group. 88% of claims now process autonomously in under 5 seconds, while our adjusters review complex edge cases 5x faster."*
 >
-> — **David Sterling**, Chief Operating Officer at **Guardian Mutual Insurance**  
+> - **David Sterling**, Chief Operating Officer at **Guardian Mutual Insurance**  
 > *Production Impact*: **88% Autonomous Claims Processing**
 
 ---
@@ -4984,7 +4984,7 @@ Constructed a cloud-native interactive video authoring suite enabling creators a
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Investment & Wealth Management Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Investment & Wealth Management Production Architecture
-  - **Live SLA Badge**: **100%** — *Automated Tax-Loss Harvesting*
+  - **Live SLA Badge**: **100%** - *Automated Tax-Loss Harvesting*
 
 ---
 
@@ -5140,7 +5140,7 @@ Completing formal sandbox trade certification with Apex / DriveWealth, executing
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -5151,7 +5151,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Neominds built our digital wealth platform connecting directly to Apex Clearing. Our 45 financial advisors now rebalance 12,000 client accounts in under 3 minutes with automated tax-loss harvesting."*
 >
-> — **David Benioff**, Managing Partner at **Highland Wealth Advisors**  
+> - **David Benioff**, Managing Partner at **Highland Wealth Advisors**  
 > *Production Impact*: **12k Accounts Rebalanced in 3 Min**
 
 ---
@@ -5259,7 +5259,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Lending & Credit Platforms Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Lending & Credit Platforms Production Architecture
-  - **Live SLA Badge**: **< 60s** — *Credit Decision Time*
+  - **Live SLA Badge**: **< 60s** - *Credit Decision Time*
 
 ---
 
@@ -5415,7 +5415,7 @@ Conducting Fair Lending audits, testing adverse action notice generation, and la
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -5426,7 +5426,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Neominds digitized our commercial equipment lending process. We cut average loan approval time from 14 days to 4 minutes while reducing first-year default rates by 38%."*
 >
-> — **Kathryn Sterling**, Chief Credit Officer at **Apex Commercial Capital**  
+> - **Kathryn Sterling**, Chief Credit Officer at **Apex Commercial Capital**  
 > *Production Impact*: **4-Minute Loan Approvals**
 
 ---
@@ -5534,7 +5534,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Medical AI Solutions Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Medical AI Solutions Production Architecture
-  - **Live SLA Badge**: **97.2%** — *Clinical Extraction Accuracy*
+  - **Live SLA Badge**: **97.2%** - *Clinical Extraction Accuracy*
 
 ---
 
@@ -5690,7 +5690,7 @@ Running a multi-center clinical validation pilot alongside practicing physicians
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -5701,7 +5701,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds developed an assistive chest X-ray triage model for our emergency department. It identifies critical pneumothorax cases in under 4 seconds, cutting time-to-treatment by 65%."*
 >
-> — **Dr. Gregory Thorne**, Head of Emergency Radiology at **St. Jude Regional Trauma Center**  
+> - **Dr. Gregory Thorne**, Head of Emergency Radiology at **St. Jude Regional Trauma Center**  
 > *Production Impact*: **65% Faster Time-to-Treatment**
 
 ---
@@ -5809,7 +5809,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Mobile App Development Production Architecture](/services/mobile-app-development.png)
   - **Image Caption**: Mobile App Development Production Architecture
-  - **Live SLA Badge**: **60 FPS** — *Sustained UI Rendering Rate*
+  - **Live SLA Badge**: **60 FPS** - *Sustained UI Rendering Rate*
 
 ---
 
@@ -5965,7 +5965,7 @@ Configuring Fastlane build pipelines, running automated device tests, and submit
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -5976,7 +5976,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds rebuilt our mobile app from scratch. We went from a 3.1-star rating with constant offline crashes to a 4.9-star rating across 250,000 active monthly users."*
 >
-> — **Marcus Vance**, Head of Mobile Product at **Kinetic Financial**  
+> - **Marcus Vance**, Head of Mobile Product at **Kinetic Financial**  
 > *Production Impact*: **4.9 ★ Rating & 60 FPS**
 
 ---
@@ -6084,7 +6084,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Patient Engagement Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Patient Engagement Production Architecture
-  - **Live SLA Badge**: **-45%** — *Clinic No-Show Rate*
+  - **Live SLA Badge**: **-45%** - *Clinic No-Show Rate*
 
 ---
 
@@ -6240,7 +6240,7 @@ Running pilot tests across outpatient clinics, tracking patient adoption rates, 
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -6251,7 +6251,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds built our modern patient portal and automated SMS appointment reminder system. In 6 months, clinic no-shows dropped from 24% to 9%, saving our hospital system over $2.1M annually."*
 >
-> — **Dr. Rebecca Martinez**, Chief Patient Experience Officer at **Summit Health Network**  
+> - **Dr. Rebecca Martinez**, Chief Patient Experience Officer at **Summit Health Network**  
 > *Production Impact*: **No-Shows Dropped to 9%**
 
 ---
@@ -6359,7 +6359,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Payment Solutions Production Architecture](https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Payment Solutions Production Architecture
-  - **Live SLA Badge**: **< 150ms** — *Payment Authorization*
+  - **Live SLA Badge**: **< 150ms** - *Payment Authorization*
 
 ---
 
@@ -6515,7 +6515,7 @@ Executing end-to-end sandbox certification with acquiring banks, configuring aut
 
 ### Case Study: Community Impact Investing Platform with SEC Compliance
 - **Client**: CNote Financial (Fintech)
-- **Headline Metric**: **SOC 2** — *Type II Certified Infrastructure*
+- **Headline Metric**: **SOC 2** - *Type II Certified Infrastructure*
 - **Operational Scale**: $500M+ Impact Capital Deployed
 
 **Case Narrative & Architecture Deployed**:
@@ -6526,7 +6526,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 ### Verified Client Endorsement
 > *"Implementing Neominds multi-acquirer smart routing increased our authorization rate by 4.8% on international cards and saved us $1.2M in annual interchange fees."*
 >
-> — **Marcus Lindholm**, VP of Payments Infrastructure at **Valo Global Commerce**  
+> - **Marcus Lindholm**, VP of Payments Infrastructure at **Valo Global Commerce**  
 > *Production Impact*: **+4.8% Authorization Rate**
 
 ---
@@ -6634,7 +6634,7 @@ Architected an institutional investment gateway connecting Fortune 500 treasurie
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Software Development Production Architecture](/services/software-development.png)
   - **Image Caption**: Software Development Production Architecture
-  - **Live SLA Badge**: **99.99%** — *System Uptime SLA*
+  - **Live SLA Badge**: **99.99%** - *System Uptime SLA*
 
 ---
 
@@ -6790,7 +6790,7 @@ Zero-downtime blue/green deployment to cloud infrastructure with Prometheus/Graf
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -6801,7 +6801,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds engineered our distributed data processing platform from the ground up, reducing batch latency from 4 hours to 12 minutes while maintaining 99.99% uptime across 12M daily transactions."*
 >
-> — **Thomas Golden**, VP of Engineering at **TruBridge**  
+> - **Thomas Golden**, VP of Engineering at **TruBridge**  
 > *Production Impact*: **95% Latency Reduction**
 
 ---
@@ -6909,7 +6909,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![24/7 SLA Technical Support Architecture](/services/technical-support.png)
   - **Image Caption**: 24/7 SLA Technical Support Architecture
-  - **Live SLA Badge**: **< 15 min** — *P1 Critical Outage Response SLA*
+  - **Live SLA Badge**: **< 15 min** - *P1 Critical Outage Response SLA*
 
 ---
 
@@ -7065,7 +7065,7 @@ Presenting quarterly SLA compliance scorecards, cloud expenditure trends, and co
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -7076,7 +7076,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Neominds manages 24/7 support for our core transaction platform. Over 3 years of partnership, we have maintained a 99.995% uptime record with zero unaddressed critical incidents."*
 >
-> — **Elena Rostova**, Chief Operating Officer at **Authenticom Logistics**  
+> - **Elena Rostova**, Chief Operating Officer at **Authenticom Logistics**  
 > *Production Impact*: **99.995% Uptime Over 3 Years**
 
 ---
@@ -7184,7 +7184,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Telemedicine Platforms Production Architecture](https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=1200&auto=format&fit=crop)
   - **Image Caption**: Telemedicine Platforms Production Architecture
-  - **Live SLA Badge**: **< 30s** — *Doctor Connection Time*
+  - **Live SLA Badge**: **< 30s** - *Doctor Connection Time*
 
 ---
 
@@ -7340,7 +7340,7 @@ Testing video performance across throttled 3G/4G networks, training clinical sta
 
 ### Case Study: Automated Medical Coding & Claims Verification Engine
 - **Client**: TruBridge (formerly TruCode) (Healthcare)
-- **Headline Metric**: **2.4M** — *Patient Encounters Analyzed / Mo*
+- **Headline Metric**: **2.4M** - *Patient Encounters Analyzed / Mo*
 - **Operational Scale**: 40% Reduction in Claims Denials
 
 **Case Narrative & Architecture Deployed**:
@@ -7351,7 +7351,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 ### Verified Client Endorsement
 > *"Neominds built our virtual urgent care platform. Over 180,000 patient consultations have been conducted with a 99.9% video connection success rate and an average patient wait time under 3 minutes."*
 >
-> — **Sarah Jenkins**, VP of Digital Health at **OptiCare Health**  
+> - **Sarah Jenkins**, VP of Digital Health at **OptiCare Health**  
 > *Production Impact*: **180k Consultations Conducted**
 
 ---
@@ -7459,7 +7459,7 @@ Built a HIPAA-compliant clinical decision support and medical encoder platform t
 - **Visual Architecture Showcase**:
   - **Visual Asset**: ![Web & CMS Development Production Architecture](/services/web-cms-development.png)
   - **Image Caption**: Web & CMS Development Production Architecture
-  - **Live SLA Badge**: **100** — *Core Web Vitals Lighthouse Score*
+  - **Live SLA Badge**: **100** - *Core Web Vitals Lighthouse Score*
 
 ---
 
@@ -7615,7 +7615,7 @@ Migrating legacy content via automated ETL scripts, configuring 301 redirects, t
 
 ### Case Study: Automotive Data Ingestion & Real-Time Integration Platform
 - **Client**: Authenticom (Enterprise Engineering)
-- **Headline Metric**: **99.99%** — *Data Pipeline Uptime SLA*
+- **Headline Metric**: **99.99%** - *Data Pipeline Uptime SLA*
 - **Operational Scale**: 15,000+ Dealerships Synchronized
 
 **Case Narrative & Architecture Deployed**:
@@ -7626,7 +7626,7 @@ Engineered high-throughput enterprise data pipelines processing millions of vehi
 ### Verified Client Endorsement
 > *"Migrating our global corporate web presence to Sanity and Next.js doubled our mobile conversion rate and cut our page load times from 4.2 seconds to 380 milliseconds globally."*
 >
-> — **Caroline Dubois**, VP of Digital Marketing at **Novatech Global**  
+> - **Caroline Dubois**, VP of Digital Marketing at **Novatech Global**  
 > *Production Impact*: **380ms Global LCP**
 
 ---

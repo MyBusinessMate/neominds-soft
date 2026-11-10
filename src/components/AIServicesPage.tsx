@@ -386,7 +386,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           </h1>
 
           <p className="ai-hero-subtitle">
-            We build AI-native applications, modernize mission-critical systems, and automate enterprise workflows. No demo prototypes that break under load — only production-grade code that ships on time.
+            We build AI-native applications, modernize mission-critical systems, and automate enterprise workflows. No demo prototypes that break under load - only production-grade code that ships on time.
           </p>
 
           <div className="ai-hero-actions">

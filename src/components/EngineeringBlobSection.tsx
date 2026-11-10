@@ -116,7 +116,7 @@ export const EngineeringBlobSection: React.FC = () => {
             margin: '0 auto clamp(36px, 4.5vw, 48px) auto',
           }}
         >
-          AI only creates value when the system underneath is rock solid. We build your core application, cloud architecture, and AI models as one unified system — fast, secure, maintainable, and built to handle real traffic.
+          AI only creates value when the system underneath is rock solid. We build your core application, cloud architecture, and AI models as one unified system - fast, secure, maintainable, and built to handle real traffic.
         </p>
 
         {/* 3 Value Pillars Strip */}

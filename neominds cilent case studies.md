@@ -140,7 +140,7 @@
 
 *"Modern e-commerce analytics goes beyond reporting historical numbers. By combining centralized business intelligence with AI-powered data exploration, complex operational data becomes accessible, actionable, and valuable for strategic decision-making."*
 
-# **Mindspace.ai: Admin Dashboard — AI-Powered Healthcare Analytics & Platform Management**
+# **Mindspace.ai: Admin Dashboard - AI-Powered Healthcare Analytics & Platform Management**
 
 An enterprise administration and analytics dashboard designed to provide centralized operational control over the Mindspace.ai mental wellness ecosystem. Built using React, TypeScript, Firebase, and modern data visualization technologies, the platform enables administrators to manage users, monitor AI companion interactions, analyze assessments, track engagement, and deliver AI-generated push notifications through an integrated administrative environment.
 
@@ -369,19 +369,19 @@ The AI integration uses a mental wellness-oriented system prompt to generate app
 
 The dashboard operates as part of a connected healthcare application ecosystem.
 
-**Tara Calling — User-Facing Application**
+**Tara Calling - User-Facing Application**
 
 Users interact with the TARA AI companion, participate in conversations, complete assessments, track moods, maintain journals, and receive notifications.
 
-**Firebase — Central Data Layer**
+**Firebase - Central Data Layer**
 
 Firestore stores application information, including users, call logs, conversations, assessments, mood tracking, journals, and notification records.
 
-**Mindspace.ai Dashboard — Administrative Layer**
+**Mindspace.ai Dashboard - Administrative Layer**
 
 Administrators access platform analytics, manage users, inspect calls and assessments, and coordinate notification campaigns.
 
-**Firebase Cloud Functions — Integration Layer**
+**Firebase Cloud Functions - Integration Layer**
 
 Cloud Functions handle backend operations, including communication with OneSignal for push notification delivery.
 
@@ -438,7 +438,7 @@ These are potential enhancements, not confirmed implemented features.
 
 ## **8\. Key Takeaway**
 
-"An intelligent healthcare platform needs more than a great user experience. It needs an equally intelligent administrative foundation — one that transforms application data into operational visibility, actionable insights, and better platform management."
+"An intelligent healthcare platform needs more than a great user experience. It needs an equally intelligent administrative foundation - one that transforms application data into operational visibility, actionable insights, and better platform management."
 
 # **Mindspace.ai: 24/7 AI Companion (TARA) for Mental Wellness**
 
@@ -582,9 +582,9 @@ Razorpay powers the platform's payment and subscription workflows.
 
 The available plans include:
 
-* Basic — 60 minutes  
-* Pro — 200 minutes  
-* Premium — 400 minutes  
+* Basic - 60 minutes  
+* Pro - 200 minutes  
+* Premium - 400 minutes  
 * Additional minute packs  
 * 10-minute free trial
 
@@ -721,7 +721,7 @@ Any additional clinical functionality would require appropriate professional ove
 
 **Client:** MyBusinessMate.ai  
 **Industry:** Enterprise Software & Business Technology  
-**Project Type:** Custom Software Development — Web Application  
+**Project Type:** Custom Software Development - Web Application  
 **Project Duration:** To Be Confirmed  
 **Services Delivered:** Web Application Development, Frontend Engineering, Backend Development, Firebase Integration, Real-Time Chat Integration.
 
@@ -899,7 +899,7 @@ These are potential extensions, not claims about existing functionality.
 
 > "Great business software doesn't just digitize existing processes. It creates a connected foundation for businesses to work smarter, communicate better, and grow."
 
-# **MyBusinessMate.ai: Native Mobile Application — Business Management** 
+# **MyBusinessMate.ai: Native Mobile Application - Business Management** 
 
 **A cross-platform native mobile application extending the MyBusinessMate business ecosystem to mobile devices, combining real-time communication, backend services, and third-party integrations in one connected experience.**
 
@@ -1229,7 +1229,7 @@ AI Co-Teacher established a unified educational workspace that simplifies academ
 
 **Client:** Montessori (Client name to be confirmed)  
 **Industry:** Education & EdTech  
-**Project Type:** Custom Software Development — Progressive Web Application  
+**Project Type:** Custom Software Development - Progressive Web Application  
 **Project Duration:** To Be Confirmed  
 **Services Delivered:** PWA Development, Frontend Development, Backend Engineering, REST API Development, Firebase Integration, Google Authentication.
 
@@ -1400,7 +1400,7 @@ These are potential extensions and are not represented as confirmed implemented 
 
 > "Early education deserves thoughtful management. By bringing school operations into one connected digital platform, technology can help educators spend less time managing processes and more time supporting children's development."
 
-# **Expirio: Smart Expiry Alerts & Recipe Ideas — Less Waste. Case Study**
+# **Expirio: Smart Expiry Alerts & Recipe Ideas - Less Waste. Case Study**
 
 A Progressive Web Application (PWA) designed to help households and businesses manage inventory, track product expiry timelines, receive proactive alerts, and make better use of available resources. Expirio combines automated expiry estimation, real-time inventory monitoring, intelligent notifications, and recipe recommendations to reduce food waste and simplify inventory management.
 
@@ -1639,7 +1639,7 @@ Household workflows focus on personal inventory, expiry alerts, and recipe recom
 
 Expirio uses a modern JavaScript and TypeScript-based application architecture, combining a React frontend, Node.js backend, MongoDB database, and Groq API integration.
 
-**Frontend — React 18, TypeScript and Vite**
+**Frontend - React 18, TypeScript and Vite**
 
 The frontend is developed using React 18 and TypeScript, with Vite providing the development and build environment.
 
@@ -1651,7 +1651,7 @@ Key implementation components:
 * Responsive interfaces for inventory management and dashboard interactions.  
 * A tile-based user interface for clear presentation of inventory information.
 
-**Backend — Node.js and Express**
+**Backend - Node.js and Express**
 
 The backend uses Node.js and Express to support the application's server-side functionality and API workflows.
 
@@ -1663,13 +1663,13 @@ Key responsibilities include:
 * Expiry tracking operations.  
 * Communication between the frontend and database.
 
-**Database — MongoDB**
+**Database - MongoDB**
 
 MongoDB provides the database layer for managing application information.
 
 It supports the storage and organization of inventory-related data and the application's data requirements.
 
-**AI Integration — Groq API**
+**AI Integration - Groq API**
 
 Groq API is integrated as the platform's AI service layer.
 
@@ -1780,7 +1780,7 @@ These opportunities position Expirio as a solution that can evolve from househol
 
 Expirio demonstrates how automation, inventory visibility, and intelligent recommendations can transform everyday product tracking into a more proactive and sustainable experience.
 
-# **The1AM: AI Content Creator — One Prompt → Image \+ Caption \+ Schedule. Case Study**
+# **The1AM: AI Content Creator - One Prompt → Image \+ Caption \+ Schedule. Case Study**
 
 An AI-powered social media content creation and automation platform designed to simplify how businesses and creators produce and publish content. The platform transforms a single text prompt into an AI-generated image and engaging caption, allowing users to review, organize, and schedule social media posts through one unified workflow. By combining AI content generation, media storage, and publishing automation, The1AM helps businesses maintain a consistent digital presence without the complexity of managing multiple tools.
 
@@ -2021,7 +2021,7 @@ The integration supports the platform's broader content management workflow by p
 
 The1AM uses a modern JavaScript and TypeScript-based web application architecture, combining a React frontend, Node.js backend, OpenAI API integration, MongoDB database, and Cloudflare R2 Object Storage.
 
-**Frontend — React 18, TypeScript and Vite**
+**Frontend - React 18, TypeScript and Vite**
 
 The frontend is developed using React 18 and TypeScript, with Vite providing the development and build environment.
 
@@ -2033,7 +2033,7 @@ Key implementation components:
 * Content creation and management interfaces.  
 * Unified dashboard for AI generation and scheduling workflows.
 
-**Backend — Node.js**
+**Backend - Node.js**
 
 Node.js provides the server-side application environment.
 
@@ -2048,13 +2048,13 @@ Key responsibilities include:
 * Application data operations.  
 * Media storage integration.
 
-**Database — MongoDB**
+**Database - MongoDB**
 
 MongoDB provides the database layer for application data management.
 
 It supports the organization and storage of application-related information and content workflow data.
 
-**AI Integration — OpenAI API**
+**AI Integration - OpenAI API**
 
 OpenAI API powers the platform's AI integration layer.
 
@@ -2065,7 +2065,7 @@ It supports the AI-powered content creation workflow, including:
 * Image generation workflows.  
 * Content generation based on user-provided ideas.
 
-**Cloud Storage — Cloudflare R2 Object Storage**
+**Cloud Storage - Cloudflare R2 Object Storage**
 
 Cloudflare R2 provides the platform's object storage infrastructure for generated media assets.
 
@@ -2167,9 +2167,9 @@ These opportunities position The1AM to evolve from an AI content generator into 
 
 ## **8\. Key Takeaway**
 
-"One idea should not require five different tools to become a published post. AI should handle the repetitive work, so creators and businesses can focus on what matters most — creativity, strategy, and storytelling."
+"One idea should not require five different tools to become a published post. AI should handle the repetitive work, so creators and businesses can focus on what matters most - creativity, strategy, and storytelling."
 
-# **Aigooru: Smart Fee Management — Payments, Reminders & Financial Intelligence. Case Study**
+# **Aigooru: Smart Fee Management - Payments, Reminders & Financial Intelligence. Case Study**
 
 An intelligent fee management platform designed to simplify financial operations for schools, colleges, and educational institutions. The platform brings fee collection, payment tracking, automated reminders, digital receipts, and financial reporting into one centralized system. By combining workflow automation, machine learning capabilities, and digital payment infrastructure, Aigooru helps institutions improve collection efficiency, reduce administrative workloads, and gain better visibility into their financial operations.
 
@@ -2480,7 +2480,7 @@ Aigooru uses a modern web application architecture built with React 18, TypeScri
 
 The architecture combines a responsive frontend, server-side application logic, cloud-based backend services, and predictive financial intelligence.
 
-**Frontend — React 18, TypeScript and Vite**
+**Frontend - React 18, TypeScript and Vite**
 
 The frontend is developed using React 18 and TypeScript, with Vite providing the development and build environment.
 
@@ -2493,7 +2493,7 @@ Key implementation components:
 * Fee management and payment tracking workflows.  
 * Administrative interfaces for institutional operations.
 
-**Backend — Node.js**
+**Backend - Node.js**
 
 Node.js provides the server-side application environment.
 
@@ -2508,13 +2508,13 @@ Key responsibilities include:
 * Financial record processing.  
 * Integration with backend services.
 
-**Database and Backend Services — Firebase**
+**Database and Backend Services - Firebase**
 
 Firebase provides the platform's database and backend services layer.
 
 It supports the application's data management requirements and provides the foundation for handling institutional and financial information.
 
-**Machine Learning — Predictive Financial Intelligence**
+**Machine Learning - Predictive Financial Intelligence**
 
 Machine learning capabilities support the platform's predictive functionality.
 
@@ -2621,11 +2621,11 @@ These opportunities position Aigooru to evolve from a fee collection application
 
 ## **8\. Key Takeaway**
 
-"Fee management should not be about chasing payments and balancing spreadsheets. It should be about giving institutions the financial clarity, automation, and intelligence to focus on what matters most — education."
+"Fee management should not be about chasing payments and balancing spreadsheets. It should be about giving institutions the financial clarity, automation, and intelligence to focus on what matters most - education."
 
 Aigooru demonstrates how workflow automation, digital payments, and machine learning can transform traditional institutional fee administration into a more transparent, proactive, and scalable financial management experience.
 
-# **Fundbot: AI SQL Chatbot — Ask Your Data in Plain English. Case Study**
+# **Fundbot: AI SQL Chatbot - Ask Your Data in Plain English. Case Study**
 
 An AI-powered conversational analytics platform that enables businesses to interact with their databases using natural language. Fundbot transforms everyday questions into SQL queries and returns meaningful insights through tables, charts, and downloadable reports. By combining Large Language Models (LLMs), Natural Language Processing, database schema awareness, and secure query execution, the platform makes business intelligence accessible without requiring users to understand SQL or depend on technical teams for routine reporting.
 
@@ -2893,7 +2893,7 @@ Fundbot uses a modern web application architecture that combines a React-based f
 
 The following stack represents a proposed implementation architecture aligned with the product requirements. The original project description confirms the use of NLP, LLMs, multiple database platforms, schema awareness, and data visualization; specific framework and provider choices should be verified before being presented as historical implementation facts.
 
-**Frontend — React 18, TypeScript and Vite**
+**Frontend - React 18, TypeScript and Vite**
 
 The frontend provides the conversational interface and analytical result presentation.
 
@@ -2907,7 +2907,7 @@ Recommended implementation:
 * Data tables and visualization components.  
 * Responsive dashboard experience.
 
-**Backend — Node.js and Express**
+**Backend - Node.js and Express**
 
 Node.js and Express provide the server-side application environment.
 
@@ -2921,7 +2921,7 @@ Recommended responsibilities include:
 * Query validation and execution.  
 * Result formatting and response delivery.
 
-**AI Integration — LLM and NLP Layer**
+**AI Integration - LLM and NLP Layer**
 
 Large Language Models and Natural Language Processing form the intelligence layer of Fundbot.
 
@@ -2936,7 +2936,7 @@ The AI workflow is designed to:
 
 An OpenAI-compatible LLM API is a suitable integration choice for this architecture, but the actual provider and model used in the project are to be confirmed.
 
-**Database Connectivity — MySQL, PostgreSQL, SQL Server and Oracle**
+**Database Connectivity - MySQL, PostgreSQL, SQL Server and Oracle**
 
 Fundbot is designed to connect with existing database environments.
 
@@ -2951,7 +2951,7 @@ Suggested connectivity components include:
 
 The database layer provides the information required for schema discovery, query execution, and result retrieval.
 
-**Query Security — Validation and Access Control**
+**Query Security - Validation and Access Control**
 
 A dedicated execution layer provides safeguards around AI-generated SQL.
 
@@ -2967,7 +2967,7 @@ Recommended implementation components include:
 
 Destructive operations should require explicit authorization and must not be executed merely because an LLM generated them.
 
-**Data Visualization — Recharts**
+**Data Visualization - Recharts**
 
 Recharts is a suitable frontend visualization library for presenting analytical results.
 
@@ -2979,7 +2979,7 @@ It can support:
 * Time-based analytics.  
 * Interactive data visualization.
 
-**API Architecture — REST APIs**
+**API Architecture - REST APIs**
 
 REST APIs connect the conversational frontend with the backend's AI, database, and analytics workflows.
 
@@ -3086,7 +3086,7 @@ These opportunities position Fundbot to evolve from a natural language SQL chatb
 
 Fundbot demonstrates how conversational AI and secure database connectivity can make organizational data more accessible, transforming traditional database reporting into a natural, interactive, and intelligent analytical experience.
 
-# **ByteXL: Enterprise Learning Management System — Centralizing Digital Education. Case Study**
+# **ByteXL: Enterprise Learning Management System - Centralizing Digital Education. Case Study**
 
 A custom Learning Management System designed to bring educational content, student learning activities, assessments, and academic progress into a unified digital platform. The solution focuses on simplifying learning delivery, improving visibility into student performance, and providing educational institutions with a centralized environment to manage and organize their digital learning operations.
 
@@ -3314,7 +3314,7 @@ The project is categorized as custom software and web application development.
 
 The actual implementation technologies have not yet been supplied. The following is a suggested architecture for an enterprise LMS, not a confirmed record of the delivered system.
 
-**Frontend — React and TypeScript**
+**Frontend - React and TypeScript**
 
 A component-based frontend would provide the student learning interface, instructor workspace, and administrative dashboard.
 
@@ -3324,7 +3324,7 @@ Potential technologies:
 * TypeScript for maintainable application code.  
 * Vite for development and production builds.
 
-**Backend — Node.js**
+**Backend - Node.js**
 
 Node.js would provide the server-side application environment.
 
@@ -3336,7 +3336,7 @@ Potential responsibilities:
 * Assessment operations.  
 * API communication.
 
-**Database — To Be Confirmed**
+**Database - To Be Confirmed**
 
 A database layer would manage learner records, course information, enrollment details, assessments, and learning progress.
 
@@ -3421,9 +3421,9 @@ These opportunities could position the LMS as a broader platform for managing di
 
 ## **8\. Key Takeaway**
 
-"Learning should not be fragmented across disconnected tools. A connected digital learning environment brings students, educators, content, and progress together — making education easier to manage and more accessible."
+"Learning should not be fragmented across disconnected tools. A connected digital learning environment brings students, educators, content, and progress together - making education easier to manage and more accessible."
 
-# **Tecnomart: Smart Billing System — Automated Billing & Digital Receipts. Case Study**
+# **Tecnomart: Smart Billing System - Automated Billing & Digital Receipts. Case Study**
 
 A modern Point-of-Sale (POS) billing application designed to simplify retail transactions and automate the billing process. Tecnomart brings billing operations, payment management, and automated customer communication into one digital platform. By combining a modern web application architecture, secure authentication, Firebase services, AI integration, and automated email delivery, the solution aims to make retail billing faster, more organized, and convenient for both businesses and customers.
 
@@ -3617,7 +3617,7 @@ This reduces the need to manage separate tools for the application's core operat
 
 Tecnomart uses a modern React-based web application architecture with TanStack, Better Auth, Firebase, Groq API, and SMTP email integration.
 
-**Frontend — React and TanStack**
+**Frontend - React and TanStack**
 
 React provides the component-based user interface, while TanStack contributes to the application's frontend architecture.
 
@@ -3630,13 +3630,13 @@ The confirmed frontend technologies include:
 
 The specific TanStack packages used are to be confirmed.
 
-**Authentication — Better Auth**
+**Authentication - Better Auth**
 
 Better Auth provides the authentication layer for the application.
 
 Its role is to support user authentication and application access management.
 
-**Backend Services and Database — Firebase**
+**Backend Services and Database - Firebase**
 
 Firebase provides the application's backend service infrastructure.
 
@@ -3644,13 +3644,13 @@ It supports application data management and backend functionality.
 
 The specific Firebase products used, such as Firestore, Authentication, or Cloud Functions, are to be confirmed.
 
-**AI Integration — Groq API**
+**AI Integration - Groq API**
 
 Groq API provides the application's AI integration capability.
 
 The exact model and business workflow associated with this integration have not been specified.
 
-**Email Infrastructure — SMTP**
+**Email Infrastructure - SMTP**
 
 SMTP provides the email delivery mechanism for automated bill sending.
 
@@ -3745,7 +3745,7 @@ These opportunities position Tecnomart to evolve from a POS billing application 
 
 Tecnomart demonstrates how modern web technologies, integrated authentication, and automated communication can transform everyday retail billing into a more organized and efficient digital workflow.
 
-# **Ayyo: Community-Driven Civic Platform — Turning Local Problems into Collective Action**
+# **Ayyo: Community-Driven Civic Platform - Turning Local Problems into Collective Action**
 
 A community-driven civic engagement platform designed to transform how people identify, discuss, fund, execute, and track local public issues. Combining social networking, location-based discovery, digital wallets, community crowdfunding, and project execution management, Ayyo creates a connected ecosystem where citizens, organizations, and contractors collaborate to solve real-world civic problems.
 
@@ -4005,7 +4005,7 @@ These are potential enhancements, not confirmed implemented features.
 
 "Solving civic problems requires more than reporting them. It requires connecting people, ideas, resources, and execution into one collaborative ecosystem. Ayyo turns community participation into a structured path toward real-world change."
 
-# **Interzoon: Cloud-Based Internal Management System — Secure, Scalable & Connected Operations. Case Study**
+# **Interzoon: Cloud-Based Internal Management System - Secure, Scalable & Connected Operations. Case Study**
 
 A cloud-based internal software system developed to support the operational needs of an enterprise operating in the global trade and financial technology ecosystem. Built around AWS cloud infrastructure and Amazon S3 object storage, the solution provides a foundation for centralized internal operations, digital resource management, and secure cloud-based workflows. The project focuses on improving operational accessibility, simplifying information management, and establishing a scalable infrastructure for enterprise activities.
 
@@ -4203,13 +4203,13 @@ This supports an operational model that is less dependent on individual physical
 
 The project uses Amazon Web Services as its cloud infrastructure foundation, with Amazon S3 serving as the confirmed object storage component.
 
-**Cloud Infrastructure — Amazon Web Services (AWS)**
+**Cloud Infrastructure - Amazon Web Services (AWS)**
 
 AWS provides the infrastructure layer for the internal system.
 
 The architecture is based on cloud services to support enterprise application operations, infrastructure flexibility, and future scalability.
 
-**Object Storage — Amazon S3**
+**Object Storage - Amazon S3**
 
 Amazon S3 is used for cloud-based object storage.
 
@@ -4304,7 +4304,7 @@ These opportunities provide a foundation for evolving the internal system alongs
 
 The Interzoon project demonstrates how cloud infrastructure and scalable object storage can establish a flexible foundation for enterprise internal systems.
 
-# **Laptomart: AI-Powered B2B Sales CRM — Unified Sales, Commerce & Customer Intelligence**
+# **Laptomart: AI-Powered B2B Sales CRM - Unified Sales, Commerce & Customer Intelligence**
 
 An AI-powered customer relationship management platform designed to streamline B2B sales operations by bringing customer interactions, commerce data, and sales workflows into a unified environment. With Shopify and Meta integrations, Laptomart aims to help businesses manage sales activities across channels while using AI to support more informed and efficient sales operations.
 
@@ -4448,7 +4448,7 @@ These are potential expansion opportunities, not confirmed implemented features.
 
 "A modern B2B CRM should do more than store customer information. It should connect the channels businesses sell through, bring sales operations together, and use AI to make those workflows more intelligent."
 
-# **DotcomWeavers: Project Buddy — Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira**
+# **DotcomWeavers: Project Buddy - Enterprise AI Knowledge Assistant for Slack, Google Drive & Jira**
 
 An enterprise AI knowledge assistant designed to make organizational knowledge instantly accessible through Slack. Powered by Google Vertex AI, Retrieval-Augmented Generation (RAG), and Gemini, Project Buddy connects project documentation with conversational AI, allowing teams to retrieve accurate, source-grounded answers without leaving their existing collaboration environment.
 
@@ -4725,9 +4725,9 @@ These are proposed future enhancements rather than confirmed delivered features.
 
 ## **8\. Key Takeaway**
 
-"Enterprise knowledge should not be buried inside folders and documents. Project Buddy turns organizational documentation into an intelligent, searchable knowledge system — delivering grounded answers with context and citations, directly where teams collaborate."
+"Enterprise knowledge should not be buried inside folders and documents. Project Buddy turns organizational documentation into an intelligent, searchable knowledge system - delivering grounded answers with context and citations, directly where teams collaborate."
 
-# **Fero: AI-Powered Invoice Automation — Intelligent Document Processing & Financial Workflow Automation**
+# **Fero: AI-Powered Invoice Automation - Intelligent Document Processing & Financial Workflow Automation**
 
 An intelligent invoice automation workflow designed to reduce repetitive financial operations by connecting document processing, data extraction, validation, and approval workflows. Built using n8n and integrated services, the solution focuses on making invoice handling more structured, efficient, and less dependent on manual data entry.
 
@@ -4865,7 +4865,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Invoice automation is not simply about extracting numbers from documents. It is about connecting information, validation, and business workflows into one reliable process."
 
-# **EduTech: Facial Attendance — AI-Powered Workforce Intelligence & Privacy-First Attendance**
+# **EduTech: Facial Attendance - AI-Powered Workforce Intelligence & Privacy-First Attendance**
 
 An enterprise-grade AI-powered attendance management system designed to modernize workforce attendance through facial recognition, event-driven processing, and privacy-first biometric data management. The platform combines computer vision, encrypted biometric embeddings, and real-time attendance analytics to deliver accurate, auditable attendance records without storing raw facial images or relying on continuous surveillance.
 
@@ -5128,7 +5128,7 @@ These are potential enhancements, not confirmed implemented features.
 
 "An intelligent attendance system should do more than recognize a face. It should establish trust through accurate records, transparent event processing, and privacy-first engineering."
 
-# **Flexport: Intelligent Burn Report Automation — AI-Powered Reporting & Workflow Orchestration**
+# **Flexport: Intelligent Burn Report Automation - AI-Powered Reporting & Workflow Orchestration**
 
 An AI-assisted reporting automation solution designed to streamline the preparation and delivery of burn reports. Using n8n as the central orchestration platform, the workflow connects relevant data sources, automates report-generation steps, and reduces repetitive reporting activities.
 
@@ -5268,7 +5268,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Reporting automation is about more than generating documents. It is about connecting business data, processing information intelligently, and delivering the right insights at the right time."
 
-# **KeoCapital: AI-Powered HR Screening Automation — Intelligent Candidate Evaluation & Recruitment Workflows**
+# **KeoCapital: AI-Powered HR Screening Automation - Intelligent Candidate Evaluation & Recruitment Workflows**
 
 An AI-assisted recruitment automation solution designed to streamline the initial candidate-screening process. Built around n8n workflow orchestration, the solution connects recruitment activities, processes candidate information, and supports HR teams in organizing applicant evaluation.
 
@@ -5410,7 +5410,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Recruitment automation should not replace human judgment. It should remove repetitive screening work, organize candidate information, and give HR teams more time to identify the right people."
 
-# **KeoCapital: AI-Powered HR Joining Automation — Intelligent Employee Onboarding & Workflow Orchestration**
+# **KeoCapital: AI-Powered HR Joining Automation - Intelligent Employee Onboarding & Workflow Orchestration**
 
 An intelligent HR automation solution designed to streamline employee joining processes through connected workflows and AI-assisted operations. Built using n8n, the solution aims to reduce repetitive onboarding tasks, coordinate employee information, and bring greater structure to the transition from candidate selection to employee onboarding.
 
@@ -5555,7 +5555,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Employee onboarding should be a coordinated experience, not a collection of disconnected administrative tasks. Intelligent automation helps HR teams spend less time managing processes and more time supporting people."
 
-# **Metacognition: AI-Powered QA Automation — Intelligent Testing & Quality Assurance Workflows**
+# **Metacognition: AI-Powered QA Automation - Intelligent Testing & Quality Assurance Workflows**
 
 An AI-assisted quality assurance automation solution designed to streamline software testing workflows, organize test execution results, and support faster identification of potential software issues. Built using n8n, the solution focuses on connecting testing processes, automating repetitive QA activities, and introducing AI-assisted analysis into the quality assurance lifecycle.
 
@@ -5700,7 +5700,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Quality assurance should not be slowed down by repetitive coordination. Intelligent automation connects testing workflows, organizes results, and helps engineering teams focus on building more reliable software."
 
-# **NDA: Automated AI Tracking System — Intelligent Monitoring & Workflow Automation**
+# **NDA: Automated AI Tracking System - Intelligent Monitoring & Workflow Automation**
 
 An AI-powered tracking and monitoring automation solution designed to streamline information tracking, automate repetitive monitoring activities, and organize operational data through intelligent workflows. Built using n8n, the solution connects multiple services and processing stages to create a centralized, automated tracking process.
 
@@ -5845,7 +5845,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "Intelligent tracking transforms monitoring from a repetitive manual activity into a connected workflow that collects information, processes it, and helps teams respond more effectively."
 
-# **NDA: Modern Healthcare Management System — Secure, Scalable & Cloud-Based Healthcare Platform**
+# **NDA: Modern Healthcare Management System - Secure, Scalable & Cloud-Based Healthcare Platform**
 
 A modern healthcare management system designed to digitize healthcare operations through a secure, cloud-based application architecture. Built using Next.js, React, and Firebase, the platform focuses on modernizing healthcare workflows, centralizing information management, and providing a scalable foundation for managing healthcare operations.
 
@@ -5996,9 +5996,9 @@ These are potential expansion opportunities, not confirmed implemented modules.
 
 ## **8\. Key Takeaway**
 
-"Healthcare technology must balance usability, security, and scalability. A modern healthcare management system should provide more than digital records — it should establish a reliable foundation for connected healthcare operations."
+"Healthcare technology must balance usability, security, and scalability. A modern healthcare management system should provide more than digital records - it should establish a reliable foundation for connected healthcare operations."
 
-# **NDA: Financial Systems Legacy Modernisation — Modern Oracle Database Migration & Enterprise Transformation**
+# **NDA: Financial Systems Legacy Modernisation - Modern Oracle Database Migration & Enterprise Transformation**
 
 A financial systems modernisation initiative focused on transitioning an older database environment to a modern Oracle Database architecture. The project aims to improve the foundation of legacy financial systems through database modernization, structured migration, and a more maintainable technology environment while preserving the integrity and reliability of critical financial information.
 
@@ -6143,7 +6143,7 @@ These are potential expansion opportunities, not confirmed implemented capabilit
 
 "Legacy modernization is not simply about moving data from one database to another. It is about preserving business-critical information while building a stronger technological foundation for the future of financial systems."
 
-# **Flavour Bombs: Magento Security Scan Automation — Intelligent E-commerce Security Monitoring**
+# **Flavour Bombs: Magento Security Scan Automation - Intelligent E-commerce Security Monitoring**
 
 An automated e-commerce security monitoring solution designed to streamline security scanning activities for Magento-based infrastructure. Using n8n as the central workflow orchestration platform, the solution focuses on connecting security scanning processes, organizing scan results, and automating security notifications to support proactive monitoring of the e-commerce environment.
 
@@ -6292,7 +6292,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 
 "E-commerce security should not depend on someone remembering to check for problems. Intelligent automation connects scanning, monitoring, and communication into a proactive security workflow."
 
-# **The Flyover: AI-Powered Lead Capture Automation — Intelligent Lead Processing & Sales Workflow Orchestration**
+# **The Flyover: AI-Powered Lead Capture Automation - Intelligent Lead Processing & Sales Workflow Orchestration**
 
 An intelligent lead capture automation solution designed to streamline how businesses collect, process, and organize incoming customer enquiries. Built using n8n, the solution connects lead sources, automates information processing, and introduces AI-assisted qualification to create a more structured lead management workflow.
 
@@ -6447,7 +6447,7 @@ These are potential enhancements, not confirmed implemented capabilities.
 **Project Duration:** To Be Confirmed  
 **Services Delivered:** Machine Learning, LLM Development, Model Specialization, AI Agent Development, Enterprise AI Integration
 
-**Technology Stack:** Machine Learning, Large Language Models (LLMs), AI Agents, Model Training and Fine-Tuning, Backend Infrastructure — specific frameworks and providers to be confirmed.
+**Technology Stack:** Machine Learning, Large Language Models (LLMs), AI Agents, Model Training and Fine-Tuning, Backend Infrastructure - specific frameworks and providers to be confirmed.
 
 ---
 
@@ -6554,14 +6554,14 @@ Key architectural considerations include:
 * Large Language Models (LLMs)  
 * Machine Learning  
 * Model Training and Specialization  
-* Fine-Tuning — exact approach to be confirmed
+* Fine-Tuning - exact approach to be confirmed
 
 **AI Agent Layer**
 
 * AI Agent Architecture  
 * Agent Orchestration  
 * Task Execution Workflows  
-* Tool and System Integration — implementation details to be confirmed
+* Tool and System Integration - implementation details to be confirmed
 
 **Infrastructure and Integration**
 

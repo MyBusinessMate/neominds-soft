@@ -138,7 +138,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                 </div>
 
                 <p className="nm-brand-description">
-                  NeoMinds helps teams transform complex challenges into intelligent, high-performance software — everything you need in one place.
+                  NeoMinds helps teams transform complex challenges into intelligent, high-performance software - everything you need in one place.
                 </p>
 
                 {/* Social Channels */}

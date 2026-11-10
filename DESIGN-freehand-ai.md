@@ -116,20 +116,20 @@ The brand's signature visual element is a 3D rendered metallic AI chip, often pr
 The Freehand color palette is built around a strong brand orange and a deep, earthy brown, supported by a neutral scale for readability and hierarchy.
 
 -   **Primary**
-    -   **Primary Orange** (`#fe6200`) — The core brand color, used for calls-to-action, key highlights, and interactive elements. It signifies action and focus.
+    -   **Primary Orange** (`#fe6200`) - The core brand color, used for calls-to-action, key highlights, and interactive elements. It signifies action and focus.
 -   **Interactive**
-    -   **Primary Orange Hover** (`#cf5000`) — A darker shade of the primary orange, applied to buttons and interactive elements on hover to provide clear feedback.
+    -   **Primary Orange Hover** (`#cf5000`) - A darker shade of the primary orange, applied to buttons and interactive elements on hover to provide clear feedback.
 -   **Neutral Scale**
-    -   **Background Light** (`#ffffff`) — The main background color for most page sections, providing a clean and bright canvas.
-    -   **Surface Subtle** (`#f1efeb`) — A light, off-white background used for cards, secondary sections, and subtle content separation.
-    -   **Background Dark** (`#200b00`) — The dominant dark background color for hero sections and feature blocks, establishing a premium and immersive feel.
-    -   **Surface Dark Subtle** (`#351505`) — A slightly lighter, warm brown used for borders or subtle dividers within dark sections.
-    -   **Text Primary** (`#000000`) — The default color for main body text, headings, and primary content on light backgrounds.
-    -   **Text Muted** (`#868683`) — A charcoal brown used for secondary text, captions, and less prominent information on light backgrounds.
-    -   **Text Inverse** (`#ffffff`) — White text used exclusively on dark backgrounds (`#200b00` or `#351505`) to ensure high readability.
-    -   **Border Light** (`#e4e2e1`) — A light grey used for subtle borders, dividers, and input outlines on light backgrounds.
-    -   **Border Dark** (`#351505`) — A dark brown border color used on dark backgrounds, often matching `surface-dark-subtle`.
-    -   **Fail Contrast Orange** (`#fe6507`) — An orange shade similar to primary, but specifically identified as failing AA contrast on `#ffffff` backgrounds.
+    -   **Background Light** (`#ffffff`) - The main background color for most page sections, providing a clean and bright canvas.
+    -   **Surface Subtle** (`#f1efeb`) - A light, off-white background used for cards, secondary sections, and subtle content separation.
+    -   **Background Dark** (`#200b00`) - The dominant dark background color for hero sections and feature blocks, establishing a premium and immersive feel.
+    -   **Surface Dark Subtle** (`#351505`) - A slightly lighter, warm brown used for borders or subtle dividers within dark sections.
+    -   **Text Primary** (`#000000`) - The default color for main body text, headings, and primary content on light backgrounds.
+    -   **Text Muted** (`#868683`) - A charcoal brown used for secondary text, captions, and less prominent information on light backgrounds.
+    -   **Text Inverse** (`#ffffff`) - White text used exclusively on dark backgrounds (`#200b00` or `#351505`) to ensure high readability.
+    -   **Border Light** (`#e4e2e1`) - A light grey used for subtle borders, dividers, and input outlines on light backgrounds.
+    -   **Border Dark** (`#351505`) - A dark brown border color used on dark backgrounds, often matching `surface-dark-subtle`.
+    -   **Fail Contrast Orange** (`#fe6507`) - An orange shade similar to primary, but specifically identified as failing AA contrast on `#ffffff` backgrounds.
 
 ## 3. Typography Rules
 Freehand employs a distinct typographic hierarchy, balancing a classic serif for impact with a modern sans-serif for clarity.
@@ -472,21 +472,21 @@ Freehand's layout emphasizes clear content separation and visual breathing room,
     Freehand utilizes generous whitespace to create a sense of calm and clarity, allowing content to breathe and preventing visual clutter. Large vertical gaps, often `64px` or `80px`, clearly delineate sections, while ample internal padding within components ensures elements are not cramped. This deliberate use of space enhances readability and highlights key information, contributing to a premium and focused user experience.
 
 -   **Border Radius Scale**:
-    -   **Small** (`sm`): `1px` — Used for crisp, subtle rounding on functional elements like input fields.
-    -   **Medium** (`md`): `10px` — Applied to cards and containers, providing a soft touch without losing a professional edge.
-    -   **Full** (`full`): `9999px` — Reserved for perfectly circular elements, such as avatars or small badges (if present).
+    -   **Small** (`sm`): `1px` - Used for crisp, subtle rounding on functional elements like input fields.
+    -   **Medium** (`md`): `10px` - Applied to cards and containers, providing a soft touch without losing a professional edge.
+    -   **Full** (`full`): `9999px` - Reserved for perfectly circular elements, such as avatars or small badges (if present).
 
 ## 6. Depth & Elevation
 Freehand primarily relies on color and strong visual separation rather than complex shadows for depth. Elevation is mainly managed through z-index for stacking contexts.
 
--   **Dropdown Nested (z-1)**: `z-index: 1` — Used for nested dropdown content within a larger dropdown.
--   **Dropdown Main (z-3)**: `z-index: 3` — Applied to primary navigation dropdowns, appearing above regular content.
--   **Resources Wrap (z-5)**: `z-index: 5` — Specific content wraps that need to appear above some background elements.
--   **Navigation Overlay (z-9)**: `z-index: 9` — Full-screen overlays, such as mobile navigation menus.
--   **Cookie Banner (z-10)**: `z-index: 10` — Persistent UI elements like cookie consent banners, appearing above most page content.
--   **Dropdown Toggle (z-900)**: `z-index: 900` — The interactive toggle element for a dropdown, ensuring it's clickable.
--   **Navbar Component (z-999)**: `z-index: 999` — The main sticky navigation bar, always visible at the top.
--   **Modal (z-1000)**: `z-index: 1000` — The highest stacking context, reserved for modal dialogs and critical alerts.
+-   **Dropdown Nested (z-1)**: `z-index: 1` - Used for nested dropdown content within a larger dropdown.
+-   **Dropdown Main (z-3)**: `z-index: 3` - Applied to primary navigation dropdowns, appearing above regular content.
+-   **Resources Wrap (z-5)**: `z-index: 5` - Specific content wraps that need to appear above some background elements.
+-   **Navigation Overlay (z-9)**: `z-index: 9` - Full-screen overlays, such as mobile navigation menus.
+-   **Cookie Banner (z-10)**: `z-index: 10` - Persistent UI elements like cookie consent banners, appearing above most page content.
+-   **Dropdown Toggle (z-900)**: `z-index: 900` - The interactive toggle element for a dropdown, ensuring it's clickable.
+-   **Navbar Component (z-999)**: `z-index: 999` - The main sticky navigation bar, always visible at the top.
+-   **Modal (z-1000)**: `z-index: 1000` - The highest stacking context, reserved for modal dialogs and critical alerts.
 
 **Shadow Philosophy**:
 The design system generally avoids prominent `box-shadow` effects, favoring a flatter aesthetic. When shadows are used, such as on card hover states, they are subtle (`0px 4px 12px rgba(0,0,0,0.08)`) and serve to indicate interactivity or temporary elevation rather than permanent depth. The primary method for visual separation is through distinct background colors and generous whitespace.
