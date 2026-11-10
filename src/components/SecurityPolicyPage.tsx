@@ -36,7 +36,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               1. Security-First Engineering Culture
             </h2>
             <p style={{ marginBottom: 'var(--space-4)' }}>
-              At Neominds, security is never an afterthought. It is integrated into every phase of our Software Development Life Cycle (SDLC). We apply a Zero-Trust architectural framework, strict least-privilege access control, continuous automated vulnerability scanning, and cryptographic encryption across all engineering touchpoints.
+              At NeoMinds TechHub, security is never an afterthought. It is integrated into every phase of our Software Development Life Cycle (SDLC). We apply a Zero-Trust architectural framework, strict least-privilege access control, continuous automated vulnerability scanning, and cryptographic encryption across all engineering touchpoints.
             </p>
           </div>
 

@@ -45,6 +45,7 @@ export type PageType =
   | 'devops'
   | 'ai-agents'
   | 'ai-product-engineering'
+  | 'admin'
   | '404';
 
 interface HeaderProps {
@@ -277,7 +278,7 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <img
               src="/images/neominds-logo.png"
-              alt="NeoMinds"
+              alt="NeoMinds TechHub"
               className="nm-header-logo"
               style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
             />
@@ -291,7 +292,7 @@ export const Header: React.FC<HeaderProps> = ({
                 whiteSpace: 'nowrap',
               }}
             >
-              Neominds Tech Hub
+              NeoMinds TechHub
             </span>
           </div>
 
@@ -576,7 +577,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* ========================================================
             DROPDOWN 1: WHAT WE DO (EXACT MATCH TO FREEHAND SCREENSHOT)
             Pure white background, Solutions on Left with Orange Icons,
-            "Neominds Studio" Discovery Showcase on Right
+            "NeoMinds TechHub Studio" Discovery Showcase on Right
             ======================================================== */}
         {activeMenu === 'what-we-do' && (
           <div
@@ -1042,7 +1043,7 @@ export const Header: React.FC<HeaderProps> = ({
                     fontFamily: 'var(--font-body)',
                   }}
                 >
-                  Neominds Tech Hub has been providing services to Canopy for four years. Their skilled engineers understand product needs, deliver quality platform increments, and meet evolving deadlines with engineering discipline.
+                  NeoMinds TechHub has been providing services to Canopy for four years. Their skilled engineers understand product needs, deliver quality platform increments, and meet evolving deadlines with engineering discipline.
                 </p>
               </div>
 
@@ -1284,11 +1285,11 @@ export const Header: React.FC<HeaderProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <img
                 src="/images/neominds-logo.png"
-                alt="NeoMinds"
+                alt="NeoMinds TechHub"
                 style={{ height: '26px', width: 'auto', objectFit: 'contain' }}
               />
               <span style={{ fontSize: '20px', fontWeight: 800, color: '#000000', fontFamily: "'DM Sans', sans-serif", letterSpacing: '-0.025em' }}>
-                Neominds Tech Hub
+                NeoMinds TechHub
               </span>
             </div>
             <button

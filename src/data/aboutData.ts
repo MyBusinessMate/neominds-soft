@@ -33,7 +33,7 @@ export const ABOUT_TEAM_MEMBERS: TeamMember[] = [
     position: 'Founder & CEO',
     image: '/team/Ali Asgar.webp',
     type: 'Leader',
-    bio: 'Guides executive vision and engineering strategy at Neominds Tech Hub, prioritizing high-velocity, production-grade software delivery for global clients.',
+    bio: 'Guides executive vision and engineering strategy at NeoMinds TechHub, prioritizing high-velocity, production-grade software delivery for global clients.',
     focus: 'Enterprise Solutions & AI Transformation',
     experience: 'Experienced enterprise technologist & founder',
     quote: 'Resilient software succeeds when architectural precision aligns directly with real business outcomes and durable user trust.',
@@ -44,7 +44,7 @@ export const ABOUT_TEAM_MEMBERS: TeamMember[] = [
     position: 'Co-founder',
     image: '/team/Abdul Khadar.webp',
     type: 'Leader',
-    bio: 'Co-directs operational architecture and technical roadmaps at Neominds Tech Hub, shaping foundational development methodologies and execution pipelines.',
+    bio: 'Co-directs operational architecture and technical roadmaps at NeoMinds TechHub, shaping foundational development methodologies and execution pipelines.',
     focus: 'System Reliability & Scalable Architecture',
     experience: 'Senior systems engineer & tech leader',
     quote: 'Rigorous engineering discipline and consistent delivery cadences compound into market-leading digital products.',
@@ -132,7 +132,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 1,
     quote:
-      'NeoMinds built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
+      'NeoMinds TechHub built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
     author: 'Daniel Brooks',
     role: 'Operations Director, MyBusinessMate',
     logo: '/images/company-logos/mybusinessmate.png',
@@ -140,7 +140,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 2,
     quote:
-      'NeoMinds delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
+      'NeoMinds TechHub delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
     author: 'Michael Anderson',
     role: 'Head of Engineering, Dotcomweavers',
     logo: '/images/company-logos/dotcomweavers.png',
@@ -148,7 +148,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 3,
     quote:
-      'NeoMinds engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
+      'NeoMinds TechHub engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
     author: 'Sarah Mitchell',
     role: 'Product Lead, Mindspace.ai',
     logo: '/images/company-logos/mindspace-ai.png',
@@ -156,7 +156,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 4,
     quote:
-      'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
+      'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds TechHub. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
     author: 'James Wilson',
     role: 'Technology Director, Laptomart',
     logo: '/images/company-logos/laptomart.png',
@@ -164,7 +164,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 5,
     quote:
-      'The custom enterprise ERP integrations and distributed data pipelines NeoMinds engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
+      'The custom enterprise ERP integrations and distributed data pipelines NeoMinds TechHub engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
     author: 'Robert Bennett',
     role: 'Infrastructure Architect, Tecnomart',
     logo: '/images/company-logos/tecnomart.png',
@@ -172,7 +172,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 6,
     quote:
-      'NeoMinds engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
+      'NeoMinds TechHub engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
     author: 'Alexander Reed',
     role: 'VP of Platform Engineering, Oden',
     logo: '/images/company-logos/oden.png',

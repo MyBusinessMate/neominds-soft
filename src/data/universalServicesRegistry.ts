@@ -691,7 +691,7 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
 
     // 11. Why Choose This Service
     whyChooseThisService: enrichment.whyChooseThisService || baseData.whyChooseThisService || {
-      title: `Why Engineering Leaders Pick Neominds for ${title}`,
+      title: `Why Engineering Leaders Pick NeoMinds TechHub for ${title}`,
       reasons: [
         {
           point: 'Senior Engineers Only, Zero Junior Bench',
@@ -747,7 +747,7 @@ export const buildUniversalService = (baseData: ServiceData): UniversalServiceDa
 
     // SEO
     seo: {
-      metaTitle: `${baseData.title} Services | Neominds Enterprise Engineering`,
+      metaTitle: `${baseData.title} Services | NeoMinds TechHub Enterprise Engineering`,
       metaDescription: baseData.heroDescription,
     },
   };

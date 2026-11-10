@@ -123,10 +123,10 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
             {/* Editorial Content */}
             <article style={{ lineHeight: 1.75, color: '#000000', fontSize: '15px' }}>
               <p style={{ fontSize: '16.5px', color: '#333333', marginBottom: '24px', fontWeight: 400 }}>
-                Neominds TechHub (“Neominds”) provides this Cookie Policy, which applies to all websites operated by or on behalf of Neominds (“Websites”). This Cookie Policy applies to all visitors, users, and others who access the Neominds Websites (“Users”). It explains how Neominds uses cookies, tags, pixels, and similar tracking technologies (collectively, “cookies”), as well as the options available to you to control them.
+                NeoMinds TechHub (“NeoMinds TechHub”) provides this Cookie Policy, which applies to all websites operated by or on behalf of NeoMinds TechHub (“Websites”). This Cookie Policy applies to all visitors, users, and others who access the NeoMinds TechHub Websites (“Users”). It explains how NeoMinds TechHub uses cookies, tags, pixels, and similar tracking technologies (collectively, “cookies”), as well as the options available to you to control them.
               </p>
               <p style={{ marginBottom: '32px' }}>
-                When you visit the Neominds Websites, we use different types of cookies to operate the Websites, analyze traffic, and personalize content and technical delivery. We may also share aggregated information collected through these cookies with verified infrastructure providers.
+                When you visit the NeoMinds TechHub Websites, we use different types of cookies to operate the Websites, analyze traffic, and personalize content and technical delivery. We may also share aggregated information collected through these cookies with verified infrastructure providers.
               </p>
 
               {/* What are cookies */}
@@ -145,7 +145,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
                   What cookies do we use?
                 </h3>
                 <p style={{ marginBottom: '20px' }}>
-                  Neominds Websites classify cookies into four distinct functional tiers:
+                  NeoMinds TechHub Websites classify cookies into four distinct functional tiers:
                 </p>
               </div>
 
@@ -349,7 +349,7 @@ const CookiePolicyPageComponent: React.FC<CookiePolicyPageProps> = ({
 
           {newsletterSubmitted && (
             <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
-              Thank you for subscribing to Neominds TechHub insights.
+              Thank you for subscribing to NeoMinds TechHub insights.
             </div>
           )}
         </div>

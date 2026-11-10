@@ -8,6 +8,7 @@ import {
   Newspaper,
 } from 'lucide-react';
 import { COMPANY_UPDATES_DATA } from '../data/blogData';
+import { getCmsCompanyUpdates, useCmsOverlay } from '../lib/cms/overlay';
 import { Footer } from './Footer';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
@@ -28,9 +29,11 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
 
   const types = ['All', 'Milestone', 'Conference & Events', 'Press Release', 'Partnership'];
 
+  useCmsOverlay(); // re-render once published CMS updates load
+  const updates = getCmsCompanyUpdates() ?? COMPANY_UPDATES_DATA;
   const filteredUpdates = activeType === 'All'
-    ? COMPANY_UPDATES_DATA
-    : COMPANY_UPDATES_DATA.filter((u) => u.type === activeType);
+    ? updates
+    : updates.filter((u) => u.type === activeType);
 
   const handlePressInquiry = (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,7 +57,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: '8px', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <Newspaper size={14} />
-            <span>Neominds Corporate Announcements & News</span>
+            <span>NeoMinds TechHub Corporate Announcements & News</span>
           </div>
 
           <ScrollReveal
@@ -75,7 +78,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
 
           <RevealElement variant="text" delay={0.06}>
             <p style={{ fontSize: '18px', color: '#555555', maxWidth: '720px', lineHeight: 1.6, marginBottom: '32px' }}>
-              The latest news, engineering breakthroughs, conference keynotes, executive perspectives, and global expansion announcements from Neominds.
+              The latest news, engineering breakthroughs, conference keynotes, executive perspectives, and global expansion announcements from NeoMinds TechHub.
             </p>
           </RevealElement>
 
@@ -233,7 +236,7 @@ export const CompanyUpdatesPage: React.FC<CompanyUpdatesPageProps> = ({
             style={{ fontSize: '32px', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)', marginBottom: '12px', display: 'block' }}
             blurStrength={6}
           >
-            Request the Neominds 2026 Press Kit
+            Request the NeoMinds TechHub 2026 Press Kit
           </ScrollReveal>
           <p style={{ fontSize: '16px', color: '#555555', maxWidth: '580px', margin: '0 auto 28px', lineHeight: 1.6 }}>
             For press inquiries, executive speaking engagements, or high-resolution media brand assets, contact our corporate communications office.

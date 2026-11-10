@@ -95,13 +95,13 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
             Turn your ideas into clarity
           </h2>
           <p className="nm-dark-banner-subheading">
-            NeoMinds makes it effortless to build intelligent software, autonomous AI systems, and scalable cloud platforms for your team.
+            NeoMinds TechHub makes it effortless to build intelligent software, autonomous AI systems, and scalable cloud platforms for your team.
           </p>
           <div className="nm-dark-banner-actions">
             <button
               onClick={() => onNavigate('#contacts')}
               className="nm-dark-banner-btn"
-              aria-label="Get Started with NeoMinds"
+              aria-label="Get Started with NeoMinds TechHub"
             >
               <span>Get Started</span>
             </button>
@@ -126,19 +126,19 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                   role="button"
                   tabIndex={0}
                   onKeyDown={(e) => e.key === 'Enter' && onNavigate('#hero')}
-                  aria-label="NeoMinds Home"
+                  aria-label="NeoMinds TechHub Home"
                 >
                   <img
                     src="/images/neominds-logo.png"
-                    alt="NeoMinds"
+                    alt="NeoMinds TechHub"
                     className="nm-footer-logo"
                     style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
                   />
-                  <span className="nm-brand-name">NeoMinds</span>
+                  <span className="nm-brand-name">NeoMinds TechHub</span>
                 </div>
 
                 <p className="nm-brand-description">
-                  NeoMinds helps teams transform complex challenges into intelligent, high-performance software - everything you need in one place.
+                  NeoMinds TechHub helps teams transform complex challenges into intelligent, high-performance software - everything you need in one place.
                 </p>
 
                 {/* Social Channels */}
@@ -148,7 +148,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
-                    aria-label="NeoMinds on LinkedIn"
+                    aria-label="NeoMinds TechHub on LinkedIn"
                   >
                     <Linkedin size={16} />
                   </a>
@@ -157,7 +157,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
-                    aria-label="NeoMinds on X"
+                    aria-label="NeoMinds TechHub on X"
                   >
                     <BrandXIcon size={15} />
                   </a>
@@ -166,7 +166,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
-                    aria-label="NeoMinds on Facebook"
+                    aria-label="NeoMinds TechHub on Facebook"
                   >
                     <Facebook size={16} />
                   </a>
@@ -175,7 +175,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
-                    aria-label="NeoMinds on YouTube"
+                    aria-label="NeoMinds TechHub on YouTube"
                   >
                     <Youtube size={16} />
                   </a>
@@ -184,7 +184,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="nm-social-link"
-                    aria-label="NeoMinds on Instagram"
+                    aria-label="NeoMinds TechHub on Instagram"
                   >
                     <Instagram size={16} />
                   </a>
@@ -270,7 +270,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
             {/* Bottom Row inside Card */}
             <div className="nm-card-bottom-row">
               <span className="nm-card-copyright">
-                &copy; {currentYear} NeoMinds. All rights reserved.
+                &copy; {currentYear} NeoMinds TechHub. All rights reserved.
               </span>
 
               <div className="nm-card-legal-links">
@@ -303,7 +303,7 @@ const FooterComponent: React.FC<FooterProps> = ({ onNavigate = (target: string) 
           aria-hidden="true"
         >
           <span className="nm-watermark-text">
-            NeoMinds
+            NeoMinds TechHub
           </span>
         </div>
       </section>

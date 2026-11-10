@@ -218,7 +218,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                 fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               }}
             >
-              NeoMinds builds on seven core technology disciplines. Every framework, language, and cloud service in our stack is selected for stability, security, and developer velocity under production load.
+              NeoMinds TechHub builds on seven core technology disciplines. Every framework, language, and cloud service in our stack is selected for stability, security, and developer velocity under production load.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>

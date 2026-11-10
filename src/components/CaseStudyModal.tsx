@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { X, ArrowRight, ExternalLink, Check, Code2, Layers, Database, Cpu, Clock } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
+import { useCmsOverlay } from '../lib/cms/overlay';
 import { parseTechStackWithIcons } from '../utils/techIcons';
 
 interface CaseStudyModalProps {
@@ -18,9 +19,10 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
 }) => {
   if (!studyId) return null;
 
+  const cmsVersion = useCmsOverlay();
   const project: UnifiedProject = useMemo(() => {
     return getUnifiedProject(studyId);
-  }, [studyId]);
+  }, [studyId, cmsVersion]);
 
   return (
     <div

@@ -1,0 +1,40 @@
+rules_version = '2';
+
+// NeoMinds CMS — Firestore security rules.
+//
+// Model:
+//   * Anyone (no auth) may READ documents whose status == 'published'.
+//     This is what the public website uses.
+//   * Only an ADMIN may read drafts or write anything.
+//   * "Admin" = a user that has a document at /admins/{their-uid}.
+//     Email/Password sign-up alone does NOT grant access — a matching admins
+//     doc must exist (bootstrap the first one manually in the console).
+//
+// Deploy with:  firebase deploy --only firestore:rules
+// (or paste into Firestore Console -> Rules).
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    // Managed content collections.
+    match /{coll}/{docId} {
+      allow read: if coll in ['blog', 'caseStudies', 'companyUpdates']
+        && (resource.data.status == 'published' || isAdmin());
+
+      allow create, update, delete: if coll in ['blog', 'caseStudies', 'companyUpdates']
+        && isAdmin();
+    }
+
+    // The admins allow-list. Readable only by admins; never writable from the
+    // client (manage it in the Firebase console).
+    match /admins/{uid} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+  }
+}

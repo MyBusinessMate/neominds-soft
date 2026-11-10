@@ -74,7 +74,7 @@ export const CookieConsent: React.FC<CookieConsentProps> = ({ onOpenPrivacy }) =
               We value your privacy and cookie transparency
             </h4>
             <p className="body-text" style={{ fontSize: '13px', lineHeight: 1.5, color: '#a3a09b' }}>
-              Neominds uses necessary cookies to ensure system stability, analyze web traffic, and personalize your experience. Learn more in our{' '}
+              NeoMinds TechHub uses necessary cookies to ensure system stability, analyze web traffic, and personalize your experience. Learn more in our{' '}
               <button
                 onClick={onOpenPrivacy}
                 style={{ color: '#ffffff', textDecoration: 'underline', cursor: 'pointer', fontSize: '13px', background: 'none', border: 'none', padding: 0 }}

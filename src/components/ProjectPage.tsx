@@ -14,6 +14,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react';
 import { getUnifiedProject, UnifiedProject } from '../data/projectsData';
+import { useCmsOverlay } from '../lib/cms/overlay';
 import { parseTechStackWithIcons } from '../utils/techIcons';
 import { PageType } from './Header';
 import { Testimonials } from './Testimonials';
@@ -31,16 +32,17 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
   onOpenContact,
 }) => {
   const [copied, setCopied] = useState(false);
+  const cmsVersion = useCmsOverlay();
 
   const project: UnifiedProject = useMemo(() => {
     return getUnifiedProject(projectId);
-  }, [projectId]);
+  }, [projectId, cmsVersion]);
 
   // Scroll to top and update document title when project ID changes
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (project?.title) {
-      document.title = `${project.title} | Neominds Enterprise Case Studies`;
+      document.title = `${project.title} | NeoMinds TechHub Enterprise Case Studies`;
     }
   }, [projectId, project?.title]);
 
@@ -102,7 +104,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
     return project.relatedProjectIds
       .map((id) => getUnifiedProject(id))
       .filter(Boolean);
-  }, [project.relatedProjectIds]);
+  }, [project.relatedProjectIds, cmsVersion]);
 
   const handleShare = () => {
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
@@ -423,7 +425,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
               N
             </div>
             <div>
-              <strong style={{ color: '#111111' }}>Neominds Engineering</strong> · Principal Systems Architecture Group
+              <strong style={{ color: '#111111' }}>NeoMinds TechHub Engineering</strong> · Principal Systems Architecture Group
             </div>
             <span style={{ color: '#c4bfb6' }}>•</span>
             <div>Updated November 2026</div>
@@ -1011,7 +1013,7 @@ export const ProjectPage: React.FC<ProjectPageProps> = ({
                   "{project.keyTakeaway}"
                 </p>
                 <div style={{ marginTop: '12px', fontSize: '13px', fontWeight: 700, fontStyle: 'italic', color: '#111111' }}>
-                  - Neominds Lead Systems Architect
+                  - NeoMinds TechHub Lead Systems Architect
                 </div>
               </div>
             </section>

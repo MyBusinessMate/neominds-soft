@@ -81,7 +81,7 @@ const FAQS = [
   },
   {
     q: 'Can I work 100% remotely?',
-    a: 'Yes! Most engineering, AI, and design positions at Neominds TechHub are fully remote-friendly across compatible time zones.',
+    a: 'Yes! Most engineering, AI, and design positions at NeoMinds TechHub are fully remote-friendly across compatible time zones.',
   },
   {
     q: 'I applied before and was not selected. Can I apply again?',
@@ -178,7 +178,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
       <section className="s-hero g-section theme-light s-hero--centered" style={{ backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)', padding: 'clamp(56px, 8vw, 96px) 24px clamp(48px, 6vw, 72px)', textAlign: 'center', borderBottom: '1px solid #f0ece2' }}>
         <div style={{ maxWidth: '840px', margin: '0 auto' }}>
           <h1 style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', fontWeight: 800, color: '#000000', letterSpacing: '-0.03em', lineHeight: 1.1, margin: '0 0 20px 0' }}>
-            Build software that matters at Neominds TechHub
+            Build software that matters at NeoMinds TechHub
           </h1>
 
           <p style={{ fontSize: '18px', color: '#555555', lineHeight: 1.6, maxWidth: '680px', margin: '0 auto 32px auto' }}>
@@ -380,7 +380,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
           <div style={{ marginTop: '40px', padding: '20px 24px', backgroundColor: '#121212', border: '1px solid #fe6200', borderRadius: '8px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
             <ShieldAlert size={22} color="#fe6200" style={{ flexShrink: 0, marginTop: '2px' }} />
             <div style={{ fontSize: '13.5px', color: '#D1D5DB', lineHeight: 1.6 }}>
-              <strong style={{ color: '#f5f5f5' }}>Recruiting fraud notice:</strong> Neominds TechHub recruiters only contact candidates from official company email addresses ending in <code>@neominds.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
+              <strong style={{ color: '#f5f5f5' }}>Recruiting fraud notice:</strong> NeoMinds TechHub recruiters only contact candidates from official company email addresses ending in <code>@NeoMinds TechHub.com</code> or verified corporate LinkedIn profiles. We never request financial payments, equipment purchasing, or sensitive bank details as part of our interview process.
             </div>
           </div>
         </div>
@@ -620,7 +620,7 @@ const CareersPageComponent: React.FC<CareersPageProps> = ({
 
           {newsletterSubmitted && (
             <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
-              Thank you for subscribing to Neominds TechHub insights.
+              Thank you for subscribing to NeoMinds TechHub insights.
             </div>
           )}
         </div>

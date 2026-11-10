@@ -195,7 +195,7 @@ export const ServicePage: React.FC<ServicePageProps> = ({
                 N
               </div>
               <div>
-                <strong style={{ color: '#111111', fontWeight: 600 }}>Neominds Engineering</strong>
+                <strong style={{ color: '#111111', fontWeight: 600 }}>NeoMinds TechHub Engineering</strong>
                 <span style={{ margin: '0 6px', color: '#c4bfb6' }}>·</span>
                 <span>Principal Systems Architecture Group</span>
               </div>

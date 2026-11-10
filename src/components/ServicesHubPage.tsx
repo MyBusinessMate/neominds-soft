@@ -332,7 +332,7 @@ export const ServicesHubPage: React.FC<ServicesHubPageProps> = ({
                 fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
               }}
             >
-              NeoMinds engineers high-performance web, mobile, cloud platforms and autonomous AI systems. We deliver verified software solutions across exactly two core competencies: <strong>AI</strong> and <strong>General Software Engineering</strong>.
+              NeoMinds TechHub engineers high-performance web, mobile, cloud platforms and autonomous AI systems. We deliver verified software solutions across exactly two core competencies: <strong>AI</strong> and <strong>General Software Engineering</strong>.
             </p>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>

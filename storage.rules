@@ -1,0 +1,27 @@
+rules_version = '2';
+
+// NeoMinds CMS — Firebase Storage rules for image uploads.
+//
+//   * Anyone may READ uploaded images (they appear on the public site).
+//   * Only an ADMIN may upload/overwrite/delete, and only images up to 8 MB.
+//     "Admin" reuses the Firestore allow-list: a document at /admins/{uid}.
+//
+// Enable Storage in the Firebase console first, then publish these rules
+// (Storage -> Rules), or: firebase deploy --only storage
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isAdmin() {
+      return request.auth != null
+        && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid));
+    }
+
+    match /cms-uploads/{allPaths=**} {
+      allow read: if true;
+      allow write: if isAdmin()
+        && request.resource.size < 8 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

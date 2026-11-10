@@ -94,7 +94,7 @@ const TEAM_CERTIFICATIONS = [
 const TESTIMONIALS = [
   {
     quote:
-      'Neominds TechHub delivered our core enterprise dashboard on schedule, with exemplary code structure, thorough automated test coverage, and responsive daily communication.',
+      'NeoMinds TechHub delivered our core enterprise dashboard on schedule, with exemplary code structure, thorough automated test coverage, and responsive daily communication.',
     author: 'David Harrison',
     role: 'VP of Technology',
     company: 'Logistics SaaS Platform (US)',
@@ -147,7 +147,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
                 Our proven expertise
               </h1>
               <p style={{ fontSize: '17px', color: '#555555', lineHeight: 1.65, maxWidth: '720px', margin: 0 }}>
-                Here you can find the recognized accomplishments and certifications obtained by Neominds TechHub, affirming our expertise, adherence to industry standards, and commitment to quality.
+                Here you can find the recognized accomplishments and certifications obtained by NeoMinds TechHub, affirming our expertise, adherence to industry standards, and commitment to quality.
               </p>
             </div>
 
@@ -344,7 +344,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
               They say it best
             </h2>
             <p style={{ fontSize: '15.5px', color: '#555555', maxWidth: '680px', margin: 0, lineHeight: 1.6 }}>
-              Neominds TechHub began with an idea focused on quality. We take action and keep your business’ best interests at heart. We believe in true partnerships with our clients and that’s why they believe us.
+              NeoMinds TechHub began with an idea focused on quality. We take action and keep your business’ best interests at heart. We believe in true partnerships with our clients and that’s why they believe us.
             </p>
           </div>
 
@@ -431,7 +431,7 @@ const CertificationPageComponent: React.FC<CertificationPageProps> = ({
 
           {newsletterSubmitted && (
             <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
-              Thank you for subscribing to Neominds TechHub insights.
+              Thank you for subscribing to NeoMinds TechHub insights.
             </div>
           )}
         </div>

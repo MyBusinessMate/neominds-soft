@@ -7,6 +7,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { BLOG_POSTS_DATA } from '../data/blogData';
+import { getCmsBlogPosts, useCmsOverlay } from '../lib/cms/overlay';
 import { Footer } from './Footer';
 
 interface BlogPostDetailPageProps {
@@ -26,8 +27,10 @@ export const BlogPostDetailPage: React.FC<BlogPostDetailPageProps> = ({
   onSuccessToast,
   onOpenLegal,
 }) => {
-  const article = BLOG_POSTS_DATA.find((p) => p.id === articleId) || BLOG_POSTS_DATA[0];
-  const relatedArticles = BLOG_POSTS_DATA.filter((p) => p.id !== article.id);
+  useCmsOverlay(); // re-render once published CMS posts load
+  const posts = getCmsBlogPosts() ?? BLOG_POSTS_DATA;
+  const article = posts.find((p) => p.id === articleId) || posts[0];
+  const relatedArticles = posts.filter((p) => p.id !== article.id);
 
   const handleShare = () => {
     if (navigator.clipboard) {

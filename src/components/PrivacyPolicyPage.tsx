@@ -111,7 +111,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
             {/* Main Editorial Articles */}
             <article style={{ lineHeight: 1.75, color: '#000000', fontSize: '15px' }}>
               <p style={{ fontSize: '16.5px', color: '#333333', marginBottom: '24px', fontWeight: 400 }}>
-                Neominds TechHub (“Neominds”) has created this Privacy Policy in line with our commitment to your privacy. This Notice sets out how Neominds collects, uses, shares, and protects personal information.
+                NeoMinds TechHub (“NeoMinds TechHub”) has created this Privacy Policy in line with our commitment to your privacy. This Notice sets out how NeoMinds TechHub collects, uses, shares, and protects personal information.
               </p>
               <p style={{ marginBottom: '32px' }}>
                 In different countries, there are different definitions of “personal information” and “personal data”. For the purposes of this Privacy Policy, personal information means any information relating to an identified or identifiable natural person.
@@ -162,7 +162,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                   We never sell, rent, or trade your personal information. We only share information with:
                 </p>
                 <ul style={{ paddingLeft: '20px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <li><strong>Affiliated Neominds Delivery Centers:</strong> Wholly-owned global development centers operating under binding corporate rules and mutual confidentiality.</li>
+                  <li><strong>Affiliated NeoMinds TechHub Delivery Centers:</strong> Wholly-owned global development centers operating under binding corporate rules and mutual confidentiality.</li>
                   <li><strong>Certified Infrastructure Providers:</strong> Cloud hosting, CRM, and communication platforms bound by rigorous Data Processing Agreements (DPAs).</li>
                   <li><strong>Legal Compliance:</strong> When required by lawful judicial subpoena, regulatory investigation, or applicable law.</li>
                 </ul>
@@ -317,7 +317,7 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
 
           {newsletterSubmitted && (
             <div style={{ marginTop: '12px', color: '#039855', fontSize: '13.5px', fontWeight: 500 }}>
-              Thank you for subscribing to Neominds TechHub insights.
+              Thank you for subscribing to NeoMinds TechHub insights.
             </div>
           )}
         </div>

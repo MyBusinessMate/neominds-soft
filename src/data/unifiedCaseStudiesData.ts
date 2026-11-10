@@ -43,7 +43,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Executive Decision Support"
     },
     "keyTakeaway": "Modern e-commerce analytics goes beyond reporting historical numbers. By combining centralized business intelligence with AI-powered data exploration, complex operational data becomes accessible, actionable, and valuable for strategic decision-making.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -108,7 +108,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "AI-Assisted Communication: Automated generation of notification content using Groq."
     },
     "keyTakeaway": "An intelligent healthcare platform needs more than a great user experience. It needs an equally intelligent administrative foundation - one that transforms application data into operational visibility, actionable insights, and better platform management.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -173,7 +173,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Professional Support Access: Integrated therapist appointment booking through Cal.com."
     },
     "keyTakeaway": "> \"Technology can make emotional support more accessible, but it should never replace human care. Mindspace brings AI companionship, self-reflection, and access to professional support together in one connected experience.\"",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -237,7 +237,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "TanStack ecosystem integration."
     },
     "keyTakeaway": "> \"Great business software doesn't just digitize existing processes. It creates a connected foundation for businesses to work smarter, communicate better, and grow.\"",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -302,7 +302,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "PostgreSQL database integration."
     },
     "keyTakeaway": "> \"Business technology should move with the people who use it. MyBusinessMate brings connected business experiences beyond the desktop and into the mobile world.\"",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -366,7 +366,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Assessment Automation"
     },
     "keyTakeaway": "The future of educational technology is not about replacing teachers with AI. It is about removing repetitive administrative work so educators can spend more time teaching, engaging, and supporting every student's learning journey.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -424,7 +424,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "REST API-based application communication."
     },
     "keyTakeaway": "> \"Early education deserves thoughtful management. By bringing school operations into one connected digital platform, technology can help educators spend less time managing processes and more time supporting children's development.\"",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical web application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical web application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -488,7 +488,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Automated expiry estimation and proactive alerts reduce dependence on handwritten lists, spreadsheets, and manually created reminders."
     },
     "keyTakeaway": "\"Smart inventory management is not just about knowing what you have. It's about knowing what needs attention, when to act, and how to make better use of every product.\" Expirio demonstrates how automation, inventory visibility, and intelligent recommendations can transform everyday product tracking into a more proactive and sustainable experience.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -553,7 +553,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "The unified workflow reduces the need to move between separate design, writing, and scheduling applications."
     },
     "keyTakeaway": "One idea should not require five different tools to become a published post. AI should handle the repetitive work, so creators and businesses can focus on what matters most - creativity, strategy, and storytelling.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -617,7 +617,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Automating payment tracking, ledger updates, receipt generation, and reminders reduces repetitive administrative tasks."
     },
     "keyTakeaway": "\"Fee management should not be about chasing payments and balancing spreadsheets. It should be about giving institutions the financial clarity, automation, and intelligence to focus on what matters most - education.\" Aigooru demonstrates how workflow automation, digital payments, and machine learning can transform traditional institutional fee administration into a more transparent, proactive, and scalable financial management experience.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -681,7 +681,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "The conversational workflow simplifies the process of asking questions, retrieving data, and reviewing analytical results."
     },
     "keyTakeaway": "\"Business intelligence should not be limited to people who know SQL. Everyone responsible for making decisions should be able to ask questions, explore data, and understand what is happening.\" Fundbot demonstrates how conversational AI and secure database connectivity can make organizational data more accessible, transforming traditional database reporting into a natural, interactive, and intelligent analytical experience.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -745,7 +745,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Structured course and enrollment management can reduce fragmented administrative workflows."
     },
     "keyTakeaway": "Learning should not be fragmented across disconnected tools. A connected digital learning environment brings students, educators, content, and progress together - making education easier to manage and more accessible.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -809,7 +809,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Automated email delivery reduces the need for staff to manually distribute billing information after transactions."
     },
     "keyTakeaway": "\"Billing should be more than generating a receipt. It should be a connected experience that simplifies transactions, reduces manual work, and keeps customers informed automatically.\" Tecnomart demonstrates how modern web technologies, integrated authentication, and automated communication can transform everyday retail billing into a more organized and efficient digital workflow.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical web application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical web application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -873,7 +873,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Transparent Workflows: Provides a structured model for monitoring project funding and execution."
     },
     "keyTakeaway": "Solving civic problems requires more than reporting them. It requires connecting people, ideas, resources, and execution into one collaborative ecosystem. Ayyo turns community participation into a structured path toward real-world change.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical mobile application platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -937,7 +937,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Amazon S3 provides a storage foundation that can accommodate growing digital resource requirements."
     },
     "keyTakeaway": "\"Enterprise operations need more than software that works. They need a cloud foundation that can grow with the business, protect its digital resources, and support the way teams operate.\" The Interzoon project demonstrates how cloud infrastructure and scalable object storage can establish a flexible foundation for enterprise internal systems.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1002,7 +1002,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "An AI integration foundation for more intelligent CRM workflows."
     },
     "keyTakeaway": "A modern B2B CRM should do more than store customer information. It should connect the channels businesses sell through, bring sales operations together, and use AI to make those workflows more intelligent.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1067,7 +1067,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "| Information accuracy | \\60% | \\95% |"
     },
     "keyTakeaway": "Enterprise knowledge should not be buried inside folders and documents. Project Buddy turns organizational documentation into an intelligent, searchable knowledge system - delivering grounded answers with context and citations, directly where teams collaborate.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1132,7 +1132,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Better integration between business applications."
     },
     "keyTakeaway": "Invoice automation is not simply about extracting numbers from documents. It is about connecting information, validation, and business workflows into one reliable process.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1196,7 +1196,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Computed Attendance History: Generates daily attendance directly from recorded events."
     },
     "keyTakeaway": "An intelligent attendance system should do more than recognize a face. It should establish trust through accurate records, transparent event processing, and privacy-first engineering.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1261,7 +1261,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Faster movement of information through reporting workflows."
     },
     "keyTakeaway": "Reporting automation is about more than generating documents. It is about connecting business data, processing information intelligently, and delivering the right insights at the right time.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1326,7 +1326,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Improved coordination between recruitment stages."
     },
     "keyTakeaway": "Recruitment automation should not replace human judgment. It should remove repetitive screening work, organize candidate information, and give HR teams more time to identify the right people.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1392,7 +1392,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Reduced manual communication overhead."
     },
     "keyTakeaway": "Employee onboarding should be a coordinated experience, not a collection of disconnected administrative tasks. Intelligent automation helps HR teams spend less time managing processes and more time supporting people.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1457,7 +1457,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Improved coordination between QA and development activities."
     },
     "keyTakeaway": "Quality assurance should not be slowed down by repetitive coordination. Intelligent automation connects testing workflows, organizes results, and helps engineering teams focus on building more reliable software.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1522,7 +1522,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Better visibility into relevant updates."
     },
     "keyTakeaway": "Intelligent tracking transforms monitoring from a repetitive manual activity into a connected workflow that collects information, processes it, and helps teams respond more effectively.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1586,7 +1586,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Cloud-based backend capabilities."
     },
     "keyTakeaway": "Healthcare technology must balance usability, security, and scalability. A modern healthcare management system should provide more than digital records - it should establish a reliable foundation for connected healthcare operations.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1650,7 +1650,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Better preparation for future system integrations."
     },
     "keyTakeaway": "Legacy modernization is not simply about moving data from one database to another. It is about preserving business-critical information while building a stronger technological foundation for the future of financial systems.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical enterprise platform platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1715,7 +1715,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Improved coordination of recurring security checks."
     },
     "keyTakeaway": "E-commerce security should not depend on someone remembering to check for problems. Intelligent automation connects scanning, monitoring, and communication into a proactive security workflow.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical automation platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical automation platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1780,7 +1780,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Faster movement of leads through connected workflows."
     },
     "keyTakeaway": "Lead generation creates opportunities, but intelligent lead automation helps businesses capture those opportunities, organize them, and move them toward meaningful customer conversations.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1844,7 +1844,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "An architecture designed for potential enterprise integrations."
     },
     "keyTakeaway": "> \"Enterprise AI should do more than understand instructions. It should understand specialized requirements, reason through tasks, and provide the foundation for intelligent execution.\" Confidential Enterprise AI Engagement Neo Minds Tech Hub develops specialized AI solutions that combine machine learning, language models, and intelligent agent architectures to address complex enterprise requirements.",
-    "discussStatement": "Neominds partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
+    "discussStatement": "NeoMinds TechHub partners with innovative engineering leaders to design and deploy mission-critical ai system platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {
@@ -1905,7 +1905,7 @@ export const UNIFIED_CASE_STUDIES: Record<string, UnifiedProject> = {
       "businessImpact": "Successfully deployed across 12M+ square feet of managed commercial assets"
     },
     "keyTakeaway": "Enterprise asset management platforms deliver maximum ROI when complex financial lease contracts are transformed into automated, proactive operational alerts.",
-    "discussStatement": "Neominds builds enterprise software and portfolio management systems that replace fragile spreadsheets with scalable cloud platforms.",
+    "discussStatement": "NeoMinds TechHub builds enterprise software and portfolio management systems that replace fragile spreadsheets with scalable cloud platforms.",
     "ctaText": "Discuss Your Project",
     "relatedServices": [
       {

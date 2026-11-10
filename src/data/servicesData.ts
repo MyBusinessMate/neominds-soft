@@ -119,7 +119,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build web applications, portals, and marketing sites that load fast, hold up under traffic, and give your team full ownership. No bloated frameworks that slow you down three months later.',
     heroImage: '/services/web-development.png',
-    heroImageCaption: 'Web application architecture · Neominds',
+    heroImageCaption: 'Web application architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Our Work',
     trustPoints: [
@@ -243,7 +243,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build iOS and Android applications that are smooth, reliable, and purpose-built for your users. We avoid reskinned templates and build native experiences shaped around real human workflows.',
     heroImage: '/services/app-development.png',
-    heroImageCaption: 'Mobile app development · Neominds',
+    heroImageCaption: 'Mobile app development · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Our Apps',
     trustPoints: [
@@ -367,7 +367,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build cross-platform apps using React Native and Flutter that run on iOS, Android, and sometimes web: from a single shared codebase. You launch faster and maintain less.',
     heroImage: '/services/cross-platform-app-development.png',
-    heroImageCaption: 'Cross-platform app architecture · Neominds',
+    heroImageCaption: 'Cross-platform app architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Cross-Platform Work',
     trustPoints: [
@@ -491,7 +491,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'Off-the-shelf software rarely fits how your business actually works. We build custom software systems: web apps, internal tools, process automation platforms: that match your operations exactly.',
     heroImage: '/services/custom-software-development.png',
-    heroImageCaption: 'Custom software development · Neominds',
+    heroImageCaption: 'Custom software development · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Case Studies',
     trustPoints: [
@@ -615,7 +615,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build AI automation systems that handle document processing, data extraction, report generation, approvals, and other repetitive tasks: so your team can work on things that actually need human judgment.',
     heroImage: '/services/ai-automations.png',
-    heroImageCaption: 'AI automation workflow · Neominds',
+    heroImageCaption: 'AI automation workflow · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Automation Examples',
     trustPoints: [
@@ -739,7 +739,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'You do not need to rebuild your software to use AI. We integrate AI capabilities: search, summarisation, predictions, content generation: into your existing products and platforms.',
     heroImage: '/services/ai-integrations.png',
-    heroImageCaption: 'AI integration architecture · Neominds',
+    heroImageCaption: 'AI integration architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Integration Examples',
     trustPoints: [
@@ -863,7 +863,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build AI agent systems and multi-step reasoning engines that handle complex goals: breaking them into tasks, calling tools, and completing work autonomously with human review where it matters.',
     heroImage: '/services/ai-systems.png',
-    heroImageCaption: 'AI agent system architecture · Neominds',
+    heroImageCaption: 'AI agent system architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See AI Systems We Built',
     trustPoints: [
@@ -987,7 +987,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build e-commerce platforms and online stores: from custom storefronts to headless commerce architectures: designed for high-traffic, high-conversion, and easy management.',
     heroImage: '/services/ecommerce-platform.png',
-    heroImageCaption: 'E-commerce platform architecture · Neominds',
+    heroImageCaption: 'E-commerce platform architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Commerce Work',
     trustPoints: [
@@ -1111,7 +1111,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build software products where AI is the core feature: not an add-on. Learning platforms, intelligent tools, autonomous systems: designed from the ground up with AI as the primary engine.',
     heroImage: '/services/ai-native-software.png',
-    heroImageCaption: 'AI-native software architecture · Neominds',
+    heroImageCaption: 'AI-native software architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See AI Products We Built',
     trustPoints: [
@@ -1235,7 +1235,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build cloud-native software systems on AWS, Azure, and Google Cloud: scalable, secure, and designed to handle real growth without constant engineering attention.',
     heroImage: '/services/cloud-based-software.png',
-    heroImageCaption: 'Cloud-native software architecture · Neominds',
+    heroImageCaption: 'Cloud-native software architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Cloud Projects',
     trustPoints: [
@@ -1359,7 +1359,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build SaaS products end-to-end: multi-tenant architecture, subscription billing, user management, analytics, and the operational infrastructure that makes a SaaS business work.',
     heroImage: '/services/saas-development.png',
-    heroImageCaption: 'SaaS product architecture · Neominds',
+    heroImageCaption: 'SaaS product architecture · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See SaaS Products We Built',
     trustPoints: [
@@ -1483,7 +1483,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build custom analytics dashboards and business intelligence systems that connect your data sources, surface the metrics that matter, and give your team the visibility to make faster decisions.',
     heroImage: '/services/analytics-dashboard.png',
-    heroImageCaption: 'Analytics dashboard · Neominds',
+    heroImageCaption: 'Analytics dashboard · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Dashboard Examples',
     trustPoints: [
@@ -1607,7 +1607,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We build custom software for healthcare businesses: patient portals, clinical telemetry tools, health tracking apps, and hospital management software designed for real clinical workflows.',
     heroImage: '/services/custom-health-software.png',
-    heroImageCaption: 'Healthcare software · Neominds',
+    heroImageCaption: 'Healthcare software · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'View Healthcare Projects',
     trustPoints: [
@@ -1731,7 +1731,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We migrate and modernise legacy software systems: moving from outdated tech stacks to modern, maintainable architectures in phased stages that preserve zero-downtime business continuity.',
     heroImage: '/services/legacy-modernisation.png',
-    heroImageCaption: 'Legacy system modernisation · Neominds',
+    heroImageCaption: 'Legacy system modernisation · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Project',
     secondaryCtaText: 'See Modernisation Cases',
     trustPoints: [
@@ -1855,7 +1855,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We run structured technical training programmes: on AI tools, new software platforms, development practices, and modern tooling, enabling your in-house team to build independently without external agency reliance.',
     heroImage: '/services/training-as-service.png',
-    heroImageCaption: 'Technical training programme · Neominds',
+    heroImageCaption: 'Technical training programme · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Programme',
     secondaryCtaText: 'See Training Options',
     trustPoints: [
@@ -1977,7 +1977,7 @@ export const SERVICES_DATA: Record<string, ServiceData> = {
     heroDescription:
       'We handle the full product engineering process: discovery, scoping, architecture, development, and launch. Built for teams that need a true product engineering partner, not just code monkeys.',
     heroImage: '/services/product-engineering.png',
-    heroImageCaption: 'Product engineering · Neominds',
+    heroImageCaption: 'Product engineering · NeoMinds TechHub',
     primaryCtaText: 'Discuss Your Product',
     secondaryCtaText: 'See Products We Built',
     trustPoints: [

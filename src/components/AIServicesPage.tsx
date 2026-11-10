@@ -206,11 +206,11 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
         'RESPONSIBLE AI',
       ],
       context:
-        'Neominds helped the client transform AI from scattered team initiatives into a scalable engineering capability, introducing governance, standardized practices, and a phased roadmap for AI-assisted and agentic software delivery.',
+        'NeoMinds TechHub helped the client transform AI from scattered team initiatives into a scalable engineering capability, introducing governance, standardized practices, and a phased roadmap for AI-assisted and agentic software delivery.',
       problem:
         'AI adoption was happening unevenly across teams, with no shared practices, governance, or standards. At the same time, years of legacy development had left knowledge distributed across systems, documentation, and teams, making reliable AI adoption more difficult.',
       solution:
-        'Neominds assessed AI readiness across engineering teams, then built the governance framework, standardized practices, and a 3-phase rollout plan tied to the modernization already underway.',
+        'NeoMinds TechHub assessed AI readiness across engineering teams, then built the governance framework, standardized practices, and a 3-phase rollout plan tied to the modernization already underway.',
       metrics: [
         {
           val: '20 stakeholders',
@@ -235,7 +235,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
       problem:
         'Medical coders spent too much time searching reference materials and interpreting coding guidelines while content teams manually maintained complex rules, which slowed productivity and restricted throughput.',
       solution:
-        'Neominds integrated an AI-powered coding assistant and automated validation capabilities that streamlined coding workflows and reduced the effort required to manage coding content.',
+        'NeoMinds TechHub integrated an AI-powered coding assistant and automated validation capabilities that streamlined coding workflows and reduced the effort required to manage coding content.',
       metrics: [
         {
           val: 'Instant guidance',
@@ -323,7 +323,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
       <nav className="ai-nav" aria-label="AI Services Navigation">
         <div className="ai-nav-brand" onClick={onNavigateHome}>
           <div className="ai-nav-logo-icon">N</div>
-          <span className="ai-nav-brand-text">NEOMINDS</span>
+          <span className="ai-nav-brand-text">NEOMINDS TECHHUB</span>
           <span className="ai-nav-brand-badge">AI CORE</span>
         </div>
 
@@ -630,7 +630,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
               <div className="ai-phase-visual">
                 <img
                   src={phase.image}
-                  alt={`${phase.badge}: ${phase.title} - Neominds Enterprise AI Delivery Model`}
+                  alt={`${phase.badge}: ${phase.title} - NeoMinds TechHub Enterprise AI Delivery Model`}
                   loading="lazy"
                 />
               </div>
@@ -752,7 +752,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
             <div className="ai-footer-brand-col">
               <div className="ai-nav-brand" onClick={onNavigateHome}>
                 <div className="ai-nav-logo-icon">N</div>
-                <span className="ai-nav-brand-text">NEOMINDS.AI</span>
+                <span className="ai-nav-brand-text">NEOMINDS TECHHUB AI</span>
               </div>
               <p className="ai-footer-desc">
                 AI-enabled product engineering from architecture through production. Over 30+
@@ -850,7 +850,7 @@ export const AIServicesPage: React.FC<AIServicesPageProps> = ({
           </div>
 
           <div className="ai-footer-bottom">
-            <span>© 2026 Neominds AI Engineering. All rights reserved.</span>
+            <span>© 2026 NeoMinds TechHub AI Engineering. All rights reserved.</span>
             <span>
               Turn ambiguous capabilities into enterprise reality with
               architecture that lasts.

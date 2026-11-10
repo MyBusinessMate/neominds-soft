@@ -11,12 +11,25 @@ interface ClientLogo {
 }
 
 const clientLogos: ClientLogo[] = [
-  { id: 'mindspace', name: 'Mindspace.ai', url: '/images/company-logos/mindspace-ai.png' },
+  { id: 'bytexl', name: 'ByteXL', url: '/images/company-logos/bytexl.webp' },
+  { id: 'fundbot', name: 'Fundbot', url: '/images/company-logos/fundbot.png' },
   { id: 'dotcomweavers', name: 'Dotcomweavers', url: '/images/company-logos/dotcomweavers.png' },
+  { id: 'fero', name: 'Fero Logistics', url: '/images/company-logos/fero.svg' },
   { id: 'mybusinessmate', name: 'MyBusinessMate', url: '/images/company-logos/mybusinessmate.png' },
-  { id: 'oden', name: 'Oden', url: '/images/company-logos/oden.png' },
+  { id: 'the1am', name: 'The 1AM', url: '/images/company-logos/The1AM.png' },
+  { id: 'aiguroo', name: 'AiGuroo', url: '/images/company-logos/AiGuroo.svg' },
+  { id: 'edutech', name: 'EduTech', url: '/images/company-logos/edutech-logo.png' },
+  { id: 'keocapital', name: 'KEO Capital', url: '/images/company-logos/KEO-CAPITAl.png' },
+  { id: 'flexport', name: 'Flexport', url: '/images/company-logos/flexport.webp' },
+  { id: 'flyover', name: 'Flyover', url: '/images/company-logos/logo-flyover-red.svg' },
+  { id: 'interzoon', name: 'Interzoon', url: '/images/company-logos/interzoon-logo.png' },
+  { id: 'expiroo', name: 'Expiroo', url: '/images/company-logos/expiroo-logo.webp' },
+  { id: 'metacognition', name: 'Metacognition', url: '/images/company-logos/metacognition.svg' },
+  { id: 'flavorbomb', name: 'Flavor Bombs', url: '/images/company-logos/flavor_bomb.avif' },
   { id: 'tecnomart', name: 'Tecnomart', url: '/images/company-logos/tecnomart.png' },
   { id: 'laptomart', name: 'Laptomart', url: '/images/company-logos/laptomart.png' },
+  { id: 'oden', name: 'Oden', url: '/images/company-logos/oden.png' },
+  { id: 'mindspace', name: 'Mindspace.ai', url: '/images/company-logos/mindspace-ai.png' },
 ];
 
 const ExperienceSectionComponent: React.FC = () => {
@@ -66,10 +79,10 @@ const ExperienceSectionComponent: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  // Rotate client logos through ticker slots
+  // Rotate client logos through ticker slots (5 batches of 4 logos)
   useEffect(() => {
     const interval = setInterval(() => {
-      setLogoBatch((prev) => (prev + 1) % 3);
+      setLogoBatch((prev) => (prev + 1) % 5);
     }, 2800);
     return () => clearInterval(interval);
   }, []);
@@ -79,10 +92,10 @@ const ExperienceSectionComponent: React.FC = () => {
   const wordsList = headlineText.split(' ');
 
   const slotSets = [
-    [clientLogos[0], clientLogos[4]],
-    [clientLogos[1], clientLogos[5]],
-    [clientLogos[2], clientLogos[0]],
-    [clientLogos[3], clientLogos[1]],
+    [clientLogos[0], clientLogos[4], clientLogos[8], clientLogos[12], clientLogos[16]],
+    [clientLogos[1], clientLogos[5], clientLogos[9], clientLogos[13], clientLogos[17]],
+    [clientLogos[2], clientLogos[6], clientLogos[10], clientLogos[14], clientLogos[18]],
+    [clientLogos[3], clientLogos[7], clientLogos[11], clientLogos[15], clientLogos[0]],
   ];
 
   return (
@@ -367,7 +380,7 @@ const ExperienceSectionComponent: React.FC = () => {
                 >
                   <img
                     src={activeLogo.url}
-                    alt={`${activeLogo.name} - Enterprise Client, Neominds Software Partner`}
+                    alt={`${activeLogo.name} - Enterprise Client, NeoMinds TechHub Software Partner`}
                     loading="lazy"
                     className="experience-client-logo"
                     style={{

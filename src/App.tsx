@@ -17,6 +17,7 @@ import { Footer } from './components/Footer';
 // Lightweight Service Slugs & SEO
 import { isServiceSlug } from './data/serviceSlugs';
 import { updateHeadMetadata } from './utils/seo';
+import { primeCmsOverlay } from './lib/cms/overlay';
 
 // UI Utilities & Banners
 import { CookieConsent } from './components/CookieConsent';
@@ -46,6 +47,9 @@ const ServicesHubPage = lazy(() => import('./components/ServicesHubPage').then((
 const IndustriesHubPage = lazy(() => import('./components/IndustriesHubPage').then((m) => ({ default: m.IndustriesHubPage })));
 const TechnologyPage = lazy(() => import('./components/TechnologyPage').then((m) => ({ default: m.TechnologyPage })));
 const NotFoundPage = lazy(() => import('./components/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
+
+// Admin CMS (lazy — never ships to normal visitors)
+const AdminApp = lazy(() => import('./components/admin/AdminApp').then((m) => ({ default: m.AdminApp })));
 
 // Lazy Modals & Palettes
 const CommandPalette = lazy(() => import('./components/CommandPalette').then((m) => ({ default: m.CommandPalette })));
@@ -120,6 +124,10 @@ export const App: React.FC = () => {
 
     // 1. Pathname takes primary routing precedence (canonical clean URLs)
     if (cleanPath) {
+      // Admin CMS owns the entire /admin/* subtree (handles its own sub-routing).
+      if (cleanPath === 'admin' || cleanPath.startsWith('admin/')) {
+        return { page: 'admin', articleId: null };
+      }
       if (cleanPath === 'services') return { page: 'services', articleId: null };
       if (cleanPath === 'industries') return { page: 'industries', articleId: null };
       if (cleanPath === 'technology' || cleanPath === 'tech-stack') return { page: 'technology', articleId: null };
@@ -240,6 +248,12 @@ export const App: React.FC = () => {
   useEffect(() => {
     updateHeadMetadata(currentPage, selectedArticleId);
   }, [currentPage, selectedArticleId]);
+
+  // Prime the CMS overlay once: pulls published content from Firestore (no-op
+  // when Firebase is unconfigured). Pages fall back to static data meanwhile.
+  useEffect(() => {
+    void primeCmsOverlay();
+  }, []);
 
   // Freeze background scroll when any modal/palette is active
   const isAnyModalOpen = Boolean(
@@ -421,7 +435,7 @@ export const App: React.FC = () => {
           </a>
 
           {/* Global Navigation Header with 11-Service Mega Menu & Mobile Drawer */}
-          {currentPage !== 'ai-product-engineering' && currentPage !== '404' && (
+          {currentPage !== 'ai-product-engineering' && currentPage !== '404' && currentPage !== 'admin' && (
             <Header
               onNavigate={handleNavigate}
               currentPage={currentPage}
@@ -433,6 +447,9 @@ export const App: React.FC = () => {
               VIEW ROUTER: RENDER BASED ON ACTIVE SELECTION
               ======================================================== */}
           <Suspense fallback={<PageLoader />}>
+            {/* Admin CMS — full-screen, own chrome, no site header/footer */}
+            {currentPage === 'admin' && <AdminApp />}
+
             {/* 0. 404 Error Page */}
             {currentPage === '404' && (
               <main id="main-content" className="smooth-page-enter">

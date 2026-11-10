@@ -1329,3 +1329,33 @@ a[role="button"]:active {
   pointer-events: none;
 }
 
+/* ==========================================================================
+   IDEO-Style Team Directory (4 in a row layout)
+   ========================================================================== */
+.team-portrait {
+  background: #F0ECE2;
+  border-radius: 2px;
+}
+
+.team-ideo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(40px, 4.5vw, 60px) clamp(20px, 2.4vw, 32px);
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .team-ideo-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px 24px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .team-ideo-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+}
+
+
