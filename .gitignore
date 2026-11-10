@@ -24,6 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 Thumbs.db
+banner/
+/banner/
 
 # Environment variables
 .env
