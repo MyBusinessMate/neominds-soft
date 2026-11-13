@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { ArrowLeft, ArrowRight, Pause, Play } from 'lucide-react';
 
 interface TestimonialItem {
   id: string;
@@ -12,79 +12,94 @@ interface TestimonialItem {
 
 export const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [fadeKey, setFadeKey] = useState(0);
   const touchStartX = useRef<number | null>(null);
   const touchEndX = useRef<number | null>(null);
 
   const testimonials: TestimonialItem[] = [
     {
-      id: 'mybusinessmate',
-      clientName: 'MyBusinessMate',
-      logoUrl: '/images/company-logos/mybusinessmate.png',
+      id: 'bytexl',
+      clientName: 'ByteXL',
+      logoUrl: '/images/company-logos/bytexl.webp',
       quote:
-        'NeoMinds TechHub built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
-      author: 'Daniel Brooks',
-      title: 'Operations Director, MyBusinessMate',
+        'NeoMinds TechHub re-architected our high-concurrency coding exam platform to handle 100,000+ simultaneous students across major universities with zero downtime and sub-second code evaluation latencies.',
+      author: 'Karunakar T.',
+      title: 'VP of Technology, ByteXL',
     },
     {
-      id: 'dotcomweavers',
-      clientName: 'Dotcomweavers',
-      logoUrl: '/images/company-logos/dotcomweavers.png',
+      id: 'fero',
+      clientName: 'Fero Logistics',
+      logoUrl: '/images/company-logos/fero.svg',
       quote:
-        'NeoMinds TechHub delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
-      author: 'Michael Anderson',
-      title: 'Head of Engineering, Dotcomweavers',
+        'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineering team moves fast, writes rock-solid code, and solved complex geospatial routing challenges for our fleet.',
+      author: 'Abhinav Sharma',
+      title: 'Head of Engineering, Fero',
     },
     {
-      id: 'mindspace',
-      clientName: 'Mindspace.ai',
-      logoUrl: '/images/company-logos/mindspace-ai.png',
+      id: 'interzoon',
+      clientName: 'Interzoon',
+      logoUrl: '/images/company-logos/interzoon-logo.png',
       quote:
-        'NeoMinds TechHub engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
-      author: 'Sarah Mitchell',
-      title: 'Product Lead, Mindspace.ai',
+        'Their team took full ownership of our core microservices migration and Kubernetes pipelines. Deployments that previously took hours now deploy continuously in minutes with zero service interruption.',
+      author: 'Marcus Weber',
+      title: 'Principal Architect, Interzoon',
     },
     {
-      id: 'laptomart',
-      clientName: 'Laptomart',
-      logoUrl: '/images/company-logos/laptomart.png',
+      id: 'expiroo',
+      clientName: 'Expiroo',
+      logoUrl: '/images/company-logos/expiroo-logo.webp',
       quote:
-        'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds TechHub. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
-      author: 'James Wilson',
-      title: 'Technology Director, Laptomart',
+        'NeoMinds TechHub engineered our real-time inventory monitoring application and automated alert pipelines. The platform gives retailers instant visibility across supply chains and reduced shrinkage dramatically.',
+      author: "Liam O'Connor",
+      title: 'Product Director, Expiroo',
     },
     {
-      id: 'tecnomart',
-      clientName: 'Tecnomart',
-      logoUrl: '/images/company-logos/tecnomart.png',
+      id: 'aiguroo',
+      clientName: 'AiGuroo',
+      logoUrl: '/images/company-logos/AiGuroo.svg',
       quote:
-        'The custom enterprise ERP integrations and distributed data pipelines NeoMinds TechHub engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
-      author: 'Robert Bennett',
-      title: 'Infrastructure Architect, Tecnomart',
+        'The team built scalable inference pipelines and production-grade vector search workflows for our AI platform. They bridged research models into high-availability production APIs with outstanding speed.',
+      author: 'Dr. Elena Rostova',
+      title: 'Chief AI Scientist, AiGuroo',
     },
     {
-      id: 'oden',
-      clientName: 'Oden',
-      logoUrl: '/images/company-logos/oden.png',
+      id: 'fundbot',
+      clientName: 'Fundbot',
+      logoUrl: '/images/company-logos/fundbot.png',
       quote:
-        'NeoMinds TechHub engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
-      author: 'Alexander Reed',
-      title: 'VP of Platform Engineering, Oden',
+        'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
+      author: 'Tariq Al-Mansoor',
+      title: 'Co-Founder & CTO, Fundbot',
     },
   ];
 
   const current = testimonials[currentIndex];
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+    setFadeKey((k) => k + 1);
+  }, [testimonials.length]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
+    setFadeKey((k) => k + 1);
+  }, [testimonials.length]);
+
+  // Dynamic Auto-Rotation: Cycles through verified client reviews every 5.5 seconds
+  useEffect(() => {
+    if (isPaused) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setFadeKey((k) => k + 1);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, [isPaused, testimonials.length]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX;
     touchEndX.current = null;
+    setIsPaused(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -92,6 +107,7 @@ export const Testimonials: React.FC = () => {
   };
 
   const handleTouchEnd = () => {
+    setIsPaused(false);
     if (touchStartX.current === null || touchEndX.current === null) return;
     const diff = touchStartX.current - touchEndX.current;
     const minSwipeDistance = 45;
@@ -161,7 +177,10 @@ export const Testimonials: React.FC = () => {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => setCurrentIndex(idx)}
+                    onClick={() => {
+                      setCurrentIndex(idx);
+                      setFadeKey((k) => k + 1);
+                    }}
                     style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -221,6 +240,8 @@ export const Testimonials: React.FC = () => {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -235,7 +256,7 @@ export const Testimonials: React.FC = () => {
               userSelect: 'none',
             }}
           >
-            <div>
+            <div key={fadeKey} className="nm-review-content">
               {/* Client Logo Header */}
               <div
                 style={{
@@ -275,16 +296,36 @@ export const Testimonials: React.FC = () => {
                   </span>
                 </div>
 
-                <span
-                  style={{
-                    fontFamily: 'var(--typography-mono-family)',
-                    fontSize: '13px',
-                    fontWeight: 600,
-                    color: '#2b2b2b',
-                  }}
-                >
-                  0{currentIndex + 1} / 0{testimonials.length}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <button
+                    onClick={() => setIsPaused((prev) => !prev)}
+                    title={isPaused ? 'Resume auto-rotation' : 'Pause auto-rotation'}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: '4px',
+                      color: isPaused ? '#fe6200' : '#66615c',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                    aria-label={isPaused ? 'Resume auto-rotation' : 'Pause auto-rotation'}
+                  >
+                    {isPaused ? <Play size={13} /> : <Pause size={13} />}
+                  </button>
+
+                  <span
+                    style={{
+                      fontFamily: 'var(--typography-mono-family)',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      color: '#2b2b2b',
+                    }}
+                  >
+                    0{currentIndex + 1} / 0{testimonials.length}
+                  </span>
+                </div>
               </div>
 
               {/* Monumental Quote in Serif */}
@@ -306,6 +347,8 @@ export const Testimonials: React.FC = () => {
             {/* Author Credentials & Pagination Controls */}
             <div>
               <div
+                key={`author-${fadeKey}`}
+                className="nm-review-content"
                 style={{
                   borderTop: '1px solid var(--colors-border-light, #e4e2e1)',
                   paddingTop: '20px',
@@ -484,6 +527,19 @@ export const Testimonials: React.FC = () => {
       </div>
 
       <style>{`
+        @keyframes nmFadeSlide {
+          0% {
+            opacity: 0.25;
+            transform: translateY(8px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .nm-review-content {
+          animation: nmFadeSlide 0.35s ease-out;
+        }
         @media (max-width: 767px) {
           .testimonials-client-roster {
             display: none !important;

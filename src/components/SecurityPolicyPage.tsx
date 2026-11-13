@@ -80,7 +80,7 @@ export const SecurityPolicyPage: React.FC<SecurityPolicyPageProps> = ({
               2. Vulnerability Disclosure & Incident Response
             </h2>
             <p>
-              We maintain a dedicated Security Incident Response Team (SIRT) on standby 24/7/365. Security researchers and enterprise partners can report vulnerabilities directly to our security engineering team at <a href="mailto:security@neomindstechhub.co" style={{ color: '#fe6200', fontWeight: 600 }}>security@neomindstechhub.co</a>. We acknowledge receipt within 4 business hours.
+              We maintain a dedicated Security Incident Response Team (SIRT) on standby 24/7/365. Security researchers and enterprise partners can report vulnerabilities directly to our security engineering team at <a href="mailto:letstalk@neomindstechhub.com" style={{ color: '#fe6200', fontWeight: 600 }}>letstalk@neomindstechhub.com</a>. We acknowledge receipt within 4 business hours.
             </p>
           </div>
         </div>

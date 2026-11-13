@@ -20,7 +20,7 @@ const clientLogos: ClientLogo[] = [
   { id: 'aiguroo', name: 'AiGuroo', url: '/images/company-logos/AiGuroo.svg' },
   { id: 'edutech', name: 'EduTech', url: '/images/company-logos/edutech-logo.png' },
   { id: 'keocapital', name: 'KEO Capital', url: '/images/company-logos/KEO-CAPITAl.png' },
-  { id: 'flexport', name: 'Flexport', url: '/images/company-logos/flexport.webp' },
+  { id: 'flexport', name: 'Flexport', url: '/images/company-logos/flexport-light.svg' },
   { id: 'flyover', name: 'Flyover', url: '/images/company-logos/logo-flyover-red.svg' },
   { id: 'interzoon', name: 'Interzoon', url: '/images/company-logos/interzoon-logo.png' },
   { id: 'expiroo', name: 'Expiroo', url: '/images/company-logos/expiroo-logo.webp' },

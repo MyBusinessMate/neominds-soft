@@ -17,7 +17,9 @@ const OFFICE_LOCATION = {
   cityStateZip: 'Hyderabad-500001, Telangana State',
   country: 'India',
   fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State',
-  email: 'contact@neomindstechhub.com',
+  email: 'letstalk@neomindstechhub.com',
+  phoneUK: '+44 7780 395866',
+  phoneIndia: '+91 95156 54804',
   workingHours: 'Mon – Fri: 9:00 AM – 6:00 PM IST',
 };
 
@@ -106,9 +108,9 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
         </RevealElement>
 
         <RevealElement variant="card" delay={0.12}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <a
-              href="mailto:contact@neomindstechhub.com"
+              href="mailto:letstalk@neomindstechhub.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -125,11 +127,11 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
               }}
             >
               <Mail size={18} style={{ color: '#fe6200' }} />
-              <span>contact@neomindstechhub.com</span>
+              <span>letstalk@neomindstechhub.com</span>
             </a>
 
             <a
-              href="tel:+914040000000"
+              href="tel:+447780395866"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -146,7 +148,28 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
               }}
             >
               <Phone size={18} style={{ color: '#fe6200' }} />
-              <span>+91 40 4000 0000</span>
+              <span>+44 7780 395866 (UK)</span>
+            </a>
+
+            <a
+              href="tel:+919515654804"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '10px',
+                color: '#000000',
+                fontSize: '15px',
+                fontWeight: 600,
+                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
+                border: '1px solid #f0ece2',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                boxShadow: 'none',
+              }}
+            >
+              <Phone size={18} style={{ color: '#fe6200' }} />
+              <span>+91 95156 54804 (India)</span>
             </a>
           </div>
         </RevealElement>
@@ -464,6 +487,18 @@ const ContactsPageComponent: React.FC<ContactsPageProps> = ({
                     <span style={{ fontWeight: 600, color: '#000000' }}>Email: </span>
                     <a href={`mailto:${OFFICE_LOCATION.email}`} style={{ color: '#fe6200', textDecoration: 'none', fontWeight: 600 }}>
                       {OFFICE_LOCATION.email}
+                    </a>
+                  </div>
+                  <div>
+                    <span style={{ fontWeight: 600, color: '#000000' }}>Phone (UK): </span>
+                    <a href={`tel:${OFFICE_LOCATION.phoneUK.replace(/\s+/g, '')}`} style={{ color: '#000000', textDecoration: 'none', fontWeight: 600 }}>
+                      {OFFICE_LOCATION.phoneUK}
+                    </a>
+                  </div>
+                  <div>
+                    <span style={{ fontWeight: 600, color: '#000000' }}>Phone (India): </span>
+                    <a href={`tel:${OFFICE_LOCATION.phoneIndia.replace(/\s+/g, '')}`} style={{ color: '#000000', textDecoration: 'none', fontWeight: 600 }}>
+                      {OFFICE_LOCATION.phoneIndia}
                     </a>
                   </div>
                   <div>

@@ -4,15 +4,16 @@ import { TeamMember } from '../../data/teamData';
 
 interface TeamCompactItemProps {
   member: TeamMember;
+  isLarge?: boolean;
   onClick?: () => void;
 }
 
-export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member }) => {
+export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member, isLarge = false }) => {
   const [imgError, setImgError] = useState(false);
 
   return (
     <div
-      className="team-member-card"
+      className={`team-member-card ${isLarge ? 'team-member-card--large' : ''}`}
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -26,7 +27,7 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member }) => {
         userSelect: 'none',
       }}
     >
-      {/* 1. Square Portrait Image Container with uniform #F0ECE2 background */}
+      {/* 1. Square Portrait Image Container with uniform #F0ECE2 background matching reference */}
       <div
         className="team-portrait"
         style={{
@@ -44,14 +45,14 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member }) => {
           justifyContent: 'center',
         }}
       >
-        {/* Layer on bg below pic: gradient flowing from top (transparent) to down (white) */}
+        {/* Soft bottom gradient layer subtly blending portrait silhouette into card background */}
         <div
           aria-hidden="true"
           className="team-portrait-gradient-layer"
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(180deg, transparent 30%, #ffffff 100%)',
+            background: 'linear-gradient(180deg, transparent 35%, rgba(255, 255, 255, 0.7) 85%, #ffffff 100%)',
             zIndex: 1,
             pointerEvents: 'none',
           }}
@@ -87,19 +88,19 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member }) => {
               color: '#9ca3af',
             }}
           >
-            <User size={48} strokeWidth={1.5} color="#fe6200" />
+            <User size={isLarge ? 56 : 44} strokeWidth={1.5} color="#fe6200" />
           </div>
         )}
       </div>
 
-      {/* 2. Team Member Name (Bold black typography, ~21px, font weight 700) */}
+      {/* 2. Team Member Name (Bold black DM Sans typography) */}
       <h3
         style={{
           fontFamily: "'DM Sans', sans-serif",
-          fontSize: '21px',
+          fontSize: isLarge ? 'clamp(20px, 1.7vw, 24px)' : 'clamp(17px, 1.35vw, 19px)',
           fontWeight: 700,
           color: '#000000',
-          margin: '18px 0 6px 0',
+          margin: isLarge ? '18px 0 5px 0' : '14px 0 4px 0',
           lineHeight: 1.25,
           letterSpacing: '-0.02em',
         }}
@@ -107,11 +108,11 @@ export const TeamCompactItem: React.FC<TeamCompactItemProps> = ({ member }) => {
         {member.name}
       </h3>
 
-      {/* 3. Team Member Designation (Muted grey typography, ~17px, font weight 400) */}
+      {/* 3. Team Member Designation (Muted grey DM Sans typography) */}
       <p
         style={{
           fontFamily: "'DM Sans', sans-serif",
-          fontSize: '17px',
+          fontSize: isLarge ? 'clamp(15px, 1.2vw, 17px)' : 'clamp(13.5px, 1.05vw, 15px)',
           fontWeight: 400,
           color: '#66615c',
           margin: 0,

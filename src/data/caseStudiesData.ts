@@ -1,53 +1,53 @@
 import { ServiceCaseStudyRef } from '../types/service';
 
 export const VERIFIED_CASE_STUDIES: Record<string, ServiceCaseStudyRef> = {
-  authenticom: {
-    id: 'authenticom',
-    title: 'Automotive Data Ingestion & Real-Time Integration Platform',
-    client: 'Authenticom',
-    category: 'Enterprise Engineering',
-    stats: '15,000+ Dealerships Synchronized',
+  bytexl: {
+    id: 'bytexl-lms',
+    title: 'High-Concurrency Coding Exam & LMS Platform',
+    client: 'ByteXL',
+    category: 'EdTech & Cloud',
+    stats: '100,000+ Active Students Synchronized',
     metric: '99.99%',
-    metricLabel: 'Data Pipeline Uptime SLA',
+    metricLabel: 'Evaluation Pipeline Uptime SLA',
     description:
-      'Engineered high-throughput enterprise data pipelines processing millions of vehicle inventory records daily across 15,000+ North American automotive dealerships with bi-directional DMS synchronization.',
-    tags: ['Data Engineering', 'AWS', 'PostgreSQL', 'Kafka', 'ETL Pipelines'],
+      'Re-architected high-concurrency coding exam platform to handle 100,000+ simultaneous students across major universities with zero downtime and sub-second code evaluation latencies.',
+    tags: ['EdTech', 'React', 'Node.js', 'MongoDB', 'AWS'],
   },
-  trubridge: {
-    id: 'trubridge',
-    title: 'Automated Medical Coding & Claims Verification Engine',
-    client: 'TruBridge (formerly TruCode)',
-    category: 'Healthcare',
-    stats: '40% Reduction in Claims Denials',
-    metric: '2.4M',
-    metricLabel: 'Patient Encounters Analyzed / Mo',
+  fero: {
+    id: 'fero-invoice-automation',
+    title: 'Autonomous Freight Invoice Verification & Rate Matching Engine',
+    client: 'Fero Logistics',
+    category: 'Logistics AI',
+    stats: '85% Automated Audit Rate',
+    metric: '3-Way',
+    metricLabel: 'Rate Card Automated Match',
     description:
-      'Built a HIPAA-compliant clinical decision support and medical encoder platform that accelerates hospital billing accuracy, integrates ICD-10/CPT guidelines, and cuts insurance claim rejection rates.',
-    tags: ['Healthcare', 'HIPAA / HITECH', 'C# / .NET Core', 'Angular', 'ICD-10 Engine'],
+      'Engineered AI freight invoice parsing, automated contract rate matching, and discrepancy resolution microservices for enterprise logistics fleets.',
+    tags: ['Logistics AI', 'Python', 'FastAPI', 'PostgreSQL', 'Docker'],
   },
-  plato: {
-    id: 'plato',
-    title: 'Autonomous Delivery Dispatch & Fleet Optimization',
-    client: 'Plato Delivery Systems',
-    category: 'Logistics & Mobile',
-    stats: '3.5x Increase in Delivery Velocity',
-    metric: '< 150ms',
-    metricLabel: 'Route Optimization Latency',
+  interzoon: {
+    id: 'interzoon-cloud-system',
+    title: 'Cloud Enterprise Management & Resource Allocation Platform',
+    client: 'Interzoon',
+    category: 'Cloud Architecture',
+    stats: '50% Infrastructure Cost Reduction',
+    metric: '99.99%',
+    metricLabel: 'System Availability SLA',
     description:
-      'Developed an algorithmic dispatching engine that dynamically pairs on-demand drivers with local retail fulfillment hubs, reducing delivery costs by 28% and driving company profitability.',
-    tags: ['Logistics & IoT', 'Golang', 'Google Cloud', 'Real-Time Geo-Routing', 'React Native'],
+      'Engineered centralized cloud platform on AWS EKS using Infrastructure as Code (Terraform) and decoupled containerized microservices for multinational operations.',
+    tags: ['Cloud Platform', 'AWS', 'Kubernetes', 'Terraform', 'PostgreSQL'],
   },
-  adventr: {
-    id: 'adventr',
-    title: 'Interactive Smart-Video Generation & Analytics Suite',
-    client: 'Adventr',
-    category: 'Enterprise AI & Media',
-    stats: '600% Higher User Engagement',
-    metric: '4K 60fps',
-    metricLabel: 'Zero-Latency Branching Video',
+  fundbot: {
+    id: 'fundbot-sql-chatbot',
+    title: 'Natural Language Financial SQL Query Engine & Automated BI',
+    client: 'Fundbot',
+    category: 'Fintech AI',
+    stats: '98.5% Text-to-SQL Query Accuracy',
+    metric: '< 120ms',
+    metricLabel: 'Query Execution Latency',
     description:
-      'Constructed a cloud-native interactive video authoring suite enabling creators and global brands to build clickable, branching video experiences with real-time viewer behavior heatmaps.',
-    tags: ['Interactive Media', 'WebRTC', 'AWS Elemental', 'React', 'AI Video Analytics'],
+      'Architected natural language SQL querying pipeline allowing financial analysts and portfolio managers to query private relational ledgers conversationally.',
+    tags: ['Fintech AI', 'Python', 'FastAPI', 'OpenAI', 'PostgreSQL'],
   },
   cnote: {
     id: 'cnote',
@@ -104,28 +104,28 @@ export const getCaseStudiesForFamily = (family: string): ServiceCaseStudyRef[] =
   switch (family) {
     case 'Fintech':
       return [
+        VERIFIED_CASE_STUDIES.fundbot,
         VERIFIED_CASE_STUDIES.cnote,
         VERIFIED_CASE_STUDIES.cityindex,
-        VERIFIED_CASE_STUDIES.authenticom,
       ];
     case 'Healthcare':
       return [
-        VERIFIED_CASE_STUDIES.trubridge,
         VERIFIED_CASE_STUDIES.delphi,
-        VERIFIED_CASE_STUDIES.authenticom,
+        VERIFIED_CASE_STUDIES.bytexl,
+        VERIFIED_CASE_STUDIES.interzoon,
       ];
     case 'Enterprise AI':
       return [
-        VERIFIED_CASE_STUDIES.adventr,
+        VERIFIED_CASE_STUDIES.fundbot,
+        VERIFIED_CASE_STUDIES.fero,
         VERIFIED_CASE_STUDIES.delphi,
-        VERIFIED_CASE_STUDIES.authenticom,
       ];
     case 'Core Technology':
     default:
       return [
-        VERIFIED_CASE_STUDIES.authenticom,
-        VERIFIED_CASE_STUDIES.plato,
-        VERIFIED_CASE_STUDIES.maersk,
+        VERIFIED_CASE_STUDIES.bytexl,
+        VERIFIED_CASE_STUDIES.interzoon,
+        VERIFIED_CASE_STUDIES.fero,
       ];
   }
 };

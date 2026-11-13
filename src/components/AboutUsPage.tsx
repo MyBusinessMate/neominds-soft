@@ -1,10 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   ArrowRight,
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
   Mail,
+  Phone,
 } from 'lucide-react';
 import {
   ABOUT_TESTIMONIALS,
@@ -49,6 +50,14 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
     setCurrentTestimonialIndex((prev) =>
       prev === 0 ? ABOUT_TESTIMONIALS.length - 1 : prev - 1
     );
+  }, []);
+
+  // Automatically cycle through client reviews every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonialIndex((prev) => (prev + 1) % ABOUT_TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   const handleFormSubmit = useCallback((e: React.FormEvent) => {
@@ -437,20 +446,37 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             <p className="s-about-locations__desc">
               Visit or reach out to our engineering leadership team.
             </p>
-            <a
-              href="mailto:contact@neomindstechhub.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#fe6200',
-                fontWeight: 600,
-                textDecoration: 'none',
-              }}
-            >
-              <Mail size={16} />
-              <span>contact@neomindstechhub.com</span>
-            </a>
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a
+                href="mailto:letstalk@neomindstechhub.com"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#fe6200',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                <Mail size={16} />
+                <span>letstalk@neomindstechhub.com</span>
+              </a>
+              <a
+                href="tel:+447780395866"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: '#000000',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                }}
+              >
+                <Phone size={14} color="#fe6200" />
+                <span>+44 7780 395866 (UK)</span>
+              </a>
+            </div>
           </div>
 
           <div className="s-about-locations__grid" style={{ maxWidth: '640px' }}>
@@ -461,13 +487,32 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                 <br />
                 {ABOUT_LOCATION.postalCode}
               </p>
-              <a
-                href="mailto:contact@neomindstechhub.com"
-                className="s-about-locations__phone"
-              >
-                <Mail size={13} />
-                <span>{ABOUT_LOCATION.email}</span>
-              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <a
+                  href={`mailto:${ABOUT_LOCATION.email}`}
+                  className="s-about-locations__phone"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Mail size={13} color="#fe6200" />
+                  <span>{ABOUT_LOCATION.email}</span>
+                </a>
+                <a
+                  href="tel:+447780395866"
+                  className="s-about-locations__phone"
+                  style={{ textDecoration: 'none', color: '#000000' }}
+                >
+                  <Phone size={13} color="#fe6200" />
+                  <span>+44 7780 395866 (UK Line)</span>
+                </a>
+                <a
+                  href="tel:+919515654804"
+                  className="s-about-locations__phone"
+                  style={{ textDecoration: 'none', color: '#000000' }}
+                >
+                  <Phone size={13} color="#fe6200" />
+                  <span>+91 95156 54804 (India HQ)</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

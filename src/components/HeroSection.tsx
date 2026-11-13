@@ -15,7 +15,7 @@ const clientLogos = [
   { name: 'Fero Logistics', logoUrl: '/images/company-logos/fero.svg' },
   { name: 'MyBusinessMate', logoUrl: '/images/company-logos/mybusinessmate.png' },
   { name: 'The 1AM', logoUrl: '/images/company-logos/The1AM.png' },
-  { name: 'Flexport', logoUrl: '/images/company-logos/flexport.webp' },
+  { name: 'Flexport', logoUrl: '/images/company-logos/flexport-light.svg' },
   { name: 'AiGuroo', logoUrl: '/images/company-logos/AiGuroo.svg' },
   { name: 'EduTech', logoUrl: '/images/company-logos/edutech-logo.png' },
   { name: 'Interzoon', logoUrl: '/images/company-logos/interzoon-logo.png' },
@@ -406,65 +406,36 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             Trusted by Forward-Thinking Product & Engineering Teams
           </span>
 
-          {/* Logo Showcase with subtle hover lift */}
+          {/* Single-line continuous looping logo marquee (Right to Left, Logos only) */}
           <div
-            className="hero-client-strip-logos"
+            className="hero-logo-marquee-viewport"
             style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: 'clamp(20px, 4.2vw, 48px)',
               width: '100%',
+              overflow: 'hidden',
+              position: 'relative',
+              maskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
+              WebkitMaskImage: 'linear-gradient(to right, transparent, black 6%, black 94%, transparent)',
             }}
           >
-            {clientLogos.map((client) => (
-              <div
-                key={client.name}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  opacity: 0.85,
-                  transition: 'opacity 0.25s ease, transform 0.25s ease',
-                  cursor: 'default',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.opacity = '1';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.opacity = '0.85';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <img
-                  src={client.logoUrl}
-                  alt={client.name}
-                  style={{
-                    height: '24px',
-                    width: 'auto',
-                    objectFit: 'contain',
-                    filter: 'grayscale(100%) brightness(0.2)',
-                  }}
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
-                />
-                <span
-                  className="hero-client-name"
-                  style={{
-                    fontSize: '16.5px',
-                    fontWeight: 700,
-                    letterSpacing: '-0.02em',
-                    color: '#1a1a1a',
-                    fontFamily: "'DM Sans', sans-serif",
-                  }}
+            <div className="hero-logo-marquee-track">
+              {[...clientLogos, ...clientLogos].map((client, idx) => (
+                <div
+                  key={`${client.name}-${idx}`}
+                  className="hero-logo-marquee-item"
+                  title={client.name}
                 >
-                  {client.name}
-                </span>
-              </div>
-            ))}
+                  <img
+                    src={client.logoUrl}
+                    alt={client.name}
+                    className="hero-logo-img"
+                    loading="lazy"
+                    onError={(e) => {
+                      (e.target as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -478,6 +449,67 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
 
         .desktop-hero-layout {
           display: grid;
+        }
+
+        /* Universal Client Strip Single-Line Looping Marquee (Runs on Desktop & Mobile) */
+        .hero-logo-marquee-viewport {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .hero-logo-marquee-track {
+          display: flex !important;
+          flex-direction: row !important;
+          flex-wrap: nowrap !important;
+          align-items: center !important;
+          gap: 64px !important;
+          width: max-content !important;
+          animation: heroLogoMarquee 26s linear infinite !important;
+          will-change: transform;
+          padding: 8px 0;
+        }
+
+        .hero-logo-marquee-track:hover {
+          animation-play-state: paused !important;
+        }
+
+        .hero-logo-marquee-item {
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          flex-shrink: 0 !important;
+          opacity: 0.82;
+          transition: opacity 0.25s ease, transform 0.25s ease;
+          cursor: pointer;
+        }
+
+        .hero-logo-marquee-item:hover {
+          opacity: 1;
+          transform: scale(1.08);
+        }
+
+        .hero-logo-img {
+          height: 30px !important;
+          max-width: 130px !important;
+          width: auto !important;
+          object-fit: contain !important;
+          filter: grayscale(100%) brightness(0.25);
+          transition: filter 0.25s ease, transform 0.25s ease;
+          display: block;
+        }
+
+        .hero-logo-marquee-item:hover .hero-logo-img {
+          filter: grayscale(0%) brightness(1);
+        }
+
+        @keyframes heroLogoMarquee {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-50%, 0, 0);
+          }
         }
 
         /* Mobile Layout Breakpoint (< 860px) */
@@ -599,13 +631,14 @@ const HeroSectionComponent: React.FC<HeroSectionProps> = ({ onTalkClick }) => {
             padding-bottom: 20px !important;
           }
 
-          .hero-client-strip-logos {
-            gap: 12px 20px !important;
-            padding: 4px 8px !important;
+          .hero-logo-marquee-track {
+            gap: 40px !important;
+            animation-duration: 20s !important;
           }
 
-          .hero-client-name {
-            font-size: 15px !important;
+          .hero-logo-img {
+            height: 24px !important;
+            max-width: 100px !important;
           }
         }
       `}</style>

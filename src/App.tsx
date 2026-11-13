@@ -21,6 +21,7 @@ import { primeCmsOverlay } from './lib/cms/overlay';
 
 // UI Utilities & Banners
 import { CookieConsent } from './components/CookieConsent';
+import { AIChatbot } from './components/AIChatbot';
 import { Toast, ToastMessage } from './components/Toast';
 import { CinematicScroll } from './components/lightswind/cinematic-scroll';
 import { CustomLoader } from './components/CustomLoader';
@@ -857,6 +858,17 @@ export const App: React.FC = () => {
 
           {/* EU / Global Cookie Consent Banner */}
           <CookieConsent onOpenPrivacy={() => handleSelectPage('privacy-policy')} />
+
+          {/* Interactive AI Chatbot Assistant with Popping Teaser Bubble */}
+          <AIChatbot
+            onNavigatePage={(pageOrTarget) => {
+              if (pageOrTarget.startsWith('#')) {
+                handleNavigate(pageOrTarget);
+              } else {
+                handleSelectPage(pageOrTarget as PageType);
+              }
+            }}
+          />
 
           {/* Toast Notification Container */}
           <Toast toasts={toasts} onDismiss={removeToast} />

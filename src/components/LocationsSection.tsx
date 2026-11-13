@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Facebook, Linkedin, Instagram, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Facebook, Linkedin, Instagram, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { ScrollReveal, RevealElement } from './scroll-reveal';
 
 interface LocationsSectionProps {
@@ -21,7 +21,9 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
     country: 'India',
     coordinates: '17.4018° N, 78.4772° E',
     fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State, India',
-    email: 'contact@neomindstechhub.com',
+    email: 'letstalk@neomindstechhub.com',
+    phoneUK: '+44 7780 395866',
+    phoneIndia: '+91 95156 54804',
     hours: 'Mon – Fri: 09:00 – 18:00 IST',
     timezone: 'Asia/Kolkata (UTC+5:30)',
   };
@@ -151,7 +153,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))',
                     gap: '16px',
                     marginBottom: '26px',
                     paddingTop: '20px',
@@ -174,10 +176,10 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                       Email Dispatch
                     </span>
                     <a
-                      href="mailto:contact@neomindstechhub.com"
+                      href="mailto:letstalk@neomindstechhub.com"
                       style={{
                         color: '#fe6200',
-                        fontSize: '14px',
+                        fontSize: '13.5px',
                         fontWeight: 600,
                         textDecoration: 'none',
                         fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
@@ -186,8 +188,55 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                         gap: '6px',
                       }}
                     >
-                      <Mail size={15} /> contact@neomindstechhub.com
+                      <Mail size={15} /> letstalk@neomindstechhub.com
                     </a>
+                  </div>
+
+                  <div>
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '11px',
+                        fontWeight: 700,
+                        color: '#66615c',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.08em',
+                        marginBottom: '6px',
+                        fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
+                      }}
+                    >
+                      Direct Lines
+                    </span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <a
+                        href="tel:+447780395866"
+                        style={{
+                          color: '#000000',
+                          fontSize: '13px',
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                        }}
+                      >
+                        <Phone size={13} color="#fe6200" /> +44 7780 395866 (UK)
+                      </a>
+                      <a
+                        href="tel:+919515654804"
+                        style={{
+                          color: '#000000',
+                          fontSize: '13px',
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                        }}
+                      >
+                        <Phone size={13} color="#fe6200" /> +91 95156 54804 (IN)
+                      </a>
+                    </div>
                   </div>
 
                   <div>
@@ -208,7 +257,7 @@ export const LocationsSection: React.FC<LocationsSectionProps> = ({ onSuccessToa
                     <span
                       style={{
                         color: '#111111',
-                        fontSize: '14px',
+                        fontSize: '13.5px',
                         fontWeight: 500,
                         fontFamily: "var(--typography-body-family, 'DM Sans'), sans-serif",
                       }}

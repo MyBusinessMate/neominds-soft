@@ -54,6 +54,57 @@ interface HeaderProps {
   onSelectPage?: (page: PageType, articleId?: string) => void;
 }
 
+const HEADER_CLIENT_REVIEWS = [
+  {
+    client: 'ByteXL',
+    role: 'VP of Technology',
+    author: 'Karunakar T.',
+    logoUrl: '/images/company-logos/bytexl.webp',
+    quote:
+      'NeoMinds TechHub re-architected our coding exam platform to handle 100,000+ simultaneous students across major universities with zero downtime and sub-second evaluation latencies.',
+  },
+  {
+    client: 'Fero Logistics',
+    role: 'Head of Engineering',
+    author: 'Abhinav Sharma',
+    logoUrl: '/images/company-logos/fero.svg',
+    quote:
+      'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineers write rock-solid code and solved complex routing challenges.',
+  },
+  {
+    client: 'Interzoon',
+    role: 'Principal Architect',
+    author: 'Marcus Weber',
+    logoUrl: '/images/company-logos/interzoon-logo.png',
+    quote:
+      'Their team took full ownership of our core microservices migration and Kubernetes pipelines. Deployments that previously took hours now deploy continuously in minutes with zero interruption.',
+  },
+  {
+    client: 'Expiroo',
+    role: 'Product Director',
+    author: "Liam O'Connor",
+    logoUrl: '/images/company-logos/expiroo-logo.webp',
+    quote:
+      'NeoMinds TechHub engineered our real-time inventory monitoring application and automated alert pipelines. The platform gives retailers instant visibility across supply chains and reduced waste.',
+  },
+  {
+    client: 'AiGuroo',
+    role: 'Chief AI Scientist',
+    author: 'Dr. Elena Rostova',
+    logoUrl: '/images/company-logos/AiGuroo.svg',
+    quote:
+      'The team built scalable inference pipelines and production-grade vector search workflows for our AI platform. They bridged research models into high-availability production APIs with outstanding speed.',
+  },
+  {
+    client: 'Fundbot',
+    role: 'Co-Founder & CTO',
+    author: 'Tariq Al-Mansoor',
+    logoUrl: '/images/company-logos/fundbot.png',
+    quote:
+      'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
+  },
+];
+
 export const Header: React.FC<HeaderProps> = ({
   onNavigate,
   currentPage = 'home',
@@ -65,6 +116,21 @@ export const Header: React.FC<HeaderProps> = ({
   const [activeMenu, setActiveMenu] = useState<'what-we-do' | 'who-we-are' | 'insights' | 'case-studies' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
+  const [headerReviewIdx, setHeaderReviewIdx] = useState(0);
+  const [headerReviewFading, setHeaderReviewFading] = useState(false);
+
+  // Auto-rotate reviews in Company dropdown every 4.5 seconds
+  useEffect(() => {
+    if (activeMenu !== 'who-we-are') return;
+    const interval = setInterval(() => {
+      setHeaderReviewFading(true);
+      setTimeout(() => {
+        setHeaderReviewIdx((prev) => (prev + 1) % HEADER_CLIENT_REVIEWS.length);
+        setHeaderReviewFading(false);
+      }, 200);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [activeMenu]);
 
   // Lock body scroll and pause Lenis when mobile menu is open to ensure clean scroll on small viewports
   useEffect(() => {
@@ -126,11 +192,6 @@ export const Header: React.FC<HeaderProps> = ({
 
   const handleMouseLeave = useCallback(() => {
     setActiveMenu(null);
-  }, []);
-
-  const handleMenuToggle = useCallback((e: React.MouseEvent, menu: 'what-we-do' | 'who-we-are' | 'insights' | 'case-studies') => {
-    e.stopPropagation();
-    setActiveMenu((prev) => (prev === menu ? null : menu));
   }, []);
 
   const navigateToPage = useCallback((page: PageType, articleId?: string) => {
@@ -314,7 +375,10 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseEnter={() => handleMouseEnter('what-we-do')}
             >
               <button
-                onClick={(e) => handleMenuToggle(e, 'what-we-do')}
+                onClick={() => {
+                  setActiveMenu(null);
+                  navigateToPage('services');
+                }}
                 aria-expanded={activeMenu === 'what-we-do'}
                 aria-haspopup="true"
                 style={{
@@ -325,20 +389,14 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: '8px 14px',
-                  borderRadius: '8px',
-                  backgroundColor: activeMenu === 'what-we-do' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
-                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  padding: '8px 12px',
+                  borderRadius: '0px',
+                  backgroundColor: 'transparent',
+                  transition: 'color 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={(e) => {
-                  if (activeMenu !== 'what-we-do') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeMenu !== 'what-we-do') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
                 <span style={{ whiteSpace: 'nowrap' }}>What we do</span>
@@ -360,7 +418,10 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseEnter={() => handleMouseEnter('who-we-are')}
             >
               <button
-                onClick={(e) => handleMenuToggle(e, 'who-we-are')}
+                onClick={() => {
+                  setActiveMenu(null);
+                  navigateToPage('about-us');
+                }}
                 aria-expanded={activeMenu === 'who-we-are'}
                 aria-haspopup="true"
                 style={{
@@ -371,20 +432,14 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: '8px 14px',
-                  borderRadius: '8px',
-                  backgroundColor: activeMenu === 'who-we-are' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
-                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  padding: '8px 12px',
+                  borderRadius: '0px',
+                  backgroundColor: 'transparent',
+                  transition: 'color 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={(e) => {
-                  if (activeMenu !== 'who-we-are') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeMenu !== 'who-we-are') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
                 <span style={{ whiteSpace: 'nowrap' }}>Who we are</span>
@@ -406,7 +461,10 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseEnter={() => handleMouseEnter('insights')}
             >
               <button
-                onClick={(e) => handleMenuToggle(e, 'insights')}
+                onClick={() => {
+                  setActiveMenu(null);
+                  navigateToPage('insights');
+                }}
                 aria-expanded={activeMenu === 'insights'}
                 aria-haspopup="true"
                 style={{
@@ -420,20 +478,14 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: '8px 14px',
-                  borderRadius: '8px',
-                  backgroundColor: activeMenu === 'insights' ? 'rgba(254, 98, 0, 0.08)' : 'transparent',
-                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  padding: '8px 12px',
+                  borderRadius: '0px',
+                  backgroundColor: 'transparent',
+                  transition: 'color 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={(e) => {
-                  if (activeMenu !== 'insights') e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-                }}
-                onMouseLeave={(e) => {
-                  if (activeMenu !== 'insights') e.currentTarget.style.backgroundColor = 'transparent';
                 }}
               >
                 <span style={{ whiteSpace: 'nowrap' }}>Insights</span>
@@ -455,7 +507,10 @@ export const Header: React.FC<HeaderProps> = ({
               onMouseEnter={() => handleMouseEnter('case-studies')}
             >
               <button
-                onClick={(e) => handleMenuToggle(e, 'case-studies')}
+                onClick={() => {
+                  setActiveMenu(null);
+                  navigateToPage('portfolio');
+                }}
                 aria-expanded={activeMenu === 'case-studies'}
                 aria-haspopup="true"
                 style={{
@@ -469,27 +524,14 @@ export const Header: React.FC<HeaderProps> = ({
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
-                  padding: isScrolled ? '5px 9px' : '8px 14px',
-                  borderRadius: '8px',
-                  backgroundColor:
-                    activeMenu === 'case-studies' || currentPage === 'portfolio'
-                      ? 'rgba(254, 98, 0, 0.08)'
-                      : 'transparent',
-                  transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                  padding: isScrolled ? '5px 8px' : '8px 12px',
+                  borderRadius: '0px',
+                  backgroundColor: 'transparent',
+                  transition: 'color 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
                   border: 'none',
                   cursor: 'pointer',
                   letterSpacing: '-0.01em',
                   whiteSpace: 'nowrap',
-                }}
-                onMouseEnter={(e) => {
-                  if (activeMenu !== 'case-studies' && currentPage !== 'portfolio') {
-                    e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.04)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeMenu !== 'case-studies' && currentPage !== 'portfolio') {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }
                 }}
               >
                 <span style={{ whiteSpace: 'nowrap' }}>Case studies</span>
@@ -1004,7 +1046,7 @@ export const Header: React.FC<HeaderProps> = ({
               ))}
             </div>
 
-            {/* Right Column: Canopy Testimonial on warm light background */}
+            {/* Right Column: Dynamic Auto-Rotating Client Reviews */}
             <div
               style={{
                 padding: '30px 28px',
@@ -1012,13 +1054,21 @@ export const Header: React.FC<HeaderProps> = ({
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 backgroundColor: '#faf8f5',
+                position: 'relative',
+                overflow: 'hidden',
               }}
             >
-              <div>
+              <div
+                style={{
+                  opacity: headerReviewFading ? 0 : 1,
+                  transform: headerReviewFading ? 'translateY(4px)' : 'translateY(0)',
+                  transition: 'opacity 0.2s ease, transform 0.2s ease',
+                }}
+              >
                 <div
                   style={{
                     display: 'flex',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
                     justifyContent: 'space-between',
                     marginBottom: '14px',
                   }}
@@ -1029,9 +1079,24 @@ export const Header: React.FC<HeaderProps> = ({
                     />
                   </svg>
 
-                  <span style={{ fontSize: '16px', fontWeight: 700, color: '#000000', letterSpacing: '-0.02em', textTransform: 'lowercase', fontFamily: 'var(--font-heading)' }}>
-                    canopy
-                  </span>
+                  {HEADER_CLIENT_REVIEWS[headerReviewIdx].logoUrl ? (
+                    <img
+                      src={HEADER_CLIENT_REVIEWS[headerReviewIdx].logoUrl}
+                      alt={HEADER_CLIENT_REVIEWS[headerReviewIdx].client}
+                      style={{
+                        height: '24px',
+                        maxWidth: '100px',
+                        objectFit: 'contain',
+                      }}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLElement).style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <span style={{ fontSize: '15px', fontWeight: 700, color: '#000000', letterSpacing: '-0.02em', fontFamily: 'var(--font-heading)' }}>
+                      {HEADER_CLIENT_REVIEWS[headerReviewIdx].client}
+                    </span>
+                  )}
                 </div>
 
                 <p
@@ -1043,30 +1108,66 @@ export const Header: React.FC<HeaderProps> = ({
                     fontFamily: 'var(--font-body)',
                   }}
                 >
-                  NeoMinds TechHub has been providing services to Canopy for four years. Their skilled engineers understand product needs, deliver quality platform increments, and meet evolving deadlines with engineering discipline.
+                  "{HEADER_CLIENT_REVIEWS[headerReviewIdx].quote}"
                 </p>
               </div>
 
-              <div style={{ marginTop: '20px' }}>
-                <div
-                  style={{
-                    fontSize: '11px',
-                    fontWeight: 700,
-                    color: '#000000',
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  MATT HOBBS
+              <div
+                style={{
+                  marginTop: '20px',
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-between',
+                  opacity: headerReviewFading ? 0 : 1,
+                  transition: 'opacity 0.2s ease',
+                }}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: '#000000',
+                      letterSpacing: '0.05em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    {HEADER_CLIENT_REVIEWS[headerReviewIdx].author}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: '#66615c',
+                      marginTop: '2px',
+                    }}
+                  >
+                    {HEADER_CLIENT_REVIEWS[headerReviewIdx].role}
+                  </div>
                 </div>
-                <div
-                  style={{
-                    fontSize: '11px',
-                    color: '#66615c',
-                    marginTop: '2px',
-                  }}
-                >
-                  Chief Product Officer
+
+                {/* Review pagination indicator dots */}
+                <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+                  {HEADER_CLIENT_REVIEWS.map((_, dotIdx) => (
+                    <button
+                      key={dotIdx}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setHeaderReviewIdx(dotIdx);
+                      }}
+                      style={{
+                        width: dotIdx === headerReviewIdx ? '16px' : '6px',
+                        height: '6px',
+                        borderRadius: '3px',
+                        backgroundColor: dotIdx === headerReviewIdx ? '#fe6200' : '#d5d2cc',
+                        border: 'none',
+                        padding: 0,
+                        cursor: 'pointer',
+                        transition: 'all 0.25s ease',
+                      }}
+                      aria-label={`View testimonial ${dotIdx + 1}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>
@@ -1125,12 +1226,12 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
 
               {[
-                { id: 'mindspace-mobile-app', client: 'Mindspace.ai', title: 'Healthcare Telehealth & Biometrics App', tag: 'Healthcare' },
-                { id: 'authenticom-ai-etl', client: 'Authenticom', title: 'Automotive Data Ingestion Platform', tag: 'Enterprise ETL' },
+                { id: 'bytexl-lms', client: 'ByteXL', title: 'Coding Exam Platform & High-Concurrency LMS (100k+ Users)', tag: 'EdTech' },
+                { id: 'fero-invoice-automation', client: 'Fero Logistics', title: 'Autonomous Freight & Automated Billing Engine', tag: 'Logistics AI' },
                 { id: 'fundbot-sql-chatbot', client: 'FundBot', title: 'Natural Language AI SQL Financial Engine', tag: 'FinTech AI' },
-                { id: 'trubridge-medical-ai', client: 'TruBridge', title: 'Automated Medical Coding & Claims', tag: 'HealthTech' },
-                { id: 'adventr', client: 'Adventr', title: 'Interactive Smart-Video Generation Suite', tag: 'Media AI' },
-                { id: 'flooring-inc-dashboard', client: 'Flooring Inc', title: 'E-Commerce Inventory Telemetry', tag: 'Analytics' },
+                { id: 'interzoon-cloud-system', client: 'Interzoon', title: 'Enterprise Cloud Management & Microservices System', tag: 'Cloud Platform' },
+                { id: 'expiro-app', client: 'Expiroo', title: 'Real-Time Smart Inventory & Asset Tracking Suite', tag: 'IoT & Retail' },
+                { id: 'aigooru-fee-manager', client: 'AiGuroo', title: 'Predictive Decisioning & Financial Data Management', tag: 'Enterprise AI' },
               ].map((cs) => (
                 <div
                   key={cs.id}
@@ -1209,7 +1310,7 @@ export const Header: React.FC<HeaderProps> = ({
                     margin: 0,
                   }}
                 >
-                  From 15,000+ synchronized dealerships and HIPAA telehealth to real-time AI SQL engines, explore how we partner with product leaders to deliver measurable business velocity.
+                  From 100,000+ concurrent examination learners and autonomous freight dispatch to real-time AI SQL financial engines, explore how we partner with product leaders to deliver measurable business velocity.
                 </p>
               </div>
 
@@ -1645,11 +1746,12 @@ export const Header: React.FC<HeaderProps> = ({
               >
                 <div className="nm-mobile-accordion-inner">
                   <div style={{ padding: '8px 0 16px 12px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    <div onClick={() => navigateToPage('project', 'mindspace-mobile-app')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Mindspace.ai Healthcare App</div>
-                    <div onClick={() => navigateToPage('project', 'authenticom-ai-etl')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Authenticom Automotive Data</div>
+                    <div onClick={() => navigateToPage('project', 'bytexl-lms')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>ByteXL Higher Education LMS</div>
+                    <div onClick={() => navigateToPage('project', 'fero-invoice-automation')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Fero Logistics Freight Automation</div>
                     <div onClick={() => navigateToPage('project', 'fundbot-sql-chatbot')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>FundBot SQL Financial AI</div>
-                    <div onClick={() => navigateToPage('project', 'trubridge-medical-ai')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>TruBridge Medical Coding</div>
-                    <div onClick={() => navigateToPage('project', 'flooring-inc-dashboard')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Flooring Inc Inventory Analytics</div>
+                    <div onClick={() => navigateToPage('project', 'interzoon-cloud-system')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Interzoon Cloud Management</div>
+                    <div onClick={() => navigateToPage('project', 'expiro-app')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>Expiroo Smart Inventory Tracking</div>
+                    <div onClick={() => navigateToPage('project', 'aigooru-fee-manager')} style={{ color: '#2b2b2b', fontSize: '15px', cursor: 'pointer' }}>AiGuroo Enterprise AI Platform</div>
                     <div onClick={() => navigateToPage('portfolio')} style={{ color: '#fe6200', fontSize: '15px', fontWeight: 700, cursor: 'pointer', marginTop: '4px' }}>Explore All Case Studies →</div>
                   </div>
                 </div>

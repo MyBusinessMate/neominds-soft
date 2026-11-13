@@ -171,60 +171,11 @@ export const TEAM_MEMBERS: TeamMember[] = [
     ],
   },
   {
-    id: 'mohiuddin-syed',
-    name: 'Mohiuddin Syed',
-    role: 'Backend Developer',
-    featured: false,
-    order: 4,
-    image: '/team/Mohiuddin Syed.webp',
-    socials: {
-      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
-      website: 'https://neominds-soft.vercel.app',
-    },
-    bioPoints: [
-      {
-        number: 1,
-        heading: 'Background',
-        description: 'Architects and builds high-throughput server-side architectures, REST and GraphQL APIs, and scalable distributed microservices.',
-      },
-      {
-        number: 2,
-        heading: 'Expertise',
-        description: 'Distributed backend systems, database normalization & indexing, low-latency API design, and asynchronous message queues.',
-      },
-      {
-        number: 3,
-        heading: 'Career highlights',
-        description: 'Engineered critical data processing pipelines handling millions of monthly records with sub-100ms response latencies.',
-      },
-      {
-        number: 4,
-        heading: 'Engineering approach',
-        description: 'Designs systems for data integrity, stateless scalability, defensive programming, and rigorous unit and integration testing.',
-      },
-      {
-        number: 5,
-        heading: 'Key achievements',
-        description: 'Optimized complex query execution plans reducing database compute loads by over 40% on production workloads.',
-      },
-      {
-        number: 6,
-        heading: 'Areas of focus',
-        description: 'PostgreSQL, Node.js, distributed caching with Redis, microservice architectures, and robust API security.',
-      },
-      {
-        number: 7,
-        heading: 'Personal philosophy',
-        description: 'A resilient backend is silent, deterministic, and effortlessly scales under peak concurrent demand.',
-      },
-    ],
-  },
-  {
     id: 'mohammed-ayaan-ur-rahman',
     name: 'Mohammed Ayaan Ur Rahman',
     role: 'DevOps Engineer',
     featured: false,
-    order: 5,
+    order: 4,
     image: '/team/Mohammed Ayaan Ur Rahman.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
@@ -273,7 +224,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Shezan Ahmed',
     role: 'Product Developer',
     featured: false,
-    order: 6,
+    order: 5,
     image: '/team/Shezan Ahmed.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
@@ -322,7 +273,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Zain Atif',
     role: 'Frontend Developer',
     featured: false,
-    order: 7,
+    order: 6,
     image: '/team/Zain Atif.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
@@ -371,7 +322,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     name: 'Abdul Samad',
     role: 'Full Stack Developer',
     featured: false,
-    order: 8,
+    order: 7,
     image: '/team/Abdul Samad.webp',
     socials: {
       linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
@@ -412,6 +363,55 @@ export const TEAM_MEMBERS: TeamMember[] = [
         number: 7,
         heading: 'Personal philosophy',
         description: 'Full-stack harmony is achieved when data models and frontend components speak the exact same language.',
+      },
+    ],
+  },
+  {
+    id: 'mohiuddin-syed',
+    name: 'Mohiuddin Syed',
+    role: 'Backend Developer',
+    featured: false,
+    order: 8,
+    image: '/team/Mohiuddin Syed.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
+      website: 'https://neominds-soft.vercel.app',
+    },
+    bioPoints: [
+      {
+        number: 1,
+        heading: 'Background',
+        description: 'Architects and builds high-throughput server-side architectures, REST and GraphQL APIs, and scalable distributed microservices.',
+      },
+      {
+        number: 2,
+        heading: 'Expertise',
+        description: 'Distributed backend systems, database normalization & indexing, low-latency API design, and asynchronous message queues.',
+      },
+      {
+        number: 3,
+        heading: 'Career highlights',
+        description: 'Engineered critical data processing pipelines handling millions of monthly records with sub-100ms response latencies.',
+      },
+      {
+        number: 4,
+        heading: 'Engineering approach',
+        description: 'Designs systems for data integrity, stateless scalability, defensive programming, and rigorous unit and integration testing.',
+      },
+      {
+        number: 5,
+        heading: 'Key achievements',
+        description: 'Optimized complex query execution plans reducing database compute loads by over 40% on production workloads.',
+      },
+      {
+        number: 6,
+        heading: 'Areas of focus',
+        description: 'PostgreSQL, Node.js, distributed caching with Redis, microservice architectures, and robust API security.',
+      },
+      {
+        number: 7,
+        heading: 'Personal philosophy',
+        description: 'A resilient backend is silent, deterministic, and effortlessly scales under peak concurrent demand.',
       },
     ],
   },
@@ -461,6 +461,104 @@ export const TEAM_MEMBERS: TeamMember[] = [
         number: 7,
         heading: 'Personal philosophy',
         description: 'True AI transformation isn\'t about novelty; it\'s about eliminating friction and giving humans superpowers.',
+      },
+    ],
+  },
+  {
+    id: 'taimoor-khan',
+    name: 'Taimoor Khan',
+    role: 'Software Engineer',
+    featured: false,
+    order: 10,
+    image: '/team/male_avater.png',
+    socials: {
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
+      website: 'https://neominds-soft.vercel.app',
+    },
+    bioPoints: [
+      {
+        number: 1,
+        heading: 'Background',
+        description: 'Builds core software infrastructure and reliable backend APIs across client applications.',
+      },
+      {
+        number: 2,
+        heading: 'Expertise',
+        description: 'Application development, RESTful APIs, modern backend frameworks, and relational databases.',
+      },
+      {
+        number: 3,
+        heading: 'Career highlights',
+        description: 'Contributed to high-traffic software deployments with low latency and clean architectures.',
+      },
+      {
+        number: 4,
+        heading: 'Engineering approach',
+        description: 'Focuses on test-driven development, code readability, and reliable error handling.',
+      },
+      {
+        number: 5,
+        heading: 'Key achievements',
+        description: 'Delivered modular microservices that scaled seamlessly under high-volume production workloads.',
+      },
+      {
+        number: 6,
+        heading: 'Areas of focus',
+        description: 'Distributed systems, database optimization, backend services, and clean architecture.',
+      },
+      {
+        number: 7,
+        heading: 'Personal philosophy',
+        description: 'Software quality begins with clear logic, diligent testing, and maintainable design.',
+      },
+    ],
+  },
+  {
+    id: 'sarah-jenkins',
+    name: 'Sarah Jenkins',
+    role: 'UI/UX Designer',
+    featured: false,
+    order: 11,
+    image: '/team/female_defalut.webp',
+    socials: {
+      linkedin: 'https://www.linkedin.com/company/neomindstechhub/',
+      website: 'https://neominds-soft.vercel.app',
+    },
+    bioPoints: [
+      {
+        number: 1,
+        heading: 'Background',
+        description: 'Crafts user experiences, design systems, and responsive digital interfaces for scalable digital platforms.',
+      },
+      {
+        number: 2,
+        heading: 'Expertise',
+        description: 'UI/UX design, design systems, rapid prototyping, design tokens, and user research.',
+      },
+      {
+        number: 3,
+        heading: 'Career highlights',
+        description: 'Designed enterprise design systems utilized across multiple commercial products and platforms.',
+      },
+      {
+        number: 4,
+        heading: 'Design approach',
+        description: 'Balances aesthetic elegance with cognitive ergonomics and technical implementability.',
+      },
+      {
+        number: 5,
+        heading: 'Key achievements',
+        description: 'Transformed complex user flows into intuitive interfaces that boosted customer retention.',
+      },
+      {
+        number: 6,
+        heading: 'Areas of focus',
+        description: 'Design systems, accessibility standards, user flow mapping, and interface typography.',
+      },
+      {
+        number: 7,
+        heading: 'Personal philosophy',
+        description: 'Exceptional design makes complex technology intuitive, transparent, and enjoyable to use.',
       },
     ],
   },

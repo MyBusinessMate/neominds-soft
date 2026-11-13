@@ -20,11 +20,11 @@ interface CaseStudyCard {
 
 const CASE_STUDY_CARDS: CaseStudyCard[] = [
   {
-    id: 'flooring-inc-dashboard',
-    client: 'FLOORING.INC',
-    metric: '360° Real-Time Analytics · 15+ Modules',
-    title: 'Flooring.inc: Centralized E-Commerce BI & Natural Language SQL Queries',
-    techs: ['React', 'TypeScript', 'Node.js', 'MySQL', 'Groq'],
+    id: 'interzoon-cloud-system',
+    client: 'INTERZOON',
+    metric: '50% Infra Cost Cut · 99.99% Availability',
+    title: 'Interzoon: Cloud Enterprise Management System & Auto-Scaling Kubernetes Cluster',
+    techs: ['AWS', 'Kubernetes', 'Terraform', 'PostgreSQL', 'React'],
     gradient: 'linear-gradient(155deg, #EEF2FF 0%, #E0E7FF 50%, #C7D2FE 100%)',
     borderColor: 'rgba(99, 102, 241, 0.28)',
     shadowColor: 'rgba(99, 102, 241, 0.16)',

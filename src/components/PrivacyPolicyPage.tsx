@@ -249,8 +249,8 @@ const PrivacyPolicyPageComponent: React.FC<PrivacyPolicyPageProps> = ({
                 </p>
                 <p>
                   If you have questions, comments, or wish to exercise your data subject rights, please contact our Data Protection Officer at{' '}
-                  <a href="mailto:privacy@neominds.com" style={{ color: '#fe6200', textDecoration: 'underline', fontWeight: 600 }}>
-                    privacy@neominds.com
+                  <a href="mailto:letstalk@neomindstechhub.com" style={{ color: '#fe6200', textDecoration: 'underline', fontWeight: 600 }}>
+                    letstalk@neomindstechhub.com
                   </a>.
                 </p>
               </div>

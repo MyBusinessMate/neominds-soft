@@ -50,8 +50,8 @@ export const APPROVED_TECHNOLOGIES: ApprovedTechnology[] = [
       { name: 'Ecommerce Platform', slug: 'ecommerce-platform' },
     ],
     relevantProjects: [
-      { name: 'Flooring Inc E-Commerce Portal', id: 'flooring-inc-dashboard' },
-      { name: 'Adventr Smart-Video Web Suite', id: 'adventr' },
+      { name: 'ByteXL LMS & Coding Exam Portal', id: 'bytexl-lms' },
+      { name: 'Interzoon Cloud Enterprise Platform', id: 'interzoon-cloud-system' },
     ],
   },
   {
@@ -87,7 +87,7 @@ export const APPROVED_TECHNOLOGIES: ApprovedTechnology[] = [
       { name: 'Analytic Dashboard', slug: 'analytics-dashboard' },
     ],
     relevantProjects: [
-      { name: 'TruBridge Medical Claims Verification', id: 'trubridge-medical-ai' },
+      { name: 'AiGuroo Predictive Intelligence Engine', id: 'aigooru-fee-manager' },
       { name: 'FundBot NL Financial Query Model', id: 'fundbot-sql-chatbot' },
     ],
   },
@@ -105,8 +105,8 @@ export const APPROVED_TECHNOLOGIES: ApprovedTechnology[] = [
       { name: 'Legacy System Modernisation', slug: 'legacy-modernisation' },
     ],
     relevantProjects: [
-      { name: 'Authenticom Automotive DMS Integration', id: 'authenticom-ai-etl' },
-      { name: 'Fintuple Bank Settlement Ledger', id: 'fintuple-bank-integration' },
+      { name: 'Interzoon Distributed Cloud Architecture', id: 'interzoon-cloud-system' },
+      { name: 'ByteXL High-Concurrency Data Store', id: 'bytexl-lms' },
     ],
   },
   {
@@ -122,8 +122,8 @@ export const APPROVED_TECHNOLOGIES: ApprovedTechnology[] = [
       { name: 'Custom Software Development', slug: 'custom-software-development' },
     ],
     relevantProjects: [
-      { name: 'Flooring Inc Analytics Dashboard', id: 'flooring-inc-dashboard' },
-      { name: 'Adventr Video Telemetry Suite', id: 'adventr' },
+      { name: 'Fundbot Real-Time Financial Query Engine', id: 'fundbot-sql-chatbot' },
+      { name: 'AiGuroo Analytics & Data Telemetry', id: 'aigooru-fee-manager' },
     ],
   },
   {
@@ -139,8 +139,8 @@ export const APPROVED_TECHNOLOGIES: ApprovedTechnology[] = [
       { name: 'Legacy System Modernisation', slug: 'legacy-modernisation' },
     ],
     relevantProjects: [
-      { name: 'Authenticom High-Volume Data Ingestion', id: 'authenticom-ai-etl' },
-      { name: 'TruBridge Automated Claim Pipelines', id: 'trubridge-medical-ai' },
+      { name: 'Fero AI Freight Invoice Verification', id: 'fero-invoice-automation' },
+      { name: 'Expiro Asset Tracking & Compliance Sync', id: 'expiro-app' },
     ],
   },
   {

@@ -6,6 +6,7 @@ import {
   BookOpen,
   Calendar,
   Mail,
+  Phone,
   CheckCircle2,
   Layers,
 } from 'lucide-react';
@@ -352,21 +353,37 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
             <p className="b-locations__desc">
               Say hello to our friendly team at one of these locations.
             </p>
-            <a
-              href="mailto:contact@neomindstechhub.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                color: '#fe6200',
-                fontWeight: 600,
-                textDecoration: 'none',
-              }}
-            >
-              <Mail size={16} />
-              <span>contact@neomindstechhub.com</span>
-            </a>
-
+            <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', alignItems: 'center' }}>
+              <a
+                href="mailto:letstalk@neomindstechhub.com"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  color: '#fe6200',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                <Mail size={16} />
+                <span>letstalk@neomindstechhub.com</span>
+              </a>
+              <a
+                href="tel:+447780395866"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: '#000000',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                }}
+              >
+                <Phone size={14} color="#fe6200" />
+                <span>+44 7780 395866 (UK)</span>
+              </a>
+            </div>
           </div>
 
           {/* Locations Grid - Single Official Headquarters */}
@@ -378,10 +395,20 @@ export const BlogHubPage: React.FC<BlogHubPageProps> = ({
                 <br />
                 Hyderabad-500001, Telangana State
               </p>
-              <a href="mailto:contact@neomindstechhub.com" className="b-locations__phone">
-                <Mail size={13} />
-                <span>contact@neomindstechhub.com</span>
-              </a>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <a href="mailto:letstalk@neomindstechhub.com" className="b-locations__phone" style={{ textDecoration: 'none' }}>
+                  <Mail size={13} color="#fe6200" />
+                  <span>letstalk@neomindstechhub.com</span>
+                </a>
+                <a href="tel:+447780395866" className="b-locations__phone" style={{ textDecoration: 'none', color: '#000000' }}>
+                  <Phone size={13} color="#fe6200" />
+                  <span>+44 7780 395866 (UK Line)</span>
+                </a>
+                <a href="tel:+919515654804" className="b-locations__phone" style={{ textDecoration: 'none', color: '#000000' }}>
+                  <Phone size={13} color="#fe6200" />
+                  <span>+91 95156 54804 (India HQ)</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

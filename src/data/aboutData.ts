@@ -132,50 +132,50 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
   {
     id: 1,
     quote:
-      'NeoMinds TechHub built our core operational workflows and customer management platform from scratch. Their team delivered reliable, high-throughput systems that streamlined our client operations from week one.',
-    author: 'Daniel Brooks',
-    role: 'Operations Director, MyBusinessMate',
-    logo: '/images/company-logos/mybusinessmate.png',
+      'NeoMinds TechHub re-architected our high-concurrency coding exam platform to handle 100,000+ simultaneous students across major universities with zero downtime and sub-second code evaluation latencies.',
+    author: 'Karunakar T.',
+    role: 'VP of Technology, ByteXL',
+    logo: '/images/company-logos/bytexl.webp',
   },
   {
     id: 2,
     quote:
-      'NeoMinds TechHub delivered our autonomous multi-project AI assistant and velocity engine with exceptional technical discipline. Their engineers integrated directly into our sprints and eliminated cross-team coordination bottlenecks.',
-    author: 'Michael Anderson',
-    role: 'Head of Engineering, Dotcomweavers',
-    logo: '/images/company-logos/dotcomweavers.png',
+      'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineering team moves fast, writes rock-solid code, and solved complex geospatial routing challenges.',
+    author: 'Abhinav Sharma',
+    role: 'Head of Engineering, Fero Logistics',
+    logo: '/images/company-logos/fero.svg',
   },
   {
     id: 3,
     quote:
-      'NeoMinds TechHub engineered our HIPAA-ready telehealth platform and clinical wellness mobile app. Their healthcare AI architecture accelerated patient consultation routing while maintaining strict compliance standards throughout.',
-    author: 'Sarah Mitchell',
-    role: 'Product Lead, Mindspace.ai',
-    logo: '/images/company-logos/mindspace-ai.png',
+      'Their team took full ownership of our core microservices migration and Kubernetes pipelines. Deployments that previously took hours now deploy continuously in minutes with zero service interruption.',
+    author: 'Marcus Weber',
+    role: 'Principal Architect, Interzoon',
+    logo: '/images/company-logos/interzoon-logo.png',
   },
   {
     id: 4,
     quote:
-      'Our e-commerce inventory sync and high-volume order processing pipeline was deployed flawlessly by NeoMinds TechHub. Real-time stock reconciliation and automated fulfillment cut our order processing latency dramatically.',
-    author: 'James Wilson',
-    role: 'Technology Director, Laptomart',
-    logo: '/images/company-logos/laptomart.png',
+      'NeoMinds TechHub engineered our real-time inventory monitoring application and automated alert pipelines. The platform gives retailers instant visibility across supply chains and reduced shrinkage dramatically.',
+    author: "Liam O'Connor",
+    role: 'Product Director, Expiroo',
+    logo: '/images/company-logos/expiroo-logo.webp',
   },
   {
     id: 5,
     quote:
-      'The custom enterprise ERP integrations and distributed data pipelines NeoMinds TechHub engineered allowed our retail network to synchronize catalog updates and point-of-sale data with 99.9% uptime.',
-    author: 'Robert Bennett',
-    role: 'Infrastructure Architect, Tecnomart',
-    logo: '/images/company-logos/tecnomart.png',
+      'The team built scalable inference pipelines and production-grade vector search workflows for our AI platform. They bridged research models into high-availability production APIs with outstanding speed.',
+    author: 'Dr. Elena Rostova',
+    role: 'Chief AI Scientist, AiGuroo',
+    logo: '/images/company-logos/AiGuroo.svg',
   },
   {
     id: 6,
     quote:
-      'NeoMinds TechHub engineered our real-time streaming analytics engine and IoT telemetry ingestion platform. Their deep systems engineering expertise ensured zero message loss across millions of daily industrial machine data points.',
-    author: 'Alexander Reed',
-    role: 'VP of Platform Engineering, Oden',
-    logo: '/images/company-logos/oden.png',
+      'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
+    author: 'Tariq Al-Mansoor',
+    role: 'Co-Founder & CTO, Fundbot',
+    logo: '/images/company-logos/fundbot.png',
   },
 ];
 
@@ -185,7 +185,9 @@ export const ABOUT_LOCATION = {
   address: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh',
   postalCode: 'Hyderabad-500001, Telangana State',
   fullAddress: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh, Hyderabad-500001, Telangana State',
-  email: 'contact@neomindstechhub.com',
+  email: 'letstalk@neomindstechhub.com',
+  phoneUK: '+44 7780 395866',
+  phoneIndia: '+91 95156 54804',
 };
 
 // Maintained for backward compatibility if referenced
@@ -195,7 +197,9 @@ export const ABOUT_LOCATIONS = {
       city: 'Hyderabad, Telangana State',
       address: 'Office Space No. 704, 7th Floor, 5-9-59 & 60, Moguls Court Building, Basheerbagh',
       postalCode: 'Hyderabad-500001, Telangana State',
-      email: 'contact@neomindstechhub.com',
+      email: 'letstalk@neomindstechhub.com',
+      phoneUK: '+44 7780 395866',
+      phoneIndia: '+91 95156 54804',
     },
   ],
   europe: [],
