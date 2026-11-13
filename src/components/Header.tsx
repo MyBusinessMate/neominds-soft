@@ -67,7 +67,7 @@ const HEADER_CLIENT_REVIEWS = [
     client: 'Fero Logistics',
     role: 'Head of Engineering',
     author: 'Abhinav Sharma',
-    logoUrl: '/images/company-logos/fero.svg',
+    logoUrl: '/images/company-logos/fero.svg?v=2',
     quote:
       'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineers write rock-solid code and solved complex routing challenges.',
   },
@@ -99,7 +99,7 @@ const HEADER_CLIENT_REVIEWS = [
     client: 'Fundbot',
     role: 'Co-Founder & CTO',
     author: 'Tariq Al-Mansoor',
-    logoUrl: '/images/company-logos/fundbot.png',
+    logoUrl: '/images/company-logos/fundbot.png?v=2',
     quote:
       'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
   },

@@ -30,7 +30,7 @@ export const Testimonials: React.FC = () => {
     {
       id: 'fero',
       clientName: 'Fero Logistics',
-      logoUrl: '/images/company-logos/fero.svg',
+      logoUrl: '/images/company-logos/fero.svg?v=2',
       quote:
         'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineering team moves fast, writes rock-solid code, and solved complex geospatial routing challenges for our fleet.',
       author: 'Abhinav Sharma',
@@ -66,7 +66,7 @@ export const Testimonials: React.FC = () => {
     {
       id: 'fundbot',
       clientName: 'Fundbot',
-      logoUrl: '/images/company-logos/fundbot.png',
+      logoUrl: '/images/company-logos/fundbot.png?v=2',
       quote:
         'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
       author: 'Tariq Al-Mansoor',

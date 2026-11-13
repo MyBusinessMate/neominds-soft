@@ -12,15 +12,15 @@ interface ClientLogo {
 
 const clientLogos: ClientLogo[] = [
   { id: 'bytexl', name: 'ByteXL', url: '/images/company-logos/bytexl.webp' },
-  { id: 'fundbot', name: 'Fundbot', url: '/images/company-logos/fundbot.png' },
+  { id: 'fundbot', name: 'Fundbot', url: '/images/company-logos/fundbot.png?v=2' },
   { id: 'dotcomweavers', name: 'Dotcomweavers', url: '/images/company-logos/dotcomweavers.png' },
-  { id: 'fero', name: 'Fero Logistics', url: '/images/company-logos/fero.svg' },
+  { id: 'fero', name: 'Fero Logistics', url: '/images/company-logos/fero.svg?v=2' },
   { id: 'mybusinessmate', name: 'MyBusinessMate', url: '/images/company-logos/mybusinessmate.png' },
   { id: 'the1am', name: 'The 1AM', url: '/images/company-logos/The1AM.png' },
   { id: 'aiguroo', name: 'AiGuroo', url: '/images/company-logos/AiGuroo.svg' },
   { id: 'edutech', name: 'EduTech', url: '/images/company-logos/edutech-logo.png' },
   { id: 'keocapital', name: 'KEO Capital', url: '/images/company-logos/KEO-CAPITAl.png' },
-  { id: 'flexport', name: 'Flexport', url: '/images/company-logos/flexport-light.svg' },
+  { id: 'flexport', name: 'Flexport', url: '/images/company-logos/flexport-light.svg?v=2' },
   { id: 'flyover', name: 'Flyover', url: '/images/company-logos/logo-flyover-red.svg' },
   { id: 'interzoon', name: 'Interzoon', url: '/images/company-logos/interzoon-logo.png' },
   { id: 'expiroo', name: 'Expiroo', url: '/images/company-logos/expiroo-logo.webp' },

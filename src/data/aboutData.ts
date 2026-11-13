@@ -143,7 +143,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
       'NeoMinds TechHub built our automated freight dispatching engine and real-time load matching microservices. Their engineering team moves fast, writes rock-solid code, and solved complex geospatial routing challenges.',
     author: 'Abhinav Sharma',
     role: 'Head of Engineering, Fero Logistics',
-    logo: '/images/company-logos/fero.svg',
+    logo: '/images/company-logos/fero.svg?v=2',
   },
   {
     id: 3,
@@ -175,7 +175,7 @@ export const ABOUT_TESTIMONIALS: ClientTestimonial[] = [
       'NeoMinds TechHub delivered our core underwriting rails and banking API integrations with institutional-grade security. Their weekly sprints and transparent code reviews gave our stakeholders total confidence.',
     author: 'Tariq Al-Mansoor',
     role: 'Co-Founder & CTO, Fundbot',
-    logo: '/images/company-logos/fundbot.png',
+    logo: '/images/company-logos/fundbot.png?v=2',
   },
 ];
 

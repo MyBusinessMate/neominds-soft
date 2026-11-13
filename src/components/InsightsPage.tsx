@@ -16,9 +16,10 @@ interface BlogPost {
   category: 'AI & Autonomous Agents' | 'Cloud & DevOps' | 'Fintech & Security' | 'Product Strategy';
   author: string;
   authorRole: string;
+  authorAvatar: string;
+  coverImage: string;
   date: string;
   readTime: string;
-  imageBg: string;
   featured?: boolean;
 }
 
@@ -31,9 +32,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'AI & Autonomous Agents',
     author: 'Alexander Kachaev',
     authorRole: 'Chief Technology Officer',
+    authorAvatar: '/uploads/ESThumbnails/100899/660.Aleksandar-Apostolov-2.jpg',
+    coverImage: '/uploads/ESThumbnails/134677/1280.AI-in-SDLC.jpg',
     date: 'February 24, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
     featured: true,
   },
   {
@@ -44,9 +46,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Cloud & DevOps',
     author: 'Vladimir Arefyev',
     authorRole: 'Head of Cloud & DevOps',
+    authorAvatar: '/uploads/ESThumbnails/86008/660.Vlad-Lenski-2.jpg',
+    coverImage: '/uploads/ESThumbnails/101582/1280.Data-warehouse-development.png',
     date: 'February 18, 2026',
     readTime: '6 min read',
-    imageBg: 'linear-gradient(180deg, #2e1103 0%, #1a0800 100%)',
   },
   {
     id: 'fintech-submillisecond-trading',
@@ -56,9 +59,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Fintech & Security',
     author: 'Mark Minehart',
     authorRole: 'VP of Engineering',
+    authorAvatar: '/uploads/ESThumbnails/112218/660.Kirill-Makarenko-3.jpg',
+    coverImage: '/uploads/ESThumbnails/136028/1280.ai-product-development.jpg',
     date: 'February 10, 2026',
     readTime: '10 min read',
-    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #f5f1e8 100%)',
   },
   {
     id: 'zero-downtime-strangler-migration',
@@ -68,9 +72,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Product Strategy',
     author: 'Elena Rostova',
     authorRole: 'Principal Solution Architect',
+    authorAvatar: '/uploads/ESThumbnails/72346/660.Marina-Khvistik-2.jpg',
+    coverImage: '/uploads/ESThumbnails/139066/1280.ai-projects-fail-in-enterprises.jpg',
     date: 'January 28, 2026',
     readTime: '7 min read',
-    imageBg: 'linear-gradient(180deg, #2a1205 0%, #fbf9f5 100%)',
   },
   {
     id: 'rag-hallucination-elimination',
@@ -80,9 +85,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'AI & Autonomous Agents',
     author: 'Dr. Sarah Lin',
     authorRole: 'Lead AI Research Engineer',
+    authorAvatar: '/uploads/ESThumbnails/78724/660.Maryia-Dudarenko-2.jpg',
+    coverImage: '/uploads/ESThumbnails/136853/1280.ai-use-cases-in-education.jpg',
     date: 'January 20, 2026',
     readTime: '9 min read',
-    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
   },
   {
     id: 'nextjs-15-edge-performance',
@@ -92,9 +98,10 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Product Strategy',
     author: 'Lucas Meyer',
     authorRole: 'Lead Frontend Architect',
+    authorAvatar: '/uploads/ESThumbnails/138916/660.Andrey-Stasishin_s.jpg',
+    coverImage: '/uploads/ESThumbnails/133156/1280.artificial-intelligence-in-human-resources.jpg',
     date: 'January 14, 2026',
     readTime: '5 min read',
-    imageBg: 'linear-gradient(180deg, #2e1103 0%, #f5f1e8 100%)',
   },
   {
     id: 'soc2-hipaa-cloud-hardening',
@@ -104,11 +111,11 @@ const BLOG_POSTS: BlogPost[] = [
     category: 'Fintech & Security',
     author: 'Vladimir Arefyev',
     authorRole: 'Head of Cloud & DevOps',
+    authorAvatar: '/uploads/ESThumbnails/86008/660.Vlad-Lenski-2.jpg',
+    coverImage: '/uploads/ESThumbnails/101578/1280.healthcare-revenue-cycle-management-software.png',
     date: 'January 05, 2026',
     readTime: '8 min read',
-    imageBg: 'linear-gradient(180deg, #f0ece2 0%, #fbf9f5 100%)',
   },
-
 ];
 
 interface InsightsPageProps {
@@ -153,6 +160,76 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
 
   return (
     <div style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', minHeight: '100vh', paddingTop: '68px', fontFamily: 'var(--font-body)' }}>
+      <style>{`
+        .insights-featured-card {
+          background-color: #ffffff;
+          border: 1px solid #e8e4dc;
+          border-radius: 14px;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: minmax(320px, 1.15fr) minmax(320px, 1.25fr);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+          cursor: pointer;
+        }
+        .insights-featured-card:hover {
+          transform: translateY(-3px);
+          border-color: #fe6200;
+          box-shadow: 0 20px 40px rgba(254, 98, 0, 0.09), 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+        .insights-featured-card:hover .insights-featured-img {
+          transform: scale(1.04);
+        }
+        .insights-featured-card:hover .insights-featured-title {
+          color: #fe6200;
+        }
+        @media (max-width: 900px) {
+          .insights-featured-card {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .insights-article-card {
+          background-color: #ffffff;
+          border: 1px solid #e8e4dc;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          overflow: hidden;
+          transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+          cursor: pointer;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+        .insights-article-card:hover {
+          transform: translateY(-4px);
+          border-color: #fe6200;
+          box-shadow: 0 16px 32px rgba(254, 98, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+        .insights-article-card:hover .insights-card-img {
+          transform: scale(1.05);
+        }
+        .insights-article-card:hover .insights-card-title {
+          color: #fe6200;
+        }
+        .insights-article-card:hover .insights-card-arrow {
+          transform: translateX(4px);
+          color: #fe6200;
+        }
+        .insights-article-card:hover .insights-card-btn-pill {
+          background-color: #fe6200 !important;
+          color: #ffffff !important;
+        }
+
+        @media (max-width: 640px) {
+          .insights-grid-container {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+        }
+      `}</style>
+
       {/* ========================================================
           1. HERO HEADER
           ======================================================== */}
@@ -166,7 +243,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
         <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 14px', backgroundColor: 'rgba(254, 98, 0, 0.08)', borderRadius: '8px', color: '#fe6200', fontSize: '13px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '16px' }}>
             <BookOpen size={14} />
-            <span>NeoMinds TechHub Research & Engineering Briefs</span>
+            <span>NeoMinds TechHub Research &amp; Engineering Briefs</span>
           </div>
 
           <ScrollReveal
@@ -174,7 +251,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
             style={{
               fontSize: 'clamp(36px, 4.5vw, 54px)',
               fontWeight: 800,
-              fontFamily: 'var(--font-heading)',
+              fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
               letterSpacing: '-0.03em',
               color: '#000000',
               marginBottom: '16px',
@@ -182,7 +259,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
             }}
             blurStrength={7}
           >
-            Insights, Architecture & <span style={{ color: '#fe6200' }}>Tech Briefs</span>
+            Insights, Architecture &amp; <span style={{ color: '#fe6200' }}>Tech Briefs</span>
           </ScrollReveal>
 
           <RevealElement variant="text" delay={0.06}>
@@ -209,7 +286,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   fontSize: '14px',
                   color: '#000000',
                   outline: 'none',
-                  boxShadow: '0 2px 6px rgba(32, 11, 0,  0.03)',
+                  boxShadow: '0 2px 6px rgba(32, 11, 0, 0.03)',
                 }}
               />
             </div>
@@ -224,6 +301,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                     color: selectedCategory === cat ? '#ffffff' : '#333333',
                     borderColor: selectedCategory === cat ? '#fe6200' : '#a3a09b',
                     backgroundColor: selectedCategory === cat ? '#fe6200' : '#faf8f5',
+                    borderRadius: '8px',
+                    fontWeight: 600,
                   }}
                 >
                   {cat}
@@ -235,70 +314,202 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       </section>
 
       {/* ========================================================
-          2. FEATURED ARTICLE (Hero Card)
+          2. FEATURED ARTICLE (Hero Card with Rich Visuals)
           ======================================================== */}
       {featuredPost && (
         <section style={{ padding: '48px 24px 32px', maxWidth: '1240px', margin: '0 auto' }}>
           <RevealElement variant="card" start="top 90%" end="top 65%">
             <div
-              style={{
-                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-                border: '1px solid #1F1F23',
-                color: '#000000',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                boxShadow: '0 16px 36px rgba(32, 11, 0,  0.4)',
-              }}
+              className="insights-featured-card"
+              onClick={() => onSuccessToast(`Opening full brief: "${featuredPost.title}"`)}
             >
-              {/* Visual Header */}
+              {/* Visual Cover Header */}
               <div
                 style={{
-                  background: featuredPost.imageBg,
-                  padding: '48px 36px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  minHeight: '280px',
+                  position: 'relative',
+                  minHeight: '340px',
+                  overflow: 'hidden',
+                  backgroundColor: '#f0ece2',
                 }}
               >
-                <div style={{ display: 'inline-flex', alignItems: 'center', borderLeft: '2px solid #fe6200', paddingLeft: '8px', width: 'fit-content', fontSize: '11px', fontFamily: 'monospace', fontWeight: 700, color: '#000000', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                  <span>Featured Engineering Teardown</span>
+                <img
+                  src={featuredPost.coverImage}
+                  alt={featuredPost.title}
+                  className="insights-featured-img"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
+                  }}
+                />
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.65) 100%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '20px',
+                    left: '20px',
+                    zIndex: 2,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    padding: '6px 12px',
+                    backgroundColor: 'rgba(254, 98, 0, 0.94)',
+                    backdropFilter: 'blur(8px)',
+                    borderRadius: '6px',
+                    color: '#ffffff',
+                    fontSize: '11px',
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                  }}
+                >
+                  <span>Featured Architecture Teardown</span>
                 </div>
 
-                <div style={{ fontSize: '13px', color: '#555555', display: 'flex', gap: '16px' }}>
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '20px',
+                    zIndex: 2,
+                    fontSize: '12px',
+                    fontWeight: 600,
+                    color: 'rgba(255, 255, 255, 0.95)',
+                    display: 'flex',
+                    gap: '12px',
+                    alignItems: 'center',
+                  }}
+                >
                   <span>{featuredPost.date}</span>
                   <span>•</span>
-                  <span>{featuredPost.readTime}</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                    <Clock size={12} color="#fe6200" />
+                    {featuredPost.readTime}
+                  </span>
                 </div>
               </div>
 
               {/* Content Body */}
-              <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div
+                style={{
+                  padding: 'clamp(28px, 4vw, 44px)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  backgroundColor: '#ffffff',
+                }}
+              >
                 <div>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '11px',
+                      fontWeight: 700,
+                      color: '#fe6200',
+                      backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                      padding: '4px 10px',
+                      borderRadius: '6px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.06em',
+                      marginBottom: '14px',
+                    }}
+                  >
                     {featuredPost.category}
                   </span>
 
-                  <h2 style={{ fontSize: 'clamp(22px, 2.5vw, 30px)', fontWeight: 700, fontFamily: 'var(--font-heading)', color: '#000000', margin: '10px 0 16px', lineHeight: 1.25 }}>
+                  <h2
+                    className="insights-featured-title"
+                    style={{
+                      fontSize: 'clamp(22px, 2.4vw, 30px)',
+                      fontWeight: 700,
+                      fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                      color: '#000000',
+                      margin: '0 0 16px 0',
+                      lineHeight: 1.25,
+                      letterSpacing: '-0.02em',
+                      transition: 'color 0.2s ease',
+                    }}
+                  >
                     {featuredPost.title}
                   </h2>
 
-                  <p style={{ fontSize: '15px', lineHeight: 1.6, color: '#555555', marginBottom: '24px' }}>
+                  <p
+                    style={{
+                      fontSize: '15px',
+                      lineHeight: 1.65,
+                      color: '#66615c',
+                      marginBottom: '28px',
+                    }}
+                  >
                     {featuredPost.excerpt}
                   </p>
                 </div>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '20px' }}>
-                  <div>
-                    <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000' }}>{featuredPost.author}</div>
-                    <div style={{ fontSize: '12px', color: '#555555' }}>{featuredPost.authorRole}</div>
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    borderTop: '1px solid #f0ece2',
+                    paddingTop: '20px',
+                    flexWrap: 'wrap',
+                    gap: '14px',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    {featuredPost.authorAvatar && (
+                      <img
+                        src={featuredPost.authorAvatar}
+                        alt={featuredPost.author}
+                        style={{
+                          width: '42px',
+                          height: '42px',
+                          borderRadius: '50%',
+                          objectFit: 'cover',
+                          border: '2px solid #fe6200',
+                          flexShrink: 0,
+                        }}
+                      />
+                    )}
+                    <div>
+                      <div style={{ fontSize: '14px', fontWeight: 700, color: '#000000' }}>
+                        {featuredPost.author}
+                      </div>
+                      <div style={{ fontSize: '12px', color: '#88847f' }}>
+                        {featuredPost.authorRole}
+                      </div>
+                    </div>
                   </div>
 
                   <button
-                    onClick={() => onSuccessToast(`Opening full brief: "${featuredPost.title}"`)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onSuccessToast(`Opening full brief: "${featuredPost.title}"`);
+                    }}
                     className="btn btn-primary btn-sm"
+                    style={{
+                      backgroundColor: '#fe6200',
+                      borderColor: '#fe6200',
+                      color: '#ffffff',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '10px 18px',
+                      borderRadius: '8px',
+                      fontWeight: 600,
+                    }}
                   >
                     <span>Read Article</span>
                     <ArrowRight size={14} />
@@ -311,7 +522,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       )}
 
       {/* ========================================================
-          3. BLOG GRID (6 Articles)
+          3. BLOG GRID (6 High-End Editorial Cards)
           ======================================================== */}
       <section style={{ padding: '40px 24px 80px', maxWidth: '1240px', margin: '0 auto' }}>
         {filteredPosts.length === 0 ? (
@@ -320,89 +531,239 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
             <p>Try searching for a different keyword or select another category filter.</p>
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '28px' }}>
+          <div
+            className="insights-grid-container"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+              gap: '28px',
+            }}
+          >
             {gridPosts.map((post, idx) => (
               <RevealElement key={post.id} variant="card" delay={(idx % 3) * 0.08} start="top 92%" end="top 65%">
                 <article
-                  style={{
-                    backgroundColor: 'var(--colors-background-dark, #fbf9f5)',
-                    border: '1px solid #f0ece2',
-                    borderRadius: '8px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
-                    height: '100%',
-                    overflow: 'hidden',
-                    transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
-                    cursor: 'pointer',
-                  }}
-                onClick={() => onSuccessToast(`Opening brief: "${post.title}"`)}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#fe6200';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 12px 24px rgba(254, 98, 0, 0.06)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#f0ece2';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                {/* Visual Top Bar */}
-                <div style={{ height: '8px', background: post.imageBg }} />
+                  className="insights-article-card"
+                  onClick={() => onSuccessToast(`Opening brief: "${post.title}"`)}
+                >
+                  {/* Visual Media Header with High-Resolution Thumbnail & Badges */}
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      height: '210px',
+                      overflow: 'hidden',
+                      backgroundColor: '#f0ece2',
+                    }}
+                  >
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      loading="lazy"
+                      className="insights-card-img"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block',
+                        transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
+                      }}
+                    />
+                    {/* Vignette Gradient Overlay */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.55) 100%)',
+                        pointerEvents: 'none',
+                      }}
+                    />
 
-                <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                  <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <span style={{ fontSize: '11px', fontWeight: 700, color: '#fe6200', backgroundColor: 'rgba(254, 98, 0, 0.08)', padding: '3px 8px', borderRadius: '8px', textTransform: 'uppercase' }}>
+                    {/* Category Badge floating bottom-left */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '14px',
+                        left: '16px',
+                        zIndex: 2,
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: 'inline-block',
+                          fontSize: '11px',
+                          fontWeight: 700,
+                          color: '#ffffff',
+                          backgroundColor: 'rgba(254, 98, 0, 0.94)',
+                          backdropFilter: 'blur(6px)',
+                          padding: '4px 10px',
+                          borderRadius: '6px',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.06em',
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                        }}
+                      >
                         {post.category}
                       </span>
-                      <span style={{ fontSize: '12px', color: '#555555', display: 'flex', alignItems: 'center', gap: '4px' }}>
-                        <Clock size={12} />
+                    </div>
+
+                    {/* Reading Time floating bottom-right */}
+                    <div
+                      style={{
+                        position: 'absolute',
+                        bottom: '14px',
+                        right: '16px',
+                        zIndex: 2,
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '5px',
+                          fontSize: '11.5px',
+                          fontWeight: 600,
+                          color: '#ffffff',
+                          backgroundColor: 'rgba(0, 0, 0, 0.65)',
+                          backdropFilter: 'blur(6px)',
+                          padding: '4px 9px',
+                          borderRadius: '6px',
+                          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                        }}
+                      >
+                        <Clock size={11} color="#fe6200" />
                         {post.readTime}
                       </span>
                     </div>
-
-                    <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#000000', fontFamily: 'var(--font-heading)', lineHeight: 1.35, marginBottom: '12px' }}>
-                      {post.title}
-                    </h3>
-
-                    <p style={{ fontSize: '14px', lineHeight: 1.6, color: '#555555', marginBottom: '20px' }}>
-                      {post.excerpt}
-                    </p>
                   </div>
 
-                  <div style={{ borderTop: '1px solid #f0ece2', paddingTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  {/* Card Content */}
+                  <div
+                    style={{
+                      padding: '24px 24px 20px 24px',
+                      flex: 1,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      backgroundColor: '#ffffff',
+                    }}
+                  >
                     <div>
-                      <div style={{ fontSize: '13px', fontWeight: 600, color: '#000000' }}>{post.author}</div>
-                      <div style={{ fontSize: '11px', color: '#555555' }}>{post.date}</div>
+                      <h3
+                        className="insights-card-title"
+                        style={{
+                          fontSize: '18px',
+                          fontWeight: 700,
+                          color: '#000000',
+                          fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)",
+                          lineHeight: 1.35,
+                          marginBottom: '10px',
+                          letterSpacing: '-0.015em',
+                          transition: 'color 0.2s ease',
+                        }}
+                      >
+                        {post.title}
+                      </h3>
+
+                      <p
+                        style={{
+                          fontSize: '14px',
+                          lineHeight: 1.6,
+                          color: '#66615c',
+                          marginBottom: '20px',
+                          display: '-webkit-box',
+                          WebkitLineClamp: 3,
+                          WebkitBoxOrient: 'vertical',
+                          overflow: 'hidden',
+                        }}
+                      >
+                        {post.excerpt}
+                      </p>
                     </div>
 
-                    <span className="btn-text" style={{ fontSize: '13px' }}>
-                      <span>Read Brief</span>
-                      <ArrowRight size={13} />
-                    </span>
+                    {/* Card Footer: Author Profile & Animated Action Arrow */}
+                    <div
+                      style={{
+                        borderTop: '1px solid #f0ece2',
+                        paddingTop: '16px',
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        {post.authorAvatar && (
+                          <img
+                            src={post.authorAvatar}
+                            alt={post.author}
+                            style={{
+                              width: '34px',
+                              height: '34px',
+                              borderRadius: '50%',
+                              objectFit: 'cover',
+                              border: '1.5px solid #fe6200',
+                              flexShrink: 0,
+                            }}
+                          />
+                        )}
+                        <div>
+                          <div style={{ fontSize: '13px', fontWeight: 700, color: '#000000', lineHeight: 1.25 }}>
+                            {post.author}
+                          </div>
+                          <div style={{ fontSize: '11.5px', color: '#88847f', marginTop: '2px' }}>
+                            {post.date}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          fontSize: '13px',
+                          fontWeight: 600,
+                          color: '#fe6200',
+                        }}
+                      >
+                        <span>Read Brief</span>
+                        <div
+                          className="insights-card-btn-pill"
+                          style={{
+                            width: '26px',
+                            height: '26px',
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(254, 98, 0, 0.08)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#fe6200',
+                            transition: 'all 0.2s ease',
+                          }}
+                        >
+                          <ArrowRight size={13} className="insights-card-arrow" style={{ transition: 'transform 0.2s ease' }} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </article>
-            </RevealElement>
-          ))}
-        </div>
-      )}
-    </section>
+                </article>
+              </RevealElement>
+            ))}
+          </div>
+        )}
+      </section>
 
       {/* ========================================================
           4. NEWSLETTER SUBSCRIPTION STRIP
           ======================================================== */}
       <RevealElement variant="card" start="top 92%" end="top 68%">
-        <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '64px 24px', borderTop: '1px solid #1F1F23' }}>
+        <section style={{ backgroundColor: 'var(--colors-background-dark, #fbf9f5)', color: '#000000', padding: '64px 24px', borderTop: '1px solid #f0ece2' }}>
           <div style={{ maxWidth: '840px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ fontSize: '12px', fontWeight: 700, color: '#fe6200', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '10px' }}>
               Stay Ahead
             </div>
             <ScrollReveal
               as="h2"
-              style={{ fontSize: '32px', fontWeight: 800, color: '#000000', fontFamily: 'var(--font-heading)', marginBottom: '12px', display: 'block' }}
+              style={{ fontSize: '32px', fontWeight: 800, color: '#000000', fontFamily: "var(--typography-display-family, 'BL Pylon Serif', serif)", marginBottom: '12px', display: 'block' }}
               blurStrength={6}
             >
               Subscribe to the NeoMinds TechHub Tech Brief
@@ -413,33 +774,47 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               </p>
             </RevealElement>
 
-          <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '10px', maxWidth: '480px', margin: '0 auto', flexWrap: 'wrap' }}>
-            <input
-              type="email"
-              required
-              placeholder="Enter your corporate email"
-              value={newsletterEmail}
-              onChange={(e) => setNewsletterEmail(e.target.value)}
-              style={{
-                flex: 1,
-                minWidth: '240px',
-                padding: '12px 16px',
-                backgroundColor: 'var(--colors-surface-dark-subtle, #f0ece2)',
-                border: '1px solid #f0ece2',
-                borderRadius: '8px',
-                color: '#000000',
-                fontSize: '14px',
-                outline: 'none',
-              }}
-            />
-            <button type="submit" className="btn btn-primary btn-md">
-              <span>Subscribe</span>
-              <Send size={14} />
-            </button>
-          </form>
-        </div>
-      </section>
-    </RevealElement>
+            <form onSubmit={handleSubscribe} style={{ display: 'flex', gap: '10px', maxWidth: '480px', margin: '0 auto', flexWrap: 'wrap' }}>
+              <input
+                type="email"
+                required
+                placeholder="Enter your corporate email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                style={{
+                  flex: 1,
+                  minWidth: '240px',
+                  padding: '12px 16px',
+                  backgroundColor: '#ffffff',
+                  border: '1px solid #e8e4dc',
+                  borderRadius: '8px',
+                  color: '#000000',
+                  fontSize: '14px',
+                  outline: 'none',
+                }}
+              />
+              <button
+                type="submit"
+                className="btn btn-primary btn-md"
+                style={{
+                  backgroundColor: '#fe6200',
+                  borderColor: '#fe6200',
+                  color: '#ffffff',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '12px 20px',
+                  borderRadius: '8px',
+                  fontWeight: 600,
+                }}
+              >
+                <span>Subscribe</span>
+                <Send size={14} />
+              </button>
+            </form>
+          </div>
+        </section>
+      </RevealElement>
 
       {/* ========================================================
           GLOBAL FOOTER

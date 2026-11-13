@@ -10,12 +10,12 @@ interface HeroSectionProps {
 
 const clientLogos = [
   { name: 'ByteXL', logoUrl: '/images/company-logos/bytexl.webp' },
-  { name: 'Fundbot', logoUrl: '/images/company-logos/fundbot.png' },
+  { name: 'Fundbot', logoUrl: '/images/company-logos/fundbot.png?v=2' },
   { name: 'Dotcomweavers', logoUrl: '/images/company-logos/dotcomweavers.png' },
-  { name: 'Fero Logistics', logoUrl: '/images/company-logos/fero.svg' },
+  { name: 'Fero Logistics', logoUrl: '/images/company-logos/fero.svg?v=2' },
   { name: 'MyBusinessMate', logoUrl: '/images/company-logos/mybusinessmate.png' },
   { name: 'The 1AM', logoUrl: '/images/company-logos/The1AM.png' },
-  { name: 'Flexport', logoUrl: '/images/company-logos/flexport-light.svg' },
+  { name: 'Flexport', logoUrl: '/images/company-logos/flexport-light.svg?v=2' },
   { name: 'AiGuroo', logoUrl: '/images/company-logos/AiGuroo.svg' },
   { name: 'EduTech', logoUrl: '/images/company-logos/edutech-logo.png' },
   { name: 'Interzoon', logoUrl: '/images/company-logos/interzoon-logo.png' },
